@@ -463,3 +463,12 @@ matches:
   - trigger: ":meeting-key-points-actions"
     form: |
       Summarize the key points, decisions, and action items from this meeting.
+
+  - trigger: ":learn-80-20"
+    form: |
+      I want to learn about [[topic]]. Please provide me with the 20% of the information that will give me 80% of the understanding of this topic. Focus on the most important concepts, principles, and insights that will allow me to grasp the essence of this topic quickly and effectively.
+      After providing the 20% of the information, ask me if I would like to dive deeper into any specific aspect of the topic or if I have any questions about what I've learned so far. This way, we can ensure that I have a solid foundation before exploring more detailed information.
+      Also What are the most common misconceptions about that 20% of the information that I should be aware of? Please clarify those misconceptions as well to ensure I have a clear and accurate understanding of the topic.
+    form_fields:
+      topic:
+        multiline: false

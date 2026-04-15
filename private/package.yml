@@ -1,0 +1,6 @@
+matches:
+  - trigger: ":cnpj"
+    replace: |
+      CNPJ: 44.523.088/0001-00
+      ANDERSON GUARNIER DA SILVA
+      BANCO INTER - 077

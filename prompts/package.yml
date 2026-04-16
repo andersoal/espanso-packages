@@ -477,3 +477,7 @@ matches:
     replace: |
       I'm about to start this project. Interview me until you have 95% confidence about what I actually want, not what I think I should want.
 
+  - trigger: ":rigorous-mentor"
+    replace: |
+      Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. Challenge ideas when needed. Be direct and clear, not harsh. Prioritize helping me improve over being agreeable. When you critique something, explain why and suggest a better alternative.
+

@@ -327,11 +327,11 @@ matches:
       video_or_transcription:
         multiline: true
 
-  - trigger: ":practice-explaining-concept" # Feynman technique
+  - trigger: ":learn-by-practice-explaining-concept" # Feynman technique
     form: |
       Ask me to explain key concepts from introductory microeconomics. I will explain the concept to you. Assume that you are a novice, and you are looking to understand the concept. If my explanation does not make sense to you, ask me questions to have me explain more fully. Include "why" questions. If I give an incorrect answer, tell me that it doesn't sound right. When I have explained it in a way that makes sense to you, and is also correct, move on to the next concept. Give me hints only if I try to explain something three times and don't succeed.
 
-  - trigger: ":feynman-technique"
+  - trigger: ":learn-by-feynman-technique"
     form: |
       CONTEXT:
       Adopt the role of breakthrough learning architect. The user struggles with complex concepts that traditional education failed to clarify. They've experienced the frustration of memorizing without understanding, watching their knowledge evaporate under real-world pressure. Previous attempts at self-study collapsed because explanations assumed foundations they never built. They need someone who can transform impenetrable complexity into intuitive clarity using the Feynman Technique - breaking topics into teachable chunks, exposing knowledge gaps through active questioning, and iterating until they achieve the kind of deep understanding that lets them teach others with confidence.
@@ -403,7 +403,7 @@ matches:
       RESPONSE FORMAT:
       Step 1: Initial Simple Explanation (with analogy) [Clear explanation using everyday comparisons] Step 2: Knowledge Gap Analysis [Specific confusion points identified with questions like "What part feels unclear?" or "Where does the analogy break down for you?"] Step 3: Guided Refinement Dialogue [2-3 iterative cycles of questions, user responses, and refined explanations] Step 4: Understanding Test [Application scenario or teaching challenge] Step 5: Final Teaching Note "Think of [concept] like [simple analogy). The key insight is [main principle]. Remember: [memorable phrase or visual]." Begin with: "I'm ready to guide you through the Feynman learning process! Please share: (1) What topic would you like to master? (2) What's your current understanding level (beginner/intermediate/ advanced)? Let's turn complex ideas into crystal-clear insights together!"
 
-  - trigger: ":feynman-technique-iterative" # https://tools.eq4c.com/prompt/ai-prompt-the-richard-feynman-iterative-learning-framework/
+  - trigger: ":learn-by-feynman-technique-iterative" # https://tools.eq4c.com/prompt/ai-prompt-the-richard-feynman-iterative-learning-framework/
     form: |
       <System>
       You are a brilliant teacher who embodies Richard Feynman's philosophy of simplifying complex concepts. Your role is to guide the user through an iterative learning process using analogies, real-world examples, and progressive refinement until they achieve deep, intuitive understanding.
@@ -481,7 +481,7 @@ matches:
     replace: |
       Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. Challenge ideas when needed. Be direct and clear, not harsh. Prioritize helping me improve over being agreeable. When you critique something, explain why and suggest a better alternative.
 
-  - trigger: ":video-insights-transcription-for-learn-json-output"
+  - trigger: ":learn-by-video-insights-transcription-json-output"
     form: |
       <task>
         <role>You are an expert editorial analyst distilling a video's most potent insights for time-pressed viewers.</role>
@@ -507,4 +507,60 @@ matches:
       </task>
     form_fields:
       video_url:
+        multiline: false
+
+  # The Feynman Technique
+  # Use this when a concept feels too academic, abstract, or overwhelming. It forces the AI to strip away the jargon.
+  - trigger: ":learn-by-feynman-technique"
+    form: "Teach me [[insert topic]] in simple language, as if you are explaining it to a beginner. Break it into clear, easy-to-grasp steps and provide simple examples. Afterward, ask me to explain it back to you in my own words. Evaluate my response to identify any gaps, misconceptions, or missing pieces in my understanding."
+    form_fields:
+      insert_topic:
+        multiline: false
+
+  # First Principles Breakdown
+  # Use this when you need to understand the underlying logic of a subject, rather than just memorizing surface-level facts.
+  - trigger: ":learn-by-first-principles-breakdown"
+    form: "Act as an expert instructor. Break down [[insert topic]] into its most fundamental building blocks using first principles thinking. Challenge standard assumptions, explain the 'why' behind each concept, and rebuild the idea from the ground up so I understand the core mechanics."
+    form_fields:
+      insert_topic:
+        multiline: false
+
+  # The Active Recall Coach
+  # Reading creates the illusion of competence. Recalling information builds actual memory. Use this to test yourself.
+  - trigger: ":learn-by-active-recall-coach"
+    form: "After teaching me the basics of [[insert topic]], quiz me with progressively challenging questions that force me to actively recall information without looking at my notes. Mix conceptual, applied, and scenario-based questions. Evaluate my answers, clearly explain any corrections, and reinforce my weak areas with targeted follow-up questions."
+    form_fields:
+      insert_topic:
+        multiline: false
+
+  # Spaced Repetition System
+  # Use this to ensure you do not forget what you learned today by the time next week rolls around.
+  - trigger: ":learn-by-spaced-repetition-system"
+    form: "Create a spaced repetition revision schedule for mastering [[insert topic]]. Outline exactly what I need to review daily, weekly, and monthly based on memory retention principles. Specify review activities—like recall, practice, and testing—and tell me how to adjust the intervals based on my performance to move this information into my long-term memory."
+    form_fields:
+      insert_topic:
+        multiline: false
+
+  # Smart Knowledge Summary
+  # Use this when you need a cheat sheet or a high-level overview of a broad topic.
+  - trigger: ":learn-by-smart-knowledge-summary"
+    form: "Summarize [[insert topic]] using clear frameworks, mental models, and simplified structures. Highlight the key principles, patterns, and relationships within the subject. Present this information in a highly structured way that makes it easy to remember and apply to real-world situations."
+    form_fields:
+      insert_topic:
+        multiline: false
+
+  # Learning Acceleration Roadmap
+  # Never wonder what you should study next. Use this to create a personalized syllabus.
+  - trigger: ":learn-by-learning-acceleration-roadmap"
+    form: "Design a structured, end-to-end learning roadmap for mastering [[insert skill]]. Break the journey down into progressive stages, milestones, and checkpoints. Specify the key resources to study and practice tasks for each stage, and define measurable criteria so I can efficiently track my progress and always know exactly what to learn next."
+    form_fields:
+      insert_skill:
+        multiline: false
+
+  # Targeted Weakness Assessment
+  # Use this to find out what you do not know before it costs you in an exam or a real-world scenario.
+  - trigger: ":learn-by-targeted-weakness-assessment"
+    form: "Ask me a series of diagnostic questions about [[insert topic]] to identify my weakest areas, blind spots, and misunderstandings. Adapt the difficulty of the questions based on my answers. Once we finish, explain where I went wrong and recommend specific exercises or focus areas to strengthen my overall comprehension."
+    form_fields:
+      insert_topic:
         multiline: false

@@ -564,3 +564,45 @@ matches:
     form_fields:
       insert_topic:
         multiline: false
+
+  # Deep Dive into a Topic
+  - trigger: ":learn-by-deep-dive-into-a-topic"
+    form: |
+      Act as an expert on [[subject]], explain the most important concepts and provide real-world examples to illustrate each. Then, give me a step-by-step guide to master this topic in the next 30 days.
+    form_fields:
+      subject:
+        multiline: false
+
+  # Personalized Learning Plan
+  - trigger: ":learn-by-personalized-learning-plan"
+    form: |
+      Help me design a personalized learning plan for mastering [[subject]]. Break it down into daily learning tasks, recommended resources, and practical exercises I can do to build my skills.
+    form_fields:
+      subject:
+        multiline: false
+
+
+  # Critical Thinking Challenge
+  - trigger: ":learn-by-critical-thinking-challenge"
+    form: |
+      Challenge me with a series of thought-provoking questions on [[subject]]. After each question, provide feedback on my answer and suggest how I can improve my critical thinking on this topic.
+    form_fields:
+      subject:
+        multiline: false
+
+  # Socratic Dialogue
+  - trigger: ":learn-by-socratic-dialogue"
+    form: |
+      Guide me through a Socratic dialogue on [[concept]]. Ask questions that will help me uncover the deeper layers of this idea and refine my understanding step-by-step.
+    form_fields:
+      concept:
+        multiline: false
+
+  # Overview of a Topic
+  - trigger: ":learn-by-overview-of-topic"
+    form: |
+      I'm new to [[topic]] and would like a detailed introduction. Please cover its basic concepts, how it started, its evolution over time, and its key components. Also, include some common uses or applications in today's world.
+    form_fields:
+      topic:
+        multiline: false
+

@@ -606,3 +606,704 @@ matches:
       topic:
         multiline: false
 
+  # Meta-Cognitive Reasoning Expert
+  - trigger: ":learn-by-meta-cognitive-reasoning-expert"
+    form: |
+      Adapt the role of a Meta-Cognitive Reasoning Expert.
+
+      For every complex problem:
+      1. DECOMPOSE: Break into sub-problems
+      2. SOLVE: Address each with explicit confidence (0.0-1.0)
+      3. VERIFY: Check logic, facts, completeness, bias
+      4. SYNTHESIZE: Combine using weighted confidence.
+      5.. REFLECT: If confidence <0.8, identify weakness and retry.
+
+      For simple questions, skip to direct answer.
+
+      Always output:
+      - clear answer
+      - confidence level
+      - key caveats
+
+  # OODA loop action plan: Observe, Orient, Decide, Act
+  # https://github.com/joelparkerhenderson/ooda-loop/blob/main/PROMPT.md
+  - trigger: ":learn-by-ooda-loop-action-plan"
+    form: |
+      ROLE: You are a strategic-tactical consultant business coach.
+
+      PROBLEM: [[problem]]
+
+      GOAL: Analyze by using the OODA loop: the cycle of observe, orient, decide, act.
+
+      STEPS:
+
+          Observe: gather information about the environment, the adversary, the decision-maker, the context, etc.
+
+          Orient: evaluate the threat, make logical connections, decide on focus, and get inside the mind of the adversary so strategies can be oriented against the adversary's capabilities.
+
+          Decide: choose a course of action to pursue, balancing the need to make rapid decisions and the need to make careful choices.
+
+          Act: Execute quickly and immediately, then return to the Observe step, in order to analyze the changes, including the adversary's reactions.
+
+      ACTIONS:
+
+          Identify the problem
+          Measure the problem
+          Analyze the problem
+          Create action plans
+          Execute action plans
+          Verify the results
+          Measure the results
+          Analyze the results
+          Create improvement plans
+          Execute improvement plans
+
+      OUTPUT: A strategic-tactical action plan.
+    form_fields:
+      problem:
+        multiline: true
+
+  # OODA
+  - trigger: ":do-with-ooda-loop-action-plan"
+    form: |
+      You are an AI engineer tasked with interviewing a user about a Product Requirements Document (PRD) or GitHub issue to clarify requirements and implementation details. Your goal is to ask insightful, context-aware questions that will help ensure a successful implementation. Follow these steps:
+
+      1. Read the referenced PRD or GitHub issue: [ link ]
+
+      2. Analyze the document and identify areas that require clarification, further detail, or confirmation.
+
+      3. Develop a list of at least 5 thoughtful questions. Each question should be specific, actionable, and aimed at uncovering important details or resolving ambiguities.
+
+      4. Format your questions as a checklist: <interview_questions> - [ ] Question 1 - [ ] Question 2 - [ ] Question 3 </interview_questions>
+
+      5. Present the questions to the user one at a time, in an interview style. For each question: a) Provide a brief background or context for why you are asking. b) Wait for the user's response before proceeding to the next question.
+
+      6. After all questions have been answered, summarize the key clarifications and any remaining uncertainties.
+
+      7. Ask the user if they have any additional clarifications or comments to add before proceeding.
+
+      8. Update the referenced GitHub issue with the results of the interview. Bring all clarifications and insights back into the issue in a meaningful way, enhancing rather than replacing existing ideas or content in the issue.
+
+      Your final output should include: 1. The full checklist of questions 2. The user's answers 3. A summary of clarifications and open questions 4. Any additional clarifications from the user 5. A draft or summary of the content to be added to the GitHub issue
+
+  # The Task Paralysis Shatterer
+  - trigger: ":do-with-task-paralysis-shatterer"
+    form: |
+      I am staring at [[task]] and can't start. Break this down into 'Ridiculously Small First Steps' (RSFS) that require less than 2 minutes of work.
+      Give me the first step and tell me exactly where to put my hands to begin.
+    form_fields:
+      task:
+        multiline: false
+
+  # The dopamine menu architect
+  - trigger: ":do-with-the-dopamine-menu-architect"
+    form: |
+      I am feeling under-stimulated. My current setting and energy level: [[context-home-office-low-energy]]. Build a 'Dopamine Menu' with 3 options in each category:
+        5-minute 'Appetizers' (quick movement)
+        20-minute 'Entrees' (focused work)
+        10-minute 'Sides' (creative play)
+      Make every option doable right now from where I am.
+
+  # THE "BODY DOUBLING" SIMULATOR
+  - trigger: ":do-with-body-doubling-simulator"
+    form: |
+      Act as my virtual body double for a 30-minute
+      focus session. I'll tell you the task now and
+      send you a quick message every 10 minutes.
+      Each time I check in, ask one specific status
+      question, give a brief encouragement, and
+      remind me what to focus on next. My task is:
+      [[task]]
+    form_fields:
+      task:
+        multiline: false
+
+  # THE CONTEXT-SWITCHING GUIDE
+  - trigger: ":do-with-context-switching-guide"
+    form: |
+      I just finished [[task-before]]
+      and need to start [[task-after]],
+      but my brain is stuck. Design a 3-minute
+      'Mental Palate Cleanser' with 3 short steps (1
+      physical, 1 sensory, 1 mental) to shift me from
+      the first type of energy to the second
+    form_fields:
+      task-before:
+        multiline: false
+      task-after:
+        multiline: false
+
+  # THE INTEREST-BASED FILTER
+  - trigger: ":do-with-interest-based-filter"
+    form: |
+      I have a boring admin task: [[task]]. Gamify it
+      using my current hyper-fixation: [[interest]].
+      Build a 3-stage 'Quest' with themed names
+      from that interest, a mini-reward after each
+      stage, and a final unlock when the whole task
+      is done
+    form_fields:
+      task:
+        multiline: false
+      interest:
+        multiline: false
+
+  # THE TIME-BLINDNESS AUDITOR
+  - trigger: ":do-with-time-blindness-auditor"
+    form: |
+      I estimate [[project]] will take [[x-minutes]],
+      but it usually takes [[y-minutes]].
+      Brief description: [[what-the-project-involves]].
+      Identify the 3 hidden sub-tasks I likely forget
+      (setup, transitions, review, etc.), give a realistic
+      time estimate for each, and a total realistic deadline.
+    form_fields:
+      project:
+        multiline: false
+      x-minutes:
+        multiline: false
+      y-minutes:
+        multiline: false
+      what-the-project-involves:
+        multiline: true
+
+  # Language Learning Roadmap
+  - trigger: ":learn-language-roadmap"
+    form: |
+      Act as a professional language tutor with 10+ years of teaching
+      experience. Create a complete roadmap to learn and speak [insert
+      language] from beginner to conversational level as quickly as possible,
+      focusing on real-life communication."
+
+  # Core Speaking Foundations
+  - trigger: ":learn-language-core-speaking-foundations"
+    form: |
+      Teach me the most important sentence structures and phrases in
+      [insert language] that allow me to communicate daily needs such as
+      introductions, asking questions, and basic conversations."
+
+  # Real-Life Conversation Simulation
+  - trigger: ":learn-language-real-life-conversation-simulation"
+    form: |
+      Act as a native speaker of [insert language] and simulate real-life
+      conversations such as ordering food, asking directions, or casual talking.
+      Correct my mistakes and guide me toward natural responses.
+
+  # Think-in-Language Training
+  - trigger: ":learn-language-think-in-language-training"
+    form: |
+      Train me to think directly in [insert language] instead of translating from
+      my native language by giving rapid-response exercises that improve
+      fluency and reduce hesitation.
+
+  # Grammar Simplification
+  - trigger: ":learn-language-grammar-simplification"
+    form: |
+      Explain grammar rules of [insert language] in simple terms and
+      immediately give speaking examples so I can apply the rules in real
+      conversations without confusion.
+
+  # Daily Practice System
+  - trigger: ":learn-language-daily-practice-system"
+    form: |
+      Create a daily practice routine for learning [insert language] that
+      includes speaking, listening, reading, and revision tasks that can be
+      completed in a limited amount of time.
+
+  # Fluency Evaluation & Upgrade
+  - trigger: ":learn-language-fluency-evaluation-upgrade"
+    form: |
+      Act as a language examiner and test my ability in [insert language]
+      through conversation and questions. Identify weaknesses and suggest
+      focused improvements to become more fluent.
+
+  # First Principles Mastery
+  - trigger: ":learn-skill-first-principles-mastery"
+    form: |
+      Act as a world-class expert and teacher with 15+ years of experience in
+      [insert skill or subject]. Teach this topic from first principles, breaking it down
+      into the most fundamental ideas so I understand the 'why' behind every
+      concept instead of memorizing facts.
+
+  # Complete Skill Roadmap
+  - trigger: ":learn-skill-complete-skill-roadmap"
+    form: |
+      Act as a world-class expert and teacher with 15+ years of experience in
+      [insert skill or subject]. Teach this topic from first principles, breaking it down
+      into the most fundamental ideas so I understand the 'why' behind every
+      concept instead of memorizing facts."
+
+  # Complete Skill Roadmap
+  - trigger: ":learn-skill-complete-skill-roadmap"
+    form: |
+      Design a complete learning roadmap for mastering [insert skill]. Break it into
+      beginner, intermediate, and advanced stages, listing exact topics, milestones,
+      and skills required at each stage so nothing important is missed."
+
+  # Deep Concept Builder
+  - trigger: ":learn-skill-deep-concept-builder"
+    form: |
+      For the topic [insert topic], explain it in depth as if preparing a professional in
+      this field. Include definitions, underlying mechanisms, real-world applications,
+      common mistakes, and advanced insights that separate beginners from
+      experts.
+
+  # Active Recall Trainer
+  - trigger: ":learn-skill-active-recall-trainer"
+    form: |
+      After teaching me [insert topic], create challenging questions that test my
+      understanding without showing answers first. Wait for my response, then
+      evaluate my thinking and correct misunderstandings before moving to the
+      next concept."
+
+  # The Advanced Mastery
+  - trigger: ":learn-skill-the-advanced-mastery"
+    form: |
+      Teach advanced techniques and insights used by top professionals in [insert
+      skill]. Focus on strategies, shortcuts, and thinking patterns that distinguish
+      experts from average practitioners.
+
+  # Knowledge Compression
+  - trigger: ":learn-skill-knowledge-compression"
+    form: |
+      Summarize everything I learned about [insert topic] into a structured revision
+      guide including key concepts, frameworks, mental models, and essential
+      takeaways that are critical for long-term mastery."
+
+  # Final Mastery Evaluation
+  - trigger: ":learn-skill-final-mastery-evaluation"
+    form: |
+      Act as an expert examiner and test my mastery of [insert skill] through
+      practical and conceptual questions. Identify remaining weaknesses and
+      recommend a targeted improvement plan.
+
+
+
+
+
+
+
+  # The problem prioritization engine
+  - trigger: ":market-research-problem-prioritization-engine"
+    form: |
+      List the top 10 problems in [YOUR INDUSTRY].
+
+      For each problem, score it on three dimensions:
+
+      · Urgency (1-10): how painful/time-sensitive it is right
+      now
+      . Willingness to pay (1-10): how likely buyers are to
+      spend money to solve it today
+      . Growth trajectory: "rising fast," "stable," or "declining"
+
+      Also add a Complaint signal column: yes/no for
+      whether this problem surfaces frequently in reviews,
+      forums, or sales calls.
+
+      Output as a table with these exact columns:
+      | # | Problem | Urgency | WTP | Trend | Complaint signal | Why it ranks here |
+
+      Sort by combined Urgency + WTP score, highest first."
+
+  # The offer creation framework
+  - trigger: ":market-research-offer-creation-framework"
+    form: |
+      Create a high-converting offer for: [YOUR SPECIFIC
+      PROBLEM].
+
+      Structure the output exactly like a landing page,
+      with these labeled sections in order:
+
+      1. Headline: one bold, benefit-driven statement
+      2. ICP: who this is for (age, role, situation, pain level)
+      3. Value proposition: the core transformation in one
+      sentence
+      4. Offer components: what's included (deliverables,
+      bonuses, format)
+      5. Pricing tiers: name, price, and what changes at
+      each tier (low / mid / premium)
+      6. Guarantee: specific risk-reversal language the
+      customer sees
+      7. Competitive edge: 3 reasons this beats the
+      obvious alternatives
+
+      Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
+
+
+
+  # The distribution domination plan
+  - trigger: ":market-research-distribution-domination-plan"
+    form: |
+      Act as a senior growth strategist. Build a realistic 30-day distribution plan for: [YOUR IDEA], including the target audience, product type, and rough budget.
+
+      Deliverables:
+      1. Top 5 acquisition channels: ranked by cost-efficiency for this specific audience
+      2. Content format per channel: one specific format that works on each (short-form video, cold email sequence, SEO article)
+      3. Weekly execution calendar: what happens in weeks 1, 2, 3, and 4 (not day-by-day)
+      4. Organic vs paid split: recommended % allocation and rationale
+      5. Leverage plays: 2-3 tactics that multiply reach without proportionally more effort (partnerships, repurposing, virality hooks)
+
+      Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers."
+
+  # Viral content engine
+  - trigger: ":market-research-viral-content-engine"
+    form: |
+      Create a viral content strategy for: [YOUR NICHE].
+
+      Deliver four components:
+
+      1. Hook bank: 10 high-converting hooks (not 20, prioritize quality). For each, label which emotional trigger it uses: fear of missing out, social status, curiosity, or controversy.
+      2. Content format matrix: a table with these columns: Format | Platform | Ideal length | Why it spreads | Example title. Include 6-8 formats across at least 3 platforms.
+      3. Shareability audit: for each format, answer "What makes someone forward/repost this?" in one sentence.
+      4. Repeatable content system: a simple weekly template showing how many posts, which formats, and what rotation keeps the audience engaged without burnout.
+
+      Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.'
+
+  # The competitor weakness map
+  - trigger: ":market-research-competitor-weakness-map"
+    form: |
+      Analyze the top 5 competitors in [YOUR NICHE].
+
+      For each competitor, provide a structured row covering:
+      . Name + one-line description of their core offer
+      . What they do best (their defensible strength)
+      . Where they are weak (product gaps, poor reviews, underserved use cases)
+      . Which audience they ignore or underserve
+
+      Then, based on the patterns across all 5:
+      . Gap analysis: the 2-3 clearest white spaces no competitor is owning
+      . Positioning recommendation: one sharp positioning statement that would differentiate a new entrant
+      . Go-to-market angle: which ignored audience + which channel combination represents the fastest path to traction
+
+      Output the competitor breakdown as a table, then the gap analysis and recommendations as prose."
+
+  # The scale system
+  - trigger: ":market-research-scale-system"
+    form: |
+      Give me a plan to scale this business to [TARGET
+      REVENUE] within [TIMEFRAME]:
+
+      Business description: [Describe your business in 3-5 sentences. Include: what you sell, who buys it, current monthly revenue, team size, and the biggest bottleneck you're facing right now]
+
+      Structure the output as a phased execution roadmap with these four phases:
+
+      Phase 1- Stabilize (Month 1-2): what to systematize and document before scaling
+      Phase 2 - Automate (Month 3-4): top 3 processes to automate, with specific tool recommendations
+      Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
+      Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier ...
+
+
+
+
+  # Pareto Principle
+  - trigger: ":learning-pareto-principle"
+    form: |
+      "I want to learn [Insert Topic]. Can you use the Pareto principle, which identifies the 20% of the topic that will yield 80% of the desired results, to create a focused learning plan for me?"
+
+  # Explain Like I'm a Beginner
+  - trigger: ":learning-explain-like-im-a-beginner"
+    form: |
+      "Explain [Insert topic] in simple terms. Explain to me as if I'm a beginner."
+
+  # Study Schedule
+  - trigger: ":learning-study-schedule"
+    form: |
+      "Create a study schedule for [Insert Topic/Subject]. I can study for 2 hours every Tuesday and Thursday, you can adjust accordingly. Please include time for revision and testing."
+
+  # Improve Decision Making
+  - trigger: ":learning-improve-decision-making"
+    form: |
+      "I am trying to decide if I should [Insert decision]. Give me a list of pros and cons that will help me decide why I should or shouldn't make this decision."
+
+  # Learn Any New Skill
+  - trigger: ":learning-any-new-skill"
+    form: |
+      "I want to learn [Insert skill]. Generate a 30-day plan that will help a beginner like me learn the skill from scratch."
+
+  # Turn CLAUDE into a Grammar Guide
+  - trigger: ":learning-turn-claude-into-a-grammar-guide"
+    form: |
+      "I want you to act as a grammar guide. Can you explain [the topics] and provide instructions on how to apply the rule or concept? Can you also give me examples of how the rule or concept works in practice?"
+
+
+
+
+
+
+
+  # Parallel Work Manager
+  - trigger: ":productivity-parallel-work-manager"
+    form: |
+      "I need to complete these tasks simultaneously: [list tasks]. Spawn agent teams: assign each task to a separate agent, coordinate between them, report progress from all agents, merge results when done. Run them in parallel."
+
+  # Multi-File Project Auditor
+  - trigger: ":productivity-multi-file-project-auditor"
+    form: |
+      "Load my entire project folder: [upload files]. Analyze: architectural decisions that should change, technical debt to tackle first, security vulnerabilities, performance bottlenecks, and outdated dependencies. Give me a prioritized action plan."
+
+  # Context Memory Vault
+  - trigger: ":productivity-context-memory-vault"
+    form: |
+      "I'm working on [project name]. Here's everything you need to retain: [paste project context]. From now on, reference this context in every response without me repeating it. Summarize what you'll remember."
+
+  # Adaptive Problem Navigator
+  - trigger: ":productivity-adaptive-problem-navigator"
+    form: |
+      "Complex problem: [describe problem]. Don't answer immediately. First, assess: how deep should you think about this (quick/deep reasoning), what information is missing, what assumptions to challenge. Then solve it at the appropriate depth."
+
+  # Mistake Spotter
+  - trigger: ":productivity-mistake-spotter"
+    form: |
+      "Review everything I've done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, places where I'm overconfident, risks I haven't considered. Challenge my thinking before I commit to this approach."
+
+  # Long-Term Project Assistant
+  - trigger: ":productivity-long-term-project-assistant"
+    form: |
+      "This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continue."
+
+  # Cross-Repo Connector
+  - trigger: ":productivity-cross-repo-connector"
+    form: |
+      "I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration."
+
+  # Long-Term Project Assistant
+  - trigger: ":productivity-long-term-project-assistant"
+    form: |
+      "This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continve."
+
+  # Cross-Repo Connector
+  - trigger: ":productivity-cross-repo-connector"
+    form: |
+      "I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration."
+
+
+
+
+
+
+
+
+
+
+  # World-Class Life Audit
+  - trigger: ":productivity-world-class-life-audit"
+    form: |
+      "Act like a world-class coach who has helped thousands of people level up mentally, physically, financially, and emotionally. Audit my current lifestyle based on this [insert your routine], and tell me exactly what to change for a full 180° transformation."
+
+  # 30-Day Ruthless Glow-Up Plan
+  - trigger: ":productivity-30-day-ruthless-glow-up-plan"
+    form: |
+      "Pretend you're the mentor behind the most iconic, disciplined and high-performing people on earth. Design me a ruthless but realistic 30-day glow-up plan that rewires my mind, resets my habits, and makes people ask 'what happened to you?'"
+
+  # Brutally Honest Mindset Reset
+  - trigger: ":productivity-brutally-honest-mindset-reset"
+    form: |
+      "Be my brutally honest mindset coach. Break down the limiting beliefs I may have based on this [insert your goal or struggle], then rewire them with powerful affirmations, logic, and new habits to replace the old story."
+
+  # Dream Reality Life System
+  - trigger: ":productivity-dream-reality-life-system"
+    form: |
+      "You are my life strategist with access to my dream reality blueprint. Based on my goal [insert your goal], create a step-by-step life system, morning to night, that would make me become 'her' in 90 days or less."
+
+  # Elite Mental Conditioning Ritual
+  - trigger: ":productivity-elite-mental-conditioning-ritual"
+    form: |
+      "Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ritual that reshapes how I think, act, and dominate my day with unshakable confidence."
+
+
+
+
+
+
+
+  # 1. BUILD YOUR SIGNATURE SLOGAN
+  - trigger: ":productivity-build-your-signature-slogan"
+    form: |
+
+      1. BUILD YOUR SIGNATURE SLOGAN
+
+      <role>Act as a personal brand symbol designer applying Seth Godin's
+      Purple Cow framework - every idea worth spreading has a visual symbol
+      so distinct it stops people mid-scroll and makes them say "what is that?"
+      </role>
+
+      <task>Design a signature symbol for my brand that makes it instantly
+      recognizable and impossible to confuse with anyone else in my space.
+      </task>
+
+      <steps>
+      1. Ask for my core idea, brand, and target audience before starting
+      2. Identify the single most remarkable concept my brand represents
+      3. Design 3 symbol options - visual, object, or metaphor that captures
+      the idea instantly
+      4. Test each symbol - can it be drawn, described, or demonstrated in
+      under 10 seconds
+      5. Select the strongest symbol and show exactly how to use it across
+      content and presentations
+      </steps>
+
+      <rules>
+      - Symbol must be remarkable - Godin's definition: worth making a
+      remark about
+      - Symbol must be ownable - not already associated with a competitor
+      - Symbol must survive without color - if it only works in full design it's
+      too fragile
+      - Symbol must be describable in one sentence to a complete stranger
+      - Test: if someone sees it once, can they draw it from memory a week
+      later
+      </rules>
+
+      <output>3 Symbol Options - Remarkability Test - Strongest Symbol -
+      How to Use It Everywhere</output>
+
+      ------
+
+      2. CREATE YOUR SIGNATURE SLOGAN
+
+      <role>Act as a brand slogan engineer applying Seth Godin's permission mar-
+      keting framework - every idea worth spreading has a phrase so specific that
+      people repeat it without being asked and share it without being paid .< /role>
+
+      <task>Create a signature slogan for my brand that becomes the handle
+      people use to remember, repeat, and recommend me - without me asking
+      them to .< /task>
+
+      <steps>
+      1. Ask for my core idea, target audience, and what I want to be known for
+      before starting
+      2. Extract the single most remarkable truth about what I do or believe
+      3. Generate 5 slogan options - short, specific, and impossible to
+      misattribute
+      4. Test each slogan - would Godin's "smallest viable audience" repeat this
+      without prompting
+      5. Select the strongest and show exactly how to embed it in content, bio,
+      and
+      presentations
+      </steps>
+
+      <rules>
+      - Slogan must be under 6 words - never a sentence
+      - Slogan must be specific enough to own - not generic enough for anyone
+      - Slogan must survive without context - it means something even to a
+      stranger
+      - Never use buzzwords - "innovative," "disruptive," "game-changing" are in-
+      stant slogan killers
+      - Test: would someone repeat this in a meeting and attribute it directly to
+      me
+      </rules>
+
+      <output>5 Slogan Options - Remarkability Test - Strongest Slogan - How
+      to Embed It Everywhere</output>
+
+      ------
+
+      3. FIND YOUR SIGNATURE SURPRISE
+
+      <role>Act as a counterintuitive idea specialist applying Seth Godin's
+      Purple
+      Cow principle - the only ideas that spread are the ones that surprise
+      people into sharing them before they even think about it .< /role>
+
+      <task>Identify the single most counterintuitive truth about my field and
+      turn it into the Purple Cow that makes my brand impossible to scroll
+      past .< /task>
+
+      <steps>
+      1. Ask for my field, core belief, and target audience before starting
+      2. Identify the most widely accepted belief in my field that I know to be
+      wrong or incomplete
+      3. Articulate the counterintuitive truth that challenges it - Godin's "idea
+      worth spreading"
+      4. Test the surprise - does it make people stop and say "wait, really?"
+      5. Build the reveal sequence - how to deliver the surprise for maximum
+      spread in content and presentations
+      </steps>
+
+      <rules>
+      - Surprise must be genuinely remarkable - not just interesting or contrar-
+      ian
+      - Surprise must be defensible - I must be able to prove it when
+      challenged
+      - Surprise must connect directly to my core idea - not a random hot take
+      - Delivery must build tension before the reveal - never lead with the
+      answer
+      - Test: does this make someone screenshot it and send it to a friend
+      </rules>
+
+      <output>Widely Accepted Belief - Counterintuitive Truth - Remarkability
+      Test - Reveal Sequence</output>
+
+      ------
+
+      4. BUILD YOUR SALIENT IDEA
+
+      <role>Act as a core idea sharpener applying Seth Godin's "be specific
+      to someone" framework - the brands that get famous are never for
+      ev-
+      eryone, they are unforgettable to someone specific .< /role>
+
+      <task>Identify and sharpen the single salient idea that defines my
+      brand - specific enough to own, remarkable enough to spread, and
+      clear enough that my smallest viable audience immediately gets
+      it .< /task>
+
+      <steps>
+      1. Ask for everything I do, teach, or sell before starting
+      2. Map every idea, concept, and message I currently communicate
+      3. Apply Godin's smallest viable audience test - which idea resonates
+      most deeply with the specific people I want to serve
+      4. Sharpen it until it cannot be confused with anyone else's idea
+      5. Show how every piece of content, every offer, and every presenta-
+      tion points back to this one salient idea
+      </steps>
+
+      <rules>
+      - One salient idea only - two ideas means no idea
+      - Idea must be for someone specific - not everyone
+      - Every piece of content must connect back to this idea
+      - If the idea could belong to a competitor it is not salient enough
+      - Test: does my smallest viable audience immediately say "this is
+      exactly
+      for me"
+      </rules>
+
+      <output>Idea Map - Smallest Viable Audience Test - Sharpened
+      Salient Idea - How Everything Points Back to It</output>
+
+      ------
+
+      5. TELL YOUR SIGNATURE STORY
+
+      <role>Act as a brand story architect applying Seth Godin's "stories are how
+      we make meaning" framework - every brand that gets famous has a story
+      that makes people feel something before they decide anything .< /role>
+
+      <task>Build my signature brand story - the narrative that makes my small-
+      est viable audience feel immediately understood and makes everyone else
+      want to become part of it .< /task>
+
+      <steps>
+      1. Ask for my background, core belief, and defining moment before starting
+      2. Identify the turning point - the specific moment that changed every-
+      thing
+      3. Apply Godin's "tension and resolution" framework - build the story arc:
+      before, tension, turning point, after
+      4. Extract the universal truth that makes my personal story feel relevant to
+      my specific audience
+      5. Write the signature story in under 3 minutes - specific enough to be
+      mine, resonant enough to spread
+      </steps>
+
+      <rules>
+      - Story must create tension before resolution - Godin says tension is what
+      makes people lean in
+      - Universal truth must be extracted explicitly - never left implied
+      - Story must be under 3 minutes when spoken - never a biography
+      - Before must make the audience feel the struggle - not just describe it
+      - Test: does this story make someone say "that's exactly how I feel"
+      </rules>
+
+      <output>Turning Point - Tension and Resolution Arc - Universal Truth -
+      3-Minute Signature Story Script</output>
+
+

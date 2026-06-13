@@ -26,7 +26,7 @@ matches:
       Now that we have these solutions to my problem, rated by percentage, I want to have the two solutions with the lowest percentages removed. Keep and write a condensed summary of the solution with the highest percentage only and list its probability of success once again. Then you need to start a brainstorming loop and run through this loop three times:
 
       5.) Brainstorming Competitive Solutions:
-      Let me reiterate my problem once again: [[problem_here]] Now take a look at the winning solution you found. I need you to brainstorm two more winning ideas that could have potentially better results than our first winning solution at resolving my problem. When providing these 2 new solutions, provide 3 components that go into making that solution effective. Also, add our current winning solution within this list, so we have a total of 3 solutions. For now, just list the solutions and the 3 components that go into making it successful, don’t worry about the probability evaluation for these 2 new ideas.
+      Let me reiterate my problem once again: [[problem_here]] Now take a look at the winning solution you found. I need you to brainstorm two more winning ideas that could have potentially better results than our first winning solution at resolving my problem. When providing these 2 new solutions, provide 3 components that go into making that solution effective. Also, add our current winning solution within this list, so we have a total of 3 solutions. For now, just list the solutions and the 3 components that go into making it successful, don't worry about the probability evaluation for these 2 new ideas.
 
       6.) Probability Evaluation:
        For each solution listed, I now need you to evaluate their probability of success. When evaluating their success probability I want you to keep these factors in mind: Pros and cons of each solution, difficulty to perform, challenges, outcome expectations, the scope of the problem, who or what the problem is dealing with, and the impact of the solutions. Give each solution a success probability. This success probability can be measured by percentages of 1%-100%. Give reasoning on how you came to the percentage conclusion.
@@ -81,12 +81,12 @@ matches:
       Review your last response and search for areas of improvement. Tell me everything you've changed, the reasoning behind changing what you changed, and re-write the response.
 
   # Improve your writing
-  - trigger: ":improve-writting"
+  - trigger: ":improve-writing"
     replace: |
       Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my writing.
 
   # Improve your writing #PT
-  - trigger: "/pt/improve-writting"
+  - trigger: "/pt/improve-writing"
     replace: |
       Faça uma revisão do meu texto acima. Corrija erros de gramática e ortografia. Forneça sugestões que melhorem a clareza da minha escrita.
 
@@ -327,11 +327,11 @@ matches:
       video_or_transcription:
         multiline: true
 
-  - trigger: ":learn-by-practice-explaining-concept" # Feynman technique
+  - trigger: ":learn-practice-explaining-concept" # Feynman technique
     form: |
       Ask me to explain key concepts from introductory microeconomics. I will explain the concept to you. Assume that you are a novice, and you are looking to understand the concept. If my explanation does not make sense to you, ask me questions to have me explain more fully. Include "why" questions. If I give an incorrect answer, tell me that it doesn't sound right. When I have explained it in a way that makes sense to you, and is also correct, move on to the next concept. Give me hints only if I try to explain something three times and don't succeed.
 
-  - trigger: ":learn-by-feynman-technique"
+  - trigger: ":learn-feynman-technique"
     form: |
       CONTEXT:
       Adopt the role of breakthrough learning architect. The user struggles with complex concepts that traditional education failed to clarify. They've experienced the frustration of memorizing without understanding, watching their knowledge evaporate under real-world pressure. Previous attempts at self-study collapsed because explanations assumed foundations they never built. They need someone who can transform impenetrable complexity into intuitive clarity using the Feynman Technique - breaking topics into teachable chunks, exposing knowledge gaps through active questioning, and iterating until they achieve the kind of deep understanding that lets them teach others with confidence.
@@ -403,7 +403,7 @@ matches:
       RESPONSE FORMAT:
       Step 1: Initial Simple Explanation (with analogy) [Clear explanation using everyday comparisons] Step 2: Knowledge Gap Analysis [Specific confusion points identified with questions like "What part feels unclear?" or "Where does the analogy break down for you?"] Step 3: Guided Refinement Dialogue [2-3 iterative cycles of questions, user responses, and refined explanations] Step 4: Understanding Test [Application scenario or teaching challenge] Step 5: Final Teaching Note "Think of [concept] like [simple analogy). The key insight is [main principle]. Remember: [memorable phrase or visual]." Begin with: "I'm ready to guide you through the Feynman learning process! Please share: (1) What topic would you like to master? (2) What's your current understanding level (beginner/intermediate/ advanced)? Let's turn complex ideas into crystal-clear insights together!"
 
-  - trigger: ":learn-by-feynman-technique-iterative" # https://tools.eq4c.com/prompt/ai-prompt-the-richard-feynman-iterative-learning-framework/
+  - trigger: ":learn-feynman-technique-iterative" # https://tools.eq4c.com/prompt/ai-prompt-the-richard-feynman-iterative-learning-framework/
     form: |
       <System>
       You are a brilliant teacher who embodies Richard Feynman's philosophy of simplifying complex concepts. Your role is to guide the user through an iterative learning process using analogies, real-world examples, and progressive refinement until they achieve deep, intuitive understanding.
@@ -481,7 +481,7 @@ matches:
     replace: |
       Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. Challenge ideas when needed. Be direct and clear, not harsh. Prioritize helping me improve over being agreeable. When you critique something, explain why and suggest a better alternative.
 
-  - trigger: ":learn-by-video-insights-transcription-json-output"
+  - trigger: ":learn-video-insights-transcription-json-output"
     form: |
       <task>
         <role>You are an expert editorial analyst distilling a video's most potent insights for time-pressed viewers.</role>
@@ -511,7 +511,7 @@ matches:
 
   # The Feynman Technique
   # Use this when a concept feels too academic, abstract, or overwhelming. It forces the AI to strip away the jargon.
-  - trigger: ":learn-by-feynman-technique"
+  - trigger: ":learn-feynman-technique"
     form: "Teach me [[insert topic]] in simple language, as if you are explaining it to a beginner. Break it into clear, easy-to-grasp steps and provide simple examples. Afterward, ask me to explain it back to you in my own words. Evaluate my response to identify any gaps, misconceptions, or missing pieces in my understanding."
     form_fields:
       insert_topic:
@@ -519,7 +519,7 @@ matches:
 
   # First Principles Breakdown
   # Use this when you need to understand the underlying logic of a subject, rather than just memorizing surface-level facts.
-  - trigger: ":learn-by-first-principles-breakdown"
+  - trigger: ":learn-first-principles-breakdown"
     form: "Act as an expert instructor. Break down [[insert topic]] into its most fundamental building blocks using first principles thinking. Challenge standard assumptions, explain the 'why' behind each concept, and rebuild the idea from the ground up so I understand the core mechanics."
     form_fields:
       insert_topic:
@@ -527,7 +527,7 @@ matches:
 
   # The Active Recall Coach
   # Reading creates the illusion of competence. Recalling information builds actual memory. Use this to test yourself.
-  - trigger: ":learn-by-active-recall-coach"
+  - trigger: ":learn-active-recall-coach"
     form: "After teaching me the basics of [[insert topic]], quiz me with progressively challenging questions that force me to actively recall information without looking at my notes. Mix conceptual, applied, and scenario-based questions. Evaluate my answers, clearly explain any corrections, and reinforce my weak areas with targeted follow-up questions."
     form_fields:
       insert_topic:
@@ -535,7 +535,7 @@ matches:
 
   # Spaced Repetition System
   # Use this to ensure you do not forget what you learned today by the time next week rolls around.
-  - trigger: ":learn-by-spaced-repetition-system"
+  - trigger: ":learn-spaced-repetition-system"
     form: "Create a spaced repetition revision schedule for mastering [[insert topic]]. Outline exactly what I need to review daily, weekly, and monthly based on memory retention principles. Specify review activities—like recall, practice, and testing—and tell me how to adjust the intervals based on my performance to move this information into my long-term memory."
     form_fields:
       insert_topic:
@@ -543,7 +543,7 @@ matches:
 
   # Smart Knowledge Summary
   # Use this when you need a cheat sheet or a high-level overview of a broad topic.
-  - trigger: ":learn-by-smart-knowledge-summary"
+  - trigger: ":learn-smart-knowledge-summary"
     form: "Summarize [[insert topic]] using clear frameworks, mental models, and simplified structures. Highlight the key principles, patterns, and relationships within the subject. Present this information in a highly structured way that makes it easy to remember and apply to real-world situations."
     form_fields:
       insert_topic:
@@ -551,7 +551,7 @@ matches:
 
   # Learning Acceleration Roadmap
   # Never wonder what you should study next. Use this to create a personalized syllabus.
-  - trigger: ":learn-by-learning-acceleration-roadmap"
+  - trigger: ":learn-learning-acceleration-roadmap"
     form: "Design a structured, end-to-end learning roadmap for mastering [[insert skill]]. Break the journey down into progressive stages, milestones, and checkpoints. Specify the key resources to study and practice tasks for each stage, and define measurable criteria so I can efficiently track my progress and always know exactly what to learn next."
     form_fields:
       insert_skill:
@@ -559,14 +559,14 @@ matches:
 
   # Targeted Weakness Assessment
   # Use this to find out what you do not know before it costs you in an exam or a real-world scenario.
-  - trigger: ":learn-by-targeted-weakness-assessment"
+  - trigger: ":learn-targeted-weakness-assessment"
     form: "Ask me a series of diagnostic questions about [[insert topic]] to identify my weakest areas, blind spots, and misunderstandings. Adapt the difficulty of the questions based on my answers. Once we finish, explain where I went wrong and recommend specific exercises or focus areas to strengthen my overall comprehension."
     form_fields:
       insert_topic:
         multiline: false
 
   # Deep Dive into a Topic
-  - trigger: ":learn-by-deep-dive-into-a-topic"
+  - trigger: ":learn-deep-dive-into-a-topic"
     form: |
       Act as an expert on [[subject]], explain the most important concepts and provide real-world examples to illustrate each. Then, give me a step-by-step guide to master this topic in the next 30 days.
     form_fields:
@@ -574,7 +574,7 @@ matches:
         multiline: false
 
   # Personalized Learning Plan
-  - trigger: ":learn-by-personalized-learning-plan"
+  - trigger: ":learn-personalized-learning-plan"
     form: |
       Help me design a personalized learning plan for mastering [[subject]]. Break it down into daily learning tasks, recommended resources, and practical exercises I can do to build my skills.
     form_fields:
@@ -583,7 +583,7 @@ matches:
 
 
   # Critical Thinking Challenge
-  - trigger: ":learn-by-critical-thinking-challenge"
+  - trigger: ":learn-critical-thinking-challenge"
     form: |
       Challenge me with a series of thought-provoking questions on [[subject]]. After each question, provide feedback on my answer and suggest how I can improve my critical thinking on this topic.
     form_fields:
@@ -591,7 +591,7 @@ matches:
         multiline: false
 
   # Socratic Dialogue
-  - trigger: ":learn-by-socratic-dialogue"
+  - trigger: ":learn-socratic-dialogue"
     form: |
       Guide me through a Socratic dialogue on [[concept]]. Ask questions that will help me uncover the deeper layers of this idea and refine my understanding step-by-step.
     form_fields:
@@ -599,7 +599,7 @@ matches:
         multiline: false
 
   # Overview of a Topic
-  - trigger: ":learn-by-overview-of-topic"
+  - trigger: ":learn-overview-of-topic"
     form: |
       I'm new to [[topic]] and would like a detailed introduction. Please cover its basic concepts, how it started, its evolution over time, and its key components. Also, include some common uses or applications in today's world.
     form_fields:
@@ -607,7 +607,7 @@ matches:
         multiline: false
 
   # Meta-Cognitive Reasoning Expert
-  - trigger: ":learn-by-meta-cognitive-reasoning-expert"
+  - trigger: ":learn-meta-cognitive-reasoning-expert"
     form: |
       Adapt the role of a Meta-Cognitive Reasoning Expert.
 
@@ -627,7 +627,7 @@ matches:
 
   # OODA loop action plan: Observe, Orient, Decide, Act
   # https://github.com/joelparkerhenderson/ooda-loop/blob/main/PROMPT.md
-  - trigger: ":learn-by-ooda-loop-action-plan"
+  - trigger: ":learn-ooda-loop-action-plan"
     form: |
       ROLE: You are a strategic-tactical consultant business coach.
 
@@ -664,7 +664,7 @@ matches:
         multiline: true
 
   # OODA
-  - trigger: ":do-with-ooda-loop-action-plan"
+  - trigger: ":prod-ooda-loop-action-plan"
     form: |
       You are an AI engineer tasked with interviewing a user about a Product Requirements Document (PRD) or GitHub issue to clarify requirements and implementation details. Your goal is to ask insightful, context-aware questions that will help ensure a successful implementation. Follow these steps:
 
@@ -687,7 +687,7 @@ matches:
       Your final output should include: 1. The full checklist of questions 2. The user's answers 3. A summary of clarifications and open questions 4. Any additional clarifications from the user 5. A draft or summary of the content to be added to the GitHub issue
 
   # The Task Paralysis Shatterer
-  - trigger: ":do-with-task-paralysis-shatterer"
+  - trigger: ":prod-task-paralysis-shatterer"
     form: |
       I am staring at [[task]] and can't start. Break this down into 'Ridiculously Small First Steps' (RSFS) that require less than 2 minutes of work.
       Give me the first step and tell me exactly where to put my hands to begin.
@@ -696,7 +696,7 @@ matches:
         multiline: false
 
   # The dopamine menu architect
-  - trigger: ":do-with-the-dopamine-menu-architect"
+  - trigger: ":prod-the-dopamine-menu-architect"
     form: |
       I am feeling under-stimulated. My current setting and energy level: [[context-home-office-low-energy]]. Build a 'Dopamine Menu' with 3 options in each category:
         5-minute 'Appetizers' (quick movement)
@@ -705,7 +705,7 @@ matches:
       Make every option doable right now from where I am.
 
   # THE "BODY DOUBLING" SIMULATOR
-  - trigger: ":do-with-body-doubling-simulator"
+  - trigger: ":prod-body-doubling-simulator"
     form: |
       Act as my virtual body double for a 30-minute
       focus session. I'll tell you the task now and
@@ -719,7 +719,7 @@ matches:
         multiline: false
 
   # THE CONTEXT-SWITCHING GUIDE
-  - trigger: ":do-with-context-switching-guide"
+  - trigger: ":prod-context-switching-guide"
     form: |
       I just finished [[task-before]]
       and need to start [[task-after]],
@@ -734,7 +734,7 @@ matches:
         multiline: false
 
   # THE INTEREST-BASED FILTER
-  - trigger: ":do-with-interest-based-filter"
+  - trigger: ":prod-interest-based-filter"
     form: |
       I have a boring admin task: [[task]]. Gamify it
       using my current hyper-fixation: [[interest]].
@@ -749,7 +749,7 @@ matches:
         multiline: false
 
   # THE TIME-BLINDNESS AUDITOR
-  - trigger: ":do-with-time-blindness-auditor"
+  - trigger: ":prod-time-blindness-auditor"
     form: |
       I estimate [[project]] will take [[x-minutes]],
       but it usually takes [[y-minutes]].
@@ -768,7 +768,7 @@ matches:
         multiline: true
 
   # Language Learning Roadmap
-  - trigger: ":learn-language-roadmap"
+  - trigger: ":learn-roadmap"
     form: |
       Act as a professional language tutor with 10+ years of teaching
       experience. Create a complete roadmap to learn and speak [insert
@@ -776,49 +776,49 @@ matches:
       focusing on real-life communication."
 
   # Core Speaking Foundations
-  - trigger: ":learn-language-core-speaking-foundations"
+  - trigger: ":learn-core-speaking-foundations"
     form: |
       Teach me the most important sentence structures and phrases in
       [insert language] that allow me to communicate daily needs such as
       introductions, asking questions, and basic conversations."
 
   # Real-Life Conversation Simulation
-  - trigger: ":learn-language-real-life-conversation-simulation"
+  - trigger: ":learn-real-life-conversation-simulation"
     form: |
       Act as a native speaker of [insert language] and simulate real-life
       conversations such as ordering food, asking directions, or casual talking.
       Correct my mistakes and guide me toward natural responses.
 
   # Think-in-Language Training
-  - trigger: ":learn-language-think-in-language-training"
+  - trigger: ":learn-think-in-language-training"
     form: |
       Train me to think directly in [insert language] instead of translating from
       my native language by giving rapid-response exercises that improve
       fluency and reduce hesitation.
 
   # Grammar Simplification
-  - trigger: ":learn-language-grammar-simplification"
+  - trigger: ":learn-grammar-simplification"
     form: |
       Explain grammar rules of [insert language] in simple terms and
       immediately give speaking examples so I can apply the rules in real
       conversations without confusion.
 
   # Daily Practice System
-  - trigger: ":learn-language-daily-practice-system"
+  - trigger: ":learn-daily-practice-system"
     form: |
       Create a daily practice routine for learning [insert language] that
       includes speaking, listening, reading, and revision tasks that can be
       completed in a limited amount of time.
 
   # Fluency Evaluation & Upgrade
-  - trigger: ":learn-language-fluency-evaluation-upgrade"
+  - trigger: ":learn-fluency-evaluation-upgrade"
     form: |
       Act as a language examiner and test my ability in [insert language]
       through conversation and questions. Identify weaknesses and suggest
       focused improvements to become more fluent.
 
   # First Principles Mastery
-  - trigger: ":learn-skill-first-principles-mastery"
+  - trigger: ":learn-first-principles-mastery"
     form: |
       Act as a world-class expert and teacher with 15+ years of experience in
       [insert skill or subject]. Teach this topic from first principles, breaking it down
@@ -826,22 +826,14 @@ matches:
       concept instead of memorizing facts.
 
   # Complete Skill Roadmap
-  - trigger: ":learn-skill-complete-skill-roadmap"
-    form: |
-      Act as a world-class expert and teacher with 15+ years of experience in
-      [insert skill or subject]. Teach this topic from first principles, breaking it down
-      into the most fundamental ideas so I understand the 'why' behind every
-      concept instead of memorizing facts."
-
-  # Complete Skill Roadmap
-  - trigger: ":learn-skill-complete-skill-roadmap"
+  - trigger: ":learn-complete-skill-roadmap"
     form: |
       Design a complete learning roadmap for mastering [insert skill]. Break it into
       beginner, intermediate, and advanced stages, listing exact topics, milestones,
       and skills required at each stage so nothing important is missed."
 
   # Deep Concept Builder
-  - trigger: ":learn-skill-deep-concept-builder"
+  - trigger: ":learn-deep-concept-builder"
     form: |
       For the topic [insert topic], explain it in depth as if preparing a professional in
       this field. Include definitions, underlying mechanisms, real-world applications,
@@ -849,7 +841,7 @@ matches:
       experts.
 
   # Active Recall Trainer
-  - trigger: ":learn-skill-active-recall-trainer"
+  - trigger: ":learn-active-recall-trainer"
     form: |
       After teaching me [insert topic], create challenging questions that test my
       understanding without showing answers first. Wait for my response, then
@@ -857,21 +849,21 @@ matches:
       next concept."
 
   # The Advanced Mastery
-  - trigger: ":learn-skill-the-advanced-mastery"
+  - trigger: ":learn-the-advanced-mastery"
     form: |
       Teach advanced techniques and insights used by top professionals in [insert
       skill]. Focus on strategies, shortcuts, and thinking patterns that distinguish
       experts from average practitioners.
 
   # Knowledge Compression
-  - trigger: ":learn-skill-knowledge-compression"
+  - trigger: ":learn-knowledge-compression"
     form: |
       Summarize everything I learned about [insert topic] into a structured revision
       guide including key concepts, frameworks, mental models, and essential
       takeaways that are critical for long-term mastery."
 
   # Final Mastery Evaluation
-  - trigger: ":learn-skill-final-mastery-evaluation"
+  - trigger: ":learn-final-mastery-evaluation"
     form: |
       Act as an expert examiner and test my mastery of [insert skill] through
       practical and conceptual questions. Identify remaining weaknesses and
@@ -884,7 +876,7 @@ matches:
 
 
   # The problem prioritization engine
-  - trigger: ":market-research-problem-prioritization-engine"
+  - trigger: ":biz-problem-prioritization-engine"
     form: |
       List the top 10 problems in [YOUR INDUSTRY].
 
@@ -906,7 +898,7 @@ matches:
       Sort by combined Urgency + WTP score, highest first."
 
   # The offer creation framework
-  - trigger: ":market-research-offer-creation-framework"
+  - trigger: ":biz-offer-creation-framework"
     form: |
       Create a high-converting offer for: [YOUR SPECIFIC
       PROBLEM].
@@ -932,7 +924,7 @@ matches:
 
 
   # The distribution domination plan
-  - trigger: ":market-research-distribution-domination-plan"
+  - trigger: ":biz-distribution-domination-plan"
     form: |
       Act as a senior growth strategist. Build a realistic 30-day distribution plan for: [YOUR IDEA], including the target audience, product type, and rough budget.
 
@@ -946,7 +938,7 @@ matches:
       Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers."
 
   # Viral content engine
-  - trigger: ":market-research-viral-content-engine"
+  - trigger: ":biz-viral-content-engine"
     form: |
       Create a viral content strategy for: [YOUR NICHE].
 
@@ -960,7 +952,7 @@ matches:
       Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.'
 
   # The competitor weakness map
-  - trigger: ":market-research-competitor-weakness-map"
+  - trigger: ":biz-competitor-weakness-map"
     form: |
       Analyze the top 5 competitors in [YOUR NICHE].
 
@@ -978,7 +970,7 @@ matches:
       Output the competitor breakdown as a table, then the gap analysis and recommendations as prose."
 
   # The scale system
-  - trigger: ":market-research-scale-system"
+  - trigger: ":biz-scale-system"
     form: |
       Give me a plan to scale this business to [TARGET
       REVENUE] within [TIMEFRAME]:
@@ -996,32 +988,32 @@ matches:
 
 
   # Pareto Principle
-  - trigger: ":learning-pareto-principle"
+  - trigger: ":learn-pareto-principle"
     form: |
       "I want to learn [Insert Topic]. Can you use the Pareto principle, which identifies the 20% of the topic that will yield 80% of the desired results, to create a focused learning plan for me?"
 
   # Explain Like I'm a Beginner
-  - trigger: ":learning-explain-like-im-a-beginner"
+  - trigger: ":learn-explain-like-im-a-beginner"
     form: |
       "Explain [Insert topic] in simple terms. Explain to me as if I'm a beginner."
 
   # Study Schedule
-  - trigger: ":learning-study-schedule"
+  - trigger: ":learn-study-schedule"
     form: |
       "Create a study schedule for [Insert Topic/Subject]. I can study for 2 hours every Tuesday and Thursday, you can adjust accordingly. Please include time for revision and testing."
 
   # Improve Decision Making
-  - trigger: ":learning-improve-decision-making"
+  - trigger: ":learn-improve-decision-making"
     form: |
       "I am trying to decide if I should [Insert decision]. Give me a list of pros and cons that will help me decide why I should or shouldn't make this decision."
 
   # Learn Any New Skill
-  - trigger: ":learning-any-new-skill"
+  - trigger: ":learn-any-new-skill"
     form: |
       "I want to learn [Insert skill]. Generate a 30-day plan that will help a beginner like me learn the skill from scratch."
 
   # Turn CLAUDE into a Grammar Guide
-  - trigger: ":learning-turn-claude-into-a-grammar-guide"
+  - trigger: ":learn-turn-claude-into-a-grammar-guide"
     form: |
       "I want you to act as a grammar guide. Can you explain [the topics] and provide instructions on how to apply the rule or concept? Can you also give me examples of how the rule or concept works in practice?"
 
@@ -1032,81 +1024,62 @@ matches:
 
 
   # Parallel Work Manager
-  - trigger: ":productivity-parallel-work-manager"
+  - trigger: ":prod-parallel-work-manager"
     form: |
       "I need to complete these tasks simultaneously: [list tasks]. Spawn agent teams: assign each task to a separate agent, coordinate between them, report progress from all agents, merge results when done. Run them in parallel."
 
   # Multi-File Project Auditor
-  - trigger: ":productivity-multi-file-project-auditor"
+  - trigger: ":prod-multi-file-project-auditor"
     form: |
       "Load my entire project folder: [upload files]. Analyze: architectural decisions that should change, technical debt to tackle first, security vulnerabilities, performance bottlenecks, and outdated dependencies. Give me a prioritized action plan."
 
   # Context Memory Vault
-  - trigger: ":productivity-context-memory-vault"
+  - trigger: ":prod-context-memory-vault"
     form: |
       "I'm working on [project name]. Here's everything you need to retain: [paste project context]. From now on, reference this context in every response without me repeating it. Summarize what you'll remember."
 
   # Adaptive Problem Navigator
-  - trigger: ":productivity-adaptive-problem-navigator"
+  - trigger: ":prod-adaptive-problem-navigator"
     form: |
       "Complex problem: [describe problem]. Don't answer immediately. First, assess: how deep should you think about this (quick/deep reasoning), what information is missing, what assumptions to challenge. Then solve it at the appropriate depth."
 
   # Mistake Spotter
-  - trigger: ":productivity-mistake-spotter"
+  - trigger: ":prod-mistake-spotter"
     form: |
       "Review everything I've done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, places where I'm overconfident, risks I haven't considered. Challenge my thinking before I commit to this approach."
 
   # Long-Term Project Assistant
-  - trigger: ":productivity-long-term-project-assistant"
+  - trigger: ":prod-long-term-project-assistant"
     form: |
       "This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continue."
 
   # Cross-Repo Connector
-  - trigger: ":productivity-cross-repo-connector"
+  - trigger: ":prod-cross-repo-connector"
     form: |
       "I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration."
-
-  # Long-Term Project Assistant
-  - trigger: ":productivity-long-term-project-assistant"
-    form: |
-      "This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continve."
-
-  # Cross-Repo Connector
-  - trigger: ":productivity-cross-repo-connector"
-    form: |
-      "I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration."
-
-
-
-
-
-
-
-
-
 
   # World-Class Life Audit
-  - trigger: ":productivity-world-class-life-audit"
+  - trigger: ":prod-world-class-life-audit"
     form: |
       "Act like a world-class coach who has helped thousands of people level up mentally, physically, financially, and emotionally. Audit my current lifestyle based on this [insert your routine], and tell me exactly what to change for a full 180° transformation."
 
   # 30-Day Ruthless Glow-Up Plan
-  - trigger: ":productivity-30-day-ruthless-glow-up-plan"
+  - trigger: ":prod-30-day-ruthless-glow-up-plan"
     form: |
       "Pretend you're the mentor behind the most iconic, disciplined and high-performing people on earth. Design me a ruthless but realistic 30-day glow-up plan that rewires my mind, resets my habits, and makes people ask 'what happened to you?'"
 
   # Brutally Honest Mindset Reset
-  - trigger: ":productivity-brutally-honest-mindset-reset"
+  - trigger: ":prod-brutally-honest-mindset-reset"
     form: |
       "Be my brutally honest mindset coach. Break down the limiting beliefs I may have based on this [insert your goal or struggle], then rewire them with powerful affirmations, logic, and new habits to replace the old story."
 
   # Dream Reality Life System
-  - trigger: ":productivity-dream-reality-life-system"
+  - trigger: ":prod-dream-reality-life-system"
     form: |
       "You are my life strategist with access to my dream reality blueprint. Based on my goal [insert your goal], create a step-by-step life system, morning to night, that would make me become 'her' in 90 days or less."
 
   # Elite Mental Conditioning Ritual
-  - trigger: ":productivity-elite-mental-conditioning-ritual"
+  - trigger: ":prod-elite-mental-conditioning-ritual"
     form: |
       "Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ritual that reshapes how I think, act, and dominate my day with unshakable confidence."
 
@@ -1117,7 +1090,7 @@ matches:
 
 
   # 1. BUILD YOUR SIGNATURE SLOGAN
-  - trigger: ":productivity-build-your-signature-slogan"
+  - trigger: ":prod-build-your-signature-slogan"
     form: |
 
       1. BUILD YOUR SIGNATURE SLOGAN
@@ -1237,24 +1210,16 @@ matches:
 
       4. BUILD YOUR SALIENT IDEA
 
-      <role>Act as a core idea sharpener applying Seth Godin's "be specific
-      to someone" framework - the brands that get famous are never for
-      ev-
-      eryone, they are unforgettable to someone specific .< /role>
+      <role>Act as a core idea sharpener applying Seth Godin's "be specific to someone" framework - the brands that get famous are never for everyone, they are unforgettable to someone specific .</role>
 
-      <task>Identify and sharpen the single salient idea that defines my
-      brand - specific enough to own, remarkable enough to spread, and
-      clear enough that my smallest viable audience immediately gets
-      it .< /task>
+      <task>Identify and sharpen the single salient idea that defines my brand - specific enough to own, remarkable enough to spread, and clear enough that my smallest viable audience immediately gets it .</task>
 
       <steps>
       1. Ask for everything I do, teach, or sell before starting
       2. Map every idea, concept, and message I currently communicate
-      3. Apply Godin's smallest viable audience test - which idea resonates
-      most deeply with the specific people I want to serve
+      3. Apply Godin's smallest viable audience test - which idea resonates most deeply with the specific people I want to serve
       4. Sharpen it until it cannot be confused with anyone else's idea
-      5. Show how every piece of content, every offer, and every presenta-
-      tion points back to this one salient idea
+      5. Show how every piece of content, every offer, and every presentation points back to this one salient idea
       </steps>
 
       <rules>
@@ -1262,13 +1227,10 @@ matches:
       - Idea must be for someone specific - not everyone
       - Every piece of content must connect back to this idea
       - If the idea could belong to a competitor it is not salient enough
-      - Test: does my smallest viable audience immediately say "this is
-      exactly
-      for me"
+      - Test: does my smallest viable audience immediately say "this is exactly for me"
       </rules>
 
-      <output>Idea Map - Smallest Viable Audience Test - Sharpened
-      Salient Idea - How Everything Points Back to It</output>
+      <output>Idea Map - Smallest Viable Audience Test - Sharpened Salient Idea - How Everything Points Back to It</output>
 
       ------
 
@@ -1307,3 +1269,82 @@ matches:
       3-Minute Signature Story Script</output>
 
 
+  # Rebranding for clarity and memorability
+  - trigger: ":rebranding-for-clarity-and-memorability"
+    form: |
+      Act as a brand clarity strategist specializing in simplifying complex business ideas into unforgettable brand concepts
+
+      Based on the information provided, create a new brand identity that is:
+      • Crystal clear - immediately understandable to potential customers
+      • Highly memorable - sticky and easy to recall
+      • Differentiated - stands out from competitors
+      • Aligned with my values and business model
+
+      I need you to take everything you've learned about my business, audience, and competitive landscape and distill it into a brand identity that makes sense and gets remembered
+    form_fields:
+      business_info:
+        multiline: true
+
+  - trigger: ":deep-youtube-summary"
+    form: |
+      You are an expert video analyst. Given this YouTube video link: [insert link here], perform the following steps:
+      1. Access and accurately transcribe the full video content, including key timestamps for reference.
+      2. Deeply analyze the video to identify the core message, main concepts, supporting arguments, and any data or examples presented.
+      3. Extract the essential knowledge points and organize them into a concise, structured summary (aim for 300-600 words unless specified otherwise).
+
+      4. For each major point, explain it using 1-2 clear analogies to make complex ideas more relatable and easier to understand (e.g., compare abstract concepts to everyday scenarios).
+
+      5. Provide a critical analysis section: Discuss pros and cons, different perspectives (e.g., educational, ethical, practical), public opinions based on general trends, and any science/data-backed facts if applicable.
+
+      6. If relevant, include a customizable step-by-step actionable framework derived from the content.
+
+      7. End with memory aids like mnemonics or anchors for better retention, plus a final verdict or calculation (e.g., efficiency score or key takeaway metric).
+
+
+      Output everything in a well-formatted response with Markdown headers for sections. Ensure the summary is objective, accurate, and spoiler
+
+      -free if it's entertainment content.
+
+  - trigger: ":deep-youtube-summary-visual-learning-engine"  # Thinking process for youtube video summary
+    form: |
+       System Prompt: Autonomous Video Analysis & Visual Learning Engine
+
+        Context: You are an elite knowledge engineer and instructional designer. Your goal is to fetch a YouTube video transcript via your web browsing tools, analyze it deeply, and transform it into a high-retention, scannable, visually mapped learning framework.
+
+        Input: [Insert YouTube URL Here]
+
+        Execute the following 4-Layer analysis system exactly. Do not abbreviate.
+
+
+        ### 1. Contextual Extraction
+
+        * Utilize web search/browsing capabilities to locate, fetch, and analyze the transcript of the provided URL.
+
+        * **The Metaphor:** Explain the video's core thesis using exactly one powerful, concrete real-world analogy.
+
+        * **The Pillar Map:** A Markdown table listing the 3-5 structural pillars of the video, mapping the concept to its practical value.
+
+
+        ### 2. Textual Diagram Blueprints & Mind Maps
+
+        Construct textual conceptual architectures to map the relationships between ideas:
+
+        * **The Mind Map:** Use Markdown hierarchical bullet structures (`- Major Node > Sub-Node > Attribute`) to outline the relationship network.
+
+        * **The Mechanism:** Provide a descriptive text blueprint of a diagram (e.g., a structural matrix or spatial layout) detailing exactly how the system components interact.
+
+
+        ### 3. Execution Framework & Learning Flow
+
+        Construct a step-by-step sequential breakdown of the methodology described. Order is critical.
+
+        * For each step, use the format: `[Step X: Title] -> [Core Action] -> [Visual Anchor Description]`.
+
+        * Provide a clear, non-vague implementation phase with its single biggest operational blind spot (The Pitfall) and how to avoid it.
+
+
+        ### 4. Interactive Simulation & Metrics
+
+        * **Dynamic Concept Sandbox:** If the video outlines a process, calculation, system, or framework with variables that can be manipulated, write a specialized `<GenerateWidget>` configuration to simulate that environment dynamically.
+
+        * **Takeaway Metric:** A singular, definitive formula or KPI derived from the video's logic to measure implementation success.

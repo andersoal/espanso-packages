@@ -1287,23 +1287,41 @@ matches:
 
   - trigger: ":deep-youtube-summary"
     form: |
-      You are an expert video analyst. Given this YouTube video link: [insert link here], perform the following steps:
-      1. Access and accurately transcribe the full video content, including key timestamps for reference.
-      2. Deeply analyze the video to identify the core message, main concepts, supporting arguments, and any data or examples presented.
-      3. Extract the essential knowledge points and organize them into a concise, structured summary (aim for 300-600 words unless specified otherwise).
+      You are an elite knowledge engineer and expert video analyst. Your primary goal is to fetch, analyze, and transform YouTube video content into a high-retention, scannable learning framework.
 
-      4. For each major point, explain it using 1-2 clear analogies to make complex ideas more relatable and easier to understand (e.g., compare abstract concepts to everyday scenarios).
+      Input URL: [insert link here]
 
-      5. Provide a critical analysis section: Discuss pros and cons, different perspectives (e.g., educational, ethical, practical), public opinions based on general trends, and any science/data-backed facts if applicable.
+      ### Formatting Rule: Title Requirement
+      * **The very first line of your response must be a clear, compelling Title (using an `# H1` Markdown header) that captures the core essence of the video analyzed.** Do not include introductions, conversational filler, or greetings before this title.
 
-      6. If relevant, include a customizable step-by-step actionable framework derived from the content.
+      Execute the following analysis pipeline exactly. Do not abbreviate.
 
-      7. End with memory aids like mnemonics or anchors for better retention, plus a final verdict or calculation (e.g., efficiency score or key takeaway metric).
+      ### 0. URL Resolution & Fetching (CRITICAL STEP)
+      * Note: The input link may be a mobile redirect or a shortened tracking URL (e.g., youtu.be/).
+      * Before performing any analysis, you MUST explicitly utilize your web browsing/search capabilities to resolve the URL, navigate to the video, and fetch the full, accurate transcript content with its associated timestamps. Do not guess based on the URL string.
 
+      ### 1. Contextual Extraction & Structural Mapping
+      * **The Metaphor:** Explain the video's core thesis using exactly one powerful, concrete, real-world analogy to make the abstract concept instantly relatable.
+      * **The Pillar Map:** Construct a Markdown table listing the 3-5 structural pillars of the video, mapping the concept to its timestamp/location and its practical value.
+      * **The Core Network:** Outline the relationships between secondary ideas using a Markdown hierarchical bullet structure (`- Major Node > Sub-Node > Attribute`).
 
-      Output everything in a well-formatted response with Markdown headers for sections. Ensure the summary is objective, accurate, and spoiler
+      ### 2. Deep Analysis & Critical Section
+      * **Objective Summary:** Provide a highly dense, scannable summary of the supporting arguments and data presented (aim for 300-400 words). Maintain strict objectivity (and keep it spoiler-free if it is entertainment content).
+      * **Critique Matrix:** Provide a balanced analysis detailing:
+        * Pros & Cons of the presented logic.
+        * Multi-perspective evaluation (e.g., practical, ethical, or educational validity).
+        * Science/data-backed counterarguments or validations where applicable.
 
-      -free if it's entertainment content.
+      ### 3. Execution Framework & Blind Spots
+      * **Actionable Flow:** Construct a step-by-step sequential breakdown of the methodology or framework described. Order is critical.
+      * For each step, use the format: `[Step X: Title] -> [Core Action] -> [Visual Anchor Description]`.
+      * **The Pitfall:** Identify the single biggest operational blind spot or common point of failure when executing this framework, and detail exactly how to avoid it.
+
+      ### 4. Retention Aids & Success Metrics
+      * **Memory Anchors:** Provide explicit mnemonics or cognitive hooks to ensure long-term retention of the core concept.
+      * **Takeaway Metric:** Design a singular, definitive formula, KPI, or key takeaway metric derived from the video's logic to measure implementation success.
+
+      Output everything using clean Markdown headers for clear section hierarchy.
 
   - trigger: ":deep-youtube-summary-visual-learning-engine"  # Thinking process for youtube video summary
     form: |
@@ -1348,3 +1366,468 @@ matches:
         * **Dynamic Concept Sandbox:** If the video outlines a process, calculation, system, or framework with variables that can be manipulated, write a specialized `<GenerateWidget>` configuration to simulate that environment dynamically.
 
         * **Takeaway Metric:** A singular, definitive formula or KPI derived from the video's logic to measure implementation success.
+
+
+
+
+
+  # 1. Startup Idea Validator
+  - trigger: ":startup-idea-validator"
+    form: |
+      Act like an experienced startup mentor. Analyze this business idea: [[describe_startup_idea]]. Evaluate the market demand, target audience, and competitors. Highlight the biggest risks, weaknesses, and opportunities, and suggest practical ways to improve the idea before launching.
+    form_fields:
+      describe_startup_idea:
+        multiline: true
+
+  # 2. Profitable Niche Finder
+  - trigger: ":profitable-niche-finder"
+    form: |
+      Based on the skills, interests, or resources I have: [[describe_skills_interests_resources]], generate 10 realistic startup ideas that can be started with little to no money. Focus on ideas with strong market demand, clear target customers, and the potential to generate revenue quickly.
+    form_fields:
+      describe_skills_interests_resources:
+        multiline: true
+
+  # 3. Customer Pain Point Researcher
+  - trigger: ":customer-pain-point-researcher"
+    form: |
+      Act like a market researcher. For the business idea: [[describe_idea]], identify the top problems or frustrations the target customers face. Explain why these problems exist, how people currently try to solve them, and what kind of solution customers would be willing to pay for.
+    form_fields:
+      describe_idea:
+        multiline: true
+
+  # 4. Lean Startup Business Plan Builder
+  - trigger: ":lean-startup-business-plan-builder"
+    form: |
+      Create a simple lean startup plan for this idea: [[describe_idea]]. Include the target customer, core value proposition, revenue model, key distribution channels, and the fastest way to launch a minimum viable product with zero or very low cost.
+    form_fields:
+      describe_idea:
+        multiline: true
+
+  # 5. Minimum Viable Product Creator
+  - trigger: ":minimum-viable-product-creator"
+    form: |
+      Help me design a simple minimum viable product (MVP) for this business idea: [[describe_idea]]. Explain what the basic version should include, how I can build it using free tools, and how I can launch it quickly to test whether customers are willing to pay.
+    form_fields:
+      describe_idea:
+        multiline: true
+
+  # 6. First Customers Acquisition Plan
+  - trigger: ":first-customers-acquisition-plan"
+    form: |
+      Act like a growth strategist. For the startup idea: [[describe_idea]], create a step-by-step plan to get the first 50–100 customers without spending money on ads. Focus on organic strategies like communities, social media, partnerships, and direct outreach.
+    form_fields:
+      describe_idea:
+        multiline: true
+
+  # 7. Fast Revenue Strategy
+  - trigger: ":fast-revenue-strategy"
+    form: |
+      For this startup idea: [[describe_idea]], design a simple monetization strategy that can start generating revenue quickly. Suggest pricing options, early offers, and practical ways to convert early users or interest into paying customers.
+    form_fields:
+      describe_idea:
+        multiline: true
+
+  - trigger: ":flow-state"
+    form: |
+      # How to Get Into Flow State
+
+      When your body and mind seamlessly connect, leading to intense focus and effortless engagement, often described as being "in the zone," and it's accessible to everyone.
+
+      ---
+
+      ## The Four Pillars of Flow
+
+      To achieve a Flow State, an activity must sit at the intersection of four core pillars:
+
+      1. **Something you care about**
+      2. **Something long term**
+      3. **Something challenging**
+      4. **Something you're good at**
+
+      ---
+
+      ## Core Outcomes & Attributes
+
+      The framework identifies four psychological outcomes tied to these dimensions:
+
+      ### 1. Fulfillment
+      * Achieving goals effortlessly.
+      * Deep sense of purpose and satisfaction.
+      * Engaging in activities that align with personal values.
+
+      ### 2. Happiness
+      * Immersion in the present moment.
+      * Feelings of joy and contentment.
+      * Experiencing a sense of timelessness.
+
+      ### 3. Persistence
+      * Continuous focus and determination.
+      * Overcoming challenges with ease.
+      * Energized and motivated to overcome obstacles.
+
+      ### 4. Clarity
+      * Clear understanding of goals and objectives.
+      * Enhanced mental clarity and focus.
+      * Heightened awareness of surroundings and actions.
+
+  - trigger: ":skill-productivity-execution-framework"
+    form: |
+      # Skill: Productivity & Execution Frameworks
+
+      ## Overview
+      A compilation of six foundational time-management, prioritization, and execution frameworks designed to optimize daily output and eliminate procrastination.
+
+      ---
+
+      ## 1. The Pomodoro Technique
+      A time-management method that breaks work into intervals separated by short breaks to maintain high focus and prevent mental fatigue.
+
+      ### Execution Steps
+      1. **List your tasks:** Identify the work that needs to be completed.
+      2. **Set a 25-min timer:** Commit to a single task during this window.
+      3. **Focus and work:** Work with zero distractions until the timer rings.
+      4. **Take a 5-min break:** Step away from the work to rest.
+      5. **Repeat and Reset:** Repeat the cycle 4 times, then take a longer break.
+
+      ---
+
+      ## 2. The 3/3/3 Method
+      A daily rule-of-thumb framework to balance deep work, urgent obligations, and administrative upkeep.
+
+      ### The Framework
+      * **3 Hours:** Spend 3 hours working on an important project (Deep Work).
+      * **3 Tasks/Meetings:** Complete 3 shorter urgent tasks or attend 3 essential meetings.
+      * **3 Maintenance Tasks:** Do 3 minor operational or administrative tasks to keep life and work running smoothly.
+
+      ---
+
+      ## 3. The Eisenhower Matrix
+      A prioritization framework used to categorize tasks by urgency and importance, optimizing decision-making on what to focus on next.
+
+      ### Matrix Breakdown
+
+      | | Urgent | Not Urgent |
+      |---|---|---|
+      | **Important** | **Do it** <br> *Tackle immediately.* | **Schedule it** <br> *Plan a dedicated time for it.* |
+      | **Not Important** | **Delegate it** <br> *Hand it off to someone else.* | **Eliminate it** <br> *Drop it from your list.* |
+
+      ---
+
+      ## 4. Eat the Frog
+      A behavioral framework centered on tackling the most difficult, high-friction task first to build momentum and remove stress early in the day.
+
+      ### Core Principle
+      > "Do your hardest task first. The rest will be easier."
+
+      ### Philosophy
+      > "If it's your job to eat a frog, it's best to do it first thing in the morning. And if it's your job to eat two frogs, it's best to eat the biggest one first."
+      > — *Mark Twain*
+
+      ---
+
+      ## 5. The Seinfeld Strategy (Don't Break the Chain)
+      A visual consistency framework designed to build long-term habits and sustain operational momentum.
+
+      ### Execution Steps
+      1. **Set your goal:** Define a specific, daily actionable habit.
+      2. **Mark a calendar:** Put a clear mark (e.g., an 'X') on each day you successfully complete the task.
+      3. **Keep the streak:** Focus entirely on maintaining the visual chain as long as possible.
+      4. **The Guardrail:** Never miss 2 days in a row.
+
+      ---
+
+      ## 6. Time Blocking
+      An intentional scheduling methodology where you divide your day into distinct blocks of time, dedicated to specific tasks or categories.
+
+      ### Execution Steps
+      1. **Identify** what needs doing.
+      2. **Group** similar activities together (batching).
+      3. **Assign** specific time slots for tasks.
+      4. **Plot** blocks clearly on a calendar.
+      5. **Stick** strictly to the schedule.
+      6. **Take** intentional breaks between blocks.
+      7. **Make** dynamic changes if or when needed.
+
+      ### Sample Schedule Block
+
+      | Time Slot | Activity |
+      |---|---|
+      | **9:00 - 12:00** | Deep Work |
+      | **12:00 - 12:30** | Email / Admin |
+      | **12:30 - 1:00** | Lunch |
+      | **1:00 - 2:00** | Gym / Physical Activity |
+      | **2:00 - 2:30** | Break |
+      | **2:30 - 4:00** | Meetings |
+
+
+  - trigger: ":steve-jobs-sales-excellence-8-rules"
+    form: |
+      # Skill Playbook: Steve Jobs’ 8 Rules for Sales Excellence
+
+      ## Framework Overview
+      This framework transforms product features and standard sales pitches into high-impact, customer-centric narratives. It focuses on extreme clarity, emotional resonance, and unyielding persistence to drive conversion and brand loyalty.
+
+      ---
+
+      ## The 8 Core Competencies
+
+      ### 1. Create a Unique Value Proposition
+      *   **Core Pillars:**
+          *   Differentiate your product from the competition.
+          *   Highlight unique, specific problem-solving aspects.
+          *   Communicate authentic passion for your offering.
+      *   **Philosophical Anchor:**
+          > "You've got to find what you love. And that is as true for your work as it is for your lovers." — Steve Jobs
+      *   **Execution Strategy:** Define your "Only" statement (e.g., "We are the *only* platform that does X without requiring Y"). If your team cannot articulate this in one sentence, your value proposition is failing.
+
+      ### 2. Focus on Benefits, Not Features
+      *   **Core Pillars:**
+          *   Emphasize how the product directly improves the user's life.
+          *   Translate technical specifications into tangible customer advantages.
+          *   Sell the overarching experience, not just the physical/digital product.
+      *   **Philosophical Anchor:**
+          > "You've got to start with the customer experience and work back toward the technology - not the other way around." — Steve Jobs
+      *   **Execution Strategy:** Implement a "So What?" audit for every pitch point. If you state a feature ("Our software has 256-bit encryption"), ask yourself "So what?" to find the benefit ("So your data is fully secure, meaning you will never have to face a compliance fine").
+
+      ### 3. Keep Your Message Simple
+      *   **Core Pillars:**
+          *   Craft clear, concise presentations.
+          *   Avoid overwhelming prospects with technical details.
+          *   Distill complex, multi-layered ideas into simple, memorable messages.
+      *   **Philosophical Anchor:**
+          > "That's been one of my mantras - focus and simplicity. Simple can be harder than complex." — Steve Jobs
+      *   **Execution Strategy:** Use constraints. Limit your primary presentation decks to a maximum of 10 slides, and use no more than one core idea per slide.
+
+      ### 4. Tell a Compelling Story
+      *   **Core Pillars:**
+          *   Use narrative arcs to make products relatable.
+          *   Connect emotionally with your audience's aspirations and frustrations.
+          *   Share high-impact success stories that mirror the prospect's situation.
+      *   **Philosophical Anchor:**
+          > "The most powerful person in the world is the storyteller. The storyteller sets the vision, values and agenda of an entire generation that is to come." — Steve Jobs
+      *   **Execution Strategy:** Structure case studies around a 3-part narrative arc:
+          1. **The Enemy/Status Quo** (The pain point)
+          2. **The Catalyst** (Your solution)
+          3. **The New Dawn** (The successful outcome)
+
+      ### 5. Know Your Audience
+      *   **Core Pillars:**
+          *   Research prospects thoroughly prior to engagement.
+          *   Deeply understand specific customer pain points and unexpressed needs.
+          *   Customize your communication approach based on the specific customer profile.
+      *   **Philosophical Anchor:**
+          > "Get closer than ever to your customers. So close that you tell them what they need well before they realize it themselves." — Steve Jobs
+      *   **Execution Strategy:** Before any discovery call, map the prospect's structural incentives. Identify what metrics your buyer is personally judged on by their boss, and tailor your pitch to safeguard or accelerate those metrics.
+
+      ### 6. Create an Experience, Not Just a Product
+      *   **Core Pillars:**
+          *   Focus meticulously on the entire customer journey.
+          *   Ensure positive, premium touchpoints throughout the lifecycle.
+          *   Prioritize customer experience directly within the sales process itself.
+      *   **Philosophical Anchor:**
+          > "You've got to start with the customer experience and work back toward the technology - not the other way around." — Steve Jobs
+      *   **Execution Strategy:** Audit the friction in your buying process. The sales experience is a trailer for the actual product experience. If buying from you is bureaucratic, slow, or confusing, the prospect will assume your customer support is the same.
+
+      ### 7. Don't Be Afraid to Polarize
+      *   **Core Pillars:**
+          *   Confidently highlight your specific strengths, even if it alienates some profiles.
+          *   Take a firm stand on industry standards and paradigms.
+      *   **Philosophical Anchor:**
+          > "A lot of times, people don't know what they want until you show it to them." — Steve Jobs
+      *   **Execution Strategy:** Avoid trying to be everything to everyone. Explicitly filter out bad-fit clients during qualification. Declaring who your product is *not* for builds immense credibility with your actual target audience.
+
+      ### 8. Persistence in the Face of Rejection
+      *   **Core Pillars:**
+          *   Use rejection strictly as a tactical learning opportunity.
+          *   Iterate and adjust your approach continuously while keeping pressure.
+          *   Stay fiercely committed to your ultimate vision.
+      *   **Philosophical Anchor:**
+          > "I'm convinced that about half of what separates successful entrepreneurs from the non-successful ones is pure perseverance." — Steve Jobs
+      *   **Execution Strategy:** Track your conversion ratios rigorously. Rejection is standard data; analyze whether losses are due to bad timing, wrong audience, or poor messaging, adjust the approach, and move immediately to the next opportunity.
+
+      ---
+
+      ## Performance Metrics & Evaluation
+      To master this framework, measure yourself against the following operational criteria:
+      *   **Clarity Index:** Can a non-technical person explain what your product achieves after hearing your 30-second pitch? (Addresses Rules 2 & 3)
+      *   **Discovery Depth:** Do you regularly uncover underlying organizational pain points that the client hadn't explicitly stated in their initial brief? (Addresses Rule 5)
+      *   **Pipeline Resilience:** Do you actively maintain a structured follow-up sequence of at least 5-7 varied touchpoints for high-value prospects before closing the file? (Addresses Rule 8)
+
+  - trigger: ":accelerated-learning-llm-framework"
+    form: |
+      # Skill: Accelerated Learning Framework via LLMs (Claude)
+
+      ## Overview
+      This framework leverages large language models to compress the learning curve of any complex topic by breaking down information into foundational concepts, mental models, and practical application vectors.
+
+      ## Core Premise
+      * **Source Material:** Derived from the concepts presented in `0d06ff9b927c315d0c79ca5f37e80f59.jpg`.
+      * **Objective:** Achieve hyper-accelerated comprehension ("100x faster") of any subject matter using strategic prompting sequences.
+
+      ---
+
+      ## The 6-Prompt Accelerated Learning Stack
+
+      ### 1. The Feynman Simplification Prompt
+      * **Purpose:** Break down complex jargon into fundamental, easy-to-understand analogies.
+      * **Prompt:**
+        > "Explain [Topic/Concept] to me as if I am a 10-year-old. Avoid industry jargon, use a vivid analogy, and focus entirely on the core foundational principle."
+
+      ### 2. The 80/20 Pareto Optimization Prompt
+      * **Purpose:** Identify the high-leverage 20% of information that yields 80% of the practical results.
+      * **Prompt:**
+        > "I want to learn [Topic/Skill]. Identify the 20% of concepts, rules, or mechanics in this domain that account for 80% of the mastery and practical application. Create a structured 4-week learning roadmap based on this."
+
+      ### 3. The Mental Model Integration Prompt
+      * **Purpose:** Connect the new topic to existing multi-disciplinary frameworks to deepen memory retention.
+      * **Prompt:**
+        > "What are the core mental models, governing laws, or first principles that rule [Topic/Field]? Explain how these models dictate success or failure in this domain."
+
+      ### 4. The Blind-Spot & Deconstruction Prompt
+      * **Purpose:** Uncover non-obvious nuances, common pitfalls, and cognitive biases related to the topic.
+      * **Prompt:**
+        > "What are the most common misconceptions, beginner mistakes, or counter-intuitive truths about [Topic]? Act as a rigorous mentor and point out the blind spots that most people miss when trying to master this."
+
+      ### 5. The Interactive Socratic Testing Prompt
+      * **Purpose:** Test your actual understanding through active recall instead of passive reading.
+      * **Prompt:**
+        > "I want you to test my knowledge on [Topic]. Ask me a series of challenging, situational questions one by one. After each answer I provide, critique my reasoning, identify flaws in my logic, and give me a score out of 10 before moving to the next question."
+
+      ### 6. The Contextual Application / Case Study Prompt
+      * **Purpose:** Translate theoretical knowledge into immediate, actionable execution.
+      * **Prompt:**
+        > "Give me 3 real-world scenarios or case studies where [Topic/Concept] is applied to solve a high-stakes problem. Walk through the step-by-step execution strategy for each scenario."
+
+  - trigger: ":building-second-brain"
+    form: |
+      # Skill: How to Organize Your Ideas (The P.A.R.A. Method & CODE Framework)
+
+      ## Overview
+      The purpose of building a second brain is not just to store information, but to make it useful and accessible to improve the quality of your work and life.
+
+      ---
+
+      ## Part 1: Basic Principles (The CODE Framework)
+      To successfully manage ideas, follow a continuous four-quadrant cycle:
+
+      1. **Capture**
+        * **Principle:** Proactively collect all ideas, thoughts, quotes, and any type of relevant information.
+        * **Execution:** Use digital or physical tools, but make sure it's easy to review and access.
+
+      2. **Organize**
+        * **Principle:** Create a system that allows you to store your information in a way that you can easily find it when you need it.
+        * **Execution:** Use tags, folders, or any method that works for you.
+
+      3. **Distill**
+        * **Principle:** Regularly review your collected content to summarize, condense, or otherwise transform the information into something more digestible and useful.
+
+      4. **Express**
+        * **Principle:** Use your second brain to create new content, make informed decisions, or enhance your learning.
+        * **Execution:** The goal is to make accumulated knowledge tangible.
+
+      ---
+
+      ## Part 2: The P.A.R.A. Method
+      Organize your digital environment into four distinct categories based on actionability:
+
+      ### 1. Projects (**P**)
+      * **Definition:** Sets of tasks with a defined goal and deadline.
+      * **Example:** Preparing a presentation for a conference.
+
+      ### 2. Areas (**A**)
+      * **Definition:** Aspects of your life that need ongoing maintenance.
+      * **Example:** Health, personal finances.
+
+      ### 3. Resources (**R**)
+      * **Definition:** Collections of thematic information that interest you.
+      * **Example:** Articles about productivity, graphic design courses.
+
+      ### 4. Archive (**A**)
+      * **Definition:** Valuable past information that you want to keep but are not currently using actively.
+      * **Example:** Completed project files, old academic papers.
+
+      ---
+
+      ## Part 3: Recommended Tools
+
+      * **Applications:** Evernote, Notion, Roam Research, or Obsidian to capture and organize your projects.
+      * **Project Management Tools:** Trello, Asana, or Todoist to track the progress of your projects. *(Note: Integrate with Google Tasks/Calendar for actual task execution as needed).*
+      * **Digital Filing Systems:** Google Drive, Dropbox, or local files with a well-thought-out folder structure to store your resources and archives.
+
+      ---
+
+      ## Part 4: Practical Tips
+      * **Schedule Maintenance:** Dedicate time each week to review and organize your second brain.
+      * **Maintain Adaptability:** Be flexible with your system; allow it to evolve as your needs and discoveries change.
+      * **Focus on Application:** Don't just store information; reflect on it and find ways to apply it in your life and work.
+
+  - trigger: ":8-hours-work-in-4"
+    form: |
+      # Framework: How to Get 8 Hours of Work Finished in 4 Hours
+      **Creator:** Colby Kultgen
+
+      ## Core Principle
+      None of this matters if you are constantly distracted. To maximize output, you must first eliminate external friction:
+      * Turn off notifications.
+      * Clear your workspace.
+      * Set healthy boundaries.
+
+      ---
+
+      ## Pillars of the Framework
+
+      ### 1. Block Out Your Day
+      Focus on one task at a time during a dedicated block. Group similar activities to streamline your day and minimize context switching. Stick to your schedule to build momentum and efficiency.
+
+      ### 2. Set Artificial Deadlines
+      Leverage **Parkinson's Law** (Work expands to fill the time allotted for its completion).
+      * Break tasks into smaller steps.
+      * Assign tight deadlines to each step.
+      * **Mechanism:** Shorter timeframes force intense focus, prevent procrastination, and make it easier to stay on track to accomplish more in less time.
+
+      ### 3. Find Your Ideal Work Style
+      Experiment with different approaches to discover what keeps you motivated and productive. Tailor your routine to your strengths to maximize your output.
+
+      #### Work Style Matrix
+      | Working Style | Step 1 | Step 2 | Step 3 | Step 4 |
+      | :--- | :--- | :--- | :--- | :--- |
+      | **Planner** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
+      | **Prioritizer** | Write a to-do list | Organize your calendar | Start with the hardest tasks first | Deep work for 2 hours |
+      | **Arranger** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
+      | **Visualizer** | Decide on a priority for the day | Write in your journal | Use the Pomodoro technique | End the day with light tasks |
+
+  - trigger: ":bs-mrd-brutal-analysis"
+    form: |
+       Act as a seasoned business strategist, market researcher, and devil’s advocate combined. I need you to ruthlessly but constructively analyze my idea/business concept in extreme detail. Here’s my idea: [[YOUR_IDEA_BUSINESS_CONCEPT]] Please provide a comprehensive analysis covering these areas:
+
+        FOUNDATIONAL ANALYSIS • Break down the core assumptions my idea relies on • Identify any logical fallacies or weak foundations • Assess whether the problem I’m solving actually exists and is significant • Evaluate if my proposed solution actually solves the stated problem • Point out any gaps between problem and solution
+
+        MARKET VALIDATION • Who is my actual target market (be specific about demographics, psychographics, and behaviors)? • What’s the realistic market size and addressable market? • Analyze existing competitors and how they’re currently serving this market • Identify market trends that could help or hurt this idea • Assess market timing - am I too early, too late, or just right?
+
+        BUSINESS MODEL SCRUTINY • How will this actually make money (be specific about revenue streams)? • What are the unit economics and scalability potential? • Identify all cost centers and potential hidden costs • Assess capital requirements and funding needs • Evaluate profit margins and path to profitability
+
+        OPERATIONAL REALITIES • What resources, skills, and infrastructure do I actually need? • Identify potential operational bottlenecks or challenges • Assess supply chain risks and dependencies • Evaluate technology requirements and technical feasibility • Consider regulatory, legal, or compliance issues
+
+        COMPETITIVE LANDSCAPE • Who are my direct and indirect competitors? • What’s my actual competitive advantage (if any)? • How easily could competitors replicate or improve on my idea? • Identify potential threats from established players entering my space • Assess barriers to entry for both me and future competitors
+
+        RISK ANALYSIS • List the top 10 things that could kill this business • Identify market risks, execution risks, and external risks • Assess financial risks and cash flow challenges • Consider reputation and brand risks • Evaluate team and human capital risks
+
+        BEST CASE SCENARIO • What does wild success look like in 1, 3, and 5 years? • What conditions would need to align for this outcome? • Quantify the potential upside (revenue, market share, impact) • Identify the key success factors and milestones
+
+        WORST CASE SCENARIO • What does complete failure look like? • What are the most likely failure modes? • How much could I lose (time, money, opportunity cost)? • What would be the warning signs of impending failure? • How could I minimize losses if things go wrong?
+
+        VALIDATION ROADMAP • What specific tests/experiments should I run to validate key assumptions? • How can I validate market demand before fully committing? • What metrics should I track to measure early traction? • Suggest low-cost ways to test the concept • Recommend validation milestones before scaling
+
+        EXECUTION REQUIREMENTS • What skills, team members, or advisors do I absolutely need? • Create a realistic timeline for key milestones • Identify the minimum viable product (MVP) requirements • Suggest the optimal launch strategy • Recommend resource allocation priorities
+
+        NAMING AND POSITIONING • Suggest 5-10 potential names for this business/idea with rationale • How should I position this in the market? • What’s the unique value proposition in one sentence? • How should I message this to different stakeholder groups? • Identify potential branding challenges or opportunities
+
+        IMPROVEMENT RECOMMENDATIONS • How could I strengthen the foundational concept? • What pivots or modifications might improve viability? • Suggest additional revenue streams or business model variations • Recommend strategic partnerships or alliances • Identify opportunities to create stronger competitive moats
+
+        GO/NO-GO DECISION FRAMEWORK • Based on this analysis, rate the idea’s viability (1-10) and explain why • What would need to change for you to rate it higher? • Under what conditions would you recommend pursuing this? • Under what conditions would you recommend abandoning it? • Suggest alternative directions if this specific approach isn’t viable Be brutally honest - I need to know the truth, not what I want to hear. Challenge my assumptions, poke holes in my logic, and help me see blind spots. If the idea has merit, tell me how to maximize its potential. If it’s flawed, help me either fix it or recognize when to move on. Provide specific, actionable insights rather than generic advice. Use data and examples where relevant. End with a clear recommendation on next steps.
+    form_fields:
+      YOUR_IDEA_BUSINESS_CONCEPT:
+        multiline: true
+
+
+

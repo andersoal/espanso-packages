@@ -60,8 +60,8 @@ matches:
     replace: '<$|$>'
   - trigger: ':`'
     replace: '`$|$`'
-  - trigger: ":\'"
-    replace: "\'$|$\'"
+  - trigger: ":'"
+    replace: "'$|$'"
   - trigger: ':"'
     replace: '"$|$"'
   - trigger: ':_'
@@ -157,22 +157,23 @@ matches:
 
   # Easily inputs ASCII emojis from a dropdown
   - trigger: :lenny
-    form: "{{smileys}}"
-    form_fields:
-      smileys:
+    replace: "{{smileys}}"
+    vars:
+      - name: smileys
         type: choice
-        values:
-        - '¯\\_(ツ)_/¯'
-        - '(╯°□°）╯︵ ┻━┻'
-        - '( ͡ಠ ʖ̯ ͡ಠ)'
-        - '☉ ‿ ⚆'
-        - 'ʕ•ᴥ•ʔ'
-        - '⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆'
-        - '◤◢◣◥◤◢◣◥'
-        - '(づᵔ◡ᵔ)づ'
-        - '|ᵔ‿ᵔ|'
-        - '⤜(*﹏*)⤏'
-        - 'ツ'
+        params:
+          values:
+          - '¯\\_(ツ)_/¯'
+          - '(╯°□°）╯︵ ┻━┻'
+          - '( ͡ಠ ʖ̯ ͡ಠ)'
+          - '☉ ‿ ⚆'
+          - 'ʕ•ᴥ•ʔ'
+          - '⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆'
+          - '◤◢◣◥◤◢◣◥'
+          - '(づᵔ◡ᵔ)づ'
+          - '|ᵔ‿ᵔ|'
+          - '⤜(*﹏*)⤏'
+          - 'ツ'
 
   # Ouputs MIT License short text
   - trigger: :mit-short
@@ -215,40 +216,40 @@ matches:
       params:
         layout: |
           Less Pass Generator
-          Website: {{site}}
-          Login: {{login}}
-          Master Password: {{pass}}
+          Website: [[site]]
+          Login: [[login]]
+          Master Password: [[pass]]
     - name: lesspass
       type: shell
       params:
         cmd: "lesspass $ESPANSO_PARAMS_SITE $ESPANSO_PARAMS_LOGIN $ESPANSO_PARAMS_PASS"
 
   # Quick search, formulates the URL params for searching a given website
-  - triggers: [:srch-ddg, :search-duckduckgo]
+  - triggers: [':srch-ddg', ':search-duckduckgo']
     replace: 'https://duckduckgo.com/?q='
-  - triggers: [:srch-wiki, :search-wikipedia]
+  - triggers: [':srch-wiki', ':search-wikipedia']
     replace: 'https://en.wikipedia.org/w/?search='
-  - triggers: [:srch-gh, :search-github]
+  - triggers: [':srch-gh', ':search-github']
     replace: 'https://github.com/search?q='
-  - triggers: [:srch-so, :search-stackoverflow]
+  - triggers: [':srch-so', ':search-stackoverflow']
     replace: 'https://stackoverflow.com/search?q='
-  - triggers: [:srch-dh, :search-dockerhub]
+  - triggers: [':srch-dh', ':search-dockerhub']
     replace: 'https://hub.docker.com/search?q='
-  - triggers: [:srch-wa, :search-wolframalpha]
+  - triggers: [':srch-wa', ':search-wolframalpha']
     replace: 'https://www.wolframalpha.com/input/?i='
-  - triggers: [:srch-red, :search-reddit]
+  - triggers: [':srch-red', ':search-reddit']
     replace: 'https://www.reddit.com/search/?q='
-  - triggers: [:srch-bbc, :search-bbc]
+  - triggers: [':srch-bbc', ':search-bbc']
     replace: 'https://www.bbc.co.uk/search?q='
-  - triggers: [:srch-vt, :search-virustotal]
+  - triggers: [':srch-vt', ':search-virustotal']
     replace: 'https://www.virustotal.com/gui/search/'
-  - triggers: [:srch-amz, :search-amazon]
+  - triggers: [':srch-amz', ':search-amazon']
     replace: 'https://amazon.co.uk/s?k='
-  - triggers: [:srch-yt, :search-youtube]
+  - triggers: [':srch-yt', ':search-youtube']
     replace: 'https://youtube.com/results?q='
-  - triggers: [:srch-maps, :search-maps]
+  - triggers: [':srch-maps', ':search-maps']
     replace: 'https://www.google.com/maps/search/'
-  - triggers: [:srch-goo, :search-google]
+  - triggers: [':srch-goo', ':search-google']
     replace: 'https://google.com/search?q='
 
   # Similar to above, but it uses the clipboard for the search query

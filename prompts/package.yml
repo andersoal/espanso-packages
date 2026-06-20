@@ -512,7 +512,7 @@ matches:
   # The Feynman Technique
   # Use this when a concept feels too academic, abstract, or overwhelming. It forces the AI to strip away the jargon.
   - trigger: ":learn-feynman-technique"
-    form: "Teach me [[insert topic]] in simple language, as if you are explaining it to a beginner. Break it into clear, easy-to-grasp steps and provide simple examples. Afterward, ask me to explain it back to you in my own words. Evaluate my response to identify any gaps, misconceptions, or missing pieces in my understanding."
+    form: "Teach me [[insert_topic]] in simple language, as if you are explaining it to a beginner. Break it into clear, easy-to-grasp steps and provide simple examples. Afterward, ask me to explain it back to you in my own words. Evaluate my response to identify any gaps, misconceptions, or missing pieces in my understanding."
     form_fields:
       insert_topic:
         multiline: false
@@ -520,7 +520,7 @@ matches:
   # First Principles Breakdown
   # Use this when you need to understand the underlying logic of a subject, rather than just memorizing surface-level facts.
   - trigger: ":learn-first-principles-breakdown"
-    form: "Act as an expert instructor. Break down [[insert topic]] into its most fundamental building blocks using first principles thinking. Challenge standard assumptions, explain the 'why' behind each concept, and rebuild the idea from the ground up so I understand the core mechanics."
+    form: "Act as an expert instructor. Break down [[insert_topic]] into its most fundamental building blocks using first principles thinking. Challenge standard assumptions, explain the 'why' behind each concept, and rebuild the idea from the ground up so I understand the core mechanics."
     form_fields:
       insert_topic:
         multiline: false
@@ -528,7 +528,7 @@ matches:
   # The Active Recall Coach
   # Reading creates the illusion of competence. Recalling information builds actual memory. Use this to test yourself.
   - trigger: ":learn-active-recall-coach"
-    form: "After teaching me the basics of [[insert topic]], quiz me with progressively challenging questions that force me to actively recall information without looking at my notes. Mix conceptual, applied, and scenario-based questions. Evaluate my answers, clearly explain any corrections, and reinforce my weak areas with targeted follow-up questions."
+    form: "After teaching me the basics of [[insert_topic]], quiz me with progressively challenging questions that force me to actively recall information without looking at my notes. Mix conceptual, applied, and scenario-based questions. Evaluate my answers, clearly explain any corrections, and reinforce my weak areas with targeted follow-up questions."
     form_fields:
       insert_topic:
         multiline: false
@@ -536,7 +536,7 @@ matches:
   # Spaced Repetition System
   # Use this to ensure you do not forget what you learned today by the time next week rolls around.
   - trigger: ":learn-spaced-repetition-system"
-    form: "Create a spaced repetition revision schedule for mastering [[insert topic]]. Outline exactly what I need to review daily, weekly, and monthly based on memory retention principles. Specify review activities—like recall, practice, and testing—and tell me how to adjust the intervals based on my performance to move this information into my long-term memory."
+    form: "Create a spaced repetition revision schedule for mastering [[insert_topic]]. Outline exactly what I need to review daily, weekly, and monthly based on memory retention principles. Specify review activities—like recall, practice, and testing—and tell me how to adjust the intervals based on my performance to move this information into my long-term memory."
     form_fields:
       insert_topic:
         multiline: false
@@ -544,7 +544,7 @@ matches:
   # Smart Knowledge Summary
   # Use this when you need a cheat sheet or a high-level overview of a broad topic.
   - trigger: ":learn-smart-knowledge-summary"
-    form: "Summarize [[insert topic]] using clear frameworks, mental models, and simplified structures. Highlight the key principles, patterns, and relationships within the subject. Present this information in a highly structured way that makes it easy to remember and apply to real-world situations."
+    form: "Summarize [[insert_topic]] using clear frameworks, mental models, and simplified structures. Highlight the key principles, patterns, and relationships within the subject. Present this information in a highly structured way that makes it easy to remember and apply to real-world situations."
     form_fields:
       insert_topic:
         multiline: false
@@ -552,7 +552,7 @@ matches:
   # Learning Acceleration Roadmap
   # Never wonder what you should study next. Use this to create a personalized syllabus.
   - trigger: ":learn-learning-acceleration-roadmap"
-    form: "Design a structured, end-to-end learning roadmap for mastering [[insert skill]]. Break the journey down into progressive stages, milestones, and checkpoints. Specify the key resources to study and practice tasks for each stage, and define measurable criteria so I can efficiently track my progress and always know exactly what to learn next."
+    form: "Design a structured, end-to-end learning roadmap for mastering [[insert_skill]]. Break the journey down into progressive stages, milestones, and checkpoints. Specify the key resources to study and practice tasks for each stage, and define measurable criteria so I can efficiently track my progress and always know exactly what to learn next."
     form_fields:
       insert_skill:
         multiline: false
@@ -560,7 +560,7 @@ matches:
   # Targeted Weakness Assessment
   # Use this to find out what you do not know before it costs you in an exam or a real-world scenario.
   - trigger: ":learn-targeted-weakness-assessment"
-    form: "Ask me a series of diagnostic questions about [[insert topic]] to identify my weakest areas, blind spots, and misunderstandings. Adapt the difficulty of the questions based on my answers. Once we finish, explain where I went wrong and recommend specific exercises or focus areas to strengthen my overall comprehension."
+    form: "Ask me a series of diagnostic questions about [[insert_topic]] to identify my weakest areas, blind spots, and misunderstandings. Adapt the difficulty of the questions based on my answers. Once we finish, explain where I went wrong and recommend specific exercises or focus areas to strengthen my overall comprehension."
     form_fields:
       insert_topic:
         multiline: false
@@ -698,11 +698,14 @@ matches:
   # The dopamine menu architect
   - trigger: ":prod-the-dopamine-menu-architect"
     form: |
-      I am feeling under-stimulated. My current setting and energy level: [[context-home-office-low-energy]]. Build a 'Dopamine Menu' with 3 options in each category:
+      I am feeling under-stimulated. My current setting and energy level: [[context_home_office_low_energy]]. Build a 'Dopamine Menu' with 3 options in each category:
         5-minute 'Appetizers' (quick movement)
         20-minute 'Entrees' (focused work)
         10-minute 'Sides' (creative play)
       Make every option doable right now from where I am.
+    form_fields:
+      context_home_office_low_energy:
+        multiline: false
 
   # THE "BODY DOUBLING" SIMULATOR
   - trigger: ":prod-body-doubling-simulator"
@@ -1280,7 +1283,9 @@ matches:
       • Differentiated - stands out from competitors
       • Aligned with my values and business model
 
-      I need you to take everything you've learned about my business, audience, and competitive landscape and distill it into a brand identity that makes sense and gets remembered
+      I need you to take everything you've learned about my business, audience, and competitive landscape and distill it into a brand identity that makes sense and gets remembered.
+      
+      Business Info: [[business_info]]
     form_fields:
       business_info:
         multiline: true
@@ -1829,5 +1834,147 @@ matches:
       YOUR_IDEA_BUSINESS_CONCEPT:
         multiline: true
 
+
+
+  - trigger: ";before-reply-ask3"
+    form: |
+      Antes de responder, me faça 3 perguntas que vão melhorar o resultado.
+
+  - trigger: ";critique-brutal"
+    form: |
+      Critique esse texto como se você fosse a pessoa que mais quer me ver falhar. Seja brutal.
+
+  - trigger: ";solve-step-by-step"
+    form: |
+      Resolva isso e mostre seu raciocínio passo a passo, para que eu aprenda a fazer sozinho.
+
+  - trigger: ";analyse-situation"
+    form: |
+      Analise a situação e me diga o que fazer.
+
+  - trigger: ";advogado"
+    form: |
+      Pense como um advogado e me diga o que fazer.
+
+  - trigger: ";weekly-routine"
+    form: |
+      Pegue o que fizemos e transforme num passo a passo que eu repito toda semana
+      na minha rotina.
+
+  - trigger: ";decision-framework"
+    form: |
+      Crie uma matriz de decisão para me ajudar a escolher entre [Opção A] e [Opção B]
+
+      | Critério | Opção A (Detalhes) | Opção B (Detalhes) |
+      | :--- | :--- | :--- |
+      | **Custos** | Detalhes aqui | Detalhes aqui |
+      | **Benefícios** | Detalhes aqui | Detalhes aqui |
+      | **Risco** | Detalhes aqui | Detalhes aqui |
+      | **Tempo** | Detalhes aqui | Detalhes aqui |
+      | **Reversibilidade** | Detalhes aqui | Detalhes aqui |
+      | **Impacto** | Detalhes aqui | Detalhes aqui |
+      | **Escalabilidade** | Detalhes aqui | Detalhes aqui |
+      | **Recursos Necessários** | Detalhes aqui | Detalhes aqui |
+      | **Conformidade Legal** | Detalhes aqui | Detalhes aqui |
+      | **Tendências de Mercado** | Detalhes aqui | Detalhes aqui |
+
+
+  # 1. The Profile-As-Landing-Page Rewriter
+  - trigger: ":profile-as-lp"
+    form: |
+
+      Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the highest-converting landing page you will ever own. Job-seekers optimize for keywords. Operators optimize for one specific reader who, if they understood what you do in 12 seconds, would either book a call, subscribe, or remember you for later.
+
+      Rebuild my profile as a landing page:
+
+      Rewrite my headline so it answers three questions in under 220 characters: who I help, what I help them do, and how they know I'm credible
+
+      Rewrite my About section as a one-screen pitch - first sentence earns the read, middle three sentences prove the claim, final sentence tells them exactly what to do next
+
+      Audit my Featured section and replace anything that doesn't generate leads, subscribers, or recognition with assets that do
+
+      Rewrite each Experience entry as a contribution statement what I shipped, who it served, what changed - never a job description
+
+      Stress-test the rebuilt profile against the question "would my ideal client know what to do within 12 seconds of landing here"
+
+      Inputs: My current headline, About section, and top three Experience entries. The single person I want to convert (specific, not a demographic). My one offer or asset I want them to engage with.
+
+      Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
+
+      Rewritten Experience Entries → 12-Second Conversion Verdict
+
+  # 2. The Authority Compounding Content Engine
+  - trigger: ":content-engine"
+    form: |
+      Act as a LinkedIn content strategist applying Welsh's principle that authority on LinkedIn compounds when you publish a small number of repeating content formats with religious consistency, not when you chase variety. The operators who win on LinkedIn are not the most prolific - they are the most pattern-recognizable.
+
+      Build my content engine:
+
+      Identify the three core formats I will use as my LinkedIn rhythm for example: a contrarian take, a tactical breakdown, a personal lesson pick three I can credibly produce weekly
+
+      For each format, write a structural template I can fill in 20 minutes without staring at a blank page
+
+      Map a 4-week posting calendar that rotates the formats so the audience starts recognizing the rhythm by week three
+
+      Identify the single content trap I am most likely to fall into when tired and pre-commit a rule that prevents it
+
+      Define what success looks like at week 4, 8, and 12 actual lead or subscriber outcomes not in vanity metrics, in
+
+      Inputs: My niche and target reader. My genuinely-held opinions in this space. My realistic posting capacity per week. My biggest content weakness when I'm short on time.
+
+      Output: Three Core Formats → Three Structural Templates → 4-Week Calendar →
+
+      The Pre-Committed Trap Block → 12-Week Outcome Targets
+
+  # 3. The Post That Earns The Click
+  - trigger: ":post-earn-click"
+    form: |
+      Act as a LinkedIn copywriter applying Welsh's standard: a LinkedIn post earns the read in the first two lines, earns the engagement in the middle, and earns the click on the final line. Most posts fail at line one because writers treat LinkedIn like a blog. Operators treat the first two lines as a billboard and the rest as the road behind it.
+
+      Write a complete post engineered for compounding engagement:
+
+      Open with a two-line hook that creates intellectual tension or specific promise never a question, never a statistic without context
+
+      Deliver the core value in 100-200 words using one named framework, one
+
+      concrete example, and one counterintuitive turn
+
+      Format for the LinkedIn feed - short paragraphs, no walls of text, scannable in 8 seconds
+
+      Close with a single line that earns the next click either to my profile, to a comment thread I'll engage in, or to an asset in my Featured section
+
+      Run the post against the test: would I screenshot this if I weren't the one who wrote it
+
+      Inputs: My post topic. The reader I'm writing to as one specific person. The framework or insight I want associated with my name. The single action I want the reader to take after reading.
+
+      Output: Two-Line Hook → 100-200 Word Core → LinkedIn Feed Formatting Click-
+
+      Earning Close → Screenshot Test Verdict
+
+  # 4. The DM That Turns Engagement Into Pipeline
+  - trigger: ":dm-pipeline"
+    form: |
+      Act as a Linkedin outbound strategist applying Welsh's principle that the highest-conversion outbound on LinkedIn is the one that doesn't feel like outbound. The operators who turn LinkedIn into an actual pipeline are the ones who DM with patience, specificity, and zero pitch in the first message. The pitch is what kills the conversation; the conversation is what produces the pipeline.
+
+      Engineer my DM system:
+
+      Build a triage rule for who I message: someone who engaged with my last three posts, someone whose work I genuinely respect, or someone with a specific problem I can solve never cold lists
+
+      Write the first message under 60 words, references something specific from their content or profile, asks one open question, mentions nothing about my offer
+
+      Write the second message without pivoting to pitch sent only if they reply that deepens the conversation
+
+      Write the third message before any ask sent only when they signal interest - that offers value
+
+      Build the weekly DM rhythm I can sustain quality of conversations, not volume of sends
+
+      Inputs: My ideal customer or collaborator profile. My recent post engagers worth contacting. My honest weekly outreach capacity. The single offer or asset I'd eventually like to surface, but only when earned.
+
+      Output: Triage Rule → Message 1 (Cold) → Message 2 (Warm) → Message 3 (Earned)
+
+      Sustainable Weekly Rhythm
+
+  #- trigger: ":"
+  #  form: |
 
 

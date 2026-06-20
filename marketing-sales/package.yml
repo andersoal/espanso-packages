@@ -1,0 +1,69 @@
+matches:
+
+  #title: AI-Driven Market and Niche Discovery
+  #tags:
+  #  - business/validation
+  #  - framework/niche
+  #  - prompt/market-analysis
+      # AI-Driven Market and Niche Discovery
+      # Framework Overview
+      # Bypassing emotional niche selection ("follow your passion") by enforcing a data-driven approach built on hard financial indicators. A viable digital product niche must satisfy three mandatory constraints simultaneously:
+      # *   **High Pain Index:** Audiences experiencing deep frustration who desperately seek an immediate antidote.
+      # *   **Demonstrated Purchasing Power:** Markets with documented commercial activity and transactional history.
+      # *   **Active Content Demand:** Measurable search volumes and active consumption patterns targeting solutions.
+  - trigger: ":niche-discovery"
+    form: |
+      Act like a market analyst. Based on current online trends, list 20 niches where people are actively spending money, content demand is high, and competition is realistic for a beginner. For each niche, tell me who spends the money, what problems they have, and what digital products sell best.
+
+  #title: Structural Market and Competitor Validation
+  #tags:
+  #  - business/validation
+  #  - framework/competitor-analysis
+  #  - prompt/consultant
+  # Structural Market and Competitor Validation
+  #    # Framework Overview
+  #    Pre-launch stress-testing to isolate critical vulnerabilities and market asymmetries before committing capital or engineering hours. This phase forces an objective assessment of structural viability, identifying where established players fail to deliver complete solutions.
+  - trigger: ":market-validation"
+    form: |
+      Act like a business analyst conducting pre-launch due diligence. I am considering entering the market [[market_or_niche_idea]]. Analyze the competitive landscape and identify structural vulnerabilities or unmet needs that represent viable entry points.
+
+      Provide a structured analysis covering:
+      *   Identified gaps in current offerings
+      *   Structural weaknesses of incumbents
+      *   Profitability indicators
+      *   Recommended strategic positioning
+    form_fields:
+      market_or_niche_idea:
+        multiline: false
+
+      # title: Skill and Competence Inventory
+      # tags:
+      #  - mindset/self-assessment
+      #  - framework/inventory
+      #  - prompt/coaching
+  - trigger: ":skill-inventory"
+    form: |
+      Identify your existing skills and competence areas. I need you to evaluate and rate yourself on a scale of 1-10. Be brutally honest with yourself. Do not inflate scores. Think hard about your actual capabilities. Rate your proficiency in:
+      - [[skill_1]]
+      - [[skill_2]]
+      - [[skill_3]]
+      - [[skill_4]]
+      - [[skill_5]]
+    form_fields:
+      skill_1:
+        multiline: false
+      skill_2:
+        multiline: false
+      skill_3:
+        multiline: false
+      skill_4:
+        multiline: false
+      skill_5:
+        multiline: false
+
+  - trigger: ":niche-validation"
+    form: |
+      Act like a business consultant. Validate this niche: [[insert_niche]]. Tell me the target audience, their urgent pain points, top competitors, and the market gaps those competitors are missing. Is this profitable? Why or why not?
+    form_fields:
+      insert_niche:
+        multiline: false

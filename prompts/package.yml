@@ -2220,3 +2220,102 @@ matches:
           - **Most likely reason**: Logical, mundane, and standard administrative or professional alternatives.
           - **Probability it's bad**: A realistic risk assessment based entirely on the text, not anxiety.
       3. Draft a calm, protective, and thoroughly professional response that the user can copy. Explicitly advise them to hold off sending messages late at night to prevent reactive communication.
+
+  # 1) CAREER CLARITY & PURPOSE FINDER
+  # Source: 7a46afec47b1dfdc7f38866e7e19b845.png
+  - trigger: ":pcareer"
+    form: |
+      I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
+
+  # 2) PERSONALIZED LEARNING ROADMAP
+  # Source: 7a46afec47b1dfdc7f38866e7e19b845.png
+  - trigger: ":plearn"
+    form: |
+      I want to learn [[topic]] from complete beginner to advanced level. Create a comprehensive 12-week learning roadmap broken down by weeks. Include: specific resources (free courses, books, videos), daily practice exercises, weekly projects to build my portfolio, common mistakes to avoid, and milestones to track my progress. Tailor it to someone who can dedicate 1-2 hours per day.
+
+  # 3) RELATIONSHIP CONFLICT RESOLVER
+  # Source: 761d0f826b5e1795d88183c7f4d9b5d8.png
+  - trigger: ":pconflict"
+    form: |
+      I'm having a conflict with [[person]] about [[issue]]. Here's the situation: 
+      [[situation]]
+
+      Help me understand their perspective, identify what I might be missing, craft a non-confrontational way to communicate my feelings using 'I' statements, and give me 3 different approaches to resolve this: one assertive, one compromising, and one focused on understanding their needs first.
+    form_fields:
+      person:
+        type: choice
+        values:
+          - "partner"
+          - "friend"
+          - "family member"
+          - "colleague"
+      situation:
+        type: multiline
+
+  # 4) FINANCIAL FREEDVEOM BLUEPRINT
+  # Source: 761d0f826b5e1795d88183c7f4d9b5d8.png
+  - trigger: ":pfinance"
+    form: |
+      My current financial situation: [[financials]]. My financial goals: [[goals]]. Create a personalized financial plan that includes: a realistic monthly budget breakdown, debt payoff strategy with timeline, savings plan with specific percentages, 3 ways to increase my income in the next 90 days, and investment recommendations based on my risk tolerance and timeline.
+
+  # 5) HEALTH & FITNESS TRANSFORMATION PLAN
+  # Source: a7e3463d94a7a5818141f9423e78cf88.png
+  - trigger: ":pfitness"
+    form: |
+      I want to [[goal]]. Current stats: [[stats]]. Create a complete 8-week transformation plan including: daily meal plan with recipes and macros, workout routine I can do [[location]] for my fitness level, sleep optimization strategies, stress management techniques, and weekly check-in questions to track progress beyond just the scale.
+    form_fields:
+      goal:
+        type: choice
+        values:
+          - "lose weight"
+          - "build muscle"
+          - "improve energy"
+      location:
+        type: choice
+        values:
+          - "at home"
+          - "at the gym"
+
+  # 6) PRODUCTIVITY & TIME OPTIMIZER
+  # Source: a7e3463d94a7a5818141f9423e78cf88.png
+  - trigger: ":pprod"
+    form: |
+      I feel overwhelmed and unproductive. My typical day looks like: 
+      [[schedule]]
+
+      My biggest time wasters are: [[time_wasters]]. My important goals are: [[goals]]. Analyze my day and create an optimized schedule using time-blocking. Include: my 3 highest-leverage tasks daily, buffer time for unexpected issues, energy management strategies, techniques to eliminate distractions, and a system to say no to non-essential commitments.
+    form_fields:
+      schedule:
+        type: multiline
+
+  # 7) EMOTIONAL INTELLIGENCE & MINDSET COACH
+  # Source: fed7edb1d03289ba4ad956df491a86ad.png
+  - trigger: ":pmindset"
+    form: |
+      I struggle with [[struggle]]. When [[trigger_situation]] happens, I typically [[reaction]]. Help me understand the root cause of this pattern, reframe my limiting beliefs with evidence-based counter-thoughts, create 5 daily affirmations specifically for my situation, teach me a 5-minute mindfulness technique I can use when triggered, and give me journaling prompts to process these emotions constructively.
+    form_fields:
+      struggle:
+        type: choice
+        values:
+          - "imposter syndrome"
+          - "self-doubt"
+          - "negative thinking"
+          - "anxiety"
+      trigger_situation:
+        type: multiline
+
+  # 8) SOCIAL SKILLS & COMMUNICATION MASTERY
+  # Source: fed7edb1d03289ba4ad956df491a86ad.png
+  - trigger: ":psocial"
+    form: |
+      I want to improve my [[skill]] skills. My current challenge is: [[challenge]]. Give me: 5 specific techniques to improve this skill with examples, practice exercises I can do alone and with others, common body language mistakes to avoid, conversation frameworks for different scenarios (small talk, professional networking, deep connections), and a 30-day challenge to build confidence in social situations.
+    form_fields:
+      skill:
+        type: choice
+        values:
+          - "public speaking"
+          - "networking"
+          - "difficult conversations"
+          - "active listening"
+      challenge:
+        type: multiline

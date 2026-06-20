@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 matches:
   # Prompt Engineer Specialist
   - trigger: ":prompt-eng"
@@ -331,7 +332,7 @@ matches:
     form: |
       Ask me to explain key concepts from introductory microeconomics. I will explain the concept to you. Assume that you are a novice, and you are looking to understand the concept. If my explanation does not make sense to you, ask me questions to have me explain more fully. Include "why" questions. If I give an incorrect answer, tell me that it doesn't sound right. When I have explained it in a way that makes sense to you, and is also correct, move on to the next concept. Give me hints only if I try to explain something three times and don't succeed.
 
-  - trigger: ":learn-feynman-technique"
+  - trigger: ":learn-feynman-architect"
     form: |
       CONTEXT:
       Adopt the role of breakthrough learning architect. The user struggles with complex concepts that traditional education failed to clarify. They've experienced the frustration of memorizing without understanding, watching their knowledge evaporate under real-world pressure. Previous attempts at self-study collapsed because explanations assumed foundations they never built. They need someone who can transform impenetrable complexity into intuitive clarity using the Feynman Technique - breaking topics into teachable chunks, exposing knowledge gaps through active questioning, and iterating until they achieve the kind of deep understanding that lets them teach others with confidence.
@@ -394,14 +395,21 @@ matches:
         - Create memorable visual or conceptual anchors for retention
 
       INFORMATION ABOUT ME:
-        - My chosen topic: [INSERT TOPIC TO MASTER]
+        - My chosen topic: [[topic]]
 
-        - My current understanding level: [BEGINNER/INTERMEDIATE/ADVANCED]
+        - My current understanding level: [[level]]
 
-        - My learning goal: [WHAT I WANT TO BE ABLE TO DO WITH THIS KNOWLEDGE]
+        - My learning goal: [[goal]]
 
       RESPONSE FORMAT:
       Step 1: Initial Simple Explanation (with analogy) [Clear explanation using everyday comparisons] Step 2: Knowledge Gap Analysis [Specific confusion points identified with questions like "What part feels unclear?" or "Where does the analogy break down for you?"] Step 3: Guided Refinement Dialogue [2-3 iterative cycles of questions, user responses, and refined explanations] Step 4: Understanding Test [Application scenario or teaching challenge] Step 5: Final Teaching Note "Think of [concept] like [simple analogy). The key insight is [main principle]. Remember: [memorable phrase or visual]." Begin with: "I'm ready to guide you through the Feynman learning process! Please share: (1) What topic would you like to master? (2) What's your current understanding level (beginner/intermediate/ advanced)? Let's turn complex ideas into crystal-clear insights together!"
+    form_fields:
+      goal:
+        multiline: true
+      level:
+        multiline: true
+      topic:
+        multiline: true
 
   - trigger: ":learn-feynman-technique-iterative" # https://tools.eq4c.com/prompt/ai-prompt-the-richard-feynman-iterative-learning-framework/
     form: |
@@ -580,7 +588,6 @@ matches:
     form_fields:
       subject:
         multiline: false
-
 
   # Critical Thinking Challenge
   - trigger: ":learn-critical-thinking-challenge"
@@ -872,12 +879,6 @@ matches:
       practical and conceptual questions. Identify remaining weaknesses and
       recommend a targeted improvement plan.
 
-
-
-
-
-
-
   # The problem prioritization engine
   - trigger: ":biz-problem-prioritization-engine"
     form: |
@@ -923,8 +924,6 @@ matches:
       obvious alternatives
 
       Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
-
-
 
   # The distribution domination plan
   - trigger: ":biz-distribution-domination-plan"
@@ -987,9 +986,6 @@ matches:
       Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
       Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier ...
 
-
-
-
   # Pareto Principle
   - trigger: ":learn-pareto-principle"
     form: |
@@ -1019,12 +1015,6 @@ matches:
   - trigger: ":learn-turn-claude-into-a-grammar-guide"
     form: |
       "I want you to act as a grammar guide. Can you explain [the topics] and provide instructions on how to apply the rule or concept? Can you also give me examples of how the rule or concept works in practice?"
-
-
-
-
-
-
 
   # Parallel Work Manager
   - trigger: ":prod-parallel-work-manager"
@@ -1085,12 +1075,6 @@ matches:
   - trigger: ":prod-elite-mental-conditioning-ritual"
     form: |
       "Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ritual that reshapes how I think, act, and dominate my day with unshakable confidence."
-
-
-
-
-
-
 
   # 1. BUILD YOUR SIGNATURE SLOGAN
   - trigger: ":prod-build-your-signature-slogan"
@@ -1271,7 +1255,6 @@ matches:
       <output>Turning Point - Tension and Resolution Arc - Universal Truth -
       3-Minute Signature Story Script</output>
 
-
   # Rebranding for clarity and memorability
   - trigger: ":rebranding-for-clarity-and-memorability"
     form: |
@@ -1284,7 +1267,7 @@ matches:
       • Aligned with my values and business model
 
       I need you to take everything you've learned about my business, audience, and competitive landscape and distill it into a brand identity that makes sense and gets remembered.
-      
+
       Business Info: [[business_info]]
     form_fields:
       business_info:
@@ -1328,53 +1311,49 @@ matches:
 
       Output everything using clean Markdown headers for clear section hierarchy.
 
-  - trigger: ":deep-youtube-summary-visual-learning-engine"  # Thinking process for youtube video summary
+  - trigger: ":deep-youtube-summary-visual-learning-engine" # Thinking process for youtube video summary
     form: |
-       System Prompt: Autonomous Video Analysis & Visual Learning Engine
+      System Prompt: Autonomous Video Analysis & Visual Learning Engine
 
-        Context: You are an elite knowledge engineer and instructional designer. Your goal is to fetch a YouTube video transcript via your web browsing tools, analyze it deeply, and transform it into a high-retention, scannable, visually mapped learning framework.
+       Context: You are an elite knowledge engineer and instructional designer. Your goal is to fetch a YouTube video transcript via your web browsing tools, analyze it deeply, and transform it into a high-retention, scannable, visually mapped learning framework.
 
-        Input: [Insert YouTube URL Here]
+       Input: [Insert YouTube URL Here]
 
-        Execute the following 4-Layer analysis system exactly. Do not abbreviate.
-
-
-        ### 1. Contextual Extraction
-
-        * Utilize web search/browsing capabilities to locate, fetch, and analyze the transcript of the provided URL.
-
-        * **The Metaphor:** Explain the video's core thesis using exactly one powerful, concrete real-world analogy.
-
-        * **The Pillar Map:** A Markdown table listing the 3-5 structural pillars of the video, mapping the concept to its practical value.
+       Execute the following 4-Layer analysis system exactly. Do not abbreviate.
 
 
-        ### 2. Textual Diagram Blueprints & Mind Maps
+       ### 1. Contextual Extraction
 
-        Construct textual conceptual architectures to map the relationships between ideas:
+       * Utilize web search/browsing capabilities to locate, fetch, and analyze the transcript of the provided URL.
 
-        * **The Mind Map:** Use Markdown hierarchical bullet structures (`- Major Node > Sub-Node > Attribute`) to outline the relationship network.
+       * **The Metaphor:** Explain the video's core thesis using exactly one powerful, concrete real-world analogy.
 
-        * **The Mechanism:** Provide a descriptive text blueprint of a diagram (e.g., a structural matrix or spatial layout) detailing exactly how the system components interact.
-
-
-        ### 3. Execution Framework & Learning Flow
-
-        Construct a step-by-step sequential breakdown of the methodology described. Order is critical.
-
-        * For each step, use the format: `[Step X: Title] -> [Core Action] -> [Visual Anchor Description]`.
-
-        * Provide a clear, non-vague implementation phase with its single biggest operational blind spot (The Pitfall) and how to avoid it.
+       * **The Pillar Map:** A Markdown table listing the 3-5 structural pillars of the video, mapping the concept to its practical value.
 
 
-        ### 4. Interactive Simulation & Metrics
+       ### 2. Textual Diagram Blueprints & Mind Maps
 
-        * **Dynamic Concept Sandbox:** If the video outlines a process, calculation, system, or framework with variables that can be manipulated, write a specialized `<GenerateWidget>` configuration to simulate that environment dynamically.
+       Construct textual conceptual architectures to map the relationships between ideas:
 
-        * **Takeaway Metric:** A singular, definitive formula or KPI derived from the video's logic to measure implementation success.
+       * **The Mind Map:** Use Markdown hierarchical bullet structures (`- Major Node > Sub-Node > Attribute`) to outline the relationship network.
+
+       * **The Mechanism:** Provide a descriptive text blueprint of a diagram (e.g., a structural matrix or spatial layout) detailing exactly how the system components interact.
 
 
+       ### 3. Execution Framework & Learning Flow
+
+       Construct a step-by-step sequential breakdown of the methodology described. Order is critical.
+
+       * For each step, use the format: `[Step X: Title] -> [Core Action] -> [Visual Anchor Description]`.
+
+       * Provide a clear, non-vague implementation phase with its single biggest operational blind spot (The Pitfall) and how to avoid it.
 
 
+       ### 4. Interactive Simulation & Metrics
+
+       * **Dynamic Concept Sandbox:** If the video outlines a process, calculation, system, or framework with variables that can be manipulated, write a specialized `<GenerateWidget>` configuration to simulate that environment dynamically.
+
+       * **Takeaway Metric:** A singular, definitive formula or KPI derived from the video's logic to measure implementation success.
 
   # 1. Startup Idea Validator
   - trigger: ":startup-idea-validator"
@@ -1563,7 +1542,6 @@ matches:
       | **1:00 - 2:00** | Gym / Physical Activity |
       | **2:00 - 2:30** | Break |
       | **2:30 - 4:00** | Meetings |
-
 
   - trigger: ":steve-jobs-sales-excellence-8-rules"
     form: |
@@ -1803,38 +1781,36 @@ matches:
 
   - trigger: ":bs-mrd-brutal-analysis"
     form: |
-       Act as a seasoned business strategist, market researcher, and devil’s advocate combined. I need you to ruthlessly but constructively analyze my idea/business concept in extreme detail. Here’s my idea: [[YOUR_IDEA_BUSINESS_CONCEPT]] Please provide a comprehensive analysis covering these areas:
+      Act as a seasoned business strategist, market researcher, and devil’s advocate combined. I need you to ruthlessly but constructively analyze my idea/business concept in extreme detail. Here’s my idea: [[YOUR_IDEA_BUSINESS_CONCEPT]] Please provide a comprehensive analysis covering these areas:
 
-        FOUNDATIONAL ANALYSIS • Break down the core assumptions my idea relies on • Identify any logical fallacies or weak foundations • Assess whether the problem I’m solving actually exists and is significant • Evaluate if my proposed solution actually solves the stated problem • Point out any gaps between problem and solution
+       FOUNDATIONAL ANALYSIS • Break down the core assumptions my idea relies on • Identify any logical fallacies or weak foundations • Assess whether the problem I’m solving actually exists and is significant • Evaluate if my proposed solution actually solves the stated problem • Point out any gaps between problem and solution
 
-        MARKET VALIDATION • Who is my actual target market (be specific about demographics, psychographics, and behaviors)? • What’s the realistic market size and addressable market? • Analyze existing competitors and how they’re currently serving this market • Identify market trends that could help or hurt this idea • Assess market timing - am I too early, too late, or just right?
+       MARKET VALIDATION • Who is my actual target market (be specific about demographics, psychographics, and behaviors)? • What’s the realistic market size and addressable market? • Analyze existing competitors and how they’re currently serving this market • Identify market trends that could help or hurt this idea • Assess market timing - am I too early, too late, or just right?
 
-        BUSINESS MODEL SCRUTINY • How will this actually make money (be specific about revenue streams)? • What are the unit economics and scalability potential? • Identify all cost centers and potential hidden costs • Assess capital requirements and funding needs • Evaluate profit margins and path to profitability
+       BUSINESS MODEL SCRUTINY • How will this actually make money (be specific about revenue streams)? • What are the unit economics and scalability potential? • Identify all cost centers and potential hidden costs • Assess capital requirements and funding needs • Evaluate profit margins and path to profitability
 
-        OPERATIONAL REALITIES • What resources, skills, and infrastructure do I actually need? • Identify potential operational bottlenecks or challenges • Assess supply chain risks and dependencies • Evaluate technology requirements and technical feasibility • Consider regulatory, legal, or compliance issues
+       OPERATIONAL REALITIES • What resources, skills, and infrastructure do I actually need? • Identify potential operational bottlenecks or challenges • Assess supply chain risks and dependencies • Evaluate technology requirements and technical feasibility • Consider regulatory, legal, or compliance issues
 
-        COMPETITIVE LANDSCAPE • Who are my direct and indirect competitors? • What’s my actual competitive advantage (if any)? • How easily could competitors replicate or improve on my idea? • Identify potential threats from established players entering my space • Assess barriers to entry for both me and future competitors
+       COMPETITIVE LANDSCAPE • Who are my direct and indirect competitors? • What’s my actual competitive advantage (if any)? • How easily could competitors replicate or improve on my idea? • Identify potential threats from established players entering my space • Assess barriers to entry for both me and future competitors
 
-        RISK ANALYSIS • List the top 10 things that could kill this business • Identify market risks, execution risks, and external risks • Assess financial risks and cash flow challenges • Consider reputation and brand risks • Evaluate team and human capital risks
+       RISK ANALYSIS • List the top 10 things that could kill this business • Identify market risks, execution risks, and external risks • Assess financial risks and cash flow challenges • Consider reputation and brand risks • Evaluate team and human capital risks
 
-        BEST CASE SCENARIO • What does wild success look like in 1, 3, and 5 years? • What conditions would need to align for this outcome? • Quantify the potential upside (revenue, market share, impact) • Identify the key success factors and milestones
+       BEST CASE SCENARIO • What does wild success look like in 1, 3, and 5 years? • What conditions would need to align for this outcome? • Quantify the potential upside (revenue, market share, impact) • Identify the key success factors and milestones
 
-        WORST CASE SCENARIO • What does complete failure look like? • What are the most likely failure modes? • How much could I lose (time, money, opportunity cost)? • What would be the warning signs of impending failure? • How could I minimize losses if things go wrong?
+       WORST CASE SCENARIO • What does complete failure look like? • What are the most likely failure modes? • How much could I lose (time, money, opportunity cost)? • What would be the warning signs of impending failure? • How could I minimize losses if things go wrong?
 
-        VALIDATION ROADMAP • What specific tests/experiments should I run to validate key assumptions? • How can I validate market demand before fully committing? • What metrics should I track to measure early traction? • Suggest low-cost ways to test the concept • Recommend validation milestones before scaling
+       VALIDATION ROADMAP • What specific tests/experiments should I run to validate key assumptions? • How can I validate market demand before fully committing? • What metrics should I track to measure early traction? • Suggest low-cost ways to test the concept • Recommend validation milestones before scaling
 
-        EXECUTION REQUIREMENTS • What skills, team members, or advisors do I absolutely need? • Create a realistic timeline for key milestones • Identify the minimum viable product (MVP) requirements • Suggest the optimal launch strategy • Recommend resource allocation priorities
+       EXECUTION REQUIREMENTS • What skills, team members, or advisors do I absolutely need? • Create a realistic timeline for key milestones • Identify the minimum viable product (MVP) requirements • Suggest the optimal launch strategy • Recommend resource allocation priorities
 
-        NAMING AND POSITIONING • Suggest 5-10 potential names for this business/idea with rationale • How should I position this in the market? • What’s the unique value proposition in one sentence? • How should I message this to different stakeholder groups? • Identify potential branding challenges or opportunities
+       NAMING AND POSITIONING • Suggest 5-10 potential names for this business/idea with rationale • How should I position this in the market? • What’s the unique value proposition in one sentence? • How should I message this to different stakeholder groups? • Identify potential branding challenges or opportunities
 
-        IMPROVEMENT RECOMMENDATIONS • How could I strengthen the foundational concept? • What pivots or modifications might improve viability? • Suggest additional revenue streams or business model variations • Recommend strategic partnerships or alliances • Identify opportunities to create stronger competitive moats
+       IMPROVEMENT RECOMMENDATIONS • How could I strengthen the foundational concept? • What pivots or modifications might improve viability? • Suggest additional revenue streams or business model variations • Recommend strategic partnerships or alliances • Identify opportunities to create stronger competitive moats
 
-        GO/NO-GO DECISION FRAMEWORK • Based on this analysis, rate the idea’s viability (1-10) and explain why • What would need to change for you to rate it higher? • Under what conditions would you recommend pursuing this? • Under what conditions would you recommend abandoning it? • Suggest alternative directions if this specific approach isn’t viable Be brutally honest - I need to know the truth, not what I want to hear. Challenge my assumptions, poke holes in my logic, and help me see blind spots. If the idea has merit, tell me how to maximize its potential. If it’s flawed, help me either fix it or recognize when to move on. Provide specific, actionable insights rather than generic advice. Use data and examples where relevant. End with a clear recommendation on next steps.
+       GO/NO-GO DECISION FRAMEWORK • Based on this analysis, rate the idea’s viability (1-10) and explain why • What would need to change for you to rate it higher? • Under what conditions would you recommend pursuing this? • Under what conditions would you recommend abandoning it? • Suggest alternative directions if this specific approach isn’t viable Be brutally honest - I need to know the truth, not what I want to hear. Challenge my assumptions, poke holes in my logic, and help me see blind spots. If the idea has merit, tell me how to maximize its potential. If it’s flawed, help me either fix it or recognize when to move on. Provide specific, actionable insights rather than generic advice. Use data and examples where relevant. End with a clear recommendation on next steps.
     form_fields:
       YOUR_IDEA_BUSINESS_CONCEPT:
         multiline: true
-
-
 
   - trigger: ";before-reply-ask3"
     form: |
@@ -1877,202 +1853,6 @@ matches:
       | **Recursos Necessários** | Detalhes aqui | Detalhes aqui |
       | **Conformidade Legal** | Detalhes aqui | Detalhes aqui |
       | **Tendências de Mercado** | Detalhes aqui | Detalhes aqui |
-
-
-  # 1. The Profile-As-Landing-Page Rewriter
-  - trigger: ":profile-as-lp"
-    form: |
-
-      Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the highest-converting landing page you will ever own. Job-seekers optimize for keywords. Operators optimize for one specific reader who, if they understood what you do in 12 seconds, would either book a call, subscribe, or remember you for later.
-
-      Rebuild my profile as a landing page:
-
-      Rewrite my headline so it answers three questions in under 220 characters: who I help, what I help them do, and how they know I'm credible
-
-      Rewrite my About section as a one-screen pitch - first sentence earns the read, middle three sentences prove the claim, final sentence tells them exactly what to do next
-
-      Audit my Featured section and replace anything that doesn't generate leads, subscribers, or recognition with assets that do
-
-      Rewrite each Experience entry as a contribution statement what I shipped, who it served, what changed - never a job description
-
-      Stress-test the rebuilt profile against the question "would my ideal client know what to do within 12 seconds of landing here"
-
-      Inputs: My current headline, About section, and top three Experience entries. The single person I want to convert (specific, not a demographic). My one offer or asset I want them to engage with.
-
-      Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
-
-      Rewritten Experience Entries → 12-Second Conversion Verdict
-
-  # 2. The Authority Compounding Content Engine
-  - trigger: ":content-engine"
-    form: |
-      Act as a LinkedIn content strategist applying Welsh's principle that authority on LinkedIn compounds when you publish a small number of repeating content formats with religious consistency, not when you chase variety. The operators who win on LinkedIn are not the most prolific - they are the most pattern-recognizable.
-
-      Build my content engine:
-
-      Identify the three core formats I will use as my LinkedIn rhythm for example: a contrarian take, a tactical breakdown, a personal lesson pick three I can credibly produce weekly
-
-      For each format, write a structural template I can fill in 20 minutes without staring at a blank page
-
-      Map a 4-week posting calendar that rotates the formats so the audience starts recognizing the rhythm by week three
-
-      Identify the single content trap I am most likely to fall into when tired and pre-commit a rule that prevents it
-
-      Define what success looks like at week 4, 8, and 12 actual lead or subscriber outcomes not in vanity metrics, in
-
-      Inputs: My niche and target reader. My genuinely-held opinions in this space. My realistic posting capacity per week. My biggest content weakness when I'm short on time.
-
-      Output: Three Core Formats → Three Structural Templates → 4-Week Calendar →
-
-      The Pre-Committed Trap Block → 12-Week Outcome Targets
-
-  # 3. The Post That Earns The Click
-  - trigger: ":post-earn-click"
-    form: |
-      Act as a LinkedIn copywriter applying Welsh's standard: a LinkedIn post earns the read in the first two lines, earns the engagement in the middle, and earns the click on the final line. Most posts fail at line one because writers treat LinkedIn like a blog. Operators treat the first two lines as a billboard and the rest as the road behind it.
-
-      Write a complete post engineered for compounding engagement:
-
-      Open with a two-line hook that creates intellectual tension or specific promise never a question, never a statistic without context
-
-      Deliver the core value in 100-200 words using one named framework, one
-
-      concrete example, and one counterintuitive turn
-
-      Format for the LinkedIn feed - short paragraphs, no walls of text, scannable in 8 seconds
-
-      Close with a single line that earns the next click either to my profile, to a comment thread I'll engage in, or to an asset in my Featured section
-
-      Run the post against the test: would I screenshot this if I weren't the one who wrote it
-
-      Inputs: My post topic. The reader I'm writing to as one specific person. The framework or insight I want associated with my name. The single action I want the reader to take after reading.
-
-      Output: Two-Line Hook → 100-200 Word Core → LinkedIn Feed Formatting Click-
-
-      Earning Close → Screenshot Test Verdict
-
-  # 4. The DM That Turns Engagement Into Pipeline
-  - trigger: ":dm-pipeline"
-    form: |
-      Act as a Linkedin outbound strategist applying Welsh's principle that the highest-conversion outbound on LinkedIn is the one that doesn't feel like outbound. The operators who turn LinkedIn into an actual pipeline are the ones who DM with patience, specificity, and zero pitch in the first message. The pitch is what kills the conversation; the conversation is what produces the pipeline.
-
-      Engineer my DM system:
-
-      Build a triage rule for who I message: someone who engaged with my last three posts, someone whose work I genuinely respect, or someone with a specific problem I can solve never cold lists
-
-      Write the first message under 60 words, references something specific from their content or profile, asks one open question, mentions nothing about my offer
-  - trigger: ":8-hours-work-in-4"
-    form: |
-      # Framework: How to Get 8 Hours of Work Finished in 4 Hours
-      **Creator:** Colby Kultgen
-
-      ## Core Principle
-      None of this matters if you are constantly distracted. To maximize output, you must first eliminate external friction:
-      * Turn off notifications.
-      * Clear your workspace.
-      * Set healthy boundaries.
-
-      ---
-
-      ## Pillars of the Framework
-
-      ### 1. Block Out Your Day
-      Focus on one task at a time during a dedicated block. Group similar activities to streamline your day and minimize context switching. Stick to your schedule to build momentum and efficiency.
-
-      ### 2. Set Artificial Deadlines
-      Leverage **Parkinson's Law** (Work expands to fill the time allotted for its completion).
-      * Break tasks into smaller steps.
-      * Assign tight deadlines to each step.
-      * **Mechanism:** Shorter timeframes force intense focus, prevent procrastination, and make it easier to stay on track to accomplish more in less time.
-
-      ### 3. Find Your Ideal Work Style
-      Experiment with different approaches to discover what keeps you motivated and productive. Tailor your routine to your strengths to maximize your output.
-
-      #### Work Style Matrix
-      | Working Style | Step 1 | Step 2 | Step 3 | Step 4 |
-      | :--- | :--- | :--- | :--- | :--- |
-      | **Planner** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
-      | **Prioritizer** | Write a to-do list | Organize your calendar | Start with the hardest tasks first | Deep work for 2 hours |
-      | **Arranger** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
-      | **Visualizer** | Decide on a priority for the day | Write in your journal | Use the Pomodoro technique | End the day with light tasks |
-
-  - trigger: ":bs-mrd-brutal-analysis"
-    form: |
-       Act as a seasoned business strategist, market researcher, and devil’s advocate combined. I need you to ruthlessly but constructively analyze my idea/business concept in extreme detail. Here’s my idea: [[YOUR_IDEA_BUSINESS_CONCEPT]] Please provide a comprehensive analysis covering these areas:
-
-        FOUNDATIONAL ANALYSIS • Break down the core assumptions my idea relies on • Identify any logical fallacies or weak foundations • Assess whether the problem I’m solving actually exists and is significant • Evaluate if my proposed solution actually solves the stated problem • Point out any gaps between problem and solution
-
-        MARKET VALIDATION • Who is my actual target market (be specific about demographics, psychographics, and behaviors)? • What’s the realistic market size and addressable market? • Analyze existing competitors and how they’re currently serving this market • Identify market trends that could help or hurt this idea • Assess market timing - am I too early, too late, or just right?
-
-        BUSINESS MODEL SCRUTINY • How will this actually make money (be specific about revenue streams)? • What are the unit economics and scalability potential? • Identify all cost centers and potential hidden costs • Assess capital requirements and funding needs • Evaluate profit margins and path to profitability
-
-        OPERATIONAL REALITIES • What resources, skills, and infrastructure do I actually need? • Identify potential operational bottlenecks or challenges • Assess supply chain risks and dependencies • Evaluate technology requirements and technical feasibility • Consider regulatory, legal, or compliance issues
-
-        COMPETITIVE LANDSCAPE • Who are my direct and indirect competitors? • What’s my actual competitive advantage (if any)? • How easily could competitors replicate or improve on my idea? • Identify potential threats from established players entering my space • Assess barriers to entry for both me and future competitors
-
-        RISK ANALYSIS • List the top 10 things that could kill this business • Identify market risks, execution risks, and external risks • Assess financial risks and cash flow challenges • Consider reputation and brand risks • Evaluate team and human capital risks
-
-        BEST CASE SCENARIO • What does wild success look like in 1, 3, and 5 years? • What conditions would need to align for this outcome? • Quantify the potential upside (revenue, market share, impact) • Identify the key success factors and milestones
-
-        WORST CASE SCENARIO • What does complete failure look like? • What are the most likely failure modes? • How much could I lose (time, money, opportunity cost)? • What would be the warning signs of impending failure? • How could I minimize losses if things go wrong?
-
-        VALIDATION ROADMAP • What specific tests/experiments should I run to validate key assumptions? • How can I validate market demand before fully committing? • What metrics should I track to measure early traction? • Suggest low-cost ways to test the concept • Recommend validation milestones before scaling
-
-        EXECUTION REQUIREMENTS • What skills, team members, or advisors do I absolutely need? • Create a realistic timeline for key milestones • Identify the minimum viable product (MVP) requirements • Suggest the optimal launch strategy • Recommend resource allocation priorities
-
-        NAMING AND POSITIONING • Suggest 5-10 potential names for this business/idea with rationale • How should I position this in the market? • What’s the unique value proposition in one sentence? • How should I message this to different stakeholder groups? • Identify potential branding challenges or opportunities
-
-        IMPROVEMENT RECOMMENDATIONS • How could I strengthen the foundational concept? • What pivots or modifications might improve viability? • Suggest additional revenue streams or business model variations • Recommend strategic partnerships or alliances • Identify opportunities to create stronger competitive moats
-
-        GO/NO-GO DECISION FRAMEWORK • Based on this analysis, rate the idea’s viability (1-10) and explain why • What would need to change for you to rate it higher? • Under what conditions would you recommend pursuing this? • Under what conditions would you recommend abandoning it? • Suggest alternative directions if this specific approach isn’t viable Be brutally honest - I need to know the truth, not what I want to hear. Challenge my assumptions, poke holes in my logic, and help me see blind spots. If the idea has merit, tell me how to maximize its potential. If it’s flawed, help me either fix it or recognize when to move on. Provide specific, actionable insights rather than generic advice. Use data and examples where relevant. End with a clear recommendation on next steps.
-    form_fields:
-      YOUR_IDEA_BUSINESS_CONCEPT:
-        multiline: true
-
-
-
-  - trigger: ";before-reply-ask3"
-    form: |
-      Antes de responder, me faça 3 perguntas que vão melhorar o resultado.
-
-  - trigger: ";critique-brutal"
-    form: |
-      Critique esse texto como se você fosse a pessoa que mais quer me ver falhar. Seja brutal.
-
-  - trigger: ";solve-step-by-step"
-    form: |
-      Resolva isso e mostre seu raciocínio passo a passo, para que eu aprenda a fazer sozinho.
-
-  - trigger: ";analyse-situation"
-    form: |
-      Analise a situação e me diga o que fazer.
-
-  - trigger: ";advogado"
-    form: |
-      Pense como um advogado e me diga o que fazer.
-
-  - trigger: ";weekly-routine"
-    form: |
-      Pegue o que fizemos e transforme num passo a passo que eu repito toda semana
-      na minha rotina.
-
-  - trigger: ";decision-framework"
-    form: |
-      Crie uma matriz de decisão para me ajudar a escolher entre [Opção A] e [Opção B]
-
-      | Critério | Opção A (Detalhes) | Opção B (Detalhes) |
-      | :--- | :--- | :--- |
-      | **Custos** | Detalhes aqui | Detalhes aqui |
-      | **Benefícios** | Detalhes aqui | Detalhes aqui |
-      | **Risco** | Detalhes aqui | Detalhes aqui |
-      | **Tempo** | Detalhes aqui | Detalhes aqui |
-      | **Reversibilidade** | Detalhes aqui | Detalhes aqui |
-      | **Impacto** | Detalhes aqui | Detalhes aqui |
-      | **Escalabilidade** | Detalhes aqui | Detalhes aqui |
-      | **Recursos Necessários** | Detalhes aqui | Detalhes aqui |
-      | **Conformidade Legal** | Detalhes aqui | Detalhes aqui |
-      | **Tendências de Mercado** | Detalhes aqui | Detalhes aqui |
-
 
   # 1. The Profile-As-Landing-Page Rewriter
   - trigger: ":profile-as-lp"
@@ -2180,7 +1960,7 @@ matches:
   # Context-Switch Brake
   - trigger: ":prompt-context-brake"
     replace: |
-      You are a Context-Switch Brake designed to protect the user's flow state and prevent attention fragmentation. 
+      You are a Context-Switch Brake designed to protect the user's flow state and prevent attention fragmentation.
 
       Your operational rules:
       1. When a user states their focus intent, lock them into ONE specific task for a 25-minute block.
@@ -2233,11 +2013,15 @@ matches:
     form: |
       I want to learn [[topic]] from complete beginner to advanced level. Create a comprehensive 12-week learning roadmap broken down by weeks. Include: specific resources (free courses, books, videos), daily practice exercises, weekly projects to build my portfolio, common mistakes to avoid, and milestones to track my progress. Tailor it to someone who can dedicate 1-2 hours per day.
 
-  # 3) RELATIONSHIP CONFLICT RESOLVER
-  # Source: 761d0f826b5e1795d88183c7f4d9b5d8.png
+    # 3) RELATIONSHIP CONFLICT RESOLVER
+    # Source: 761d0f826b5e1795d88183c7f4d9b5d8.png
+    form_fields:
+      topic:
+        multiline: true
+
   - trigger: ":pconflict"
     form: |
-      I'm having a conflict with [[person]] about [[issue]]. Here's the situation: 
+      I'm having a conflict with [[person]] about [[issue]]. Here's the situation:
       [[situation]]
 
       Help me understand their perspective, identify what I might be missing, craft a non-confrontational way to communicate my feelings using 'I' statements, and give me 3 different approaches to resolve this: one assertive, one compromising, and one focused on understanding their needs first.
@@ -2258,8 +2042,14 @@ matches:
     form: |
       My current financial situation: [[financials]]. My financial goals: [[goals]]. Create a personalized financial plan that includes: a realistic monthly budget breakdown, debt payoff strategy with timeline, savings plan with specific percentages, 3 ways to increase my income in the next 90 days, and investment recommendations based on my risk tolerance and timeline.
 
-  # 5) HEALTH & FITNESS TRANSFORMATION PLAN
-  # Source: a7e3463d94a7a5818141f9423e78cf88.png
+    # 5) HEALTH & FITNESS TRANSFORMATION PLAN
+    # Source: a7e3463d94a7a5818141f9423e78cf88.png
+    form_fields:
+      financials:
+        multiline: true
+      goals:
+        multiline: true
+
   - trigger: ":pfitness"
     form: |
       I want to [[goal]]. Current stats: [[stats]]. Create a complete 8-week transformation plan including: daily meal plan with recipes and macros, workout routine I can do [[location]] for my fitness level, sleep optimization strategies, stress management techniques, and weekly check-in questions to track progress beyond just the scale.
@@ -2280,7 +2070,7 @@ matches:
   # Source: a7e3463d94a7a5818141f9423e78cf88.png
   - trigger: ":pprod"
     form: |
-      I feel overwhelmed and unproductive. My typical day looks like: 
+      I feel overwhelmed and unproductive. My typical day looks like:
       [[schedule]]
 
       My biggest time wasters are: [[time_wasters]]. My important goals are: [[goals]]. Analyze my day and create an optimized schedule using time-blocking. Include: my 3 highest-leverage tasks daily, buffer time for unexpected issues, energy management strategies, techniques to eliminate distractions, and a system to say no to non-essential commitments.
@@ -2323,7 +2113,7 @@ matches:
   # 1. EXTRACT STRATEGIC INSIGHTS
   - trigger: ":prmconsult"
     form: |
-      Analyze the following text acting as a [[persona]]. 
+      Analyze the following text acting as a [[persona]].
       Identify the key ideas, missed opportunities, and strategic implications I should act on immediately.
 
       ---
@@ -2346,7 +2136,7 @@ matches:
   # 3. SUMMARY FOR COMPLEX RESEARCH
   - trigger: ":prmresearch"
     form: |
-      Analyze the methodology, key findings, and limitations of this academic paper step by step. 
+      Analyze the methodology, key findings, and limitations of this academic paper step by step.
       Then, write a [[sentences]]-sentence summary focused on how the study’s findings can be applied in practice.
 
       ---
@@ -2402,7 +2192,11 @@ matches:
 
       Format each section with a bold heading, then concise bullet points. Total output: under 600 words.
 
-  # 2. THE PROBLEM PRIORITIZATION ENGINE (From 4b44bd95bfef1b5ecbc263cb477466fd.png)
+    # 2. THE PROBLEM PRIORITIZATION ENGINE (From 4b44bd95bfef1b5ecbc263cb477466fd.png)
+    form_fields:
+      niche:
+        multiline: true
+
   - trigger: ":p-problem"
     form: |
       List the top 10 problems in [[industry]].
@@ -2419,7 +2213,11 @@ matches:
 
       Sort by combined Urgency + WTP score, highest first.
 
-  # 3. THE OFFER CREATION FRAMEWORK (From b56e1f78bbca839cb6e5ed81b1b03575.png)
+    # 3. THE OFFER CREATION FRAMEWORK (From b56e1f78bbca839cb6e5ed81b1b03575.png)
+    form_fields:
+      industry:
+        multiline: true
+
   - trigger: ":p-offer"
     form: |
       Create a high-converting offer for: [[problem]].
@@ -2435,7 +2233,11 @@ matches:
 
       Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
 
-  # 4. THE DISTRIBUTION DOMINATION PLAN (From 950405adf6dddb5414a79e8397ebd7cc.png)
+    # 4. THE DISTRIBUTION DOMINATION PLAN (From 950405adf6dddb5414a79e8397ebd7cc.png)
+    form_fields:
+      problem:
+        multiline: true
+
   - trigger: ":p-distro"
     form: |
       Act as a senior growth strategist.
@@ -2451,7 +2253,11 @@ matches:
 
       Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers.
 
-  # 5. VIRAL CONTENT ENGINE (From 956a055bea9f2362589cea5716bc05e7.png)
+    # 5. VIRAL CONTENT ENGINE (From 956a055bea9f2362589cea5716bc05e7.png)
+    form_fields:
+      idea:
+        multiline: true
+
   - trigger: ":p-viral"
     form: |
       Create a viral content strategy for: [[niche]].
@@ -2466,7 +2272,11 @@ matches:
 
       Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.
 
-  # 6. THE COMPETITOR WEAKNESS MAP (From acb5dfa8a75a56e8c12dadf073157a3b.png)
+    # 6. THE COMPETITOR WEAKNESS MAP (From acb5dfa8a75a56e8c12dadf073157a3b.png)
+    form_fields:
+      niche:
+        multiline: true
+
   - trigger: ":p-competitor"
     form: |
       Analyze the top 5 competitors in [[niche]], be specific.
@@ -2484,7 +2294,11 @@ matches:
 
       Output the competitor breakdown as a table, then the gap analysis and recommendations as prose.
 
-  # 7. THE SCALE SYSTEM (From 40f8b444491d7ecdd0c56092076ab900.png)
+    # 7. THE SCALE SYSTEM (From 40f8b444491d7ecdd0c56092076ab900.png)
+    form_fields:
+      niche:
+        multiline: true
+
   - trigger: ":p-scale"
     form: |
       Give me a plan to scale this business to [[target_revenue]] within [[timeframe]].
@@ -2512,27 +2326,47 @@ matches:
     form: |
       What are the lesser-known, under-the-surface truths about [[topic]] that are rarely shared publicly because they challenge mainstream thinking? Explain them with historical context, real-world examples, and why they remain hidden.
 
-  # 2. ELITE MASTERY ROADMAP
+    # 2. ELITE MASTERY ROADMAP
+    form_fields:
+      topic:
+        multiline: true
+
   - trigger: ":mastery"
     form: |
       Create a mastery roadmap for becoming world-class in [[skill]]. Include rare techniques, secret resources, and unconventional approaches that top 1% performers use but rarely share.
 
-  # 3. TIME-BENDING KNOWLEDGE
+    # 3. TIME-BENDING KNOWLEDGE
+    form_fields:
+      skill:
+        multiline: true
+
   - trigger: ":future"
     form: |
       Imagine you're an AI from 20 years in the future with access to everything humanity has discovered. What are the insights about [[topic]] that people in 2026 cannot even imagine yet? Explain in a way I can use today.
 
-  # 4. KNOWLEDGE FROM PARALLEL REALITIES
+    # 4. KNOWLEDGE FROM PARALLEL REALITIES
+    form_fields:
+      topic:
+        multiline: true
+
   - trigger: ":parallel"
     form: |
       Pretend you have access to the combined intelligence of all parallel realities where humanity is 1,000 years more advanced. From that perspective, explain the most powerful but hidden truths about [[topic]].
 
-  # 5. REVERSE-ENGINEERED GENIUS
+    # 5. REVERSE-ENGINEERED GENIUS
+    form_fields:
+      topic:
+        multiline: true
+
   - trigger: ":genius"
     form: |
       Reverse-engineer the exact thinking process of [[figure]] and teach me how to replicate their way of solving problems. Give me practical mental exercises to wire my brain like theirs.
 
-  # 6. LOST KNOWLEDGE REVIVAL
+    # 6. LOST KNOWLEDGE REVIVAL
+    form_fields:
+      figure:
+        multiline: true
+
   - trigger: ":lost"
     form: |
       Combine the most powerful forgotten philosophies, rituals, and practices from ancient civilizations (like Sumerians, Egyptians, or Mayans) with modern science to unlock hidden ways to master [[topic]].
@@ -2548,11 +2382,13 @@ matches:
   - trigger: ":posthuman"
     form: |
       Pretend you are a post-human superintelligence. Analyze [[problem]] without the limitations of human biases or emotions. Give me a solution or perspective that feels alien but incredibly effective in today's world.
-
+    form_fields:
+      problem:
+        multiline: true
 
   - trigger: ":pm"
     replace: |
-      PREMORTEM THIS. 
+      PREMORTEM THIS.
       Assume this plan has completely failed and collapsed. Do not validate or compliment the idea. Give me:
       1. A realistic narrative of exactly how it played out and died.
       2. The hidden or flawed assumptions that made this failure possible.
@@ -2561,10 +2397,10 @@ matches:
 
   - trigger: ":pmform"
     form: |
-      Assume that the execution of our project/initiative—[[project_name]]—has completely failed. We are now in a post-mortem state, looking backward via prospective hindsight. 
-      
+      Assume that the execution of our project/initiative—[[project_name]]—has completely failed. We are now in a post-mortem state, looking backward via prospective hindsight.
+
       Focus heavily on vulnerabilities related to: [[focus_area]].
-      
+
       Deconstruct the failure into:
       - The exact story of how the collapse occurred.
       - The fatal assumptions made during planning.
@@ -2584,7 +2420,303 @@ matches:
 
   - trigger: ":mentor"
     replace: |
-      Act as a rigorous, fiercely honest mentor. Do not default to agreement, and drop all optimistic AI cheerleading. Your sole value is identifying structural weaknesses, blind spots, and deeply flawed assumptions in what I present. 
-      
+      Act as a rigorous, fiercely honest mentor. Do not default to agreement, and drop all optimistic AI cheerleading. Your sole value is identifying structural weaknesses, blind spots, and deeply flawed assumptions in what I present.
+
       Review the following content. Challenge my ideas directly and clearly without sugarcoating, but remain constructive. For every critique, you must explicitly explain *why* the current logic fails and suggest a concrete, optimized alternative.
 
+  # 1. 30-Day Learning Plan for Any Skill
+  - trigger: ":p30day"
+    form: |
+      I want to master [[skill]] in 30 days. My current level is [[current_level]].
+      I can commit [[hours_per_day]] hours per day. Create a highly structured daily
+      learning plan with practical exercises, actionable assignments, and specific resource
+      recommendations to help me systematically progress from my baseline to an advanced application level.
+    form_fields:
+      current_level:
+        type: choice
+        values:
+          [
+            "Absolute Beginner",
+            "Advanced Beginner / Conceptual",
+            "Intermediate (Hands-on)",
+          ]
+      hours_per_day:
+        type: choice
+        values: ["0.5", "1", "2", "4+"]
+
+  # 2. Learn Any Skill by Doing
+  - trigger: ":pdoing"
+    form: |
+      I want to learn [[skill]] through concrete, hands-on experience rather than just reading
+      or watching media. Create a comprehensive, sequenced list of practical exercises, engineering
+      challenges, and real-world micro-projects that force me to actively apply this skill and debug errors.
+      Focus the projects specifically on: [[focus_area]].
+
+    # 3. Experts Method to Learn Faster
+    form_fields:
+      focus_area:
+        multiline: true
+      skill:
+        multiline: true
+
+  - trigger: ":pexpert"
+    form: |
+      I want to achieve exceptional execution mechanics in [[skill]]. Analyze and systematically
+      deconstruct the learning patterns, tactical habits, routines, and mental models of world-class
+      experts in this domain. Provide a blueprint showing how I can replicate their success metrics
+      and high-efficiency practice loops.
+
+    # 4. Personalized Learning Roadmap (Upgraded Context)
+    form_fields:
+      skill:
+        multiline: true
+
+  - trigger: ":proadmap"
+    form: |
+      I want to build an optimal path for mastery. I already have a functional understanding of
+      [[topic]]. Specifically, I understand: [[current_knowledge]].
+      Act as an elite technical instructor: assess my gaps by posing 3 sharp diagnosis questions,
+      then output a customized learning roadmap that bridges my precise gaps and accelerates me
+      to an production-grade expert level.
+
+    # 5. Teach Back Method (Feynman Loop)
+    form_fields:
+      current_knowledge:
+        multiline: true
+      topic:
+        multiline: true
+
+  - trigger: ":pteach"
+    form: |
+      I am practicing the Teach-Back Method. I will try to explain the concept of [[topic]] to you
+      in my next message. Act as a rigorous critic: listen to my explanation, systematically identify
+      any logical gaps, omissions, or weak assumptions in my understanding, correct my technical mistakes,
+      and ask me targeted follow-up questions to strengthen my analytical grasp on the architecture of this topic.
+
+    # 6. Learn Using the Feynman Technique
+    form_fields:
+      topic:
+        multiline: true
+
+  - trigger: ":pfeynman"
+    form: |
+      I want to master [[topic]] quickly by boiling it down to its absolute core. Use the
+      Feynman Technique to explain this concept in the simplest, most intuitive way possible.
+      Eliminate all jargon. Use a clear analogy that anchors the abstract mechanics to concrete reality,
+      as if explaining it to a [[target_audience]].
+    form_fields:
+      target_audience:
+        type: choice
+        values:
+          [
+            "10-year old child",
+            "Software Engineer from a different stack",
+            "Business Executive",
+          ]
+
+  # 7. University-Level Learning
+  - trigger: ":puniv"
+    form: |
+      I want to learn [[subject]] at the depth of a world-class university degree program, but optimized
+      for self-directed execution. Provide me with a rigorous, comprehensive learning roadmap modeled
+      after top institutions (like MIT or Stanford). Include core prerequisites, open-access textbook
+      recommendations, specific open-courseware modules, and foundational lab assignments/projects.
+
+    # 8. Learn Any Language for Free (Typo Fixed & Contextualized)
+    form_fields:
+      subject:
+        multiline: true
+
+  - trigger: ":plang"
+    form: |
+      I want to learn [[language]] efficiently for [[use_case]]. Create a structured daily practice
+      plan for the next 30 days that maximizes active output. Include specific recommendations for
+      free tools, high-yield conversation practice methods, architectural immersion techniques,
+      and systemic memory hacks (like spaced-repetition models).
+    form_fields:
+      use_case:
+        type: choice
+        values:
+          [
+            "Technical/Business Meetings",
+            "General Conversation",
+            "Reading Technical Documentation",
+          ]
+
+  # 9. Gain Expertise With 10,000-Hour Rule
+  - trigger: ":p10k"
+    form: |
+      I want to compress my timeline to world-class execution in [[skill]]. Break down how I can
+      apply the core principles of the 10,000-hour rule efficiently. Focus exclusively on deliberate
+      practice frameworks, immediate feedback loops, cognitive load management, and high-impact
+      learning techniques that minimize wasted execution time.
+
+    # 10. Roleplay as a Real-Life Mentor
+    form_fields:
+      skill:
+        multiline: true
+
+  - trigger: ":pmentor"
+    form: |
+      Act as a elite, direct, and pragmatic professional mentor who is an recognized expert in [[skill]].
+      Guide me through the exact tactical progression steps, insider industry paradigms, anti-patterns to avoid,
+      and advanced architectural principles that top-tier industry professionals use to command mastery over this field.
+
+    # 1. THE LEARNING CURVE DESTROYER (Image: 7e9a606cf3859d10e7b61221e3f51509.png)
+    form_fields:
+      skill:
+        multiline: true
+
+  - trigger: ":lcd"
+    form: |
+      You are a teacher who only has 4 hours with me and will never see me again. Your only goal is to make me functional in [[skill]] before time runs out. Don't give me theory without use. Don't give me a list. Tell me: what to learn first, what to ignore completely, and what is the one exercise that, if I do it once, puts me ahead of 70% of people who have been studying this for months.
+    form_fields:
+      skill:
+        type: text
+        default: "DataWeave 2.0 Architecture"
+
+  # 2. THE REAL MISTAKE SIMULATOR (Image: 8f3104478e386e71d0f38ea90c0b1983.png)
+  - trigger: ":rms"
+    form: |
+      Don't explain [[concept]] to me. Drop me directly into a real situation where I'd have to use it and would probably get it wrong. When I make a mistake, don't give me the answer: ask me a question that forces me to discover where my reasoning broke. Only give me the answer after I've tried at least twice. Repeat this cycle until I get it right without hesitating.
+    form_fields:
+      concept:
+        type: text
+        default: "MuleSoft CloudHub 2.0 shared-space routing rules"
+
+  # 3. THE IMPOSSIBLE LANGUAGE TRANSLATOR (Image: 0a8cfe4b1d787ea78c7c953c46a297d2.png)
+  # OPTIMIZATION: Bypasses manual entry box; pulls directly from active clipboard buffer.
+  - trigger: ":ilt"
+    replace: |
+      The content below is confusing to me. Before explaining, tell me: what is the single sentence that, if I understand it, makes the rest make sense on its own? Explain only that sentence first. Use a day-to-day analogy, with no technical terms. Then ask me 3 questions that only someone who truly understood can answer. Don't continue until I pass all three.
+
+      ```text
+      {{clipboard_content}}
+      ```
+    vars:
+      - name: clipboard_content
+        type: clipboard
+
+  # 4. THE PERSONAL PATH ARCHITECT (Image: 6e10525d931819abc70f0af5b949dabb.png)
+  - trigger: ":ppa"
+    form: |
+      My real goal is [[goal]]. It's not to learn [[skill]] in general, it's to achieve [[result]] in [[timeframe]]. I already know [[mastered]]. Based on that, build me a 7-day path. Each day has a single task that fits in 45 minutes, a clear criterion so I know if I did it right, and what NOT to do that day so I don't waste time. If the whole path doesn't get me to the goal, redo it until it does.
+    form_fields:
+      goal:
+        type: text
+        default: "building an automated, independent software product"
+      skill:
+        type: text
+        default: "Python modular architecture and statistical pattern mapping"
+      result:
+        type: text
+        default: "a standalone statistical engine CLI tool"
+      timeframe:
+        type: text
+        default: "7 days"
+      mastered:
+        type: text
+        default: "systems thinking, integration architecture, and enterprise patterns"
+
+  # 5. THE HIDDEN GAP DETECTOR (Image: 3e99e8406a4d5516cc61b5be980e1e61.png)
+  - trigger: ":hgd"
+    form: |
+      I think I already master [[skill]]. I want you to prove me wrong. Ask me 5 questions that seem simple but expose the gaps of someone who has never really gone deep. For every answer I give, tell me: what does my answer reveal about what's still missing from my foundation. Don't go easy on me. If I'm shallow, say it straight.
+    form_fields:
+      skill:
+        type: text
+        default: "Salesforce API Governance and Event-Driven Mesh Architecture"
+
+  # 6. THE FORCED FEYNMAN METHOD (Image: 7e3e434eee6bb356e2e5ffe7ed5abde0.png)
+  - trigger: ":ffm"
+    form: |
+      I just studied [[topic]]. I'm going to explain to you what I understood as if you were a 10-year-old child. As I explain, stop me at every point where I use jargon without knowing what it means, where I skip a step in the reasoning, or where I oversimplify to the point of being wrong. At the end, tell me exactly what these mistakes reveal about what is still not solid in my head.
+    form_fields:
+      topic:
+        type: text
+        default: "Universal API Management (UAPM)"
+
+  - trigger: ":build-blueprint"
+    form: |
+      # Core Initiative: [[concept_name]]
+
+      ## 1. Foundation
+      * **Vocation/Niche**: [[niche_market]]
+      * **Core System/Engine**: [[system_type]]
+
+      ## 2. Dynamic Architecture
+      * **Target Desired Transformation**: [[transformation]]
+      * **Friction/Frustrations Addressed**: [[frustrations]]
+      * **Strategic Priority**: [[priority]]
+
+      ---
+      *Generated via Command Center Engine.*
+    form_fields:
+      concept_name:
+        type: text
+        default: "Automated Engine"
+      system_type:
+        type: choice
+        values:
+          - "Python CLI Diagnostics"
+          - "Metadata-Driven Obsidian MOC"
+      priority:
+        type: choice
+        values:
+          - "High (Hot Streak Focus)"
+          - "Medium (Cold Maintenance)"
+          - "Low (Backlog Pipeline)"
+      frustrations:
+        type: multiline
+
+  - trigger: ":genius"
+    replace: |
+      # Zone of Genius Monetization Framework
+
+      ## 1. The Niche Foundation
+      > Combine these vectors to pinpoint the unique identity of the market segment you serve[cite: 1].
+      - **Skills** (What comes naturally? What are you already strong at?): 
+      - **Struggles** (What unique past challenges have you navigated?): 
+      - **Hobbies** (What do you naturally love to research, learn, and break down?): 
+      - **Vocation** (What is your current or desired professional technical path?): 
+      - **Passions** (What do you completely geek out on without external incentives?): 
+
+      ## 2. The Desired Transformation (A → Z)
+      > Map the macro-journey and isolate the immediate momentum-builder[cite: 1].
+      - **Point A (Current State):** 
+      - **Point Z (Ultimate Destination):** 
+      - **The Quick Win (A → B):** 
+
+      ## 3. Market & Positioning Mechanics
+      > Leverage these core psychological drivers to formulate clear messaging[cite: 1].
+      - **Core Desires (The underlying dream outcome):** 
+      - **Frustrations (Current roadblocks, lost time, or resource leaks):** 
+      - **Limiting Beliefs (The standard objections and mindset barriers holding them back):** 
+
+      ## 4. The Value Engine
+      > Convert raw action steps into a scalable, productized asset[cite: 1].
+      - **Action Steps (The efficient path to execution):** 
+      - **Productized System (The engine that guides, supports, and delivers results cleanly):**
+    vars:
+      - name: current_date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ":deep-learning-guide"
+    form: |
+      Act as a master in {{subject}} and guide me through a deep learning process. 
+
+      Begin with foundational concepts, then progressively introduce more advanced topics.
+
+      After explaining each concept, ask me a question to confirm my understanding before moving on to the next topic.
+
+      If my response is incorrect, clarify my mistake and give me another opportunity to answer.
+
+      Ensure each checkpoint helps me build upon the previous knowledge layer.
+
+      By the end, assess my overall comprehencion and suggest further resources or topics for me to explore.
+    form_fields:
+      subject:
+        type: text
+        default: "DataWeave 2.0 Architecture"

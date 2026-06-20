@@ -1,0 +1,8 @@
+name: "productivity-package"
+title: "Productivity Pack"
+description: "A collection of productivity tools and templates for Espanso."
+version: "1.0.0"
+author: ""
+
+# Metadata required for Espanso Package Registry
+# https://github.com/espanso/espanso-package-registry

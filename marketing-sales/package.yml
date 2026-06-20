@@ -1,16 +1,17 @@
-matches:
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
+matches:
   #title: AI-Driven Market and Niche Discovery
   #tags:
   #  - business/validation
   #  - framework/niche
   #  - prompt/market-analysis
-      # AI-Driven Market and Niche Discovery
-      # Framework Overview
-      # Bypassing emotional niche selection ("follow your passion") by enforcing a data-driven approach built on hard financial indicators. A viable digital product niche must satisfy three mandatory constraints simultaneously:
-      # *   **High Pain Index:** Audiences experiencing deep frustration who desperately seek an immediate antidote.
-      # *   **Demonstrated Purchasing Power:** Markets with documented commercial activity and transactional history.
-      # *   **Active Content Demand:** Measurable search volumes and active consumption patterns targeting solutions.
+  # AI-Driven Market and Niche Discovery
+  # Framework Overview
+  # Bypassing emotional niche selection ("follow your passion") by enforcing a data-driven approach built on hard financial indicators. A viable digital product niche must satisfy three mandatory constraints simultaneously:
+  # *   **High Pain Index:** Audiences experiencing deep frustration who desperately seek an immediate antidote.
+  # *   **Demonstrated Purchasing Power:** Markets with documented commercial activity and transactional history.
+  # *   **Active Content Demand:** Measurable search volumes and active consumption patterns targeting solutions.
   - trigger: ":niche-discovery"
     form: |
       Act like a market analyst. Based on current online trends, list 20 niches where people are actively spending money, content demand is high, and competition is realistic for a beginner. For each niche, tell me who spends the money, what problems they have, and what digital products sell best.
@@ -67,3 +68,81 @@ matches:
     form_fields:
       insert_niche:
         multiline: false
+
+  # Rule 1: Unique Value Proposition
+  - trigger: ":sj.val"
+    replace: |
+      ### 1. Crie uma Proposta de Valor Única
+      * **Diferencie seu produto**
+      * **Destaque os aspectos de resolução de problemas únicos**
+      * **Comunique paixão pela sua oferta**
+
+      > "Você tem que encontrar o que ama. E isso é tão verdade para o seu trabalho quanto para os seus amantes." — Steve Jobs
+
+  # Rule 2: Focus on Benefits
+  - trigger: ":sj.ben"
+    replace: |
+      ### 2. Foque nos Benefícios, Não nos Recursos
+      * **Enfatize como o produto melhora vidas**
+      * **Traduza as especificações em vantagens para o cliente**
+      * **Venda a experiência, não apenas o produto**
+
+      > "Você tem que começar com a experiência do cliente e, a partir dela, trabalhar em direção à tecnologia – e não o contrário." — Steve Jobs
+
+  # Rule 3: Keep it Simple
+  - trigger: ":sj.sim"
+    replace: |
+      ### 3. Mantenha sua Mensagem Simples
+      * **Crie apresentações claras e concisas**
+      * **Evite sobrecarregar com detalhes técnicos**
+      * **Destile ideias complexas em mensagens simples**
+
+      > "Esse tem sido um dos meus mantras — foco e simplicidade. O simples pode ser mais difícil que o complexo." — Steve Jobs
+
+  # Rule 4: Tell an Engaging Story
+  - trigger: ":sj.story"
+    replace: |
+      ### 4. Conte uma História Envolvente
+      * **Use narrativas para tornar os produtos relacionáveis**
+      * **Conecte-se emocionalmente com seu público**
+      * **Compartilhe histórias de sucesso impactantes**
+
+      > "A pessoa mais poderosa do mundo é o contador de histórias. O contador de histórias define a visão, os valores e a agenda de uma geração inteira que virá." — Steve Jobs
+
+  # Rule 5: Know Your Audience
+  - trigger: ":sj.aud"
+    replace: |
+      ### 5. Conheça seu Público
+      * **Pesquise os prospects minuciosamente**
+      * **Entenda as dores e necessidades**
+      * **Personalize a abordagem com base no perfil do cliente**
+
+      > "Aproximem-se mais do que nunca de seus clientes. Tão perto que você diz a eles o que eles precisam bem antes que eles percebam." — Steve Jobs
+
+  # Rule 6: Create an Experience
+  - trigger: ":sj.exp"
+    replace: |
+      ### 6. Crie uma Experiência, Não Apenas um Produto
+      * **Foque em toda a jornada do cliente**
+      * **Garanta pontos de contato positivos**
+      * **Priorize a experiência do cliente no processo de vendas**
+
+      > "Você tem que começar com a experiência do cliente e, a partir dela, trabalhar em direção à tecnologia — e não o contrário." — Steve Jobs
+
+  # Rule 7: Don't Be Afraid to Polarize
+  - trigger: ":sj.pol"
+    replace: |
+      ### 7. Não Tenha Medo de Polarizar
+      * **Destaque confiantemente as qualidades**
+
+      > "Muitas vezes, as pessoas não sabem o que querem até que você mostre a elas." — Steve Jobs
+
+  # Rule 8: Persistence
+  - trigger: ":sj.per"
+    replace: |
+      ### 8. Persistência Diante da Rejeição
+      * **Use a rejeição como uma oportunidade de aprendizado**
+      * **Ajuste a abordagem e continue pressionando**
+      * **Permaneça comprometido com sua visão**
+
+      > "Estou convencido de que cerca de metade do que separa os empreendedores bem-sucedidos dos não-bem-sucedidos é a pura perseverança." — Steve Jobs

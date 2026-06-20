@@ -1,0 +1,391 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+# Espanso Triggers: "Fazer Acontecer" Productivity Pack
+
+matches:
+  # 1. POMODORO TECHNIQUE
+  - trigger: ":pomo"
+    replace: |
+      🍅 **Técnica Pomodoro: Foco Ativado**
+      1. Listar tarefas: [ ]
+      2. Cronômetro: 25 min ⏱️
+      3. Concentração Total: Trabalhar sem distrações.
+      4. Pausa Curta: 5 min ☕
+      5. Ciclo: Repetir 4 vezes, depois fazer uma pausa mais longa (15-30 min).
+
+  # 2. THE 3/3/3 METHOD
+  - trigger: ":333"
+    replace: |
+      ⚡ **Método 3/3/3: Definição de Foco**
+      • [ ] 3 Horas de Trabalho Profundo (Projeto Importante): ____________________
+      • [ ] 3 Tarefas Curtas e Urgentes (Ou Reuniões):
+            1. ____________________
+            2. ____________________
+            3. ____________________
+      • [ ] 3 Tarefas de Manutenção (Manter a vida funcionando):
+            1. ____________________
+            2. ____________________
+            3. ____________________
+
+  # 3. EISENHOWER MATRIX (Interactive Form)
+  - trigger: ":eisen"
+    form: |
+      📊 **Matriz de Eisenhower: Classificação de Prioridade**
+      Tarefa: [[tarefa]]
+
+      [ [[quadrante]] ] -> Ação recomendada.
+    form_fields:
+      tarefa:
+        type: text
+        default: ""
+      quadrante:
+        type: choice
+        values:
+          - "Urgente & Importante -> FAÇA AGORA"
+          - "Não Urgente & Importante -> AGENDE"
+          - "Urgente & Não Importante -> DELEGUE"
+          - "Não Urgente & Não Importante -> ELIMINE"
+
+  # 4. EAT THE FROG (Coma o Sapo)
+  - trigger: ":sapo"
+    replace: |
+      🐸 **Coma o Sapo: A tarefa mais difícil primeiro!**
+      "Se o seu trabalho é comer um sapo, é melhor fazê-lo logo de manhã cedo. E se o seu trabalho é comer dois sapos, é melhor comer o maior primeiro." - Mark Twain
+
+      • HOJE, meu maior sapo é: ____________________
+
+  # 5. SEINFELD STRATEGY (Dynamic Current Month Generator)
+  - trigger: ":seinfeld"
+    replace: |
+      📅 **Estratégia Seinfeld: Não Quebre a Corrente!**
+      Objetivo: ____________________
+      Regra de Ouro: Nunca perca 2 dias seguidos.
+
+      Progresso para {{mes_atual}} / {{ano_atual}}:
+      {{calendario}}
+    vars:
+      - name: mes_atual
+        type: date
+        params:
+          format: "%B"
+      - name: ano_atual
+        type: date
+        params:
+          format: "%Y"
+      - name: calendario
+        type: shell
+        params:
+          cmd: "cal -h | sed '1,2d'" # Outputs the raw days layout cleanly
+
+  # 6. TIME BLOCKING TEMPLATE
+  - trigger: ":tblock"
+    replace: |
+      ⏳ **Time Blocking: Cronograma do Dia**
+      • Passo 1: Identifique o que precisa ser feito.
+      • Passo 2: Agrupe atividades semelhantes.
+      • Passo 3: Atribua horários para tarefas.
+
+      | Horário     | Bloco de Atividade               | Concluído |
+      |-------------|----------------------------------|-----------|
+      | 09:00 - 12:00| 🧠 Trabalho Profundo             | [ ]       |
+      | 12:00 - 12:30| 📧 E-mail / Comunicação           | [ ]       |
+      | 12:30 - 13:00| 🍽️ Almoço                        | [ ]       |
+      | 13:00 - 14:00| 🏋️ Ginásio / Saúde                | [ ]       |
+      | 14:00 - 14:30| ☕ Pausa / Descompressão         | [ ]       |
+      | 14:30 - 16:00| 👥 Reuniões / Alinhamento        | [ ]       |
+
+  - trigger: ":blockday"
+    replace: |
+      ## 🕒 Time-Blocking Architecture
+      - **08h - 09h**: Planejamento & Alinhamento Estratégico
+      - **09h - 11h**: 🚀 Trabalho Profundo (Foco Total / Zero Distrações)
+      - **11h - 12h**: Reuniões / Foco Criativo / Revisão Semanal
+      - **12h - 13h**: Almoço / Desconexão
+      - **13h - 15h**: 🚀 Trabalho Profundo (Execução de Alta Intensidade)
+      - **15h - 16h**: Admin / E-mail / Triagem de Mensagens
+      - **16h - 17h**: Revisão do Dia / Ajuste de Pendências
+
+      > **Nota Importante:** Nada disto importa se você estiver constantemente distraído. Desligue as notificações e proteja seu foco.
+
+  - trigger: ":parkinson"
+    form: |
+      ### ⏱️ Parkinson's Law Execution Blueprint
+      * **Macro Objetivo**: [[macro_task]]
+      * **Micro Etapa Dedicada**: [[micro_step]]
+      * **Prazo Artificial Restrito**: [[minutes]] minutos (Foco Absoluto)
+
+      ---
+      *Ação: Iniciar cronômetro imediatamente. O esforço se expande para preencher o tempo alocado. Reduza o tempo, aumente a intensidade.*
+    form_fields:
+      macro_task:
+        type: text
+        default: "Refatoração de Arquitetura"
+      micro_step:
+        type: text
+        default: "Mapeamento de DataWeave e Mocking"
+      minutes:
+        type: choice
+        values:
+          - "15"
+          - "30"
+          - "45"
+          - "60"
+
+  - trigger: ":workstyle"
+    form: |
+      ### 🛠️ Perfil Operacional Selecionado: [[perfil]]
+
+      #### 🔄 Rotina Diária de Alta Performance:
+      1. **Planejamento**: [[passo1]]
+      2. **Execução Primária**: [[passo2]]
+      3. **Sustentabilidade**: [[passo3]]
+      4. **Encerramento**: [[passo4]]
+    form_fields:
+      perfil:
+        type: choice
+        values:
+          - "Planejador (Foco Cronológico)"
+          - "Priorizador (Foco em Impacto)"
+          - "Organizador (Foco Estrutural)"
+          - "Visualizador (Foco Ágil/Mental)"
+      passo1:
+        type: text
+        default: "Planeje seu dia hora a hora / Escreva a lista de tarefas claras"
+      passo2:
+        type: text
+        default: "Foco profundo ininterrupto por 2 horas"
+      passo3:
+        type: text
+        default: "Fazer pausa estratégica para respirar / Pomodoro controlado"
+      passo4:
+        type: text
+        default: "Trabalhar em tarefas leves / Revisar progresso e fechar o dia"
+
+  # -------------------------------------------------------------------
+  # Trigger 1: Static Framework Reference (Obsidian Properties Format)
+  # -------------------------------------------------------------------
+  - trigger: ":flowtpl"
+    replace: |
+      ### Framework: Estado de Flow
+      - **Plenitude**: Alcançando objetivos sem esforço. Propósito e valores.
+      - **Felicidade**: Imersão no presente, alegria e atemporalidade.
+      - **Persistência**: Foco contínuo e motivação para superar obstáculos.
+      - **Clareza**: Metas claras, clareza mental e foco aprimorado.
+
+  # -------------------------------------------------------------------
+  # Trigger 2: Interactive Deep-Work Friction Gate
+  # -------------------------------------------------------------------
+  - trigger: ":flowgate"
+    form: |
+      ---
+      type: focus-block
+      timestamp: {{current_time}}
+      alignment:
+        cares_about: [[importa]]
+        long_term: [[longo_prazo]]
+        challenging: [[desafiador]]
+        skill_match: [[bom_nisso]]
+      primary_state: [[foco_predominante]]
+      ---
+      # 🎯 Focus Block: [[block_objective]]
+
+      > "Estado de Flow: Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço."
+
+      Status: Inicializado. Proteção de flow-state ativa.
+
+    vars:
+      - name: current_time
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M"
+
+    form_fields:
+      block_objective:
+        type: text
+        default: "Engineering / Architecture Execution"
+      importancia:
+        type: choice
+        values:
+          ["Sim (Plenitude/Felicidade)", "Não (Alerta de Baixo Propósito)"]
+      longo_prazo:
+        type: choice
+        values:
+          [
+            "Sim (Plenitude/Persistência)",
+            "Não (Alerta de Linha de Frente Tática)",
+          ]
+      desafio:
+        type: choice
+        values: ["Sim (Persistência/Clareza)", "Não (Alerta de Tédio/Rotina)"]
+      bom_nisso:
+        type: choice
+        values:
+          ["Sim (Felicidade/Clareza)", "Não (Alerta de Atrito de Aprendizado)"]
+      foco_predominante:
+        type: choice
+        values:
+          - "FLOW TOTAL (Todos os quadrantes presentes)"
+          - "Plenitude (Propósito e Alinhamento)"
+          - "Felicidade (Imersão e Atemporalidade)"
+          - "Persistência (Foco Resiliente)"
+          - "Clareza (Metas Cristalinas)"
+
+  - trigger: ":antivision"
+    form: |
+      ### 🚫 Anti-Visão vs. 🎯 Visão Real
+      *Calibrado em: {{current_date}}*
+
+      #### 1. A Anti-Visão (O que evitar)
+      [[antivision_items]]
+
+      #### 2. A Visão Real (O oposto estratégico)
+      [[real_vision]]
+
+      ---
+      *Foco Fundamental:* Escrever diariamente, exercitar-se com consistência e refinar o ofício[cite: 1].
+    form_fields:
+      antivision_items:
+        type: multiline
+        default: "- Rotinas sem sentido e caos.\n- Hábitos não saudáveis.\n- Trabalho sem propósito."
+      real_vision:
+        type: multiline
+        default: "- Autonomia total e clareza de execução.\n- Engenharia de sistemas escaláveis."
+    vars:
+      - name: current_date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ":ghostmode"
+    replace: |
+      ## 🥷 Protocolo de Foco: Desaparecer por Seis Meses[cite: 1]
+
+      ### 🪐 Filtro de Entropia (Eliminação de Distrações)
+      - **Corte Técnico:** Redes sociais e inputs de baixa qualidade eliminados[cite: 1].
+      - **Social:** Zero dependência de validação externa ou explicações desnecessárias[cite: 1].
+
+      ### 🧪 Mentalidade Científica (Tentativa e Erro)
+      - **Experimento do Dia:** Tratar falhas apenas como dados de ajuste de rota[cite: 1].
+      - **Perspectiva:** Visão de longo prazo. O crescimento exponencial é composto por ações chatas e repetitivas[cite: 1].
+
+      ### 🔩 Execução dos Fundamentos[cite: 1]
+      - [ ] Praticar habilidades essenciais do ofício.
+      - [ ] Proteger o bloco de foco profundo.
+
+  - trigger: ":pararef"
+    replace: |
+      ### Método P.A.R.A. — Resumo de Organização [67b8d4bc85d58286674ab5e6b9f2b6ce.png]
+      - **Projetos**: Conjuntos de tarefas com um objetivo e prazo definidos. (Ex: Preparar uma apresentação para uma conferência)
+      - **Áreas**: Aspectos da vida que precisam de manutenção contínua. (Ex: Saúde, finanças pessoais)
+      - **Recursos**: Coleções de informações temáticas de seu interesse. (Ex: Artigos sobre produtividade, cursos de design gráfico)
+      - **Arquivo**: Informações valiosas do passado que você deseja manter, mas não está usando ativamente no momento. (Ex: Projetos concluídos, trabalhos acadêmicos antigos)
+
+  # Opção 1: Resumo rápido do conceito do infográfico
+  - trigger: ":flowtxt"
+    replace: |
+      🎯 COMO ENTRAR NO ESTADO DE FLOW
+      Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço, frequentemente descrito como estar "na zona".
+
+      🧠 OS 4 PILARES:
+      • PLENITUDE: Alcançando objetivos sem esforço, profundo senso de propósito e alinhamento com valores.
+      • FELICIDADE: Imersão no presente, sentimentos de alegria e senso de atemporalidade.
+      • PERSISTÊNCIA: Foco e determinação contínuos, superando desafios com facilidade e motivação.
+      • CLAREZA: Entendimento claro de metas, clareza mental e consciência aguçada das ações.
+
+      🌀 A INTERSECÇÃO:
+      Para atingir o Flow, sua atividade deve unir: Algo que você se importa + Algo de longo prazo + Algo desafiador + Algo em que você é bom.
+
+  # Opção 2: Formulário interativo para reflexão e planejamento pessoal
+  - trigger: ":flowform"
+    form: |
+      # 🌀 Meu Planejamento para o Estado de Flow
+      Data: {{atual}}
+
+      Para garantir foco intenso e engajamento sem esforço hoje, vou me alinhar com:
+
+      1. ❤️ Algo com que me importo (Propósito):
+         > [[importa]]
+
+      2. ⏳ Algo de longo prazo (Consistência):
+         > [[longo_prazo]]
+
+      3. ⚡ Algo desafiador (Estímulo):
+         > [[desafiador]]
+
+      4. 💪 Algo em que sou bom (Habilidade):
+         > [[habilidade]]
+
+      ---
+      "Corpo e mente conectados perfeitamente. Hora de entrar na zona! 🚀"
+    vars:
+      - name: atual
+        type: date
+        params:
+          format: "%d/%m/%Y"
+
+  - trigger: ":flow-ref"
+    replace: |
+      # Como Entrar no Estado de Flow[cite: 1]
+      > Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço ("na zona")[cite: 1].
+
+      ## 🎯 Os 4 Pilares de Alinhamento
+      * **Algo com que você se importa** -> Conecta à **Plenitude**[cite: 1]
+        * Alcançando objetivos sem esforço[cite: 1].
+        * Profundo senso de propósito e satisfação[cite: 1].
+        * Envolvendo-se em atividades que se alinham com valores pessoais[cite: 1].
+      * **Algo em que você é bom** -> Conecta à **Felicidade**[cite: 1]
+        * Imersão no momento presente[cite: 1].
+        * Sentimentos de alegria e contentamento[cite: 1].
+        * Vivenciando um senso de atemporalidade[cite: 1].
+      * **Algo desafiador** -> Conecta à **Clareza**[cite: 1]
+        * Entendimento claro de metas e objetivos[cite: 1].
+        * Clareza mental e foco aprimorados[cite: 1].
+        * Consciência aguçada dos arredores e ações[cite: 1].
+      * **Algo de longo prazo** -> Conecta à **Persistência**[cite: 1]
+        * Foco e determinação contínuos[cite: 1].
+        * Superando desafios com facilidade[cite: 1].
+        * Energizado e motivado para superar obstáculos[cite: 1].
+
+  - trigger: ":flowcheck"
+    form: |
+      ---
+      type: log/execution-audit
+      evaluated_at: {{current_date}}
+      target_task: "[[task_name]]"
+      vectors:
+        significance: [[v_care]] # Algo com que você se importa[cite: 1]
+        horizon: [[v_long]]      # Algo de longo prazo[cite: 1]
+        mastery: [[v_good]]      # Algo em que você é bom[cite: 1]
+        tension: [[v_challenge]] # Algo desafiador[cite: 1]
+      execution_mode: [[mode]]
+      ---
+    vars:
+      - name: current_date
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M"
+    form_fields:
+      v_care:
+        type: choice
+        values: ["HIGH (Plenitude)", "LOW (Apathy)"]
+      v_long:
+        type: choice
+        values: ["STRATEGIC (Persistência)", "TACTICAL (Short-term)"]
+      v_good:
+        type: choice
+        values: ["EXPERT (Felicidade)", "LEARNING (Friction)"]
+      v_challenge:
+        type: choice
+        values:
+          [
+            "OPTIMAL (Clareza)",
+            "UNDERWHELMING (Boredom)",
+            "OVERWHELMING (Anxiety)",
+          ]
+      mode:
+        type: choice
+        values:
+          [
+            "Deep Work / Flow Protection",
+            "Administrative / Maintenance",
+            "Exploratory / R&D",
+          ]

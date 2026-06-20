@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 matches:
   # ---------------------------------------------------------------------------
   # 1. NICHE INTELLIGENCE & AUDIENCE MAPPING (Image: e73c3bbac6ede7f0e2600ca6ef63986e.png)
@@ -69,10 +70,80 @@ matches:
   - trigger: ":analytics"
     replace: |
       You're a data analyst for social media. Based on these metrics:
-      
+
       {{raw_metrics}}
-      
+
       Identify: what's working and why, what's underperforming and how to fix it, content gaps I should fill, optimal posting frequency, and a 90-day growth roadmap with specific KPIs to hit.
     vars:
       - name: raw_metrics
         type: clipboard
+
+  # 1. The Ryan Deiss Before-and-After Grid
+  - trigger: ":beforeafter"
+    replace: |
+      ### The Before-and-After Grid
+      | Experiential Register | The "Before" State (Point A) | The "After" State (Point B) |
+      | --- | --- | --- |
+      | **Have** | | |
+      | **Feel** | | |
+      | **Average Day** | | |
+      | **Status** | | |
+      | **Good vs. Evil** | | |
+
+  # 2. The 8-Step Epiphany Bridge Narrative Blueprint
+  - trigger: ":epiphany"
+    replace: |
+      ### Epiphany Bridge Narrative Outline
+      1. **Backstory:** [Establish the professional starting point to create immediate empathy]
+      2. **Desire:** [Articulate the external goals and deeper internal motivations driving the change]
+      3. **The Wall:** [Identify the insurmountable obstacle hit within the legacy framework]
+      4. **The Epiphany:** [The sudden discovery of the New Opportunity vehicle]
+      5. **The Plan:** [The strategic blueprint created to test and validate this discovery]
+      6. **The Conflict:** [The intense friction, challenges, and skepticism overcome during execution]
+      7. **Achievement:** [Attaining the target end result and proving the validity of the plan]
+      8. **Transformation:** [The profound operational and identity shift realized from the journey]
+
+  # 3. The 9-Minute Triage Call Diagnostic Logger
+  - trigger: ":triage"
+    replace: |
+      ---
+      type: interaction
+      activity: triage-call
+      date: "{{current_date}}"
+      status: completed
+      ---
+      # Triage Call Diagnostic: [Prospect Name]
+
+      ### 1. The Problem
+      > What is broken or missing in their current framework, and how long has this friction persisted?
+      - 
+
+      ### 2. The Impact
+      > What are the quantifiable financial, operational, or personal costs of continuing with state-level inaction?
+      - 
+
+      ### 3. Fit & Urgency
+      > Confirm baseline parameters: Do they possess the resources, alignment, and immediate intent to solve it?
+      - 
+
+      ### 4. Pipeline Disposition
+      - [ ] **Advance:** Qualified candidate. Book 45-Minute Strategy Session.
+      - [ ] **Redirect:** Unqualified/Poor fit. Disengage or route to low-barrier asynchronous asset.
+    vars:
+      - name: current_date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # 4. The Taki Moore Signature System Core Formula
+  - trigger: ":sigsys"
+    replace: |
+      ### Proprietary Signature System Design
+      * Formula: $Signature System = Problem + Promise + Process$
+
+      - **The Problem Core:** [State the primary high-friction marketplace inefficiency being resolved]
+      - **The Promise Core:** [State the ultimate outcome achieved at Point Z]
+      - **The Process Milestones:**
+        1. **Phase 1 (Quick Win / A → B):** [Low-friction intervention to establish trust and momentum]
+        2. **Phase 2 (Core Pivot):** [Implementation of the proprietary engine to resolve root obstacles]
+        3. **Phase 3 (Scale / Final Integration):** [Systemization to ensure long-term, repeatable outcomes]

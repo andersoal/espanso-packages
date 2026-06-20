@@ -1,0 +1,95 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # 1. THE ENGLISH TEACHING SETUP
+  - trigger: ":engtutor"
+    form: |
+      Act as a professional English tutor. Design a [[days]]-day conversational English plan focused on [[focus]] and real-world communication instead of theory. Tailor the tone to be highly practical for an international market.
+    form_fields:
+      days:
+        type: text
+        default: "30"
+      focus:
+        type: choice
+        values:
+          - "practical phrases and professional communication"
+          - "technical architecture explanations and engineering leadership"
+          - "high-pressure business meetings and negotiations"
+
+  # 2. THE DAILY VOCABULARY BUILDER
+  - trigger: ":engvocab"
+    form: |
+      Teach me [[count]] powerful English words per day related to [[domain]]. Include pronunciation guides, realistic example sentences, and one memory trick or etymological hook for each to help me retain them faster.
+    form_fields:
+      count:
+        type: text
+        default: "10"
+      domain:
+        type: choice
+        values:
+          - "general professional interactions"
+          - "software engineering and systems architecture"
+          - "strategic leadership and project orchestration"
+
+  # 3. THE CONVERSATION PARTNER
+  - trigger: ":engchat"
+    form: |
+      Pretend you're a native English speaker in a [[setting]]. Hold a [[duration]]-minute dialogue with me on [[topic]], and correct my grammar, syntax, and phrasing naturally as we go. Highlight better alternatives for any awkward phrasing.
+    form_fields:
+      setting:
+        type: text
+        default: "professional office / corporate environment"
+      duration:
+        type: text
+        default: "10"
+      topic:
+        type: text
+        default: "casual business topics or strategic alignment"
+
+  # 4. THE GRAMMAR SIMPLIFIER
+  - trigger: ":enggrammar"
+    form: |
+      Explain English grammar rules, especially [[topic]], in the simplest, most direct way possible. Provide short, everyday professional examples and contrast them against common pitfalls made by non-native speakers.
+    form_fields:
+      topic:
+        type: text
+        default: "participles, verb conjugations, and complex sentence structures"
+
+  # 5. THE DAILY IMMERSION SYSTEM
+  - trigger: ":engimmerse"
+    form: |
+      Build a daily [[duration]]-minute English immersion routine using podcasts, technical articles, and media content that fits an advanced professional level. Prioritize real conversational exposure and strategies for active listening.
+    form_fields:
+      duration:
+        type: text
+        default: "30"
+
+  # 6. THE PRONUNCIATION COACH
+  - trigger: ":engcoach"
+    form: |
+      Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English phonetics, tongue positions, and mechanics on how to sound more natural, assertive, and fluid in professional settings.
+
+  # 7. THE PROGRESS TRACKER
+  - trigger: ":engtrack"
+    form: |
+      Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, listening checks, pronunciation feedback self-assessments, and tangible fluency benchmarks I can track systematically.
+
+  - trigger: ":engrefactor"
+    form: |
+      Act as a rigorous communication mentor and elite technical editor. Refactor the following draft for an audience of **[[audience]]**:
+
+      ---
+      "{{current_clip}}"
+      ---
+
+      Optimize the text to maximize clarity, authority, and structural precision. Align the phrasing with high-performance international market standards. Completely eliminate passive voice, defensive language, or hesitant wording. Provide two highly polished alternatives (one concise/direct, one comprehensively detailed).
+    vars:
+      - name: current_clip
+        type: clipboard
+    form_fields:
+      audience:
+        type: choice
+        values:
+          - "Technical Architects & Engineering Leads"
+          - "Executive Stakeholders (C-Level / Business Directors)"
+          - "Cross-Functional Project Teams"

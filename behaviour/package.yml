@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  ###
+  # ADHD Cognitive Frameworks & Prompt Engines
+  ###
+  # 1. The Task Paralysis Shatterer
+  # Source Image: 0a58683f5bc14329f210532477e9cab4.png
+  - trigger: ":pshatter"
+    form: |
+      I am staring at "[[task]]" and can't start. Break this down into 'Ridiculously Small' steps that take less than 1 minute each. Give me the first step and tell me exactly where to put my hands to begin.
+
+  # 2. The Dopamine Menu Architect
+  # Source Image: e85b614263d0a86d621b03a15374d9e7.png (or related template)
+  - trigger: ":pmenu"
+    replace: |
+      I am feeling under-stimulated. Create a 'Dopamine Menu' for me with 5-minute 'Appetizers' (quick movement), 20-minute 'Entrees' (deep work), and 10-minute 'Sides' (creative play) to keep my brain engaged.
+
+  # 3. The "Body Doubling" Simulator
+  # Source Image: e85b614263d0a86d621b03a15374d9e7.png
+  # Optimization: Upgraded to accept the current objective instantly instead of waiting for a second message.
+  - trigger: ":pdouble"
+    form: |
+      Act as my virtual body double for the next 30 minutes. I am currently working on: [[current_focus]]. Check in every 10 minutes to ask for a status update and keep my focus anchored.
+
+  # 4. The Context-Switching Guide
+  # Source Image: 9c8b27b3c2dabd5ee464788fb438b794.png
+  - trigger: ":pswitch"
+    form: |
+      I just finished "[[task_a]]" and need to start "[[task_b]]", but my brain is stuck. Design a 3-minute 'Mental Palace Cleanser' routine to help me transition between these two different types of energy.
+
+  # 5. The Interest-Based Filter
+  # Source Image: 8cca29a107894c424162e7822649bd8e.png
+  - trigger: ":pgamify"
+    form: |
+      I have a boring administrative task: [[task]]. Help me gamify this by connecting it to my current hyper-fixation: [[interest]]. Create a 'Quest' structure where finishing the task unlocks a reward.
+
+  # 6. The Time-Blindness Auditor
+  # Source Image: cb9c641234e83e2424aa1fcc7313036b.png
+  # Optimization: Parameterized the expected vs historical times to accommodate varying scope magnitudes.
+  - trigger: ":paudit"
+    form: |
+      I think "[[project]]" will take [[estimated_time]], but it usually takes [[historical_reality]]. Help me 'Time-Map' this by identifying the 3 hidden sub-tasks I always forget to account for so I can set a realistic deadline.
+    form_fields:
+      estimated_time:
+        type: text
+        default: "20 minutes"
+      historical_reality:
+        type: text
+        default: "2 hours"
+
+  # 7. The Executive Function Externalizer
+  # Source Image: 4a8c89e21bc73bfb415414183fd3820a.png
+  # Optimization: Swapped to a multiline block input for raw data dumping inside the UI layer.
+  - trigger: ":ploops"
+    form: |
+      My brain is full of 'Open Loops.' I will dump everything I'm worried about below. Categorize these into 'Now,' 'Later,' and 'Trash,' and then write a 1-sentence 'Actionable Next Step' for only the 'Now' items.
+
+      ---
+      [[raw_dump]]
+    form_fields:
+      raw_dump:
+        type: multiline

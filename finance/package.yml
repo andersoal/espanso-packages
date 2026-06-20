@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # 1. Billionaire Money Lens (Source: b33ca2793fff68485ca647b327cbabe7.png)
+  - trigger: ":w_lens"
+    form: |
+      Analyze how an elite macro-scale investor or software scale-builder thinks about capital and infrastructure in this exact situation: [[situation]]
+      -> Pinpoint where my operational thinking is constrained by linear limits.
+      -> Where am I failing to decouple time from revenue?
+      -> What programmatic or systemic leverage am I ignoring?
+      Think in scalable systems and enterprise value, not billable hours. Be uncomfortably direct.
+
+  # 2. High-Income Opportunity Filter (Source: b33ca2793fff68485ca647b327cbabe7.png)
+  - trigger: ":w_filter"
+    form: |
+      Evaluate the technical and financial architecture of this opportunity: [[idea]]
+      -> Can this scale to $1M+/month using zero-marginal-cost replication mechanics?
+      -> Is it driven by scalable leverage engines (automated systems, product assets, API/distribution networks)?
+      -> Does it accumulate compounding equity, or is it transient transactional cash flow?
+      Apply high friction to your analysis. Explicitly reject anything small or reliant on manual services.
+
+  # 3. Wealth Blueprint (Source: ef3627a2d8a9c24339ace46db313d428.png)
+  - trigger: ":w_blueprint"
+    form: |
+      Design an architectural roadmap to scale a business model from $100K to $1M/month.
+      Core Focus Area: [[focus]]
+      Provide a rigorous execution strategy addressing:
+      -> The business engine (software, product ecosystems, or automated platforms over services)
+      -> Scalable distribution channels and high-margin recurring revenue models
+      -> Systems architecture, decoupling mechanisms, and operational scaling bottlenecks
+      -> Velocity vectors: Where can speed be weaponized over perfection?
+
+  # 4. Wealth Psychology Decoder (Source: ef3627a2d8a9c24339ace46db313d428.png)
+  - trigger: ":w_decoder"
+    replace: |
+      Conduct a root-cause breakdown of operational risk psychology and decision bottlenecks.
+      Analyze the following execution dynamics:
+      -> Hidden friction points and psychological overhead when moving to high-risk/high-leverage systems.
+      -> Scarcity vs abundance engineering: Behavioral patterns that prioritize immediate micro-wins over long-term platform value.
+      -> Emotional triggers around systemic risk, loss-aversion, and delegation.
+      Isolate what specific mental framework or operational habit is artificially capping current income potential.
+
+  # 5. The Real Money Game (Source: 49b9f679af4d7bc855143100e8582c7b.png)
+  - trigger: ":w_game"
+    form: |
+      Deconstruct the value-capture network and supply-chain hierarchy in this space: [[industry]]
+      -> Who controls primary distribution, platforms, and aggregators?
+      -> Where exactly are the highest margin profits and asymmetric value concentrated?
+      -> Who takes the highest risk vs. who captures the ultimate economic equity?
+      Map out the hidden transactional engine and structural gatekeepers of this market.
+
+  # 6. Power Thinking Framework (Source: 49b9f679af4d7bc855143100e8582c7b.png)
+  - trigger: ":w_framework"
+    replace: |
+      Contrast asymmetric wealth execution vs linear operational thinking.
+      Break down the structural differences across these parameters:
+      -> Decision loop velocity: How elite systems thinkers handle incomplete information compared to perfection-paralyzed operators.
+      -> Risk profiling: Managing systemic risk via portfolio allocation vs avoiding risk altogether.
+      -> Pattern recognition: Discovering scalable platform opportunities vs trading hours for a single-point-of-failure paycheck.
+
+  # 7. Leverage System (Source: ee21a4379cc15757eb4fcb7bcb9cc07a.png)
+  - trigger: ":w_leverage"
+    form: |
+      Build an asymmetric leverage playbook for the following business infrastructure: [[business]]
+      Provide deep operational tactics to exploit each lever:
+      -> Capital: Arbitrage, asymmetric risk, and scaling mechanisms.
+      -> Labor: Delegation, system-bound operations, and automation of routine tasks.
+      -> Technology: Code engines, APIs, software platforms, and cloud orchestration layers.
+      -> Media: Scale-independent content engines, asset libraries, and digital real estate.
+      Identify where to place the fulcrum to multiply throughput with zero additional manual labor.
+
+  # 8. Unfair Advantage Builder (Source: ee21a4379cc15757eb4fcb7bcb9cc07a.png)
+  - trigger: ":w_advantage"
+    form: |
+      Construct an unassailable strategic moat within this space: [[industry]]
+      Provide explicit engineering protocols for:
+      -> Compounding Skills: Intersecting deep technical architecture with commercial leverage.
+      -> Proprietary Distribution: Building structural channels that competitors cannot easily buy or replicate.
+      -> Network Effects: Designing systems where each new node inherently adds systemic value to the platform.
+      -> Positioning & Defensibility: Becoming the structural standard so competing becomes economically irrational.
+
+  # 9. Future Wealth Projection (Source: cdd51890d8b4baf29eb5ddfc1f3791f2.png)
+  - trigger: ":w_projection"
+    replace: |
+      Execute an aggressive 3-year forensic financial audit on current operational trajectories.
+      Hypothesis: If the current operational baseline, system architecture, and lifestyle models remain exactly static:
+      -> Where will the portfolio realistically sit in 36 months?
+      -> Which structural mistakes, overhead costs, or single points of failure will inflict the largest financial toll?
+      -> What operational inefficiencies or lack of scaling engines must be corrected immediately?
+      Do not pad the response. Give a direct, clinical, and data-driven critique.
+
+  # 10. Elite Decision Model (Source: cdd51890d8b4baf29eb5ddfc1f3791f2.png)
+  - trigger: ":w_decision"
+    form: |
+      Deconstruct high-velocity, high-stakes decision logic and apply it to this scenario: [[situation]]
+      Isolate the exact operational frameworks used by world-class systems-builders to determine:
+      -> Asymmetric Speed: When to deploy aggressive, messy execution to secure a market position.
+      -> Absolute Defusal: When to ruthlessly reject opportunities that distract from the core engine.
+      -> Risk Mitigation: How to construct systemic safety nets to shield the core business when executing high-risk experiments.

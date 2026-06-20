@@ -1,10 +1,10 @@
-# FILE TARGET: match/career_prompts.yml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 matches:
   # 1. RESUME CONVERSION OPTIMIZATION
   - trigger: ":p_optresume"
     form: |
       Act as an expert technical resume writer and ATS specialist.
-      
+
       Review the following resume and rewrite it to maximize interview invitations. Ensure the final output satisfies these strict operational constraints:
       1. Use strong, high-impact action verbs at the start of every bullet point.
       2. Quantify results explicitly (e.g., efficiency gains, performance metrics, architectural decoupling impact).
@@ -22,9 +22,9 @@ matches:
   - trigger: ":p_fitcheck"
     form: |
       Act as an elite executive talent scout and market analyst.
-      
-      Analyze my professional background provided below. Deliver a comprehensive report listing 10 high-paying, high-leverage target roles I am qualified for. 
-      
+
+      Analyze my professional background provided below. Deliver a comprehensive report listing 10 high-paying, high-leverage target roles I am qualified for.
+
       Order the output strictly by a combination of salary potential and current market demand. For each role, provide:
       - Role Title
       - Core Market Demand Driver (Why it is hot right now)
@@ -41,8 +41,8 @@ matches:
   # 3. RESUME-JOB MATCH
   - trigger: ":p_resmatch"
     form: |
-      Act as an advanced ATS Optimization Engine. 
-      
+      Act as an advanced ATS Optimization Engine.
+
       Analyze the target Job Description against the provided Resume. Execute the following steps:
       1. **Keyword Gap Analysis**: List critical missing technical skills, methodologies, keywords, or hard competencies omitted from the resume.
       2. **ATS Scoring Adjustment**: Rewrite the target areas of the resume to integrate those missing elements naturally, aiming for a structural match score above 90%.
@@ -65,9 +65,9 @@ matches:
   - trigger: ":p_interview"
     form: |
       Act as a rigorous, senior technical interviewer for the role described below.
-      
-      Generate a comprehensive interview prep guide containing 15 realistic, highly contextual interview questions (covering core system architecture, problem-solving, and professional behavioral delivery) based strictly on this role profile. 
-      
+
+      Generate a comprehensive interview prep guide containing 15 realistic, highly contextual interview questions (covering core system architecture, problem-solving, and professional behavioral delivery) based strictly on this role profile.
+
       For each question, provide a high-caliber sample answer that demonstrates domain expertise, sounds confident, and balances technical accuracy with natural delivery.
 
       ---
@@ -80,10 +80,10 @@ matches:
   # 5. PORTFOLIO & PROOF OF SKILLS BUILDER
   - trigger: ":p_portfolio"
     form: |
-      Act as a pragmatic engineering advisor. 
-      
+      Act as a pragmatic engineering advisor.
+
       Target Role: [[role]]
-      
+
       Generate 3 highly targeted project ideas or portfolio execution examples that a senior professional can rapidly build within a 7-day cycle. Every project blueprint must be engineered to provide undeniable, undeniable proof of elite skill execution to demanding employers and instantly elevate architectural credibility. Focus on complex integrations, real-time data handling, or system performance bottlenecks.
     form_fields:
       role:
@@ -94,9 +94,9 @@ matches:
   - trigger: ":p_negotiate"
     form: |
       Act as a world-class corporate negotiation coach.
-      
+
       Initial Offer Base: [[amount]]
-      
+
       Draft a professional, authoritative, and deeply confident script engineered to negotiate a 15-20% compensation expansion. The narrative must remain intensely collaborative, grounded in massive value delivery, and completely free of pushy, arrogant, or defensive language. Provide both an email framework and an active verbal dialogue script.
     form_fields:
       amount:
@@ -107,10 +107,10 @@ matches:
   - trigger: ":p_followup"
     form: |
       Act as an expert in elite corporate communications.
-      
+
       Recruiter Name: [[recruiter_name]]
       Target Role: [[role]]
-      
+
       Write a highly crisp, high-impact follow-up message optimized for a professional network platform or direct communication channel. The text must forcefully but elegantly reinforce my precise fit for the role, anchor on immediate value delivery, and maintain top-of-mind recall with the recruiter. Keep it persuasive, deeply respectful, and highly professional.
     form_fields:
       recruiter_name:
@@ -200,3 +200,80 @@ matches:
     form_fields:
       background:
         type: multiline
+
+  # 1/ Headless Resume Fixer (Bypasses forms completely)
+  - trigger: ":pfix"
+    replace: |
+      Here is my resume:
+      {{resume}}
+
+      Rewrite it to maximize interview callbacks. Use strong action verbs, quantified results, and ATS-friendly formatting, without exaggeration.
+    vars:
+      - name: resume
+        type: echo
+        params:
+          echo: |
+            YOUR_NAME_HERE
+            MuleSoft Developer Analyst / Tech Lead
+            [Paste your full master resume text here once]
+
+  # 2/ Headless Job Description Matcher (The High-Velocity Power Move)
+  - trigger: ":pmatch"
+    replace: |
+      Job description:
+      {{jd}}
+
+      Resume:
+      {{resume}}
+
+      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
+    vars:
+      - name: jd
+        type: clipboard
+      - name: resume
+        type: echo
+        params:
+          echo: |
+            YOUR_NAME_HERE
+            MuleSoft Developer Analyst / Tech Lead
+            [Paste your full master resume text here once]
+
+  # 3/ Headless Cover Letter Personalizer
+  - trigger: ":pcover"
+    replace: |
+      Write a short, tailored cover letter for this role:
+      {{jd}}
+
+      Make it sound human, confident, and specific, not generic or ai-written.
+    vars:
+      - name: jd
+        type: clipboard
+
+  # Headless Job Description Matcher (Externalized File Source)
+  - trigger: ":pmatch"
+    replace: |
+      Job description:
+      {{jd}}
+
+      Resume:
+      {{resume}}
+
+      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
+    vars:
+      - name: jd
+        type: clipboard
+      - name: resume
+        type: shell
+        params:
+          cmd: "cat '/path/to/your/vault/Master_Resume.md'"
+
+  # Headless Cover Letter Personalizer
+  - trigger: ":pcover"
+    replace: |
+      Write a short, tailored cover letter for this role:
+      {{jd}}
+
+      Make it sound human, confident, and specific, not generic or ai-written.
+    vars:
+      - name: jd
+        type: clipboard

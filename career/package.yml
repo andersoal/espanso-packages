@@ -117,3 +117,86 @@ matches:
         type: text
       role:
         type: text
+
+  # 1/ Resume conversion fixer (Source: 9830ab2e57a69ab0a960caa74f759c50.png)
+  - trigger: ":pfix"
+    form: |
+      Here is my resume:
+      [[resume]]
+
+      Rewrite it to maximize interview callbacks. Use strong action verbs, quantified results, and ATS-friendly formatting, without exaggeration.
+    form_fields:
+      resume:
+        type: multiline
+
+  # 2/ Job description matcher (Source: cb7e21ffdc1228c461ad98ab6fc75f71.png)
+  - trigger: ":pmatch"
+    form: |
+      Job description:
+      [[jd]]
+
+      Resume:
+      [[resume]]
+
+      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
+    form_fields:
+      jd:
+        type: multiline
+      resume:
+        type: multiline
+
+  # 3/ Role fit finder (Source: 99e372a2821b214f35a8b00a4fcae92c.png)
+  # Fixes typo "likelihousd" -> "likelihood"
+  - trigger: ":pfit"
+    form: |
+      Based on my experience and skills:
+      [[skills]]
+
+      List 10 roles I'm qualified for that I might be overlooking. Rank them by hiring demand and response likelihood.
+    form_fields:
+      skills:
+        type: multiline
+
+  # 4/ Bullet point upgrader (Source: a353d5467fe34573bed02fb30d9ecde3.png)
+  - trigger: ":pbullet"
+    form: |
+      Rewrite these resume bullet points:
+      [[bullets]]
+
+      Make them clearer, more results-focused, and more impressive to recruiters in under 2 lines each.
+    form_fields:
+      bullets:
+        type: multiline
+
+  # 5/ Cover letter personalizer (Source: 1a419d10f2515d8eee12bfd39e304d78.png)
+  - trigger: ":pcover"
+    form: |
+      Write a short, tailored cover letter for this role:
+      [[jd]]
+
+      Make it sound human, confident, and specific, not generic or AI-written.
+    form_fields:
+      jd:
+        type: multiline
+
+  # 6/ Recruiter hook message (Source: abab44c303473b95f4211158e26dbcd4.png)
+  - trigger: ":phook"
+    form: |
+      Write a concise LinkedIn or email message to a recruiter for this role:
+      [[jd]]
+
+      The goal is to spark interest and get a reply, not ask for a favor.
+    form_fields:
+      jd:
+        type: multiline
+
+  # 7/ Application optimizer (Source: c004d1c2a80aadcaf608eb3232238868.png)
+  - trigger: ":popt"
+    form: |
+      Based on my background and target roles:
+      [[background]]
+
+      Create a smarter application strategy. Tell me how many roles to apply for weekly, how to customize efficiently, and how to follow up.
+    form_fields:
+      background:
+        type: multiline

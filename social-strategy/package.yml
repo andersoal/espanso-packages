@@ -1,0 +1,78 @@
+matches:
+  # ---------------------------------------------------------------------------
+  # 1. NICHE INTELLIGENCE & AUDIENCE MAPPING (Image: e73c3bbac6ede7f0e2600ca6ef63986e.png)
+  # Optimization: Fast inline regex capture. Usage: :niche(your-target-niche)
+  # ---------------------------------------------------------------------------
+  - regex: ":niche\\((?P<target_niche>.*)\\)"
+    replace: |
+      Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze the niche "{{target_niche}}" and identify the most profitable audience segments, their biggest frustrations, emotional triggers, content consumption habits, and what type of posts make them follow, engage, and buy. Present this in a clear, actionable profile I can build content around.
+
+  # ---------------------------------------------------------------------------
+  # 2. MARKET POSITIONING & BRAND STRATEGY (Image: e73c3bbac6ede7f0e2600ca6ef63986e.png)
+  # Optimization: Fast inline regex capture. Usage: :position(your-target-niche)
+  # ---------------------------------------------------------------------------
+  - regex: ":position\\((?P<target_niche>.*)\\)"
+    replace: |
+      Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". Define what my brand stands for, the unique angle that separates me from competitors, my brand voice and tone, visual aesthetic guidelines, and the core message that will resonate deeply with my target audience.
+
+  # ---------------------------------------------------------------------------
+  # 3. CONTENT PILLAR ARCHITECTURE (Image: c51e5017d619e6942c1bc183b8860eb6.png)
+  # Optimization: Multi-field form with smart defaults for targeted systems-thinking design.
+  # ---------------------------------------------------------------------------
+  - trigger: ":pillars"
+    form: |
+      You're a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche [[niche]] and target audience [[audience]], create 5 content pillars that will drive maximum engagement. For each pillar, explain: why it works, the psychology behind it, 10 post ideas, and how to balance educational/entertaining/promotional content.
+    form_fields:
+      niche:
+        type: text
+        default: "B2B Software Engineering"
+      audience:
+        type: text
+        default: "Technical Architects and Enterprise Builders"
+
+  # ---------------------------------------------------------------------------
+  # 4. 30-DAY CONTENT CALENDAR GENERATOR (Image: c51e5017d619e6942c1bc183b8860eb6.png)
+  # Optimization: Choice dropdown to enforce correct platform schemas seamlessly.
+  # ---------------------------------------------------------------------------
+  - trigger: ":calendar"
+    form: |
+      Act as my content calendar manager. Create a complete 30-day posting schedule for [[platform]]. Include: daily post concepts, optimal posting times based on audience behavior, content format variety (carousels/reels/stories), hooks for each post, and strategic CTAs. Make it copy-paste ready.
+    form_fields:
+      platform:
+        type: choice
+        values:
+          - "LinkedIn"
+          - "X (Twitter)"
+          - "YouTube Shorts"
+          - "Instagram"
+
+  # ---------------------------------------------------------------------------
+  # 5. VIRAL HOOK FORMULA CREATOR (Image: eb09a32628a6d7a86708fc3c6a3db5f3.png)
+  # Optimization: Fast inline regex capture. Usage: :hooks(your-niche)
+  # ---------------------------------------------------------------------------
+  - regex: ":hooks\\((?P<target_niche>.*)\\)"
+    replace: |
+      You're a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}} and create 50 hook templates I can customize. Categorize them by: curiosity-driven, controversy, storytelling, listicles, bold statements. Make each one scroll-stopping.
+
+  # ---------------------------------------------------------------------------
+  # 6. ENGAGEMENT & COMMUNITY BUILDER (Image: eb09a32628a6d7a86708fc3c6a3db5f3.png)
+  # Optimization: Static plain text. No variables required in original prompt text.
+  # ---------------------------------------------------------------------------
+  - trigger: ":engage"
+    replace: |
+      Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conversation starters that build relationships, collaboration outreach templates, how to turn followers into loyal fans, and a daily engagement routine that takes under 30 minutes.
+
+  # ---------------------------------------------------------------------------
+  # 7. ANALYTICS INTERPRETER & OPTIMIZER (Image: eb09a32628a6d7a86708fc3c6a3db5f3.png)
+  # Optimization: Automatically pulls raw metrics data directly from your clipboard.
+  # ---------------------------------------------------------------------------
+  - trigger: ":analytics"
+    replace: |
+      You're a data analyst for social media. Based on these metrics:
+      
+      {{raw_metrics}}
+      
+      Identify: what's working and why, what's underperforming and how to fix it, content gaps I should fill, optimal posting frequency, and a 90-day growth roadmap with specific KPIs to hit.
+    vars:
+      - name: raw_metrics
+        type: clipboard

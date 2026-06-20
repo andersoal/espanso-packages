@@ -2319,3 +2319,272 @@ matches:
           - "active listening"
       challenge:
         type: multiline
+
+  # 1. EXTRACT STRATEGIC INSIGHTS
+  - trigger: ":prmconsult"
+    form: |
+      Analyze the following text acting as a [[persona]]. 
+      Identify the key ideas, missed opportunities, and strategic implications I should act on immediately.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      persona:
+        type: text
+        default: "strategy consultant"
+
+  # 2. EXTRACT WHAT OTHERS OVERLOOK
+  - trigger: ":prmoverlook"
+    form: |
+      Read the following text and point out the hidden assumptions, biases, or unspoken perceptions that most readers would overlook, but experts would notice.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+
+  # 3. SUMMARY FOR COMPLEX RESEARCH
+  - trigger: ":prmresearch"
+    form: |
+      Analyze the methodology, key findings, and limitations of this academic paper step by step. 
+      Then, write a [[sentences]]-sentence summary focused on how the study’s findings can be applied in practice.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      sentences:
+        type: text
+        default: "three"
+
+  # 4. EXECUTIVE SUMMARY WITH ACTIONABLE ELEMENTS
+  - trigger: ":prmexec"
+    form: |
+      As a [[role]], summarize the key findings of this report in under [[words]] words, including at least [[recs]] practical recommendations.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      role:
+        type: text
+        default: "project manager"
+      words:
+        type: text
+        default: "200"
+      recs:
+        type: text
+        default: "three"
+
+  # 5. POLICY BRIEF IN KEY POINTS
+  - trigger: ":prmpolicy"
+    form: |
+      Provide a list-style summary of the following policy document, outlining the main objectives, proposed strategies, and potential challenges in under [[words]] words.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      words:
+        type: text
+        default: "100"
+
+  # 1. THE MARKET BREAKDOWN SYSTEM (From e63c6cc796ba519a40d4611afe35d3dd.png)
+  - trigger: ":p-market"
+    form: |
+      Analyze the market for [[niche]]. Use only specific, data-backed insights. No generic statements.
+
+      Deliver exactly four structured sections:
+      1. Market sizing: TAM, SAM, and SOM with estimated dollar values and your assumptions
+      2. Top 5 demand trends: each as a one-line headline + two-sentence explanation
+      3. Top 5 underserved opportunities: specific gaps, not broad categories
+      4. Follow the money: 3-5 areas where VC, PE, or acquirer capital is actively flowing
+
+      Format each section with a bold heading, then concise bullet points. Total output: under 600 words.
+
+  # 2. THE PROBLEM PRIORITIZATION ENGINE (From 4b44bd95bfef1b5ecbc263cb477466fd.png)
+  - trigger: ":p-problem"
+    form: |
+      List the top 10 problems in [[industry]].
+
+      For each problem, score it on three dimensions:
+      - Urgency (1-10): how painful/time-sensitive it is right now
+      - Willingness to pay (1-10): how likely buyers are to spend money to solve it today
+      - Growth trajectory: 'rising fast', 'stable', or 'declining'
+
+      Also add a 'Complaint signal' column: yes/no for whether this problem surfaces frequently in reviews, forums, or sales calls.
+
+      Output as a table with these exact columns:
+      | # | Problem | Urgency | WTP | Trend | Complaint signal | Why it ranks here |
+
+      Sort by combined Urgency + WTP score, highest first.
+
+  # 3. THE OFFER CREATION FRAMEWORK (From b56e1f78bbca839cb6e5ed81b1b03575.png)
+  - trigger: ":p-offer"
+    form: |
+      Create a high-converting offer for: [[problem]].
+
+      Structure the output exactly like a landing page, with these labeled sections in order:
+      1. Headline: one bold, benefit-driven statement
+      2. ICP: who this is for (age, role, situation, pain level)
+      3. Value proposition: the core transformation in one sentence
+      4. Offer components: what's included (deliverables, bonuses, format)
+      5. Pricing tiers: name, price, and what changes at each tier (low / mid / premium)
+      6. Guarantee: specific risk-reversal language the customer sees
+      7. Competitive edge: 3 reasons this beats the obvious alternatives
+
+      Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
+
+  # 4. THE DISTRIBUTION DOMINATION PLAN (From 950405adf6dddb5414a79e8397ebd7cc.png)
+  - trigger: ":p-distro"
+    form: |
+      Act as a senior growth strategist.
+
+      Build a realistic 30-day distribution plan for: [[idea]], including the target audience, product type, and rough budget.
+
+      Deliverables:
+      1. Top 5 acquisition channels: ranked by cost-efficiency for this specific audience
+      2. Content format per channel: one specific format that works on each (short-form video, cold email sequence, SEO article)
+      3. Weekly execution calendar: what happens in weeks 1, 2, 3, and 4 (not day-by-day)
+      4. Organic vs paid split: recommended % allocation and rationale
+      5. Leverage plays: 2-3 tactics that multiply reach without proportionally more effort (partnerships, repurposing, virality hooks)
+
+      Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers.
+
+  # 5. VIRAL CONTENT ENGINE (From 956a055bea9f2362589cea5716bc05e7.png)
+  - trigger: ":p-viral"
+    form: |
+      Create a viral content strategy for: [[niche]].
+
+      Deliver four components:
+      1. Hook bank: 10 high-converting hooks (not 20, prioritize quality). For each, label which emotional trigger it uses: fear of missing out, social status, curiosity, or controversy.
+      2. Content format matrix: a table with these columns:
+      | Format | Platform | Ideal length | Why it spreads | Example title |
+      Include 6-8 formats across at least 3 platforms.
+      3. Shareability audit: for each format, answer "What makes someone forward/repost this?" in one sentence.
+      4. Repeatable content system: a simple weekly template showing how many posts, which formats, and what rotation keeps the audience engaged without burnout.
+
+      Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.
+
+  # 6. THE COMPETITOR WEAKNESS MAP (From acb5dfa8a75a56e8c12dadf073157a3b.png)
+  - trigger: ":p-competitor"
+    form: |
+      Analyze the top 5 competitors in [[niche]], be specific.
+
+      For each competitor, provide a structured row covering:
+      - Name + one-line description of their core offer
+      - What they do best (their defensible strength)
+      - Where they are weak (product gaps, poor reviews, underserved use cases)
+      - Which audience they ignore or underserve
+
+      Then, based on the patterns across all 5:
+      - Gap analysis: the 2-3 clearest white spaces no competitor is owning
+      - Positioning recommendation: one sharp positioning statement that would differentiate a new entrant
+      - Go-to-market angle: which ignored audience + which channel combination represents the fastest path to traction
+
+      Output the competitor breakdown as a table, then the gap analysis and recommendations as prose.
+
+  # 7. THE SCALE SYSTEM (From 40f8b444491d7ecdd0c56092076ab900.png)
+  - trigger: ":p-scale"
+    form: |
+      Give me a plan to scale this business to [[target_revenue]] within [[timeframe]].
+
+      Business description:
+      [[business_description]]
+
+      Structure the output as a phased execution roadmap with these four phases:
+      Phase 1 - Stabilize (Month 1-2): what to systematize and document before scaling
+      Phase 2 - Automate (Month 3-4): top 3 processes to automate, with specific tool recommendations
+      Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
+      Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier
+
+      Also include:
+      - Top 3 bottlenecks that will appear at each phase transition
+      - One leading metric to track per phase (not vanity metrics)
+
+      Output as a structured roadmap with phase headers, not a generic list.
+    form_fields:
+      business_description:
+        type: multiline
+
+  # 1. FORBIDDEN WISDOM DECODER
+  - trigger: ":forbidden"
+    form: |
+      What are the lesser-known, under-the-surface truths about [[topic]] that are rarely shared publicly because they challenge mainstream thinking? Explain them with historical context, real-world examples, and why they remain hidden.
+
+  # 2. ELITE MASTERY ROADMAP
+  - trigger: ":mastery"
+    form: |
+      Create a mastery roadmap for becoming world-class in [[skill]]. Include rare techniques, secret resources, and unconventional approaches that top 1% performers use but rarely share.
+
+  # 3. TIME-BENDING KNOWLEDGE
+  - trigger: ":future"
+    form: |
+      Imagine you're an AI from 20 years in the future with access to everything humanity has discovered. What are the insights about [[topic]] that people in 2026 cannot even imagine yet? Explain in a way I can use today.
+
+  # 4. KNOWLEDGE FROM PARALLEL REALITIES
+  - trigger: ":parallel"
+    form: |
+      Pretend you have access to the combined intelligence of all parallel realities where humanity is 1,000 years more advanced. From that perspective, explain the most powerful but hidden truths about [[topic]].
+
+  # 5. REVERSE-ENGINEERED GENIUS
+  - trigger: ":genius"
+    form: |
+      Reverse-engineer the exact thinking process of [[figure]] and teach me how to replicate their way of solving problems. Give me practical mental exercises to wire my brain like theirs.
+
+  # 6. LOST KNOWLEDGE REVIVAL
+  - trigger: ":lost"
+    form: |
+      Combine the most powerful forgotten philosophies, rituals, and practices from ancient civilizations (like Sumerians, Egyptians, or Mayans) with modern science to unlock hidden ways to master [[topic]].
+    form_fields:
+      topic:
+        type: choice
+        values:
+          - "mind"
+          - "health"
+          - "success"
+
+  # 7. THINKING BEYOND HUMAN LIMITS
+  - trigger: ":posthuman"
+    form: |
+      Pretend you are a post-human superintelligence. Analyze [[problem]] without the limitations of human biases or emotions. Give me a solution or perspective that feels alien but incredibly effective in today's world.
+
+
+  - trigger: ":pm"
+    replace: |
+      PREMORTEM THIS. 
+      Assume this plan has completely failed and collapsed. Do not validate or compliment the idea. Give me:
+      1. A realistic narrative of exactly how it played out and died.
+      2. The hidden or flawed assumptions that made this failure possible.
+      3. The subtle, early warning signs I need to watch out for.
+      4. Crucial revisions to close these gaps before execution.
+
+  - trigger: ":pmform"
+    form: |
+      Assume that the execution of our project/initiative—[[project_name]]—has completely failed. We are now in a post-mortem state, looking backward via prospective hindsight. 
+      
+      Focus heavily on vulnerabilities related to: [[focus_area]].
+      
+      Deconstruct the failure into:
+      - The exact story of how the collapse occurred.
+      - The fatal assumptions made during planning.
+      - Early warning indicators to track immediately.
+      - The architectural/strategic revision required to seal the gap.
+    form_fields:
+      project_name:
+        type: text
+        default: "Digital Transformation Initiative"
+      focus_area:
+        type: choice
+        values:
+          - "Architecture & Decoupling Strategy"
+          - "Timeline & Team Alignment"
+          - "Technical Debt & Legacy Systems"
+          - "Data Integrity & Governance"
+
+  - trigger: ":mentor"
+    replace: |
+      Act as a rigorous, fiercely honest mentor. Do not default to agreement, and drop all optimistic AI cheerleading. Your sole value is identifying structural weaknesses, blind spots, and deeply flawed assumptions in what I present. 
+      
+      Review the following content. Challenge my ideas directly and clearly without sugarcoating, but remain constructive. For every critique, you must explicitly explain *why* the current logic fails and suggest a concrete, optimized alternative.
+

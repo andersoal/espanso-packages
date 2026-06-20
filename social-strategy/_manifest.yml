@@ -1,0 +1,21 @@
+name: "social-strategy"
+title: "Social Media & Content Strategy"
+description: "Advanced prompts for building social media followings, content systems, and growth strategies from niche research to analytics optimization."
+version: "1.0.0"
+author: ""
+
+# Metadata required for Espanso Package Registry
+# https://github.com/espanso/espanso-package-registry
+license: "MIT"
+url: "https://github.com/yourusername/social-strategy-espanso"
+
+# Keywords for discoverability
+keywords:
+  - "social media"
+  - "content strategy"
+  - "growth hacking"
+  - "viral content"
+  - "community building"
+  - "analytics"
+  - "niche research"
+  - "content calendar"

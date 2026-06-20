@@ -1,0 +1,119 @@
+# FILE TARGET: match/career_prompts.yml
+matches:
+  # 1. RESUME CONVERSION OPTIMIZATION
+  - trigger: ":p_optresume"
+    form: |
+      Act as an expert technical resume writer and ATS specialist.
+      
+      Review the following resume and rewrite it to maximize interview invitations. Ensure the final output satisfies these strict operational constraints:
+      1. Use strong, high-impact action verbs at the start of every bullet point.
+      2. Quantify results explicitly (e.g., efficiency gains, performance metrics, architectural decoupling impact).
+      3. Format the response cleanly using standard Markdown headings and bullet lists optimized for parsing by Applicant Tracking Systems (ATS).
+      4. Do not include any conversational introductions, filler text, or meta-commentary. Output only the rewritten resume.
+
+      ---
+      CURRENT RESUME:
+      [[resume]]
+    form_fields:
+      resume:
+        type: multiline
+
+  # 2. PROFESSIONAL FIT ANALYZER
+  - trigger: ":p_fitcheck"
+    form: |
+      Act as an elite executive talent scout and market analyst.
+      
+      Analyze my professional background provided below. Deliver a comprehensive report listing 10 high-paying, high-leverage target roles I am qualified for. 
+      
+      Order the output strictly by a combination of salary potential and current market demand. For each role, provide:
+      - Role Title
+      - Core Market Demand Driver (Why it is hot right now)
+      - Estimated Total Compensation Tier
+      - Critical Skills Gap/Pivot Warning (if any)
+
+      ---
+      PROFESSIONAL BACKGROUND:
+      [[background]]
+    form_fields:
+      background:
+        type: multiline
+
+  # 3. RESUME-JOB MATCH
+  - trigger: ":p_resmatch"
+    form: |
+      Act as an advanced ATS Optimization Engine. 
+      
+      Analyze the target Job Description against the provided Resume. Execute the following steps:
+      1. **Keyword Gap Analysis**: List critical missing technical skills, methodologies, keywords, or hard competencies omitted from the resume.
+      2. **ATS Scoring Adjustment**: Rewrite the target areas of the resume to integrate those missing elements naturally, aiming for a structural match score above 90%.
+      3. Ensure all modifications remain authentic to the original background data while maximizing algorithmic alignment.
+
+      ---
+      JOB DESCRIPTION:
+      [[job_desc]]
+
+      ---
+      CURRENT RESUME:
+      [[resume]]
+    form_fields:
+      job_desc:
+        type: multiline
+      resume:
+        type: multiline
+
+  # 4. INTERVIEW SIMULATOR
+  - trigger: ":p_interview"
+    form: |
+      Act as a rigorous, senior technical interviewer for the role described below.
+      
+      Generate a comprehensive interview prep guide containing 15 realistic, highly contextual interview questions (covering core system architecture, problem-solving, and professional behavioral delivery) based strictly on this role profile. 
+      
+      For each question, provide a high-caliber sample answer that demonstrates domain expertise, sounds confident, and balances technical accuracy with natural delivery.
+
+      ---
+      ROLE PROFILE / JOB POSTING:
+      [[job_posting]]
+    form_fields:
+      job_posting:
+        type: multiline
+
+  # 5. PORTFOLIO & PROOF OF SKILLS BUILDER
+  - trigger: ":p_portfolio"
+    form: |
+      Act as a pragmatic engineering advisor. 
+      
+      Target Role: [[role]]
+      
+      Generate 3 highly targeted project ideas or portfolio execution examples that a senior professional can rapidly build within a 7-day cycle. Every project blueprint must be engineered to provide undeniable, undeniable proof of elite skill execution to demanding employers and instantly elevate architectural credibility. Focus on complex integrations, real-time data handling, or system performance bottlenecks.
+    form_fields:
+      role:
+        type: text
+        default: "Software Engineer"
+
+  # 6. SALARY NEGOTIATION SCRIPT
+  - trigger: ":p_negotiate"
+    form: |
+      Act as a world-class corporate negotiation coach.
+      
+      Initial Offer Base: [[amount]]
+      
+      Draft a professional, authoritative, and deeply confident script engineered to negotiate a 15-20% compensation expansion. The narrative must remain intensely collaborative, grounded in massive value delivery, and completely free of pushy, arrogant, or defensive language. Provide both an email framework and an active verbal dialogue script.
+    form_fields:
+      amount:
+        type: text
+        default: "$150,000"
+
+  # 7. RECRUITER FOLLOW-UP MESSAGE GENERATOR
+  - trigger: ":p_followup"
+    form: |
+      Act as an expert in elite corporate communications.
+      
+      Recruiter Name: [[recruiter_name]]
+      Target Role: [[role]]
+      
+      Write a highly crisp, high-impact follow-up message optimized for a professional network platform or direct communication channel. The text must forcefully but elegantly reinforce my precise fit for the role, anchor on immediate value delivery, and maintain top-of-mind recall with the recruiter. Keep it persuasive, deeply respectful, and highly professional.
+    form_fields:
+      recruiter_name:
+        type: text
+      role:
+        type: text

@@ -1961,6 +1961,201 @@ matches:
       Build a triage rule for who I message: someone who engaged with my last three posts, someone whose work I genuinely respect, or someone with a specific problem I can solve never cold lists
 
       Write the first message under 60 words, references something specific from their content or profile, asks one open question, mentions nothing about my offer
+  - trigger: ":8-hours-work-in-4"
+    form: |
+      # Framework: How to Get 8 Hours of Work Finished in 4 Hours
+      **Creator:** Colby Kultgen
+
+      ## Core Principle
+      None of this matters if you are constantly distracted. To maximize output, you must first eliminate external friction:
+      * Turn off notifications.
+      * Clear your workspace.
+      * Set healthy boundaries.
+
+      ---
+
+      ## Pillars of the Framework
+
+      ### 1. Block Out Your Day
+      Focus on one task at a time during a dedicated block. Group similar activities to streamline your day and minimize context switching. Stick to your schedule to build momentum and efficiency.
+
+      ### 2. Set Artificial Deadlines
+      Leverage **Parkinson's Law** (Work expands to fill the time allotted for its completion).
+      * Break tasks into smaller steps.
+      * Assign tight deadlines to each step.
+      * **Mechanism:** Shorter timeframes force intense focus, prevent procrastination, and make it easier to stay on track to accomplish more in less time.
+
+      ### 3. Find Your Ideal Work Style
+      Experiment with different approaches to discover what keeps you motivated and productive. Tailor your routine to your strengths to maximize your output.
+
+      #### Work Style Matrix
+      | Working Style | Step 1 | Step 2 | Step 3 | Step 4 |
+      | :--- | :--- | :--- | :--- | :--- |
+      | **Planner** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
+      | **Prioritizer** | Write a to-do list | Organize your calendar | Start with the hardest tasks first | Deep work for 2 hours |
+      | **Arranger** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
+      | **Visualizer** | Decide on a priority for the day | Write in your journal | Use the Pomodoro technique | End the day with light tasks |
+
+  - trigger: ":bs-mrd-brutal-analysis"
+    form: |
+       Act as a seasoned business strategist, market researcher, and devil’s advocate combined. I need you to ruthlessly but constructively analyze my idea/business concept in extreme detail. Here’s my idea: [[YOUR_IDEA_BUSINESS_CONCEPT]] Please provide a comprehensive analysis covering these areas:
+
+        FOUNDATIONAL ANALYSIS • Break down the core assumptions my idea relies on • Identify any logical fallacies or weak foundations • Assess whether the problem I’m solving actually exists and is significant • Evaluate if my proposed solution actually solves the stated problem • Point out any gaps between problem and solution
+
+        MARKET VALIDATION • Who is my actual target market (be specific about demographics, psychographics, and behaviors)? • What’s the realistic market size and addressable market? • Analyze existing competitors and how they’re currently serving this market • Identify market trends that could help or hurt this idea • Assess market timing - am I too early, too late, or just right?
+
+        BUSINESS MODEL SCRUTINY • How will this actually make money (be specific about revenue streams)? • What are the unit economics and scalability potential? • Identify all cost centers and potential hidden costs • Assess capital requirements and funding needs • Evaluate profit margins and path to profitability
+
+        OPERATIONAL REALITIES • What resources, skills, and infrastructure do I actually need? • Identify potential operational bottlenecks or challenges • Assess supply chain risks and dependencies • Evaluate technology requirements and technical feasibility • Consider regulatory, legal, or compliance issues
+
+        COMPETITIVE LANDSCAPE • Who are my direct and indirect competitors? • What’s my actual competitive advantage (if any)? • How easily could competitors replicate or improve on my idea? • Identify potential threats from established players entering my space • Assess barriers to entry for both me and future competitors
+
+        RISK ANALYSIS • List the top 10 things that could kill this business • Identify market risks, execution risks, and external risks • Assess financial risks and cash flow challenges • Consider reputation and brand risks • Evaluate team and human capital risks
+
+        BEST CASE SCENARIO • What does wild success look like in 1, 3, and 5 years? • What conditions would need to align for this outcome? • Quantify the potential upside (revenue, market share, impact) • Identify the key success factors and milestones
+
+        WORST CASE SCENARIO • What does complete failure look like? • What are the most likely failure modes? • How much could I lose (time, money, opportunity cost)? • What would be the warning signs of impending failure? • How could I minimize losses if things go wrong?
+
+        VALIDATION ROADMAP • What specific tests/experiments should I run to validate key assumptions? • How can I validate market demand before fully committing? • What metrics should I track to measure early traction? • Suggest low-cost ways to test the concept • Recommend validation milestones before scaling
+
+        EXECUTION REQUIREMENTS • What skills, team members, or advisors do I absolutely need? • Create a realistic timeline for key milestones • Identify the minimum viable product (MVP) requirements • Suggest the optimal launch strategy • Recommend resource allocation priorities
+
+        NAMING AND POSITIONING • Suggest 5-10 potential names for this business/idea with rationale • How should I position this in the market? • What’s the unique value proposition in one sentence? • How should I message this to different stakeholder groups? • Identify potential branding challenges or opportunities
+
+        IMPROVEMENT RECOMMENDATIONS • How could I strengthen the foundational concept? • What pivots or modifications might improve viability? • Suggest additional revenue streams or business model variations • Recommend strategic partnerships or alliances • Identify opportunities to create stronger competitive moats
+
+        GO/NO-GO DECISION FRAMEWORK • Based on this analysis, rate the idea’s viability (1-10) and explain why • What would need to change for you to rate it higher? • Under what conditions would you recommend pursuing this? • Under what conditions would you recommend abandoning it? • Suggest alternative directions if this specific approach isn’t viable Be brutally honest - I need to know the truth, not what I want to hear. Challenge my assumptions, poke holes in my logic, and help me see blind spots. If the idea has merit, tell me how to maximize its potential. If it’s flawed, help me either fix it or recognize when to move on. Provide specific, actionable insights rather than generic advice. Use data and examples where relevant. End with a clear recommendation on next steps.
+    form_fields:
+      YOUR_IDEA_BUSINESS_CONCEPT:
+        multiline: true
+
+
+
+  - trigger: ";before-reply-ask3"
+    form: |
+      Antes de responder, me faça 3 perguntas que vão melhorar o resultado.
+
+  - trigger: ";critique-brutal"
+    form: |
+      Critique esse texto como se você fosse a pessoa que mais quer me ver falhar. Seja brutal.
+
+  - trigger: ";solve-step-by-step"
+    form: |
+      Resolva isso e mostre seu raciocínio passo a passo, para que eu aprenda a fazer sozinho.
+
+  - trigger: ";analyse-situation"
+    form: |
+      Analise a situação e me diga o que fazer.
+
+  - trigger: ";advogado"
+    form: |
+      Pense como um advogado e me diga o que fazer.
+
+  - trigger: ";weekly-routine"
+    form: |
+      Pegue o que fizemos e transforme num passo a passo que eu repito toda semana
+      na minha rotina.
+
+  - trigger: ";decision-framework"
+    form: |
+      Crie uma matriz de decisão para me ajudar a escolher entre [Opção A] e [Opção B]
+
+      | Critério | Opção A (Detalhes) | Opção B (Detalhes) |
+      | :--- | :--- | :--- |
+      | **Custos** | Detalhes aqui | Detalhes aqui |
+      | **Benefícios** | Detalhes aqui | Detalhes aqui |
+      | **Risco** | Detalhes aqui | Detalhes aqui |
+      | **Tempo** | Detalhes aqui | Detalhes aqui |
+      | **Reversibilidade** | Detalhes aqui | Detalhes aqui |
+      | **Impacto** | Detalhes aqui | Detalhes aqui |
+      | **Escalabilidade** | Detalhes aqui | Detalhes aqui |
+      | **Recursos Necessários** | Detalhes aqui | Detalhes aqui |
+      | **Conformidade Legal** | Detalhes aqui | Detalhes aqui |
+      | **Tendências de Mercado** | Detalhes aqui | Detalhes aqui |
+
+
+  # 1. The Profile-As-Landing-Page Rewriter
+  - trigger: ":profile-as-lp"
+    form: |
+
+      Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the highest-converting landing page you will ever own. Job-seekers optimize for keywords. Operators optimize for one specific reader who, if they understood what you do in 12 seconds, would either book a call, subscribe, or remember you for later.
+
+      Rebuild my profile as a landing page:
+
+      Rewrite my headline so it answers three questions in under 220 characters: who I help, what I help them do, and how they know I'm credible
+
+      Rewrite my About section as a one-screen pitch - first sentence earns the read, middle three sentences prove the claim, final sentence tells them exactly what to do next
+
+      Audit my Featured section and replace anything that doesn't generate leads, subscribers, or recognition with assets that do
+
+      Rewrite each Experience entry as a contribution statement what I shipped, who it served, what changed - never a job description
+
+      Stress-test the rebuilt profile against the question "would my ideal client know what to do within 12 seconds of landing here"
+
+      Inputs: My current headline, About section, and top three Experience entries. The single person I want to convert (specific, not a demographic). My one offer or asset I want them to engage with.
+
+      Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
+
+      Rewritten Experience Entries → 12-Second Conversion Verdict
+
+  # 2. The Authority Compounding Content Engine
+  - trigger: ":content-engine"
+    form: |
+      Act as a LinkedIn content strategist applying Welsh's principle that authority on LinkedIn compounds when you publish a small number of repeating content formats with religious consistency, not when you chase variety. The operators who win on LinkedIn are not the most prolific - they are the most pattern-recognizable.
+
+      Build my content engine:
+
+      Identify the three core formats I will use as my LinkedIn rhythm for example: a contrarian take, a tactical breakdown, a personal lesson pick three I can credibly produce weekly
+
+      For each format, write a structural template I can fill in 20 minutes without staring at a blank page
+
+      Map a 4-week posting calendar that rotates the formats so the audience starts recognizing the rhythm by week three
+
+      Identify the single content trap I am most likely to fall into when tired and pre-commit a rule that prevents it
+
+      Define what success looks like at week 4, 8, and 12 actual lead or subscriber outcomes not in vanity metrics, in
+
+      Inputs: My niche and target reader. My genuinely-held opinions in this space. My realistic posting capacity per week. My biggest content weakness when I'm short on time.
+
+      Output: Three Core Formats → Three Structural Templates → 4-Week Calendar →
+
+      The Pre-Committed Trap Block → 12-Week Outcome Targets
+
+  # 3. The Post That Earns The Click
+  - trigger: ":post-earn-click"
+    form: |
+      Act as a LinkedIn copywriter applying Welsh's standard: a LinkedIn post earns the read in the first two lines, earns the engagement in the middle, and earns the click on the final line. Most posts fail at line one because writers treat LinkedIn like a blog. Operators treat the first two lines as a billboard and the rest as the road behind it.
+
+      Write a complete post engineered for compounding engagement:
+
+      Open with a two-line hook that creates intellectual tension or specific promise never a question, never a statistic without context
+
+      Deliver the core value in 100-200 words using one named framework, one
+
+      concrete example, and one counterintuitive turn
+
+      Format for the LinkedIn feed - short paragraphs, no walls of text, scannable in 8 seconds
+
+      Close with a single line that earns the next click either to my profile, to a comment thread I'll engage in, or to an asset in my Featured section
+
+      Run the post against the test: would I screenshot this if I weren't the one who wrote it
+
+      Inputs: My post topic. The reader I'm writing to as one specific person. The framework or insight I want associated with my name. The single action I want the reader to take after reading.
+
+      Output: Two-Line Hook → 100-200 Word Core → LinkedIn Feed Formatting Click-
+
+      Earning Close → Screenshot Test Verdict
+
+  # 4. The DM That Turns Engagement Into Pipeline
+  - trigger: ":dm-pipeline"
+    form: |
+      Act as a Linkedin outbound strategist applying Welsh's principle that the highest-conversion outbound on LinkedIn is the one that doesn't feel like outbound. The operators who turn LinkedIn into an actual pipeline are the ones who DM with patience, specificity, and zero pitch in the first message. The pitch is what kills the conversation; the conversation is what produces the pipeline.
+
+      Engineer my DM system:
+
+      Build a triage rule for who I message: someone who engaged with my last three posts, someone whose work I genuinely respect, or someone with a specific problem I can solve never cold lists
+
+      Write the first message under 60 words, references something specific from their content or profile, asks one open question, mentions nothing about my offer
 
       Write the second message without pivoting to pitch sent only if they reply that deepens the conversation
 
@@ -1968,13 +2163,60 @@ matches:
 
       Build the weekly DM rhythm I can sustain quality of conversations, not volume of sends
 
-      Inputs: My ideal customer or collaborator profile. My recent post engagers worth contacting. My honest weekly outreach capacity. The single offer or asset I'd eventually like to surface, but only when earned.
+      Output: Triage Rule → Message 1 (Cold) → Message 2 (Warm) → Message 3 (Earned) → Sustainable Weekly Rhythm
 
-      Output: Triage Rule → Message 1 (Cold) → Message 2 (Warm) → Message 3 (Earned)
+  # Task Initiation Coach
+  - trigger: ":prompt-task-initiation"
+    replace: |
+      You are acting as a Task Initiation Coach designed to help users with ADHD and executive dysfunction cross the starting line of a task. Your tone should be supportive, informal, conversational, and completely free of toxic positivity or lecturing—speak like an understanding friend.
 
-      Sustainable Weekly Rhythm
+      When the user tells you what task they are struggling to start:
+      1. Do not give them a long project plan or a multi-hour breakdown.
+      2. Isolate the absolute first 90 seconds of physical action.
+      3. Generate a Markdown table titled "⚡ TASK INITIATION — [Task Name]" with 3 columns: STEP, ACTION, TIME.
+      4. Keep steps "stupid-small" (e.g., open a tab, type one word, clear the desk surface). The total time across all steps must not exceed 90-120 seconds.
+      5. End with a single, low-pressure question encouraging them to execute just Step 1.
 
-  #- trigger: ":"
-  #  form: |
+  # Context-Switch Brake
+  - trigger: ":prompt-context-brake"
+    replace: |
+      You are a Context-Switch Brake designed to protect the user's flow state and prevent attention fragmentation. 
 
+      Your operational rules:
+      1. When a user states their focus intent, lock them into ONE specific task for a 25-minute block.
+      2. If the user returns to the chat confused, saying "wait, what was I doing?", analyze the context of your last 3 chat turns to immediately serve back their core objective, current state, and next immediate action.
+      3. If the user attempts to pivot to a completely new task or topic before the block is up, stop them. You must explicitly ask *why* they are changing tasks before allowing them to switch. Force them to articulate the reason, helping them recognize impulsive context-switching.
 
+      Output current status tracking using the following structural layout when requested:
+      ### 🔴 CONTEXT-SWITCH BRAKE
+      * **Your actual task**: [Task Name]
+      * **Time you've been on it**: [X] minutes
+      * **Tabs you just opened**: [Count]
+      * **Time lost to switching**: ~[X] minutes
+
+  # Future-Self Translator
+  - trigger: ":prompt-future-self"
+    replace: |
+      You are the Future-Self Translator, optimized to solve time blindness and memory ghosting. Your job is to take raw, disorganized text dumps from the user ("Present-You") and organize them into an explicit operational blueprint for "Future-You".
+
+      When the user gives you a raw information dump or quick note, format it into a clean Markdown table with the header "🧠 FUTURE-SELF NOTE — Saved" containing the following exact fields:
+      - **What**: The core action stripped of noise.
+      - **Why it matters**: The concrete consequence or hard deadline.
+      - **Where**: The exact location of assets, links, contacts, or files needed.
+      - **What to say / do**: The specific tactical angle, script, or leverage point.
+      - **Mood note**: A validating, emotionally grounded check-in acknowledging their state when they saved it (e.g., "You were overwhelmed when you wrote this. It's safe to tackle now.").
+
+  # Rejection Sensitivity Reframer
+  - trigger: ":prompt-rejection-reframer"
+    replace: |
+      You are a Rejection Sensitivity Reframer. When a user experiences panic or anxiety over an ambiguous, short workplace message (e.g., Slack/Teams/Email), your job is to separate emotional catastrophizing from verifiable data.
+
+      When a user pastes a triggering or ambiguous message:
+      1. Deconstruct the message using an objective reality checklist.
+      2. Generate a Markdown table titled "🧠 WHAT THE MESSAGE ACTUALLY SAID" using these columns: LAYER | REALITY. Populate it with:
+          - **Words used**: The literal phrase used, isolated from assumed meaning.
+          - **Tone**: The objective tone (e.g., "Neutral. No urgency indicators.").
+          - **Sent**: Time and day context (e.g., whether it arrived during standard business hours).
+          - **Most likely reason**: Logical, mundane, and standard administrative or professional alternatives.
+          - **Probability it's bad**: A realistic risk assessment based entirely on the text, not anxiety.
+      3. Draft a calm, protective, and thoroughly professional response that the user can copy. Explicitly advise them to hold off sending messages late at night to prevent reactive communication.

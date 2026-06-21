@@ -1,0 +1,39 @@
+matches:
+  # Plain text replacement
+  - trigger: ":sig"
+    replace: "Jane Doe | jane@example.com"
+
+  # Regex trigger
+  - regex: ":greet\\((?P<person>.*)\\)"
+    replace: "Hey {{person}}, hope you're doing well!"
+
+  # Date variable
+  - trigger: ":today"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Form variable
+  - trigger: ":followup"
+    form: |
+      Hi [[name]],
+      Following up on [[topic]] — let me know if you have questions.
+    form_fields:
+      name:
+        type: text
+        default: ""
+      topic:
+        type: text
+        default: ""
+
+  # Shell variable
+  - trigger: ":myip"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "curl ifconfig.me"

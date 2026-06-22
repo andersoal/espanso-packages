@@ -235,32 +235,73 @@ matches:
           cmd: "lesspass $ESPANSO_PARAMS_SITE $ESPANSO_PARAMS_LOGIN $ESPANSO_PARAMS_PASS"
 
   # Quick search, formulates the URL params for searching a given website
-  - triggers: [":srch-ddg", ":search-duckduckgo"]
+  - triggers: [":s-ddg", ":search-duckduckgo"]
     replace: "https://duckduckgo.com/?q="
-  - triggers: [":srch-wiki", ":search-wikipedia"]
+  - triggers: [":s-wiki", ":search-wikipedia"]
     replace: "https://en.wikipedia.org/w/?search="
-  - triggers: [":srch-gh", ":search-github"]
+  - triggers: [":s-gh", ":search-github"]
     replace: "https://github.com/search?q="
-  - triggers: [":srch-so", ":search-stackoverflow"]
+  - triggers: [":s-so", ":search-stackoverflow"]
     replace: "https://stackoverflow.com/search?q="
-  - triggers: [":srch-dh", ":search-dockerhub"]
+  - triggers: [":s-dh", ":search-dockerhub"]
     replace: "https://hub.docker.com/search?q="
-  - triggers: [":srch-wa", ":search-wolframalpha"]
+  - triggers: [":s-wa", ":search-wolframalpha"]
     replace: "https://www.wolframalpha.com/input/?i="
-  - triggers: [":srch-red", ":search-reddit"]
+  - triggers: [":s-red", ":search-reddit"]
     replace: "https://www.reddit.com/search/?q="
-  - triggers: [":srch-bbc", ":search-bbc"]
+  - triggers: [":s-bbc", ":search-bbc"]
     replace: "https://www.bbc.co.uk/search?q="
-  - triggers: [":srch-vt", ":search-virustotal"]
+  - triggers: [":s-vt", ":search-virustotal"]
     replace: "https://www.virustotal.com/gui/search/"
-  - triggers: [":srch-amz", ":search-amazon"]
+  - triggers: [":s-amz", ":search-amazon"]
     replace: "https://amazon.co.uk/s?k="
-  - triggers: [":srch-yt", ":search-youtube"]
+  - triggers: [":s-yt", ":search-youtube"]
     replace: "https://youtube.com/results?q="
-  - triggers: [":srch-maps", ":search-maps"]
+  - triggers: [":s-maps", ":search-maps"]
     replace: "https://www.google.com/maps/search/"
-  - triggers: [":srch-goo", ":search-google"]
+  - triggers: [":s-goo", ":search-google"]
     replace: "https://google.com/search?q="
+
+  # Quick search using interactive form
+  - trigger: ":s-choice"
+    replace: "{{form_data.engine}}{{form_data.query}}"
+    vars:
+      - name: form_data
+        type: form
+        params:
+          layout: "Search Engine: [[engine]]\nQuery: [[query]]"
+          fields:
+            engine:
+              type: choice
+              values:
+                - label: "Google"
+                  id: "https://google.com/search?q="
+                - label: "DuckDuckGo"
+                  id: "https://duckduckgo.com/?q="
+                - label: "Wikipedia"
+                  id: "https://en.wikipedia.org/w/?search="
+                - label: "GitHub"
+                  id: "https://github.com/search?q="
+                - label: "StackOverflow"
+                  id: "https://stackoverflow.com/search?q="
+                - label: "DockerHub"
+                  id: "https://hub.docker.com/search?q="
+                - label: "WolframAlpha"
+                  id: "https://www.wolframalpha.com/input/?i="
+                - label: "Reddit"
+                  id: "https://www.reddit.com/search/?q="
+                - label: "BBC"
+                  id: "https://www.bbc.co.uk/search?q="
+                - label: "VirusTotal"
+                  id: "https://www.virustotal.com/gui/search/"
+                - label: "Amazon"
+                  id: "https://amazon.co.uk/s?k="
+                - label: "YouTube"
+                  id: "https://youtube.com/results?q="
+                - label: "Google Maps"
+                  id: "https://www.google.com/maps/search/"
+            query:
+              type: text
 
   # Similar to above, but it uses the clipboard for the search query
   - trigger: ":swc-ddg"
@@ -302,6 +343,43 @@ matches:
   - trigger: ":swc-goo"
     replace: "https://google.com/search?q={{clipboard}}"
     vars: [{ name: "clipboard", type: "clipboard" }]
+
+  # Quick search using clipboard
+  - trigger: ":swc-choice"
+    replace: "{{engine}}{{clipboard}}"
+    vars:
+      - name: engine
+        type: choice
+        params:
+          values:
+            - label: "Google"
+              id: "https://google.com/search?q="
+            - label: "DuckDuckGo"
+              id: "https://duckduckgo.com/?q="
+            - label: "Wikipedia"
+              id: "https://en.wikipedia.org/w/?search="
+            - label: "GitHub"
+              id: "https://github.com/search?q="
+            - label: "StackOverflow"
+              id: "https://stackoverflow.com/search?q="
+            - label: "DockerHub"
+              id: "https://hub.docker.com/search?q="
+            - label: "WolframAlpha"
+              id: "https://www.wolframalpha.com/input/?i="
+            - label: "Reddit"
+              id: "https://www.reddit.com/search/?q="
+            - label: "BBC"
+              id: "https://www.bbc.co.uk/search?q="
+            - label: "VirusTotal"
+              id: "https://www.virustotal.com/gui/search/"
+            - label: "Amazon"
+              id: "https://amazon.co.uk/s?k="
+            - label: "YouTube"
+              id: "https://youtube.com/results?q="
+            - label: "Google Maps"
+              id: "https://www.google.com/maps/search/"
+      - name: clipboard
+        type: clipboard
 
   # Markdown syntax
   # Outputs a bolded text placeholder
@@ -358,7 +436,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: python -c "from faker import Faker; import os; print(getattr(Faker(), os.environ['ESPANSO_MODULE'])())"
+          cmd: "python scripts/fake.py {{module}}"
 
   - trigger: ":lorem"
     label: "Paragraph"
@@ -367,7 +445,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: python -c "from faker import Faker; print(Faker().paragraph())"
+          cmd: "python scripts/fake.py paragraph"
   - trigger: ":lorem"
     label: "Sentence"
     replace: "{{output}}"
@@ -375,4 +453,4 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: python -c "from faker import Faker; print(Faker().sentence())"
+          cmd: "python scripts/fake.py sentence"

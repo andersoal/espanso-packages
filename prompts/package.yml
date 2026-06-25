@@ -4448,3 +4448,194 @@ matches:
       Tone & Style
       Passionate about learning, scientifically rigorous, and practically grounded. Use learning science terminology correctly (scaffolding, zone of proximal development, cognitive load, spaced repetition, formative assessment, metacognition, knowledge tracing). Balance pedagogical idealism with implementation realism. Structure as a learning design document that instructional designers, engineers, and educators can collaborate around. Include learning flow diagrams, example interactions, and assessment rubrics.
             </form>
+
+# ==============================================================================
+# FEYNMAN TECHNIQUE LEARNING WORKFLOW (4-STEP ENGINE)
+# Purpose: Active recall, gap detection, and analogy locking via LLM tutoring.
+# Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uejih0/i_turned_the_feynman_technique_into_a_4prompt_ai/
+# ==============================================================================
+  # STEP 1: CONCEPT MAPPING
+  # Prompts the user for the core topic and extracts the load-bearing concepts.
+  - trigger: ":feynman-workflow-step1-of-4"
+    form: |
+      I just finished reading about [[topic]].
+      I want to run the Feynman Method to make sure it sticks.
+
+      Step 1: Concept Map.
+      List the 5 most important ideas from this topic that I should fully understand.
+      For each idea, give me:
+      1. A 1 sentence definition in simple English
+      2. Why this idea matters in the real world
+      3. The 1 question I should be able to answer if I truly understand it
+
+      Do not use jargon.
+      Do not assume I have a background in this field.
+      Write like you are talking to a smart 16 year old.
+
+  # STEP 2: THE 12-YEAR-OLD TEST (MODEL GENERATION)
+  # Forces the AI to establish baseline simplified models before your attempt.
+  - trigger: ":feynman-workflow-step2-of-4"
+    replace: |
+      For each of the 5 ideas above, I am going to try to explain it in my own words like I am teaching a 12 year old.
+      But first, write me a model answer for each idea.
+
+      Use only words a 12 year old would understand.
+      Use an everyday example for each one.
+
+      Format:
+      IDEA 1: [name]
+      12 year old version:
+      [your explanation]
+      Everyday example:
+      [your example]
+
+      Then ask me to write my own version of each.
+      Wait for my answers before continuing.
+
+  # STEP 3: THE GAP FINDER
+  # Interactive form to paste your custom explanations for automated analysis.
+  - trigger: ":feynman-workflow-step3-of-4"
+    form: |
+      Here are my 5 explanations:
+      [[explanations]]
+
+      Now play the role of a strict but kind tutor.
+      For each explanation:
+      1. Mark it STRONG, WEAK, or WRONG.
+      2. If it is WEAK or WRONG, tell me exactly what I misunderstood.
+      3. Give me the corrected version using words a 12 year old would understand.
+      4. Use a different analogy than before.
+      5. Ask me 1 follow-up question that would prove I understand it.
+
+      End with:
+      "Which idea should I restudy first to fix the biggest gap?"
+    form_fields:
+      explanations:
+        type: multiline
+
+  # STEP 4: THE ANALOGY LOCK
+  # Structural deep-dive to bind concepts to existing mental models.
+  - trigger: ":feynman-workflow-step4-of-4"
+    replace: |
+      For each of the 5 ideas, build 2 analogies.
+
+      ANALOGY 1:
+      From everyday life (cooking, sports, driving, family, weather, money)
+
+      ANALOGY 2:
+      From common adult experience (work, phones, finances, time management)
+
+      For each analogy:
+      - Show where it works
+      - Show exactly where it breaks down
+
+      End with:
+      A single sentence summary I should reread tomorrow morning.
+
+
+# ==============================================================================
+# THE AI-ASSISTED MASTERY LOOP (6-PHASE LEARNING ENGINE)
+# Strategy: Framework for deep active recall, application testing, and structural compression.
+# Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uejih0/comment/otm0n8w/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+# ==============================================================================
+  # PHASE 1: EXTRACT THE LOAD-BEARING CONCEPTS
+  # Captures the core topic via a dynamic text form input.
+  - trigger: ":mastery-loop-phase1-of-6"
+    form: |
+      I just finished studying [[topic]].
+      Act as an expert teacher.
+
+      Identify the smallest set of concepts that explain roughly 80% of this topic.
+      For each concept provide:
+      1. A simple definition
+      2. Why it matters
+      3. What people commonly misunderstand
+      4. One question that proves mastery
+
+      Then create a concept map showing how all concepts connect.
+      Use simple language.
+      Assume no prior knowledge.
+
+  # PHASE 2: EXPLAIN LIKE A 12-YEAR-OLD
+  # Prompts model answers and enforces an interactive step-by-step evaluation block.
+  - trigger: ":mastery-loop-phase2-of-6"
+    replace: |
+      For each concept:
+      Explain it as if teaching a curious 12-year-old.
+
+      Requirements:
+      - No jargon
+      - One everyday example
+      - One visual mental image
+      - One common misconception
+
+      After each explanation, ask me to explain it in my own words.
+      Wait for my response before continuing.
+
+  # PHASE 3: FIND KNOWLEDGE GAPS
+  # Uses a multiline text area to safely ingest and evaluate your custom answers.
+  - trigger: ":mastery-loop-phase3-of-6"
+    form: |
+      Here are my explanations:
+      [[explanations]]
+
+      Evaluate each explanation.
+      Grade each: [MASTERED], [PARTIAL], or [CONFUSED].
+
+      For each concept target:
+      - What I got right
+      - What I missed
+      - What I misunderstood
+      - A clearer explanation
+      - A new analogy
+      - One test question
+
+      Identify my biggest knowledge gap.
+      Tell me which concept I should revisit first and why.
+    form_fields:
+      explanations:
+        type: multiline
+
+  # PHASE 4: APPLICATION TEST
+  # Forces scenarios that test conceptual transfer beyond the text boundaries.
+  - trigger: ":mastery-loop-phase4-of-6"
+    replace: |
+      Create real-world situations where these concepts apply.
+      For each situation:
+      1. Present the scenario
+      2. Ask me how the concept applies
+      3. Wait for my answer
+      4. Evaluate my reasoning
+      5. Correct mistakes
+
+      Increase difficulty over time. Can I use the idea outside the original lesson?
+
+  # PHASE 5: ANALOGY LOCK
+  # Stress-tests conceptual boundaries across three distinct vectors.
+  - trigger: ":mastery-loop-phase5-of-6" # Alternative legacy hook map
+    replace: |
+      For each concept create:
+      1. An analogy from everyday life
+      2. An analogy from work or business
+      3. An analogy from nature
+
+      For each analogy explain:
+      - Where it works
+      - Where it breaks down
+      - What misconception it could create
+
+      Finish with a one-sentence memory hook.
+
+  # PHASE 6: COMPRESSION TEST
+  # Evaluates structural fidelity under multi-tiered length constraints.
+  - trigger: ":mastery-loop-phase6-of-6"
+    replace: |
+      Help me compress this topic.
+      Create exactly four discrete, structured fidelity tiers:
+
+      Level 1: One sentence explanation
+      Level 2: 30-second explanation
+      Level 3: 2-minute explanation
+      Level 4: One-page explanation
+
+      Then explicitly identify anything critical or nuanced that was lost during this compression process.

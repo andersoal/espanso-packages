@@ -1,5 +1,6 @@
-name: "example-package"
-title: "Example package"
-description: An example package to show how to host Espanso packages
+name: "marketing-sales"
+title: "Marketing & Sales package"
+description:
+  "This package contains the marketing and sales related content for the SAP Fiori tools."
 version: 0.1.0
-author: Federico Terzi
+author: Someone

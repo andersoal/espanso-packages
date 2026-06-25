@@ -4639,3 +4639,24 @@ matches:
       Level 4: One-page explanation
 
       Then explicitly identify anything critical or nuanced that was lost during this compression process.
+
+  # ----------------------------------------------------------------------------
+  # OPTIONAL COMPOSITE SHORTCUT: Monolithic Gateway
+  # ----------------------------------------------------------------------------
+  - trigger: ":preflight-full"
+    label: "Alternative: Combined single execution block utilizing form injection."
+    form: |
+      Before you do the task I'm about to give you, do this first.
+
+      Predict how you're most likely to fail at it. Give me the top five ways this goes wrong: where you'll probably misunderstand me, what you'll likely assume that I didn't say, where you tend to get generic or hedge, and what part of this is genuinely hard for a model like you.
+
+      For each failure, tell me the one instruction I could add that would prevent it.
+
+      Then wait. Don't do the task until I've responded.
+
+      The task:
+      [[task_payload]]
+    form_fields:
+      task_payload:
+        type: multiline
+        default: ""

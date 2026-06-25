@@ -86,7 +86,8 @@ After writing a trigger:
 1. Confirm YAML indentation is consistent (2 spaces, no tabs) — Espanso match files are whitespace-sensitive.
 2. If `regex` is used, mention that `trigger` and `regex` are mutually exclusive on the same match — never include both.
 3. If `shell` is used, read [references/shell-and-automation.md](references/shell-and-automation.md) for the security/latency notes before finalizing — never suggest a shell command that exfiltrates input unsafely or blocks on slow network calls without flagging the tradeoff.
-4. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.
+4. Ensure the match structure complies with the official Espanso JSON schema. For example, never use invalid form field attributes like `type: text` or `type: checkbox`. (Text fields should omit `type` entirely, and multiline fields should use `multiline: true`).
+5. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.
 
 ## Debugging existing triggers
 

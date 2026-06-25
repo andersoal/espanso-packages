@@ -100,9 +100,9 @@ matches:
       Name: [[name]]
     form_fields:
       name:
-        type: text
+        default: ""
       extra:
-        type: text
+        default: ""
 """
         errors, warnings = lint_yaml_content(content)
         self.assertEqual(errors, [])
@@ -132,6 +132,27 @@ matches:
         errors, warnings = lint_yaml_content(content)
         self.assertEqual(errors, [])
         self.assertTrue(any("clipboard status feedback" in warn for warn in warnings))
+
+    def test_schema_validation_error(self):
+        # Test schema error at root
+        content = """
+invalid_root_key: true
+matches:
+  - trigger: ":sig"
+    replace: "Jane Doe"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertTrue(any("Schema violation" in err for err in errors))
+
+        # Test schema error inside a match (invalid property)
+        content = """
+matches:
+  - trigger: ":sig"
+    replace: "Jane Doe"
+    invalid_match_key: 123
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertTrue(any("Schema violation at matches -> 0: Additional properties are not allowed ('invalid_match_key' was unexpected)" in err for err in errors))
 
 
 if __name__ == "__main__":

@@ -23,10 +23,8 @@ matches:
       Following up on [[topic]] — let me know if you have questions.
     form_fields:
       name:
-        type: text
         default: ""
       topic:
-        type: text
         default: ""
 
   # Shell variable

@@ -92,7 +92,6 @@ def generate_scaffold(args: argparse.Namespace) -> str:
         fields_lines = []
         for field in fields:
             fields_lines.append(f"      {field}:")
-            fields_lines.append(f"        type: text")
             fields_lines.append(f"        default: \"\"")
         fields_str = "\n".join(fields_lines)
 

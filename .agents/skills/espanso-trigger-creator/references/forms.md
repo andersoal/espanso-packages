@@ -24,7 +24,6 @@ Typing `:greet` opens a dialog box with a text field for `name`; Espanso fills `
     [[sender]]
   form_fields:
     sender:
-      type: text
       default: "Jane"
 ```
 
@@ -42,12 +41,15 @@ form_fields:
       - "Medium"
       - "High"
   notes:
-    type: multiline
+    multiline: true
   confirmed:
-    type: checkbox
+    type: choice
+    values:
+      - "Yes"
+      - "No"
 ```
 
-Common types: `text` (default), `multiline`, `choice` (dropdown), `checkbox`.
+Common field configurations: text input (default), multiline text input (`multiline: true`), and choice/list selections (`type: choice` or `type: list` with `values`).
 
 ## Two-stage forms (form result feeds a second form/layout)
 

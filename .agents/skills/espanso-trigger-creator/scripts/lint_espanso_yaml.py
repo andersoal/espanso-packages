@@ -4,10 +4,13 @@
 from __future__ import annotations
 
 import argparse
+import json
+import os
 import pathlib
 import re
 import sys
 import yaml
+import jsonschema
 
 # Regex to match placeholders like {{variable}} in the replacement template
 PLACEHOLDER_RE = re.compile(r"\{\{([a-zA-Z0-9_\.]+)\}\}")
@@ -21,6 +24,35 @@ WARN_CLIPBOARD_STATUS = (
     "copied result to clipboard",
     "copied to clipboard",
 )
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCHEMA_PATH = os.path.join(SCRIPT_DIR, "..", "resources", "match.schema.json")
+
+
+def validate_against_schema(data: dict) -> list[str]:
+    """Validate data against the official Espanso match schema.
+
+    Returns a list of error strings.
+    """
+    errors: list[str] = []
+    if not os.path.exists(SCHEMA_PATH):
+        errors.append(f"Espanso match schema file not found at {SCHEMA_PATH}")
+        return errors
+
+    try:
+        with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
+            schema = json.load(f)
+    except Exception as exc:
+        errors.append(f"Failed to parse Espanso match schema JSON: {exc}")
+        return errors
+
+    validator = jsonschema.Draft7Validator(schema)
+    for error in validator.iter_errors(data):
+        path = " -> ".join(str(p) for p in error.path)
+        path_str = f" at {path}" if path else ""
+        errors.append(f"Schema violation{path_str}: {error.message}")
+
+    return errors
 
 
 def check_match_entry(match_idx: int, entry: dict) -> tuple[list[str], list[str]]:
@@ -116,10 +148,32 @@ def check_match_entry(match_idx: int, entry: dict) -> tuple[list[str], list[str]
         
         # Verify all form_fields defined are present in the form layout
         if isinstance(form_fields, dict):
-            for field_name in form_fields.keys():
+            for field_name, field_cfg in form_fields.items():
                 if field_name not in layout_fields:
                     warnings.append(
                         f"Match #{match_idx} defines form field '{field_name}' in form_fields, but it is not in the form layout."
+                    )
+                if isinstance(field_cfg, dict):
+                    field_type = field_cfg.get("type")
+                    if field_type is not None:
+                        if field_type not in ("choice", "list"):
+                            errors.append(
+                                f"Match #{match_idx} form field '{field_name}' has invalid type '{field_type}'. "
+                                "Espanso only supports 'choice' or 'list' as types. "
+                                "For text/multiline fields, omit the 'type' attribute and set 'multiline: true'."
+                            )
+                        elif "values" not in field_cfg:
+                            errors.append(
+                                f"Match #{match_idx} form field '{field_name}' is of type '{field_type}' but is missing required 'values' list."
+                            )
+                    
+                    if "multiline" in field_cfg and not isinstance(field_cfg["multiline"], bool):
+                        errors.append(
+                            f"Match #{match_idx} form field '{field_name}' has non-boolean 'multiline' value."
+                        )
+                else:
+                    errors.append(
+                        f"Match #{match_idx} form field '{field_name}' configuration must be a dictionary."
                     )
         else:
             errors.append(
@@ -155,6 +209,10 @@ def lint_yaml_content(text: str) -> tuple[list[str], list[str]]:
     if not isinstance(data, dict):
         errors.append("Root of Espanso file must be a dictionary/mapping.")
         return errors, warnings
+
+    # Run JSON Schema Validation first
+    schema_errors = validate_against_schema(data)
+    errors.extend(schema_errors)
 
     matches = data.get("matches")
     if matches is None:

@@ -533,3 +533,60 @@ matches:
           - "gaze direction"
           - "gaze looking directly at the camera"
           - "gaze matching their natural head positioning"
+
+  # 1. THE MAIN SCENE PASS (Interactive Photography Recipe)
+  - trigger: ":recipe"
+    form: |
+      Transform the subject in this photo into a dreamy aesthetic [[environment]] portrait while preserving their recognizable facial structure, age, expression, and overall likeness. Use [[lighting]] lighting. The subject is [[pose]], wearing [[wardrobe]]. Hair is [[hair]]. Add [[lens_effect]], [[color_grade]], [[depth_of_field]], and a [[background]]. Add subtle film camera grain with an [[grain]] aesthetic. Mood: [[mood]]. Keep skin texture natural. Avoid plastic-looking skin, distorted hands or feet, extra limbs, text, logos, and changing the person into someone else.
+    form_fields:
+      environment:
+        type: choice
+        values:
+          - "beach"
+          - "flower meadow"
+          - "old European street"
+          - "neon cyberpunk alleyway"
+      lighting:
+        type: choice
+        values:
+          - "golden hour, approximately 30 minutes before sunset"
+          - "blue hour twilight dusk"
+          - "dramatic high-contrast cinematic lighting"
+          - "soft-focus diffused morning window light"
+      pose:
+        type: text
+        default: "standing at the shoreline with bare feet in shallow water"
+      wardrobe:
+        type: text
+        default: "relaxed white linen beachwear: a flowy white linen sundress, loose linen shirt, or linen trousers depending on the subject"
+      hair:
+        type: text
+        default: "softly tousled by ocean breeze"
+      lens_effect:
+        type: text
+        default: "soft lens flare from a low sun angle"
+      color_grade:
+        type: text
+        default: "warm orange-pink color grade with slightly blown highlights"
+      depth_of_field:
+        type: choice
+        values:
+          - "shallow depth of field"
+          - "ultra-shallow f/1.2 bokeh depth of field"
+          - "deep architectural focus"
+      background:
+        type: text
+        default: "blurred ocean horizon"
+      grain:
+        type: choice
+        values:
+          - "ISO 800 film camera"
+          - "vintage Polaroid"
+          - "subtle 35mm film"
+      mood:
+        type: text
+        default: "ethereal, carefree, premium vacation editorial, Pinterest-core"
+
+  # 2. THE SECOND-PASS REFINEMENT (The Pro-Tip Face Corrector)
+  - trigger: ":fixface"
+    replace: "Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes, beard/hair, and age."

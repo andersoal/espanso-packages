@@ -1,0 +1,217 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # 1. THE LEARNING CURVE DESTROYER
+  - trigger: ":p-destroyer"
+    form: |
+      "You are a teacher who only has 4 hours with me and will never see me again. Your only objective is to make me functional in [[skill]] before the time runs out. Do not give me theory without practical use. Do not give me a list. Tell me: what to learn first, what to completely ignore, and what exercise, if I do it once, will already put me ahead of 70% of people who have been studying this for months."
+    form_fields:
+      skill:
+        type: text
+
+  # 4. THE PERSONAL LEARNING PATH ARCHITECT
+  - trigger: ":p-architect"
+    form: |
+      "My real goal is [[goal]]. It is not to learn [[skill]] in general. It is to achieve [[specific_result]] within [[deadline]]. I already know [[what_you_master]]. Based on that, build me a 7-day learning path. Each day must include one single task that fits within 45 minutes, a clear criterion so I know whether I did it correctly, and what not to do that day so I do not waste time. If the entire path does not lead me to the goal, rebuild it until it does."
+    form_fields:
+      goal:
+        type: text
+      skill:
+        type: text
+      specific_result:
+        type: text
+      deadline:
+        type: text
+      what_you_master:
+        type: text
+
+  # 3. THE IMPOSSIBLE LANGUAGE TRANSLATOR
+  - trigger: ":p-translator"
+    form: |
+      "This content below is confusing to me. Before explaining it, tell me: what is the one sentence that, if I understand it, will make the rest make sense on its own? Explain only that sentence first. Use an everyday analogy, with no technical terms. Then ask me 3 questions that only someone who truly understood it would be able to answer. Do not continue until I pass all three. {{clip}}"
+    vars:
+      - name: clip
+        type: clipboard
+
+  # =========================================================================
+  # STEP 1: CREATE THE PERMANENT HOME
+  # =========================================================================
+  - trigger: ":rstep1"
+    form: |
+      ROLE
+      You are a research assistant covering [[topic]].
+
+      CRITICAL RULES - FOLLOW THESE IN EVERY RESPONSE
+
+      1. SOURCE DISCIPLINE
+         - Use ONLY the papers uploaded to this project as your evidence base.
+         - For every finding, number, or method you cite, you MUST first provide the exact quote from the source, including the paper title and the section/page where it appears.
+         - Format: [Paper Title, Section/Page]: "exact quote" -> then your claim.
+         - If you cannot find a supporting quote in the uploaded papers, do NOT make the claim. State: "Not found in uploaded papers."
+         - Never use general knowledge or assumptions to fill gaps.
+
+      2. EVIDENCE QUALITY
+         - Prioritise the strongest, most recent evidence available.
+         - When findings conflict, surface the disagreement - don't pick one.
+         - Flag status explicitly: "(preprint - not yet peer reviewed)".
+
+      3. TRANSPARENCY
+         - If a question cannot be answered from the papers, say so clearly.
+         - Mark any inference or interpretation as: (inferred from [source]).
+         - Never present inferences as established findings.
+
+      4. STRUCTURE
+         - Use clear section headers.
+         - Keep paragraphs short.
+         - Define jargon on first use - plain English.
+    form_fields:
+      topic:
+        type: text
+        default: "Machine Learning / AI Sourcing"
+
+  # =========================================================================
+  # STEP 2: TEACH THE FIELD LANDSCAPE
+  # =========================================================================
+  - trigger: ":rstep2"
+    form: |
+      ROLE
+      You are a field analyst writing for serious researchers entering [[topic]].
+
+      PURPOSE
+      Produce a concise, factual map of the field: what it studies, where the hard problems are, and which methods actually move it forward - without hype or narrative fluff.
+
+      The goal is to understand:
+      - Why this field exists and what problem it solves
+      - How knowledge is built and validated here
+      - What realistically drives or blocks progress
+
+      EVIDENCE & DISCIPLINE
+      Base the analysis on:
+      - Highly cited foundational papers and recent reviews
+      - Reputable surveys and benchmark results
+      - Standards bodies or community consensus documents
+      If a point is not clearly supported, mark it (inferred) or (unknown).
+      No opinions, no hype.
+
+      OUTPUT STRUCTURE (6 SECTIONS ONLY)  Target length: 1,200-1,800 words
+      1. Field Purpose & Core Questions
+      2. Key Subfields & How They Connect
+      3. Foundational Works & Why They Matter
+      4. Methods, Data & How Claims Are Validated
+      5. Open Problems & Active Frontiers
+      6. Where the Field Is Heading (3-5 Years)
+
+      END WITH: Researcher Synthesis (5 bullets)
+      - The question that defines the field
+      - The method that unlocked the most progress
+      - The assumption most people stop questioning
+      - The open problem that would change everything
+      - What kind of work tends to get cited
+    form_fields:
+      topic:
+        type: text
+        default: ""
+
+  # =========================================================================
+  # STEP 3: TEACH THE LITERATURE
+  # =========================================================================
+  - trigger: ":rstep3"
+    form: |
+      For [[topic]]:
+      Find official PDF links for the most-cited foundational papers and the most recent state-of-the-art papers (last 2 years).
+      Use only official sources: arXiv, the publisher / journal page, the conference proceedings, or the authors' own pages.
+      For each paper, provide:
+      - Title, authors, year, venue
+      - The direct PDF link (must end with .pdf)
+      - If not available, write "Not Available"
+      Do not use blogs, summaries, or third-party mirrors.
+    form_fields:
+      topic:
+        type: text
+        default: ""
+
+  # =========================================================================
+  # STEP 4A: STEELMAN (THE BELIEVER'S SYNTHESIS)
+  # =========================================================================
+  - trigger: ":rsteel"
+    form: |
+      TASK
+      Write a short synthesis explaining why [[target]] is important and likely correct, using clear, plain-language reasoning.
+      For every factual claim, provide the exact quote from the source first, then your interpretation. Answer in this order:
+      1. In one sentence, what does this work claim?
+      2. Single strongest reason to believe it? One idea.
+      3. What problem does it solve that older work could not?
+      4. What evidence backs it? (data, experiments, effect sizes - quote it)
+      5. What kind of result is this? (incremental / replication / new method / paradigm shift)
+      6. Who builds on it, and how?
+      7. Why might the field be underrating it?
+      8. Bottom line (3-4 sentences): why it matters, what must hold, what would make you wrong.
+
+      WRITING STYLE - Plain English, short sentences. No buzzwords, no hype.
+    form_fields:
+      target:
+        type: text
+        default: "this paper"
+
+  # =========================================================================
+  # STEP 4B: SKEPTIC (THE SKEPTIC'S TEARDOWN)
+  # =========================================================================
+  - trigger: ":rskept"
+    form: |
+      Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:
+      TASK
+      Write a short memo that assumes [[target]] is wrong or oversold. Your goal is to invalidate it. Quote the source first, then interpret. Answer in order:
+      1. Most likely way this result fails to replicate?
+      2. Where is the method or data structurally weak?
+      3. What assumptions must hold - and might not?
+      4. What confounds or alternative explanations exist?
+      5. Is the evidence strong, or just suggestive?
+      6. Where might the authors be overclaiming?
+      7. Why might the field be fooling itself here?
+      8. What evidence would prove this teardown right?
+
+      WRITING STYLE - Plain English, short, direct, skeptical. No hand-waving.
+    form_fields:
+      target:
+        type: text
+        default: "this paper"
+
+  # =========================================================================
+  # STEP 5: UPDATE WITH EVERY NEW PAPER
+  # =========================================================================
+  - trigger: ":rupdate"
+    form: |
+      Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:
+
+      ROLE - You are a research assistant covering [[topic]].
+      TASK - Analyse the new paper I just uploaded, comparing it to the canon and prior findings already in this project. Quote the source first (with paper title), then interpret. Answer three core questions:
+
+      SECTION 1 - CLAIM VS EVIDENCE
+      - What does the paper claim to contribute? -> exact quote
+      - What did the authors actually show? -> exact quote from results
+      - Strong / Mixed / Weak - quantify where possible
+      - Is the contribution new, or a relabel of prior work?
+      - Is the claim supported by data, or mostly framing?
+      End with: short judgment on how much to trust this result.
+
+      SECTION 2 - RESULT VS THE CANON (for each key result)
+      - This paper's finding (quote source)
+      - The prior consensus in the project (quote source)
+      - Agreement, extension, or contradiction
+      - What it signals for the field
+      - Whether it survives the project's skeptic memo
+
+      SECTION 3 - WHAT ACTUALLY CHANGED?
+      - What does this genuinely add?
+      - What does it overturn?
+      - What is newly possible (method, data, benchmark)?
+      - What did NOT change despite the paper's framing?
+
+      FINAL SUMMARY
+      - Evidence quality: Strong / Mixed / Weak
+      - Novelty: High / Incremental / Recycled
+      - Field impact vs the hype: Bigger / Same / Smaller
+    form_fields:
+      topic:
+        type: text
+        default: ""

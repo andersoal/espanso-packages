@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # 1. MULTI-FILE PROJECT AUDITOR
+  - trigger: ":p-audit"
+    form: |
+      "Load my entire project folder: [[project_files]]. Analyze: architectural decisions that should change, technical debt to tackle first, security vulnerabilities, performance bottlenecks, and outdated dependencies. Give me a prioritized action plan."
+    form_fields:
+      project_files:
+        type: multiline
+
+  # 2. CONTEXT MEMORY VAULT
+  - trigger: ":p-vault"
+    form: |
+      "I'm working on [[project_name]]. Here's everything you need to retain: {{clip}}. From now on, reference this context in every response without me repeating it. Summarize what you'll remember."
+    form_fields:
+      project_name:
+        type: text
+    vars:
+      - name: clip
+        type: clipboard
+
+  # 3. PARALLEL WORK MANAGER
+  - trigger: ":p-parallel"
+    form: |
+      "I need to complete these tasks simultaneously: [[tasks]]. Spawn agent teams: assign each task to a separate agent, coordinate between them, report progress from all agents, merge results when done. Run them in parallel."
+    form_fields:
+      tasks:
+        type: multiline
+
+  # 4. ADAPTIVE PROBLEM NAVIGATOR
+  - trigger: ":p-navigate"
+    form: |
+      "Complex problem: [[problem]]. Don't answer immediately. First, assess: how deep should you think about this (quick/medium/deep reasoning), what information is missing, what assumptions to challenge. Then solve it at the appropriate depth."
+    form_fields:
+      problem:
+        type: multiline

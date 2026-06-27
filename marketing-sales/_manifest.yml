@@ -1,6 +1,5 @@
 name: "marketing-sales"
 title: "Marketing & Sales package"
-description:
-  "This package contains the marketing and sales related content for the SAP Fiori tools."
-version: 0.1.0
+description: "This package contains the marketing and sales related content for the SAP Fiori tools."
+version: 0.1.1
 author: Someone

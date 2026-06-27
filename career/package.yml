@@ -277,3 +277,40 @@ matches:
     vars:
       - name: jd
         type: clipboard
+
+  # 1. DREAM-ROLE PRECISION TARGETING
+  - trigger: ":p-dream"
+    form: |
+      "Act as a senior hiring manager and career strategist. Analyze my skills, experience, interests, constraints, and current market demand to identify the exact job roles I should target. Eliminate unsuitable roles and clearly define my ideal position, responsibilities, company type, and hiring expectations. My background: {{clip}}"
+    vars:
+      - name: clip
+        type: clipboard
+
+  # 2. RECRUITER-GRADE RESUME CREATION
+  - trigger: ":p-resume"
+    form: |
+      "Act as a senior recruiter with deep ATS expertise. Create a resume tailored specifically for my target role [[job_title]]. Convert responsibilities into measurable impact, integrate role-specific keywords naturally, and structure it for fast recruiter scanning and ATS compatibility. My experience: {{clip}}. Job description: [[job_description]]"
+    form_fields:
+      job_title:
+        type: text
+      job_description:
+        type: multiline
+    vars:
+      - name: clip
+        type: clipboard
+
+  # 3. LINKEDIN PROFILE OPTIMIZATION
+  - trigger: ":p-linkedin"
+    form: |
+      "Act as a recruiter who sources candidates daily on LinkedIn. Rewrite my headline, summary, and experience so my value, role fit, and expertise are immediately clear. Optimize for recruiter searches and human scanning while keeping the tone professional and credible. Profile details: {{clip}}."
+    vars:
+      - name: clip
+        type: clipboard
+
+  # 4. RESUME REJECTION DETECTOR
+  - trigger: ":p-reject"
+    form: |
+      "Review my resume exactly as a recruiter would. Identify every reason it could be rejected, ignored, or misunderstood. Highlight weak bullets, unclear positioning, missing signals, or credibility gaps, then rewrite those sections so the resume becomes interview-ready. Resume: {{clip}}."
+    vars:
+      - name: clip
+        type: clipboard

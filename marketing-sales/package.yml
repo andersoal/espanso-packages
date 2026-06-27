@@ -146,3 +146,378 @@ matches:
       * **Permaneça comprometido com sua visão**
 
       > "Estou convencido de que cerca de metade do que separa os empreendedores bem-sucedidos dos não-bem-sucedidos é a pura perseverança." — Steve Jobs
+
+  # 3. DESIGNING PROMPTS (CANVA GRAPHIC IDEAS)
+  - trigger: ":p-canva"
+    form: |
+      'Generate Canva-ready graphic ideas with text overlays for [[topic]].'
+    form_fields:
+      topic:
+        type: text
+
+  # 4. VIDEO SCRIPT GENERATION
+  - trigger: ":p-script"
+    form: |
+      'Write short, engaging, and scroll-stopping 30-second scripts for videos about [[topic]].'
+    form_fields:
+      topic:
+        type: text
+
+  # 5. CAPTIONS + HASHTAGS
+  - trigger: ":p-captions"
+    form: |
+      "Write captions with a mix of storytelling and CTA. Add 5 to 7 high-quality, targeted, and trending hashtags for [[niche]]."
+    form_fields:
+      niche:
+        type: text
+
+  # 6. ENGAGEMENT BOOST
+  - trigger: ":p-engagement"
+    form: |
+      "Draft 15 comment replies that feel authentic, witty, and brand-aligned for [[niche]]."
+    form_fields:
+      niche:
+        type: text
+
+  # 7. SCHEDULING TIME
+  - trigger: ":p-schedule"
+    form: |
+      "Suggest the best posting schedule (times + frequency) for maximum reach on [[platform]]."
+    form_fields:
+      platform:
+        type: choice
+        values:
+          - "LinkedIn"
+          - "Twitter / X"
+          - "Instagram"
+          - "TikTok"
+          - "YouTube Shorts"
+
+  # 1. The Niche Domination Prompt (With Clipboard & Budget Selector)
+  - trigger: ":pniche"
+    replace: |
+      Here are the industries to evaluate:
+      {{my_clipboard}}
+
+      Which industry spends the most on manual tasks that A.I tools under ${{form1.budget}}/mo could handle? Rank them by potential savings and tell me who the decision maker is.
+    vars:
+      - name: my_clipboard
+        type: clipboard
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Select monthly tool budget threshold:
+            [[budget]]
+          fields:
+            budget:
+              type: choice
+              values:
+                - "50"
+                - "100"
+                - "250"
+                - "500"
+
+  # 2. The Offer Builder Prompt (With Selectable Business Functions)
+  - trigger: ":poffer"
+    replace: |
+      I help [[form1.niche]] businesses save money by installing A.I tools that handle {{form1.function}}. Build me a 3-tier offer: a $2,000 quick-win install, a $5,000 full setup, and a $10,000/mo retainer. Include what's delivered at each level.
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Target Niche: [[niche]]
+            Operational Function: [[function]]
+          fields:
+            niche:
+              type: text
+              default: "SaaS"
+            function:
+              type: choice
+              values:
+                - "marketing and content engines"
+                - "customer support ticket routing"
+                - "outbound lead generation pipelines"
+                - "automated invoicing & financial collection"
+
+  # 3. The Cold Email Machine Prompt (With Variable Length Options)
+  - trigger: ":pcold"
+    replace: |
+      Write me 5 cold email variations for [[form1.niche]] business owners. Lead with the cost of their current manual process. Offer to cut it by 60-80% using A.I. Keep each email under {{form1.words}} words. No fluff. Sound like a real person, not a marketer.
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Target Niche: [[niche]]
+            Word Limit Constraint: [[words]]
+          fields:
+            niche:
+              type: text
+              default: "Real Estate"
+            words:
+              type: choice
+              values:
+                - "60"
+                - "90"
+                - "120"
+
+  # 4. The Objection Destroyer Prompt (Direct From Clipboard)
+  - trigger: ":pobject"
+    replace: |
+      Here are the most common objections I hear on sales calls:
+      {{objections_list}}
+
+      For each one, give me a 2-sentence response that reframes the objection using a specific number or case study.
+    vars:
+      - name: objections_list
+        type: clipboard
+
+  # 5. The Onboarding Playbook Prompt
+  - trigger: ":ponboard"
+    replace: |
+      Build me a step-by-step client onboarding checklist for installing [[form1.tool]] for a [[form1.niche]] business. Include what I need from the client, what I set up on day 1, and what the client sees by day 7.
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |
+            AI Tool Name: [[tool]]
+            Client Niche: [[niche]]
+
+  # 6. The Upsell Identifier Prompt
+  - trigger: ":pupsell"
+    replace: |
+      I just installed [[form1.tool]] for a [[form1.niche]] client. Based on their business type, what are 3 other A.I tools I could offer that would save them money or increase revenue? Include the cost of each tool and what it replaces.
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Installed Tool: [[tool]]
+            Client Niche:    [[niche]]
+
+  # 7. The Weekly CEO Report Prompt (Full Numeric Form Matrix)
+  - trigger: ":pceo"
+    replace: |
+      Here are my numbers this week:
+      - Leads generated: [[form1.leads]]
+      - Calls booked: [[form1.calls]]
+      - Deals closed: [[form1.deals]]
+      - Revenue: [[form1.revenue]]
+      - Client installs completed: [[form1.installs]]
+
+      Analyse my pipeline. Tell me where I'm leaking money and what to focus on next week.
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Leads Generated:  [[leads]]
+            Calls Booked:     [[calls]]
+            Deals Closed:     [[deals]]
+            Weekly Revenue:   [[revenue]]
+            Installs Finished: [[installs]]
+
+  # ==========================================
+  # 1. MARKETING & CONTENT PATTERNS
+  # ==========================================
+
+  # Item 2: Repurpose Engine (Clipboard Aware Transformation)
+  - trigger: ":repurpose"
+    replace: |
+      Act as an advanced multi-channel content strategist. Take the following source article, analyze its core arguments, and split it into:
+      1. Three high-engagement LinkedIn text posts using strong hooks.
+      2. Five value-first tweets/X posts optimized for thread structure.
+      3. A structured 10-slide Instagram carousel script (Slide title, visual direction, exact caption text).
+
+      ---
+      SOURCE ARTICLE:
+      {{article_content}}
+    vars:
+      - name: article_content
+        type: clipboard
+
+  # Item 4: Hook Generator (Interactive Form Structure)
+  - trigger: ":hooks"
+    form: |
+      Give me 20 scroll-stopping content hooks for my content on the topic of: [[topic]].
+      Use the PAS (Problem-Agitation-Solution) copywriting framework.
+      Target Audience Demographics: [[audience]].
+    form_fields:
+      topic:
+        type: text
+        default: ""
+      audience:
+        type: text
+        default: "Professionals & Founders"
+
+  # Item 8: A/B Copy Variants (Interactive Multiline Form)
+  - trigger: ":abcopy"
+    form: |
+      Analyze the following core offering/brief and create 3 distinct high-performance ad copy variations.
+
+      OFFER DESCRIPTION:
+      [[brief]]
+
+      Generate precisely three variations meeting these tone requirements:
+      - Version 1 [Aggressive & Value-Driven]: Focus heavily on immediate ROI and high stakes.
+      - Version 2 [Friendly & Community-Focused]: Conversational, narrative-driven, relational.
+      - Version 3 [Data-Driven & Analytical]: Lead with technical specifications, metrics, and evidence.
+
+      Enforce exact platform character counts for each variation.
+    form_fields:
+      brief:
+        type: multiline
+
+  # Item 11: Hashtag Strategy (Rapid Inline Regex Capture)
+  - regex: ":hash\\((?P<niche>.*)\\)"
+    replace: "Find 30 optimized, high-intent hashtags for the following market sector: {{niche}}. Group the final output cleanly into broad, medium-density, and long-tail niche subcategories."
+
+  # ==========================================
+  # 2. LEAD GEN & OUTBOUND PATTERNS
+  # ==========================================
+
+  # Item 23: LinkedIn DM Scripts (Interactive Choice Fields)
+  - trigger: ":lidm"
+    form: |
+      Draft a sequence of 5 initial connection messages and 3 strategic follow-up DMs based on the following input parameters. Keep them concise and clear of artificial fluff.
+
+      Core Value Proposition/Offer: [[offer]]
+      Target Persona/Role: [[role]]
+    form_fields:
+      offer:
+        type: text
+      role:
+        type: text
+        default: "VP of Sales"
+
+  # Item 34: Pain Point Extractor (Review Processing Pattern)
+  - trigger: ":painpoints"
+    replace: |
+      Analyze the following competitor customer reviews. Extract recurring complaints, deep-seated frustrations, system bottlenecks, and explicit feature failures. Group them into a structural matrix for outbound target messaging.
+
+      ---
+      COMPETITOR REVIEWS:
+      {{reviews}}
+    vars:
+      - name: reviews
+        type: clipboard
+
+  # ==========================================
+  # 3. DESIGN & VISUALS PATTERNS
+  # ==========================================
+
+  # Item 46: Color Palette Explorer (Inline Fast Generation)
+  - regex: ":palette\\((?P<mood>.*)\\)"
+    replace: "Act as an expert UI/UX developer. Based on the target brand atmosphere of '{{mood}}', generate 5 cohesive digital color palettes. Provide hex codes, asset application rules, accessibility contrast compliance targets, and primary/secondary role definitions."
+
+  # ==========================================
+  # 4. RESEARCH & ANALYSIS PATTERNS
+  # ==========================================
+
+  # Item 61: Competitor Matrix
+  - trigger: ":compmatrix"
+    replace: |
+      Analyze the 5 competitors listed below. Generate a structural feature markdown comparison sheet containing functional matrices, known software pricing tiers, critical feature gaps, and distinct strategic defensive positioning opportunities.
+
+      Competitors:
+      {{clipboard_competitors}}
+    vars:
+      - name: clipboard_competitors
+        type: clipboard
+
+  # ==========================================
+  # 5. AUTOMATION & WORKFLOW PATTERNS
+  # ==========================================
+
+  # Item 82: n8n Workflow Builder
+  - trigger: ":n8n"
+    form: |
+      Act as an enterprise automation architect. Build an architectural map and the accompanying complete, production-ready n8n JSON workflow schema for the following requested automation sequence:
+
+      Process Definition: [[process]]
+
+      Ensure thorough error handling states, accurate nodes, data transformations, and conditional route fallbacks are baked into the JSON structure.
+    form_fields:
+      process:
+        type: multiline
+
+  # 1. Market Research Profile
+  - trigger: ":brmarket"
+    form: |
+      Act as a market research expert. For my defined audience: [[audience]], create a detailed profile: top 10 problems, exact language they use, current solutions, what’s failing, and their emotional state. Keep it specific to this stage, there should be no generic founder insights.
+    form_fields:
+      audience:
+        type: text
+        default: "B2B Technical Architects"
+
+  # 2. Language Library Builder
+  - trigger: ":brlang"
+    form: |
+      Using the audience analysis for [[icp]], build a 3-part language library for my ICP:
+      1. Pain vocabulary: how they describe problems.
+      2. Aspirational language: how they define success.
+      3. Self-framing: how they describe their expertise.
+      Keep phrasing raw, specific, and true to how they actually speak.
+    form_fields:
+      icp:
+        type: text
+        default: "Enterprise CTOs navigating legacy migrations"
+
+  # 3. Content Pillars Developer
+  - trigger: ":brpillars"
+    form: |
+      Help me develop three to five content pillars for [[business_domain]]. Each pillar must be anchored to a specific belief or observation rather than a broad topic area. Each pillar must be distinct enough that a post from one could not plausibly sit within another. Each pillar must connect to the business outcomes my audience cares about: [[outcomes]].
+    form_fields:
+      business_domain:
+        type: text
+        default: "API Management and Decoupled Architecture"
+      outcomes:
+        type: text
+        default: "Reduced engineering bottlenecks, predictable scale"
+
+  # 4. Writing Style Voice Profiler
+  - trigger: ":brvoice"
+    form: |
+      Analyse my writing samples provided below and build a voice profile: sentence structure, vocabulary, tone, openings/closings, and use of examples or stories. Then turn this into clear second-person guidelines so another writer can replicate my style accurately.
+
+      SAMPLES:
+      [[samples]]
+    form_fields:
+      samples:
+        type: multiline
+
+  # 5. First-Person Positioning Statement
+  - trigger: ":brposition"
+    form: |
+      Write a 70–90 word, first-person positioning statement based on the following attributes:
+      - Who I help (specific situation): [[target]]
+      - Outcome delivered (with metric/timeframe): [[outcome]]
+      - How I do it (method): [[method]]
+      - Why me (proof): [[proof]]
+
+      Make it clear, specific, and instantly recognisable to your ideal client.
+    form_fields:
+      target:
+        type: text
+      outcome:
+        type: text
+      method:
+        type: text
+      proof:
+        type: text
+
+  # 6. Core Offer & Differentiator Mapping
+  - trigger: ":broffer"
+    form: |
+      Define your offer, audience, and competitors based on this overview: [[overview]].
+      Then map key differentiators:
+      1. Your unique method.
+      2. Specific results achieved Inc numbers
+      3. The niche you serve.
+      For each, write 2 - 3 clear, specific sentences, no vague claims.
+    form_fields:
+      overview:
+        type: multiline

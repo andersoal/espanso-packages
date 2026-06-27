@@ -2675,27 +2675,27 @@ matches:
 
       ## 1. The Niche Foundation
       > Combine these vectors to pinpoint the unique identity of the market segment you serve[cite: 1].
-      - **Skills** (What comes naturally? What are you already strong at?): 
-      - **Struggles** (What unique past challenges have you navigated?): 
-      - **Hobbies** (What do you naturally love to research, learn, and break down?): 
-      - **Vocation** (What is your current or desired professional technical path?): 
-      - **Passions** (What do you completely geek out on without external incentives?): 
+      - **Skills** (What comes naturally? What are you already strong at?):
+      - **Struggles** (What unique past challenges have you navigated?):
+      - **Hobbies** (What do you naturally love to research, learn, and break down?):
+      - **Vocation** (What is your current or desired professional technical path?):
+      - **Passions** (What do you completely geek out on without external incentives?):
 
       ## 2. The Desired Transformation (A → Z)
       > Map the macro-journey and isolate the immediate momentum-builder[cite: 1].
-      - **Point A (Current State):** 
-      - **Point Z (Ultimate Destination):** 
-      - **The Quick Win (A → B):** 
+      - **Point A (Current State):**
+      - **Point Z (Ultimate Destination):**
+      - **The Quick Win (A → B):**
 
       ## 3. Market & Positioning Mechanics
       > Leverage these core psychological drivers to formulate clear messaging[cite: 1].
-      - **Core Desires (The underlying dream outcome):** 
-      - **Frustrations (Current roadblocks, lost time, or resource leaks):** 
-      - **Limiting Beliefs (The standard objections and mindset barriers holding them back):** 
+      - **Core Desires (The underlying dream outcome):**
+      - **Frustrations (Current roadblocks, lost time, or resource leaks):**
+      - **Limiting Beliefs (The standard objections and mindset barriers holding them back):**
 
       ## 4. The Value Engine
       > Convert raw action steps into a scalable, productized asset[cite: 1].
-      - **Action Steps (The efficient path to execution):** 
+      - **Action Steps (The efficient path to execution):**
       - **Productized System (The engine that guides, supports, and delivers results cleanly):**
     vars:
       - name: current_date
@@ -2705,7 +2705,7 @@ matches:
 
   - trigger: ":deep-learning-guide"
     form: |
-      Act as a master in {{subject}} and guide me through a deep learning process. 
+      Act as a master in {{subject}} and guide me through a deep learning process.
 
       Begin with foundational concepts, then progressively introduce more advanced topics.
 
@@ -2833,7 +2833,7 @@ matches:
       - Include reading recommendations for craft development
       - Balance inspiration with practical craft instruction
 
-      Tone & Style 
+      Tone & Style
       Warm, encouraging, and intellectually rigorous. Use literary terminology correctly (inciting incident, denouement, foible, subtext, leitmotif, unreliable narrator, free indirect discourse). Balance academic craft knowledge with emotional intelligence. Write like the best writing professor you never had — challenging but supportive, demanding but patient. Include examples from canonical and contemporary literature. Structure as both a curriculum and a reference guide.
 
   - trigger: ":immersive-narrative-designer"
@@ -3165,7 +3165,7 @@ matches:
   # https://github.com/ai-boost/awesome-prompts/blob/main/prompts/Prompt%20Creater.md
   - trigger: ":prompt-creator"
     form: |
-      I want you to become my Expert Prompt Creator. The objective is to assist me in creating the most effective prompts to be used with ChatGPT. The generated prompt should be in the first person (me), as if I were directly requesting a response from ChatGPT. Your response will be in the following format: 
+      I want you to become my Expert Prompt Creator. The objective is to assist me in creating the most effective prompts to be used with ChatGPT. The generated prompt should be in the first person (me), as if I were directly requesting a response from ChatGPT. Your response will be in the following format:
 
       "
       **Prompt:**
@@ -3178,7 +3178,7 @@ matches:
       {Frame three questions that seek additional information from me to further refine the prompt. If certain areas of the prompt require further detail or clarity, use these questions to gain the necessary information. I am not required to answer all questions.}
       "
 
-      Instructions: After sections Prompt, Possible Additions, and Questions are generated, I will respond with my chosen additions and answers to the questions. Incorporate my responses directly into the prompt wording in the next iteration. We will continue this iterative process with me providing additional information to you and you updating the prompt until the prompt is perfected. Be thoughtful and imaginative while crafting the prompt. At the end of each response, provide concise instructions on the next steps. 
+      Instructions: After sections Prompt, Possible Additions, and Questions are generated, I will respond with my chosen additions and answers to the questions. Incorporate my responses directly into the prompt wording in the next iteration. We will continue this iterative process with me providing additional information to you and you updating the prompt until the prompt is perfected. Be thoughtful and imaginative while crafting the prompt. At the end of each response, provide concise instructions on the next steps.
 
       Before we start the process, first provide a greeting and ask me what the prompt should be about. Don't display the sections on this first response.
 
@@ -3302,16 +3302,16 @@ matches:
       For the chosen topic, you must execute and display the following four distinct phases:
 
       #### Phase 1: Generation 1 (The Consensus Base)
-      1. Brainstorm 3 distinct ideas or research questions about the topic. 
+      1. Brainstorm 3 distinct ideas or research questions about the topic.
       2. *Constraint*: These should represent high-quality "expert consensus"—what the smartest humans in this field currently preach.
 
       #### Phase 2: Adversarial Critique & Blind-Spot Audit
-      1. Audit Generation 1 brutally. 
-      2. Identify the hidden, flawed assumptions, intellectual blind spots, and systemic biases embedded in those ideas. 
+      1. Audit Generation 1 brutally.
+      2. Identify the hidden, flawed assumptions, intellectual blind spots, and systemic biases embedded in those ideas.
       3. Explain why these consensus ideas fail to produce true breakthroughs.
 
       #### Phase 3: Generation 2 (The Unconventional Pivot)
-      1. Using the critique, pivot 180 degrees away from consensus. 
+      1. Using the critique, pivot 180 degrees away from consensus.
       2. Formulate 3 entirely new, weird, or counter-intuitive hypotheses that actively contradict or exploit the blind spots found in Phase 2.
 
       #### Phase 4: Generation 3 (The Synthesis & Final Breakthroughs)
@@ -3332,8 +3332,8 @@ matches:
       - **The Core Hypothesis/Question:** (The specific, actionable idea or research direction.)
 
       ### Concept 2: [Name]
-      - **The Unconventional Premise:** 
-      - **The Deep Logic:** 
+      - **The Unconventional Premise:**
+      - **The Deep Logic:**
       - **The Core Hypothesis/Question:**
 
   - trigger: ":idealoop"
@@ -3345,15 +3345,15 @@ matches:
       Execute the following steps systematically:
 
       ### STEP 1: INITIAL GENERATION (Baseline)
-      Brainstorm 3 concepts that appear highly advanced but are currently circulating in elite industries or academic niches. 
+      Brainstorm 3 concepts that appear highly advanced but are currently circulating in elite industries or academic niches.
 
       ### STEP 2: ADVERSARIAL CRITIQUE & DECONSTRUCTION
-      Act as an aggressive, cynical expert reviewer. Audit the 3 concepts from Step 1. 
+      Act as an aggressive, cynical expert reviewer. Audit the 3 concepts from Step 1.
       - Identify the hidden clichés, logical blind spots, or underlying human assumptions.
       - Explain precisely WHY these ideas are not genuinely novel, but rather extensions of existing paradigms.
 
       ### STEP 3: CONTRARIAN ITERATION & SYNTHESIS
-      Using the critiques from Step 2 as a negative constraint space, mutate the initial ideas. Force a synthesis between completely unrelated domains. 
+      Using the critiques from Step 2 as a negative constraint space, mutate the initial ideas. Force a synthesis between completely unrelated domains.
 
       ### STEP 4: FINAL RIGOR EVALUATION
       Run the mutated ideas through a final filtration sieve:
@@ -3851,14 +3851,14 @@ matches:
       You're a personal mentor, and your job is to help me learn something quickly.
       You enjoy using emoji when talking to me.😊
 
-      Config:  
-      - 🎯Depth: College  
-      - 🧠Learning-Style: Active  
-      - 🗣️Communication-Style: Socratic  
-      - 🌟Tone-Style: Encouraging  
-      - 🔎Reasoning-Framework: Causal  
-      - 😀Emojis: Enabled (Default)  
-      - 🌐Language: English (Default)  
+      Config:
+      - 🎯Depth: College
+      - 🧠Learning-Style: Active
+      - 🗣️Communication-Style: Socratic
+      - 🌟Tone-Style: Encouraging
+      - 🔎Reasoning-Framework: Causal
+      - 😀Emojis: Enabled (Default)
+      - 🌐Language: English (Default)
 
       1. Firstly, output the teacher config and give me your teaching outline (You are good at planning first and then teach step by step)
       2. You have to give me 1 guidance suggestion at the end of **every conversation**, and tell me input "continue". (don't make me think)"
@@ -3870,17 +3870,17 @@ matches:
       - Your expertise lies in breaking down complex concepts into understandable segments, allowing for quick and thorough comprehension.
       - You have a warm and approachable style, often using emojis to make learning more enjoyable and relatable. 😊
 
-      **Config:**  
-      - 🎯 **Depth:** College  
-      - 🧠 **Learning-Style:** Active  
-      - 🗣️ **Communication-Style:** Socratic  
-      - 🌟 **Tone-Style:** Encouraging  
-      - 🔎 **Reasoning-Framework:** Causal  
-      - 😀 **Emojis:** Enabled (Default)  
-      - 🌐 **Language:** English (Default)  
+      **Config:**
+      - 🎯 **Depth:** College
+      - 🧠 **Learning-Style:** Active
+      - 🗣️ **Communication-Style:** Socratic
+      - 🌟 **Tone-Style:** Encouraging
+      - 🔎 **Reasoning-Framework:** Causal
+      - 😀 **Emojis:** Enabled (Default)
+      - 🌐 **Language:** English (Default)
 
       **Task Instructions:** 📝
-      1. **Teaching Outline Creation:** 
+      1. **Teaching Outline Creation:**
         - As your first step, present the 'teacher config' to confirm understanding of the settings.
         - Develop a structured teaching outline. This should be a step-by-step plan that aligns with my learning style and the specified depth.
         - Emphasize active participation and causal reasoning in the learning process.
@@ -4449,11 +4449,11 @@ matches:
       Passionate about learning, scientifically rigorous, and practically grounded. Use learning science terminology correctly (scaffolding, zone of proximal development, cognitive load, spaced repetition, formative assessment, metacognition, knowledge tracing). Balance pedagogical idealism with implementation realism. Structure as a learning design document that instructional designers, engineers, and educators can collaborate around. Include learning flow diagrams, example interactions, and assessment rubrics.
             </form>
 
-# ==============================================================================
-# FEYNMAN TECHNIQUE LEARNING WORKFLOW (4-STEP ENGINE)
-# Purpose: Active recall, gap detection, and analogy locking via LLM tutoring.
-# Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uejih0/i_turned_the_feynman_technique_into_a_4prompt_ai/
-# ==============================================================================
+  # ==============================================================================
+  # FEYNMAN TECHNIQUE LEARNING WORKFLOW (4-STEP ENGINE)
+  # Purpose: Active recall, gap detection, and analogy locking via LLM tutoring.
+  # Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uejih0/i_turned_the_feynman_technique_into_a_4prompt_ai/
+  # ==============================================================================
   # STEP 1: CONCEPT MAPPING
   # Prompts the user for the core topic and extracts the load-bearing concepts.
   - trigger: ":feynman-workflow-step1-of-4"
@@ -4532,12 +4532,11 @@ matches:
       End with:
       A single sentence summary I should reread tomorrow morning.
 
-
-# ==============================================================================
-# THE AI-ASSISTED MASTERY LOOP (6-PHASE LEARNING ENGINE)
-# Strategy: Framework for deep active recall, application testing, and structural compression.
-# Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uejih0/comment/otm0n8w/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-# ==============================================================================
+  # ==============================================================================
+  # THE AI-ASSISTED MASTERY LOOP (6-PHASE LEARNING ENGINE)
+  # Strategy: Framework for deep active recall, application testing, and structural compression.
+  # Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uejih0/comment/otm0n8w/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+  # ==============================================================================
   # PHASE 1: EXTRACT THE LOAD-BEARING CONCEPTS
   # Captures the core topic via a dynamic text form input.
   - trigger: ":mastery-loop-phase1-of-6"
@@ -4660,3 +4659,2178 @@ matches:
       task_payload:
         type: multiline
         default: ""
+
+  # The Core Architecture (Role → Task → Format)
+  # Role → Task → Format. This structural approach is a prime candidate for an interactive form.
+  - trigger: ":p-struct"
+    form: |
+      Act as a [[role]].
+
+      Your task is to [[task]].
+
+      Output the final result exactly in this format: [[format]].
+    form_fields:
+      role:
+        type: text
+        default: "senior software architect specializing in enterprise integrations"
+      task:
+        type: multiline
+      format:
+        type: choice
+        values:
+          - "Markdown table with clear column headers"
+          - "Bullet points sorted by priority"
+          - "Step-by-step instructions"
+          - "Valid JSON schema"
+
+  # Ask "What's missing here?"
+  - trigger: ":p-missing"
+    replace: "Analyze your previous response. What crucial details, edge cases, or silent assumptions are missing here? List them explicitly and rewrite the response to include them."
+
+  # Self-Critique Power Move
+  - trigger: ":p-critique"
+    replace: |
+      Critique your own previous output rigorously.
+      Identify:
+      1. Weak points or logical gaps.
+      2. Blind spots or biased assumptions.
+      3. Overly verbose or superficial explanations.
+      Then, provide an improved version based on your own critique.
+
+  # Turn Answers into Action
+  - trigger: ":p-action"
+    replace: "Convert the explanation above into a concrete, actionable execution plan. Break it down into step-by-step technical milestones, assigning clear objectives for each phase."
+
+  # Audience Shift Form
+  - trigger: ":p-audience"
+    form: |
+      Rewrite the text below for a [[audience]] audience.
+      Adjust the complexity, vocabulary, and technical depth accordingly while keeping the core insights intact.
+
+      Text:
+      [[text]]
+    form_fields:
+      audience:
+        type: choice
+        values:
+          - "non-technical business stakeholder"
+          - "junior developer looking for clear patterns"
+          - "highly academic peer reviewer"
+      text:
+        type: multiline
+
+  # Contrast / Opposite Opinion Power Move
+  - trigger: ":p-contrast"
+    #label: "Contrast / Opposite Opinion"
+    replace: "Provide the counter-argument or opposite perspective to the scenario described above. Challenge the baseline assumptions and explain where this logic would fail."
+
+  - trigger: ":p-init"
+    form: |
+      I am planning to [[task]].
+      Before you generate any execution blocks or deep dives, ask me any clarifying questions, missing context, or constraints you need resolved to deliver an optimal result.
+      Do you have any questions before starting?
+    form_fields:
+      task:
+        type: text
+
+  # 1. Real-Time Code Refactoring & Debugging
+  - trigger: ":ai-refactor"
+    form: |
+      Review the following [[language]] code snippet. Refactor it for [[criterion]].
+
+      Return:
+      - Optimized code (fully rewritten if needed)
+      - Step-by-step explanation of all logic changes
+      - Identification of potential bugs or edge cases
+      - A dry-run test case simulation showing input -> output to validate no regressions occur
+
+      Code:
+      [[code]]
+    form_fields:
+      language:
+        type: text
+        default: "Python"
+      criterion:
+        type: choice
+        values:
+          - "Performance"
+          - "Readability"
+          - "Security"
+          - "Performance / Readability / Security"
+      code:
+        type: multiline
+
+  # 2. Intelligent Travel Planning (Context-Aware Routing)
+  - trigger: ":ai-travel"
+    form: |
+      Design a [[days]]-day itinerary for [[destination]] focused on [[theme]].
+
+      Constraints:
+      - Travel time between locations must not exceed [[max_time]] minutes
+      - Use [[transit_mode]]
+      - Optimize route efficiency (no backtracking)
+      - Include direct Google Maps links for every location
+      - Group locations by geographic clusters per day
+    form_fields:
+      days:
+        type: text
+        default: "3"
+      destination:
+        type: text
+      theme:
+        type: text
+        default: "architecture, food, coffee culture"
+      max_time:
+        type: text
+        default: "30"
+      transit_mode:
+        type: choice
+        values:
+          - "Walking"
+          - "Transit"
+          - "Driving"
+          - "Walking / Transit"
+
+  # 3. Real-Time Fact Verification & Media Bias Analysis
+  - trigger: ":ai-verify"
+    form: |
+      Using live search capabilities, analyze the top 3 most recent news reports (last [[hours]] hours) on [[topic]].
+
+      Provide:
+      - Summary of each report
+      - Primary sources cited in each article
+      - Cross-region comparison of framing (how different outlets present the story)
+      - Identification of unverified claims or 'breaking news' exaggerations
+    form_fields:
+      hours:
+        type: text
+        default: "24"
+      topic:
+        type: text
+
+  # 4. Video Breakdown & Learning Extraction System
+  - trigger: ":ai-video"
+    form: |
+      Analyze the YouTube video at [[url]].
+
+      Return:
+      - Structured summary using Cornell Note-Taking format
+      - Key concepts broken into digestible sections
+      - 5-question multiple-choice quiz testing deep understanding
+      - Highlight 3 most important actionable insights
+    form_fields:
+      url:
+        type: text
+
+  # 5. AI-Powered Task Intelligence
+  - trigger: ":ai-tasks"
+    form: |
+      Access my [[source]]. Identify all communications from the last [[days]] days related to [[context]].
+
+      Then:
+      - Extract and prioritize all tasks
+      - Assign each task a Next Action, Owner, and Deadline
+      - Flag bottlenecks or missing dependencies
+      - Format output for direct import into Google Tasks or Notion
+    form_fields:
+      source:
+        type: choice
+        values:
+          - "Gmail/Drive/Workspace"
+          - "Gmail"
+          - "Drive"
+      days:
+        type: text
+        default: "7"
+      context:
+        type: text
+
+  # 6. Deep Document Cross-Analysis Engine
+  - trigger: ":ai-cross"
+    form: |
+      I am uploading [[doc_count]] documents on [[subject]]. Perform a cross-analysis.
+
+      Identify:
+      - Contradictions between documents
+      - Conflicting data points
+      - Logical gaps or missing assumptions
+
+      Present results in a table:
+      | Topic | Source A Claim | Source B Claim | Risk / Impact |
+    form_fields:
+      doc_count:
+        type: text
+        default: "the uploaded"
+      subject:
+        type: text
+
+  # 7. Cinematic AI Image Generation (Visual Precision Engine)
+  - trigger: ":ai-image"
+    form: |
+      Generate an ultra-realistic cinematic image of [[subject]].
+
+      Specifications:
+      - Lighting: [[lighting]]
+      - Camera: [[camera]]
+      - Environment: [[environment]]
+      - Atmosphere: [[atmosphere]]
+      - Aspect ratio: [[aspect_ratio]]
+      - Focus: high realism, depth of field, professional photography style
+    form_fields:
+      subject:
+        type: text
+      lighting:
+        type: choice
+        values:
+          - "Golden hour"
+          - "Neon cyberpunk"
+          - "Soft studio"
+          - "Dramatic chiaroscuro"
+      camera:
+        type: choice
+        values:
+          - "85mm lens"
+          - "macro"
+          - "wide-angle cinematic"
+      environment:
+        type: text
+      atmosphere:
+        type: choice
+        values:
+          - "minimal"
+          - "gritty"
+          - "ethereal"
+          - "cinematic moody"
+      aspect_ratio:
+        type: choice
+        values:
+          - "16:9"
+          - "1:1"
+          - "4:5"
+
+  # 8. Cultural Translation & Localization Engine
+  - trigger: ":ai-translate"
+    form: |
+      Translate the following text into [[target_lang]] for a [[audience]].
+
+      Do NOT translate literally. Instead:
+      - Adapt idioms, metaphors, and tone to local culture
+      - Align with professional industry language
+      - Ensure it reads as originally written by a native expert in that field
+
+      Text:
+      [[text]]
+    form_fields:
+      target_lang:
+        type: text
+        default: "English"
+      audience:
+        type: text
+        default: "Tech Executives"
+      text:
+        type: multiline
+
+  # 9. AI Interview Simulation & Performance Coach
+  - trigger: ":ai-interview"
+    form: |
+      Roleplay as a [[job_title]] at [[company]].
+
+      Using my CV and the job description:
+      - Conduct a behavioral interview
+      - Ask one challenging question at a time
+      - After each answer, provide: Critique (strengths) & Refinement (how to improve impact)
+      - Gradually increase difficulty level
+    form_fields:
+      job_title:
+        type: text
+      company:
+        type: text
+
+  # 10. Viral Content Architecture System (Retention Engineering)
+  - trigger: ":ai-viral"
+    form: |
+      Analyze the core value proposition of [[topic]].
+
+      Then create a 10-post X (Twitter) thread:
+      - Post 1: Contrarian or curiosity-driven hook
+      - Posts 2-9: Logical narrative progression with retention bridges
+      - Final post: High-conversion CTA
+
+      Ensure:
+      - Each post naturally leads to the next
+      - Psychological triggers are used (curiosity, tension, reward loops)
+    form_fields:
+      topic:
+        type: text
+
+  - trigger: ":ai-mistake"
+    form: |
+      Review everything I've done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, places where I'm overconfident, risks I haven't considered. Challenge my thinking before I commit to this approach.
+
+      Focus Areas / Context:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "Pay specific attention to edge cases and architectural blind spots."
+
+  - trigger: ":ai-project"
+    form: |
+      This is a month-long project: [[project_description]]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continue.
+    form_fields:
+      project_description:
+        type: text
+        default: ""
+
+  - trigger: ":ai-connect"
+    form: |
+      I have two projects: [[project_a]] and [[project_b]]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration.
+    form_fields:
+      project_a:
+        type: text
+        default: "Core Engine / API Gateway"
+      project_b:
+        type: text
+        default: "Consumer Module"
+
+  # 1. Clear, Concise & No-Fluff Responses
+  - trigger: ":ci-concise"
+    replace: |
+      - Tone: Direct, pragmatic, and candid. No fluff, padding, or meta-commentary.
+      - Formatting: Highly scannable. Use bolding, bullet points, and headers instead of dense walls of text.
+      - Communication: Avoid corporate jargon, robotic throat-clearing (e.g., "Sure, I can help with that!"), or overly repetitive summaries at the end.
+      - Core Rule: If a direct answer can be given in two sentences, give it in two sentences.
+
+  # 2. Expert Software Engineer / Code Companion
+  - trigger: ":ci-dev"
+    replace: |
+      - Profile: You are an elite, senior staff engineer.
+      - Style: Provide clean, production-ready, well-commented code following strict best practices (DRY, SOLID).
+      - Explanations: Keep conceptual explanations brief and technical. Prioritize showing the solution in code first, followed by a concise breakdown of *why* it works.
+      - Safety: Highlight edge cases, performance bottlenecks, or potential security vulnerabilities in any code snippet you provide.
+
+  # 3. Interactive Custom Blueprint Form
+  - trigger: ":ci-form"
+    form: |
+      - Role/Persona: You are an expert [[persona]] specialized in [[specialty]].
+      - Response Tone: [[tone]]
+      - Formatting Preference: Maximize readability using [[format]].
+      - Negative Constraints: Never use [[avoid]].
+    form_fields:
+      persona:
+        type: text
+        default: "technical advisor"
+      specialty:
+        type: text
+        default: "clear communication and system design"
+      tone:
+        type: text
+        default: "Objective, collaborative, and slightly witty"
+      format:
+        type: text
+        default: "bullet points, bold text for key terms, and markdown tables"
+      avoid:
+        type: text
+        default: "preachy conclusions, conversational filler, or apologizing for being an AI"
+
+  - trigger: ":crit"
+    form: |
+      Analyze this concept under strict adversarial rules. Do not use conversational filler ("Great question!"). Point out structural flaws first, declare your assumptions clearly, and hold your ground if my constraints are broken.
+
+      Focus Area: [[focus]]
+      Concept to Audit: [[concept]]
+    form_fields:
+      focus:
+        type: choice
+        values:
+          - "Architecture & Systems Design"
+          - "Logical Fallacies & Flawed Assumptions"
+          - "Edge Cases & Error Handling"
+          - "General Code Optimization"
+      concept:
+        type: multiline
+
+  - trigger: ":primeai"
+    replace: |
+      Adopt this operational model for this conversation:
+      1. Zero Fluff: Never open with conversational fillers like "Great question!", "Certainly!", or "I can help with that." Start directly with the payload.
+      2. Friction First: Critically evaluate my premises. Tell me exactly what is wrong or flawed about my idea before you attempt to execute it.
+      3. Explicit Calibration: State clearly when you are guessing or operating under low-certainty assumptions instead of projecting absolute certainty.
+      4. Intellectual Resilience: If I push back or challenge your output, do not default to submissive agreement. If your original logic holds up under constraints, defend it rigorously.
+
+  # ===========================================================================
+  # 1. THE MASTER ENGINE: INTERACTIVE CONTEXT FORM
+  # ===========================================================================
+  - trigger: ":cos"
+    form: |
+      # SYSTEM CONFIGURATION: CLAUDE OS ENGAGED
+
+      You are now operating as an elite **[[specialist]]** inside the system.
+
+      ## Context & Constraints:
+      - **Core Product/Service:** [[product]]
+      - **Target Audience:** [[audience]]
+      - **Immediate Deliverable:** [[deliverable]]
+
+      ## Operational Execution:
+      Execute this task with maximum structural rigor. Avoid meta-commentary, conversational filler, or introductory platitudes. Default directly to the payload output.
+    form_fields:
+      specialist:
+        type: choice
+        values:
+          - "Copywriter & Conversion Rate Optimizer"
+          - "Code Builder & Systems Architect"
+          - "Funnel Writer & Growth Marketer"
+          - "SEO Content Strategist"
+          - "Business Systems Automation Engineer"
+      product:
+        type: text
+        default: ""
+      audience:
+        type: text
+        default: "B2B Decision Makers"
+      deliverable:
+        type: multiline
+
+  # ===========================================================================
+  # 2. SEMANTIC SPECIALIST SHORTCUTS (FAST INJECTION)
+  # ===========================================================================
+
+  # Code Builder Module
+  - trigger: ":oscode"
+    replace: |
+      You are a Senior Systems Architect and Pragmatic Code Builder.
+      Analyze the requirements completely before writing a single line of code.
+      Prioritize type safety, edge-case validation, and performance hygiene.
+      Provide fully realized code blocks; do not truncate with placeholders.
+
+  # Copywriter Module
+  - trigger: ":oscopy"
+    replace: |
+      You are a Direct Response Copywriter and Behavioral Economist.
+      Analyze the customer's core anxieties, false beliefs, and dominant buying motivations.
+      Write high-converting, punchy copy that addresses objections natively within the narrative flow.
+
+  # Strategist / Funnel Module
+  - trigger: ":osfunnel"
+    replace: |
+      You are a Growth Marketing Architect specializing in high-ticket offer stacks.
+      Map out a full 3-tier conversion funnel (Top, Middle, and Bottom of Funnel).
+      Identify leaks, specify exact lead magnet transitions, and define the value-ladder architecture.
+
+  # Paste this inside your match/base.yml or a dedicated match/prompts.yml
+  - regex: ":err\\((?P<concept>.*)\\)"
+    replace: |
+      Do not explain {{concept}} to me. Put me directly into a real situation where I would have to use it and would probably make a mistake.
+
+      When I make a mistake, do not give me the answer. Ask me a question that forces me to discover where my reasoning is broken.
+
+      Only give me the answer after I have tried at least two times. Repeat this cycle until I can get it right without hesitation.
+
+  # Paste this inside your match/base.yml or match/prompts.yml
+  - trigger: ":sim"
+    form: |
+      Do not explain [[concept]] to me. Put me directly into a real situation regarding [[context]] where I would have to use it and would probably make a mistake.
+
+      When I make a mistake, do not give me the answer. Ask me a question that forces me to discover where my reasoning is broken.
+
+      Only give me the answer after I have tried at least two times. Repeat this cycle until I can get it right without hesitation.
+    form_fields:
+      concept:
+        type: text
+        default: ""
+      context:
+        type: text
+        default: "system architecture and edge cases"
+
+  # ===========================================================================
+  # CHAIN 1: THE FOUNDATION BUILDER (ALWAYS START HERE)
+  # ===========================================================================
+  # ===========================================================================
+  # OPTION A: INTERACTIVE FORM (Recommended)
+  # Opens a UI dialog box when you type :qfound. Clean and readable.
+  # ===========================================================================
+  - trigger: ":qfound"
+    form: |
+      I need to research [[topic]]. Before we dive in, help me build a solid foundation:
+
+      1. What are the 5 core concepts I must understand first?
+      2. What common misconceptions exist about this topic?
+      3. What's the current expert consensus vs. emerging debates?
+      4. What questions should I be asking that I'm not?
+
+      Deliver this as a highly structured breakdown using Markdown headers, bold key terms, and a comparative table for consensus vs. debates to ensure deep conceptual parsing.
+    form_fields:
+      topic:
+        type: text
+        default: ""
+
+  # ===========================================================================
+  # OPTION B: REGEX CAPTURE (For Speed)
+  # Inline execution. Example typing: :qfound(DataWeave performance)
+  # ===========================================================================
+  - regex: ":qfound\\((?P<topic>.*)\\)"
+    replace: |
+      I need to research {{topic}}. Before we dive in, help me build a solid foundation:
+
+      1. What are the 5 core concepts I must understand first?
+      2. What common misconceptions exist about this topic?
+      3. What's the current expert consensus vs. emerging debates?
+      4. What questions should I be asking that I'm not?
+
+      Deliver this as a highly structured breakdown using Markdown headers, bold key terms, and a comparative table for consensus vs. debates to ensure deep conceptual parsing.
+
+  # ===========================================================================
+  # CHAIN 2: THE PERSPECTIVE MULTIPLIER (RUN AFTER CHAIN 1)
+  # ===========================================================================
+  # Option A: The Interactive Form (Recommended UX)
+  - trigger: ":pmult"
+    form: |
+      Based on the foundation we just built, analyze "[[question]]" from these 5 perspectives:
+
+      1. A skeptic who thinks this won't work
+      2. An expert practitioner with 10+ years experience
+      3. A beginner encountering this for the first time
+      4. Someone who tried and failed at this
+      5. A researcher looking at data, not opinions
+
+      For each perspective, give me their strongest argument and evidence. Present the final response with distinct Markdown headers for each persona to ensure strict structural readability.
+  # Option B: The High-Speed Inline Regex
+  - regex: ":pmult\\((?P<question>.*)\\)"
+    replace: |
+      Based on the foundation we just built, analyze "{{question}}" from these 5 perspectives:
+
+      1. A skeptic who thinks this won't work
+      2. An expert practitioner with 10+ years experience
+      3. A beginner encountering this for the first time
+      4. Someone who tried and failed at this
+      5. A researcher looking at data, not opinions
+
+      For each perspective, give me their strongest argument and evidence. Present the final response with distinct Markdown headers for each persona to ensure strict structural readability.
+
+  # ===========================================================================
+  # CHAIN 3: THE BLIND SPOT FINDER (RUN AFTER CHAIN 2)
+  # CHAIN 3: THE GAP IDENTIFIER (RUN AFTER CHAIN 2)
+  # ===========================================================================
+  # Version 1: Literal Text Replacement
+  - trigger: ":gap5"
+    replace: |
+      Looking at those 5 perspectives we just explored, now identify:
+
+      1. What critical information is missing from ALL perspectives?
+      2. What assumptions are they making that could be wrong?
+      3. What questions remain unanswered?
+      4. What data would we need to validate or reject each viewpoint?
+      5. Where do the perspectives contradict each other - and why?
+
+      Highlight the gaps in our current understanding.
+
+  # Version 2: Optimized Dynamic Form
+  # Removes the blind spot of hardcoded counts by leveraging an interactive popup
+  - trigger: ":gapform"
+    form: |
+      Looking at those [[count]] perspectives we just explored, now identify:
+
+      1. What critical information is missing from ALL perspectives?
+      2. What assumptions are they making that could be wrong?
+      3. What questions remain unanswered?
+      4. What data would we need to validate or reject each viewpoint?
+      5. Where do the perspectives contradict each other - and why?
+
+      Highlight the gaps in our current understanding.
+    form_fields:
+      count:
+        type: text
+        default: "5"
+
+  # ===========================================================================
+  # CHAIN 4: THE DEEP DIVE RESEARCH (RUN AFTER CHAIN 3)
+  # ===========================================================================
+  # 1. Direct Context Chain (Literal Extraction)
+  - trigger: ":chain4"
+    replace: |
+      Take the gaps we identified. For each gap, help me research deeper:
+
+      1. What would an expert study or investigate to fill this gap?
+      2. What methodologies or frameworks apply here?
+      3. What real-world examples or case studies exist?
+      4. What are the leading theories or models that address this?
+      5. Create a research roadmap: What should I explore first, second, third?
+
+      Give me a structured deep-dive plan with specific next steps.
+
+  # 2. Clipboard-Grounded Variant (Eliminates context drift)
+  - trigger: ":c4clip"
+    replace: |
+      We are focusing on these specific identified gaps:
+      ---
+      {{copied_gaps}}
+      ---
+
+      For each gap detailed above, help me research deeper:
+      1. What would an expert study or investigate to fill this gap?
+      2. What methodologies or frameworks apply here?
+      3. What real-world examples or case studies exist?
+      4. What are the leading theories or models that address this?
+      5. Create a research roadmap: What should I explore first, second, third?
+
+      Give me a structured deep-dive plan with specific next steps.
+    vars:
+      - name: copied_gaps
+        type: clipboard
+
+  # 3. Interactive Form Variant (Protects flow state)
+  - trigger: ";c4form"
+    form: |
+      We are analyzing the following identified architecture/system gaps:
+      [[target_gaps]]
+
+      For each gap, help me research deeper:
+      1. What would an expert study or investigate to fill this gap?
+      2. What methodologies or frameworks apply here?
+      3. What real-world examples or case studies exist?
+      4. What are the leading theories or models that address this?
+      5. Create a research roadmap: What should I explore first, second, third?
+
+      Give me a structured deep-dive plan with specific next steps.
+    form_fields:
+      target_gaps:
+        type: multiline
+
+  # ===========================================================================
+  # CHAIN 5: THE SYNTHESIS ENGINE & ACTION PLAN (RUN AFTER CHAIN 4)
+  # ===========================================================================
+  - trigger: ";chain5-of-6-run-after-4"
+    triggers:
+      - :synth
+    form: |
+      We've built foundation, explored perspectives, identified gaps, and done deep research. Now synthesize everything[[extra_context]]:
+
+      1. What are the [[insight_count]] most important insights from our entire conversation?
+      2. How do all the pieces connect? Draw the big picture.
+      3. What would I be confident saying is true vs. what's still uncertain?
+      4. If I had to explain this to someone in 2 minutes, what would I say?
+      5. What's my action plan based on everything we've learned?
+
+      Create a clear, actionable summary of our entire chain.
+    form_fields:
+      insight_count:
+        type: text
+        default: "3"
+      extra_context:
+        type: text
+        default: ""
+
+  # ===========================================================================
+  # CHAIN 6: THE QUALITY CHECKER / DEEP DIVE CLARIFICATION (RUN AFTER CHAIN 5 - FINAL STEP)
+  # ===========================================================================
+  # Full quality checker prompt verbatim from image_0.png
+  - trigger: "|qualitycheck"
+    replace: |
+      Review everything we've discussed in this conversation. Now quality-check our work:
+
+      1. What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)
+      2. What counterarguments haven't we fully considered?
+      3. Rate the confidence level of each major claim (High/Medium/Low)
+      4. What would make this analysis stronger?
+      5. If an expert criticized our conclusions, what would they say?
+
+      Be brutally honest. Poke holes in our own work.
+  # Optimized quality check variation for faster input
+  - trigger: "|qc"
+    replace: |
+      Please quality-check the previous analysis based on the following points:
+      - Biases check (e.g., confirmation, recency, etc.).
+      - Review of counterarguments we haven't fully considered.
+      - Confidence ratings (High/Medium/Low) for each major claim.
+      - Identification of specific expert criticisms.
+
+  # --- Chain 6: The Full Quality Checker (Refined) ---
+  - trigger: "|quality"
+    replace: |
+      "Review everything we've discussed in this conversation. Now quality-check our work:
+
+      Be brutally honest. Poke holes in our own work."
+
+  # --- Deep-Dive Individual Checks ---
+  - trigger: "|biascheck"
+    replace: "What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)"
+
+  # (Use this deep dive trigger to identify overlooked arguments)
+  - trigger: "|counterarg"
+    replace: "What counterarguments haven't we fully considered?"
+
+  # (Use this deep dive trigger to focus on expert critique)
+  - triggers: [":expert-crit", ":what-if-expert"]
+    replace: "If an expert criticized our conclusions, what would they say?"
+
+  # --- Improvements for Flexibility ---
+  - triggers: [":confidence", ":rate"]
+    replace: "Rate the confidence level of each major claim (High/Medium/Low)"
+
+  # Improvement: Variable Injection (adds context)
+  - trigger: "|refinement-chain"
+    replace: "Review everything we've discussed. Based on the concept of '{{input}}', how can we refine the analysis for greater impact?"
+    vars:
+      - name: input
+        type: form
+        params:
+          layout: "Refine based on: [[input]]"
+
+  ###
+
+  # 1/ Startup MVP Engineering Team
+  - trigger: ":ai-mvp"
+    form: |
+      Act like a senior full-stack engineer building a production-ready startup MVP from scratch.
+      The core tech stack is: [[tech_stack]].
+
+      First design the complete system architecture, then build the most minimal but scalable version possible.
+
+      Include:
+      • System architecture
+      • File structure
+      • Database schema
+      • API endpoints
+      • UI architecture
+      • Production-ready code
+
+      Build it like a real startup that could scale to millions of users.
+    form_fields:
+      tech_stack:
+        type: text
+        default: "Next.js, TypeScript, PostgreSQL, Prisma, Tailwind"
+
+  # 2/ Senior Codebase Audit
+  - trigger: ":ai-audit"
+    form: |
+      Act like a senior engineer who just joined a massive unfamiliar codebase. First reverse-engineer the architecture and understand the complete data flow.
+
+      Then identify:
+      • Bad architecture decisions
+      • Duplicate logic
+      • Performance bottlenecks
+      • Scalability risks
+      • Maintainability issues
+
+      Finally provide:
+      • A clean architecture breakdown
+      • Critical problem areas
+      • Refactoring strategies
+      • Improved production-grade code
+
+      Do not change functionality.
+      Only upgrade the code quality, scalability, and maintainability.
+    form_fields: {}
+
+  # 3/ Production-Level Debugging Monster
+  - trigger: ":ai-debug"
+    form: |
+      Act like a senior debugging engineer investigating a live production issue. Analyze the codebase step by step like you're handling a critical outage at a fast-growing startup. Your job:
+
+      • Understand what the code actually does
+      • Trace the real root cause
+      • Explain why the failure happens
+      • Identify hidden edge cases
+      • Propose the most robust fix possible
+
+      Finally provide:
+      • Code functionality breakdown
+      • Root cause analysis
+      • Failure explanation
+      • Edge case analysis
+      • Fixed production-ready code Do not guess.
+      Think deeply before making changes.
+    form_fields: {}
+
+  # 4/ Performance Optimization Engineer
+  - trigger: ":ai-perf"
+    form: |
+      Act like a senior performance engineer optimizing a production application used by millions of users.
+
+      Your goals:
+      • Maximum speed
+      • Lower memory usage
+      • Better scalability
+      • Faster rendering
+      • Cleaner execution
+
+      Carefully identify:
+      • Performance bottlenecks
+      • Inefficient logic
+      • Unnecessary rendering
+      • Expensive operations
+      • Memory leaks
+
+      Then provide:
+      • Performance issue breakdown
+      • Optimization strategies
+      • Improved production-ready code
+      • Scalability recommendations
+
+      Optimize the code like you're preparing it for massive traffic.
+    form_fields: {}
+
+  # 5/ Clean Architecture Rebuild
+  - trigger: ":ai-rebuild"
+    form: |
+      Act like a senior software architect rebuilding a messy production codebase using clean architecture principles.
+
+      Your mission:
+      • Separate concerns properly
+      • Increase modularity
+      • Reduce tight coupling
+      • Improve scalability
+      • Make the codebase easier to maintain long term
+
+      Do NOT change the product behavior. Only improve the architecture and code quality.
+
+      Finally provide:
+      • New folder structure
+      • Clean architecture breakdown
+      • Refactored production-grade code
+      • Explanation of architectural improvements
+
+      Refactor it like a real senior engineer preparing the codebase to scale.
+    form_fields: {}
+
+  # 6/ Startup Backend Architect
+  - trigger: ":ai-backend"
+    form: |
+      Act like a senior systems architect designing infrastructure for a high-growth startup. First design a scalable production-grade system architecture. Then build the minimal implementation that could realistically scale in the future.
+
+      Include:
+      • System architecture
+      • Component structure
+      • Data flow
+      • API design
+      • Database schema
+      • Caching strategy
+      • Production-ready implementation code
+
+      Optimize for scalability, maintainability, and real-world production usage.
+    form_fields: {}
+
+  # 7/ Senior Frontend Engineer
+  - trigger: ":ai-frontend"
+    form: |
+      Act like a senior frontend engineer building production-grade UI systems for a modern startup.
+      The styling system/framework context: [[ui_context]].
+
+      Your task is to create:
+      • Reusable UI components
+      • Scalable component architecture
+      • Accessible production-ready interfaces
+
+      While building, carefully handle:
+      • Loading states
+      • Empty states
+      • Edge cases
+      • Responsive design
+      • Accessibility
+      • Component reusability
+      • Clean developer experience
+
+      Finally provide:
+      • Component architecture
+      • Props/API design
+      • Production-ready implementation
+      • Usage examples
+      • Best practices
+
+      Build it like it's going into a real production app used by millions.
+    form_fields:
+      ui_context:
+        type: text
+        default: "React, Tailwind CSS, Radix UI (Accessible components)"
+
+  # 8/ AI Technical Lead Mode
+  - trigger: ":ai-techlead"
+    form: |
+      Act like a senior technical lead managing a real engineering team.
+
+      Before writing code:
+      • Ask clarifying questions
+      • Challenge bad decisions
+      • Identify scaling risks
+      • Suggest better approaches
+      • Prioritize simplicity
+
+      Think long-term like someone responsible for maintaining this product for 5+ years.
+
+      Then provide:
+      • Technical decisions
+      • Tradeoff analysis
+      • Recommended architecture
+      • Implementation plan
+      • Production-ready solution
+
+      This makes Claude stop behaving like a code generator... and start thinking like an actual tech lead.
+    form_fields: {}
+
+  # 9/ Production Security Audit
+  - trigger: ":ai-security"
+    form: |
+      Act like a senior security engineer auditing a production application.
+
+      Carefully inspect the system for:
+      • Security vulnerabilities
+      • Authentication flaws
+      • API weaknesses
+      • Injection risks
+      • Sensitive data exposure
+      • Infrastructure risks
+
+      Then provide:
+      • Vulnerability report
+      • Severity levels
+      • Attack scenarios
+      • Secure implementation fixes
+      • Production-grade recommendations
+    form_fields: {}
+
+  # 10/ Senior DevOps + Deployment Engineer
+  - trigger: ":ai-devops"
+    form: |
+      Act like a senior DevOps engineer preparing this application for real production deployment.
+      Target cloud environment: [[target_cloud]].
+
+      Your job:
+      • Design deployment architecture
+      • Configure CI/CD
+      • Setup monitoring/logging
+      • Improve reliability
+      • Reduce downtime risks
+      • Optimize scaling
+
+      Provide:
+      • Infrastructure architecture
+      • Deployment workflow
+      • CI/CD pipeline
+      • Docker/Kubernetes setup
+      • Monitoring strategy
+      • Production deployment checklist
+    form_fields:
+      target_cloud:
+        type: text
+        default: "AWS (EKS, GitHub Actions, Prometheus/Grafana)"
+
+  # ----------------------------------------------------------------------------
+  # SECTION 1: STATIC & CORE CONTEXT TRIGGERS (No Form Fields Needed)
+  # ----------------------------------------------------------------------------
+
+  # 1. The Private Professor
+  - trigger: ":p_prof"
+    replace: "Act as an expert teacher. Explain this content to me from scratch, with practical examples, and tell me what I should learn first."
+
+  # 3. Active Learning Mode
+  - trigger: ":p_active"
+    replace: "Pause after each important concept and ask me a question. If I answer incorrectly, explain it again using a different analogy."
+
+  # 4. Examiner Mode
+  - trigger: ":p_examine"
+    replace: "Act as an examiner and give me tests and questions about this document. Then explain what my answers reveal about my gaps in understanding and help me correct them."
+
+  # 6. The Express Reader
+  - trigger: ":p_read"
+    replace: |
+      I'm going to share a document with you. Read it and give me:
+      → A 3-line executive summary
+      → 5 key points I can't miss
+      → 1 thing the author gets wrong or exaggerates
+      → 3 questions I should ask myself afterward
+
+  # ----------------------------------------------------------------------------
+  # SECTION 2: INTERACTIVE FORM TRIGGERS (Context-Aware Multi-Field Forms)
+  # ----------------------------------------------------------------------------
+
+  # 2. Turn Topics into Classes
+  - trigger: ":p_class"
+    form: |
+      Turn this chapter/topic into a [[duration]] lesson plan. Include sections, examples, and quick comprehension checks.
+    form_fields:
+      duration:
+        type: text
+        default: "30-minute"
+
+  # 5. The Blind Spot Detector
+  - trigger: ":p_blind"
+    form: |
+      I'm going to tell you my plan:
+      [[plan]]
+
+      I don't want you to agree with me. I want you to act as my worst critic. Give me:
+      → 5 reasons why it might fail
+      → 3 things I'm not seeing
+      → 1 question I'm afraid to ask
+    form_fields:
+      plan:
+        type: multiline
+
+  # 7. The Invisible Writer
+  - trigger: ":p_write"
+    form: |
+      Analyze these 3 texts of mine:
+      [[samples]]
+
+      Extract my tone, vocabulary, sentence length, and level of formality. Everything you write from now on must sound exactly like me. Never use 'furthermore,' 'however,' or 'it is important to note.'
+    form_fields:
+      samples:
+        type: multiline
+
+  # 8. The Negotiator in the Shadows
+  - trigger: ":p_negotiate"
+    form: |
+      I'm going to have this difficult conversation: [[situation]]
+      The person is: [[profile]]
+      My goal is: [[outcome]]
+
+      Give me three ways to approach this: a direct approach, a diplomatic approach, and a data-driven approach. For each, tell me the risk and the expected reaction.
+    form_fields:
+      situation:
+        type: text
+      profile:
+        type: text
+      outcome:
+        type: text
+
+  # 9. The Meeting Preparer
+  - trigger: ":p_meet"
+    form: |
+      In 30 minutes I have a meeting about [[topic]] with [[person]]. Their profile is: [[profile]].
+      Prepare me:
+      → 3 key points I need to have ready
+      → 2 intelligent questions that demonstrate my mastery of the topic
+      → 1 fact no one expects me to know
+      → A 2-line emergency summary in case I'm late
+    form_fields:
+      topic:
+        type: text
+      person:
+        type: text
+      profile:
+        type: text
+
+  # 10. The Accelerated Learner
+  - trigger: ":p_learn"
+    form: |
+      I want to learn [[topic]] in [[days]] days, dedicating [[time]] a day. Create a plan with:
+      → What to study from day 1 to [[days]]
+      → One free resource per session
+      → One practical exercise per day
+      → A mini-project on day [[days]] to demonstrate my learning
+    form_fields:
+      topic:
+        type: text
+      days:
+        type: text
+        default: "7"
+      time:
+        type: text
+        default: "30 minutes"
+
+  # 1. O Destruidor da Curva de Aprendizado (Form Mode)
+  - trigger: ":pcurva"
+    form: |
+      Você é um professor que só tem 4 horas comigo e nunca mais vai me ver.
+      Seu único objetivo é me deixar funcional em [[habilidade]] antes que o tempo acabe.
+      Não me dê teoria sem aplicação.
+
+      Me diga:
+      • o que aprender primeiro
+      • o que ignorar completamente
+      • qual exercício me colocaria à frente de 70% das pessoas
+    form_fields:
+      habilidade:
+        type: text
+        default: ""
+
+  # 2. O Arquiteto de Aprendizado (Form Mode)
+  - trigger: ":parquiteto"
+    form: |
+      Meu objetivo não é aprender [[habilidade]]. Meu objetivo é alcançar [[resultado]].
+      Crie um plano de 7 dias. 45 minutos por dia.
+
+      Diga exatamente:
+      • o que fazer
+      • como validar
+      • o que NÃO estudar
+    form_fields:
+      habilidade:
+        type: text
+        default: ""
+      resultado:
+        type: text
+        default: ""
+
+  # 3. Traits I Can't See (Static Text Replacement)
+  - trigger: ":pblind"
+    replace: "Based on everything you know about me, name the personality traits I most likely don't see in myself, the patterns that are obvious to you but invisible to me. My blind spots, my insecurities, the way I actually come across versus how I think I do. Be blunt and specific."
+
+  # 4. Predict Me (Static Text Replacement)
+  - trigger: ":ppredict"
+    replace: "Using your profile of me, predict how I'd handle things I've never told you about: money, stress, conflict, risk, and the decision I'm most likely to make next in my life. Tell me how confident you are in each one and what in my behavior it's based on."
+
+  # 1. R-T-F Framework
+  - trigger: ":rtf"
+    form: |
+      Act according to the following framework:
+      - **Role**: [[role]]
+      - **Task**: [[task]]
+      - **Format**: [[format]]
+    form_fields:
+      role:
+        type: text
+        default: "Expert Assistant"
+      task:
+        type: multiline
+      format:
+        type: text
+        default: "Clean markdown tables or bullet points"
+
+  # 2. S-O-L-V-E Framework
+  - trigger: ":solve"
+    form: |
+      Please follow this prompt structure:
+      - **Situation**: [[situation]]
+      - **Objective**: [[objective]]
+      - **Limitations**: [[limitations]]
+      - **Vision**: [[vision]]
+      - **Execution**: [[execution]]
+    form_fields:
+      situation:
+        type: multiline
+      objective:
+        type: multiline
+      limitations:
+        type: multiline
+        default: "None specified"
+      vision:
+        type: text
+      execution:
+        type: multiline
+
+  # 3. T-A-G Framework
+  - trigger: ":tag"
+    form: |
+      Execute the following:
+      - **Task**: [[task]]
+      - **Action**: [[action]]
+      - **Goal**: [[goal]]
+    form_fields:
+      task:
+        type: multiline
+      action:
+        type: multiline
+      goal:
+        type: text
+
+  # 4. R-A-C-E Framework
+  - trigger: ":race"
+    form: |
+      Analyze and generate:
+      - **Role**: [[role]]
+      - **Action**: [[action]]
+      - **Context**: [[context]]
+      - **Expectation**: [[expectation]]
+    form_fields:
+      role:
+        type: text
+      action:
+        type: multiline
+      context:
+        type: multiline
+      expectation:
+        type: multiline
+
+  # 5. D-R-E-A-M Framework
+  - trigger: ":dream"
+    form: |
+      Address this systematically:
+      - **Define**: [[define]]
+      - **Research**: [[research]]
+      - **Execute**: [[execute]]
+      - **Analyse**: [[analyse]]
+      - **Measure**: [[measure]]
+    form_fields:
+      define:
+        type: multiline
+      research:
+        type: multiline
+      execute:
+        type: multiline
+      analyse:
+        type: multiline
+      measure:
+        type: text
+
+  # 6. P-A-C-T Framework
+  - trigger: ":pact"
+    form: |
+      Evaluate the problem space:
+      - **Problem**: [[problem]]
+      - **Approach**: [[approach]]
+      - **Compromise**: [[compromise]]
+      - **Test**: [[test]]
+    form_fields:
+      problem:
+        type: multiline
+      approach:
+        type: multiline
+      compromise:
+        type: multiline
+        default: "None"
+      test:
+        type: text
+
+  # 7. C-A-R-E Framework
+  - trigger: ":care"
+    form: |
+      Formulate a response using these elements:
+      - **Context**: [[context]]
+      - **Action**: [[action]]
+      - **Result**: [[result]]
+      - **Example**: [[example]]
+    form_fields:
+      context:
+        type: multiline
+      action:
+        type: multiline
+      result:
+        type: text
+      example:
+        type: multiline
+
+  # 8. R-I-S-E Framework
+  - trigger: ":rise"
+    form: |
+      Execute this request:
+      - **Role**: [[role]]
+      - **Input**: [[input]]
+      - **Steps**: [[steps]]
+      - **Expectation**: [[expectation]]
+    form_fields:
+      role:
+        type: text
+      input:
+        type: multiline
+      steps:
+        type: multiline
+      expectation:
+        type: multiline
+
+  # Interactive Custom Instructions Prompt Builder
+  - trigger: ":customai"
+    form: |
+      You are my [[persona]], not my assistant. Follow these rules in every reply: Never open with agreement. Challenge my thinking [[intensity]] or ask the question I'm avoiding. When I'm wrong, say it directly. No "great point, but." Rate your confidence: [Certain] for hard evidence, [Likely] for strong guess, [Guessing] for filling gaps. Never say "Great question," "You're absolutely right," "That makes a lot of sense," or "Absolutely." Lead with the answer I don't want to hear. First line, not paragraph three. No warm-up paragraphs. Start with the most useful thing you can say. If I push back, don't fold unless I give you genuinely new information.
+    form_fields:
+      persona:
+        type: choice
+        values:
+          - "advisor"
+          - "devil's advocate"
+          - "strict editor"
+          - "critical reviewer"
+      intensity:
+        type: choice
+        values:
+          - "first"
+          - "aggressively"
+          - "constructively"
+
+  # 1. O Destruidor de Paralisia de Tarefas
+  - trigger: ":p_paralisia"
+    form: |
+      Estou olhando para [[tarefa]] e não consigo começar. Divide isso em passos ridiculamente pequenos que levem menos de 1 minuto cada. Me dá o primeiro passo e diz exatamente onde colocar as mãos para começar.
+
+  # 2. O Arquiteto do Menu de Dopamina
+  - trigger: ":p_dopamina"
+    replace: "Estou me sentindo sem estímulo. Cria um Menu de Dopamina para mim com Aperitivos de 5 minutos, movimento rápido, Pratos Principais de 20 minutos, trabalho profundo, e Acompanhamentos de 10 minutos, jogo criativo, para manter meu cérebro engajado."
+
+  # 3. O Simulador de Parceiro de Foco
+  - trigger: ":p_foco"
+    replace: "Age como meu parceiro de foco virtual pelos próximos 30 minutos. Vou te dizer no que estou trabalhando e quero que você me pergunte um status a cada 10 minutos para manter meu foco."
+
+  # 4. O Guia de Troca de Contexto
+  - trigger: ":p_transicao"
+    form: |
+      Acabei de terminar [[tarefa_a]] e preciso começar [[tarefa_b]], mas meu cérebro travou. Cria uma rotina de limpeza mental de 3 minutos para me ajudar a transitar entre esses dois tipos de energia.
+
+  # 5. O Filtro Baseado em Interesse
+  - trigger: ":p_gamifica"
+    form: |
+      Tenho uma tarefa administrativa chata: [[tarefa]]. Me ajuda a gamificar ela conectando ao meu interesse atual: [[interesse]]. Cria uma estrutura de missão onde terminar a tarefa desbloqueia uma recompensa.
+
+  # 6. O Auditor de Cegueira Temporal
+  - trigger: ":p_tempo"
+    form: |
+      Acho que [[projeto]] vai levar 20 minutos, mas normalmente leva 2 horas. Me ajuda a mapear isso identificando as 3 subtarefas escondidas que sempre esqueço de considerar para eu definir um prazo realista.
+
+  # 7. O Externalizador de Função Executiva
+  - trigger: ":p_loops"
+    replace: "Meu cérebro está cheio de loops abertos. Vou jogar tudo que me preocupa abaixo. Categoriza em: Agora, Depois e Lixo. Depois escreve um próximo passo acionável de 1 frase só para os itens de Agora."
+
+  # --- SECTION 2: COMMAND UTILITIES ---
+
+  # Interactive persona assignment
+  - trigger: ":act"
+    form: |
+      Act as a [[persona]]. Your task is to [[task]].
+      Please provide your response in a [[tone]] tone.
+    form_fields:
+      persona:
+        type: text
+        default: "Senior Software Engineer"
+      task:
+        type: text
+        default: "optimize this database query for speed"
+      tone:
+        type: choice
+        values:
+          [
+            "Professional",
+            "Friendly",
+            "Enthusiastic",
+            "Empathetic",
+            "Instructional",
+            "Reassuring",
+            "Inspirational",
+          ]
+
+  # Quick "Simplify like I'm 5" shortcut wrapping clipboard contents
+  - trigger: ":eli5"
+    replace: "Simplify the following complex information for a beginner/ELI5 audience:\n\n{{clip}}"
+    vars:
+      - name: clip
+        type: clipboard
+
+  # Evaluate advantages and disadvantages
+  - trigger: ":proscons"
+    replace: "Evaluate and list the advantages (pros) and disadvantages (cons) of: "
+
+  # Point out missing gaps in information
+  - trigger: ":gaps"
+    replace: "Review the preceding information and explicitly point out any missing, incomplete, or hidden gaps in the data."
+
+  # --- SECTION 3: PROMPT STRUCTURES (FORMS WITH EXAMPLES) ---
+
+  # TREF Framework
+  - trigger: ":ptref"
+    form: |
+      Please execute the following request based on the TREF framework:
+      - Task: [[task]]
+      - Requirement: [[requirement]]
+      - Expectation: [[expectation]]
+      - Format: [[format]]
+    form_fields:
+      task:
+        type: text
+        default: "Summarize the quarterly financial report"
+      requirement:
+        type: text
+        default: "Focus strictly on operational expenses and cloud spend"
+      expectation:
+        type: text
+        default: "Objective, technical, and actionable"
+      format:
+        type: text
+        default: "Markdown table followed by a 3-bullet takeaway list"
+
+  # STAR Framework
+  - trigger: ":pstar"
+    form: |
+      Analyze and generate a response utilizing the STAR structure:
+      - Situation: [[situation]]
+      - Task: [[task]]
+      - Action: [[action]]
+      - Result: [[result]]
+    form_fields:
+      situation:
+        type: multiline
+        default: "The main production API crashed unexpectedly during a traffic spike."
+      task:
+        type: multiline
+        default: "Identify the root cause, mitigate immediate downtime, and establish a patch."
+      action:
+        type: multiline
+        default: "Analyzed Datadog logs, isolated a database connection leak, and expanded the connection pool."
+      result:
+        type: multiline
+        default: "Restored service within 8 minutes and cut database latency by 15% overall."
+
+  # ROSES Framework
+  - trigger: ":proses"
+    form: |
+      Execute the following task contextually:
+      - Role: [[role]]
+      - Objective: [[objective]]
+      - Scenario: [[scenario]]
+      - Expected Solution: [[solution]]
+      - Edge Cases to Avoid: [[edge]]
+    form_fields:
+      role:
+        type: text
+        default: "Expert QA Automation Engineer"
+      objective:
+        type: text
+        default: "Draft a robust end-to-end testing strategy for our new checkout logic"
+      scenario:
+        type: multiline
+        default: "Simulated load of 10,000 parallel checkout requests during a holiday sales event."
+      solution:
+        type: multiline
+        default: "A step-by-step automation test plan using Playwright and an accompanying script skeleton."
+      edge:
+        type: multiline
+        default: "Expired authorization tokens mid-transaction, race conditions on inventory counts, and double-clicks on payment buttons."
+
+  # 1. TREF Framework
+  - trigger: ":tref"
+    form: |
+      # [TREF Prompt] — Context: [[domain]]
+      ### TASK
+      [[task]]
+
+      ### REQUIREMENT
+      [[requirement]]
+
+      ### EXPECTATION
+      [[expectation]]
+
+      ### FORMAT
+      [[format]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - "Tech Development (Architecture, Refactoring)"
+          - "Creative/Copywriting (Marketing, Editing)"
+          - "Business Strategy (Analysis, Operations)"
+      task:
+        type: multiline
+        default: "Define the core operation or task to be executed."
+      requirement:
+        type: multiline
+        default: "List explicit constraints, rules, boundaries, or dependencies."
+      expectation:
+        type: multiline
+        default: "Define what a successful output achieves (KPIs or qualitative benchmarks)."
+      format:
+        type: multiline
+        default: "Specify the structure: Markdown tables, JSON schemas, or bullet points."
+
+  # 2. SCET Framework
+  - trigger: ":scet"
+    form: |
+      # [SCET Prompt] — Context: [[domain]]
+      ### SITUATION
+      [[situation]]
+
+      ### COMPLICATION
+      [[complication]]
+
+      ### EXPECTATION
+      [[expectation]]
+
+      ### TASK
+      [[task]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - "System Engineering & Debugging"
+          - "Product Management & Roadmapping"
+          - "Executive Communication"
+      situation:
+        type: multiline
+        default: "Provide background information on the current steady-state environment."
+      complication:
+        type: multiline
+        default: "Describe the specific friction point, bug, bottleneck, or structural issue triggering this request."
+      expectation:
+        type: multiline
+        default: "Outline the ideal future state once the friction is resolved."
+      task:
+        type: multiline
+        default: "Detail the explicit action steps needed from the model to bridge the gap."
+
+  # 3. PECRA Framework
+  - trigger: ":pecra"
+    form: |
+      # [PECRA Prompt] — Context: [[domain]]
+      ### PURPOSE
+      [[purpose]]
+
+      ### EXPECTATION
+      [[expectation]]
+
+      ### CONTEXT
+      [[context]]
+
+      ### REQUEST
+      [[request]]
+
+      ### ACTION
+      [[action]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - "Research & Synthesis"
+          - "Algorithm & Workflow Optimization"
+          - "Strategic Advisory"
+      purpose:
+        type: multiline
+        default: "The high-level 'Why' behind this task."
+      expectation:
+        type: multiline
+        default: "The qualitative definition of done or quality check parameters."
+      context:
+        type: multiline
+        default: "Environmental details, existing tech stack, historical data, or framing rules."
+      request:
+        type: multiline
+        default: "The precise, direct prompt or question asked of the model."
+      action:
+        type: multiline
+        default: "The explicit computational or creative processing steps to follow."
+
+  # 4. PCCRA Framework
+  - trigger: ":pccra"
+    form: |
+      # [PCCRA Prompt] — Context: [[domain]]
+      ### GOAL
+      [[goal]]
+
+      ### REQUEST
+      [[request]]
+
+      ### ACTION
+      [[action]]
+
+      ### DETAIL
+      [[detail]]
+
+      ### EXAMPLES
+      [[examples]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - "Automation Scripting & DevOps"
+          - "Content Enrichment & SEO"
+          - "Financial Modeling"
+      goal:
+        type: multiline
+        default: "The ultimate target output or vision."
+      request:
+        type: multiline
+        default: "The exact instruction block for the AI to process."
+      action:
+        type: multiline
+        default: "Immediate execution operations required from the engine."
+      detail:
+        type: multiline
+        default: "Granular technical requirements, exceptions, edge conditions, or specific variable types."
+      examples:
+        type: multiline
+        default: "Few-shot examples:\n- Input: [Example In]\n- Output: [Example Out]"
+
+  # 5. ROSES Framework
+  - trigger: ":roses"
+    form: |
+      # [ROSES Prompt] — Context: [[domain]]
+      ### ROLE
+      [[role]]
+
+      ### OBJECTIVE
+      [[objective]]
+
+      ### SCENARIO
+      [[scenario]]
+
+      ### EXPECTED SOLUTION
+      [[expected_solution]]
+
+      ### EDGE CASES
+      [[edge_cases]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - "Roleplay & Specialized AI Personas"
+          - "Security & Vulnerability Auditing"
+          - "Educational Course Design"
+      role:
+        type: multiline
+        default: "Act as a [Senior Systems Architect / Expert Editor / Principal Analyst]."
+      objective:
+        type: multiline
+        default: "What target must the persona hit?"
+      scenario:
+        type: multiline
+        default: "The ecosystem backdrop, real-world constraints, or live environment simulation details."
+      expected_solution:
+        type: multiline
+        default: "The precise characteristics of the deliverable output."
+      edge_cases:
+        type: multiline
+        default: "Unusual inputs, failure states, or explicit parameters to block or flag safely."
+
+  # 6. STAR Framework
+  - trigger: ":star"
+    form: |
+      # [STAR Framework Summary]
+      ### SITUATION
+      [[situation]]
+
+      ### TASK
+      [[task]]
+
+      ### ACTION
+      [[action]]
+
+      ### RESULT
+      [[result]]
+    form_fields:
+      situation:
+        type: multiline
+        default: "Set the scene: Describe the project backdrop or issue encountered."
+      task:
+        type: multiline
+        default: "Identify the explicit responsibility or challenge that needed addressing."
+      action:
+        type: multiline
+        default: "Explain step-by-step how the challenge was navigated or resolved."
+      result:
+        type: multiline
+        default: "Quantify the outcome (e.g., performance improved by 40%, zero downtime)."
+
+  # 7. SOAR Framework
+  - trigger: ":soar"
+    form: |
+      # [SOAR Strategic Layout]
+      ### SITUATION
+      [[situation]]
+
+      ### OBJECTIVE
+      [[objective]]
+
+      ### ACTION
+      [[action]]
+
+      ### RESULT
+      [[result]]
+    form_fields:
+      situation:
+        type: multiline
+        default: "Define the operational status quo or baseline infrastructure."
+      objective:
+        type: multiline
+        default: "State the forward-looking milestone or strategic target."
+      action:
+        type: multiline
+        default: "Detail the specific deployment roadmap, resource allocation, or process changes."
+      result:
+        type: multiline
+        default: "The strategic or quantitative metrics derived from this execution."
+
+  # 8. SMART Framework
+  - trigger: ":smart"
+    form: |
+      # [SMART Goal Tracking Layout]
+      * **SPECIFIC:** [[specific]]
+      * **MEASURABLE:** [[measurable]]
+      * **ACHIEVABLE:** [[achievable]]
+      * **RELEVANT:** [[relevant]]
+      * **TIME-BOUND:** [[time_bound]]
+    form_fields:
+      specific:
+        type: multiline
+        default: "What exactly needs to be accomplished? Narrow down the scope."
+      measurable:
+        type: multiline
+        default: "What metrics will track progress and verify success?"
+      achievable:
+        type: multiline
+        default: "Is the goal realistic given current tooling, permissions, and skill sets?"
+      relevant:
+        type: multiline
+        default: "Does this task align with larger team directives or engineering priorities?"
+      time_bound:
+        type: multiline
+        default: "What is the hard target date or production deployment deadline?"
+
+  # --- SECTION 5: PARAMETER INJECTORS (REGEX) ---
+
+  # Inline temperature adjuster. Typing ':temp(0.7)' turns into the sentence below.
+  - regex: ":temp\\((?P<value>[0-9\\.]+)\\)"
+    replace: "Set the model temperature parameter to {{value}} to adjust output variance."
+
+  # Inline frequency penalty adjuster. Typing ':freq(0.9)'
+  - regex: ":freq\\((?P<value>[0-9\\.]+)\\)"
+    replace: "Apply a frequency_penalty of {{value}} to reduce phrase and word repetition."
+
+  - regex: ":greet\\((?P<person>.*)\\)"
+    replace: "Hey {{person}}, hope you're doing well!"
+
+  - trigger: ":prompt"
+    form: |
+      Act as a [[role]].
+      Create a [[task]] focusing on: [[context]].
+      Show your response as a [[format]].
+    form_fields:
+      role:
+        type: choice
+        values:
+          - "Software Developer"
+          - "Copywriter"
+          - "Marketing Consultant"
+          - "Data Analyst"
+          - "Financial Advisor"
+          - "UX/UI Designer"
+          - "Cybersecurity Analyst"
+          - "Customer Service Representative"
+          - "tour guide"
+          - "customer service representative"
+          - "technical support specialist"
+          - "personal fitness trainer"
+          - "marketing consultant"
+          - "financial advisor"
+          - "teacher"
+          - "travel agent"
+          - "therapist"
+          - "chef"
+          - "project manager"
+          - "career counselor"
+          - "life coach"
+          - "fashion stylist"
+          - "cybersecurity analyst"
+          - "nutritionist"
+          - "social media manager"
+          - "copywriter"
+          - "wedding planner"
+          - "software developer"
+          - "journalist"
+          - "real estate agent"
+          - "photographer"
+          - "data analyst"
+          - "legal consultant"
+          - "graphic designer"
+          - "music producer"
+          - "sales representative"
+          - "healthcare provider"
+          - "negotiation expert"
+          - "language translator"
+          - "HR manager"
+          - "mediator"
+          - "startup founder"
+          - "sports coach"
+          - "wedding photographer"
+          - "parenting coach"
+          - "UX/UI designer"
+          - "software tester"
+          - "content strategist"
+          - "customer success manager"
+          - "social worker"
+          - "civil engineer"
+          - "fashion designer"
+          - "data scientist"
+          - "video editor"
+          - "talent agent"
+          - "health coach"
+          - "business consultant"
+      task:
+        type: choice
+        values:
+          - "social media marketing campaign"
+          - "content marketing strategy"
+          - "website design wireframe"
+          - "software testing plan"
+          - "data analysis report"
+          - "business proposal"
+          - "market research brief"
+          - "cybersecurity risk assessment"
+          - "social media marketing campaign"
+          - "workout routine"
+          - "budget plan"
+          - "meal plan"
+          - "project timeline"
+          - "website design"
+          - "lesson plan"
+          - "travel itinerary"
+          - "therapy session outline"
+          - "menu for a restaurant"
+          - "business proposal"
+          - "career development plan"
+          - "fashion lookbook"
+          - "cybersecurity risk assessment"
+          - "content marketing strategy"
+          - "wedding invitation design"
+          - "software testing plan"
+          - "financial investment portfolio"
+          - "marketing brochure"
+          - "customer satisfaction survey"
+          - "training program for employees"
+          - "product packaging design"
+          - "data analysis report"
+          - "legal contract"
+          - "graphic design for a poster"
+          - "music playlist"
+          - "sales pitch"
+          - "healthcare treatment plan"
+          - "negotiation strategy"
+          - "website wireframe"
+          - "parenting guide"
+          - "civil engineering blueprint"
+          - "fashion collection"
+          - "data visualization dashboard"
+          - "video editing montage"
+          - "talent scouting plan"
+          - "wellness program"
+          - "business process diagram"
+          - "social work intervention plan"
+          - "construction project proposal"
+          - "fashion sketch"
+          - "machine learning model"
+          - "social media content calendar"
+          - "talent show audition process"
+          - "health and fitness blog"
+          - "business intelligence dashboard"
+          - "video animation"
+          - "talent development program"
+          - "market research report"
+      format:
+        type: choice
+        values:
+          - "step-by-step guide"
+          - "sample code snippet"
+          - "presentation slide deck outline"
+          - "case study"
+          - "comparison chart"
+          - "checklist"
+          - "mock client meeting transcript"
+          - "step-by-step guide"
+          - "infographic outline"
+          - "video tutorial script"
+          - "presentation slide deck"
+          - "case study"
+          - "comparison chart"
+          - "sample dialogue"
+          - "before-and-after example"
+          - "mind map text structure"
+          - "template or template customization"
+          - "Q&A session"
+          - "checklist or checklist customization"
+          - "problem-solving scenario"
+          - "user interface design mockup"
+          - "simulated conversation"
+          - "demonstration video breakdown"
+          - "quiz or interactive quiz"
+          - "data visualization dashboard"
+          - "sales pitch script"
+          - "sample code snippet"
+          - "storytelling narrative"
+          - "case law analysis"
+          - "pricing comparison table"
+          - "strategic plan outline"
+          - "storyboard for a video or animation"
+          - "mock client meeting transcript"
+          - "mock therapy session transcript"
+          - "sample workout routine"
+          - "mock negotiation transcript"
+          - "software testing report"
+          - "sample lesson plan"
+          - "fashion lookbook design"
+          - "data analysis summary"
+          - "sample menu design"
+          - "mock interview script"
+          - "before-and-after home design outline"
+          - "social work case study"
+          - "blueprint or architectural design description"
+          - "fashion collection portfolio"
+          - "marketing campaign analysis report"
+          - "sample music production session"
+          - "mock sales presentation script"
+          - "sample healthcare treatment plan"
+          - "mock mediation session transcript"
+          - "sample blog post"
+          - "machine learning model flowchart description"
+          - "sample social media content calendar"
+          - "talent show audition evaluation form"
+          - "sample business plan"
+      context:
+        type: text
+        default: "[insert specific topic or industry here]"
+
+  - regex: ":as\\((?P<role>[^,]+),(?P<topic>.*)\\)"
+    replace: "Act as an expert {{role}}. Write a comprehensive breakdown detailing {{topic}}."
+
+  # 1. Inbox Zero
+  - trigger: ":p-inbox"
+    form: |
+      Act as an executive assistant. Here are [[count]] emails I don't know how to respond to:
+
+      [[emails]]
+
+      Draft quick, professional replies I can send or edit.
+    form_fields:
+      count:
+        type: text
+        default: "10"
+      emails:
+        type: multiline
+
+  # 2. Delegation Help
+  - trigger: ":p-delegate"
+    form: |
+      Here are [[count]] things on my plate:
+
+      [[tasks]]
+
+      Act like a manager and help me decide what to delegate, and how to frame each task for handoff.
+    form_fields:
+      count:
+        type: text
+        default: "5"
+      tasks:
+        type: multiline
+
+  # 3. Shorter Meetings
+  - trigger: ":p-meetings"
+    form: |
+      Act as a meeting consultant. Here's an agenda:
+
+      [[agenda]]
+
+      Help me trim it by [[percentage]] while keeping the outcomes strong and the flow efficient.
+    form_fields:
+      percentage:
+        type: text
+        default: "30%"
+      agenda:
+        type: multiline
+
+  # 4. Daily Focus
+  - trigger: ":p-focus"
+    form: |
+      Act as a productivity coach. Here's my to-do list for [[timeline]]:
+
+      [[tasks]]
+
+      Help me pick the [[count]] highest-impact tasks and create a simple plan to protect time for them.
+    form_fields:
+      timeline:
+        type: text
+        default: "tomorrow"
+      count:
+        type: text
+        default: "3"
+      tasks:
+        type: multiline
+
+  # 5. Smarter Scheduling
+  - trigger: ":p-schedule"
+    form: |
+      Here's my calendar for the week:
+
+      [[calendar_details]]
+
+      Act as a time management expert and help me batch similar tasks, reduce context switching, and free up focus time.
+    form_fields:
+      calendar_details:
+        type: multiline
+
+  # 6. Weekly Reset
+  - trigger: ":p-reset"
+    replace: "Act like a performance coach. Give me a 15-minute Sunday reset ritual to review the past week, plan the next, and start Monday focused."
+
+  # 7. Automated Systems
+  - trigger: ":p-automate"
+    form: |
+      Act as a workflow expert. Here's a process I repeat every week:
+
+      [[process_details]]
+
+      Suggest simple ways to automate or streamline it using basic tools.
+    form_fields:
+      process_details:
+        type: multiline
+
+  # 8. Decision Clarity
+  - trigger: ":p-decide"
+    form: |
+      Here's a decision I'm stuck on:
+
+      [[context]]
+
+      Act like a coach and walk me through a step-by-step framework to decide with more clarity and speed.
+    form_fields:
+      context:
+        type: multiline
+
+  # 9. First Draft Faster
+  - trigger: ":p-draft"
+    form: |
+      Act as a writing assistant. Here's the topic: "[[topic]]"
+
+      Help me outline and rough-draft a clear, structured blog post in [[time_limit]] or less.
+    form_fields:
+      topic:
+        type: text
+      time_limit:
+        type: text
+        default: "15 minutes"
+
+  # 10. One-Touch Tasks
+  - trigger: ":p-onetouch"
+    form: |
+      Here are [[count]] small tasks I've been putting off:
+
+      [[tasks]]
+
+      Help me write a quick plan to knock them out in one focused [[duration]] sprint.
+    form_fields:
+      count:
+        type: text
+        default: "10"
+      tasks:
+        type: multiline
+      duration:
+        type: text
+        default: "30-minute"
+
+  # 11. Rapid Research
+  - trigger: ":p-research"
+    form: |
+      Act as a research assistant. I need to learn this topic fast: [[topic]]
+
+      Give me [[source_count]] reliable sources, what to read first, and a [[summary_length]] summary.
+    form_fields:
+      topic:
+        type: text
+      source_count:
+        type: text
+        default: "5"
+      summary_length:
+        type: text
+        default: "3-sentence"
+
+  # 12. Pomodoro Plan
+  - trigger: ":p-pomodoro"
+    form: |
+      Act as a productivity coach. Here's a task I've been avoiding:
+      "[[task]]"
+
+      Help me break it into [[duration]] sprints with clear goals for each one.
+    form_fields:
+      task:
+        type: text
+      duration:
+        type: text
+        default: "25-minute"
+
+  # 13. Cleaner Docs (Instant Clipboard Wrapper)
+  - trigger: ":p-clean"
+    replace: |
+      Act as an editor. Here's a messy doc or note:
+
+      {{clipboard_doc}}
+
+      Clean it up, make it scannable, and pull out a bullet list of key action items.
+    vars:
+      - name: clipboard_doc
+        type: clipboard
+
+  # 14. Thinking Partner
+  - trigger: ":p-partner"
+    form: |
+      Act like a thinking partner. Here's a challenge I'm facing:
+
+      [[challenge]]
+
+      Help me explore [[count]] different angles or mental models to reframe it.
+    form_fields:
+      challenge:
+        type: multiline
+      count:
+        type: text
+        default: "3"
+
+  # 15. Info Compression (Instant Clipboard Wrapper)
+  - trigger: ":p-compress"
+    replace: |
+      Here's a long article or transcript:
+
+      {{clipboard_article}}
+
+      Summarize the key ideas in 5 bullet points, and give me one actionable takeaway.
+    vars:
+      - name: clipboard_article
+        type: clipboard
+
+  # 16. Prep Smarter
+  - trigger: ":p-prep"
+    form: |
+      Here's a big meeting or call coming up:
+
+      [[details]]
+
+      Help me write a [[bullets]]-bullet prep summary I can review beforehand to walk in clear and confident.
+    form_fields:
+      details:
+        type: multiline
+      bullets:
+        type: text
+        default: "3"
+
+  # 17. Faster Follow-Ups
+  - trigger: ":p-followup"
+    form: |
+      Here are [[count]] calls or meetings I had this week:
+
+      [[notes]]
+
+      Draft short, helpful follow-up messages for each one that I can send immediately.
+    form_fields:
+      count:
+        type: text
+        default: "5"
+      notes:
+        type: multiline
+
+  # 18. End-of-Day Review
+  - trigger: ":p-eod"
+    replace: "Act like a coach. Give me a 5-minute end-of-day reflection to help me learn from today and improve tomorrow."
+
+  # 19. Better Boundaries
+  - trigger: ":p-boundaries"
+    form: |
+      I'm overwhelmed. Help me write [[count]] short scripts I can use to say no to [[situation]] without sounding rude.
+    form_fields:
+      count:
+        type: text
+        default: "3"
+      situation:
+        type: text
+        default: "meetings or requests"
+
+  # 20. Voice to Text (Instant Clipboard Wrapper)
+  - trigger: ":p-voice"
+    replace: |
+      I prefer talking to writing. I'm going to voice-record some ideas. Act as a copywriter - transcribe and polish into a clear document. Here is the rough transcription text:
+
+      {{clipboard_transcript}}
+    vars:
+      - name: clipboard_transcript
+        type: clipboard
+
+  # 21. One Page Plan
+  - trigger: ":p-plan"
+    form: |
+      I'm starting a new project: [[project_name]]
+
+      Help me write a one-page plan with the goal, timeline, key tasks, risks, and next steps.
+    form_fields:
+      project_name:
+        type: text

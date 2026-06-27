@@ -404,7 +404,7 @@ matches:
   - trigger: ":biu"
     replace: "***__$|$__***"
   # Outputs inline code placeholder
-  - trigger: ":c"
+  - trigger: ":ci"
     replace: "`$|$`"
   # Outputs code block placeholder
   - trigger: ":cm"

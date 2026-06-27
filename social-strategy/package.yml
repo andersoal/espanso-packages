@@ -116,15 +116,15 @@ matches:
 
       ### 1. The Problem
       > What is broken or missing in their current framework, and how long has this friction persisted?
-      - 
+      -
 
       ### 2. The Impact
       > What are the quantifiable financial, operational, or personal costs of continuing with state-level inaction?
-      - 
+      -
 
       ### 3. Fit & Urgency
       > Confirm baseline parameters: Do they possess the resources, alignment, and immediate intent to solve it?
-      - 
+      -
 
       ### 4. Pipeline Disposition
       - [ ] **Advance:** Qualified candidate. Book 45-Minute Strategy Session.
@@ -147,3 +147,293 @@ matches:
         1. **Phase 1 (Quick Win / A → B):** [Low-friction intervention to establish trust and momentum]
         2. **Phase 2 (Core Pivot):** [Implementation of the proprietary engine to resolve root obstacles]
         3. **Phase 3 (Scale / Final Integration):** [Systemization to ensure long-term, repeatable outcomes]
+
+  # 1. THE MARKET BREAKDOWN SYSTEM
+  - trigger: ":p-market"
+    form: |
+      Analyze the market for [[niche]].
+      Do NOT give surface insights.
+
+      → Break into: TAM, SAM, SOM
+      → Identify top 5 trends shaping demand
+      → Find 5 underserved opportunities
+      → Highlight where money is already flowing
+
+      Output as structured insights, not paragraphs.
+    form_fields:
+      niche:
+        type: text
+        default: "AI-driven architecture pipelines"
+
+  # 2. THE PROBLEM PRIORITIZATION ENGINE
+  - trigger: ":p-problem"
+    form: |
+      List the top 10 problems in [[industry]]
+
+      → Rank by urgency (1-10)
+      → Rank by willingness to pay
+      → Identify which problems are growing fastest
+      → Highlight problems people actively complain
+
+      Output as a ranked table.
+    form_fields:
+      industry:
+        type: text
+        default: "B2B SaaS integration telecom platforms"
+
+  # 3. THE OFFER CREATION FRAMEWORK
+  - trigger: ":p-offer"
+    form: |
+      Create a high-converting offer for: [[problem]]
+
+      → Define ICP (ideal customer profile)
+      → Craft a clear value proposition
+      → Add pricing strategy (low, mid, premium tiers)
+      → Include guarantee + risk reversal
+      → Show why this beats competitors
+
+      Output like a landing page structure.
+    form_fields:
+      problem:
+        type: text
+        default: "decoupling monolithic APIs under tight delivery dates"
+
+  # 4. THE DISTRIBUTION DOMINATION PLAN
+  - trigger: ":p-dist"
+    form: |
+      Act like a growth strategist.
+      Build a plan to reach 1M people in 30 days for: [[idea]]
+
+      → List top 5 acquisition channels
+      → Define content formats for each
+      → Suggest daily execution plan
+      → Include organic + paid mix
+      → Focus on leverage, not efforts
+
+      Output as step-by-step system.
+    form_fields:
+      idea:
+        type: text
+        default: "automated statistical forecasting engine for developers"
+
+  # 5. THE VIRAL CONTENT ENGINE
+  - trigger: ":p-viral"
+    form: |
+      Create a viral content strategy for [[niche]]
+
+      → Generate 20 high-converting hooks
+      → Suggest 10 content formats
+      → Identify emotional triggers (fear, status, curiosity)
+      → Show why people will share this
+
+      Output in repeatable framework.
+    form_fields:
+      niche:
+        type: text
+        default: "personal knowledge management and system workflows"
+
+  # 6. THE COMPETITOR WEAKNESS MAP
+  - trigger: ":p-competitor"
+    form: |
+      Analyze top 5 competitors in [[niche]]
+
+      → What they do best
+      → Where they are weak
+      → What audience they ignore
+      → What positioning gap exists
+
+      Suggest how I can dominate this space.
+    form_fields:
+      niche:
+        type: text
+        default: "cloud infrastructure automation"
+
+  # 7. THE SCALE SYSTEM
+  - trigger: ":p-scale"
+    form: |
+      Give me a plan to scale this to [[target_revenue]]/month: [[business_description]]
+
+      → What to automate first
+      → What to delegate
+      → What systems to build
+      → Hiring roadmap
+      → Bottlenecks that will appear
+
+      Output as execution roadmap.
+    form_fields:
+      target_revenue:
+        type: text
+        default: "$100k USD"
+      business_description:
+        type: text
+        default: "B2B SaaS tool selling automated integration infrastructure engines"
+
+  # 1. Channel Strategy Architect
+  # Source: 9fc569671c9f920bab072663b68f1b97.png
+  - trigger: ":yt-strategy"
+    form: |
+      Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
+
+      Niche: [[niche]]
+      Target Audience: [[audience]]
+      Content Goals: [[goals]]
+
+      Design a complete channel strategy including positioning, content pillars, upload frequency, and the fastest path to 1,000 subscribers and monetization.
+    form_fields:
+      niche:
+        type: text
+        default: "Software Engineering & Architecture"
+      audience:
+        type: text
+        default: "Mid-to-Senior Developers"
+      goals:
+        type: text
+        default: "Build a scalable brand and drive organic engine inbound leads"
+
+  # 2. Viral Video Idea Generator (Optimized via Inline Regex Capture)
+  # Source: b8872e3a972b0fd3cc7cf08d096994cb.jpg
+  - regex: ":yt-ideas\\((?P<niche>.*)\\)"
+    replace: |
+      Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, competitor analysis, and audience interest patterns. Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
+
+  # 1. Dynamic Outreach & Pitching Form
+  - trigger: ":aipitch"
+    form: |
+      Hi [[client_name]],
+
+      I've been reviewing how workflows are structured at [[company_name]] and wanted to reach out regarding our **[[studio_division]]** offerings.
+
+      Specifically, we’ve been helping teams implement **[[core_service]]** frameworks to optimize efficiency and drive measurable ROI.
+
+      We typically kick things off with a structured kickoff to map out your current bottlenecks. Are you open to a quick 15-minute discovery call this week to see if this aligns with your current goals?
+
+      Best regards,
+      [[your_name]]
+    form_fields:
+      studio_division:
+        type: choice
+        values:
+          - "AI Systems Agency"
+          - "AI Strategy Consulting"
+          - "AI Intelligence Services"
+          - "AI Skill Academy"
+          - "AI Writing Studio"
+          - "AI Creative Studio"
+          - "AI Mini Product Studio"
+      core_service:
+        type: text
+        default: "Automated Workflow Integration"
+      your_name:
+        type: text
+        default: "Founder"
+
+  # 2. Comprehensive Service Menu (Quick Reference)
+  - trigger: ":aimenu"
+    replace: |
+      Our AI Studio Offerings:
+      ---------------------------------------------------------
+      1. AI Systems Agency (Automated business architecture)
+      2. AI Strategy Consulting (Readiness & roadmapping)
+      3. AI Intelligence Services (Data to decisions)
+      4. AI Skill Academy (Workforce & team training)
+      5. AI Writing Studio (High-speed narrative delivery)
+      6. AI Creative Studio (Visual & audio brand assets)
+      7. AI Mini Product Studio (Lean, micro-SaaS tools)
+
+  # 3. Fast Scope-of-Work Generator
+  - trigger: ":aisow"
+    form: |
+      ### Statement of Work: [[project_focus]]
+      **Service Line:** [[studio]]
+      **Pricing Model:** [[investment_tier]]
+
+      **Key Deliverables:**
+      * Phase 1: AI Readiness Assessment & System Scoping
+      * Phase 2: Sandbox Deployment of [[project_focus]]
+      * Phase 3: Staff Capability Building & Integration Playbook
+
+      **Estimated Timeline:** 4 - 6 weeks from agreement.
+    form_fields:
+      studio:
+        type: choice
+        values:
+          - "AI Systems Agency (Target: ₹1.5L - ₹8L)"
+          - "AI Strategy Consulting (Target: ₹5K - ₹25K / session)"
+          - "AI Intelligence Services (Custom Dashboarding)"
+          - "AI Skill Academy (Corporate Training)"
+          - "AI Mini Product Studio (Target: ₹2.5K - ₹8K / month)"
+      investment_tier:
+        type: choice
+        values:
+          - "Fixed Project Milestone Basis"
+          - "Monthly Recurring Retainer Contract"
+          - "Per-Session / Hourly Advisory Rate"
+
+  # 1. AI STRATEGY CONSULTING (Inline Regex Capture)
+  # Typing ":consult(Aria)" immediately outputs a tailored advisory message.
+  - regex: ":consult\\((?P<client>.*)\\)"
+    replace: |
+      Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selection Advisory session booked for next week to map out where you're leaking margins.
+
+  # 2. AI SKILL ACADEMY (Interactive Dropdown Form)
+  # Typing ":academy" brings up a targeted enrollment or follow-up pitch.
+  - trigger: ":academy"
+    form: |
+      Hi [[student_name]],
+
+      Thanks for asking about our training tracks. Based on your goals, I highly recommend our **[[course_selection]]** curriculum. This module is specifically built to help teams master these exact systems in their day-to-day workflows.
+
+      Let me know if you want me to drop the syllabus link over!
+    form_fields:
+      course_selection:
+        type: choice
+        values:
+          - "Prompt Writing Masterclass"
+          - "Workflow Automation Bootcamp"
+          - "AI Starter Workshop For Non-Tech Professionals"
+          - "Classroom AI For Educators"
+          - "AI Tools For Property Agents"
+      student_name:
+        type: text
+        default: "there"
+
+  # 3. AI SYSTEMS AGENCY (High-Ticket System Closer)
+  # Typing ":systems" builds a structural milestone outline matching your premium price tiers.
+  - trigger: ":systems"
+    form: |
+      ### Proposed Integration: [[system_architecture]]
+      *   **Target Scope:** Production deployment of [[system_architecture]] architecture.
+      *   **Core Objective:** Zero-Touch operational execution to reduce manual overhead.
+      *   **Implementation Track:** Discovery Mapping → Sandbox Testing → Staff Capability Building.
+      *   **Project Fee:** [[investment_tier]] (50% upfront milestone initialization).
+    form_fields:
+      system_architecture:
+        type: choice
+        values:
+          - "Smart Inbox Management"
+          - "Automated Billing Workflows"
+          - "Sales Lead Qualification"
+          - "Zero Touch Data Entry"
+          - "Candidate Screening Flows"
+      investment_tier:
+        type: choice
+        values:
+          - "₹1,500,000 (Base Tier Integration)"
+          - "₹4,500,000 (Mid-Market Scale)"
+          - "₹8,000,000 (Enterprise Custom Architecture)"
+
+  # 4. AI WRITING & CREATIVE STUDIO (Deliverable Wrapper)
+  # Typing ":studio" allows you to quickly pitch high-speed content delivery outcomes.
+  - trigger: ":studio"
+    form: |
+      We can lock down your request for [[deliverable_type]] under our asset production umbrella. We deliver these assets at a fraction of standard traditional agency overhead because we build them utilizing optimized AI generation frameworks.
+
+      When would be a good time to review your brand design guidelines?
+    form_fields:
+      deliverable_type:
+        type: choice
+        values:
+          - "Executive Ghostwriting & Long Form Blogs"
+          - "Video Script Production & Audio Show Notes"
+          - "AI Product Photography & Short Form Video Ads"
+          - "Brand Identity Design & Visual Brand Systems"

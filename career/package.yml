@@ -314,3 +314,40 @@ matches:
     vars:
       - name: clip
         type: clipboard
+
+  # 1/ The Recruiter Attention Test
+  - trigger: ":res-attention"
+    replace: "I want you to evaluate my resume the same way a recruiter would during the first 10 seconds of scanning it. Tell me what stands out immediately, what feels forgettable, and whether my resume communicates enough value fast enough to compete with stronger applicants. Analyze the layout, positioning, clarity, and first impression. Explain whether this resume makes me look experienced, credible, and worth interviewing - or just average among hundreds of candidates."
+
+  # 2/ The Recruiter Mindset Breakdown
+  - trigger: ":res-mindset"
+    form: |
+      Review my resume as if you're evaluating hundreds of candidates for a highly competitive role in [[industry]]. I want a raw and realistic assessment of how my resume performs in a real hiring environment. Point out every weak area that could lower my chances of getting shortlisted - including unclear positioning, weak achievements, poor structure, generic wording, missing credibility signals, or anything that makes me look average compared to stronger candidates. Tell me what instantly creates a negative impression, what feels forgettable, and what changes would make this resume look significantly more valuable, skilled, and interview-worthy.
+    form_fields:
+      industry:
+        type: text
+        default: "the Salesforce and MuleSoft ecosystem"
+
+  # 3/ The ATS Visibility Engine
+  - trigger: ":res-ats"
+    replace: "I'm targeting this specific job opportunity, and I want my resume to be optimized for both ATS systems and real recruiters. Analyze the job description alongside my resume and identify the technical terms, role-specific phrases, competencies, and industry keywords that are currently underrepresented or completely absent. Show me how to naturally integrate those elements into my resume without making it feel stuffed or artificial. Recommend improvements to my experience section, skills layout, and wording strategy so my resume aligns more closely with the expectations of this role and performs better during automated screening."
+
+  # 4/ The Impact Statement Rebuilder
+  - trigger: ":res-impact"
+    replace: "Transform the experience section of my resume into high-value achievement statements that sound compelling to recruiters and hiring managers. Replace weak or responsibility-focused lines with results-oriented descriptions that clearly communicate ownership, contribution, and business impact. Wherever my resume lacks measurable outcomes, ask strategic follow-up questions to uncover useful metrics, improvements, efficiencies, revenue impact, time savings, or performance gains. The final version should make every bullet point feel intentional, credible, and strong enough to justify an interview."
+
+  # 5/ The Market Positioning Rewrite
+  - trigger: ":res-market"
+    form: |
+      Study the hiring style, communication patterns, and professional expectations commonly seen in companies such as [[companies]] within [[industry]]. Then reshape my resume summary and core skills section so they reflect the mindset, priorities, and terminology valued in this field. I want my resume to feel aligned with the industry's standards and culture instead of sounding broad, outdated, or interchangeable with every other applicant. Focus on making my profile appear specialized, relevant, and naturally suited for the type of opportunities these companies offer.
+    form_fields:
+      companies:
+        type: text
+        default: "Gerdau, Wellhub, or top-tier telecom providers"
+      industry:
+        type: text
+        default: "B2B digital transformation and API integration"
+
+  # 6/ The Executive Resume Refinement System
+  - trigger: ":res-executive"
+    replace: "Conduct a deep final-pass evaluation of my resume from the perspective of a recruiter reviewing top-tier candidates. Identify anything that weakens clarity, professionalism, credibility, or overall impact. This includes inconsistent writing style, repetitive sentence structure, vague descriptions, weak transitions, low-value wording, and overused corporate phrases that fail to differentiate me. Refine the language throughout the resume so every section sounds precise, intentional, and high-value. Replace generic statements with sharper positioning, stronger achievement-driven phrasing, and wording that reflects expertise, confidence, and real-world contribution. The final resume should feel polished, modern, and competitive at a professional level."

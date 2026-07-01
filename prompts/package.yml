@@ -6834,3 +6834,103 @@ matches:
     form_fields:
       project_name:
         type: text
+
+  # ===========================================================================
+  # CATEGORY 1: AI SELF-ANALYSIS PROMPTS (Fixed & Deep Analytics)
+  # ===========================================================================
+
+  # From image c768ab45c71ba14068c6d0b5a7d1b2fd.png (1/ OPEN THE FILE)
+  - trigger: ":aidump"
+    replace: |
+      Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, preferences, anything. Don't summarize or leave anything out. I want to see the full file you've built on me from our conversations.
+
+  # From image 4630568af049e85d76eb7c6e98b1959b.png (3/ TRAITS I CAN'T SEE)
+  - trigger: ":aiblind"
+    replace: |
+      Based on everything you know about me, name the personality traits I most likely don't see in myself, the patterns that are obvious to you but invisible to me. My blind spots, my insecurities, the way I actually come across versus how I think I do. Be blunt and specific.
+
+  # From image 91468577383616ead46f134fb15fcf2b.png (4/ PREDICT ME)
+  - trigger: ":aipredict"
+    replace: |
+      Using your profile of me, predict how I'd handle things I've never told you about: money, stress, conflict, risk, and the decision I'm most likely to make next in my life. Tell me how confident you are in each one and what in my behavior it's based on.
+
+  # ===========================================================================
+  # CATEGORY 2: SKILL ACQUISITION PROMPTS (Dynamic/Interactive Upgrades)
+  # ===========================================================================
+
+  # From image ce4649997539564cd4611087ee8870cb.png (2. The 30-Day Skill Roadmap)
+  # UPGRADE: Uses an interactive form layout to let you define the target skill instantly.
+  - trigger: ":roadmap"
+    form: |
+      Create a detailed 30-day learning roadmap for mastering [[skill]]. Break it into daily or weekly stages, explain what to learn, what to practice, and what outcome I should achieve at each stage to progress correctly.
+    form_fields:
+      skill:
+        type: text
+        default: ""
+
+  # From image 8d5b74cad6f6850e96ca43a8a01f4a95.png (3. Learn-by-Doing Practice)
+  # UPGRADE: Uses an inline regex capture group. Type ":learn(DataWeave 2.0)" to trigger it instantly.
+  - regex: ":learn\\((?P<skill>.*)\\)"
+    replace: |
+      Teach me {{skill}} primarily through practical exercises and hands-on practice. Design simple tasks, drills, or mini-projects that force me to apply what I learn instead of just reading or memorizing information.
+
+  # From image 6a4c2d79f6490bb90b96994f2ae95e1c.png (4. Skill Application & Real-World Use)
+  - regex: ":usecase\\((?P<skill>.*)\\)"
+    replace: |
+      Show me how {{skill}} is actually used in real-world situations. Give realistic examples, scenarios, or use cases and explain how to apply the skill correctly in each case.
+
+  # Optimized Version: Interactive Form for Targeted Privacy Audits
+  - trigger: ":aiaudit"
+    form: |
+      Tell me everything you've figured out about me that I never explicitly stated. Analyze the things you have inferred from my writing style, the complexity of what I ask, the topics I prioritize, and what I avoid.
+
+      Specifically focus on evaluating my [[focus_areas]].
+
+      Show me exactly what specific behaviors, phrases, or patterns tipped you off for each inference.
+    form_fields:
+      focus_areas:
+        type: text
+        default: "technical skill level, operational blind spots, and professional situation"
+
+  # Exact Version: Literal string from the image if you want a direct copy-paste
+  - trigger: ":aihidden"
+    replace: "Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, what I ask, and what I avoid. My age range, income level, where I likely live, my situation. Show me exactly what tipped you off for each one."
+
+  # 1. Professional Skill Instructor
+  - trigger: ":ai:instruct"
+    form: |
+      Act as a professional instructor and practitioner with deep real-world experience in [[skill]]. Teach me this skill from beginner to advanced level in [[timeline]]. Focus on practical understanding, correct fundamentals, and real application instead of theory or academic explanations.
+    form_fields:
+      skill:
+        type: text
+        default: ""
+      timeline:
+        type: text
+        default: "30 days"
+
+  # 5. Expert Thinking & Skill Mastery
+  - trigger: ":ai:expert"
+    form: |
+      Explain how experts think differently when using [[skill]]. Teach me the mindset, decision-making approach, and problem-solving style that separates professionals from beginners.
+    form_fields:
+      skill:
+        type: text
+        default: ""
+
+  # 6. Progress Check & Skill Assessment
+  - trigger: ":ai:test"
+    form: |
+      Test my current understanding of [[skill]]. Ask relevant questions or give tasks to assess my level, then tell me clearly what I need to improve before moving forward.
+    form_fields:
+      skill:
+        type: text
+        default: ""
+
+  # 7. Final Skill Readiness
+  - trigger: ":ai:ready"
+    form: |
+      Evaluate whether I am ready to use [[skill]] confidently in real-world situations. Identify any remaining gaps and give a clear next-step plan to reach full competence.
+    form_fields:
+      skill:
+        type: text
+        default: ""

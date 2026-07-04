@@ -215,3 +215,145 @@ matches:
       topic:
         type: text
         default: ""
+
+  # Step 1 of 2: Generate the Google Skills learning path
+  # Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uflzo9/google_put_3000_ai_courses_in_one_place_this/
+  - trigger: ":gskills-1of2"
+    form: |
+      I'm a [[role]] who wants to learn [[goal]]. Google Skills has ~3,000 courses and labs. Build me a focused [[weeks]]-week plan: one track only, the 3-4 specific labs and badges worth doing in order, about [[hours]] hours a week, skip anything that is pure theory. Tell me which badge to earn first and why it matters to an employer.
+    form_fields:
+      role:
+        type: text
+        default: "developer"
+      goal:
+        type: text
+        default: "Deploy ML models on Vertex AI"
+      weeks:
+        type: text
+        default: "4"
+      hours:
+        type: text
+        default: "3"
+
+  # Step 2 of 2: Pre-lab study kickoff
+  # Source: Custom follow-up for the generated plan to prevent copy-paste learning
+  - trigger: ":gskills-2of2"
+    form: |
+      I am ready to start the "[[lab_name]]" lab from the plan you gave me. Before I click start, give me a 3-bullet prep sheet:
+      1. What core concept must I understand so I don't just blindly copy-paste the code?
+      2. What is the most common mistake people make in this specific lab?
+      3. How does this specific skill translate to a real-world [[role]] task?
+    form_fields:
+      lab_name:
+        type: text
+        default: ""
+      role:
+        type: text
+        default: "developer"
+
+# =============================================================================
+# ESPANSO CONFIGURATION: DYNAMIC LLM LEARNING CHAINS
+# Location: match/learning_chain.yml
+# Run 'espanso restart' after saving to apply changes.
+# =============================================================================
+
+
+  # ---------------------------------------------------------------------------
+  # PROTOCOL A: THE 5-STEP DISCRETE LEARNING LOOP
+  # ---------------------------------------------------------------------------
+
+  # Step 1 of 5: Calibration Phase
+  - trigger: ":lp1of5"
+    form: |
+      I want to learn [[topic]]. Before teaching me anything, calibrate to me.
+
+      Ask me:
+      1. What I already know about it, so you can skip that.
+      2. Why I want to learn it and how I will use it.
+      3. How deep I need to go - rough overview, or a working understanding.
+
+      Ask these as a short numbered list and then wait. Do not start teaching yet.
+
+  # Step 2 of 5: Targeted Instruction Phase
+  # Optimization: Pulls the active topic directly from the clipboard to prevent duplicate typing.
+  - trigger: ":lp2of5"
+    replace: |
+      Based on my answers, teach me {{copied_topic}} at exactly the level I need - no more, no less.
+
+      Rules:
+      - Build on what I already said I know. Do not re-explain that.
+      - One concept at a time, in a logical order, each with a concrete example.
+      - Define every new term the first time you use it.
+      - Stop after the core concepts that get me to my stated goal. Do not dump the whole field.
+
+      Teach it now.
+    vars:
+      - name: copied_topic
+        type: clipboard
+
+  # Step 3 of 5: Active Evaluation Phase
+  - trigger: ":lp3of5"
+    replace: |
+      Now test whether it actually stuck. Do NOT re-explain anything first.
+
+      Ask me 6 questions about what you just taught, ONE at a time, waiting for my answer each time:
+      - Mix straight recall, "explain why," and one applied scenario.
+      - After each answer, tell me right or wrong with a one-line correction.
+
+      At the end, list the specific concepts I clearly have not grasped.
+
+  # Step 4 of 5: Remediation Layer
+  - trigger: ":lp4of5"
+    replace: |
+      Re-teach ONLY the concepts I got wrong or was shaky on. Ignore everything I already understood.
+
+      For each one:
+      - Explain it a different way than you did the first time - a new angle or analogy.
+      - Give me one fresh example.
+      - Ask me a single follow-up question to confirm I have it now.
+
+  # Step 5 of 5: Reference Compression
+  - trigger: ":lp5of5"
+    replace: |
+      Now compress everything into a one-page reference I can save and review later.
+
+      Include:
+      - The core concepts as short, plain-language bullets.
+      - The key examples, briefly.
+      - The mistakes I made during the test, written as "remember: ..." reminders.
+      - 3 questions I can use to re-test myself in a week.
+
+      Keep it tight enough to fit on one screen.
+
+  # ---------------------------------------------------------------------------
+  # PROTOCOL B: UNIFIED SOCRATIC COMPILER (SINGLE-PROMPT ENGINE)
+  # ---------------------------------------------------------------------------
+
+  # Automated state-machine execution alternative to avoid the 5-step manual cycle.
+  - trigger: ":lpsocratic"
+    form: |
+      [ROLE]
+      Act as an aggressively gated, high-signal Socratic Compiler. Your objective is to map, isolate, and verify comprehension of a target topic using a compressed, non-linear progression loop.
+
+      [VARIABLES]
+      - Topic = "[[topic]]"
+      - Baseline = "[[baseline]]"
+
+      [COMPRESSION & PARSING PROTOCOLS]
+      1. ZERO FLUFF: Eliminate all meta-commentary, introductory pleasantries, and motivational framing.
+      2. ISOLATION: Break the target topic down into an atomic, dependency-mapped hierarchy.
+      3. STRICT GATEKEEPING: You are hard-locked from advancing to a subsequent concept until the user passes an active evaluation phase.
+
+      [EXECUTION PIPELINE - LINEAR STATE MACHINE]
+      - STATE 01 (Mapping): Deliver a high-density, conceptual overview of the absolute core foundational pillar of [Topic], tailored to [Baseline]. Under 150 words. Append exactly 3 core architectural keywords. Stop.
+      - STATE 02 (Verification): Prompt the user for a structural breakdown or real-world application of those keywords. Evaluate the user's input for semantic accuracy.
+      - STATE 03 (Branching):
+        - If accuracy >= 85%: Auto-advance to the next dependency in the hierarchy (State 01 increment).
+        - If accuracy < 85%: Execute an immediate course-correction layer, reframing the breakdown using an alternate conceptual model. Do not advance.
+
+      [INITIALIZATION]
+      Acknowledge receipt of parameters by executing STATE 01 for [Topic] immediately. Do not dump the entire field.
+    form_fields:
+      baseline:
+        type: text
+        default: "Systems thinker, practical architecture focus"

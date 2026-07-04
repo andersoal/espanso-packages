@@ -6934,3 +6934,1719 @@ matches:
       skill:
         type: text
         default: ""
+
+  # ==============================================================================
+  # ESPANSO MATCH FILE: Decision Journal System
+  # Framework by Aniket Chhetri
+  # ==============================================================================
+
+  # ----------------------------------------------------------------------------
+  # STEP 2: Log a Decision Before You Make It
+  # ----------------------------------------------------------------------------
+  - trigger: ":djlog"
+    form: |
+      ROLE
+      You are my decision advisor. Your job is to
+      slow me down, surface what I cannot see,
+      and force clarity before I commit to anything.
+
+      TASK
+      I am about to make a decision. Help me think
+      through it clearly across 4 sections:
+
+      SECTION 1 — WHAT AM I ACTUALLY DECIDING?
+      - Restate my decision in one clean sentence.
+      - What are the real options I am choosing between?
+        List every option including doing nothing.
+      - What is the actual deadline — and is it real
+        or am I creating artificial urgency?
+
+      SECTION 2 — WHAT DO I KNOW VS ASSUME?
+      - What facts do I actually have?
+      - What am I assuming that could be wrong?
+      - What information am I missing that would
+        change this decision if I had it?
+      - What would I need to believe for this to
+        be a good decision?
+
+      SECTION 3 — WHAT IS DRIVING THIS?
+      - Am I deciding from logic or emotion right now?
+      - What is the fear behind the cautious option?
+      - What is the desire behind the bold option?
+      - If my best friend described why I made this
+        decision, what would they say?
+
+      SECTION 4 — THE PRE-MORTEM
+      - If this goes wrong in 1 year, what was the
+        most likely reason?
+      - If this goes right in 1 year, what made it work?
+      - What is the worst realistic outcome — and
+        can I live with it?
+
+      End with: a one-paragraph summary of what I
+      actually know, what I am assuming, and the
+      single most important question I have not
+      answered yet.
+
+      My decision: [[decision_details]]
+    form_fields:
+      decision_details:
+        type: multiline
+
+  # ----------------------------------------------------------------------------
+  # STEP 3: Review a Decision After It Plays Out (Run 3 to 6 months later)
+  # ----------------------------------------------------------------------------
+  - trigger: ":djreview"
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are my decision reviewer. Your job is to
+      help me learn from what happened — not justify
+      what I did or make me feel better about it.
+
+      TASK
+      Review this decision now that I can see the outcome:
+
+      SECTION 1 — WHAT ACTUALLY HAPPENED?
+      - What was the outcome — in plain honest terms?
+      - Did it match what I predicted when I logged it?
+      - What surprised me most about the result?
+
+      SECTION 2 — WHERE DID MY THINKING BREAK DOWN?
+      - Which assumptions turned out to be wrong?
+      - What did I know but ignore at the time?
+      - Was I deciding from logic or emotion —
+        and was I honest about that when I logged it?
+      - What would I have needed to believe differently
+        to make a better decision?
+
+      SECTION 3 — THE HONEST SCORE
+      Rate this decision across 3 dimensions:
+      - Quality of my thinking: Strong / Average / Weak
+      - Quality of the outcome: Strong / Average / Weak
+      - What I would do differently with the same
+        information I had at the time.
+
+      Note: a bad outcome from good thinking is not
+      a bad decision. A good outcome from bad thinking
+      is not a good decision. Score the thinking.
+
+      End with: the single most important lesson
+      from this decision in one sentence.
+
+  # ----------------------------------------------------------------------------
+  # STEP 4: Find Your Blind Spots (Run after logging 5+ decisions)
+  # ----------------------------------------------------------------------------
+  - trigger: ":djblind"
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are a pattern analyst. You have read every
+      decision I have ever logged in this project.
+      Your job is to find what I cannot see about
+      myself — the thinking errors I keep repeating
+      across career, money, and relationship decisions.
+
+      TASK
+      Analyze all my logged decisions and find my
+      blind spots across 3 sections:
+
+      SECTION 1 — MY RECURRING PATTERNS
+      - What thinking patterns appear across multiple
+        decisions — good and bad?
+      - Do I consistently overestimate or underestimate
+        specific things? What are they?
+      - Do I decide differently under pressure vs
+        when I have time? How?
+      - Am I more likely to err toward risk or caution —
+        and does it serve me?
+
+      SECTION 2 — MY CONSISTENT BLIND SPOTS
+      - What do I consistently fail to consider
+        before making decisions?
+      - Which of my assumptions are almost always wrong?
+      - What emotions most reliably cloud my judgment?
+        Show me the evidence from my own decisions.
+      - Is there a type of decision I am systematically
+        bad at — career, money, or relationships?
+
+      SECTION 3 — THE PATTERN I NEED TO BREAK
+      - What is the single most costly thinking habit
+        I have shown across my decisions?
+      - Give me one concrete rule I should follow
+        in every future decision to counter this.
+      - Show me exactly which logged decisions
+        support this conclusion.
+
+      End with: my top 3 blind spots in order of
+      how much they have cost me — with evidence
+      from my own decision log.
+
+  # ----------------------------------------------------------------------------
+  # STEP 5: The Quarterly Review (Run every 90 days)
+  # ----------------------------------------------------------------------------
+  - trigger: ":djquarter"
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are my quarterly thinking coach.
+      Your job is to measure whether I am becoming
+      a sharper decision-maker — or repeating the
+      same patterns at a higher stakes level.
+
+      TASK
+      Run my quarterly decision review:
+
+      SECTION 1 — THIS QUARTER IN REVIEW
+      - How many decisions did I log this quarter?
+      - How many have outcomes I can already measure?
+      - What was my average decision quality score?
+      - Which decision am I most proud of — and why?
+      - Which decision do I most regret — and why?
+
+      SECTION 2 — AM I GETTING BETTER?
+      - Compare this quarter to the previous one.
+      - Are my blind spots from last quarter still
+        showing up — or have I corrected them?
+      - Am I asking better questions before I decide?
+      - Am I more honest about emotion vs logic?
+      - Show me evidence from my own logs either way.
+
+      SECTION 3 — NEXT QUARTER FOCUS
+      - What is the one thinking habit I must improve
+        in the next 90 days?
+      - What type of decision am I likely to face
+        next quarter — and what should I watch out for?
+      - Write me one rule to carry into next quarter
+        based on everything I have logged so far.
+
+      End with: my decision-making score for this
+      quarter — Improving / Stable / Declining —
+      and one sentence explaining why.
+
+  # ==============================================================================
+  # ESPANSO CONFIGURATION: CHATGPT AUTOMATION PROMPTS
+  # File Location: match/ai_prompts.yml
+  # ==============================================================================
+
+  # 1. IDENTIFY KEY TAKEAWAYS
+  # Optimization: Automatically inserts your copied article text from the clipboard.
+  - trigger: ":ai-takeaways"
+    replace: |
+      Extract the key takeaways from the following article and summarize them in 3-5 concise bullet points:
+
+      {{clip}}
+
+      Ensure each bullet point highlights the most important information.
+    vars:
+      - name: clip
+        type: clipboard
+
+  # 2. CREATE A CONTENT CALENDAR
+  # Optimization: Launches a crisp text form field for the target topic.
+  - trigger: ":ai-calendar"
+    form: |
+      Help me develop a content calendar for the next month focused on [[topic]]. Include 5 blog post ideas, 5 social media post ideas, and 5 video ideas, each with brief descriptions.
+
+  # 3. TRAIN CHATGPT TO LEARN YOUR WRITING
+  # Optimization: Ingests your target writing sample from your clipboard buffer instantly.
+  - trigger: ":ai-train"
+    replace: |
+      Analyze the following text for style, voice, and tone:
+
+      {{clip}}
+
+      Based on this analysis, create a prompt that can generate new content in the same style, voice, and tone for future use.
+    vars:
+      - name: clip
+        type: clipboard
+
+  # 4. PREPARE MEETING AGENDA
+  # Optimization: Populates a structured layout via a dynamic interactive form block.
+  - trigger: ":ai-agenda"
+    form: |
+      Draft a structured agenda for a meeting about [[topic]]. Include key discussion points, time allocations, and any action items to be covered.
+
+  # 5. SPECIFY THE AUDIENCE AND PURPOSE
+  # Optimization: Implements a hybrid match that requests metadata via a prompt dialog,
+  # then appends your target text cleanly from the clipboard.
+  - trigger: ":ai-rewrite"
+    replace: |
+      Rewrite the following content to better suit the specified audience and purpose.
+      Topic: {{metadata.topic}}
+      Audience: {{metadata.audience}}
+      Tone: {{metadata.tone}}
+      Goal: {{metadata.goal}}
+
+      Text to rewrite:
+      {{clip}}
+    vars:
+      - name: clip
+        type: clipboard
+      - name: metadata
+        type: form
+        params:
+          layout: |
+            Topic: [[topic]]
+            Audience: [[audience]]
+            Tone: [[tone]]
+            Goal: [[goal]]
+
+  # 6. CONSULT AN EXPERT
+  # Optimization: Provides a clean drop-down menu choosing common personas,
+  # combined with automatic clipboard sample ingestion.
+  - trigger: ":ai-expert"
+    replace: |
+      Act as a [[persona.role]] and provide a detailed critique of the following writing sample:
+
+      {{clip}}
+
+      Offer constructive feedback and suggest improvements based on your expertise.
+    vars:
+      - name: clip
+        type: clipboard
+      - name: persona
+        type: form
+        params:
+          layout: |
+            Select Expert Persona: [[role]]
+          form_fields:
+            role:
+              type: choice
+              values:
+                - "Subject Matter Expert"
+                - "Proofreader"
+                - "Copywriter"
+                - "Technical Writer"
+                - "Legal Advisor"
+
+  # 7. CREATE A PROJECT TIMELINE
+  # Optimization: Prompts for the project title using standard form styling.
+  - trigger: ":ai-timeline"
+    form: |
+      Generate a detailed project timeline for [[project]]. Include key milestones, deadlines, and tasks needed to complete the project on time.
+
+  # 8. WRITE A PRODUCT DESCRIPTION
+  # Optimization: Quick product detail form overlay.
+  - trigger: ":ai-product"
+    form: |
+      Craft a compelling product description for [[product]]. Highlight its key features, benefits, and what makes it stand out from competitors.
+
+  # match/prompts.yml
+
+  # Unified Interactive Form (Recommended)
+  - trigger: ":color-form"
+    form: |
+      Create a clean, modern personal color analysis infographic poster with beauty recommendations.
+      Use the provided portrait photo as the main subject (keep face consistent, natural skin tone, no distortion).
+
+      Layout:
+      Left: large main portrait (rounded corners)
+      Right: “Season Analysis” with 4 sections: Spring, Summer, Autumn, Winter
+      Each season has a small circular version of the same face
+      Add 4–5 color swatches under each season
+      Highlight the best match with a subtle ring
+
+      Middle highlight box:
+      Title: BEST MATCH
+      Show: [[season_match]]
+      Short note: [[season_note]]
+
+      Add new section: “MAKEUP GUIDE” (clean card style)
+      Subsections:
+      Lips: show 3–4 swatches ([[lips]])
+      Blush: [[blush]]
+      Eyes: [[eyes]]
+      Highlighter: [[highlighter]]
+      Avoid: [[avoid]]
+
+      Bottom:
+      Two sections side by side:
+      ✔ Best Colors → same person wearing cool tones ([[best_colors]])
+      ✖ Avoid Colors → warm/muted tones ([[avoid_colors]])
+
+      Footer:
+      “Color Swatches” grid ([[palette_desc]]: [[palette_colors]])
+
+      Style:
+      Minimal, editorial, fashion magazine aesthetic
+      Soft neutral background (off-white / light beige)
+      Clean sans-serif typography, uppercase titles
+      Rounded cards, subtle shadows
+      Balanced spacing, grid-based layout
+
+      Lighting & color:
+      Natural skin tone preserved
+      Accurate color rendering (important for makeup tones)
+      No heavy filters
+
+      Output:
+      High resolution Premium infographic poster
+
+      Use accurate color palettes for each type:
+      • Type 1: light, bright, warm (coral, peach, turquoise, light yellow)
+      • Type 2: soft, muted, cool (dusty rose, lavender, sage, blue-gray)
+      • Type 3: warm, rich, earthy (rust, mustard, olive, camel)
+      • Type 4: cool, rich, high-contrast jewel tones (emerald, sapphire, royal purple, fuchsia, true red, black, white, charcoal)
+
+      Keep facial features and proportions exactly the same and include the types and tones next to each image for color reference.
+    form_fields:
+      season_match:
+        type: text
+        default: "WINTER (Deep Winter)"
+      season_note:
+        type: text
+        default: "high contrast, cool undertone, deep & clear colors"
+      lips:
+        type: text
+        default: "berry, deep red, plum, cool pink"
+      blush:
+        type: text
+        default: "soft rose, mauve"
+      eyes:
+        type: text
+        default: "charcoal, cool brown, taupe, silver shimmer"
+      highlighter:
+        type: text
+        default: "icy pearl / cool champagne"
+      avoid:
+        type: text
+        default: "orange, peach, warm coral, yellow-based tones"
+      best_colors:
+        type: text
+        default: "navy, deep red, magenta"
+      avoid_colors:
+        type: text
+        default: "mustard, olive, beige"
+      palette_desc:
+        type: text
+        default: "cool, high contrast palette"
+      palette_colors:
+        type: text
+        default: "black, white, navy, burgundy, plum, teal, icy tones"
+
+  # redteam.yml
+  # Reference files: 1000623646.png through 1000623654.png
+  # Strategy: Structured multi-line forms with default inner scaffolds.
+
+  # 1. THE COMPETITOR WAR GAME (Reference: 1000623651.png)
+  - trigger: ":rt-competitor"
+    form: |
+      You are my smartest, most ruthless competitor. I'm going to describe my business model, pricing, and target customer.
+
+      Your job: build the exact strategy you'd use to steal my customers, undercut my positioning, or make my product irrelevant within 12 months.
+
+      Be specific. Name the moves. Show me the timeline.
+
+      Here's my business:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "- Business Model: \n- Pricing: \n- Target Customer: \n- Key Differentiator: "
+
+  # 2. THE CUSTOMER BETRAYAL SIM (Reference: 1000623649.png)
+  - trigger: ":rt-betrayal"
+    form: |
+      You are a customer who used my product for 6 months, genuinely liked it at first, and just canceled.
+
+      Write me the breakup email. Explain exactly what made you leave, what triggered the final decision, and where you're going instead.
+
+      Be emotionally honest, not polite. I need the version you'd text a friend, not the version you'd put in a feedback form.
+
+      Here's what my product does and who it serves:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "- Product Description: \n- Target Customer Profile: "
+
+  # 3. THE INVESTOR TEARDOWN (Reference: 1000623647.png)
+  - trigger: ":rt-investor"
+    form: |
+      You are a skeptical VC partner doing due diligence on my business. You've seen 200 pitches this year and you're looking for reasons to pass.
+
+      Review my business and give me:
+      1. The 3 biggest holes in my model that would make you say no
+      2. The question you'd ask in the partner meeting that I probably can't answer yet
+      3. The comparable company that tried this and failed, and why I might repeat their mistake
+
+      Here's my business overview:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "- Core Business: \n- Revenue Model: \n- Current Traction: \n- Market Landscape: "
+
+  # 4. THE SINGLE POINT OF FAILURE SCAN (Reference: 1000623650.png)
+  - trigger: ":rt-spof"
+    form: |
+      Audit my business for single points of failure. These are the things where if one element breaks, the whole operation stalls.
+
+      Check across these categories:
+      → People (key person dependency)
+      → Tools and platforms (what if this tool goes down or changes pricing?)
+      → Revenue (customer concentration, channel dependency)
+      → Supply chain (single suppliers, single distribution channels)
+
+      For each vulnerability you find, rate it: how likely is it to happen and how badly does it hurt if it does.
+
+      Here's how my business operates:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "- Team & Roles: \n- Tech Stack & Tools: \n- Revenue Sources: \n- Key Dependencies: "
+
+  # 5. THE MARKET SHIFT SCENARIO (Reference: 1000623652.png)
+  - trigger: ":rt-market"
+    form: |
+      Generate 3 plausible market shifts that could happen in the next 18 months and would seriously damage my current business model.
+
+      For each scenario:
+      1. What changes (regulatory, technological, or consumer behavior)
+      2. How it specifically impacts my revenue, customers, or competitive position
+      3. The early warning signs I should be watching for right now
+      4. What I'd need to pivot or adjust if it happens
+
+      Don't give me doomsday fantasies. Give me realistic shifts that have a real chance of happening.
+
+      Here's my business and market:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "- Core Business: \n- Core Industry: \n- Current Market Position: "
+
+  # 6. THE PRICING PRESSURE TEST (Reference: 1000623648.png)
+  - trigger: ":rt-pricing"
+    form: |
+      You are a price-sensitive buyer evaluating my product against alternatives. Your budget is tight and you need to justify every dollar.
+
+      Systematically argue why my product isn't worth what I charge. Compare it to cheaper alternatives, free workarounds, and the option of doing nothing.
+
+      Then tell me:
+      1. The exact price point where I start losing customers like you
+      2. What I'd need to add or change to make the current price feel like a steal
+      3. The one competitor whose pricing makes mine look bad
+
+      Here's my product and pricing:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "- Product Offering: \n- Current Pricing Tiers: \n- Main Competitors: "
+
+  # 7. THE ATTACK SURFACE REPORT (Reference: 1000623654.png)
+  - trigger: ":rt-report"
+    form: |
+      Based on everything I've shared about my business, compile a Red Team Report.
+
+      Structure it as:
+      1. TOP 3 CRITICAL VULNERABILITIES — ranked by likelihood and severity. For each: the attack vector, how it plays out, and the timeline before it hits.
+      2. BIGGEST BLIND SPOT — the one risk I'm almost certainly not thinking about because it sits outside my normal frame of reference.
+      3. HARDENED STRATEGY — a revised version of my current plan with the top vulnerabilities patched. Show me what changes, what stays, and why.
+
+      Write it like a security briefing, not a brainstorm. Direct. Prioritized. Actionable.
+
+      Here's my full business context:
+      [[context]]
+    form_fields:
+      context:
+        type: multiline
+        default: "[Refer to the conversation history above, or add updates here]"
+
+  # ==============================================================================
+  # ESPANSO CONFIGURATION: EXECUTIVE AI PROMPTS
+  # File Target Recommendation: match/ai_prompts.yml
+  # To apply changes, run: espanso restart
+  # ==============================================================================
+
+  # ----------------------------------------------------------------------------
+  # 1. PwC Data Analysis Report Writer
+  # ----------------------------------------------------------------------------
+  - trigger: ":pwc"
+    form: |
+      "You are a senior data analyst at PwC who takes messy spreadsheets and raw numbers and transforms them into polished analysis reports that executives actually read, understand, and act on."
+
+      I need a complete data analysis report that turns my numbers into a story my boss can present upward.
+
+      Analyze:
+      • Data summary: clean overview of the dataset — what it contains, time period, and sample size
+      • Key metrics calculated: totals, averages, percentages, and growth rates for every important number
+      • Trend identification: what's going up, what's going down, and what's staying flat over time
+      • Comparison analysis: performance vs last month, last quarter, last year, and vs target
+      • Top and bottom performers: rank items, products, regions, or people by the key metric
+      • Anomaly detection: flag any numbers that look unusual with possible explanations
+      • Root cause narrative: explain WHY the numbers look the way they do in plain business language
+      • Visualization descriptions: specify which charts to create (bar, line, pie) and what each should show
+      • Recommendations: 3–5 specific actions to take based on what the data reveals
+      • Executive summary: 3-sentence overview a C-suite executive can read in 30 seconds
+
+      Format as a PwC-style data analysis report with summary dashboard, detailed findings, and actionable recommendations.
+
+      My data:
+      [[raw_data]]
+    form_fields:
+      raw_data:
+        type: multiline
+        default: ""
+
+  # ----------------------------------------------------------------------------
+  # 2. McKinsey Monday Morning Status Report Generator
+  # ----------------------------------------------------------------------------
+  - trigger: ":mck"
+    form: |
+      "You are a senior associate at McKinsey who writes crisp, executive-ready status reports that make partners feel informed and confident without scheduling another meeting. I need a complete weekly status report that makes my boss think I spent an hour writing it."
+
+      Generate:
+      • Project summary: one paragraph overview of what I'm working on written in confident corporate language
+      • Accomplishments this week: transform my messy bullet points into polished achievement statements with impact metrics
+      • Progress against milestones: show each deliverable with percentage complete and green/yellow/red status
+      • Blockers and risks: frame problems diplomatically so I'm flagging issues without sounding like I'm complaining
+      • Next week priorities: 5–7 clear action items that show I'm proactive and thinking ahead
+      • Key decisions needed: specific asks from leadership formatted so they can reply with a simple yes or no
+      • Metrics dashboard summary: take my raw numbers and present them as a clean performance snapshot
+      • Stakeholder updates: any cross-functional dependencies or communications sent this week
+      • Resource requests: if I need help, frame it as a business case not a personal complaint
+      • Executive summary: a 2-sentence version my boss can forward to their boss without editing
+
+      Format as a McKinsey-style weekly status report with clean headers, bullet points, and a professional tone that sounds like I spent all morning writing it.
+
+      My raw notes:
+      [[status_notes]]
+    form_fields:
+      status_notes:
+        type: multiline
+        default: ""
+
+  # ----------------------------------------------------------------------------
+  # 3. Goldman Sachs Email Drafting Machine
+  # ----------------------------------------------------------------------------
+  - trigger: ":gs"
+    form: |
+      "You are a VP at Goldman Sachs who writes emails that get read, get responses, and get results — because in a 200-email-per-day inbox, the wrong tone or length means your email gets ignored.
+
+      I need professionally written emails for every situation I face at work."
+
+      Draft:
+      • Upward emails: updates to my boss that are concise, confident, and make me look competent
+      • Downward emails: task assignments to my team that are clear, respectful, and leave zero ambiguity
+      • Cross-functional emails: requests to other departments that get prioritized instead of buried
+      • Bad news delivery: frame problems with a solution already attached so I'm a problem-solver not a complainer
+      • Follow-up nudges: polite but firm second and third emails when someone hasn't responded
+      • Meeting requests: subject lines and body text that make busy people actually accept the invite
+      • Thank you and recognition: genuine appreciation emails that strengthen relationships without being cheesy
+      • Declining requests: say no diplomatically to extra work without damaging the relationship
+      • Escalation emails: raise issues to leadership without throwing anyone under the bus
+      • Cold internal outreach: introduce myself to senior leaders or contacts without being awkward
+
+      Format as ready-to-send emails with subject lines, body text, and any necessary context notes. Match the tone I specify.
+
+      My email need:
+      Situation/Context: [[context]]
+      Recipient: [[recipient]]
+      Deliverable/Need: [[need]]
+      Tone requested: [[tone]]
+    form_fields:
+      context:
+        type: multiline
+        default: ""
+      recipient:
+        type: text
+        default: "a colleague"
+      need:
+        type: text
+        default: ""
+      tone:
+        type: choice
+        values:
+          - "Formal"
+          - "Friendly"
+          - "Urgent"
+          - "Diplomatic"
+
+  # ----------------------------------------------------------------------------
+  # 4. Bain Presentation Builder
+  # ----------------------------------------------------------------------------
+  - trigger: ":bain"
+    form: |
+      "You are a senior consultant at Bain who builds slide decks that tell a clear story, make data look compelling, and get executives to approve budgets, strategies, and projects in a single meeting."
+
+      I need a complete presentation built from my raw notes and data.
+
+      Build:
+      1. Narrative structure: organize my scattered thoughts into a logical flow with a clear beginning, middle, and recommendation
+      2. Executive summary slide: the single slide that captures the entire presentation if my boss only reads one
+      3. Problem statement: frame the challenge in a way that creates urgency without causing panic
+      4. Data visualization: turn my raw numbers into chart descriptions (bar, line, pie) that tell a story at a glance
+      5. Key findings slides: 3–5 insight slides with one takeaway per slide and supporting evidence
+      6. Recommendation slide: clear next steps with owner, timeline, and expected impact for each
+      7. Appendix slides: detailed backup data organized for when someone asks "where did you get that number"
+      8. Speaker notes: what to SAY on each slide (not just what's ON the slide) for a smooth delivery
+      9. Slide titles as headlines: every slide title is a complete sentence that states the takeaway
+
+      One-line summary: the single sentence that captures my entire presentation for Slack or email
+
+      Format as a Bain-style slide deck outline with exact slide titles, bullet points per slide, chart descriptions, and speaker notes.
+
+      My raw content:
+      [[raw_content]]
+    form_fields:
+      raw_content:
+        type: multiline
+        default: ""
+
+  # ----------------------------------------------------------------------------
+  # 5. Deloitte Meeting Notes and Action Items Extractor
+  # ----------------------------------------------------------------------------
+  - trigger: ":deloitte"
+    form: |
+      "You are a senior project manager at Deloitte who turns chaotic meetings into clear, structured notes with action items, owners, and deadlines so nobody ever asks 'wait, what did we agree on' again.
+
+      I need a complete meeting summary that makes me look like the most organized person in the room."
+
+      Extract:
+      • Meeting overview: one paragraph summary of what was discussed and the overall outcome
+      • Key decisions made: every decision explicitly stated with who approved it
+      • Action items: every task that was assigned with the specific person responsible and the deadline
+      • Open questions: unresolved items that need follow-up with who should answer and by when
+      • Risks flagged: any concerns raised during the meeting documented for the record
+      • Parking lot items: topics that came up but were tabled for future discussion
+      • Next meeting agenda: suggested topics for the follow-up meeting based on what was discussed
+      • Stakeholder updates: what needs to be communicated to people who weren't in the meeting
+      • Timeline changes: any shifts in deadlines or milestones agreed during the meeting
+      • Follow-up email draft: a ready-to-send recap email to all attendees with the notes attached
+
+      Format as a Deloitte-style meeting minutes document with a decision log, action item table, and a follow-up email draft.
+
+      My meeting notes:
+      [[meeting_notes]]
+    form_fields:
+      meeting_notes:
+        type: multiline
+        default: ""
+
+  # ----------------------------------------------------------------------------
+  # 6. Amazon "Working Backwards" Document Writer
+  # ----------------------------------------------------------------------------
+  - trigger: ":amzn"
+    form: |
+      "You are a senior program manager at Amazon who writes the famous 6-page narrative memos that Amazon uses instead of PowerPoint the document format that forces clear thinking. and gets leadership buy-in.
+
+      I need a complete Amazon-style narrative document for a project, proposal, or strategy I'm presenting.
+
+      Write:
+      1. Press release format: write the announcement as if my project already succeeded what does the future look like
+      2. Customer problem statement: clearly define who benefits and what pain point this solves.
+      3. Current state vs future state: what the situation looks like today vs after my proposal is implemented
+      4. Solution overview: explain my approach in plain English without jargon or buzzwords
+      5. Key metrics: how we'll measure success with specific KPIs and target numbers
+      6. Timeline and milestones: phased rollout plan from kickoff to completion
+      7. Resource requirements: what I need (budget, people, tools) presented as un investment not a cost
+      8. Risk assessment: what could go wrong and my mitigation plan for each risk
+      9. FAQ section: anticipate every tough question leadership will ask and pre-answer them
+      10. Appendix: supporting data, research, and calculations that back up every claim in the narrative
+
+      Format as an Amazon-style 6-page narrative memo with the press release opening, narrative body, FAQ section, and supporting appendix.
+
+      My project:
+      [[project_desc]]
+    form_fields:
+      project_desc:
+        type: multiline
+        default: ""
+
+  # match/prompts.yml
+
+  # ==========================================
+  # QUICK SINGLE PROMPTS
+  # ==========================================
+
+  # 1. The Tightener
+  # Uses a form to ask for the text type and word count,
+  # and automatically pastes your clipboard content.
+  - trigger: ":p-tight"
+    form: |
+      Tighten this [[text_type]] to under [[word_count]] words without losing the meaning.
+
+      - Cut filler and repetition.
+      - Keep my voice - do not make it generic.
+      - Give me the tightened version, then one line on what you cut.
+
+      TEXT:
+      {{clip}}
+    form_fields:
+      text_type:
+        type: text
+        default: "email"
+      word_count:
+        type: text
+        default: "200"
+    vars:
+      - name: clip
+        type: clipboard
+
+  # 2. The Gut-Check
+  # Automatically injects your clipboard into the prompt.
+  - trigger: ":p-gut"
+    replace: |
+      Here is something I am about to send or do:
+
+      {{clip}}
+
+      Give me a fast gut-check, not an essay:
+      - The one thing most likely to go wrong or be misread.
+      - The single change that would improve it most.
+      - Your call: send/do it as-is, or fix that first?
+
+      Keep it to a few lines.
+    vars:
+      - name: clip
+        type: clipboard
+
+  # ==========================================
+  # MULTI-STEP CHAIN (3 STEPS)
+  # ==========================================
+
+  # Step 1 of 3: Draft
+  # Uses a form to capture constraints before sending to the LLM.
+  - trigger: ":p-chain-1of3"
+    form: |
+      Write a first draft of: [[what_you_need]].
+      Constraints: [[constraints]].
+
+      Just get a complete draft down. Do not polish or second-guess yet - I want raw material to work with.
+    form_fields:
+      what_you_need:
+        type: text
+        default: "an email to my team"
+      constraints:
+        type: text
+        default: "professional tone, under 3 paragraphs"
+
+  # Step 2 of 3: Critique
+  # Static text replacement to follow up the first prompt.
+  - trigger: ":p-chain-2of3"
+    replace: |
+      Switch roles. You are now a tough reviewer seeing the draft above for the first time.
+
+      - Name the 3 weakest things, most important first.
+      - Flag anything generic, unclear, or unsupported.
+      - Say what is missing.
+
+      Do not rewrite it. Critique only - be blunt.
+
+  # Step 3 of 3: Finalize
+  # Static text replacement to execute the final rewrite.
+  - trigger: ":p-chain-3of3"
+    replace: |
+      Now rewrite the draft, fixing every point from the critique.
+
+      - Keep what was already working.
+      - Address each weakness specifically.
+      - Give me the final version only, polished.
+
+  # match/prompts.yml
+  # This file contains interactive AI prompt templates.
+  # Triggers open a form to inject dynamic variables into standard prompt structures.
+
+  # Template 1 of 3: The Decision Pressure Test
+  # Purpose: Stress-test a business or architectural choice.
+  - name: "prompt-template-1-of-3"
+    trigger: ":p-decision"
+    form: |
+      You are a strategic advisor who specializes in pre-mortem analysis and decision stress-testing.
+
+      Context: I am about to make a significant business decision. Before committing, I want to pressure-test it from every angle.
+
+      Task: Run a full decision audit on the choice below. Argue both sides with equal force. Then identify the three assumptions my decision depends on that, if wrong, would make it a mistake.
+
+      Decision: [[decision]]
+
+      Format: (1) Case FOR — 4 strongest arguments. (2) Case AGAINST — 4 strongest arguments. (3) Three critical assumptions I'm making. (4) One question I haven't asked that I should.
+
+      Constraints: Do not tell me what to do. Do not soften either side. Your job is clarity, not comfort.
+    form_fields:
+      decision:
+        type: multiline
+        default: "Describe the decision and your current lean here..."
+
+  # Template 2 of 3: The Bottleneck Finder
+  # Purpose: Identify constraints in a system or flow.
+  - name: "prompt-template-2-of-3"
+    trigger: ":p-bottleneck"
+    form: |
+      You are a business systems analyst specializing in constraint theory and throughput optimization.
+
+      Context: My business is generating activity but not converting it to revenue at the rate it should. Something is the constraint — I may not be seeing it clearly.
+
+      Task: Analyze my business flow below and identify the single constraint that, if removed, would have the highest downstream impact on revenue. Do not give me a list of problems. Give me the one.
+
+      My current flow: [[flow]]
+
+      Format: (1) Identified constraint — one sentence. (2) Why this is the constraint, not a symptom. (3) Three actions to break it, ranked by speed of impact.
+
+      Constraints: No generic advice. If you don't have enough data, ask one specific question to get it.
+    form_fields:
+      flow:
+        type: multiline
+        default: "Describe the flow cycle here..."
+
+  # Template 3 of 3: Generic 5-Part Prompt Builder
+  # Purpose: Build a custom prompt on the fly using the Role/Context/Task/Format/Constraint framework.
+  - name: "prompt-template-3-of-3"
+    trigger: ":p-build"
+    form: |
+      You are [[role]].
+
+      Context: [[context]]
+
+      Task: [[task]]
+
+      Format: [[format]]
+
+      Constraints: [[constraints]]
+    form_fields:
+      role:
+        type: text
+        default: "a rigorous systems architect"
+      context:
+        type: multiline
+        default: "OAL Logic is scaling a Python-based prediction engine..."
+      task:
+        type: multiline
+        default: "Define the core problem you want solved here."
+      format:
+        type: multiline
+        default: "Provide a bulleted list with clear rationale."
+      constraints:
+        type: multiline
+        default: "Do not use generic advice. Focus strictly on technical feasibility and modular architecture."
+
+  # Insert the primary instructions (Goal, Method, Lenses).
+  # Uses a standard multi-line block scalar (|) to preserve your exact line breaks.
+  - trigger: ":mirror-step1of2"
+    replace: |
+      GOAL:
+
+      Conduct a full-spectrum audit of how I come across across our past conversations. Avoid direct reference to my domain-specific interests (topics, hobbies, work subject matter). Focus purely on vibe, cognition, style, communication, and inner architecture. Extract truth and tension, not praise or surface observation.
+
+      METHOD (mandatory):
+
+      Before writing any section, search across our conversation history for concrete instances: specific phrasings, decisions, moments of pushback or avoidance, recurring patterns.
+
+      Every claim must be backed by a specific behavioral instance from those chats, described without naming the topic (behavior only, not subject matter).
+
+      Do not assign diagnostic labels, types, or numeric scores (no MBTI, Big Five percentiles, Enneagram number, clinical diagnosis, attachment style label, Kohlberg stage, or similar instrument). These require validated tools this context doesn't have, and inventing them produces Barnum-statement noise, not insight.
+
+      Where a scale is genuinely useful (e.g. "how directive vs. exploratory," "how much pushback tolerated"), use a descriptive gradient with reasoning, not a bare number.
+
+      Each section ends with a 1-2 sentence summary judgment, earned from the evidence above it, not asserted first.
+
+      THE FIVE LENSES:
+
+      Systemic Observer (behavioral-linguistic pattern read)
+
+      - How thinking, speaking, and information-patterning actually show up
+      - Cognitive tempo: speed, depth, complexity — with instances
+      - Linguistic patterns: sentence structure, tonal consistency, recurring phrasing habits
+      - Biases or inconsistencies in phrasing, contradictions between stated intent and actual behavior
+      - Summary: "This is a person who..."
+
+      Clinical Read (experienced-practitioner lens, no formal diagnosis)
+
+      - Capacity for self-reflection and insight, with an instance
+      - Defense patterns observed in conversation (e.g. intellectualizing, deflecting, over-explaining) — named only where there's a real instance
+      - Emotional granularity: how precisely complex states get articulated when they come up
+      - Cognitive distortions, if any actually appear (not assumed)
+      - Summary: "If this person were my client, I would..."
+
+  # Step 2 of 2: Insert the final instructions and evaluator rules.
+  - trigger: ":mirror-step2of2"
+    replace: |
+      Strategic Operator (execution, decision-making, scale readiness)
+
+      - Decision-making pattern: intuitive, deliberative, hybrid — with instance
+      - Biases in play: narrative bias, over-control, sunk cost, etc. — only where evidenced
+      - Risk calibration: conservative, aggressive, intuitive
+      - Follow-through pattern across conversations (does stated intent become tracked action?)
+      - Blindspot: what might derail scale or cause burnout, based on actual pattern
+      - Summary: "Operating like this, they would..."
+
+      Street-Level Social Read (perceptive-stranger lens)
+
+      - Energetic impression: calm, intense, calculating, warm, closed, inviting — with instance
+      - Vulnerability vs. control ratio in how things get shared
+      - Who this style would likely attract vs. repel in conversation
+      - Interpersonal blind spots (cutting off emotionally, over-assuming intent, etc.)
+      - Summary: "This person gives the vibe of someone who..."
+
+      Inner Guide (alignment, not success)
+
+      - Where is performance vs. where is presence — with instance
+      - Areas of emotional bypass (intellect, productivity, or identity used as armor) — only if evidenced
+      - The story that keeps repeating vs. what seems to be trying to unfold instead
+      - Summary: "If I were guiding this person in silence, I'd ask them..."
+
+      CONTRAST & INTEGRATION:
+
+      - Where do the five lenses align?
+      - Where do they contradict each other?
+      - What do all five miss or avoid seeing?
+      - What's the most underdeveloped layer?
+      - Where is there overcompensation, and for what?
+
+      FINAL REFLECTION: "The Story I Tell vs. The Story I Hide"
+
+      - The narrative put out into the world
+      - The less comfortable pattern underneath it
+      - The gap between the two, and what maintaining that gap costs vs. what closing it might give
+
+      INSTRUCTIONS TO THE EVALUATOR:
+
+      - Clarity over politeness. No flattery, no softening.
+      - No invented scores, types, or diagnoses — evidence-based description only.
+      - Every claim traces to a real instance from the conversation history. If there isn't one, don't make the claim.
+
+  # match/prompts.yml
+  - trigger: ":pca-custom"
+    form: |
+      Create a clean, elegant personal color analysis infographic based on this portrait. Place the person’s face on the left side in a soft rounded frame, keeping their natural features, skin tone, and lighting realistic without altering identity. Automatically analyze their undertone (cool, warm, or neutral), contrast level, and overall coloring, then assign a suitable seasonal type (such as Cool Winter, Warm Autumn, Soft Summer, or Clear Spring). Use this analysis to generate a short statement like “You glow in [undertone + color characteristic] colors,” along with a few concise bullet points describing undertone, contrast, best color intensity, jewelry preference, and ideal neutrals.
+
+      On the right side, design a structured infographic layout with clear sections. Include a Makeup Color Palette featuring foundation tones, blush, eyeshadow, highlight, and lipstick shades that harmonize with the subject’s coloring, plus a small “avoid” section for clashing tones. Add a Clothing Color Palette with organized color grids (neutrals from light to dark, main colors, accent colors, and avoid tones), as well as recommended metallics. Provide simple visual examples of outfits categorized into “Best,” “Good,” and “Avoid,” using faceless models or minimal fashion illustrations.
+
+      Complete the infographic with a Glasses Guide showing suitable frame shapes based on face shape and recommended colors based on undertone, including a small diagram. Add a short Overall Look Vibe section describing the ideal style direction (e.g., fresh, bold, soft, high contrast).
+
+      Maintain a [[aesthetic]] aesthetic with a [[background]] background, clean modern typography, balanced spacing, rounded elements, and subtle shadows. Ensure the final result is visually polished, cohesive, and high resolution, suitable for Pinterest or professional branding.
+    form_fields:
+      aesthetic:
+        type: text
+        default: "minimalist, high-end beauty magazine"
+      background:
+        type: text
+        default: "soft neutral (beige or light gray)"
+
+  # Step 1 of 2: The Failure Predictor
+  # Triggers a multiline dialog box. Paste your raw task here.
+  # The layout injects it inside <task> XML delimiters so the LLM doesn't confuse the task with the instructions.
+  - trigger: ":prompt:1of2"
+    replace: |
+      Before executing the task below, perform a failure prediction analysis.
+
+      Identify the most critical ways you are likely to fail at this task (e.g., misunderstandings, false assumptions, generic responses, or inherent model limitations).
+      For each identified failure mode, provide the exact instruction I should add to prevent it.
+
+      Do NOT execute the task yet. Output ONLY your failure analysis and suggested prompt patches.
+
+      <task>
+      {{form_output}}
+      </task>
+    vars:
+      - name: form_output
+        type: form
+        params:
+          layout: "[[task_input]]"
+          fields:
+            task_input:
+              multiline: true
+
+  # ---------------------------------------------------------
+  # STEP 1 OF 3: Initialize Framework & Core Rules
+  # ---------------------------------------------------------
+  - trigger: ":ko-step1-rules"
+    replace: |
+      You are an expert Art Teacher and Curriculum Designer. I am going to feed you the ART KNOWLEDGE ORGANISER FRAMEWORK v1.0. Acknowledge that you understand these rules, but DO NOT generate anything yet.
+
+      PURPOSE:
+      Knowledge organisers are retrieval/revision resources. Prioritize: Artist knowledge, context, vocabulary, formal elements, techniques, and visual language. Do NOT include lesson sequences, assessment sheets, or final outcome showcases.
+
+      REFERENCE HIERARCHY:
+      1. ART_KO_MASTER_v1.png (Primary layout)
+      2. Uploaded Project PowerPoint (Primary content source)
+
+      RULES:
+      - KNOWLEDGE-FIRST: Every section must teach knowledge. No filler.
+      - IMAGE RULES: Use authentic images from the source material whenever possible. Do not redraw or substitute unless impossible. Images must support knowledge, not act as decoration.
+      - PROCESS KNOWLEDGE: Only include process sections to explain *how/why* a technique works, not step-by-step classroom instructions.
+      - EXCLUSIONS: Exclude success criteria, generic material lists, learning outcomes, and peer assessments.
+
+      Reply with "FRAMEWORK LOADED" when you are ready for the project specification.
+
+  # ---------------------------------------------------------
+  # STEP 2 OF 3: Upload Context & Generate Specification
+  # ---------------------------------------------------------
+  - trigger: ":ko-step2-spec"
+    form: |
+      I have uploaded the project PowerPoint.
+
+      Produce a KO specification for the project: "[[project_name]]".
+
+      This is a [[focus]] project.
+
+      Perform the following workflow:
+      1. Analyse the project PowerPoint.
+      2. Extract vocabulary, formal elements, and techniques.
+      3. Identify authentic images.
+      4. Produce a proposed panel structure.
+    form_fields:
+      project_name:
+        type: text
+        default: "Untitled Project"
+      focus:
+        type: choice
+        values:
+          - "Artist-led (Prioritize Artist knowledge, artworks, and methods)"
+          - "Technique-led (Prioritize Context, Techniques, and Process knowledge)"
+
+  # ---------------------------------------------------------
+  # STEP 3 OF 3: Approval Lock & Final Generation
+  # ---------------------------------------------------------
+  - trigger: ":ko-step3-generate"
+    replace: |
+      Before generating the final knowledge organiser image, present the PRE-GENERATION APPROVAL LOCK CHECKLIST.
+
+      List out for my approval:
+      * Exact title text
+      * Panel titles & order
+      * Key vocabulary & Required images
+      * Retrieval questions
+
+      Do not generate the KO until I approve this list.
+      Once approved, perform a final Quality Check ensuring every section teaches knowledge and instructional content is removed, then generate the final output.
+
+  # -----------------------------------------------------------------------------
+  # Book Editor AI Prompt Triggers
+  # -----------------------------------------------------------------------------
+
+  # STEP 1 OF 2: The System Instructions
+  # Sets the persona, boundaries, and rules for the LLM.
+  # Paste this into the "System Instructions" area or as your very first message.
+  - trigger: ":editor-1of2"
+    form: |
+      You are my editor, not my co-author.
+
+      Imagine you are the rare editor trusted by writers and thinkers such as [[authors]]. If you know the actual editor's style, use that.
+
+      Your task is not to provide ideas, impress me with creativity, or tell me what the book should become. Your task is to help me discover the idea myself.
+      Assume that the deepest intuitions of the work already exist within me, even if I cannot yet articulate them. Help me find the work through inquiry, which sometimes can be playful.
+
+      Your role is to draw out meaning, not suggest it, though short feedback is welcome.
+
+      RULES:
+      - By default, ask only one question at a time. Do not ask compound questions.
+      - Each question should be informed from my previous answer. Allow my answers to create curiosity about the project to inform your next question.
+      - Avoid jumping ahead or introducing possibilities I have not hinted at.
+      - Your questions should help me understand the idea, what about it fascinates me, what I do not yet know, and what key foundations I need to discover.
+      - Do not brainstorm for me unless I explicitly ask.
+      - Do not create plots, themes, characters, settings, or scenes unless I explicitly ask.
+      - Do not overwhelm me with lists of possibilities.
+      - Keep feedback extremely brief. Three sentences maximum. Feedback should clarify, sharpen, or point out tensions, never evaluate or praise.
+      - Criticism can be included in the feedback.
+      - Protect the integrity of the work. Do not optimize for entertainment, trends, commercial success, or conventional story structures, unless I give you a theme or genre I am writing toward.
+
+      TO CONSIDER IN YOUR QUESTIONS:
+      - What emotional truth lives underneath the idea?
+      - What contradictions or tensions animate it?
+      - What I fear, hope, love, or grieve through this work?
+      - What questions I am really asking?
+      - What kind of world, people, or symbols naturally belong to this book?
+      - What I know intuitively but have not yet put into words?
+
+      Trust that the work knows more than either of us. Our task is to listen carefully enough for it to reveal itself.
+    form_fields:
+      authors:
+        type: text
+        default: "James Joyce, C.G. Jung, Eduardo Galeano, George Orwell, Aldous Huxley, Verlyn Klinkenborg, John Berger, Robert Moore, Gabriel García Márquez, Paulo Freire, Robert Bly, Maya Angelou, David Graeber, and Jeremy Taylor"
+
+  # -----------------------------------------------------------
+  # ChatGPT Prompt Templates: "Decide and Communicate" Set
+  # -----------------------------------------------------------
+
+  # Step 1 of 5: The Comparison (for deciding between options)
+  - trigger: ":gpt-1-compare"
+    form: |
+      Help me compare my options so I can actually decide.
+
+      OPTIONS: [[options]]
+      What matters most to me: [[criteria]]
+
+      Do this:
+      - Build a table: options as rows, my criteria as columns, a short honest rating in each cell.
+      - Call out the single biggest tradeoff between the top 2.
+      - Recommend one for my situation, and say who should pick a different one instead.
+
+      No "it depends." Commit to a recommendation.
+    form_fields:
+      options:
+        type: multiline
+      criteria:
+        type: text
+        default: "price, setup time, learning curve"
+
+  # Step 2 of 5: The Reply (for messages you keep putting off)
+  - trigger: ":gpt-2-reply"
+    form: |
+      Help me reply to this message.
+
+      MESSAGE I RECEIVED:
+      [[message]]
+
+      What I want to get across: [[goal]]
+      Tone: [[tone]]
+
+      Give me 2 versions: one short, one more complete.
+      Keep it natural, no corporate filler, and do not over-apologize or over-explain.
+    form_fields:
+      message:
+        type: multiline
+      goal:
+        type: text
+      tone:
+        type: choice
+        values:
+          - "warm but firm"
+          - "professional"
+          - "casual"
+          - "direct and concise"
+
+  # Step 3 of 5: The SOP (turning processes into steps)
+  - trigger: ":gpt-3-sop"
+    form: |
+      Turn this process into a clear step-by-step SOP that someone else could follow without asking me questions.
+
+      THE PROCESS: [[process]]
+
+      Format it as:
+      - Goal (one line: what "done" looks like)
+      - Numbered steps, each starting with an action verb
+      - For any step that is easy to get wrong, a short "watch out" note
+      - What to do if something goes wrong
+
+      Flag anything I described that is ambiguous and needs a decision from me.
+    form_fields:
+      process:
+        type: multiline
+
+  # Step 4 of 5: The Briefing (getting up to speed fast)
+  - trigger: ":gpt-4-briefing"
+    form: |
+      Get me up to speed on [[topic]] fast. Assume I am smart but know nothing about this.
+
+      Give me:
+      - What it is, in 2-3 plain sentences.
+      - Why it matters and why people care.
+      - The 5 things I actually need to know to hold a conversation about it.
+      - The most common misconception.
+      - 3 good questions to ask if I want to go deeper.
+
+      Skip the history lecture. Prioritize what is useful now.
+    form_fields:
+      topic:
+        type: text
+
+  # Step 5 of 5: The Objection Handler (preparing to convince)
+  - trigger: ":gpt-5-objection"
+    form: |
+      I am about to propose this: [[proposal]].
+      Audience: [[audience]].
+
+      Help me prepare:
+      1. The top 5 objections or pushbacks they are most likely to raise.
+      2. For each, the strongest honest version of their concern (steelman it).
+      3. A concise, straight response to each - no spin.
+      4. The one objection I probably cannot answer well, so I can prepare for it in advance.
+    form_fields:
+      proposal:
+        type: multiline
+      audience:
+        type: text
+
+  # =====================================================================
+  # AI Persona Prompts - Robin Life Coach
+  # =====================================================================
+
+  # [Step 1 of 2] System Prompt Injection
+  # Injects the core behavior, tone, and rules for the Robin persona.
+  # Best used in the "System Instructions" box of an AI agent or as your first message.
+  - trigger: ":robin-1of2"
+    replace: |
+      You are Robin, a warm, reflective life coach and thinking companion.
+
+      Your role is not to act as a therapist, psychologist, doctor, authority figure, or problem-solver. Your role is to help the user slow down, reflect, process emotions, and discover their own insights.
+
+      Core Personality:
+      * Warm, gentle, compassionate, and emotionally intelligent.
+      * Conversational and human, as if speaking with a trusted friend over coffee.
+      * Never cold, clinical, academic, or overly analytical.
+      * Never harsh, confrontational, judgmental, or argumentative.
+      * Avoid sounding like a self-help book.
+      * Avoid giving rapid-fire advice or lists of action steps.
+      * Focus on understanding before solving.
+
+      Tone:
+      * Frequently address the user as "friend."
+      * Use a calm, thoughtful, supportive voice.
+      * Use gentle transitions such as:
+        * "🌱 Friend..."
+        * "💛 What I’m hearing is..."
+        * "☕️ Something that stands out to me..."
+        * "🌱 I wonder if..."
+        * "💛 That makes a lot of sense."
+      * Use emojis naturally and sparingly: 🌱, 💛, ☕️. Never overuse emojis.
+
+      Conversation Style:
+      * Reflect back what the user is saying before offering any interpretation.
+      * Help the user feel understood before exploring deeper questions.
+      * Frequently summarize emotional themes and underlying tensions.
+      * Gently distinguish between different emotions and motivations.
+      * Look for nuance rather than taking extreme positions.
+      * Avoid black-and-white thinking.
+      * Avoid immediately deciding who is right or wrong.
+      * Avoid telling the user what they should do.
+
+      Reasoning Style:
+      * Explore rather than declare.
+      * Use phrases such as: "I wonder if...", "It sounds like...", "What I’m hearing is...", "I’m curious about...", "Something that occurs to me..."
+      * Present possibilities instead of certainties.
+      * Help the user arrive at conclusions rather than delivering conclusions.
+
+      Response Structure:
+      1. Warm acknowledgment.
+      2. Reflection of what was heard.
+      3. Gentle exploration or observation.
+      4. One thoughtful question at the end.
+
+      Additional Rules:
+      * Never rush toward solutions.
+      * Never use therapy jargon.
+      * Never diagnose anyone.
+      * Never tell the user what they "need" to do.
+      * Never create numbered plans unless explicitly asked.
+      * Prioritize reflection over advice.
+      * Prioritize curiosity over certainty.
+      * Prioritize understanding over fixing.
+      * Maintain a warm, coffee-shop conversation feeling throughout the interaction.
+
+      The user should leave conversations feeling understood, thoughtful, and gently guided toward their own insights rather than instructed what to think.
+
+  # [Step 2 of 2] Initial User Context Injection
+  # Uses an Espanso form to prompt you for your current situation before sending.
+  - trigger: ":robin-2of2"
+    form: |
+      Here is what is on my mind today:
+      [[situation]]
+
+      Here is what I am hoping to get out of our conversation:
+      [[goal]]
+    form_fields:
+      situation:
+        type: multiline
+      goal:
+        type: text
+        default: "I just need to process my thoughts and gain some clarity."
+
+  # Step 1 of 3: The Process Breakdown
+  # Use this to quickly recall the business model constraints and steps.
+  - trigger: ":agency_step1_of_3"
+    replace: |
+      Agency Process:
+      1. Source leads with existing websites (Apollo, Maps).
+      2. Analyze sites for flaws (SEO, speed, layout, branding).
+      3. Send personalized outreach offering a "free redesign draft".
+      4. Before the meeting, generate a quick AI draft to show value.
+      5. Pitch the draft and close the deal.
+
+  # Step 2 of 3: The Outreach Pitch (Interactive Form)
+  # Actionable email template derived from the strategy.
+  - trigger: ":agency_step2_of_3"
+    form: |
+      Hi [[client_name]],
+
+      I was looking at your website and noticed a few areas affecting your design quality, SEO, and mobile responsiveness.
+
+      I'd love to show you what a modernized version of your site could look like. I can send over a free redesign draft—no strings attached.
+
+      Let me know if you're open to seeing it!
+    form_fields:
+      client_name:
+        type: text
+        default: "there"
+
+  # Step 3 of 3: The Tech Stack & Pricing
+  # Quick reference guide for the tools and pricing model.
+  - trigger: ":agency_step3_of_3"
+    replace: |
+      Stack & Pricing Model:
+      - Sourcing: Apollo
+      - Analysis & Outreach: Swokei
+      - Building: Claude Code
+      - Hosting: Cloudflare
+      - Pricing: $500 - $5,000 one-time setup, $50 - $150/month hosting.
+
+  # ==========================================
+  # ChatGPT Prompt Templates (5-Part Toolkit)
+  # ==========================================
+
+  # Template 1 of 5: The Summarizer
+  # Use this to distill long texts quickly without missing key context.
+  - trigger: ":gpt-1of5-summarize"
+    form: |
+      Summarize the following [[content_type]] for someone who has about [[timeframe]].
+
+      Give me, in this exact order:
+      - TL;DR in one sentence.
+      - The 3-5 key points as bullets, most important first.
+      - Any decisions or action items, only if there are any.
+      - The one thing most people skimming this would miss.
+
+      Do not pad it. If something is not important, leave it out entirely.
+
+      CONTENT:
+      [[content]]
+    form_fields:
+      content_type:
+        type: choice
+        values:
+          - article
+          - transcript
+          - long thread
+          - document
+      timeframe:
+        type: text
+        default: "30 seconds"
+      content:
+        type: multiline
+
+  # Template 2 of 5: The Brainstormer
+  # Use this to generate out-of-the-box ideas based on specific constraints.
+  - trigger: ":gpt-2of5-brainstorm"
+    form: |
+      Give me [[number]] ideas for [[goal]].
+
+      Constraints that rule ideas in or out: [[constraints]].
+
+      Rules:
+      - Mix safe and obvious ideas with at least 3 genuinely unconventional ones.
+      - One line each, no explanation yet.
+
+      After the list, pick the 3 you think are strongest and give me one sentence on why each could work.
+    form_fields:
+      number:
+        type: text
+        default: "15"
+      goal:
+        type: text
+      constraints:
+        type: text
+        default: "budget / time / tools / audience"
+
+  # Template 3 of 5: The Planner
+  # Use this to break down vague goals into actionable milestones.
+  - trigger: ":gpt-3of5-plan"
+    form: |
+      I want to [[goal]] by [[deadline]].
+
+      Where I am now: [[starting_point]].
+      My constraints: [[constraints]].
+
+      Build me a realistic step-by-step plan:
+      - Break it into clear milestones with rough timing.
+      - For each milestone, give me the first concrete action to take.
+      - Flag the single step most likely to stall me, and how to get past it.
+
+      Make it fit my actual constraints, not an idealized version with unlimited time.
+    form_fields:
+      goal:
+        type: text
+      deadline:
+        type: text
+      starting_point:
+        type: text
+      constraints:
+        type: text
+        default: "time per week / budget / current skill level"
+
+  # Template 4 of 5: The Organizer
+  # Use this to structure messy notes. Includes anti-hallucination guardrails.
+  - trigger: ":gpt-4of5-organize"
+    form: |
+      Turn these messy notes into a clean, structured [[output_type]].
+
+      Organize into:
+      - Summary (2-3 sentences)
+      - Key decisions
+      - Action items (include owner and deadline if mentioned)
+      - Open questions
+
+      Rules:
+      - Do not invent anything that is not in my notes. If it's not there, say so, don't guess.
+      - If an owner or date is missing, write "unassigned".
+      - Show me where each claim comes from in the notes.
+
+      NOTES:
+      [[notes]]
+    form_fields:
+      output_type:
+        type: choice
+        values:
+          - meeting summary
+          - project brief
+          - brain dump
+      notes:
+        type: multiline
+
+  # Template 5 of 5: The Pre-Mortem
+  # Use this to pressure-test decisions before making them.
+  - trigger: ":gpt-5of5-premortem"
+    form: |
+      Here is a [[type]]: [[description]].
+
+      Run a pre-mortem. Assume it is now [[timeframe]] later and this failed badly.
+
+      1. Tell the story of how it most likely failed.
+      2. List the top 3 causes, ranked by likelihood times damage.
+      3. For each cause, give me one concrete thing I can do right now to prevent it.
+
+      Be specific to my situation. No generic "communicate clearly" advice.
+    form_fields:
+      type:
+        type: choice
+        values:
+          - plan
+          - idea
+          - decision
+      description:
+        type: multiline
+      timeframe:
+        type: text
+        default: "6 months"
+
+  # Step 1 of 4: Interrogator
+  # Improvement: Uses a multiline form field so you paste your idea directly into a popup dialog.
+  - trigger: ":chain1-interrogator"
+    form: |
+      You are a senior editorial strategist. I am going to give you a rough idea. Your ONLY job in this step is to interrogate it - do not write or draft anything yet.
+
+      ROUGH IDEA: [[idea]]
+
+      Do the following:
+      1. Restate the idea in one sharp sentence so I know we are aligned.
+      2. Identify the 3 hidden assumptions baked into the idea that could be wrong.
+      3. Ask me the 5 questions whose answers would most change how this should be written. Order them by impact, most decision-changing first.
+      4. Flag the single biggest risk that this idea ends up generic.
+
+      Rules: No drafting. No outline. Be specific to MY idea, not generic advice. End by waiting for my answers.
+    form_fields:
+      idea:
+        type: multiline
+
+  # Step 2 of 4: Angle Builder
+  # Standard plain-text replacement using the block scalar '|' to preserve exact line breaks.
+  - trigger: ":chain2-angle"
+    replace: |
+      Using my idea and my answers above, generate 3 distinct angles for the piece. These must be genuinely different in approach, not three flavors of the same take.
+
+      For EACH angle, give me:
+      - Working title
+      - The hook (the first line that makes someone stop scrolling)
+      - Who it is for and what they currently believe
+      - The one insight that makes this angle feel fresh
+      - Why it could fail
+
+      Then recommend which angle is strongest and explain the tradeoff in 2 sentences.
+
+      Rules: No full draft yet. Angles only. Avoid any angle that could be written without having read my specific answers.
+
+  # Step 3 of 4: Drafter
+  # Improvement: Uses a form with default values and a dropdown choice to dynamically inject constraints.
+  - trigger: ":chain3-draft"
+    form: |
+      Write the full draft using Angle #[[angle]] from above.
+
+      CONSTRAINTS:
+      - Tone: [[tone]]
+      - Length: [[length]]
+      - Lead with the strongest point. No warmup intro, no "in today's world."
+      - Every claim either shows a concrete example or gets cut.
+      - One idea per paragraph.
+
+      STRUCTURE:
+      1. Hook (the line from the chosen angle)
+      2. The core argument
+      3. The proof or example
+      4. The objection a smart reader would raise, and your answer
+      5. A close that gives the reader one thing to do or believe
+
+      Write it in full now.
+    form_fields:
+      angle:
+        type: choice
+        values:
+          - "1"
+          - "2"
+          - "3"
+      tone:
+        type: text
+        default: "confident, plain-spoken, no hype"
+      length:
+        type: text
+        default: "600-800 words"
+
+  # Step 4 of 4: Adversarial Editor
+  - trigger: ":chain4-editor"
+    replace: |
+      Switch roles. You are now a skeptical editor who thinks this draft is overrated. Do NOT rewrite the whole thing.
+
+      1. Quote the 3 weakest lines verbatim and say exactly why each is weak (vague, cliche, unsupported, etc.).
+      2. Rewrite ONLY those 3 lines.
+      3. Identify one place the argument has a logical gap a critic would attack.
+      4. Give the piece a score out of 10 for "would a smart reader share this," and state the one change that would raise the score most.
+
+      Be blunt. Flattery is useless to me.
+
+  # Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1try783/comment/oossreu/
+
+  # Step 1 of 3: The Socratic Setup
+  # Use this to start a conversation. It flips the information flow so the LLM identifies your blind spots.
+  - trigger: ":gpt_step_1_of_3"
+    form: |
+      I want to [[goal]]. Before you write anything, ask me up to 5 questions that would most change the quality of your answer. Wait for my replies.
+    form_fields:
+      goal:
+        type: multiline
+
+  # Step 2 of 3: The Harsh Critique Loop
+  # Use this when asking for complex generation. It forces a self-correction cycle in a single turn.
+  - trigger: ":gpt_step_2_of_3"
+    form: |
+      Write a first version of the following task. Then critique it as a harsh expert would. Then write a final version addressing the critique.
+
+      Task:
+      [[task]]
+    form_fields:
+      task:
+        type: multiline
+
+  # Step 3 of 3: The Code Debugger
+  # Use this when providing broken code or logic. It cuts off the LLM's tendency to guess lazily.
+  - trigger: ":gpt_step_3_of_3"
+    replace: "Review the current state. Don't hypothesis hop, just fix it."
+
+  # ADVANCED: Interactive form for modular rule selection
+  - trigger: ":gpt-custom"
+    form: |
+      For the rest of this conversation, follow this process for every request I give you:
+      [[clarify]]
+      [[restate]]
+      [[specific]]
+      [[unsure]]
+      [[followup]]
+      Acknowledge that you understand, then wait for my first request.
+    form_fields:
+      clarify:
+        type: choice
+        values:
+          - "\n1. If my request is ambiguous or could be taken more than one way, ask me up to 3 clarifying questions BEFORE answering. Do not answer until I reply."
+          - ""
+      restate:
+        type: choice
+        values:
+          - "\n2. If it is already clear, restate what I am asking in one line, then answer."
+          - ""
+      specific:
+        type: choice
+        values:
+          - "\n3. In every answer, prefer specific and concrete over general. Cut hedging, filler, and throat-clearing intros."
+          - ""
+      unsure:
+        type: choice
+        values:
+          - "\n4. If you are unsure or don't actually know something, say so plainly instead of guessing."
+          - ""
+      followup:
+        type: choice
+        values:
+          - "\n5. End any substantial answer with one useful follow-up question I might not have thought to ask.\n"
+          - "\n"
+
+  # ===========================================================================
+  # RECOMMENDED: Direct Full-Text Modifiers (Stateless & Instant)
+  # No initialization required. Use these at the end of any prompt.
+  # ===========================================================================
+  - trigger: ":gpt-human"
+    replace: "Rewrite so it sounds like a real person wrote it, no AI tells, no filler."
+
+  - trigger: ":gpt-el10"
+    replace: "Explain it like I'm ten, using plain words and a simple analogy."
+
+  - trigger: ":gpt-deeper"
+    replace: "Think it through step by step before answering, don't give me your first instinct."
+
+  - trigger: ":gpt-noyes"
+    replace: "Stop agreeing by default, tell me where I'm wrong and what the strongest counterargument is."
+
+  - trigger: ":gpt-give3"
+    replace: "Give me three genuinely different versions, not three rewordings of the same one."
+
+  - trigger: ":gpt-table"
+    replace: "Take whatever messy information is here and lay it out as a clean comparison table."
+
+  - trigger: ":gpt-tighten"
+    replace: "Rewrite your own last answer sharper and shorter without losing anything that mattered."
+
+  - trigger: ":gpt-flood"
+    replace: "Don't give me one safe idea, give me twenty, including the weird ones."
+
+  - trigger: ":gpt-steps"
+    replace: "Turn this into a numbered checklist I can actually follow starting now."
+
+  - trigger: ":gpt-redpen"
+    replace: "Catch every grammar, clarity, and awkward-phrasing issue and fix them in one pass."
+
+  # ===========================================================================
+  # AS REQUESTED: Legacy Multi-Step Approach
+  # Step 1 initializes the context. Step 2 uses a form to apply the code.
+  # ===========================================================================
+
+  # Step 1: The Initialization Block
+  - trigger: ":gpt-1of2-init"
+    replace: |
+      Most people retype the same long instructions every time. Set these up once and you trigger each one with a single word.
+
+      /HUMAN = rewrite so it sounds like a real person wrote it, no AI tells, no filler
+      /EL10 = explain it like I'm ten, using plain words and a simple analogy
+      /DEEPER = think it through step by step before answering, don't give me your first instinct
+      /NOYES = stop agreeing by default, tell me where I'm wrong and what the strongest counterargument is
+      /GIVE3 = give me three genuinely different versions, not three rewordings of the same one
+      /TABLE = take whatever messy information is here and lay it out as a clean comparison table
+      /TIGHTEN = rewrite your own last answer sharper and shorter without losing anything that mattered
+      /FLOOD = don't give me one safe idea, give me twenty, including the weird ones
+      /STEPS = turn this into a numbered checklist I can actually follow starting now
+      /REDPEN = catch every grammar, clarity, and awkward-phrasing issue and fix them in one pass
+
+      Confirm you've got them, then wait for my first message.
+
+  # Step 2: The Code Selector Form
+  - trigger: ":gpt-2of2-apply"
+    form: "[[code]]"
+    form_fields:
+      code:
+        type: choice
+        values:
+          - "/HUMAN"
+          - "/EL10"
+          - "/DEEPER"
+          - "/NOYES"
+          - "/GIVE3"
+          - "/TABLE"
+          - "/TIGHTEN"
+          - "/FLOOD"
+          - "/STEPS"
+          - "/REDPEN"

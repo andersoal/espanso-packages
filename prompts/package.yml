@@ -520,6 +520,7 @@ matches:
   # The Feynman Technique
   # Use this when a concept feels too academic, abstract, or overwhelming. It forces the AI to strip away the jargon.
   - trigger: ":learn-feynman-technique"
+    word: true
     form: "Teach me [[insert_topic]] in simple language, as if you are explaining it to a beginner. Break it into clear, easy-to-grasp steps and provide simple examples. Afterward, ask me to explain it back to you in my own words. Evaluate my response to identify any gaps, misconceptions, or missing pieces in my understanding."
     form_fields:
       insert_topic:
@@ -1274,6 +1275,7 @@ matches:
         multiline: true
 
   - trigger: ":deep-youtube-summary"
+    word: true
     form: |
       You are an elite knowledge engineer and expert video analyst. Your primary goal is to fetch, analyze, and transform YouTube video content into a high-retention, scannable learning framework.
 
@@ -2332,6 +2334,7 @@ matches:
         multiline: true
 
   - trigger: ":mastery"
+    word: true
     form: |
       Create a mastery roadmap for becoming world-class in [[skill]]. Include rare techniques, secret resources, and unconventional approaches that top 1% performers use but rarely share.
 
@@ -2359,6 +2362,7 @@ matches:
         multiline: true
 
   - trigger: ":genius"
+    word: true
     form: |
       Reverse-engineer the exact thinking process of [[figure]] and teach me how to replicate their way of solving problems. Give me practical mental exercises to wire my brain like theirs.
 
@@ -2387,6 +2391,7 @@ matches:
         multiline: true
 
   - trigger: ":pm"
+    word: true
     replace: |
       PREMORTEM THIS.
       Assume this plan has completely failed and collapsed. Do not validate or compliment the idea. Give me:
@@ -2669,7 +2674,7 @@ matches:
       frustrations:
         type: multiline
 
-  - trigger: ":genius"
+  - trigger: ":genius-zone"
     replace: |
       # Zone of Genius Monetization Framework
 
@@ -4684,7 +4689,7 @@ matches:
           - "Valid JSON schema"
 
   # Ask "What's missing here?"
-  - trigger: ":p-missing"
+  - trigger: ":p-gaps"
     replace: "Analyze your previous response. What crucial details, edge cases, or silent assumptions are missing here? List them explicitly and rewrite the response to include them."
 
   # Self-Critique Power Move
@@ -5248,6 +5253,7 @@ matches:
   # ===========================================================================
   # 1. Direct Context Chain (Literal Extraction)
   - trigger: ":chain4"
+    word: true
     replace: |
       Take the gaps we identified. For each gap, help me research deeper:
 
@@ -5347,6 +5353,7 @@ matches:
 
   # --- Chain 6: The Full Quality Checker (Refined) ---
   - trigger: "|quality"
+    word: true
     replace: |
       "Review everything we've discussed in this conversation. Now quality-check our work:
 
@@ -5679,7 +5686,7 @@ matches:
         type: multiline
 
   # 8. The Negotiator in the Shadows
-  - trigger: ":p_negotiate"
+  - trigger: ":p_difficult"
     form: |
       I'm going to have this difficult conversation: [[situation]]
       The person is: [[profile]]
@@ -5811,7 +5818,7 @@ matches:
         type: multiline
 
   # 3. T-A-G Framework
-  - trigger: ":tag"
+  - trigger: ":p-tag"
     form: |
       Execute the following:
       - **Task**: [[task]]
@@ -6279,6 +6286,7 @@ matches:
 
   # 6. STAR Framework
   - trigger: ":star"
+    word: true
     form: |
       # [STAR Framework Summary]
       ### SITUATION
@@ -6375,6 +6383,7 @@ matches:
     replace: "Hey {{person}}, hope you're doing well!"
 
   - trigger: ":prompt"
+    word: true
     form: |
       Act as a [[role]].
       Create a [[task]] focusing on: [[context]].
@@ -6630,7 +6639,7 @@ matches:
         type: multiline
 
   # 5. Smarter Scheduling
-  - trigger: ":p-schedule"
+  - trigger: ":p-calendar"
     form: |
       Here's my calendar for the week:
 
@@ -7530,6 +7539,7 @@ matches:
   # 3. Goldman Sachs Email Drafting Machine
   # ----------------------------------------------------------------------------
   - trigger: ":gs"
+    word: true
     form: |
       "You are a VP at Goldman Sachs who writes emails that get read, get responses, and get results — because in a 200-email-per-day inbox, the wrong tone or length means your email gets ignored.
 
@@ -7760,7 +7770,7 @@ matches:
   # Template 1 of 3: The Decision Pressure Test
   # Purpose: Stress-test a business or architectural choice.
   - name: "prompt-template-1-of-3"
-    trigger: ":p-decision"
+    trigger: ":p-premortem-decision"
     form: |
       You are a strategic advisor who specializes in pre-mortem analysis and decision stress-testing.
 

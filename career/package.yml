@@ -148,6 +148,7 @@ matches:
   # 3/ Role fit finder (Source: 99e372a2821b214f35a8b00a4fcae92c.png)
   # Fixes typo "likelihousd" -> "likelihood"
   - trigger: ":pfit"
+    word: true
     form: |
       Based on my experience and skills:
       [[skills]]
@@ -200,83 +201,6 @@ matches:
     form_fields:
       background:
         type: multiline
-
-  # 1/ Headless Resume Fixer (Bypasses forms completely)
-  - trigger: ":pfix"
-    replace: |
-      Here is my resume:
-      {{resume}}
-
-      Rewrite it to maximize interview callbacks. Use strong action verbs, quantified results, and ATS-friendly formatting, without exaggeration.
-    vars:
-      - name: resume
-        type: echo
-        params:
-          echo: |
-            YOUR_NAME_HERE
-            MuleSoft Developer Analyst / Tech Lead
-            [Paste your full master resume text here once]
-
-  # 2/ Headless Job Description Matcher (The High-Velocity Power Move)
-  - trigger: ":pmatch"
-    replace: |
-      Job description:
-      {{jd}}
-
-      Resume:
-      {{resume}}
-
-      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
-    vars:
-      - name: jd
-        type: clipboard
-      - name: resume
-        type: echo
-        params:
-          echo: |
-            YOUR_NAME_HERE
-            MuleSoft Developer Analyst / Tech Lead
-            [Paste your full master resume text here once]
-
-  # 3/ Headless Cover Letter Personalizer
-  - trigger: ":pcover"
-    replace: |
-      Write a short, tailored cover letter for this role:
-      {{jd}}
-
-      Make it sound human, confident, and specific, not generic or ai-written.
-    vars:
-      - name: jd
-        type: clipboard
-
-  # Headless Job Description Matcher (Externalized File Source)
-  - trigger: ":pmatch"
-    replace: |
-      Job description:
-      {{jd}}
-
-      Resume:
-      {{resume}}
-
-      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
-    vars:
-      - name: jd
-        type: clipboard
-      - name: resume
-        type: shell
-        params:
-          cmd: "cat '/path/to/your/vault/Master_Resume.md'"
-
-  # Headless Cover Letter Personalizer
-  - trigger: ":pcover"
-    replace: |
-      Write a short, tailored cover letter for this role:
-      {{jd}}
-
-      Make it sound human, confident, and specific, not generic or ai-written.
-    vars:
-      - name: jd
-        type: clipboard
 
   # 1. DREAM-ROLE PRECISION TARGETING
   - trigger: ":p-dream"

@@ -160,6 +160,7 @@ matches:
   # 4. Detector de Falsos Especialistas (Image 4)
   # Improvement: Interactive form replaces [HABILIDADE] dynamically
   - trigger: ":expert"
+    word: true
     form: |
       Eu acho que domino [[habilidade]]. Prove que estou errado. Faça [[quantidade_de_perguntas]] perguntas simples que revelem lacunas de conhecimento.
 

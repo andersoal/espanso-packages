@@ -2,6 +2,7 @@
 
 matches:
   - trigger: ":fixlight"
+    word: true
     replace: |
       Precise correction of deficient lighting while preserving the face and original scene essence.
       Correct harsh shadows on the eyes, nose, and chin caused by mobile phone flash.
@@ -175,6 +176,7 @@ matches:
 
   # Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.
   - trigger: ":pstudio"
+    word: true
     form: |
       [[subject]], premium product photography, luxury advertising, elegant lighting with [[background_tone]], subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.
     form_fields:
@@ -202,7 +204,8 @@ matches:
           - "dramatic studio lighting"
           - "high-end commercial lighting"
 
-  - trigger: ":pstudio\\((?P<subject>.*)\\)"
+  # Inline variant of :pstudio, e.g. ":ps(A sleek glass perfume bottle)"
+  - regex: ":ps\\((?P<subject>.*)\\)"
     replace: "{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality."
 
   - trigger: ":rawstudio"
@@ -210,6 +213,7 @@ matches:
 
   # Keep the image as is and only remove the logos and text overlays on the image. Keep the image clean and preserve the original content. STRICT RULE: Do not change the face, hair, expression, posture, composition, or background.
   - trigger: ":imgclean"
+    word: true
     form: |
       Keep the image background and core composition exactly as is. Remove only the following elements: [[elements]].
 
@@ -226,7 +230,8 @@ matches:
           - "landscape elements, architectural structures, or perspective"
           - "original subject matter and core details"
 
-  - trigger: ":imgclean\\((?P<elements>.*)\\)"
+  # Inline variant of :imgclean, e.g. ":ic(logos and text overlays)"
+  - regex: ":ic\\((?P<elements>.*)\\)"
     replace: "Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT RULE: Do not modify, hallucinate, or alter the original subject matter and core details. Preserve the original pixels, lighting, color palette, and quality completely."
 
   - trigger: ":retouch"
@@ -689,6 +694,7 @@ matches:
 
   # 5/ SCALE YOUR ONE PERSON BUSINESS
   - trigger: ":prompt-scale"
+    word: true
     replace: |
       <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalable assets that generate revenue without proportional time input.</role>
 

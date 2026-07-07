@@ -119,7 +119,10 @@ matches:
         type: text
 
   # 1/ Resume conversion fixer (Source: 9830ab2e57a69ab0a960caa74f759c50.png)
+  # Shares its trigger with a headless variant below: espanso shows a picker
+  # (using the labels) so you choose Form vs Headless on each expansion.
   - trigger: ":pfix"
+    label: "Form: paste resume"
     form: |
       Here is my resume:
       [[resume]]
@@ -129,8 +132,25 @@ matches:
       resume:
         type: multiline
 
+  # 1b/ Headless Resume Fixer: no typing, reads your master resume from a file
+  # kept outside the package (~/.config/espanso/master_resume.md), so package
+  # updates never overwrite it. Create the file once and :pfix is instant.
+  - trigger: ":pfix"
+    label: "Headless: resume from master file"
+    replace: |
+      Here is my resume:
+      {{resume}}
+
+      Rewrite it to maximize interview callbacks. Use strong action verbs, quantified results, and ATS-friendly formatting, without exaggeration.
+    vars:
+      - name: resume
+        type: shell
+        params:
+          cmd: 'cat "$HOME/.config/espanso/master_resume.md" 2>/dev/null || echo "[master resume not found - create $HOME/.config/espanso/master_resume.md]"'
+
   # 2/ Job description matcher (Source: cb7e21ffdc1228c461ad98ab6fc75f71.png)
   - trigger: ":pmatch"
+    label: "Form: paste JD + resume"
     form: |
       Job description:
       [[jd]]
@@ -145,9 +165,31 @@ matches:
       resume:
         type: multiline
 
+  # 2b/ Headless Job Description Matcher (the high-velocity power move):
+  # copy the job description, type :pmatch, pick this variant - the JD comes
+  # from the clipboard and the resume from the master file. Zero typing.
+  - trigger: ":pmatch"
+    label: "Headless: JD from clipboard + master file"
+    replace: |
+      Job description:
+      {{jd}}
+
+      Resume:
+      {{resume}}
+
+      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
+    vars:
+      - name: jd
+        type: clipboard
+      - name: resume
+        type: shell
+        params:
+          cmd: 'cat "$HOME/.config/espanso/master_resume.md" 2>/dev/null || echo "[master resume not found - create $HOME/.config/espanso/master_resume.md]"'
+
   # 3/ Role fit finder (Source: 99e372a2821b214f35a8b00a4fcae92c.png)
   # Fixes typo "likelihousd" -> "likelihood"
   - trigger: ":pfit"
+    word: true
     form: |
       Based on my experience and skills:
       [[skills]]
@@ -170,6 +212,7 @@ matches:
 
   # 5/ Cover letter personalizer (Source: 1a419d10f2515d8eee12bfd39e304d78.png)
   - trigger: ":pcover"
+    label: "Form: paste job description"
     form: |
       Write a short, tailored cover letter for this role:
       [[jd]]
@@ -178,6 +221,19 @@ matches:
     form_fields:
       jd:
         type: multiline
+
+  # 5b/ Headless Cover Letter Personalizer: copy the job description, type
+  # :pcover, pick this variant - the JD comes straight from the clipboard.
+  - trigger: ":pcover"
+    label: "Headless: JD from clipboard"
+    replace: |
+      Write a short, tailored cover letter for this role:
+      {{jd}}
+
+      Make it sound human, confident, and specific, not generic or AI-written.
+    vars:
+      - name: jd
+        type: clipboard
 
   # 6/ Recruiter hook message (Source: abab44c303473b95f4211158e26dbcd4.png)
   - trigger: ":phook"
@@ -200,83 +256,6 @@ matches:
     form_fields:
       background:
         type: multiline
-
-  # 1/ Headless Resume Fixer (Bypasses forms completely)
-  - trigger: ":pfix"
-    replace: |
-      Here is my resume:
-      {{resume}}
-
-      Rewrite it to maximize interview callbacks. Use strong action verbs, quantified results, and ATS-friendly formatting, without exaggeration.
-    vars:
-      - name: resume
-        type: echo
-        params:
-          echo: |
-            YOUR_NAME_HERE
-            MuleSoft Developer Analyst / Tech Lead
-            [Paste your full master resume text here once]
-
-  # 2/ Headless Job Description Matcher (The High-Velocity Power Move)
-  - trigger: ":pmatch"
-    replace: |
-      Job description:
-      {{jd}}
-
-      Resume:
-      {{resume}}
-
-      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
-    vars:
-      - name: jd
-        type: clipboard
-      - name: resume
-        type: echo
-        params:
-          echo: |
-            YOUR_NAME_HERE
-            MuleSoft Developer Analyst / Tech Lead
-            [Paste your full master resume text here once]
-
-  # 3/ Headless Cover Letter Personalizer
-  - trigger: ":pcover"
-    replace: |
-      Write a short, tailored cover letter for this role:
-      {{jd}}
-
-      Make it sound human, confident, and specific, not generic or ai-written.
-    vars:
-      - name: jd
-        type: clipboard
-
-  # Headless Job Description Matcher (Externalized File Source)
-  - trigger: ":pmatch"
-    replace: |
-      Job description:
-      {{jd}}
-
-      Resume:
-      {{resume}}
-
-      Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
-    vars:
-      - name: jd
-        type: clipboard
-      - name: resume
-        type: shell
-        params:
-          cmd: "cat '/path/to/your/vault/Master_Resume.md'"
-
-  # Headless Cover Letter Personalizer
-  - trigger: ":pcover"
-    replace: |
-      Write a short, tailored cover letter for this role:
-      {{jd}}
-
-      Make it sound human, confident, and specific, not generic or ai-written.
-    vars:
-      - name: jd
-        type: clipboard
 
   # 1. DREAM-ROLE PRECISION TARGETING
   - trigger: ":p-dream"
@@ -351,3 +330,59 @@ matches:
   # 6/ The Executive Resume Refinement System
   - trigger: ":res-executive"
     replace: "Conduct a deep final-pass evaluation of my resume from the perspective of a recruiter reviewing top-tier candidates. Identify anything that weakens clarity, professionalism, credibility, or overall impact. This includes inconsistent writing style, repetitive sentence structure, vague descriptions, weak transitions, low-value wording, and overused corporate phrases that fail to differentiate me. Refine the language throughout the resume so every section sounds precise, intentional, and high-value. Replace generic statements with sharper positioning, stronger achievement-driven phrasing, and wording that reflects expertise, confidence, and real-world contribution. The final resume should feel polished, modern, and competitive at a professional level."
+
+  # Career clarity & purpose finder
+  # Source: 7a46afec47b1dfdc7f38866e7e19b845.png
+  - trigger: ":pcareer"
+    form: |
+      I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
+
+  # Should I stay or should I go?
+  - trigger: ":p-decision"
+    replace: |
+      “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, e.g. should I change jobs or stay?]. Ask 7 yes/no questions that filter step by step based on my priorities as you know them from our conversations. Make the outcomes super concrete, with clear actions (like ‘request this meeting,’ ‘update your CV,’ ‘plan a trial day’), not vague suggestions. Format it so I can screenshot it and reuse it anytime.”
+
+  # What is my personal recipe for success?
+  - trigger: ":p-success"
+    replace: |
+      “Based on my talents and character, what’s the way I can be most successful and happy in my career and life?”
+
+  # The Profile-As-Landing-Page Rewriter
+  - trigger: ":profile-as-lp"
+    form: |
+
+      Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the highest-converting landing page you will ever own. Job-seekers optimize for keywords. Operators optimize for one specific reader who, if they understood what you do in 12 seconds, would either book a call, subscribe, or remember you for later.
+
+      Rebuild my profile as a landing page:
+
+      Rewrite my headline so it answers three questions in under 220 characters: who I help, what I help them do, and how they know I'm credible
+
+      Rewrite my About section as a one-screen pitch - first sentence earns the read, middle three sentences prove the claim, final sentence tells them exactly what to do next
+
+      Audit my Featured section and replace anything that doesn't generate leads, subscribers, or recognition with assets that do
+
+      Rewrite each Experience entry as a contribution statement what I shipped, who it served, what changed - never a job description
+
+      Stress-test the rebuilt profile against the question "would my ideal client know what to do within 12 seconds of landing here"
+
+      Inputs: My current headline, About section, and top three Experience entries. The single person I want to convert (specific, not a demographic). My one offer or asset I want them to engage with.
+
+      Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
+
+      Rewritten Experience Entries → 12-Second Conversion Verdict
+
+  # AI Interview Simulation & Performance Coach
+  - trigger: ":ai-interview"
+    form: |
+      Roleplay as a [[job_title]] at [[company]].
+
+      Using my CV and the job description:
+      - Conduct a behavioral interview
+      - Ask one challenging question at a time
+      - After each answer, provide: Critique (strengths) & Refinement (how to improve impact)
+      - Gradually increase difficulty level
+    form_fields:
+      job_title:
+        type: text
+      company:
+        type: text

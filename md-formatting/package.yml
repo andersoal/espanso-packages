@@ -28,23 +28,3 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
-
-  # Auto close brackets, quotes and formatting modifiers, and put cursor in center
-  - trigger: ":(("
-    replace: "($|$)"
-  - trigger: ":[["
-    replace: "[$|$]"
-  - trigger: ":{{"
-    replace: "{$|$}"
-  - trigger: ":<<"
-    replace: "<$|$>"
-  - trigger: ":``"
-    replace: "`$|$`"
-  - trigger: ":''"
-    replace: "'$|$'"
-  - trigger: ':""'
-    replace: '"$|$"'
-  - trigger: ":__"
-    replace: "_$|$_"
-  - trigger: ":**"
-    replace: "*$|$*"

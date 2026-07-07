@@ -160,6 +160,7 @@ matches:
   # 4. Detector de Falsos Especialistas (Image 4)
   # Improvement: Interactive form replaces [HABILIDADE] dynamically
   - trigger: ":expert"
+    word: true
     form: |
       Eu acho que domino [[habilidade]]. Prove que estou errado. Faça [[quantidade_de_perguntas]] perguntas simples que revelem lacunas de conhecimento.
 
@@ -187,4 +188,18 @@ matches:
   #    2. Tracking: Go to Settings > Personalization > Turn off "Reference Chat History".
   #    3. Training: Go to Data Controls > Turn off "Improve the model for everyone".
 
-  
+  # The Negotiator in the Shadows
+  - trigger: ":p_difficult"
+    form: |
+      I'm going to have this difficult conversation: [[situation]]
+      The person is: [[profile]]
+      My goal is: [[outcome]]
+
+      Give me three ways to approach this: a direct approach, a diplomatic approach, and a data-driven approach. For each, tell me the risk and the expected reaction.
+    form_fields:
+      situation:
+        type: text
+      profile:
+        type: text
+      outcome:
+        type: text

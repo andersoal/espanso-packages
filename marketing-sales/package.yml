@@ -521,3 +521,33 @@ matches:
     form_fields:
       overview:
         type: multiline
+
+  # Zone of Genius monetization framework
+  - trigger: ":genius-zone"
+    replace: |
+      # Zone of Genius Monetization Framework
+
+      ## 1. The Niche Foundation
+      > Combine these vectors to pinpoint the unique identity of the market segment you serve.
+      - **Skills** (What comes naturally? What are you already strong at?):
+      - **Struggles** (What unique past challenges have you navigated?):
+      - **Hobbies** (What do you naturally love to research, learn, and break down?):
+      - **Vocation** (What is your current or desired professional technical path?):
+      - **Passions** (What do you completely geek out on without external incentives?):
+
+      ## 2. The Desired Transformation (A → Z)
+      > Map the macro-journey and isolate the immediate momentum-builder.
+      - **Point A (Current State):**
+      - **Point Z (Ultimate Destination):**
+      - **The Quick Win (A → B):**
+
+      ## 3. Market & Positioning Mechanics
+      > Leverage these core psychological drivers to formulate clear messaging.
+      - **Core Desires (The underlying dream outcome):**
+      - **Frustrations (Current roadblocks, lost time, or resource leaks):**
+      - **Limiting Beliefs (The standard objections and mindset barriers holding them back):**
+
+      ## 4. The Value Engine
+      > Convert raw action steps into a scalable, productized asset.
+      - **Action Steps (The efficient path to execution):**
+      - **Productized System (The engine that guides, supports, and delivers results cleanly):**

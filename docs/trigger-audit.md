@@ -12,6 +12,33 @@ python3 scripts/check_triggers.py
 
 The script exits non-zero on any exact duplicate (unless every copy has a distinct `label`, which espanso disambiguates with a popup) or any prefix-shadowed trigger.
 
+## Where the duplicates came from (git archaeology)
+
+The repo grew by **batch-importing prompt collections** (many converted from screenshots — see the `Source: <hash>.png` comments) into whichever package was being worked on at the time, with no duplicate check. The concrete origins:
+
+| Duplicate class | Introduced by | What happened |
+|---|---|---|
+| utils ⇄ md-formatting md helpers + punctuation wrappers | `8b5f1c0` (initial packages commit) | Both packages were initialized carrying the same markdown/wrap helpers from day one |
+| social-strategy `:p-*` business series | `6ccbf6d` created them in social-strategy; **`9754147`** (2026-06-27, "add new trigger to espanso") re-imported refined rewrites of the same prompts into **prompts** | `9754147` appended **123 triggers** to prompts in one batch — the single biggest source of cross-package conflicts (`:p-market`, `:p-viral`, `:p_negotiate`, `:p-missing`, `:tag`, …) |
+| career headless `:pfix`/`:pmatch`/`:pcover` variants | `5184577` ("modularize espanso configuration") | The modularization reshuffle imported experimental "headless" variants alongside the form versions already added by `6ccbf6d` |
+| Second `:genius`, `[cite: 1]` markers | `5184577` | Content pasted from an AI chat export carried Gemini-style `[cite: 1]` citation markers (37 occurrences in productivity + prompts) and re-used an existing trigger name |
+
+The `scripts/check_triggers.py` guard now catches all of this at import time — run it after adding any batch of prompts.
+
+## Reorganization: topical prompts moved out of `prompts`
+
+Principle applied: **the generic `prompts` package keeps only general-purpose prompt-engineering templates; anything clearly topical lives in its topical package** — and where a duplicate existed, the better-written survivor is the version that moves.
+
+| Trigger(s) | Moved to | Why |
+|---|---|---|
+| `:p-market` `:p-problem` `:p-offer` `:p-distro` `:p-viral` `:p-competitor` `:p-scale` | **social-strategy** | The 7-part business-building series originated there (`6ccbf6d`); the refined rewrites return home. Also fixed the misplaced section comments that had drifted inside the previous match's `form_fields` |
+| `:pcareer` `:p-decision` `:p-success` `:profile-as-lp` `:ai-interview` | **career** | Career clarity, career decision tree, career/life success, LinkedIn profile rewriter, job-interview simulator — all explicitly career content |
+| `:genius-zone` | **marketing-sales** | Niche/monetization framework; fits the `:pniche`/`:poffer` cluster (also stripped `[cite: 1]` markers and an unused `current_date` var) |
+| `:p_difficult` | **relationship** | Interpersonal difficult-conversation coach |
+| `:p-calendar` | **productivity** | Weekly calendar / time-management prompt |
+
+Content fixes in the same pass: removed all 37 leaked `[cite: 1]` citation markers (productivity, prompts) and the leaked AI-refusal sentence inside social-strategy's `:yt-ideas` prompt.
+
 ## Renamed triggers (update your muscle memory)
 
 | Old trigger | New trigger | Package | Why |
@@ -51,11 +78,10 @@ Without `word: true`, espanso expands a trigger the instant its last character i
 
 - `:lorem` ×2 in utils — both copies carry distinct `label`s ("Paragraph" / "Sentence"), so espanso shows a disambiguation popup. This is a supported pattern; the audit script allows it.
 
-## Other observations (not trigger-related, not fixed here)
+## Other observations
 
-- social-strategy's `:yt-ideas(...)` regex replacement contains leaked AI-refusal text mid-prompt: *"Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else."* — worth cleaning up.
 - Packages install independently; cross-package conflicts only bite when both packages are installed. This audit treats the repo as one installable set, which is the safest assumption.
 
 ## Version bumps
 
-career 0.2.0 · content-creation 0.2.0 · md-formatting 1.1.0 · prompts 1.3.0 · relationship 0.2.0 · social-strategy 1.1.0 · utils 0.2.0
+career 0.2.0 · content-creation 0.2.0 · marketing-sales 0.2.0 · md-formatting 1.1.0 · productivity 1.1.0 · prompts 1.3.0 · relationship 0.2.0 · social-strategy 1.1.0 · utils 0.2.0

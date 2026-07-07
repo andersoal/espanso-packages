@@ -148,6 +148,148 @@ matches:
         2. **Phase 2 (Core Pivot):** [Implementation of the proprietary engine to resolve root obstacles]
         3. **Phase 3 (Scale / Final Integration):** [Systemization to ensure long-term, repeatable outcomes]
 
+  # 1. THE MARKET BREAKDOWN SYSTEM (From e63c6cc796ba519a40d4611afe35d3dd.png)
+  - trigger: ":p-market"
+    form: |
+      Analyze the market for [[niche]]. Use only specific, data-backed insights. No generic statements.
+
+      Deliver exactly four structured sections:
+      1. Market sizing: TAM, SAM, and SOM with estimated dollar values and your assumptions
+      2. Top 5 demand trends: each as a one-line headline + two-sentence explanation
+      3. Top 5 underserved opportunities: specific gaps, not broad categories
+      4. Follow the money: 3-5 areas where VC, PE, or acquirer capital is actively flowing
+
+      Format each section with a bold heading, then concise bullet points. Total output: under 600 words.
+
+    form_fields:
+      niche:
+        multiline: true
+
+  # 2. THE PROBLEM PRIORITIZATION ENGINE (From 4b44bd95bfef1b5ecbc263cb477466fd.png)
+  - trigger: ":p-problem"
+    form: |
+      List the top 10 problems in [[industry]].
+
+      For each problem, score it on three dimensions:
+      - Urgency (1-10): how painful/time-sensitive it is right now
+      - Willingness to pay (1-10): how likely buyers are to spend money to solve it today
+      - Growth trajectory: 'rising fast', 'stable', or 'declining'
+
+      Also add a 'Complaint signal' column: yes/no for whether this problem surfaces frequently in reviews, forums, or sales calls.
+
+      Output as a table with these exact columns:
+      | # | Problem | Urgency | WTP | Trend | Complaint signal | Why it ranks here |
+
+      Sort by combined Urgency + WTP score, highest first.
+
+    form_fields:
+      industry:
+        multiline: true
+
+  # 3. THE OFFER CREATION FRAMEWORK (From b56e1f78bbca839cb6e5ed81b1b03575.png)
+  - trigger: ":p-offer"
+    form: |
+      Create a high-converting offer for: [[problem]].
+
+      Structure the output exactly like a landing page, with these labeled sections in order:
+      1. Headline: one bold, benefit-driven statement
+      2. ICP: who this is for (age, role, situation, pain level)
+      3. Value proposition: the core transformation in one sentence
+      4. Offer components: what's included (deliverables, bonuses, format)
+      5. Pricing tiers: name, price, and what changes at each tier (low / mid / premium)
+      6. Guarantee: specific risk-reversal language the customer sees
+      7. Competitive edge: 3 reasons this beats the obvious alternatives
+
+      Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
+
+    form_fields:
+      problem:
+        multiline: true
+
+  # 4. THE DISTRIBUTION DOMINATION PLAN (From 950405adf6dddb5414a79e8397ebd7cc.png)
+  - trigger: ":p-distro"
+    form: |
+      Act as a senior growth strategist.
+
+      Build a realistic 30-day distribution plan for: [[idea]], including the target audience, product type, and rough budget.
+
+      Deliverables:
+      1. Top 5 acquisition channels: ranked by cost-efficiency for this specific audience
+      2. Content format per channel: one specific format that works on each (short-form video, cold email sequence, SEO article)
+      3. Weekly execution calendar: what happens in weeks 1, 2, 3, and 4 (not day-by-day)
+      4. Organic vs paid split: recommended % allocation and rationale
+      5. Leverage plays: 2-3 tactics that multiply reach without proportionally more effort (partnerships, repurposing, virality hooks)
+
+      Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers.
+
+    form_fields:
+      idea:
+        multiline: true
+
+  # 5. VIRAL CONTENT ENGINE (From 956a055bea9f2362589cea5716bc05e7.png)
+  - trigger: ":p-viral"
+    form: |
+      Create a viral content strategy for: [[niche]].
+
+      Deliver four components:
+      1. Hook bank: 10 high-converting hooks (not 20, prioritize quality). For each, label which emotional trigger it uses: fear of missing out, social status, curiosity, or controversy.
+      2. Content format matrix: a table with these columns:
+      | Format | Platform | Ideal length | Why it spreads | Example title |
+      Include 6-8 formats across at least 3 platforms.
+      3. Shareability audit: for each format, answer "What makes someone forward/repost this?" in one sentence.
+      4. Repeatable content system: a simple weekly template showing how many posts, which formats, and what rotation keeps the audience engaged without burnout.
+
+      Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.
+
+    form_fields:
+      niche:
+        multiline: true
+
+  # 6. THE COMPETITOR WEAKNESS MAP (From acb5dfa8a75a56e8c12dadf073157a3b.png)
+  - trigger: ":p-competitor"
+    form: |
+      Analyze the top 5 competitors in [[niche]], be specific.
+
+      For each competitor, provide a structured row covering:
+      - Name + one-line description of their core offer
+      - What they do best (their defensible strength)
+      - Where they are weak (product gaps, poor reviews, underserved use cases)
+      - Which audience they ignore or underserve
+
+      Then, based on the patterns across all 5:
+      - Gap analysis: the 2-3 clearest white spaces no competitor is owning
+      - Positioning recommendation: one sharp positioning statement that would differentiate a new entrant
+      - Go-to-market angle: which ignored audience + which channel combination represents the fastest path to traction
+
+      Output the competitor breakdown as a table, then the gap analysis and recommendations as prose.
+
+    form_fields:
+      niche:
+        multiline: true
+
+  # 7. THE SCALE SYSTEM (From 40f8b444491d7ecdd0c56092076ab900.png)
+  - trigger: ":p-scale"
+    form: |
+      Give me a plan to scale this business to [[target_revenue]] within [[timeframe]].
+
+      Business description:
+      [[business_description]]
+
+      Structure the output as a phased execution roadmap with these four phases:
+      Phase 1 - Stabilize (Month 1-2): what to systematize and document before scaling
+      Phase 2 - Automate (Month 3-4): top 3 processes to automate, with specific tool recommendations
+      Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
+      Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier
+
+      Also include:
+      - Top 3 bottlenecks that will appear at each phase transition
+      - One leading metric to track per phase (not vanity metrics)
+
+      Output as a structured roadmap with phase headers, not a generic list.
+    form_fields:
+      business_description:
+        type: multiline
+
   # 1. Channel Strategy Architect
   # Source: 9fc569671c9f920bab072663b68f1b97.png
   - trigger: ":yt-strategy"
@@ -174,7 +316,7 @@ matches:
   # Source: b8872e3a972b0fd3cc7cf08d096994cb.jpg
   - regex: ":yt-ideas\\((?P<niche>.*)\\)"
     replace: |
-      Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, competitor analysis, and audience interest patterns. Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
+      Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, competitor analysis, and audience interest patterns.
 
   # 1. Dynamic Outreach & Pitching Form
   - trigger: ":aipitch"

@@ -275,3 +275,59 @@ matches:
   # 6/ The Executive Resume Refinement System
   - trigger: ":res-executive"
     replace: "Conduct a deep final-pass evaluation of my resume from the perspective of a recruiter reviewing top-tier candidates. Identify anything that weakens clarity, professionalism, credibility, or overall impact. This includes inconsistent writing style, repetitive sentence structure, vague descriptions, weak transitions, low-value wording, and overused corporate phrases that fail to differentiate me. Refine the language throughout the resume so every section sounds precise, intentional, and high-value. Replace generic statements with sharper positioning, stronger achievement-driven phrasing, and wording that reflects expertise, confidence, and real-world contribution. The final resume should feel polished, modern, and competitive at a professional level."
+
+  # Career clarity & purpose finder
+  # Source: 7a46afec47b1dfdc7f38866e7e19b845.png
+  - trigger: ":pcareer"
+    form: |
+      I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
+
+  # Should I stay or should I go?
+  - trigger: ":p-decision"
+    replace: |
+      “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, e.g. should I change jobs or stay?]. Ask 7 yes/no questions that filter step by step based on my priorities as you know them from our conversations. Make the outcomes super concrete, with clear actions (like ‘request this meeting,’ ‘update your CV,’ ‘plan a trial day’), not vague suggestions. Format it so I can screenshot it and reuse it anytime.”
+
+  # What is my personal recipe for success?
+  - trigger: ":p-success"
+    replace: |
+      “Based on my talents and character, what’s the way I can be most successful and happy in my career and life?”
+
+  # The Profile-As-Landing-Page Rewriter
+  - trigger: ":profile-as-lp"
+    form: |
+
+      Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the highest-converting landing page you will ever own. Job-seekers optimize for keywords. Operators optimize for one specific reader who, if they understood what you do in 12 seconds, would either book a call, subscribe, or remember you for later.
+
+      Rebuild my profile as a landing page:
+
+      Rewrite my headline so it answers three questions in under 220 characters: who I help, what I help them do, and how they know I'm credible
+
+      Rewrite my About section as a one-screen pitch - first sentence earns the read, middle three sentences prove the claim, final sentence tells them exactly what to do next
+
+      Audit my Featured section and replace anything that doesn't generate leads, subscribers, or recognition with assets that do
+
+      Rewrite each Experience entry as a contribution statement what I shipped, who it served, what changed - never a job description
+
+      Stress-test the rebuilt profile against the question "would my ideal client know what to do within 12 seconds of landing here"
+
+      Inputs: My current headline, About section, and top three Experience entries. The single person I want to convert (specific, not a demographic). My one offer or asset I want them to engage with.
+
+      Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
+
+      Rewritten Experience Entries → 12-Second Conversion Verdict
+
+  # AI Interview Simulation & Performance Coach
+  - trigger: ":ai-interview"
+    form: |
+      Roleplay as a [[job_title]] at [[company]].
+
+      Using my CV and the job description:
+      - Conduct a behavioral interview
+      - Ask one challenging question at a time
+      - After each answer, provide: Critique (strengths) & Refinement (how to improve impact)
+      - Gradually increase difficulty level
+    form_fields:
+      job_title:
+        type: text
+      company:
+        type: text

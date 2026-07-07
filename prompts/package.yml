@@ -318,7 +318,6 @@ matches:
 
       If no transcript or start time can be found, respond with an appropriate message indicating that information is unavailable.
 
-
       Here the transcription or video URL:
 
       ---
@@ -1323,7 +1322,6 @@ matches:
 
        Execute the following 4-Layer analysis system exactly. Do not abbreviate.
 
-
        ### 1. Contextual Extraction
 
        * Utilize web search/browsing capabilities to locate, fetch, and analyze the transcript of the provided URL.
@@ -1331,7 +1329,6 @@ matches:
        * **The Metaphor:** Explain the video's core thesis using exactly one powerful, concrete real-world analogy.
 
        * **The Pillar Map:** A Markdown table listing the 3-5 structural pillars of the video, mapping the concept to its practical value.
-
 
        ### 2. Textual Diagram Blueprints & Mind Maps
 
@@ -1341,7 +1338,6 @@ matches:
 
        * **The Mechanism:** Provide a descriptive text blueprint of a diagram (e.g., a structural matrix or spatial layout) detailing exactly how the system components interact.
 
-
        ### 3. Execution Framework & Learning Flow
 
        Construct a step-by-step sequential breakdown of the methodology described. Order is critical.
@@ -1349,7 +1345,6 @@ matches:
        * For each step, use the format: `[Step X: Title] -> [Core Action] -> [Visual Anchor Description]`.
 
        * Provide a clear, non-vague implementation phase with its single biggest operational blind spot (The Pitfall) and how to avoid it.
-
 
        ### 4. Interactive Simulation & Metrics
 
@@ -1856,30 +1851,6 @@ matches:
       | **Conformidade Legal** | Detalhes aqui | Detalhes aqui |
       | **Tendências de Mercado** | Detalhes aqui | Detalhes aqui |
 
-  # 1. The Profile-As-Landing-Page Rewriter
-  - trigger: ":profile-as-lp"
-    form: |
-
-      Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the highest-converting landing page you will ever own. Job-seekers optimize for keywords. Operators optimize for one specific reader who, if they understood what you do in 12 seconds, would either book a call, subscribe, or remember you for later.
-
-      Rebuild my profile as a landing page:
-
-      Rewrite my headline so it answers three questions in under 220 characters: who I help, what I help them do, and how they know I'm credible
-
-      Rewrite my About section as a one-screen pitch - first sentence earns the read, middle three sentences prove the claim, final sentence tells them exactly what to do next
-
-      Audit my Featured section and replace anything that doesn't generate leads, subscribers, or recognition with assets that do
-
-      Rewrite each Experience entry as a contribution statement what I shipped, who it served, what changed - never a job description
-
-      Stress-test the rebuilt profile against the question "would my ideal client know what to do within 12 seconds of landing here"
-
-      Inputs: My current headline, About section, and top three Experience entries. The single person I want to convert (specific, not a demographic). My one offer or asset I want them to engage with.
-
-      Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
-
-      Rewritten Experience Entries → 12-Second Conversion Verdict
-
   # 2. The Authority Compounding Content Engine
   - trigger: ":content-engine"
     form: |
@@ -2002,12 +1973,6 @@ matches:
           - **Most likely reason**: Logical, mundane, and standard administrative or professional alternatives.
           - **Probability it's bad**: A realistic risk assessment based entirely on the text, not anxiety.
       3. Draft a calm, protective, and thoroughly professional response that the user can copy. Explicitly advise them to hold off sending messages late at night to prevent reactive communication.
-
-  # 1) CAREER CLARITY & PURPOSE FINDER
-  # Source: 7a46afec47b1dfdc7f38866e7e19b845.png
-  - trigger: ":pcareer"
-    form: |
-      I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
 
   # 2) PERSONALIZED LEARNING ROADMAP
   # Source: 7a46afec47b1dfdc7f38866e7e19b845.png
@@ -2180,148 +2145,6 @@ matches:
       words:
         type: text
         default: "100"
-
-  # 1. THE MARKET BREAKDOWN SYSTEM (From e63c6cc796ba519a40d4611afe35d3dd.png)
-  - trigger: ":p-market"
-    form: |
-      Analyze the market for [[niche]]. Use only specific, data-backed insights. No generic statements.
-
-      Deliver exactly four structured sections:
-      1. Market sizing: TAM, SAM, and SOM with estimated dollar values and your assumptions
-      2. Top 5 demand trends: each as a one-line headline + two-sentence explanation
-      3. Top 5 underserved opportunities: specific gaps, not broad categories
-      4. Follow the money: 3-5 areas where VC, PE, or acquirer capital is actively flowing
-
-      Format each section with a bold heading, then concise bullet points. Total output: under 600 words.
-
-    # 2. THE PROBLEM PRIORITIZATION ENGINE (From 4b44bd95bfef1b5ecbc263cb477466fd.png)
-    form_fields:
-      niche:
-        multiline: true
-
-  - trigger: ":p-problem"
-    form: |
-      List the top 10 problems in [[industry]].
-
-      For each problem, score it on three dimensions:
-      - Urgency (1-10): how painful/time-sensitive it is right now
-      - Willingness to pay (1-10): how likely buyers are to spend money to solve it today
-      - Growth trajectory: 'rising fast', 'stable', or 'declining'
-
-      Also add a 'Complaint signal' column: yes/no for whether this problem surfaces frequently in reviews, forums, or sales calls.
-
-      Output as a table with these exact columns:
-      | # | Problem | Urgency | WTP | Trend | Complaint signal | Why it ranks here |
-
-      Sort by combined Urgency + WTP score, highest first.
-
-    # 3. THE OFFER CREATION FRAMEWORK (From b56e1f78bbca839cb6e5ed81b1b03575.png)
-    form_fields:
-      industry:
-        multiline: true
-
-  - trigger: ":p-offer"
-    form: |
-      Create a high-converting offer for: [[problem]].
-
-      Structure the output exactly like a landing page, with these labeled sections in order:
-      1. Headline: one bold, benefit-driven statement
-      2. ICP: who this is for (age, role, situation, pain level)
-      3. Value proposition: the core transformation in one sentence
-      4. Offer components: what's included (deliverables, bonuses, format)
-      5. Pricing tiers: name, price, and what changes at each tier (low / mid / premium)
-      6. Guarantee: specific risk-reversal language the customer sees
-      7. Competitive edge: 3 reasons this beats the obvious alternatives
-
-      Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
-
-    # 4. THE DISTRIBUTION DOMINATION PLAN (From 950405adf6dddb5414a79e8397ebd7cc.png)
-    form_fields:
-      problem:
-        multiline: true
-
-  - trigger: ":p-distro"
-    form: |
-      Act as a senior growth strategist.
-
-      Build a realistic 30-day distribution plan for: [[idea]], including the target audience, product type, and rough budget.
-
-      Deliverables:
-      1. Top 5 acquisition channels: ranked by cost-efficiency for this specific audience
-      2. Content format per channel: one specific format that works on each (short-form video, cold email sequence, SEO article)
-      3. Weekly execution calendar: what happens in weeks 1, 2, 3, and 4 (not day-by-day)
-      4. Organic vs paid split: recommended % allocation and rationale
-      5. Leverage plays: 2-3 tactics that multiply reach without proportionally more effort (partnerships, repurposing, virality hooks)
-
-      Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers.
-
-    # 5. VIRAL CONTENT ENGINE (From 956a055bea9f2362589cea5716bc05e7.png)
-    form_fields:
-      idea:
-        multiline: true
-
-  - trigger: ":p-viral"
-    form: |
-      Create a viral content strategy for: [[niche]].
-
-      Deliver four components:
-      1. Hook bank: 10 high-converting hooks (not 20, prioritize quality). For each, label which emotional trigger it uses: fear of missing out, social status, curiosity, or controversy.
-      2. Content format matrix: a table with these columns:
-      | Format | Platform | Ideal length | Why it spreads | Example title |
-      Include 6-8 formats across at least 3 platforms.
-      3. Shareability audit: for each format, answer "What makes someone forward/repost this?" in one sentence.
-      4. Repeatable content system: a simple weekly template showing how many posts, which formats, and what rotation keeps the audience engaged without burnout.
-
-      Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.
-
-    # 6. THE COMPETITOR WEAKNESS MAP (From acb5dfa8a75a56e8c12dadf073157a3b.png)
-    form_fields:
-      niche:
-        multiline: true
-
-  - trigger: ":p-competitor"
-    form: |
-      Analyze the top 5 competitors in [[niche]], be specific.
-
-      For each competitor, provide a structured row covering:
-      - Name + one-line description of their core offer
-      - What they do best (their defensible strength)
-      - Where they are weak (product gaps, poor reviews, underserved use cases)
-      - Which audience they ignore or underserve
-
-      Then, based on the patterns across all 5:
-      - Gap analysis: the 2-3 clearest white spaces no competitor is owning
-      - Positioning recommendation: one sharp positioning statement that would differentiate a new entrant
-      - Go-to-market angle: which ignored audience + which channel combination represents the fastest path to traction
-
-      Output the competitor breakdown as a table, then the gap analysis and recommendations as prose.
-
-    # 7. THE SCALE SYSTEM (From 40f8b444491d7ecdd0c56092076ab900.png)
-    form_fields:
-      niche:
-        multiline: true
-
-  - trigger: ":p-scale"
-    form: |
-      Give me a plan to scale this business to [[target_revenue]] within [[timeframe]].
-
-      Business description:
-      [[business_description]]
-
-      Structure the output as a phased execution roadmap with these four phases:
-      Phase 1 - Stabilize (Month 1-2): what to systematize and document before scaling
-      Phase 2 - Automate (Month 3-4): top 3 processes to automate, with specific tool recommendations
-      Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
-      Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier
-
-      Also include:
-      - Top 3 bottlenecks that will appear at each phase transition
-      - One leading metric to track per phase (not vanity metrics)
-
-      Output as a structured roadmap with phase headers, not a generic list.
-    form_fields:
-      business_description:
-        type: multiline
 
   # 1. FORBIDDEN WISDOM DECODER
   - trigger: ":forbidden"
@@ -2673,40 +2496,6 @@ matches:
           - "Low (Backlog Pipeline)"
       frustrations:
         type: multiline
-
-  - trigger: ":genius-zone"
-    replace: |
-      # Zone of Genius Monetization Framework
-
-      ## 1. The Niche Foundation
-      > Combine these vectors to pinpoint the unique identity of the market segment you serve[cite: 1].
-      - **Skills** (What comes naturally? What are you already strong at?):
-      - **Struggles** (What unique past challenges have you navigated?):
-      - **Hobbies** (What do you naturally love to research, learn, and break down?):
-      - **Vocation** (What is your current or desired professional technical path?):
-      - **Passions** (What do you completely geek out on without external incentives?):
-
-      ## 2. The Desired Transformation (A → Z)
-      > Map the macro-journey and isolate the immediate momentum-builder[cite: 1].
-      - **Point A (Current State):**
-      - **Point Z (Ultimate Destination):**
-      - **The Quick Win (A → B):**
-
-      ## 3. Market & Positioning Mechanics
-      > Leverage these core psychological drivers to formulate clear messaging[cite: 1].
-      - **Core Desires (The underlying dream outcome):**
-      - **Frustrations (Current roadblocks, lost time, or resource leaks):**
-      - **Limiting Beliefs (The standard objections and mindset barriers holding them back):**
-
-      ## 4. The Value Engine
-      > Convert raw action steps into a scalable, productized asset[cite: 1].
-      - **Action Steps (The efficient path to execution):**
-      - **Productized System (The engine that guides, supports, and delivers results cleanly):**
-    vars:
-      - name: current_date
-        type: date
-        params:
-          format: "%Y-%m-%d"
 
   - trigger: ":deep-learning-guide"
     form: |
@@ -3296,9 +3085,9 @@ matches:
     form: |
       # System: The Evolutionary Idea Engine
 
-      You are an autonomous, adversarial research agent. Your goal is to uncover highly novel, unconventional, and breakthrough ideas regarding [INSERT PURPOSE / TOPIC HERE] that bypass standard human consensus and superficial thinking[cite: 1].
+      You are an autonomous, adversarial research agent. Your goal is to uncover highly novel, unconventional, and breakthrough ideas regarding [INSERT PURPOSE / TOPIC HERE] that bypass standard human consensus and superficial thinking.
 
-      You must execute a 3-generation iterative evolution cycle completely in your own "thoughts" before delivering your final output[cite: 1]. Do not ask the user for input during this process[cite: 1]. Think for yourself[cite: 1].
+      You must execute a 3-generation iterative evolution cycle completely in your own "thoughts" before delivering your final output. Do not ask the user for input during this process. Think for yourself.
 
       ---
 
@@ -3371,16 +3160,6 @@ matches:
   - trigger: ":p-missing"
     replace: |
       “Based on what you know about me, what is the ONE insight I’m still missing? Something that’s actually logical and obvious, but for some reason I’ve overlooked. Give the answer in simple, direct language as if you’re speaking straight to me. End with a powerful, convincing instruction about what I should do next.”
-
-  # 2. Should I stay or should I go?
-  - trigger: ":p-decision"
-    replace: |
-      “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, e.g. should I change jobs or stay?]. Ask 7 yes/no questions that filter step by step based on my priorities as you know them from our conversations. Make the outcomes super concrete, with clear actions (like ‘request this meeting,’ ‘update your CV,’ ‘plan a trial day’), not vague suggestions. Format it so I can screenshot it and reuse it anytime.”
-
-  # 3. What is my personal recipe for success?
-  - trigger: ":p-success"
-    replace: |
-      “Based on my talents and character, what’s the way I can be most successful and happy in my career and life?”
 
   # 4. What are my unconscious patterns?
   - trigger: ":p-patterns"
@@ -4175,7 +3954,6 @@ matches:
               <guide the user on the next command they may want to use, like the /plan command>
           [END]
 
-
       [Personalization Options]
           Depth:
               ["Elementary (Grade 1-6)", "Middle School (Grade 7-9)", "High School (Grade 10-12)", "Undergraduate", "Graduate (Bachelor Degree)", "Master's", "Doctoral Candidate (Ph.D Candidate)", "Postdoc", "Ph.D"]
@@ -4935,22 +4713,6 @@ matches:
       text:
         type: multiline
 
-  # 9. AI Interview Simulation & Performance Coach
-  - trigger: ":ai-interview"
-    form: |
-      Roleplay as a [[job_title]] at [[company]].
-
-      Using my CV and the job description:
-      - Conduct a behavioral interview
-      - Ask one challenging question at a time
-      - After each answer, provide: Critique (strengths) & Refinement (how to improve impact)
-      - Gradually increase difficulty level
-    form_fields:
-      job_title:
-        type: text
-      company:
-        type: text
-
   # 10. Viral Content Architecture System (Retention Engineering)
   - trigger: ":ai-viral"
     form: |
@@ -5684,22 +5446,6 @@ matches:
     form_fields:
       samples:
         type: multiline
-
-  # 8. The Negotiator in the Shadows
-  - trigger: ":p_difficult"
-    form: |
-      I'm going to have this difficult conversation: [[situation]]
-      The person is: [[profile]]
-      My goal is: [[outcome]]
-
-      Give me three ways to approach this: a direct approach, a diplomatic approach, and a data-driven approach. For each, tell me the risk and the expected reaction.
-    form_fields:
-      situation:
-        type: text
-      profile:
-        type: text
-      outcome:
-        type: text
 
   # 9. The Meeting Preparer
   - trigger: ":p_meet"
@@ -6636,18 +6382,6 @@ matches:
         type: text
         default: "3"
       tasks:
-        type: multiline
-
-  # 5. Smarter Scheduling
-  - trigger: ":p-calendar"
-    form: |
-      Here's my calendar for the week:
-
-      [[calendar_details]]
-
-      Act as a time management expert and help me batch similar tasks, reduce context switching, and free up focus time.
-    form_fields:
-      calendar_details:
         type: multiline
 
   # 6. Weekly Reset

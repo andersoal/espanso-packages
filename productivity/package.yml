@@ -241,7 +241,7 @@ matches:
       [[real_vision]]
 
       ---
-      *Foco Fundamental:* Escrever diariamente, exercitar-se com consistência e refinar o ofício[cite: 1].
+      *Foco Fundamental:* Escrever diariamente, exercitar-se com consistência e refinar o ofício.
     form_fields:
       antivision_items:
         type: multiline
@@ -257,17 +257,17 @@ matches:
 
   - trigger: ":ghostmode"
     replace: |
-      ## 🥷 Protocolo de Foco: Desaparecer por Seis Meses[cite: 1]
+      ## 🥷 Protocolo de Foco: Desaparecer por Seis Meses
 
       ### 🪐 Filtro de Entropia (Eliminação de Distrações)
-      - **Corte Técnico:** Redes sociais e inputs de baixa qualidade eliminados[cite: 1].
-      - **Social:** Zero dependência de validação externa ou explicações desnecessárias[cite: 1].
+      - **Corte Técnico:** Redes sociais e inputs de baixa qualidade eliminados.
+      - **Social:** Zero dependência de validação externa ou explicações desnecessárias.
 
       ### 🧪 Mentalidade Científica (Tentativa e Erro)
-      - **Experimento do Dia:** Tratar falhas apenas como dados de ajuste de rota[cite: 1].
-      - **Perspectiva:** Visão de longo prazo. O crescimento exponencial é composto por ações chatas e repetitivas[cite: 1].
+      - **Experimento do Dia:** Tratar falhas apenas como dados de ajuste de rota.
+      - **Perspectiva:** Visão de longo prazo. O crescimento exponencial é composto por ações chatas e repetitivas.
 
-      ### 🔩 Execução dos Fundamentos[cite: 1]
+      ### 🔩 Execução dos Fundamentos
       - [ ] Praticar habilidades essenciais do ofício.
       - [ ] Proteger o bloco de foco profundo.
 
@@ -324,26 +324,26 @@ matches:
 
   - trigger: ":flow-ref"
     replace: |
-      # Como Entrar no Estado de Flow[cite: 1]
-      > Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço ("na zona")[cite: 1].
+      # Como Entrar no Estado de Flow
+      > Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço ("na zona").
 
       ## 🎯 Os 4 Pilares de Alinhamento
-      * **Algo com que você se importa** -> Conecta à **Plenitude**[cite: 1]
-        * Alcançando objetivos sem esforço[cite: 1].
-        * Profundo senso de propósito e satisfação[cite: 1].
-        * Envolvendo-se em atividades que se alinham com valores pessoais[cite: 1].
-      * **Algo em que você é bom** -> Conecta à **Felicidade**[cite: 1]
-        * Imersão no momento presente[cite: 1].
-        * Sentimentos de alegria e contentamento[cite: 1].
-        * Vivenciando um senso de atemporalidade[cite: 1].
-      * **Algo desafiador** -> Conecta à **Clareza**[cite: 1]
-        * Entendimento claro de metas e objetivos[cite: 1].
-        * Clareza mental e foco aprimorados[cite: 1].
-        * Consciência aguçada dos arredores e ações[cite: 1].
-      * **Algo de longo prazo** -> Conecta à **Persistência**[cite: 1]
-        * Foco e determinação contínuos[cite: 1].
-        * Superando desafios com facilidade[cite: 1].
-        * Energizado e motivado para superar obstáculos[cite: 1].
+      * **Algo com que você se importa** -> Conecta à **Plenitude**
+        * Alcançando objetivos sem esforço.
+        * Profundo senso de propósito e satisfação.
+        * Envolvendo-se em atividades que se alinham com valores pessoais.
+      * **Algo em que você é bom** -> Conecta à **Felicidade**
+        * Imersão no momento presente.
+        * Sentimentos de alegria e contentamento.
+        * Vivenciando um senso de atemporalidade.
+      * **Algo desafiador** -> Conecta à **Clareza**
+        * Entendimento claro de metas e objetivos.
+        * Clareza mental e foco aprimorados.
+        * Consciência aguçada dos arredores e ações.
+      * **Algo de longo prazo** -> Conecta à **Persistência**
+        * Foco e determinação contínuos.
+        * Superando desafios com facilidade.
+        * Energizado e motivado para superar obstáculos.
 
   - trigger: ":flowcheck"
     form: |
@@ -352,10 +352,10 @@ matches:
       evaluated_at: {{current_date}}
       target_task: "[[task_name]]"
       vectors:
-        significance: [[v_care]] # Algo com que você se importa[cite: 1]
-        horizon: [[v_long]]      # Algo de longo prazo[cite: 1]
-        mastery: [[v_good]]      # Algo em que você é bom[cite: 1]
-        tension: [[v_challenge]] # Algo desafiador[cite: 1]
+        significance: [[v_care]] # Algo com que você se importa
+        horizon: [[v_long]]      # Algo de longo prazo
+        mastery: [[v_good]]      # Algo em que você é bom
+        tension: [[v_challenge]] # Algo desafiador
       execution_mode: [[mode]]
       ---
     vars:
@@ -389,3 +389,15 @@ matches:
             "Administrative / Maintenance",
             "Exploratory / R&D",
           ]
+
+  # Smarter Scheduling
+  - trigger: ":p-calendar"
+    form: |
+      Here's my calendar for the week:
+
+      [[calendar_details]]
+
+      Act as a time management expert and help me batch similar tasks, reduce context switching, and free up focus time.
+    form_fields:
+      calendar_details:
+        type: multiline

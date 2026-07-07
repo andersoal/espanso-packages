@@ -109,8 +109,7 @@ matches:
       - name: "html"
         type: form
         params:
-          layout: "XML / HTML Element Inserter\nTag Name: {{element}}"
-          fields: { element: { type: text } }
+          layout: "XML / HTML Element Inserter\nTag Name: [[element]]"
 
   # Outputs todays date (dd/mm/yy)
   - trigger: :date
@@ -162,8 +161,29 @@ matches:
 
   # Ouputs MIT License short text
   - trigger: :mit-short
-    replace: "Licensed under MIT X11, © Alicia Sykes {{year}}: https://aliciasykes.com"
-    vars: [{ name: year, type: date, params: { format: "%Y" } }]
+    replace: "Licensed under MIT X11, © {{name}} {{year}}: {{url}}"
+    vars:
+      [
+        { name: year, type: date, params: { format: "%Y" } },
+        {
+          name: name,
+          type: choice,
+          params: { values: ["Alicia Sykes", "James Carter", "You"] },
+        },
+        {
+          name: url,
+          type: random,
+          params:
+            {
+              choices:
+                [
+                  "https://aliciasykes.com",
+                  "https://jamescarter.dev",
+                  "https://you.com",
+                ],
+            },
+        },
+      ]
 
   # Outputs full MIT license text, from GitHub
   - trigger: :mit-long
@@ -172,7 +192,8 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "curl 'https://gist.githubusercontent.com/Lissy93/143d2ee01ccc5c052a17/raw/a8ac96cd15847a231931b561d95d2de47066fd33/LICENSE.MD'"
+          shell: cmd
+          cmd: "curl.exe 'https://gist.githubusercontent.com/Lissy93/143d2ee01ccc5c052a17/raw/a8ac96cd15847a231931b561d95d2de47066fd33/LICENSE.MD'"
 
   # Personal email notes
   - trigger: :kr
@@ -187,6 +208,7 @@ matches:
             - "Jordan O'Hare"
             - "Tom Wilson"
             - "James Carter"
+            - "Me"
 
   # Outputs git commit command, with cursor in the message block
   - trigger: :commit
@@ -198,7 +220,9 @@ matches:
     vars:
       - name: output
         type: shell
-        params: { cmd: "curl -s whatthecommit.com/index.txt" }
+        params:
+          shell: cmd
+          cmd: "curl.exe -s whatthecommit.com/index.txt"
 
   # Uses Lesspass to generatre a password for a given account
   # Requires the Lesspass CLI to be installed, see:
@@ -366,44 +390,6 @@ matches:
       - name: clipboard
         type: clipboard
 
-  # Markdown syntax
-  # Outputs a bolded text placeholder
-  - trigger: ":b"
-    replace: "**$|$**"
-    word: true
-  # Outputs italicized text placeholder
-  - trigger: ":i"
-    replace: "*$|$*"
-    word: true
-  # Outputs underlined text placeholder
-  - trigger: ":u"
-    replace: "__$|$__"
-    word: true
-  # Outputs bold italicized text placeholder
-  - trigger: ":bi"
-    replace: "***$|$***"
-    word: true
-  # Outputs bold underlined text placeholder
-  - trigger: ":bu"
-    replace: "__**$|$**__"
-    word: true
-  # Outputs italic underlined text placeholder
-  - trigger: ":iu"
-    replace: "__*$|$*__"
-    word: true
-  # Outputs bold italic underlined text placeholder
-  - trigger: ":biu"
-    replace: "***__$|$__***"
-    word: true
-  # Outputs inline code placeholder
-  - trigger: ":ci"
-    replace: "`$|$`"
-    word: true
-  # Outputs code block placeholder
-  - trigger: ":cm"
-    replace: "```$|$```"
-    word: true
-
   # Generates fake data
   - trigger: ":faker"
     replace: "{{output}}"
@@ -430,7 +416,8 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "python scripts/fake.py {{module}}"
+          shell: cmd
+          cmd: python %CONFIG%\match\packages\utils\scripts\fake.py {{module}}
 
   - trigger: ":lorem"
     label: "Paragraph"
@@ -439,7 +426,8 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "python scripts/fake.py paragraph"
+          shell: cmd
+          cmd: python %CONFIG%\match\packages\utils\scripts\fake.py paragraph
   - trigger: ":lorem"
     label: "Sentence"
     replace: "{{output}}"
@@ -447,4 +435,14 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "python scripts/fake.py sentence"
+          shell: cmd
+          cmd: python %CONFIG%\match\packages\utils\scripts\fake.py sentence
+
+  - trigger: ":envtest"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          shell: cmd
+          cmd: "set"

@@ -29,7 +29,7 @@ def load_matches():
         pkg = os.path.basename(os.path.dirname(path))
         if pkg in IGNORED_PACKAGES:
             continue
-        with open(path) as f:
+        with open(path, encoding='utf-8') as f:
             data = yaml.safe_load(f)
         for match in data.get("matches", []):
             triggers = match.get("triggers") or (

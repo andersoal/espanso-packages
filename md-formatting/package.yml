@@ -2,7 +2,7 @@
 matches:
   # Inserts a markdown code block
   - trigger: :md-code
-    replace: "```\n$|$\n```"
+    replace: "```$|$\n```"
 
   # Inserts markdown collapsable section
   - trigger: :md-collapse
@@ -28,3 +28,41 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
+
+  # Markdown syntax
+  # Outputs a bolded text placeholder
+  - trigger: ":b"
+    replace: "**$|$**"
+    word: true
+  # Outputs italicized text placeholder
+  - trigger: ":i"
+    replace: "*$|$*"
+    word: true
+  # Outputs underlined text placeholder
+  - trigger: ":u"
+    replace: "__$|$__"
+    word: true
+  # Outputs bold italicized text placeholder
+  - trigger: ":bi"
+    replace: "***$|$***"
+    word: true
+  # Outputs bold underlined text placeholder
+  - trigger: ":bu"
+    replace: "__**$|$**__"
+    word: true
+  # Outputs italic underlined text placeholder
+  - trigger: ":iu"
+    replace: "__*$|$*__"
+    word: true
+  # Outputs bold italic underlined text placeholder
+  - trigger: ":biu"
+    replace: "***__$|$__***"
+    word: true
+  # Outputs inline code placeholder
+  - trigger: ":ci"
+    replace: "`$|$`"
+    word: true
+  # Outputs code block placeholder
+  - trigger: ":cm"
+    replace: "```$|$```"
+    word: true

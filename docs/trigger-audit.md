@@ -60,7 +60,7 @@ Content fixes in the same pass: removed all 37 leaked `[cite: 1]` citation marke
 | `:((` `:[[` `:{{` `:<<` `` :`` `` `:''` `:""` `:__` `:**` | md-formatting | Produced byte-identical output to utils' single-char wrappers (`:(` `:[` …) and were unreachable whenever both packages were installed |
 | `:p-market` `:p-problem` `:p-offer` `:p-viral` `:p-competitor` `:p-scale` | social-strategy | Conflicted with the **prompts** versions, which are refined rewrites of the same prompts (more structured output specs); prompts versions kept |
 | `:p-dist` | social-strategy | Same concept as prompts' `:p-distro` (30-day distribution plan), which is the refined version |
-| `:pfix` ×1, `:pmatch` ×2, `:pcover` ×2 ("headless" variants) | career | Unlabeled duplicates of the form-based versions, containing unfilled placeholders (`YOUR_NAME_HERE`, `/path/to/your/vault/Master_Resume.md`); the interactive form versions kept |
+| `:pfix` ×1, `:pmatch` ×2, `:pcover` ×2 ("headless" variants) | career | Unlabeled duplicates of the form-based versions, containing unfilled placeholders (`YOUR_NAME_HERE`, `/path/to/your/vault/Master_Resume.md`); the interactive form versions kept. Later reinstated as properly labeled variants — see "Remaining duplicates" below |
 
 ## `word: true` added (prefix shadowing fix)
 
@@ -74,9 +74,18 @@ Without `word: true`, espanso expands a trigger the instant its last character i
 
 **Behavior change to be aware of:** these triggers now require a word separator to fire. `:b` + space produces `**|**` (plus the space); `:b` mid-word does nothing. For the cursor-wrap triggers (`:b`, `:(`, …) this is the intended trade-off that makes the longer triggers reachable.
 
-## Kept as-is (intentional)
+## Remaining duplicates (intentional, label-disambiguated)
 
-- `:lorem` ×2 in utils — both copies carry distinct `label`s ("Paragraph" / "Sentence"), so espanso shows a disambiguation popup. This is a supported pattern; the audit script allows it.
+These triggers are still defined more than once **on purpose**: every copy carries a distinct `label`, so espanso shows a selection popup instead of picking one arbitrarily. The audit script allows exactly this pattern. Line numbers as of this audit — re-locate with `grep -n 'trigger: ":<name>"' <file>` if they drift:
+
+| Trigger | File | Lines | Variants |
+|---|---|---|---|
+| `:lorem` | `utils/package.yml` | 435, 443 | "Paragraph" / "Sentence" |
+| `:pfix` | `career/package.yml` | 124, 138 | "Form: paste resume" / "Headless: resume from master file" |
+| `:pmatch` | `career/package.yml` | 152, 171 | "Form: paste JD + resume" / "Headless: JD from clipboard + master file" |
+| `:pcover` | `career/package.yml` | 214, 227 | "Form: paste job description" / "Headless: JD from clipboard" |
+
+The career headless variants are a rewrite of the ones removed during dedup: instead of unlabeled duplicates with unfilled `echo` placeholders, each is now labeled (picker on expand), pulls the job description from the **clipboard**, and reads the master resume from `~/.config/espanso/master_resume.md` — a file outside the package, so package updates never overwrite it (create it once with your resume text).
 
 ## Other observations
 
@@ -84,4 +93,4 @@ Without `word: true`, espanso expands a trigger the instant its last character i
 
 ## Version bumps
 
-career 0.2.0 · content-creation 0.2.0 · marketing-sales 0.2.0 · md-formatting 1.1.0 · productivity 1.1.0 · prompts 1.3.0 · relationship 0.2.0 · social-strategy 1.1.0 · utils 0.2.0
+career 0.3.0 · content-creation 0.2.0 · marketing-sales 0.2.0 · md-formatting 1.1.0 · productivity 1.1.0 · prompts 1.3.0 · relationship 0.2.0 · social-strategy 1.1.0 · utils 0.2.0

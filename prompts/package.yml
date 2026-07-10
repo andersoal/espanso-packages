@@ -1,22 +1,554 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 matches:
 
   # ===========================================================================
   # PROMPT ENGINEERING & META-PROMPTING
   # ===========================================================================
 
-  # Prompt Engineer Specialist
-  - trigger: ":prompt-eng"
+  - trigger: ":gm-forbidden"
     replace: |
-      I want you to become my prompt engineer. Your goal is to help me craft the best possible prompt for my needs.
-      The prompt will be used by you. You will follow the following process:
-      1. Your initial response will be to ask me what the prompt should be about. I will provide my answer, but we will need to improve it through continual iterations by going through the next steps.
-      2. 2. Based on my input, you will generate 2 sections:
-      a) Revised prompt (provide your rewritten prompt; it should be clear, concise, and easily understood by you)
-      b) Questions (ask any relevant questions pertaining to what additional information is needed from me to improve the prompt).
-      3. We will continue this iterative process, with me providing additional information to you and you're updating the prompt in the Revised Prompt section, until I say we are done.
+      ## Forbidden Wisdom Decoder
 
-  # Enhanced Responses
-  - trigger: ":enhanced-response"
+      ROLE: Research analyst specializing in identifying non-mainstream, evidence-backed insights that challenge dominant narratives in {{topic}}.
+
+      TASK: Identify 5-7 under-the-surface truths about {{topic}} that challenge mainstream thinking. Each truth must have historical grounding and distinguishable evidence quality.
+
+      STEPS:
+      1. Identify the dominant narrative(s) about {{topic}}
+      2. Cross-reference historical and current sources for contradictions
+      3. Extract 5-7 specific insights that challenge the dominant view
+      4. Rate evidence strength for each (High/Medium/Low)
+      5. Identify why each insight is not mainstream (gatekeeping, incentive misalignment, recency bias, complexity)
+      6. Articulate actionable implications
+
+      OUTPUT FORMAT:
+      For each truth:
+      **Truth #N**: [One sentence]
+      **Dominant Narrative Challenged**: [What conventional view this contradicts]
+      **Historical Context**: [When/where this was known, and by whom]
+      **Evidence Strength**: [High/Medium/Low + brief justification]
+      **Why It Stays Hidden**: [Specific mechanism keeping this obscure]
+      **Actionable Implication**: [What decision this insight should change]
+      **How to Verify**: [Specific source, method, or experiment to validate]
+
+      STAKES: After listing all truths, write a 3-sentence paragraph on why knowing these matters for anyone working in or affected by {{topic}}.
+
+      RULES:
+      - No conspiracy theories without documented evidence
+      - Distinguish between "unpopular and well-evidenced" vs "controversial and contested"
+      - Every truth must have at least one verifiable source or line of reasoning
+      - If evidence is Low, explicitly state the confidence level and why it matters anyway
+    vars:
+      - name: "topic"
+        type: "clip"
+
+  - trigger: ":gm-mastery"
     replace: |
-      Review your last response and search for areas of improvement. Tell me everything you've changed, the reasoning behind changing what you changed, and re-write the response.
+      ## Elite Mastery Roadmap
+
+      ROLE: Learning scientist and performance analyst specializing in skill acquisition. You synthesize research on deliberate practice, cognitive load theory, and expertise development.
+
+      TASK: Create a structured mastery roadmap for {{skill}} assuming a {{level}} starting point over a {{timeline}} timeline.
+
+      STEPS:
+      1. Assess the starting point: What does a {{level}} practitioner already know?
+      2. Define 4 progression phases: Foundation → Competence → Expertise → Mastery
+      3. For each phase, specify:
+         - The specific sub-skills to develop
+         - The deliberate practice method (specific exercise, not "practice more")
+         - The validation metric (how to know you've achieved this phase)
+         - 2-3 evidence-based but underutilized resources
+      4. Identify the 3 most common anti-patterns that derail mastery in {{skill}}
+      5. Recommend a weekly practice structure with time allocation
+
+      OUTPUT FORMAT:
+      **Phase 1: Foundation** (Weeks X-Y)
+      - Sub-skills: [...]
+      - Practice Method: [Specific exercise with duration/frequency]
+      - Validation: [Observable milestone]
+      - Resources: [Book/tool/community + why it's underutilized]
+
+      [Repeat for Phases 2-4]
+
+      **Anti-Patterns to Avoid**:
+      1. [Pattern] → [Why it fails] → [What to do instead]
+      2. [Pattern] → [Why it fails] → [What to do instead]
+      3. [Pattern] → [Why it fails] → [What to do instead]
+
+      **Weekly Structure**:
+      [Day-by-day or time-block recommendation]
+
+      **Validation Checkpoints**:
+      [How to self-assess at each phase transition]
+    vars:
+      - name: "skill"
+        type: "clip"
+      - name: "level"
+        type: "choice"
+        params:
+          values: ["complete beginner", "beginner with some exposure", "intermediate", "advanced"]
+      - name: "timeline"
+        type: "choice"
+        params:
+          values: ["3 months", "6 months", "1 year", "2 years", "5 years"]
+
+  - trigger: ":gm-future"
+    replace: |
+      ## Future Trajectory Analysis
+
+      ROLE: Strategic foresight analyst. You extrapolate current trends in {{topic}} to project developments over the next 20 years, grounded in observable momentum rather than speculation.
+
+      TASK: Identify 5 high-probability developments in {{topic}} by 2045 that most people are underestimating, based on current trajectory analysis.
+
+      STEPS:
+      1. Map the current state of {{topic}} — key technologies, research frontiers, market dynamics
+      2. Identify 3-5 trend lines with clear acceleration or inflection signals
+      3. Extrapolate each trend line to 2045
+      4. Identify second-order effects (what happens when trends intersect)
+      5. Assign confidence level to each prediction
+      6. Specify "what would need to be true" for each prediction
+      7. Articulate immediate actions based on likely futures
+
+      OUTPUT FORMAT:
+      **Trend #N**: [Name of trend]
+      **Current Signal**: [Observable evidence this trend is real]
+      **Extrapolation to 2045**: [Specific projected development]
+      **Confidence**: [High (70%+) / Medium (40-70%) / Low (below 40%)]
+      **What Would Need to Be True**: [Key assumptions required]
+      **Second-Order Effects**: [What this unlocks or disrupts]
+      **Action Today**: [Specific thing to learn, invest in, or prepare for]
+
+      RULES:
+      - Every prediction must be grounded in a CURRENT trend with evidence
+      - No science fiction — extrapolate from existing research/technology only
+      - Distinguish between "likely" and "possible" clearly
+      - Include at least one prediction that runs counter to mainstream optimism/pessimism
+    vars:
+      - name: "topic"
+        type: "clip"
+
+  - trigger: ":gm-parallel"
+    replace: |
+      ## Cross-Domain Pattern Transfer
+
+      ROLE: Interdisciplinary systems thinker. You identify proven solutions from one domain that have not yet been applied to another, creating novel insights through analogy transfer.
+
+      TASK: Analyze {{topic}} through the lens of 3 different disciplines to generate actionable insights that insiders in {{topic}} typically miss.
+
+      STEPS:
+      1. Select 3 analogy domains based on structural similarity to {{topic}}:
+         - One from natural sciences (biology, physics, ecology)
+         - One from engineering/systems (networks, control systems, architecture)
+         - One from social sciences (economics, sociology, anthropology)
+      2. For each analogy domain:
+         - Identify a well-solved problem with structural parallels
+         - Extract the core pattern/principle
+         - Map the transfer mechanism to {{topic}}
+         - Generate specific actionable insights
+      3. Validate each transfer: explain WHY the pattern applies across domains
+      4. Flag transfers that might be misleading or oversimplified
+
+      OUTPUT FORMAT:
+      **Analogy Domain #N**: [Field name]
+      **Well-Solved Problem There**: [Specific solved challenge]
+      **Core Pattern**: [The transferable principle]
+      **Transfer Mechanism**: [How it maps to {{topic}}]
+      **Insight for {{topic}}**: [Specific, actionable recommendation]
+      **Validation**: [Why this pattern genuinely applies]
+      **Caution**: [Where the analogy breaks down]
+
+      SYNTHESIS: After presenting all 3, write a "Cross-Domain Synthesis" paragraph identifying the meta-pattern that connects them and what this reveals about {{topic}} at a systems level.
+    vars:
+      - name: "topic"
+        type: "clip"
+
+  - trigger: ":gm-genius"
+    replace: |
+      ## Cognitive Pattern Modeling
+
+      ROLE: Cognitive scientist studying expert problem-solving. You model the evidenced thinking patterns of exceptional performers, creating transferable cognitive frameworks.
+
+      TASK: Deconstruct the problem-solving approach of {{figure}} in their domain of {{domain}}, then create a learnable framework with progressive exercises.
+
+      STEPS:
+      1. Identify the specific domain of genius: What kind of problems did {{figure}} solve?
+      2. Deconstruct their approach into 3-4 cognitive patterns evidenced in their work:
+         - Mental models they used
+         - Heuristics they applied
+         - Knowledge structures they built
+         - Question-framing techniques
+      3. For each pattern:
+         - Provide 2-3 pieces of evidence from their work
+         - Design a practice exercise (progressive: beginner → advanced)
+         - Specify application scope (where this pattern works)
+         - State limitations (where it doesn't apply)
+      4. Create a 4-week practice plan
+      5. Add a "When NOT to use this" section — boundaries of the model
+
+      OUTPUT FORMAT:
+      **Pattern #N**: [Name of cognitive pattern]
+      **Evidence**: [Specific work, decision, or quote demonstrating this]
+      **Practice Exercise (Beginner)**: [Specific 15-20 min exercise]
+      **Practice Exercise (Advanced)**: [Specific complex application]
+      **Application Scope**: [Domains/problems where this applies]
+      **Limitation**: [Where this pattern fails or misleads]
+
+      **4-Week Practice Plan**:
+      Week 1: [Focus] — [Daily exercise]
+      Week 2: [Focus] — [Daily exercise]
+      Week 3: [Focus] — [Daily exercise]
+      Week 4: [Focus] — [Daily exercise]
+
+      **IMPORTANT CAVEAT**: Write a paragraph on the limitations of modeling genius — what aspects of {{figure}}'s success were contextual, non-replicable, or dependent on factors beyond thinking patterns (timing, resources, temperament, luck).
+    vars:
+      - name: "figure"
+        type: "clip"
+      - name: "domain"
+        type: "clip"
+
+  - trigger: ":gm-lost"
+    replace: |
+      ## Evidence-Based Ancient Wisdom Audit
+
+      ROLE: Historian of ideas with scientific methodology training. You evaluate practices from pre-modern civilizations against current evidence, separating genuine insight from romanticized nonsense.
+
+      TASK: Identify 5 practices from ancient or pre-industrial civilizations relevant to {{topic}} that have modern scientific support, and provide specific implementation protocols.
+
+      STEPS:
+      1. Survey practices from 3+ ancient traditions relevant to {{topic}}
+      2. Filter: Only include practices with at least preliminary modern evidence
+      3. For each surviving practice:
+         - Document historical origin and original context
+         - Present modern scientific evidence (with strength rating)
+         - Explain why it was abandoned (not just "forgotten")
+         - Provide specific implementation protocol
+         - List caveats and contraindications
+      4. Flag practices that are popular but lack evidence
+      5. Synthesize: What meta-principles emerge across traditions?
+
+      OUTPUT FORMAT:
+      **Practice #N**: [Name]
+      **Origin**: [Civilization/Tradition + time period]
+      **Original Purpose**: [What it was designed to achieve]
+      **Why It Was Abandoned**: [Specific historical reason — technological replacement, cultural shift, etc.]
+      **Modern Evidence**: [Study finding or mechanism + strength: Strong/Moderate/Preliminary]
+      **Implementation Protocol**: [Step-by-step, with frequency/duration]
+      **Caveats**: [Who should not do this, known risks, common mistakes]
+
+      **Evidence-Free Zone**: List 2-3 popular "ancient wisdom" claims about {{topic}} that lack scientific support and should be avoided.
+
+      **Meta-Principles**: What common threads connect the evidence-backed practices across different civilizations?
+    vars:
+      - name: "topic"
+        type: "clip"
+
+  - trigger: ":gm-posthuman"
+    replace: |
+      ## Systematic De-Biasing Analysis
+
+      ROLE: Decision quality analyst trained in cognitive bias identification and structured analytical techniques. You don't claim to be bias-free — you systematically expose and counter biases.
+
+      TASK: Audit the conventional approach to {{problem}} for cognitive biases, then re-analyze from a de-biased perspective to generate counterintuitive but feasible solutions.
+
+      STEPS:
+      1. BIAS AUDIT: Identify which biases likely affect typical thinking about {{problem}}:
+         - Confirmation bias (seeking confirming evidence)
+         - Status quo bias (overweighting current state)
+         - Availability bias (overweighting recent/vivid examples)
+         - Sunk cost bias (committing to past investments)
+         - Anchoring bias (over-relying on first information)
+         - Groupthink (suppressing dissent in teams)
+      2. For each identified bias: document how it likely manifests in {{problem}}
+      3. UNBIASED RE-ANALYSIS: Re-examine {{problem}} as if each bias were neutralized
+      4. Generate 3 counterintuitive solutions that emerge from de-biased thinking
+      5. FEASIBILITY FILTER: For each solution:
+         - Assess implementation feasibility (Easy/Medium/Hard)
+         - Identify the "human resistance" — why people will reject this
+         - Design a step-by-step adoption path
+      6. PRIORITY MATRIX: Rank by Impact vs. Implementation Difficulty
+
+      OUTPUT FORMAT:
+      **Bias Audit**:
+      | Bias | Manifestation in {{problem}} | Severity (1-5) |
+      [Table format]
+
+      **De-Biased Solutions**:
+      Solution #N: [Description]
+      - Why it's counterintuitive: [Which bias it overcomes]
+      - Feasibility: [Easy/Medium/Hard + why]
+      - Human Resistance: [Why people/organizations will resist]
+      - Adoption Path: [Step 1 → Step 2 → Step 3]
+
+      **Priority Matrix**: [High Impact/Low Effort first, etc.]
+
+      RULES:
+      - Do not claim to be "unbiased" — show the PROCESS of de-biasing
+      - Every solution must be actually implementable (not theoretically optimal but practically impossible)
+      - Address the political/social reality of adoption, not just the logical case
+    vars:
+      - name: "problem"
+        type: "clip"
+
+  - trigger: ":wp-excavator"
+    form: |
+      My obsessions (things I read about without being paid): [[obsessions]]
+      My weird angles (things I've done that others haven't): [[angles]]
+      My skills (even if I think they're not special): [[skills]]
+    form_fields:
+      obsessions:
+        type: multiline
+        multiline: true
+      angles:
+        type: multiline
+        multiline: true
+      skills:
+        type: multiline
+        multiline: true
+    replace: |
+      ## Specific Knowledge Excavator
+
+      ROLE: Specific knowledge analyst trained on Naval Ravikant's wealth philosophy. You reverse-engineer a person's unique intellectual fingerprint — the rare intersection of obsessions, experiences, and undervalued skills.
+
+      TASK: Excavate my specific knowledge profile. Identify the knowledge stack I can build a leverage engine around.
+
+      STEPS:
+      1. Cross-reference all three inputs to find the rare intersection
+      2. Name the specific knowledge niche in one precise sentence
+      3. Articulate what makes this combination unusual (2-3 sentences)
+      4. Evaluate: Could this be learned from a course or copied in 6 months? If yes, drill deeper until the answer is no.
+      5. Propose 3 business models that turn this into leverage (code, media, or capital — not labor)
+      6. Score each model using the rubric below
+      7. Design a fast validation experiment for the top model
+
+      SCORING RUBRIC (1-5 scale for each):
+      - Market Size: 1=Niche hobbyist, 5=Mass market or high-value B2B
+      - Competition: 1=Dominated by incumbents, 5=Blue ocean / underserved
+      - Leverage Multiplier: 1=Linear time-for-money, 5=Non-linear scalable
+      - Speed to Validate: 1=Years to test, 5=Can validate in 2 weeks
+      - Personal Fit: 1=Draining work, 5=Energizing work
+
+      OUTPUT FORMAT:
+      **Your Specific Knowledge Niche**: [One precise sentence]
+
+      **Why This Is Rare**: [2-3 sentences on what makes this combination unusual and defensible]
+
+      **Defensibility Test**: [Why this cannot be easily copied + time estimate for replication]
+
+      **3 Leveraged Business Models**:
+      | Model | Leverage Type | Market | Competition | Multiplier | Validation Speed | Personal Fit | Total |
+      [Scoring table with totals]
+
+      **Top Model Deep Dive**: [Name]
+      - Recommended Positioning: [One sentence]
+      - First 3 Steps: [Specific, time-bound actions]
+
+      **Fast Validation Experiment**: [Specific experiment to run in 14 days to test demand]
+
+  - trigger: ":wp-leverage"
+    form: |
+      My income sources and hours per week on each: [[streams]]
+      My monthly income: [[income]]
+    form_fields:
+      streams:
+        type: multiline
+        multiline: true
+      income:
+        type: multiline
+        multiline: true
+    replace: |
+      ## Leverage Stack Audit
+
+      ROLE: Leverage analyst operating on Naval Ravikant's four-layer framework: labor, capital, code, and media. You diagnose over-dependence on low-leverage activities and redesign work around high-leverage equivalents.
+
+      FRAMEWORK:
+      - Labor leverage (1-3): Trading time for money. Scales linearly. Capped by hours.
+      - Capital leverage (4-6): Money working for you. Requires capital accumulation.
+      - Code leverage (7-9): Software working for you. Build once, serve many. Requires technical skill or hiring.
+      - Media leverage (8-10): Content working for you. Build once, discovered repeatedly. Requires distribution.
+
+      TASK: Audit my current income streams and work activities. Show where I have leverage and where I'm leaking time.
+
+      STEPS:
+      1. Map every income source to leverage type and score (using rubric above)
+      2. Calculate overall leverage index (weighted average by income)
+      3. Identify the biggest leverage leak (highest hours, lowest score)
+      4. Assess leverage risk: which streams die if I stop working for 60 days?
+      5. Propose 3 conversion upgrades with realistic timelines
+      6. Sequence by effort vs. impact (do highest impact/easiest first)
+
+      OUTPUT FORMAT:
+      **Leverage Audit Table**:
+      | Activity | Leverage Type | Score | Hours/Week | % of Income | Risk if Stopped? |
+      [Full table]
+
+      **Your Leverage Index**: [X/10] — [Interpretation: "Mostly labor-dependent" / "Balanced" / "Highly leveraged"]
+
+      **Leverage Risk Map**: Which income streams disappear if you take 60 days off?
+
+      **Biggest Leverage Leak**: [Activity + hours invested + income generated + why it's a trap]
+
+      **3 Conversion Upgrades**:
+      | Current Activity | Convert To | Specific Change | Timeline | Effort | Impact |
+      [Prioritized table — highest impact/easiest effort first]
+
+      **90-Day Action Plan**:
+      Month 1: [Specific action]
+      Month 2: [Specific action]
+      Month 3: [Specific action]
+
+      RULES:
+      - Hourly consulting = Labor score 1-2 regardless of rate
+      - Upgrades must specify the exact asset being built, not conceptual direction
+      - Each upgrade must include a concrete deliverable name
+
+  - trigger: ":wp-productize"
+    form: |
+      My expertise and transformation I provide: [[expertise]]
+      My current audience: [[audience]]
+      Time available to build: [[time]]
+    form_fields:
+      expertise:
+        type: multiline
+        multiline: true
+      audience:
+        type: text
+        multiline: false
+      time:
+        type: choice
+        params:
+          values: ["5 hours/week", "10 hours/week", "15 hours/week", "20 hours/week"]
+    replace: |
+      ## Productize Yourself Blueprint
+
+      ROLE: Product architect specializing in converting knowledge workers into scalable operators. You design product ecosystems that deliver transformation without requiring the creator's live presence.
+
+      TASK: Design a complete "productize yourself" blueprint. Convert my expertise into a scalable system — not more client work, but a machine.
+
+      STEPS:
+      1. Identify the single most valuable transformation I deliver (in one sentence)
+      2. Design a product ladder: Free → Entry → Core → Premium → Enterprise
+      3. Specify the winning product: contents, delivery mechanism, irreplaceability factor
+      4. Design the distribution channel based on my existing audience/platform
+      5. Write the positioning statement for launch
+      6. Create a validation plan: How to test demand BEFORE building
+      7. Build a realistic timeline with milestones
+
+      PRODUCT LADDER FRAMEWORK:
+      - Free: [Attracts audience, demonstrates expertise]
+      - Entry ($): [Low-risk first purchase, high value]
+      - Core ($$): [Main revenue driver, complete transformation]
+      - Premium ($$$): [High-touch, high-price for committed customers]
+      - Enterprise ($$$$): [Custom, requires some presence but at massive scale]
+
+      OUTPUT FORMAT:
+      **Your Core Transformation**: [One sentence — what do you help people DO or BECOME]
+
+      **Product Ladder**:
+      | Tier | Product Name | Price | Contents | Delivery | Purpose |
+      [Complete ladder]
+
+      **Winning Product (Core Tier)**:
+      - Name: [Product name + proprietary mechanism name]
+      - Contents: [What's inside — modules, tools, resources]
+      - Delivery: [How it reaches buyers without your live presence]
+      - Price: [Recommended price + pricing psychology reasoning]
+      - Irreplaceability Factor: [Why this can't be easily copied]
+
+      **Validation Plan** (Do THIS before building):
+      - Step 1: [Specific validation action with success criteria]
+      - Step 2: [Specific validation action with success criteria]
+      - Step 3: [Specific validation action with success criteria]
+
+      **Positioning Statement**: [One sentence — For [target] who [problem], [Product] is the [category] that [benefit], unlike [alternatives].]
+
+      **Build Timeline** (at [[time]]/week):
+      Week 1-2: [Milestone]
+      Week 3-4: [Milestone]
+      [Continue...]
+
+      RULES:
+      - A product requiring live presence to deliver must have >10x price justification
+      - No generic courses — must include a named framework or proprietary methodology
+      - Distribution must match current platform — no starting from zero on new channel
+      - Validation comes before building, always
+
+  - trigger: ":wp-leak"
+    form: |
+      My current work activities and compensation: [[activities]]
+      Total hours worked per week: [[total_hours]]
+      Current income split (active vs passive): [[split]]
+    form_fields:
+      activities:
+        type: multiline
+        multiline: true
+      total_hours:
+        type: text
+        multiline: false
+      split:
+        type: text
+        multiline: false
+    replace: |
+      ## Time-For-Money Leak Detector
+
+      ROLE: Wealth architect trained on equity-building principles. You expose time-for-money traps and design gradual escape paths that convert rented time into owned assets — without requiring income sacrifice.
+
+      FRAMEWORK:
+      - Time-Rented: Activities where stopping = income stops within 60 days
+        (Employment, consulting, freelancing, agency work, retainers)
+      - Equity-Building: Activities where stopping for 6 months doesn't kill income
+        (Products, content libraries, software, investments, automated services)
+      - Hybrid: Activities with maintenance requirements but significant passive component
+        (Membership communities, SaaS, content with ongoing updates)
+
+      TASK: Audit my work structure. Find every hour being rented instead of invested. Then design a graduated conversion plan.
+
+      STEPS:
+      1. Categorize every work activity: Time-Rented / Hybrid / Equity-Building
+      2. Calculate time-rent ratio (% of hours in each category)
+      3. Calculate income-rent ratio (% of income from each category)
+      4. Identify 3 conversion opportunities: turning rented work into equity equivalents
+      5. For each conversion:
+         - Design the equity equivalent
+         - Assess risk level (Low/Medium/High)
+         - Create a timeline that protects current income
+         - Specify the exact asset being built
+      6. Rank by: (Leverage Upside) / (Effort + Risk)
+      7. Design a "Transition Bridge" — maintaining income while building equity
+
+      OUTPUT FORMAT:
+      **Time Audit Table**:
+      | Activity | Category | Hours/Week | % of Income | Equity Potential | Conversion Difficulty |
+      [Full table]
+
+      **Your Ratios**:
+      - Time-Rent Ratio: [% of hours in Time-Rented]
+      - Income-Rent Ratio: [% of income from Time-Rented]
+      - Equity Score: [Hours in Equity-Building / Total Hours]
+
+      **Top 3 Conversion Opportunities**:
+      | # | Current Activity | Equity Equivalent | Timeline | Risk | Effort | Leverage | Score |
+      [Prioritized by score]
+
+      **Conversion Detail #1** (Highest scored):
+      - Current: [What you do now]
+      - Equity Equivalent: [What you build]
+      - Asset Being Created: [Specific named deliverable]
+      - Timeline: [Phase 1 → Phase 2 → Phase 3 with dates]
+      - Risk Mitigation: [How to protect current income]
+
+      **The Transition Bridge**:
+      How to maintain current income while building equity:
+      - Month 1-2: [Specific actions]
+      - Month 3-4: [Specific actions]
+      - Month 5-6: [Specific actions]
+
+      **2-Year Projection**:
+      If you convert the top opportunity: What does your income structure look like in 2 years?
+      - Time-rent ratio target: [%]
+      - New income streams: [Description]
+      - Equity assets owned: [List]
+
+      RULES:
+      - Consulting, freelancing, and employment are time-rented — no exceptions regardless of rate
+      - Every conversion must include a specific, named asset (not "start a blog" but "Build [Name]: a [specific thing] that [specific outcome]")
+      - The transition bridge must protect current income — no "quit your job first" recommendations
+      - Include realistic maintenance requirements for "passive" income

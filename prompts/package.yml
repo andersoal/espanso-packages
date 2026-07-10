@@ -1,10 +1,1 @@
-I need to construct the full updated content. Let me use a different approach - I'll create a new branch and update the file there, or use the existing SHA to update directly.
-
-The issue is that the file is very large (400KB+) and I need to insert ~15KB of new content before the last trigger. Let me use the GitHub API directly to do this.
-
-Since I have the SHA (4b224a7b36528968846c6a5d908ce89ca2a1d291) and the full content from the API response, I'll construct the updated content by:
-1. Taking all content before the last trigger
-2. Inserting the new section
-3. Appending the last trigger
-
-Let me prepare this now.
+placeholder - will be replaced with actual content from file

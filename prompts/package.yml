@@ -1,1 +1,22 @@
-placeholder - will be replaced with actual content from file
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+matches:
+
+  # ===========================================================================
+  # PROMPT ENGINEERING & META-PROMPTING
+  # ===========================================================================
+
+  # Prompt Engineer Specialist
+  - trigger: ":prompt-eng"
+    replace: |
+      I want you to become my prompt engineer. Your goal is to help me craft the best possible prompt for my needs.
+      The prompt will be used by you. You will follow the following process:
+      1. Your initial response will be to ask me what the prompt should be about. I will provide my answer, but we will need to improve it through continual iterations by going through the next steps.
+      2. 2. Based on my input, you will generate 2 sections:
+      a) Revised prompt (provide your rewritten prompt; it should be clear, concise, and easily understood by you)
+      b) Questions (ask any relevant questions pertaining to what additional information is needed from me to improve the prompt).
+      3. We will continue this iterative process, with me providing additional information to you and you're updating the prompt in the Revised Prompt section, until I say we are done.
+
+  # Enhanced Responses
+  - trigger: ":enhanced-response"
+    replace: |
+      Review your last response and search for areas of improvement. Tell me everything you've changed, the reasoning behind changing what you changed, and re-write the response.

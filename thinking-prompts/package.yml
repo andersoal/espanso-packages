@@ -1,0 +1,160 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+# =============================================================================
+# THINKING PROMPTS — Metacognition & Self-Reflection Toolkit
+# =============================================================================
+# A curated set of 10 AI-powered prompts designed to sharpen thinking,
+# expose blind spots, and accelerate self-awareness.
+# Source: SAINT NULL's Thinking Toolkit
+# =============================================================================
+
+matches:
+
+  # =========================================================================
+  # 1. SNAP AWAKENING
+  # =========================================================================
+  # Forces a completely different perspective on recurring problems.
+  # Use when: you're stuck in a loop with the same issue.
+  # =========================================================================
+  - trigger: ":think-snap"
+    form: |
+      I keep repeating this recurring problem: [[problem]]
+
+      Give me one unexpected exercise that forces me to see it from a completely different angle, and the first small action I should take today.
+    form_fields:
+      problem:
+        type: multiline
+
+  # =========================================================================
+  # 2. MIRROR MY MIND
+  # =========================================================================
+  # Analyzes your thinking patterns, decision-making style, and biases.
+  # Use when: you want to understand how you actually think.
+  # =========================================================================
+  - trigger: ":think-mirror"
+    replace: |
+      Based on everything I've said so far, break down how I think. Show my patterns in decision-making, how I handle pressure, where I overcomplicate things, and where I'm missing something obvious.
+
+  # =========================================================================
+  # 3. DESTROY MY IDEA
+  # =========================================================================
+  # Builds the strongest possible case against one of your beliefs.
+  # Use when: you want to stress-test an idea or belief.
+  # =========================================================================
+  - trigger: ":think-destroy"
+    form: |
+      Take one of my beliefs about [[topic]] and build the strongest possible case against it.
+
+      Use logic, real-world examples, and edge cases. Then give me 3 questions I can ask myself to test if my belief actually holds up.
+    form_fields:
+      topic:
+        type: multiline
+
+  # =========================================================================
+  # 4. BORROW 5 BRAINS
+  # =========================================================================
+  # Looks at your problem through five different expert perspectives.
+  # Use when: you need fresh, multi-disciplinary insights.
+  # =========================================================================
+  - trigger: ":think-borrow"
+    form: |
+      Look at my [[idea_or_problem]] through five different experts (for example: psychologist, investor, engineer, strategist, creator).
+
+      For each one, explain what they would focus on, what they'd ignore, and what they'd do next.
+    form_fields:
+      idea_or_problem:
+        type: multiline
+
+  # =========================================================================
+  # 5. LEARNING CHEAT CODE
+  # =========================================================================
+  # Creates a focused, high-impact learning plan for any skill.
+  # Use when: you want to learn something fast without wasted effort.
+  # =========================================================================
+  - trigger: ":think-learn"
+    form: |
+      I want to get good at [[skill]]. Create a simple, focused plan that covers only the highest-impact parts.
+
+      Break it into clear steps, daily actions, and what I should practice to improve fast without wasting time.
+    form_fields:
+      skill:
+        type: text
+
+  # =========================================================================
+  # 6. FIND MY BLOCKS
+  # =========================================================================
+  # Identifies self-sabotage patterns and creates a removal plan.
+  # Use when: you feel stuck but can't pinpoint why.
+  # =========================================================================
+  - trigger: ":think-blocks"
+    form: |
+      Help me spot where I'm getting in my own way in [[area]].
+
+      Show the patterns, habits, or decisions that are slowing me down, and give me a simple plan to remove or replace them starting this week.
+    form_fields:
+      area:
+        type: text
+        default: "my life and work"
+
+  # =========================================================================
+  # 7. INSIGHT FINDER
+  # =========================================================================
+  # Breaks any topic into five powerful, non-obvious insights.
+  # Use when: you want to go beyond surface-level understanding.
+  # =========================================================================
+  - trigger: ":think-insight"
+    form: |
+      Take [[topic]] and break it into five powerful insights that are easy to understand but hard to notice.
+
+      For each one, explain it simply and show how it actually applies in real life.
+    form_fields:
+      topic:
+        type: text
+
+  # =========================================================================
+  # 8. DECODE ACTIONS
+  # =========================================================================
+  # Reveals hidden drivers (fears, habits, patterns) behind your behavior.
+  # Use when: you want to understand why you do what you do.
+  # =========================================================================
+  - trigger: ":think-decode"
+    form: |
+      Break down how I handle [[problem]].
+
+      Identify the hidden drivers behind my actions (patterns, fears, habits), explain why they show up, and suggest one practical way to respond differently next time.
+    form_fields:
+      problem:
+        type: multiline
+
+  # =========================================================================
+  # 9. VISIONARY THINKING
+  # =========================================================================
+  # Shows how a bold, creative person would approach your challenge.
+  # Use when: you need unconventional, high-conviction moves.
+  # =========================================================================
+  - trigger: ":think-vision"
+    form: |
+      Show how someone bold and creative (like [[person]]) would approach my [[challenge]].
+
+      Explain how their thinking differs from mine and what specific moves they would make first.
+    form_fields:
+      person:
+        type: text
+        default: "Elon Musk"
+      challenge:
+        type: multiline
+
+  # =========================================================================
+  # 10. BLIND SPOT EXPOSER
+  # =========================================================================
+  # Challenges your thinking and exposes weak logic, assumptions, and biases.
+  # Use when: you want to stress-test your conclusions before acting.
+  # =========================================================================
+  - trigger: ":think-blind"
+    form: |
+      Challenge my thinking about [[topic]].
+
+      Point out weak logic, hidden assumptions, and biases. Then reframe the situation in a clearer, more useful way I can act on immediately.
+    form_fields:
+      topic:
+        type: multiline

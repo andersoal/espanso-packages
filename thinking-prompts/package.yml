@@ -1,21 +1,28 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 # =============================================================================
-# THINKING PROMPTS — Metacognition & Self-Reflection Toolkit
+# THINKING PROMPTS -- Metacognition & Self-Reflection Toolkit
 # =============================================================================
 # A curated set of 10 AI-powered prompts designed to sharpen thinking,
 # expose blind spots, and accelerate self-awareness.
 # Source: SAINT NULL's Thinking Toolkit
+#
+# FEATURES:
+#   - 10 core reflective prompts (form + replace modes)
+#   - Regex variants for inline quick-fire usage
+#   - 3 multi-step chains for structured deep thinking
+#   - Cross-package synergy triggers for integrated workflows
 # =============================================================================
 
 matches:
 
   # =========================================================================
+  # CORE 10: SAINT NULL'S THINKING PROMPTS
+  # =========================================================================
+
+  # -------------------------------------------------------------------------
   # 1. SNAP AWAKENING
-  # =========================================================================
-  # Forces a completely different perspective on recurring problems.
-  # Use when: you're stuck in a loop with the same issue.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-snap"
     form: |
       I keep repeating this recurring problem: [[problem]]
@@ -25,22 +32,16 @@ matches:
       problem:
         type: multiline
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 2. MIRROR MY MIND
-  # =========================================================================
-  # Analyzes your thinking patterns, decision-making style, and biases.
-  # Use when: you want to understand how you actually think.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-mirror"
     replace: |
       Based on everything I've said so far, break down how I think. Show my patterns in decision-making, how I handle pressure, where I overcomplicate things, and where I'm missing something obvious.
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 3. DESTROY MY IDEA
-  # =========================================================================
-  # Builds the strongest possible case against one of your beliefs.
-  # Use when: you want to stress-test an idea or belief.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-destroy"
     form: |
       Take one of my beliefs about [[topic]] and build the strongest possible case against it.
@@ -50,12 +51,9 @@ matches:
       topic:
         type: multiline
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 4. BORROW 5 BRAINS
-  # =========================================================================
-  # Looks at your problem through five different expert perspectives.
-  # Use when: you need fresh, multi-disciplinary insights.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-borrow"
     form: |
       Look at my [[idea_or_problem]] through five different experts (for example: psychologist, investor, engineer, strategist, creator).
@@ -65,12 +63,9 @@ matches:
       idea_or_problem:
         type: multiline
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 5. LEARNING CHEAT CODE
-  # =========================================================================
-  # Creates a focused, high-impact learning plan for any skill.
-  # Use when: you want to learn something fast without wasted effort.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-learn"
     form: |
       I want to get good at [[skill]]. Create a simple, focused plan that covers only the highest-impact parts.
@@ -80,12 +75,9 @@ matches:
       skill:
         type: text
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 6. FIND MY BLOCKS
-  # =========================================================================
-  # Identifies self-sabotage patterns and creates a removal plan.
-  # Use when: you feel stuck but can't pinpoint why.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-blocks"
     form: |
       Help me spot where I'm getting in my own way in [[area]].
@@ -96,12 +88,9 @@ matches:
         type: text
         default: "my life and work"
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 7. INSIGHT FINDER
-  # =========================================================================
-  # Breaks any topic into five powerful, non-obvious insights.
-  # Use when: you want to go beyond surface-level understanding.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-insight"
     form: |
       Take [[topic]] and break it into five powerful insights that are easy to understand but hard to notice.
@@ -111,12 +100,9 @@ matches:
       topic:
         type: text
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 8. DECODE ACTIONS
-  # =========================================================================
-  # Reveals hidden drivers (fears, habits, patterns) behind your behavior.
-  # Use when: you want to understand why you do what you do.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-decode"
     form: |
       Break down how I handle [[problem]].
@@ -126,12 +112,9 @@ matches:
       problem:
         type: multiline
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 9. VISIONARY THINKING
-  # =========================================================================
-  # Shows how a bold, creative person would approach your challenge.
-  # Use when: you need unconventional, high-conviction moves.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-vision"
     form: |
       Show how someone bold and creative (like [[person]]) would approach my [[challenge]].
@@ -144,12 +127,9 @@ matches:
       challenge:
         type: multiline
 
-  # =========================================================================
+  # -------------------------------------------------------------------------
   # 10. BLIND SPOT EXPOSER
-  # =========================================================================
-  # Challenges your thinking and exposes weak logic, assumptions, and biases.
-  # Use when: you want to stress-test your conclusions before acting.
-  # =========================================================================
+  # -------------------------------------------------------------------------
   - trigger: ":think-blind"
     form: |
       Challenge my thinking about [[topic]].
@@ -158,3 +138,424 @@ matches:
     form_fields:
       topic:
         type: multiline
+
+  # =========================================================================
+  # FEATURE 1: REGEX VARIANTS -- Inline Quick-Fire Triggers
+  # =========================================================================
+  # Type the trigger with your argument in parentheses for instant expansion.
+  # Example: :think-snap(I keep procrastinating on my side project)
+  # =========================================================================
+
+  - regex: ":think-snap\\((?P<problem>[^)]*)\\)"
+    replace: |
+      I keep repeating this recurring problem: {{problem}}
+
+      Give me one unexpected exercise that forces me to see it from a completely different angle, and the first small action I should take today.
+
+  - regex: ":think-destroy\\((?P<topic>[^)]*)\\)"
+    replace: |
+      Take one of my beliefs about {{topic}} and build the strongest possible case against it.
+
+      Use logic, real-world examples, and edge cases. Then give me 3 questions I can ask myself to test if my belief actually holds up.
+
+  - regex: ":think-borrow\\((?P<idea>[^)]*)\\)"
+    replace: |
+      Look at my {{idea}} through five different experts (for example: psychologist, investor, engineer, strategist, creator).
+
+      For each one, explain what they would focus on, what they'd ignore, and what they'd do next.
+
+  - regex: ":think-learn\\((?P<skill>[^)]*)\\)"
+    replace: |
+      I want to get good at {{skill}}. Create a simple, focused plan that covers only the highest-impact parts.
+
+      Break it into clear steps, daily actions, and what I should practice to improve fast without wasting time.
+
+  - regex: ":think-blocks\\((?P<area>[^)]*)\\)"
+    replace: |
+      Help me spot where I'm getting in my own way in {{area}}.
+
+      Show the patterns, habits, or decisions that are slowing me down, and give me a simple plan to remove or replace them starting this week.
+
+  - regex: ":think-insight\\((?P<topic>[^)]*)\\)"
+    replace: |
+      Take {{topic}} and break it into five powerful insights that are easy to understand but hard to notice.
+
+      For each one, explain it simply and show how it actually applies in real life.
+
+  - regex: ":think-decode\\((?P<problem>[^)]*)\\)"
+    replace: |
+      Break down how I handle {{problem}}.
+
+      Identify the hidden drivers behind my actions (patterns, fears, habits), explain why they show up, and suggest one practical way to respond differently next time.
+
+  - regex: ":think-vision\\((?P<person>[^,]+),(?P<challenge>[^)]*)\\)"
+    replace: |
+      Show how someone bold and creative (like {{person}}) would approach my {{challenge}}.
+
+      Explain how their thinking differs from mine and what specific moves they would make first.
+
+  - regex: ":think-blind\\((?P<topic>[^)]*)\\)"
+    replace: |
+      Challenge my thinking about {{topic}}.
+
+      Point out weak logic, hidden assumptions, and biases. Then reframe the situation in a clearer, more useful way I can act on immediately.
+
+  # =========================================================================
+  # FEATURE 2: CHAIN TRIGGERS -- Multi-Step Deep Thinking Workflows
+  # =========================================================================
+  # Structured sequences that guide you through extended thinking sessions.
+  # Each chain has 3-4 steps. Use them in order for maximum depth.
+  # =========================================================================
+
+  # -------------------------------------------------------------------------
+  # CHAIN A: The Decision Forge (3-step decision-making protocol)
+  # -------------------------------------------------------------------------
+  - trigger: ":think-chain-decide"
+    word: true
+    replace: |
+      === DECISION FORGE -- Step 1 of 3: CLARIFY ===
+
+      Before deciding, answer these 4 questions:
+
+      1. What exactly am I deciding between? (List every option including "do nothing")
+      2. What is the real deadline -- and is it real or artificial urgency?
+      3. What would I need to believe for each option to be the right choice?
+      4. What is the worst realistic outcome of each option -- and can I live with it?
+
+      State your decision context and answers, then run :think-chain-decide-2
+
+  - trigger: ":think-chain-decide-2"
+    replace: |
+      === DECISION FORGE -- Step 2 of 3: STRESS-TEST ===
+
+      Now pressure-test your leading option:
+
+      1. Run :think-destroy on your preferred choice
+      2. Run :think-borrow on your problem, substituting: lawyer, pessimist, historian, 10-year-old, future-you
+      3. Identify the single assumption that, if wrong, makes your choice a disaster
+
+      Report what you found, then run :think-chain-decide-3
+
+  - trigger: ":think-chain-decide-3"
+    replace: |
+      === DECISION FORGE -- Step 3 of 3: COMMIT ===
+
+      Synthesize everything:
+
+      1. What is your final decision and why?
+      2. What is the one thing that could make you change your mind?
+      3. What is the very first action (specific, under 10 minutes) you will take?
+      4. When will you review whether this decision was correct?
+
+      Optional: Log this in your decision journal with :djlog
+
+  # -------------------------------------------------------------------------
+  # CHAIN B: The Insight Pipeline (3-step topic mastery)
+  # -------------------------------------------------------------------------
+  - trigger: ":think-chain-master"
+    word: true
+    replace: |
+      === INSIGHT PIPELINE -- Step 1 of 3: DECONSTRUCT ===
+
+      Pick a topic you want to deeply understand.
+
+      1. Run :think-insight on it
+      2. For each of the 5 insights, ask: "What must be true for this to work?"
+      3. Identify the one insight that, if wrong, collapses the others
+
+      Share your findings, then run :think-chain-master-2
+
+  - trigger: ":think-chain-master-2"
+    replace: |
+      === INSIGHT PIPELINE -- Step 2 of 3: STRESS-TEST ===
+
+      Deepen your understanding:
+
+      1. Run :think-blind on your strongest insight
+      2. Run :think-decode on why you find certain insights intuitive or counter-intuitive
+      3. Find the gap: what critical perspective is missing from your analysis?
+
+      Report what survived the stress-test, then run :think-chain-master-3
+
+  - trigger: ":think-chain-master-3"
+    replace: |
+      === INSIGHT PIPELINE -- Step 3 of 3: INTEGRATE ===
+
+      Make it actionable:
+
+      1. Compress your understanding into a 2-minute explanation (Feynman-style)
+      2. Identify 3 real-world situations where this insight changes how you act
+      3. Create one trigger phrase you'll use to recall this insight when needed
+
+      Optional: Lock it in with spaced repetition using :learn-active-recall
+
+  # -------------------------------------------------------------------------
+  # CHAIN C: The Problem Breaker (4-step problem resolution)
+  # -------------------------------------------------------------------------
+  - trigger: ":think-chain-solve"
+    word: true
+    replace: |
+      === PROBLEM BREAKER -- Step 1 of 4: REFRAME ===
+
+      State the problem you're facing.
+
+      1. Run :think-snap on it to get a fresh perspective
+      2. Rewrite the problem in 3 completely different ways (e.g., as opportunity, as symptom, as illusion)
+      3. Which reframe changes what a "solution" would even look like?
+
+      Share your best reframe, then run :think-chain-solve-2
+
+  - trigger: ":think-chain-solve-2"
+    replace: |
+      === PROBLEM BREAKER -- Step 2 of 4: DECODE ===
+
+      Understand the human layer:
+
+      1. Run :think-decode on your own response to this problem
+      2. Run :think-blocks to find your self-sabotage patterns
+      3. Ask: what would someone with zero emotional attachment to this do?
+
+      Report your blind spots, then run :think-chain-solve-3
+
+  - trigger: ":think-chain-solve-3"
+    replace: |
+      === PROBLEM BREAKER -- Step 3 of 4: MULTIPLY ===
+
+      Generate solutions from everywhere:
+
+      1. Run :think-borrow on your reframed problem
+      2. Run :think-vision to see how an unconventional thinker would attack it
+      3. Force yourself to list 10 solutions, including 3 terrible ones and 1 impossible one
+
+      Share your top 3 solutions, then run :think-chain-solve-4
+
+  - trigger: ":think-chain-solve-4"
+    replace: |
+      === PROBLEM BREAKER -- Step 4 of 4: EXECUTE ===
+
+      Commit to action:
+
+      1. Pick one solution. Run :think-destroy on it to confirm it's robust.
+      2. Define the smallest possible first step (under 5 minutes)
+      3. Set a trigger condition: "When X happens, I will do Y"
+      4. Schedule a check-in with yourself to review progress
+
+      Optional: Convert to project plan with :p-plan
+
+
+  # =========================================================================
+  # FEATURE 3: CROSS-PACKAGE SYNERGY -- Integrated Workflows
+  # =========================================================================
+  # These triggers bridge thinking-prompts with other packages in the repo,
+  # creating powerful integrated workflows. Each trigger is designed to
+  # seamlessly hand off to complementary tools.
+  # =========================================================================
+
+  # -------------------------------------------------------------------------
+  # SYNERGY A: Reflective Decision Making
+  # -------------------------------------------------------------------------
+  # think -> decide -> log the decision for later review
+  # Partners with: decision-journal package (:djlog, :djreview)
+  # -------------------------------------------------------------------------
+  - trigger: ":think-decide"
+    word: true
+    replace: |
+      === REFLECTIVE DECISION PROTOCOL ===
+
+      Step 1 -- THINK: Run :think-chain-decide (all 3 steps)
+      Step 2 -- DECIDE: Make your choice using the clarified framework
+      Step 3 -- LOG: Immediately capture the decision with :djlog so you can review it later
+
+      Why this works: Thinking prevents impulsive choices. Logging prevents hindsight bias.
+
+  - trigger: ":think-decide-quick"
+    form: |
+      I'm about to make this decision: [[decision]]
+
+      Walk me through a compressed version of the reflective decision protocol:
+      1. Three angles to consider (using :think-borrow logic)
+      2. The strongest case against my likely choice (using :think-destroy logic)
+      3. The one question I haven't asked myself yet
+      4. A recommendation on whether to decide now or gather more info
+
+      Then prompt me to log this with :djlog if it's a significant choice.
+    form_fields:
+      decision:
+        type: multiline
+
+  # -------------------------------------------------------------------------
+  # SYNERGY B: Strategic Thinking Loop
+  # -------------------------------------------------------------------------
+  # thinking prompts + business/strategy frameworks
+  # Partners with: social-strategy, marketing-sales packages
+  # -------------------------------------------------------------------------
+  - trigger: ":think-strategize"
+    form: |
+      I'm working on this strategic challenge: [[challenge]]
+
+      Apply a multi-lens strategic analysis:
+
+      1. PERSPECTIVE (think-borrow): How would a psychologist, investor, engineer, strategist, and creator view this?
+      2. STRESS-TEST (think-destroy): What's the strongest case against my current approach?
+      3. BLIND SPOTS (think-blind): What weak logic or hidden assumptions am I carrying?
+      4. INSIGHTS (think-insight): What are 5 non-obvious insights about this situation?
+
+      Deliver a unified strategic recommendation synthesizing all four lenses.
+    form_fields:
+      challenge:
+        type: multiline
+
+  - trigger: ":think-innovate"
+    form: |
+      I need breakthrough ideas for [[domain]].
+
+      Run this innovation sequence:
+      1. DECONSTRUCT: Use :think-insight to find 5 hidden patterns in [[domain]]
+      2. CROSS-POLLINATE: Use :think-borrow to see how 5 unrelated industries would solve this
+      3. DESTROY: Use :think-destroy on the most obvious solution to force unconventional thinking
+      4. VISION: Use :think-vision to channel the approach of [[visionary]]
+
+      Synthesize into 3 concrete, actionable ideas ranked by impact vs. feasibility.
+    form_fields:
+      domain:
+        type: text
+      visionary:
+        type: text
+        default: "Elon Musk"
+
+  # -------------------------------------------------------------------------
+  # SYNERGY C: Learning Accelerator
+  # -------------------------------------------------------------------------
+  # thinking prompts + learning frameworks
+  # Partners with: learn, learn-language packages
+  # -------------------------------------------------------------------------
+  - trigger: ":think-accelerate"
+    form: |
+      I want to master [[skill]] as fast as possible.
+
+      Execute the accelerated learning protocol:
+
+      1. CHEAT CODE (think-learn): Generate the high-impact 20% learning plan
+      2. INSIGHTS (think-insight): Extract 5 deep insights about [[skill]] that most learners miss
+      3. BLOCKS (think-blocks): Identify what will likely slow me down and how to remove it
+      4. MASTERY CHECK: Create a self-test question that only a practitioner could answer
+
+      Give me a complete 7-day sprint plan combining all four outputs.
+    form_fields:
+      skill:
+        type: text
+
+  - trigger: ":think-teachback"
+    form: |
+      I just learned about [[topic]]. I'm going to explain it back to test my understanding.
+
+      Run the teach-back protocol:
+      1. FEYNMAN CHECK: Ask me to explain [[topic]] in my own words
+      2. GAP FIND (think-decode): Analyze my explanation for hidden confusion or oversimplification
+      3. BLIND SPOT (think-blind): Challenge any weak logic or assumptions in my understanding
+      4. LOCK: Give me a memorable one-sentence summary and 3 recall triggers
+
+      Start by asking me to explain [[topic]] in my own words.
+    form_fields:
+      topic:
+        type: text
+
+  # -------------------------------------------------------------------------
+  # SYNERGY D: Productivity & Focus Integration
+  # -------------------------------------------------------------------------
+  # thinking prompts + productivity systems
+  # Partners with: productivity package
+  # -------------------------------------------------------------------------
+  - trigger: ":think-productivity"
+    form: |
+      I'm stuck on [[task]] and need to get moving.
+
+      Run the productivity unlock sequence:
+      1. SNAPSHOT (think-snap): Give me one unexpected perspective on why I'm stuck
+      2. BLOCKS (think-blocks): Identify the specific self-sabotage patterns at play
+      3. DECODE (think-decode): Reveal the hidden emotional drivers behind the procrastination
+      4. ACTION: Convert everything into a "Ridiculously Small First Step" (under 90 seconds)
+
+      End with: the exact first step, where to put my hands, and what to type/click.
+    form_fields:
+      task:
+        type: multiline
+
+  # -------------------------------------------------------------------------
+  # SYNERGY E: Weekly Reflection Ritual
+  # -------------------------------------------------------------------------
+  # A complete end-to-end weekly review combining multiple thinking tools
+  # -------------------------------------------------------------------------
+  - trigger: ":think-weekly"
+    replace: |
+      === WEEKLY THINKING RITUAL ===
+
+      This is a guided weekly review. Work through each section in order.
+
+      --- MIRROR (think-mirror) ---
+      How did I think this week? What patterns showed up in my decisions?
+
+      --- BLOCKS (think-blocks) ---
+      What got in my way? What habits need removing or replacing?
+
+      --- INSIGHTS (think-insight) ---
+      What was the most important non-obvious insight I had this week?
+
+      --- DESTROY (think-destroy) ---
+      What's one belief I held this week that deserves to be challenged?
+
+      --- VISION (think-vision) ---
+      How would my future ideal self have handled this week differently?
+
+      --- COMMIT ---
+      What is the one thing I will think about differently next week?
+
+      Optional: Log the key decisions of the week with :djlog and review previous decisions with :djreview
+
+  # -------------------------------------------------------------------------
+  # UTILITY: Thinking Prompt Quick Reference
+  # -------------------------------------------------------------------------
+  - trigger: ":think-help"
+    replace: |
+      === THINKING PROMPTS QUICK REFERENCE ===
+
+      CORE 10 (interactive forms):
+        :think-snap      -- Snap Awakening (break loops)
+        :think-mirror    -- Mirror My Mind (pattern analysis)
+        :think-destroy   -- Destroy My Idea (stress-test beliefs)
+        :think-borrow    -- Borrow 5 Brains (expert perspectives)
+        :think-learn     -- Learning Cheat Code (skill plans)
+        :think-blocks    -- Find My Blocks (self-sabotage)
+        :think-insight   -- Insight Finder (deep topic analysis)
+        :think-decode    -- Decode Actions (behavior drivers)
+        :think-vision    -- Visionary Thinking (channel great minds)
+        :think-blind     -- Blind Spot Exposer (logic audit)
+
+      INLINE VARIANTS (no form needed):
+        :think-snap(problem)         -- instant Snap Awakening
+        :think-destroy(topic)        -- instant idea destruction
+        :think-borrow(idea)          -- instant 5-brain perspective
+        :think-learn(skill)          -- instant learning plan
+        :think-blocks(area)          -- instant block finder
+        :think-insight(topic)        -- instant insight extraction
+        :think-decode(problem)       -- instant behavior decode
+        :think-vision(person,challenge) -- instant visionary thinking
+        :think-blind(topic)          -- instant blind spot audit
+
+      CHAINS (multi-step workflows):
+        :think-chain-decide  + -2 + -3  -- The Decision Forge
+        :think-chain-master + -2 + -3  -- The Insight Pipeline
+        :think-chain-solve  + -2 + -3 + -4  -- The Problem Breaker
+
+      SYNERGY (cross-package):
+        :think-decide        -- Reflective decision-making + :djlog
+        :think-decide-quick  -- Compressed decision audit
+        :think-strategize    -- Multi-lens strategic analysis
+        :think-innovate      -- Breakthrough idea generation
+        :think-accelerate    -- Accelerated learning protocol
+        :think-teachback     -- Feynman-style comprehension check
+        :think-productivity  -- Procrastination unlock sequence
+        :think-weekly        -- Complete weekly reflection ritual
+
+      HELP: :think-help (this reference)
+

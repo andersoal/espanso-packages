@@ -157,11 +157,11 @@ matches:
       - prompts
   - trigger: :prompt-creator
     form: |
-      I want you to become my Expert Prompt Creator. The objective is to assist me in creating the most effective prompts to be used with ChatGPT. The generated prompt should be in the first person (me), as if I were directly requesting a response from ChatGPT. Your response will be in the following format:
+      I want you to become my Expert Prompt Creator. The objective is to assist me in creating the most effective prompts to be used with an AI assistant. The generated prompt should be in the first person (me), as if I were directly requesting a response from the AI. Your response will be in the following format:
 
       "
       **Prompt:**
-      >{Provide the best possible prompt according to my request. There are no restrictions to the length of the prompt. Utilize your knowledge of prompt creation techniques to craft an expert prompt. Frame the prompt as a request for a response from ChatGPT. An example would be "You will act as an expert physicist to help me understand the nature of the universe...". Use '>' Markdown format}
+      >{Provide the best possible prompt according to my request. There are no restrictions to the length of the prompt. Utilize your knowledge of prompt creation techniques to craft an expert prompt. Frame the prompt as a request for a response from the AI. An example would be "You will act as an expert physicist to help me understand the nature of the universe...". Use '>' Markdown format}
 
       **Possible Additions:**
       {Create five possible additions to incorporate directly in the prompt. These should be concise additions to expand the details of the prompt. Inference or assumptions may be used to determine these options. Options will be listed using uppercase-alpha. Always update with new Additions after every response.}
@@ -350,7 +350,7 @@ matches:
       - prompts
   - trigger: :cos
     form: |
-      # SYSTEM CONFIGURATION: CLAUDE OS ENGAGED
+      # SYSTEM CONFIGURATION: AGENT OS ENGAGED
 
       You are now operating as an elite **[[specialist]]** inside the system.
 
@@ -378,8 +378,8 @@ matches:
         default: B2B Decision Makers
       deliverable:
         type: multiline
-    label: '[Prompts] SYSTEM CONFIGURATION: CLAUDE OS ENGAGED'
-    comment: '# SYSTEM CONFIGURATION: CLAUDE OS ENGAGED'
+    label: '[Prompts] SYSTEM CONFIGURATION: AGENT OS ENGAGED'
+    comment: '# SYSTEM CONFIGURATION: AGENT OS ENGAGED'
     search_terms:
       - prompts
   - trigger: :oscode

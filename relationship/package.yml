@@ -1,8 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
-  # SKILL 1: DATE NIGHT PLANNER
-  - trigger: ":dateplan"
+  - trigger: :dateplan
     form: |
       Act as our AI Relationship Concierge and Date Night Planner. Generate exactly three distinct date options for this weekend using this structural criteria:
       - Current Location Context: [[city]]
@@ -16,13 +15,15 @@ matches:
     form_fields:
       city:
         type: text
-        default: "Austin, TX"
+        default: Austin, TX
       budget:
         type: text
-        default: "60"
-
-  # SKILL 2: THE FINANCIAL CHECK-IN
-  - trigger: ":fincheck"
+        default: '60'
+    label: '[Relationship] Creative Date & Activity Concierge'
+    comment: Act as our AI Relationship Concierge and Date Night Planner. Generate exactly three distinct date options for this weeke
+    search_terms:
+      - relationship
+  - trigger: :fincheck
     form: |
       Act as our joint Financial Strategist. Below is our baseline snapshot for the past week. Analyze our current spending velocity, note anything out of the ordinary, and evaluate our progress tracking toward our primary joint savings milestone ([[goal]]).
 
@@ -37,25 +38,27 @@ matches:
     form_fields:
       rent:
         type: text
-        default: "2100"
+        default: '2100'
       groceries:
         type: text
-        default: "187"
+        default: '187'
       dining:
         type: text
-        default: "96"
+        default: '96'
       subs:
         type: text
-        default: "43"
+        default: '43'
       unusual:
         type: text
-        default: "None"
+        default: None
       goal:
         type: text
-        default: "Europe Trip Fund"
-
-  # SKILL 3: THE MENTAL LOAD SPLITTER
-  - trigger: ":loadsplit"
+        default: Europe Trip Fund
+    label: '[Relationship] Joint Financial Alignment & Budgeting'
+    comment: Act as our joint Financial Strategist. Below is our baseline snapshot for the past week. Analyze our current spending ve
+    search_terms:
+      - relationship
+  - trigger: :loadsplit
     form: |
       Act as our domestic operations manager. We need to split the following collective list of household tasks, appointments, and chores fairly across both of us for the coming week to balance the invisible mental load evenly.
 
@@ -71,9 +74,11 @@ matches:
           - Mid-week grocery run
           - Order anniversary/birthday gift
           - Drop dog off at the groomer (10am Sat)
-
-  # SKILL 4: THE TRIP PLANNER
-  - trigger: ":tripplan"
+    label: '[Relationship] Domestic Labor & Mental Load Balancing'
+    comment: Act as our domestic operations manager. We need to split the following collective list of household tasks, appointments,
+    search_terms:
+      - relationship
+  - trigger: :tripplan
     form: |
       Act as a high-end customized travel concierge. Build a personalized, day-by-day vacation itinerary using our specific, asymmetric travel profiles:
 
@@ -89,31 +94,33 @@ matches:
     form_fields:
       destination:
         type: text
-        default: "Lisbon, Portugal"
+        default: Lisbon, Portugal
       dates:
         type: text
-        default: "September"
+        default: September
       pace_a:
         type: text
-        default: "Slow, coffee first"
+        default: Slow, coffee first
       food_a:
         type: text
-        default: "No shellfish"
+        default: No shellfish
       vibe_a:
         type: text
-        default: "Mix of culture + rest"
+        default: Mix of culture + rest
       pace_b:
         type: text
-        default: "Early hike ok"
+        default: Early hike ok
       food_b:
         type: text
-        default: "Eats everything"
+        default: Eats everything
       vibe_b:
         type: text
-        default: "Wants at least 1 adventure"
-
-  # SKILL 5: THE MEMORY KEEPER
-  - trigger: ":memkeep"
+        default: Wants at least 1 adventure
+    label: '[Relationship] Bespoke Travel & Itinerary Concierge'
+    comment: Act as a high-end customized travel concierge. Build a personalized, day-by-day vacation itinerary using our specific, a
+    search_terms:
+      - relationship
+  - trigger: :memkeep
     form: |
       Act as our relationship archivist. Commit the following newly captured memories, inside jokes, and milestones into our relationship ledger:
 
@@ -128,20 +135,25 @@ matches:
           - First time making homemade pizza together (the dough disaster)
           - Adopted our dog Luna
           - Celebrated career promotion dinner at Rosewood
-
-  # 1. Full Memory Dump (Image 1)
-  - trigger: ":aimem"
+    label: '[Relationship] Relationship Archivist & Memory Keeper'
+    comment: Act as our relationship archivist. Commit the following newly captured memories, inside jokes, and milestones into our r
+    search_terms:
+      - relationship
+  - trigger: :aimem
     replace: |
       Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, preferences, anything. Don't summarize or leave anything out. I want to see the full file you've built on me from our conversations.
-
-  # 2. Hidden Inferred Profile (Image 2)
-  - trigger: ":aiprofile"
+    label: '[Relationship] Stored AI Memory & Relationship Overview'
+    comment: Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, pr
+    search_terms:
+      - relationship
+  - trigger: :aiprofile
     replace: |
       Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, what I ask, and what I avoid. My age range, income level, where I likely live, my situation. Show me exactly what tipped you off for each one.
-
-  # 3. Tradutor de Assuntos Impossíveis (Image 3)
-  # Improvement: Upgraded to an interactive form so you can supply the context inline!
-  - trigger: ":tradutor"
+    label: '[Relationship] Unstated Behavioral Pattern Profiler'
+    comment: Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, w
+    search_terms:
+      - relationship
+  - trigger: :tradutor
     form: |
       Conteúdo para analisar:
       [[conteudo]]
@@ -156,10 +168,11 @@ matches:
     form_fields:
       conteudo:
         type: multiline
-
-  # 4. Detector de Falsos Especialistas (Image 4)
-  # Improvement: Interactive form replaces [HABILIDADE] dynamically
-  - trigger: ":expert"
+    label: '[Relationship] Complex Content to Plain Portuguese Translator'
+    comment: 'Conteúdo para analisar:'
+    search_terms:
+      - relationship
+  - trigger: :expert
     word: true
     form: |
       Eu acho que domino [[habilidade]]. Prove que estou errado. Faça [[quantidade_de_perguntas]] perguntas simples que revelem lacunas de conhecimento.
@@ -168,28 +181,22 @@ matches:
     form_fields:
       habilidade:
         type: text
-        default: ""
+        default: ''
       nivel:
         type: choice
         values:
-          - "Iniciante"
-          - "Intermediário"
-          - "Avançado"
-          - "Especialista"
+          - Iniciante
+          - Intermediário
+          - Avançado
+          - Especialista
       quantidade_de_perguntas:
         type: text
-        default: "5"
-
-  # 5. Quick Text Guide: Privacy Clean Up Checklist (Images 5 & 6 combo)
-  #- trigger: ":aiprivacy"
-  #  replace: |
-  #    --- ChatGPT Privacy Cleanup Action Items ---
-  #    1. Memories: Go to Settings > Personalization > Manage Memories to view/clear explicit facts.
-  #    2. Tracking: Go to Settings > Personalization > Turn off "Reference Chat History".
-  #    3. Training: Go to Data Controls > Turn off "Improve the model for everyone".
-
-  # The Negotiator in the Shadows
-  - trigger: ":p_difficult"
+        default: '5'
+    label: '[Relationship] Skill Mastery Challenge & Blind Spot Prover'
+    comment: Eu acho que domino . Prove que estou errado. Faça  perguntas simples que revelem lacunas de conhecimento.
+    search_terms:
+      - relationship
+  - trigger: :p_difficult
     form: |
       I'm going to have this difficult conversation: [[situation]]
       The person is: [[profile]]
@@ -203,3 +210,7 @@ matches:
         type: text
       outcome:
         type: text
+    label: '[Relationship] Difficult Conversation Preparation Coach'
+    comment: 'I''m going to have this difficult conversation:'
+    search_terms:
+      - relationship

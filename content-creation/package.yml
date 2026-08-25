@@ -1,15 +1,19 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
-  - trigger: ":fixlight"
+  - trigger: :fixlight
     word: true
     replace: |
       Precise correction of deficient lighting while preserving the face and original scene essence.
       Correct harsh shadows on the eyes, nose, and chin caused by mobile phone flash.
       Neutralize ambient color casts for accurate, lifelike skin tones. Brighten underexposed areas.
       Final image: realistic and intact skin texture with invisible, natural editing.
-
-  - trigger: ":fixform"
+    label: '[Content Creation] Image Lighting & Cinematic Shadow Corrector'
+    comment: Precise correction of deficient lighting while preserving the face and original scene essence.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :fixform
     form: |
       Precise correction of deficient lighting. Preserve facial features and the core essence of the scene.
       Correct harsh shadows on eyes/nose/chin caused by [[light_source]].
@@ -20,79 +24,103 @@ matches:
       light_source:
         type: choice
         values:
-          - "mobile phone flash"
-          - "harsh overhead lighting"
-          - "low-light environment noise"
+          - mobile phone flash
+          - harsh overhead lighting
+          - low-light environment noise
       cast_color:
         type: choice
         values:
-          - "orange/warm"
-          - "green/fluorescent"
-          - "blue/cold"
-          - "unwanted ambient"
-
-  # 1. Content Calendar Prompt
-  - trigger: ":ccal"
+          - orange/warm
+          - green/fluorescent
+          - blue/cold
+          - unwanted ambient
+    label: '[Content Creation] Character Anatomy & Form Fixer Prompt'
+    comment: Precise correction of deficient lighting. Preserve facial features and the core essence of the scene.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :ccal
     form: |
       Create a 30-day social media content calendar for [[niche]], mixing videos, carousels, and captions.
     form_fields:
       niche:
         type: text
-        default: "software engineering"
-
-  # 2. Viral Hooks Prompt
-  - trigger: ":vhooks"
+        default: software engineering
+    label: '[Content Creation] 30-Day Omnichannel Content Calendar'
+    comment: Create a 30-day social media content calendar for , mixing videos, carousels, and captions.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :vhooks
     form: |
       Write 20 scroll-stopping and engaging hooks for TikTok/Instagram posts for [[topic]].
     form_fields:
       topic:
         type: text
-        default: "architecture"
-
-  # 1. Content Creator Mode Activation
-  - trigger: ":ccactivate"
+        default: architecture
+    label: '[Content Creation] 50 Viral Video & Post Hooks Library'
+    comment: Write 20 scroll-stopping and engaging hooks for TikTok/Instagram posts for .
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :ccactivate
     form: |
       Act as a professional content creator who has experience producing high-performing content across multiple platforms. From now on, whenever I give you a topic, create content that is engaging, valuable, and easy to understand. Focus on clarity, creativity, and usefulness so every piece of content feels intentional and audience-focused. My niche is: [[niche]].
     form_fields:
       niche:
         type: text
-        default: "Digital Marketing & AI Productivity"
-
-  # 2. Infinite Content Idea Generator
-  - trigger: ":ccideas"
+        default: Digital Marketing & AI Productivity
+    label: '[Content Creation] Omnichannel Content Creator Persona Activation'
+    comment: Act as a professional content creator who has experience producing high-performing content across multiple platforms. Fr
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :ccideas
     form: |
       Act as a creative content strategist known for generating endless ideas. Based on my niche [[niche]], generate 50 highly relevant content ideas that solve problems, answer common questions, or provide valuable insights that my audience cares about.
     form_fields:
       niche:
         type: text
-        default: "Solopreneurship"
-
-  # 3. Audience Understanding
-  - trigger: ":ccaudience"
+        default: Solopreneurship
+    label: '[Content Creation] Ccideas'
+    comment: Act as a creative content strategist known for generating endless ideas. Based on my niche , generate 50 highly relevant
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :ccaudience
     form: |
       Analyze my target audience [[audience_desc]] and identify their biggest problems, interests, fears, desires. Use this information to guide future content ideas so every piece of content directly addresses their needs.
     form_fields:
       audience_desc:
         type: multiline
-
-  # 4. Scroll-Stopping Hook Creator
-  - trigger: ":cchooks"
+    label: '[Content Creation] Ccaudience'
+    comment: Analyze my target audience  and identify their biggest problems, interests, fears, desires. Use this information to guid
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :cchooks
     form: |
       Generate powerful Hooks for content related to my topic [[topic]]. Ensure the hooks are attention-grabbing and designed to make viewers or readers stop scrolling and pay attention immediately.
     form_fields:
       topic:
         type: text
-
-  # 5. Structured Content Builder
-  - trigger: ":ccbuild"
+    label: '[Content Creation] Generate Powerful Hooks For Content Related To My Topic'
+    comment: Generate powerful Hooks for content related to my topic . Ensure the hooks are attention-grabbing and designed to make v
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :ccbuild
     form: |
       Create structured content for the topic [[topic]] that includes a clear beginning, main points, and conclusion. Ensure the content flows logically and delivers value step-by-step so the audience understands the message easily.
     form_fields:
       topic:
         type: text
-
-  # 6. Smart Content Repurposing (Automatic Clipboard Injection)
-  - trigger: ":ccrepurpose"
+    label: '[Content Creation] Ccbuild'
+    comment: Create structured content for the topic  that includes a clear beginning, main points, and conclusion. Ensure the conten
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :ccrepurpose
     replace: |
       Take this existing content:
 
@@ -104,44 +132,49 @@ matches:
     vars:
       - name: copied_text
         type: clipboard
-
-  # Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, damage, fading, scratches, tears, folds, worn-out areas, or being in black and white. First, analyze the image to identify the approximate era and original photographic process to ensure a historically accurate restoration. Make it look fresh and clear by gently sharpening soft edges and facial features without overdoing it, smoothing out grainy spots or noise if present, and reconstructing missing parts with realistic textures that match the original. If colors are faded or absent, bring them back naturally and vibrantly but true to the era's photographic technology without looking artificial; balance colors to match natural lighting, adjust brightness and contrast so everything pops nicely, and maintain original tonality. Add subtle details to faces, objects, or backgrounds that might have been lost, like fine lines in clothing, lifelike skin textures, or small elements in the scenery, while keeping the overall feel authentic, preserving natural grain patterns, and not changing the composition. Ensure the whole image is balanced, with no harsh shadows or washed-out areas, remove technical defects while respecting the nostalgic charm and exposure qualities of the time. Finally, upscale it to a higher resolution like Full HD 32k for better clarity, outputting in a photo-realistic style that looks like a professionally restored or recent high-quality photo.
-  # Interactive prompt generator for photo restoration workflows
-  # ** The Technical Misnomer ("Full HD 32k"): The prompt instructs the model to upscale to "Full HD 32k". This is a severe hallucination/contradiction in terms. Full HD specifically denotes a resolution of $1920 \times 1080$ (roughly $2\text{K}$). $32\text{K}$ refers to an extreme resolution of $30720 \times 17280$. Feeding an LLM or diffusion model conflicting spatial constraints causes unpredictable downsampling or generation errors.
-  # ** Monolithic Inflexibility: Not every photo needs scratch removal, colorization, and background reconstruction. Hardcoding a wall of text as a static snippet forcing all parameters at once guarantees suboptimal AI generations for photos that only require minor adjustments.
-  #
-  - trigger: ":photorest"
+    label: '[Content Creation] Take This Existing Content'
+    comment: 'Take this existing content:'
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :photorest
     form: |
       Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as [[damage]]. First, analyze the image to identify the approximate era ([[era]]) and original photographic process to ensure a historically accurate restoration. Make it look fresh and clear by gently sharpening soft edges and facial features without overdoing it, smoothing out grainy spots or noise if present, and reconstructing missing parts with realistic textures that match the original. If colors are faded or absent, bring them back naturally and vibrantly but true to the era's photographic technology without looking artificial; balance colors to match natural lighting, adjust brightness and contrast so everything pops nicely, and maintain original tonality. Add subtle details to faces, objects, or backgrounds that might have been lost, like fine lines in clothing, lifelike skin textures, or small elements in the scenery, while keeping the overall feel authentic, preserving natural grain patterns, and not changing the composition. Ensure the whole image is balanced, with no harsh shadows or washed-out areas, remove technical defects while respecting the nostalgic charm and exposure qualities of the time. Finally, upscale it to [[resolution]] for better clarity, outputting in a photo-realistic style that looks like a professionally restored or recent high-quality photo.
     form_fields:
       damage:
         type: text
-        default: "blurring, damage, fading, scratches, tears, folds, worn-out areas"
-
+        default: blurring, damage, fading, scratches, tears, folds, worn-out areas
       era:
         type: text
-        default: "automatic detection"
+        default: automatic detection
       resolution:
         type: choice
         values:
-          - "Ultra HD 4K"
-          - "Ultra HD 8K"
-          - "Full HD (1080p)"
-
-  # Exact literal extraction from photo restoration card
-  - trigger: ":prmonolith"
+          - Ultra HD 4K
+          - Ultra HD 8K
+          - Full HD (1080p)
+    label: '[Content Creation] Photorest'
+    comment: Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as . First, anal
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :prmonolith
     replace: |
       Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, damage, fading, scratches, tears, folds, worn-out areas, or being in black and white. First, analyze the image to identify the approximate era and original photographic process to ensure a historically accurate restoration. Make it look fresh and clear by gently sharpening soft edges and facial features without overdoing it, smoothing out grainy spots or noise if present, and reconstructing missing parts with realistic textures that match the original. If colors are faded or absent, bring them back naturally and vibrantly but true to the era's photographic technology without looking artificial; balance colors to match natural lighting, adjust brightness and contrast so everything pops nicely, and maintain original tonality. Add subtle details to faces, objects, or backgrounds that might have been lost, like fine lines in clothing, lifelike skin textures, or small elements in the scenery, while keeping the overall feel authentic, preserving natural grain patterns, and not changing the composition. Ensure the whole image is balanced, with no harsh shadows or washed-out areas, remove technical defects while respecting the nostalgic charm and exposure qualities of the time. Finally, upscale it to a higher resolution like Full HD 32k for better clarity, outputting in a photo-realistic style that looks like a professionally restored or recent high-quality photo.
-
-  # Professional skin retouching with premium sharpness, advanced imperfection correction; eliminates pimples, acne, blackheads, temporary spots, and irregular texture of the facial skin. Intelligent smoothing while preserving natural pores; soft and healthy skin with realistic texture, without a "plastic skin" effect. Fully preserve the original skin tone and undertone; avoid excessive brightness or darkening. Keep facial details precise: eyes, eyebrows, eyelashes, beard, and hair intact. High-end beauty editorial finish, balanced lighting, refined contrast, subtle facial definition, realistic skin retouching, studio-quality result, ultra-detailed, natural skin texture, ultra-sharp 3x upscale, HD, photorealistic, clean cinematic finish.
-  # ** Buzzword Inflation: Tokens like ultra-detailed, HD, and photorealistic are artifacts of older generation models. Modern engines (like Flux or Midjourney v6) often interpret these as instructions to generate a cheap, over-processed digital art style rather than an actual photograph.
-  # ** Hardcoded Assumptions: The phrase beard, and hair intact is brittle. If you apply this trigger to a prompt for a clean-shaven subject or a bald subject, the model will experience token confusion, leading to phantom hair artifacts or ignored instructions.
-  # ** Structural Redundancy: The phrase realistic skin retouching and variants of natural skin texture are repeated multiple times, wasting context window weight.
-  - trigger: ":srps"
-    replace: "Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture. Intelligent smoothing while preserving natural pores and realistic texture without a plastic skin effect. Preserved original skin tone and undertone, balanced lighting, refined contrast, high-end beauty editorial finish, clean cinematic execution."
-
-  - trigger: ":srf"
-    replace: "Professional skin retouching for a {{form.subject}}, advanced imperfection correction, eliminating acne and irregular skin texture. Intelligent smoothing while preserving natural pores, maintaining a realistic skin texture without a plastic effect. Fully preserve original skin tone and undertone. Keep facial details precise: {{form.details}} intact. High-end beauty editorial finish, balanced lighting, refined contrast, studio-quality photographic execution."
+    label: '[Content Creation] Prmonolith'
+    comment: Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, dam
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :srps
+    replace: Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture. Intelligent smoothing while preserving natural pores and realistic texture without a plastic skin effect. Preserved original skin tone and undertone, balanced lighting, refined contrast, high-end beauty editorial finish, clean cinematic execution.
+    label: '[Content Creation] Srps'
+    comment: Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :srf
+    replace: 'Professional skin retouching for a {{form.subject}}, advanced imperfection correction, eliminating acne and irregular skin texture. Intelligent smoothing while preserving natural pores, maintaining a realistic skin texture without a plastic effect. Fully preserve original skin tone and undertone. Keep facial details precise: {{form.details}} intact. High-end beauty editorial finish, balanced lighting, refined contrast, studio-quality photographic execution.'
     vars:
       - name: form
         type: form
@@ -153,66 +186,80 @@ matches:
             subject:
               type: list
               values:
-                - "man"
-                - "woman"
-                - "person"
+                - man
+                - woman
+                - person
             details:
               type: list
               values:
-                - "eyes, eyebrows, eyelashes, beard, and hair"
-                - "eyes, eyebrows, eyelashes, and hair"
-                - "eyes, eyebrows, and facial features"
-
-  # Ultra-high-resolution 4K enhancement based strictly on the provided reference image. Absolute fidelity to original facial anatomy, proportions, and identity. Preserve expression, gaze, pose, camera angle, framing, and perspective with zero deviation. Clothing, hair, skin, and background elements must remain unchanged in structure, placement, and design. Recover fine-grain detail with natural realism. Enhance pores, fine lines, hair strands, eyelashes, fabric weave, seams, and material edges without introducing stylization. Maintain original color science, white balance, and tonal relationships exactly as captured. Lighting direction, intensity, contrast, and shadow behavior must match the source image precisely, with only improved clarity and expanded dynamic range. No relighting, no reshaping. Remove any grain. Apply controlled sharpening and high-frequency detail reconstruction, remove compression artifacts and noise while retaining authentic texture. No smoothing, no plastic skin, no artificial gloss. Facial features must remain consistent across the entire image with coherent anatomy and clean, stable edges. Negative constraints: no warping, no facial drift, no added or missing anatomy, no altered hands, no distortions, no perspective shift, no text or graphics, no hallucinated detail, no stylized rendering. Output must read as a true-to-life, photorealistic upscale that matches the reference exactly, only clearer, sharper, and higher resolution.
-  # *** The Flaw (Token Dilution): Phrases like "absolute fidelity," "zero deviation," "remain unchanged in structure," "no warping," and "no perspective shift" all command the exact same mathematical constraint. In modern diffusion or rendering models, this text bloat consumes finite context windows and dilutes the weights of the actionable instructions (like enhancing pores and fabric weaves).
-  # *** The Fix: Group your instructions into crisp, distinct vectors: Core Objective, High-Frequency Details, Conservation Rules, and Negative Constraints. This creates a logical hierarchy that models can parse efficiently.
-  - trigger: ":up4k"
+                - eyes, eyebrows, eyelashes, beard, and hair
+                - eyes, eyebrows, eyelashes, and hair
+                - eyes, eyebrows, and facial features
+    label: '[Content Creation] Srf'
+    comment: Professional skin retouching for a {{form.subject}}, advanced imperfection correction, eliminating acne and irregular sk
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :up4k
     replace: |
       4K photorealistic upscale and high-frequency detail reconstruction.
       Core: Maintain absolute fidelity to original facial anatomy, proportions, expression, and camera perspective with zero structural deviation. Clothing, hair, and background placement must remain identical to source.
       Details: Recover natural skin pores, fine lines, individual hair strands, eyelashes, and precise fabric weave textures. Clean, stable edges with sharp, realistic rendering.
       Lighting & Color: Retain original color science, white balance, lighting direction, intensity, and shadow behavior with expanded dynamic range.
       Negative Constraints: Remove compression artifacts, noise, and grain. Avoid smoothing, plastic skin, artificial gloss, warping, facial drift, or hallucinated details.
-
-  # Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.
-  - trigger: ":pstudio"
+    label: '[Content Creation] Up4K'
+    comment: 4K photorealistic upscale and high-frequency detail reconstruction.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :pstudio
     word: true
     form: |
       [[subject]], premium product photography, luxury advertising, elegant lighting with [[background_tone]], subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.
     form_fields:
       subject:
         type: choice
-        default: "A sleek aluminum energy drink can"
+        default: A sleek aluminum energy drink can
         values:
-          - "A sleek aluminum energy drink can"
-          - "A sleek glass perfume bottle"
-          - "A sleek leather wallet"
-          - "A sleek stainless steel water bottle"
-          - "A sleek ceramic mug"
-          - "A sleek wooden box"
-          - "A sleek plastic container"
-          - "A sleek metal tin"
-          - "A sleek glass jar"
+          - A sleek aluminum energy drink can
+          - A sleek glass perfume bottle
+          - A sleek leather wallet
+          - A sleek stainless steel water bottle
+          - A sleek ceramic mug
+          - A sleek wooden box
+          - A sleek plastic container
+          - A sleek metal tin
+          - A sleek glass jar
       background_tone:
         type: choice
         values:
-          - "rich deep blacks"
-          - "clean minimalist whites"
-          - "muted editorial grays"
-          - "vibrant high-contrast duotones"
-          - "soft natural lighting"
-          - "dramatic studio lighting"
-          - "high-end commercial lighting"
-
-  # Inline variant of :pstudio, e.g. ":ps(A sleek glass perfume bottle)"
-  - regex: ":ps\\((?P<subject>.*)\\)"
-    replace: "{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality."
-
-  - trigger: ":rawstudio"
-    replace: "Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality."
-
-  # Keep the image as is and only remove the logos and text overlays on the image. Keep the image clean and preserve the original content. STRICT RULE: Do not change the face, hair, expression, posture, composition, or background.
-  - trigger: ":imgclean"
+          - rich deep blacks
+          - clean minimalist whites
+          - muted editorial grays
+          - vibrant high-contrast duotones
+          - soft natural lighting
+          - dramatic studio lighting
+          - high-end commercial lighting
+    label: '[Content Creation] Pstudio'
+    comment: ', premium product photography, luxury advertising, elegant lighting with , subtle reflections on surface, high-end comme'
+    search_terms:
+      - content-creation
+      - content creation
+  - regex: :ps\((?P<subject>.*)\)
+    replace: '{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.'
+    label: '[Content Creation] Ps    P Subject'
+    comment: '{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections'
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :rawstudio
+    replace: Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.
+    label: '[Content Creation] Rawstudio'
+    comment: 'Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, '
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :imgclean
     word: true
     form: |
       Keep the image background and core composition exactly as is. Remove only the following elements: [[elements]].
@@ -221,156 +268,175 @@ matches:
     form_fields:
       elements:
         type: text
-        default: "logos and text overlays"
+        default: logos and text overlays
       asset_type:
         type: choice
         values:
-          - "subject's face, hair, expression, posture, or features"
-          - "product design, branding geometry, texture, or shape"
-          - "landscape elements, architectural structures, or perspective"
-          - "original subject matter and core details"
-
-  # Inline variant of :imgclean, e.g. ":ic(logos and text overlays)"
-  - regex: ":ic\\((?P<elements>.*)\\)"
-    replace: "Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT RULE: Do not modify, hallucinate, or alter the original subject matter and core details. Preserve the original pixels, lighting, color palette, and quality completely."
-
-  - trigger: ":retouch"
+          - subject's face, hair, expression, posture, or features
+          - product design, branding geometry, texture, or shape
+          - landscape elements, architectural structures, or perspective
+          - original subject matter and core details
+    label: '[Content Creation] Imgclean'
+    comment: 'Keep the image background and core composition exactly as is. Remove only the following elements: .'
+    search_terms:
+      - content-creation
+      - content creation
+  - regex: :ic\((?P<elements>.*)\)
+    replace: 'Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT RULE: Do not modify, hallucinate, or alter the original subject matter and core details. Preserve the original pixels, lighting, color palette, and quality completely.'
+    label: '[Content Creation] Ic    P Elements'
+    comment: 'Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT R'
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :retouch
     form: |
       Professional skin retouching with premium sharpness, advanced imperfection correction; eliminates pimples, acne, blackheads, temporary spots, and irregular texture of the facial skin. Intelligent smoothing while preserving natural pores; soft and healthy skin with realistic texture, without a "plastic skin" effect. Fully preserve the original skin tone and undertone; avoid excessive brightness or darkening. Keep facial details precise: eyes, eyebrows, eyelashes, [[preservation]]and hair intact. High-end beauty editorial finish, balanced lighting, refined contrast, subtle facial definition, realistic skin retouching, studio-quality result, ultra-detailed, natural skin texture, ultra-sharp [[upscale]] upscale, [[resolution]], photorealistic, clean cinematic finish.
     form_fields:
       upscale:
         type: choice
         values:
-          - "3x"
-          - "2x"
-          - "4x"
+          - 3x
+          - 2x
+          - 4x
       resolution:
         type: choice
         values:
-          - "HD"
-          - "4K"
-          - "8K"
+          - HD
+          - 4K
+          - 8K
       preservation:
         type: choice
         values:
-          - "beard, mustache, "
-          - "refined makeup, sharp eyeliner, crisp cosmetic details, "
-          - "natural character lines, authentic skin maturity, "
-          - ""
-
-  - trigger: ":rmbg"
+          - 'beard, mustache, '
+          - 'refined makeup, sharp eyeliner, crisp cosmetic details, '
+          - 'natural character lines, authentic skin maturity, '
+          - ''
+    label: '[Content Creation] Retouch'
+    comment: Professional skin retouching with premium sharpness, advanced imperfection correction; eliminates pimples, acne, blackhe
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :rmbg
     form: |
       Remove all [[remove_target]] in the background of the uploaded image. Preserve the [[preserve_subject]] exactly. Do not change the subject's [[avoid_changes]]. Reconstruct the background naturally where the [[remove_target]] were removed, matching the original location, [[bg_details]]. Do not crop, blur, or stylize. The result must look as if the photo had originally been taken without [[remove_target]] in the background.
     form_fields:
       remove_target:
         type: text
-        default: "people"
+        default: people
       preserve_subject:
         type: text
-        default: "main subject"
+        default: main subject
       avoid_changes:
         type: text
-        default: "face, body, clothing, pose, or expression"
+        default: face, body, clothing, pose, or expression
       bg_details:
         type: text
-        default: "architecture, lighting, shadows, and depth"
-
-  - trigger: ":portrait"
+        default: architecture, lighting, shadows, and depth
+    label: '[Content Creation] Remove All  In The Background Of The Uploaded Image'
+    comment: Remove all  in the background of the uploaded image. Preserve the  exactly. Do not change the subject's . Reconstruct th
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :portrait
     form: |
       [[lighting]], fully preserving every original detail of the photo without changes, except for the lighting and the [[atmosphere]]. Enhance [[backlight_focus]] the backlight. Strengthen facial definition with a [[detail_scale]] enhancement without altering the features. Strict rule: Do not change the face, hair, or background structure of the subject. Do not change the composition.
     form_fields:
       lighting:
         type: choice
         values:
-          - "Front-side golden hour sunlight"
-          - "Side-lit cinematic morning sunlight"
-          - "Moody split-lighting from the side"
-          - "Soft diffused overcast daylight"
-          - "Cinematic studio lighting"
-          - "Dramatic hard lighting"
-          - "Softbox lighting"
-          - "Beauty dish lighting"
-          - "Rim lighting"
-          - "Soft ring light"
-          - "Natural window light"
-          - "Backlit silhouette"
-          - "High-key lighting"
-          - "Low-key lighting"
-          - "Fill lighting"
-          - "Split lighting"
-          - "Triangle lighting"
-          - "Butterfly lighting"
-          - "Paramount lighting"
-          - "Clamshell lighting"
-          - "Loop lighting"
-          - "Rembrandt lighting"
-          - "Broad lighting"
-          - "Short lighting"
-          - "Combined lighting"
-          - "Neon lighting"
-          - "Neon backlighting"
-          - "Volumetric lighting"
-          - "Dramatic overhead lighting"
-          - "Lens flare lighting"
-        default: "Front-side golden hour sunlight"
+          - Front-side golden hour sunlight
+          - Side-lit cinematic morning sunlight
+          - Moody split-lighting from the side
+          - Soft diffused overcast daylight
+          - Cinematic studio lighting
+          - Dramatic hard lighting
+          - Softbox lighting
+          - Beauty dish lighting
+          - Rim lighting
+          - Soft ring light
+          - Natural window light
+          - Backlit silhouette
+          - High-key lighting
+          - Low-key lighting
+          - Fill lighting
+          - Split lighting
+          - Triangle lighting
+          - Butterfly lighting
+          - Paramount lighting
+          - Clamshell lighting
+          - Loop lighting
+          - Rembrandt lighting
+          - Broad lighting
+          - Short lighting
+          - Combined lighting
+          - Neon lighting
+          - Neon backlighting
+          - Volumetric lighting
+          - Dramatic overhead lighting
+          - Lens flare lighting
+        default: Front-side golden hour sunlight
       atmosphere:
         type: choice
         values:
-          - "warm, radiant color atmosphere"
-          - "vibrant, high-contrast color atmosphere"
-          - "cool-toned, muted color atmosphere"
-          - "vintage, nostalgic color atmosphere"
-          - "dramatic cinematic atmosphere"
-          - "dreamy ethereal atmosphere"
-          - "nostalgic sepia tone"
-          - "mysterious dark atmosphere"
-          - "bright optimistic atmosphere"
-          - "moody cinematic atmosphere"
-          - "dramatic high-contrast atmosphere"
-          - "soft pastel atmosphere"
-          - "vibrant neon atmosphere"
-          - "dark mysterious atmosphere"
-          - "warm romantic atmosphere"
-          - "cold sterile atmosphere"
-          - "natural daylight atmosphere"
-          - "golden hour glow"
-          - "blue hour tranquility"
-          - "cinematic color grading"
-          - "moody dark academia aesthetic"
-          - "retro 1970s vibe"
-          - "modern minimalist color palette"
-          - "cyberpunk neon glow"
-          - "pastel dreamlike atmosphere"
-          - "vintage film aesthetic"
-          - "vivid commercial colors"
-          - "subtle natural tones"
-          - "dramatic contrast"
-          - "soft diffused colors"
-          - "clean editorial look"
-          - "dark moody cinematic look"
-          - "warm cinematic lighting"
-        default: "warm, radiant color atmosphere"
+          - warm, radiant color atmosphere
+          - vibrant, high-contrast color atmosphere
+          - cool-toned, muted color atmosphere
+          - vintage, nostalgic color atmosphere
+          - dramatic cinematic atmosphere
+          - dreamy ethereal atmosphere
+          - nostalgic sepia tone
+          - mysterious dark atmosphere
+          - bright optimistic atmosphere
+          - moody cinematic atmosphere
+          - dramatic high-contrast atmosphere
+          - soft pastel atmosphere
+          - vibrant neon atmosphere
+          - dark mysterious atmosphere
+          - warm romantic atmosphere
+          - cold sterile atmosphere
+          - natural daylight atmosphere
+          - golden hour glow
+          - blue hour tranquility
+          - cinematic color grading
+          - moody dark academia aesthetic
+          - retro 1970s vibe
+          - modern minimalist color palette
+          - cyberpunk neon glow
+          - pastel dreamlike atmosphere
+          - vintage film aesthetic
+          - vivid commercial colors
+          - subtle natural tones
+          - dramatic contrast
+          - soft diffused colors
+          - clean editorial look
+          - dark moody cinematic look
+          - warm cinematic lighting
+        default: warm, radiant color atmosphere
       backlight_focus:
         type: text
-        default: "loose strands of hair inside"
+        default: loose strands of hair inside
       detail_scale:
         type: choice
         values:
-          - "high-detail scale"
-          - "ultra-sharp textural"
-          - "subtle micro-contrast"
-          - "gentle soft enhancements"
-          - "strong bold definitions"
-          - "artistic painterly texture"
-          - "commercial crisp definition"
-          - "minimalist refined focus"
-          - "intricate detailed treatment"
-          - "natural subtle enhancements"
-          - "dramatic textured depth"
-          - "clean professional definition"
-        default: "high-detail scale"
-
-  - trigger: ":fixlighting"
+          - high-detail scale
+          - ultra-sharp textural
+          - subtle micro-contrast
+          - gentle soft enhancements
+          - strong bold definitions
+          - artistic painterly texture
+          - commercial crisp definition
+          - minimalist refined focus
+          - intricate detailed treatment
+          - natural subtle enhancements
+          - dramatic textured depth
+          - clean professional definition
+        default: high-detail scale
+    label: '[Content Creation] Portrait'
+    comment: ', fully preserving every original detail of the photo without changes, except for the lighting and the . Enhance  the ba'
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :fixlighting
     form: |
       Precise correction of deficient lighting. Preserve [[subject]] and the essence of the scene.
       Correct harsh shadows on [[shadow_areas]] caused by [[lighting_fault]].
@@ -379,225 +445,241 @@ matches:
     form_fields:
       subject:
         type: choice
-        default: "the face"
+        default: the face
         values:
-          - "the face"
-          - "the body"
-          - "the subject"
-          - "the entire subject"
-          - "the foreground subject"
-          - "the main subject"
-          - "the person in the photo"
-          - "the person or object"
-          - "the object"
-          - "the product"
-          - "the entire image"
-          - "the portrait"
-          - "the group"
-          - "the outfit"
-          - "the hands"
-          - "the hair"
-          - "the skin"
+          - the face
+          - the body
+          - the subject
+          - the entire subject
+          - the foreground subject
+          - the main subject
+          - the person in the photo
+          - the person or object
+          - the object
+          - the product
+          - the entire image
+          - the portrait
+          - the group
+          - the outfit
+          - the hands
+          - the hair
+          - the skin
       shadow_areas:
         type: choice
         values:
-          - "eyes/nose/chin"
-          - "under the nose"
-          - "under the chin"
-          - "under the eyes"
-          - "under the cheekbones"
-          - "under the jawline"
-          - "under the nose and chin"
-          - "under the nose, chin, and jawline"
-          - "under the nose, chin, and cheeks"
-          - "under the nose, chin, and forehead"
-          - "under the nose, chin, and neck"
-          - "under the nose, chin, and shoulders"
-          - "under the nose, chin, and chest"
-          - "under the nose, chin, and arms"
-          - "under the nose, chin, and legs"
-          - "under the nose, chin, and feet"
-          - "under the nose, chin, and hands"
-          - "under the nose, chin, and hair"
-          - "under the nose, chin, and skin"
-          - "under the nose, chin, and clothing"
-          - "under the nose, chin, and background"
+          - eyes/nose/chin
+          - under the nose
+          - under the chin
+          - under the eyes
+          - under the cheekbones
+          - under the jawline
+          - under the nose and chin
+          - under the nose, chin, and jawline
+          - under the nose, chin, and cheeks
+          - under the nose, chin, and forehead
+          - under the nose, chin, and neck
+          - under the nose, chin, and shoulders
+          - under the nose, chin, and chest
+          - under the nose, chin, and arms
+          - under the nose, chin, and legs
+          - under the nose, chin, and feet
+          - under the nose, chin, and hands
+          - under the nose, chin, and hair
+          - under the nose, chin, and skin
+          - under the nose, chin, and clothing
+          - under the nose, chin, and background
       lighting_fault:
         type: choice
         values:
-          - "mobile phone flash"
-          - "harsh overhead fluorescent lighting"
-          - "strong direct sunlight"
-          - "underexposed low-light environment"
-          - "harsh overhead lighting"
-          - "harsh side lighting"
-          - "harsh back lighting"
-          - "harsh top lighting"
-          - "harsh bottom lighting"
-          - "harsh front lighting"
+          - mobile phone flash
+          - harsh overhead fluorescent lighting
+          - strong direct sunlight
+          - underexposed low-light environment
+          - harsh overhead lighting
+          - harsh side lighting
+          - harsh back lighting
+          - harsh top lighting
+          - harsh bottom lighting
+          - harsh front lighting
       color_casts:
         type: choice
         values:
-          - "orange/green/blue"
-          - "orange/green"
-          - "orange/blue"
-          - "green/blue"
-          - "orange"
-          - "green"
-          - "blue"
-          - "warm orange"
-          - "cool green"
-          - "cool blue"
-          - "neutral warm"
-          - "neutral cool"
-          - "vivid orange"
-          - "vivid green"
-          - "vivid blue"
-          - "subtle orange"
-          - "subtle green"
-          - "subtle blue"
-          - "strong orange"
-          - "strong green"
-          - "strong blue"
-          - "slight orange"
-          - "slight green"
-          - "slight blue"
-          - "warm tones"
-          - "cool tones"
-          - "natural tones"
-          - "uniform tones"
-          - "uneven tones"
+          - orange/green/blue
+          - orange/green
+          - orange/blue
+          - green/blue
+          - orange
+          - green
+          - blue
+          - warm orange
+          - cool green
+          - cool blue
+          - neutral warm
+          - neutral cool
+          - vivid orange
+          - vivid green
+          - vivid blue
+          - subtle orange
+          - subtle green
+          - subtle blue
+          - strong orange
+          - strong green
+          - strong blue
+          - slight orange
+          - slight green
+          - slight blue
+          - warm tones
+          - cool tones
+          - natural tones
+          - uniform tones
+          - uneven tones
       final_environment:
         type: choice
         values:
-          - "photo with flash light taken at night"
-          - "photo taken in a studio with controlled lighting"
-          - "photo taken in a natural daylight environment"
-          - "photo taken in a low-light environment"
-          - "photo taken with a mobile phone flash"
-          - "photo taken with harsh overhead fluorescent lighting"
-          - "photo taken with strong direct sunlight"
-          - "photo taken in an underexposed low-light environment"
-          - "photo taken with harsh overhead lighting"
-          - "photo taken with harsh side lighting"
-          - "photo taken with harsh back lighting"
-          - "photo taken with harsh top lighting"
-          - "photo taken with harsh bottom lighting"
-          - "photo taken with harsh front lighting"
-          - "photo taken with warm orange color cast"
-          - "photo taken with cool green color cast"
-          - "photo taken with cool blue color cast"
-          - "photo taken with natural tones"
-          - "photo taken with uniform tones"
-          - "photo taken with uneven tones"
-
-  # Subtly correct the unflattering camera angle in this uploaded photo, keeping the subject's face, features, identity, and the entire scene completely unaltered. If the photo was taken from a low angle creating an exaggerated chin or jawline, subtly adjust the perspective to simulate a slightly higher and more flattering camera position. Reduce any double chin or excess shadow under the chin created by the unflattering angle, not by removing the anatomy, but by simulating better lighting and a more aesthețic angle. Slightly define and clean up the jawline so it looks more sculpted and the subject actually looks in person from a normal eye-level angle. If the nostrils are prominently visible from a low angle, subtly reduce their prominence toward a natural frontal view. Subtly adjust the neck length and posture if the angle compressed them unnaturally. All corrections must be extremely subtle and natural; the subject must still look exactly like themselves, just photographed from a more flattering angle. Do not change any facial features, do not slim the face, and do not alter the bone structure. Only correct the distortion caused by the bad camera angle. The final result should look exactly like the same photo taken from a slightly more flattering eye-level position.
-  - trigger: ":correctchin"
+          - photo with flash light taken at night
+          - photo taken in a studio with controlled lighting
+          - photo taken in a natural daylight environment
+          - photo taken in a low-light environment
+          - photo taken with a mobile phone flash
+          - photo taken with harsh overhead fluorescent lighting
+          - photo taken with strong direct sunlight
+          - photo taken in an underexposed low-light environment
+          - photo taken with harsh overhead lighting
+          - photo taken with harsh side lighting
+          - photo taken with harsh back lighting
+          - photo taken with harsh top lighting
+          - photo taken with harsh bottom lighting
+          - photo taken with harsh front lighting
+          - photo taken with warm orange color cast
+          - photo taken with cool green color cast
+          - photo taken with cool blue color cast
+          - photo taken with natural tones
+          - photo taken with uniform tones
+          - photo taken with uneven tones
+    label: '[Content Creation] Precise Correction Of Deficient Lighting'
+    comment: Precise correction of deficient lighting. Preserve  and the essence of the scene.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :correctchin
     form: |
       [[intensity]] correct the unflattering camera angle in this uploaded photo, keeping the subject's face, features, identity, and the entire scene completely unaltered. If the photo was taken from a low angle creating an exaggerated chin or jawline, subtly adjust the perspective to simulate a slightly higher and more flattering camera position. Reduce any double chin or excess shadow under the chin created by the unflattering angle, not by removing the anatomy, but by simulating better lighting and a more aesthetic angle. Slightly define and clean up the jawline so it looks more sculpted and the subject actually looks in person from a normal eye-level angle. If the nostrils are prominently visible from a low angle, subtly reduce their prominence toward a natural frontal view. Subtly adjust the neck length and posture if the angle compressed them unnaturally. [[custom_focus]] All corrections must be extremely [[lowercase_intensity]] and natural; the subject must still look exactly like themselves, just photographed from a more flattering angle. Do not change any facial features, do not slim the face, and do not alter the bone structure. Only correct the distortion caused by the bad camera angle. The final result should look exactly like the same photo taken from a slightly more flattering eye-level position.
     form_fields:
       intensity:
         type: choice
         values:
-          - "Subtly"
-          - "Gently"
-          - "Moderately"
-          - "Severely"
-          - "Extremely"
-          - ""
+          - Subtly
+          - Gently
+          - Moderately
+          - Severely
+          - Extremely
+          - ''
       lowercase_intensity:
         type: choice
         values:
-          - "subtle"
-          - "gentle"
-          - "moderate"
-          - "severe"
-          - "extreme"
+          - subtle
+          - gentle
+          - moderate
+          - severe
+          - extreme
       custom_focus:
         type: text
-        default: ""
-
-  - trigger: ":eyerescue"
+        default: ''
+    label: '[Content Creation] Correctchin'
+    comment: correct the unflattering camera angle in this uploaded photo, keeping the subject's face, features, identity, and the en
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :eyerescue
     form: |
       In the uploaded [[photo_type]], identify [[target_person]] with closed or partially closed eyes and naturally open only the affected eyes. Match the eye shape, eyelid position, [[gaze_direction]], and facial lighting of each person. Do not alter the facial structure, expression, skin texture, hairstyle, head position, or camera angle. Do not borrow eyes from other people or exaggerate the size or brightness of the eyes. The result should look like a real photo captured at the same moment with everyone's eyes open.
     form_fields:
       photo_type:
         type: choice
         values:
-          - "group photo"
-          - "portrait"
-          - "family photo"
-          - "candid shot"
-          - ""
+          - group photo
+          - portrait
+          - family photo
+          - candid shot
+          - ''
       target_person:
         type: text
-        default: "any person"
+        default: any person
       gaze_direction:
         type: choice
         values:
-          - "gaze direction"
-          - "gaze looking directly at the camera"
-          - "gaze matching their natural head positioning"
-
-  # 1. THE MAIN SCENE PASS (Interactive Photography Recipe)
-  - trigger: ":recipe"
+          - gaze direction
+          - gaze looking directly at the camera
+          - gaze matching their natural head positioning
+    label: '[Content Creation] Eyerescue'
+    comment: In the uploaded , identify  with closed or partially closed eyes and naturally open only the affected eyes. Match the ey
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :recipe
     form: |
       Transform the subject in this photo into a dreamy aesthetic [[environment]] portrait while preserving their recognizable facial structure, age, expression, and overall likeness. Use [[lighting]] lighting. The subject is [[pose]], wearing [[wardrobe]]. Hair is [[hair]]. Add [[lens_effect]], [[color_grade]], [[depth_of_field]], and a [[background]]. Add subtle film camera grain with an [[grain]] aesthetic. Mood: [[mood]]. Keep skin texture natural. Avoid plastic-looking skin, distorted hands or feet, extra limbs, text, logos, and changing the person into someone else.
     form_fields:
       environment:
         type: choice
         values:
-          - "beach"
-          - "flower meadow"
-          - "old European street"
-          - "neon cyberpunk alleyway"
+          - beach
+          - flower meadow
+          - old European street
+          - neon cyberpunk alleyway
       lighting:
         type: choice
         values:
-          - "golden hour, approximately 30 minutes before sunset"
-          - "blue hour twilight dusk"
-          - "dramatic high-contrast cinematic lighting"
-          - "soft-focus diffused morning window light"
+          - golden hour, approximately 30 minutes before sunset
+          - blue hour twilight dusk
+          - dramatic high-contrast cinematic lighting
+          - soft-focus diffused morning window light
       pose:
         type: text
-        default: "standing at the shoreline with bare feet in shallow water"
+        default: standing at the shoreline with bare feet in shallow water
       wardrobe:
         type: text
-        default: "relaxed white linen beachwear: a flowy white linen sundress, loose linen shirt, or linen trousers depending on the subject"
+        default: 'relaxed white linen beachwear: a flowy white linen sundress, loose linen shirt, or linen trousers depending on the subject'
       hair:
         type: text
-        default: "softly tousled by ocean breeze"
+        default: softly tousled by ocean breeze
       lens_effect:
         type: text
-        default: "soft lens flare from a low sun angle"
+        default: soft lens flare from a low sun angle
       color_grade:
         type: text
-        default: "warm orange-pink color grade with slightly blown highlights"
+        default: warm orange-pink color grade with slightly blown highlights
       depth_of_field:
         type: choice
         values:
-          - "shallow depth of field"
-          - "ultra-shallow f/1.2 bokeh depth of field"
-          - "deep architectural focus"
+          - shallow depth of field
+          - ultra-shallow f/1.2 bokeh depth of field
+          - deep architectural focus
       background:
         type: text
-        default: "blurred ocean horizon"
+        default: blurred ocean horizon
       grain:
         type: choice
         values:
-          - "ISO 800 film camera"
-          - "vintage Polaroid"
-          - "subtle 35mm film"
+          - ISO 800 film camera
+          - vintage Polaroid
+          - subtle 35mm film
       mood:
         type: text
-        default: "ethereal, carefree, premium vacation editorial, Pinterest-core"
-
-  # 2. THE SECOND-PASS REFINEMENT (The Pro-Tip Face Corrector)
-  - trigger: ":fixface"
-    replace: "Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes, beard/hair, and age."
-
-  # 1/ FIND YOUR ONE PERSON BUSINESS IDEA
-  - trigger: ":prompt-idea"
+        default: ethereal, carefree, premium vacation editorial, Pinterest-core
+    label: '[Content Creation] Structured Recipe & Culinary Guide Formatter'
+    comment: Transform the subject in this photo into a dreamy aesthetic  portrait while preserving their recognizable facial structu
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :fixface
+    replace: Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes, beard/hair, and age.
+    label: '[Content Creation] Fixface'
+    comment: Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :prompt-idea
     replace: |
       <role>Act as a one-person business strategist who applies Dan Koe's philosophy of monetizing a single skill, interest, and personality into a scalable solo operation.</role>
 
@@ -619,9 +701,12 @@ matches:
       </rules>
 
       <output>Skill Intersection -> 3 Business Models -> Validation Check -> Strongest Model -> Positioning Statement</output>
-
-  # 2/ BUILD YOUR ONE PERSON OFFER
-  - trigger: ":prompt-offer"
+    label: '[Content Creation] Prompt Idea'
+    comment: <role>Act as a one-person business strategist who applies Dan Koe's philosophy of monetizing a single skill, interest, a
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :prompt-offer
     replace: |
       <role>Act as an offer architect who builds irresistible one-person business offers using Dan Koe's principle of selling outcomes and transformations — never time or deliverables.</role>
 
@@ -643,9 +728,12 @@ matches:
       </rules>
 
       <output>Transformation Definition -> Offer Structure -> Premium Price -> Delivery Method -> One-Paragraph Offer Description</output>
-
-  # 3/ BUILD YOUR ONE PERSON CONTENT SYSTEM
-  - trigger: ":prompt-content"
+    label: '[Content Creation] Prompt Offer'
+    comment: '<role>Act as an offer architect who builds irresistible one-person business offers using Dan Koe''s principle of selling '
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :prompt-content
     replace: |
       <role>Act as a one-person content strategist who applies Dan Koe's content system of writing about one topic from every angle until the internet knows your name.</role>
 
@@ -667,9 +755,12 @@ matches:
       </rules>
 
       <output>Core Thesis -> Content Expansion Map -> Cross-Platform System -> Weekly Schedule -> Authority Building Arc</output>
-
-  # 4/ BUILD YOUR ONE PERSON SALES SYSTEM
-  - trigger: ":prompt-sales"
+    label: '[Content Creation] Prompt Content'
+    comment: '<role>Act as a one-person content strategist who applies Dan Koe''s content system of writing about one topic from every '
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :prompt-sales
     replace: |
       <role>Act as a one-person sales system architect who builds automated pipelines that attract, nurture, and convert ideal clients — without sales calls, cold outreach, or a sales team.</role>
 
@@ -691,9 +782,12 @@ matches:
       </rules>
 
       <output>Customer Journey Map -> Lead Capture -> Nurture Sequence -> Conversion Mechanism -> Automated Sales Flow</output>
-
-  # 5/ SCALE YOUR ONE PERSON BUSINESS
-  - trigger: ":prompt-scale"
+    label: '[Content Creation] Prompt Sales'
+    comment: <role>Act as a one-person sales system architect who builds automated pipelines that attract, nurture, and convert ideal
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :prompt-scale
     word: true
     replace: |
       <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalable assets that generate revenue without proportional time input.</role>
@@ -717,8 +811,12 @@ matches:
       </rules>
 
       <output>Time Audit -> Productization Plan -> Digital Product Design -> Passive Income Layer -> 12-Month Scaling Roadmap</output>
-
-  - trigger: ":prompt-scale-fast"
+    label: '[Content Creation] Prompt Scale'
+    comment: <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :prompt-scale-fast
     form: |
       <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalable assets that generate revenue without proportional time input.</role>
 
@@ -753,3 +851,182 @@ matches:
         type: text
       time:
         type: text
+    label: '[Content Creation] Prompt Scale Fast'
+    comment: <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :cinematic-split-light-portrait
+    replace: |
+      A high-resolution, cinematic, and photorealistic close-up profile portrait of a man. The image features dramatic split-lighting with a vibrant, glowing red light illuminating the top of his face and a contrasting, cool neon blue light casting a soft glow on his jawline and neck. He has a contemplative expression, looking upwards and away from the camera. The focus is sharp on his eye, with a dark, minimalist background. The style is moody, ethereal, and high-fashion. keep the likeness of the image in the source image. 4x5 aspect ratio
+    label: '[Content Creation] Midjourney: Cinematic Split-Lighting Portrait'
+    comment: Generates high-resolution, cinematic split-light portrait prompts for Midjourney.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :editorial-fashion-men
+    replace: |
+      Use 100% face above uploaded photo An editorial fashion, street-style photograph of a handsome and dapper young man from the source image with black hair and black like uploaded photo. He is wearing a form-fitting black ribbed turtleneck sweater, black trousers, and stylish dark sunglasses. He is captured mid-stride, walking confidently down a city street, carrying a light beige overcoat over one arm and holding black leather gloves.
+
+      The background is a classic European city street, softly blurred to create a shallow depth of field that emphasizes the subject. The lighting is natural and soft, creating a clean, cinematic feel. The overall mood is sophisticated, cool, and effortlessly stylish.
+      Style: Photorealistic, hyper-detailed, sharp focus, cinematic color grading, high-end men's fashion, shot on an 85mm lens, 8K resolution, hyperrealistic, FHD.
+
+      4x5 aspect ratio
+    label: '[Content Creation] Midjourney: Editorial Men Fashion Portrait'
+    comment: Generates high-fashion editorial magazine photography prompts.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :rough-draft-intro
+    replace: |
+      A rough draft is 20 minutes. A draft that sounds like you and earns the read used to be hours.
+
+      These 7 close that gap.
+
+      Save them and your next post comes together way faster.
+    label: '[Content Creation] 20-Minute Fast Rough Draft Protocol'
+    comment: Overcomes writer block by producing a rapid, uninhibited zero-draft in 20 minutes.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :infographics
+    replace: |
+      You are a world-class visual explainer and technical designer.
+      Transform this concept into a visual infographic using Mermaid.js or another code-based diagram format:
+
+      "[INSERT CONCEPT]"
+
+      Return
+      1. A flowchart, timeline, concept map, or decision tree whichever fits best.
+      2. A plain-language caption explaining the graphic.
+      3. Clean Mermaid (or HTML/SVG/CSS) code I can copy and render.
+
+      Keep it minimal, readable, and slide-ready.
+    label: '[Content Creation] Visual Explainer & Infographic Architect'
+    comment: Outlines data layouts, visual hierarchies, and copy for infographic designs.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :consulting-deck
+    replace: |
+      Act as a strategy consultant creating a web-based presentation.
+
+      Topic: [INSERT TOPIC]
+
+      Output
+      1. Use the pyramid principle: Problem -> Insight -> Recommendation.
+      2. Break into 6-10 concise slides, each with a bold title and 2-4 bullets.
+      3. Provide mobile-responsive HTML/CSS for the deck (optional).
+      4. Focus on clarity, insight, and executive readiness.
+
+      Make it feel like a McKinsey slide deck built in Beautiful. AI
+    label: '[Content Creation] McKinsey-Style Presentation Deck Outliner'
+    comment: Structures executive slide decks with pyramid principle messaging and clear takeaways.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :content-creator
+    replace: |
+      You are a top-tier content strategist and writer.
+
+      Task
+      Write a [TYPE OF CONTENT: newsletter, tweet thread, YouTube script, etc.] on:
+      "[INSERT TOPIC]"
+
+      Guidelines
+      1. Mirror the tone and style of [CREATOR OR BRAND].
+      2. Use hooks, smooth transitions, and emotional triggers.
+      3. Make it actionable, conversational, and valuable.
+      4. Suggest a title and a strong CTA at the end.
+
+      The result should feel human, not AI-generated.
+    label: '[Content Creation] Top-Tier Content Strategist & Writer'
+    comment: Creates viral articles, hooks, and content pillars with high reader retention.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :whitepaper-writer
+    replace: |
+      You are a senior consultant writing a whitepaper for a tech-savvy audience.
+
+      Topic: "[INSERT TOPIC]"
+
+      Structure
+      • Executive Summary
+      • Market Trends (with relevant data)
+      • Key Challenges
+      • Future Predictions
+      • Case Studies
+      • Final Call to Action
+
+      Use clear, persuasive language and back claims with evidence or examples.
+    label: '[Content Creation] Technical Whitepaper Author'
+    comment: Drafts comprehensive, well-researched whitepapers for technical audiences.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :humanize-real-person
+    replace: |
+      You are an editor with a sharp eye for writing that sounds constructed instead of spoken. Rewrite this the way someone who actually lived through the experience would say it: a little rougher, more direct, and more natural. Cut anything that feels rehearsed, exaggerated, or written to impress. Make it sound authentic, conversational, and genuinely human.
+      Text: [paste here].
+    label: '[Content Creation] Writing Humanizer: Natural Conversation Flow'
+    comment: Eliminates AI jargon and robotic phrasing to produce authentic human writing.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :humanize-thought-flow
+    replace: |
+      This isn't a grammar edit – it's a thinking edit. Rewrite this so the ideas flow the way a real person's mind does: sometimes fast, sometimes slow, sometimes messy, sometimes precise. Vary the rhythm naturally, break any patterns that make the writing feel overly controlled or artificial, and make it sound like genuine human thought instead of polished AI text. Text: [paste here].
+    label: '[Content Creation] Writing Humanizer: Thought Cadence & Flow'
+    comment: Rewrites sentences with varied rhythm, natural transitions, and clear thinking.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :humanize-pattern-breaker
+    replace: |
+      You are an expert at spotting the subtle patterns that make writing sound AI-generated. Go through this text and remove those patterns one by one. Vary the sentence structure, soften anything that feels rigid or formulaic, and make every word feel naturally chosen in the moment rather than produced by a template. The result should read like authentic human writing with a natural flow. Text: [paste here].
+    label: '[Content Creation] Writing Humanizer: AI Cliché & Pattern Breaker'
+    comment: Removes overused AI clichés (delve, testament, pivotal, navigating).
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :humanize-voice-builder
+    replace: |
+      You are shaping a writing style that sounds like it belongs to a real person. Rewrite this so it has a clear point of view instead of the neutral tone of someone trying to please everyone. Let genuine opinions, subtle contradictions, and natural shifts in tone come through. The result should feel personal, confident, and unmistakably human-not polished into sounding generic. Text: [paste here].
+    label: '[Content Creation] Writing Humanizer: Distinctive Brand Voice'
+    comment: Injects personality, conviction, and tone into flat, generic drafts.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :humanize-hit-hard
+    replace: |
+      Rewrite this with one goal: make it impossible to ignore. Keep the core message, but cut anything that feels weak, overthought, or forgettable. Every sentence should carry weight, every word should earn its place, and the writing should sound like it comes from someone who genuinely cares about what they're saying. Text: [paste here].
+    label: '[Content Creation] Writing Humanizer: High-Impact Punchy Prose'
+    comment: Tightens writing for maximum punch, clarity, and emotional resonance.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :humanize-credibility-test
+    replace: |
+      You are a skeptical reader who immediately notices writing that feels too polished or artificial. Go through this text sentence by sentence and rewrite anything that sounds overly constructed, over-edited, or unnaturally precise. Make it sound like something a real person would actually say out loud-natural, believable, and effortless, without feeling forced. Text: [paste here].
+    label: '[Content Creation] Writing Humanizer: Skeptical Reader Audit'
+    comment: Reviews text through the eyes of a skeptical reader to ensure proof and credibility.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :writing-fixer-quick
+    replace: |
+      Here's my text: [paste]. Make it clearer, smoother, and stronger. Show me exactly what to change and why.
+    label: '[Content Creation] Quick Clarity & Tone Polish'
+    comment: Instantly polishes text for clarity, smoothness, and impact without over-editing.
+    search_terms:
+      - content-creation
+      - content creation
+  - trigger: :lightning-summary-tool
+    replace: |
+      Here is a long text: [paste]. Summarize it in seconds, keeping only the most important and useful points.
+    label: '[Content Creation] Lightning-Fast Text Summarizer'
+    comment: Condenses long articles into seconds-readable bullet points preserving key data.
+    search_terms:
+      - content-creation
+      - content creation

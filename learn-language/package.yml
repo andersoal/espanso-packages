@@ -1,80 +1,101 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
-  # 1. THE ENGLISH TEACHING SETUP
-  - trigger: ":engtutor"
+  - trigger: :engtutor
     form: |
       Act as a professional English tutor. Design a [[days]]-day conversational English plan focused on [[focus]] and real-world communication instead of theory. Tailor the tone to be highly practical for an international market.
     form_fields:
       days:
         type: text
-        default: "30"
+        default: '30'
       focus:
         type: choice
         values:
-          - "practical phrases and professional communication"
-          - "technical architecture explanations and engineering leadership"
-          - "high-pressure business meetings and negotiations"
-
-  # 2. THE DAILY VOCABULARY BUILDER
-  - trigger: ":engvocab"
+          - practical phrases and professional communication
+          - technical architecture explanations and engineering leadership
+          - high-pressure business meetings and negotiations
+    label: '[Learn Language] Professional English Tutor'
+    comment: 'Act as a professional English tutor. Design a -day conversational English plan focused on  and real-world communication '
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :engvocab
     form: |
       Teach me [[count]] powerful English words per day related to [[domain]]. Include pronunciation guides, realistic example sentences, and one memory trick or etymological hook for each to help me retain them faster.
     form_fields:
       count:
         type: text
-        default: "10"
+        default: '10'
       domain:
         type: choice
         values:
-          - "general professional interactions"
-          - "software engineering and systems architecture"
-          - "strategic leadership and project orchestration"
-
-  # 3. THE CONVERSATION PARTNER
-  - trigger: ":engchat"
+          - general professional interactions
+          - software engineering and systems architecture
+          - strategic leadership and project orchestration
+    label: '[Learn Language] Teach Me  Powerful English Words Per Day Related To'
+    comment: Teach me  powerful English words per day related to . Include pronunciation guides, realistic example sentences, and one
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :engchat
     form: |
       Pretend you're a native English speaker in a [[setting]]. Hold a [[duration]]-minute dialogue with me on [[topic]], and correct my grammar, syntax, and phrasing naturally as we go. Highlight better alternatives for any awkward phrasing.
     form_fields:
       setting:
         type: text
-        default: "professional office / corporate environment"
+        default: professional office / corporate environment
       duration:
         type: text
-        default: "10"
+        default: '10'
       topic:
         type: text
-        default: "casual business topics or strategic alignment"
-
-  # 4. THE GRAMMAR SIMPLIFIER
-  - trigger: ":enggrammar"
+        default: casual business topics or strategic alignment
+    label: '[Learn Language] Pretend You''Re A Native English Speaker In A'
+    comment: 'Pretend you''re a native English speaker in a . Hold a -minute dialogue with me on , and correct my grammar, syntax, and '
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :enggrammar
     form: |
       Explain English grammar rules, especially [[topic]], in the simplest, most direct way possible. Provide short, everyday professional examples and contrast them against common pitfalls made by non-native speakers.
     form_fields:
       topic:
         type: text
-        default: "participles, verb conjugations, and complex sentence structures"
-
-  # 5. THE DAILY IMMERSION SYSTEM
-  - trigger: ":engimmerse"
+        default: participles, verb conjugations, and complex sentence structures
+    label: '[Learn Language] Enggrammar'
+    comment: Explain English grammar rules, especially , in the simplest, most direct way possible. Provide short, everyday professio
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :engimmerse
     form: |
       Build a daily [[duration]]-minute English immersion routine using podcasts, technical articles, and media content that fits an advanced professional level. Prioritize real conversational exposure and strategies for active listening.
     form_fields:
       duration:
         type: text
-        default: "30"
-
-  # 6. THE PRONUNCIATION COACH
-  - trigger: ":engcoach"
+        default: '30'
+    label: '[Learn Language] Engimmerse'
+    comment: Build a daily -minute English immersion routine using podcasts, technical articles, and media content that fits an advan
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :engcoach
     form: |
       Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English phonetics, tongue positions, and mechanics on how to sound more natural, assertive, and fluid in professional settings.
-
-  # 7. THE PROGRESS TRACKER
-  - trigger: ":engtrack"
+    label: '[Learn Language] Engcoach'
+    comment: Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English p
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :engtrack
     form: |
       Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, listening checks, pronunciation feedback self-assessments, and tangible fluency benchmarks I can track systematically.
-
-  - trigger: ":engrefactor"
+    label: '[Learn Language] Create A Weekly Progress Tracker For Learning English'
+    comment: Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, lis
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :engrefactor
     form: |
       Act as a rigorous communication mentor and elite technical editor. Refactor the following draft for an audience of **[[audience]]**:
 
@@ -90,6 +111,97 @@ matches:
       audience:
         type: choice
         values:
-          - "Technical Architects & Engineering Leads"
-          - "Executive Stakeholders (C-Level / Business Directors)"
-          - "Cross-Functional Project Teams"
+          - Technical Architects & Engineering Leads
+          - Executive Stakeholders (C-Level / Business Directors)
+          - Cross-Functional Project Teams
+    label: '[Learn Language] Engrefactor'
+    comment: 'Act as a rigorous communication mentor and elite technical editor. Refactor the following draft for an audience of ****:'
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :language-tutor-mode
+    replace: |
+      Act as my private [LANGUAGE] tutor.
+
+      Assume I know absolutely nothing about this language. Start from scratch and create a complete learning plan.
+
+      Teach me one lesson at a time using simple explanations, real-life examples, pronunciation tips, and short exercises.
+
+      Do not move on to the next lesson until I fully understand the current one.
+    label: '[Learn Language] Private Language Tutor (Adaptive Socratic)'
+    comment: Conversational language tutor providing instant corrections and grammar tips.
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :language-90d-plan
+    replace: |
+      Create a complete 90-day learning plan for [LANGUAGE] based on how much time I can study each day:
+
+      [DAILY STUDY TIME]
+
+      Break the plan into daily lessons that include vocabulary, grammar, pronunciation, listening, speaking, reading, writing, and review sessions.
+
+      Explain what I should achieve each week and how to measure my progress.
+    label: '[Learn Language] 90-Day Language Fluency Roadmap'
+    comment: Structured 90-day plan targeting core conversational vocabulary and grammar patterns.
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :language-conversation-coach
+    replace: |
+      Become my conversation partner for practicing [LANGUAGE].
+
+      Start with beginner-level conversations and gradually increase the difficulty as I improve.
+
+      Correct every mistake I make, explain why it's wrong, show me how a native speaker would say it, then continue the conversation.
+    label: '[Learn Language] Language Conversation Partner'
+    comment: Engages in natural foreign language dialogue with real-time feedback.
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :language-vocab-builder
+    replace: |
+      Help me expand my [LANGUAGE] vocabulary as efficiently as possible.
+
+      Teach me the most useful words and expressions first, organized by everyday situations like greetings, travel, shopping, work, food, emergencies, and conversations.
+
+      Include example sentences, memory techniques, and a short quiz at the end of each lesson.
+    label: '[Learn Language] High-Frequency Vocabulary Expander'
+    comment: Teaches the top 1,000 most frequently used words with contextual example sentences.
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :language-simplified-grammar
+    replace: |
+      Teach me [LANGUAGE] grammar from beginner to advanced in the simplest way possible.
+
+      Explain one rule at a time using clear language, practical examples, and comparisons with my native language whenever helpful.
+
+      After each lesson, test my understanding with exercises and explain every mistake I make.
+    label: '[Learn Language] Simplified Grammar Engine'
+    comment: Demystifies complex foreign grammar rules using plain explanations and pattern charts.
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :language-learn-like-native
+    replace: |
+      Teach me [LANGUAGE] the same way children learn their native language.
+
+      Prioritize listening, speaking, repetition, everyday situations, stories, and practical use before introducing complex grammar rules.
+
+      Make every lesson interactive, engaging, and easy to follow.
+    label: '[Learn Language] Natural Language Acquisition (Comprehensible Input)'
+    comment: Teaches language via comprehensible input and natural context without rote drilling.
+    search_terms:
+      - learn-language
+      - learn language
+  - trigger: :language-total-immersion
+    replace: |
+      Create a complete immersion experience in [LANGUAGE] without requiring me to travel.
+
+      Simulate real-life situations, ask me questions, introduce everyday vocabulary naturally, gradually reduce the use of my native language, and adjust the difficulty based on my progress.
+    label: '[Learn Language] Home Language Immersion Environment'
+    comment: Creates an immersive daily routine involving media, journaling, and self-talk.
+    search_terms:
+      - learn-language
+      - learn language

@@ -83,11 +83,17 @@ For anything beyond these patterns — regex captures, multi-step forms, shell c
 ## Validation before handing off
 
 After writing a trigger:
-1. Confirm YAML indentation is consistent (2 spaces, no tabs) — Espanso match files are whitespace-sensitive.
-2. If `regex` is used, mention that `trigger` and `regex` are mutually exclusive on the same match — never include both.
-3. If `shell` is used, read [references/shell-and-automation.md](references/shell-and-automation.md) for the security/latency notes before finalizing — never suggest a shell command that exfiltrates input unsafely or blocks on slow network calls without flagging the tradeoff.
-4. Ensure the match structure complies with the official Espanso JSON schema. For example, never use invalid form field attributes like `type: text` or `type: checkbox`. (Text fields should omit `type` entirely, and multiline fields should use `multiline: true`).
-5. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.
+1. Ensure line 1 of the match file retains `# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json` for IDE validation.
+2. Confirm YAML indentation is consistent (2 spaces, no tabs) and multi-line strings in `form:` or `replace:` use literal block scalar `|` (avoid single-quoted multi-line strings with `''` escaping).
+3. Ensure the match is well-documented with:
+   - `label: "[Package Tag] Complete Descriptive Title"` (never a raw/lazy repeat of the trigger name).
+   - `comment: "..."` describing the prompt's intent and context.
+   - `search_terms:` containing the package name and key aliases for fuzzy search discovery.
+4. If `regex` is used, mention that `trigger` and `regex` are mutually exclusive on the same match — never include both.
+5. Check for prefix collisions and shadowing (e.g. `:act` shadowing `:action-blueprint`). Ensure duplicate triggers have distinct labels.
+6. If `shell` is used, read [references/shell-and-automation.md](references/shell-and-automation.md) for the security/latency notes before finalizing — never suggest a shell command that exfiltrates input unsafely or blocks on slow network calls without flagging the tradeoff.
+7. Ensure the match structure complies with the official Espanso JSON schema. For example, never use invalid form field attributes like `type: text` or `type: checkbox`. (Text fields should omit `type` entirely, and multiline fields should use `multiline: true`).
+8. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.
 
 ## Debugging existing triggers
 

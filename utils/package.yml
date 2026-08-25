@@ -1,448 +1,776 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+# yaml-language-server: =https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
 matches:
-  # ASCII Arrows
-  - triggers: [":-->", ":rarrow"]
-    replace: "→"
-  - triggers: [":<--", ":larrow"]
-    replace: "←"
-  - triggers: [":uarrow"]
-    replace: "↑"
-  - triggers: [":darrow"]
-    replace: "↓"
-  - triggers: [":lrarrow"]
-    replace: "↓"
+- triggers:
+  - :-->
+  - :rarrow
+  replace: →
+  label: '[Utils] Right Arrow (→)'
+  comment: →
+  search_terms:
+  - utils
+- triggers:
+  - :<--
+  - :larrow
+  replace: ←
+  label: '[Utils] Left Arrow (←)'
+  comment: ←
+  search_terms:
+  - utils
+- triggers:
+  - :uarrow
+  replace: ↑
+  label: '[Utils] Up Arrow (↑)'
+  comment: ↑
+  search_terms:
+  - utils
+- triggers:
+  - :darrow
+  replace: ↓
+  label: '[Utils] Down Arrow (↓)'
+  comment: ↓
+  search_terms:
+  - utils
+- triggers:
+  - :lrarrow
+  replace: ↔
+  label: '[Utils] Left-Right Arrow (↔)'
+  comment: ↔
+  search_terms:
+  - utils
+- trigger: :eur
+  replace: €
+  label: '[Utils] Euro Currency Symbol (€)'
+  comment: €
+  search_terms:
+  - utils
+- trigger: :gbp
+  replace: £
+  label: '[Utils] Gbp'
+  comment: £
+  search_terms:
+  - utils
+- trigger: :usd
+  replace: $
+  label: '[Utils] Dollar Currency Symbol ($)'
+  comment: $
+  search_terms:
+  - utils
+- trigger: :jpy
+  replace: ¥
+  label: '[Utils] Jpy'
+  comment: ¥
+  search_terms:
+  - utils
+- trigger: :inr
+  replace: ₹
+  label: '[Utils] Inr'
+  comment: ₹
+  search_terms:
+  - utils
+- trigger: :btc
+  replace: ฿
+  label: '[Utils] Bitcoin Currency Symbol (฿)'
+  comment: ฿
+  search_terms:
+  - utils
+- trigger: :eth
+  replace: Ξ
+  label: '[Utils] Ethereum Currency Symbol (Ξ)'
+  comment: Ξ
+  search_terms:
+  - utils
+- triggers:
+  - :(c)
+  - ':copyright:'
+  replace: ©
+  label: '[Utils] Copyright Symbol (©)'
+  comment: ©
+  search_terms:
+  - utils
+- trigger: :ip
+  replace: '{{output}}'
+  vars:
+  - name: output
+    type: shell
+    params:
+      cmd: curl 'https://api.ipify.org'
+  label: '[Utils] Public IP Address (API lookup)'
+  comment: '{{output}}'
+  search_terms:
+  - utils
+- trigger: :weather
+  replace: '{{output}}'
+  vars:
+  - name: output
+    type: shell
+    params:
+      cmd: curl 'http://wttr.in/?format=3'
+  label: '[Utils] Live Weather Report (curl wttr.in)'
+  comment: '{{output}}'
+  search_terms:
+  - utils
+- trigger: :(
+  replace: ($|$)
+  word: true
+  label: '[Utils] Parenthesis Pair ()'
+  comment: ($|$)
+  search_terms:
+  - utils
+- trigger: :[
+  replace: '[$|$]'
+  word: true
+  label: '[Utils] Square Bracket Pair []'
+  comment: '[$|$]'
+  search_terms:
+  - utils
+- trigger: :{
+  replace: '{$|$}'
+  word: true
+  label: '[Utils] Curly Brace Pair {}'
+  comment: '{$|$}'
+  search_terms:
+  - utils
+- trigger: :<
+  replace: <$|$>
+  word: true
+  label: '[Utils] Angle Bracket Pair <>'
+  comment: <$|$>
+  search_terms:
+  - utils
+- trigger: :`
+  replace: '`$|$`'
+  word: true
+  label: '[Utils] Backtick Code Pair ``'
+  comment: '`$|$`'
+  search_terms:
+  - utils
+- trigger: :'
+  replace: '''$|$'''
+  word: true
+  label: '[Utils] Single Quote Pair '''''
+  comment: $|$
+  search_terms:
+  - utils
+- trigger: :"
+  replace: '"$|$"'
+  word: true
+  label: '[Utils] Double Quote Pair ""'
+  comment: $|$
+  search_terms:
+  - utils
+- trigger: :_
+  replace: _$|$_
+  word: true
+  label: '[Utils] Underscore Pair __'
+  comment: _$|$_
+  search_terms:
+  - utils
+- trigger: :*
+  replace: '*$|$*'
+  word: true
+  label: '[Utils] Asterisk Pair **'
+  comment: '*$|$*'
+  search_terms:
+  - utils
+- trigger: :-
+  replace: -$|$-
+  word: true
+  label: '[Utils] '
+  comment: -$|$-
+  search_terms:
+  - utils
+- trigger: :hr
+  replace: <hr />
+  label: '[Utils] HTML Horizontal Rule'
+  comment: <hr />
+  search_terms:
+  - utils
+- trigger: :br
+  replace: <br />
+  word: true
+  label: '[Utils] Br'
+  comment: <br />
+  search_terms:
+  - utils
+- trigger: :div
+  replace: <div>$|$</div>
+  label: '[Utils] <Div>$|$</Div>'
+  comment: <div>$|$</div>
+  search_terms:
+  - utils
+- trigger: :span
+  replace: <span>$|$</span>
+  label: '[Utils] <Span>$|$</Span>'
+  comment: <span>$|$</span>
+  search_terms:
+  - utils
+- trigger: :h1
+  replace: <h1>$|$</h1>
+  label: '[Utils] <H1>$|$</H1>'
+  comment: <h1>$|$</h1>
+  search_terms:
+  - utils
+- trigger: :h2
+  replace: <h2>$|$</h2>
+  label: '[Utils] <H2>$|$</H2>'
+  comment: <h2>$|$</h2>
+  search_terms:
+  - utils
+- trigger: :h3
+  replace: <h3>$|$</h3>
+  label: '[Utils] <H3>$|$</H3>'
+  comment: <h3>$|$</h3>
+  search_terms:
+  - utils
+- trigger: :para
+  replace: <p>$|$</p>
+  word: true
+  label: '[Utils] Para'
+  comment: <p>$|$</p>
+  search_terms:
+  - utils
+- trigger: :tag
+  word: true
+  replace: <{{html.element}}>$|$</{{html.element}}>
+  vars:
+  - name: html
+    type: form
+    params:
+      layout: 'XML / HTML Element Inserter
 
-  # Common Currency Symbols
-  - trigger: ":eur"
-    replace: "€"
-  - trigger: ":gbp"
-    replace: "£"
-  - trigger: ":usd"
-    replace: "$"
-  - trigger: ":jpy"
-    replace: "¥"
-  - trigger: ":inr"
-    replace: "₹"
-  - trigger: ":btc"
-    replace: "฿"
-  - trigger: ":eth"
-    replace: "Ξ"
+        Tag Name: [[element]]
 
-  - triggers: [":(c)", ":copyright:"]
-    replace: "©"
+        '
+  label: '[Utils] Tag'
+  comment: <{{html.element}}>$|$</{{html.element}}>
+  search_terms:
+  - utils
+- trigger: :date
+  word: true
+  replace: '{{date}}'
+  vars:
+  - name: date
+    type: date
+    params:
+      format: '%d/%m/%y'
+  comment: '{{date}}'
+  label: '[Utils] Current Date (YYYY-MM-DD)'
+  search_terms:
+  - utils
+- trigger: :time
+  replace: '{{time}}'
+  vars:
+  - name: time
+    type: date
+    params:
+      format: '%H:%M'
+  label: '[Utils] Current Time (HH:MM)'
+  comment: '{{time}}'
+  search_terms:
+  - utils
+- trigger: :month
+  replace: '{{date}}'
+  vars:
+  - name: date
+    type: date
+    params:
+      format: '%B %Y'
+  label: '[Utils] Month {{date}} format %B %Y'
+  comment: '{{date}}'
+  search_terms:
+  - utils
+- trigger: :lenny
+  replace: '{{smileys}}'
+  vars:
+  - name: smileys
+    type: choice
+    params:
+      values:
+      - ¯\\_(ツ)_/¯
+      - (╯°□°）╯︵ ┻━┻
+      - ( ͡ಠ ʖ̯ ͡ಠ)
+      - ☉ ‿ ⚆
+      - ʕ•ᴥ•ʔ
+      - ⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆
+      - ◤◢◣◥◤◢◣◥
+      - (づᵔ◡ᵔ)づ
+      - '|ᵔ‿ᵔ|'
+      - ⤜(*﹏*)⤏
+      - ツ
+  label: '[Utils] Lenny'
+  comment: '{{smileys}}'
+  search_terms:
+  - utils
+- trigger: :mit-short
+  replace: 'Licensed under MIT X11, © {{name}} {{year}}: {{url}}'
+  vars:
+  - name: year
+    type: date
+    params:
+      format: '%Y'
+  - name: name
+    type: choice
+    params:
+      values:
+      - Alicia Sykes
+      - James Carter
+      - You
+  - name: url
+    type: random
+    params:
+      choices:
+      - https://aliciasykes.com
+      - https://jamescarter.dev
+      - https://you.com
+  label: '[Utils] Licensed Under Mit X11, ©'
+  comment: 'Licensed under MIT X11, © {{name}} {{year}}: {{url}}'
+  search_terms:
+  - utils
+- trigger: :mit-long
+  replace: '{{output}}'
+  vars:
+  - name: output
+    type: shell
+    params:
+      shell: cmd
+      cmd: curl.exe 'https://gist.githubusercontent.com/Lissy93/143d2ee01ccc5c052a17/raw/a8ac96cd15847a231931b561d95d2de47066fd33/LICENSE.MD'
+  label: '[Utils] Mit Long'
+  comment: '{{output}}'
+  search_terms:
+  - utils
+- trigger: :kr
+  replace: 'Kind Regards,
 
-  # Outputs public IP address
-  - trigger: ":ip"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "curl 'https://api.ipify.org'"
+    {name}
 
-  # Outputs the current weather for your location
-  - trigger: ":weather"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "curl 'http://wttr.in/?format=3'"
+    '
+  vars:
+  - name: name
+    type: choice
+    params:
+      values:
+      - Alicia Sykes
+      - Dan Smith
+      - Jordan O'Hare
+      - Tom Wilson
+      - James Carter
+      - Me
+  label: '[Utils] Kind Regards,'
+  comment: Kind Regards,
+  search_terms:
+  - utils
+- trigger: :commit
+  replace: git commit -m "$|$"
+  label: '[Utils] Git Commit -M "$|$'
+  comment: git commit -m "$|$
+  search_terms:
+  - utils
+- trigger: :wtc
+  replace: '{{output}}'
+  vars:
+  - name: output
+    type: shell
+    params:
+      shell: cmd
+      cmd: curl.exe -s whatthecommit.com/index.txt
+  label: '[Utils] What the commit'
+  comment: '{{output}}'
+  search_terms:
+  - utils
+- trigger: :pass
+  replace: '{{lesspass}}'
+  vars:
+  - name: params
+    type: form
+    params:
+      layout: 'Less Pass Generator
 
-  # Auto close brackets, quotes and formatting modifiers, and put cursor in center
-  - trigger: ":("
-    replace: "($|$)"
-    word: true
-  - trigger: ":["
-    replace: "[$|$]"
-    word: true
-  - trigger: ":{"
-    replace: "{$|$}"
-    word: true
-  - trigger: ":<"
-    replace: "<$|$>"
-    word: true
-  - trigger: ":`"
-    replace: "`$|$`"
-    word: true
-  - trigger: ":'"
-    replace: "'$|$'"
-    word: true
-  - trigger: ':"'
-    replace: '"$|$"'
-    word: true
-  - trigger: ":_"
-    replace: "_$|$_"
-    word: true
-  - trigger: ":*"
-    replace: "*$|$*"
-    word: true
-  - trigger: ":-"
-    replace: "-$|$-"
-    word: true
+        Website: [[site]]
 
-  # Inserts common HTML elements
-  - trigger: :hr
-    replace: "<hr />"
-  - trigger: :br
-    replace: "<br />"
-    word: true
-  - trigger: :div
-    replace: "<div>$|$</div>"
-  - trigger: :span
-    replace: "<span>$|$</span>"
-  - trigger: :h1
-    replace: "<h1>$|$</h1>"
-  - trigger: :h2
-    replace: "<h2>$|$</h2>"
-  - trigger: :h3
-    replace: "<h3>$|$</h3>"
-  - trigger: :para
-    replace: "<p>$|$</p>"
-    word: true
+        Login: [[login]]
 
-  # Inserts any custom HTML, XML or web component tag
-  - trigger: ":tag"
-    word: true
-    replace: "<{{html.element}}>$|$</{{html.element}}>"
-    vars:
-      - name: "html"
-        type: form
-        params:
-          layout: "XML / HTML Element Inserter\nTag Name: [[element]]"
+        Master Password: [[pass]]
 
-  # Outputs todays date (dd/mm/yy)
-  - trigger: :date
-    word: true
-    replace: "{{date}}"
-    vars:
-      - name: date
-        type: date
-        params:
-          format: "%d/%m/%y"
+        '
+  - name: lesspass
+    type: shell
+    params:
+      cmd: lesspass $ESPANSO_PARAMS_SITE $ESPANSO_PARAMS_LOGIN $ESPANSO_PARAMS_PASS
+  label: '[Utils] Pass'
+  comment: '{{lesspass}}'
+  search_terms:
+  - utils
+- triggers:
+  - :s-ddg
+  - :search-duckduckgo
+  replace: https://duckduckgo.com/?q=
+  label: '[Utils] Search DuckDuckGo'
+  comment: Quick search query URL prefix for DuckDuckGo
+  search_terms:
+  - utils
+- triggers:
+  - :s-wiki
+  - :search-wikipedia
+  replace: https://en.wikipedia.org/w/?search=
+  label: '[Utils] Search Wikipedia'
+  comment: Quick search query URL prefix for Wikipedia
+  search_terms:
+  - utils
+- triggers:
+  - :s-gh
+  - :search-github
+  replace: https://github.com/search?q=
+  label: '[Utils] Search GitHub'
+  comment: Quick search query URL prefix for GitHub
+  search_terms:
+  - utils
+- triggers:
+  - :s-so
+  - :search-stackoverflow
+  replace: https://stackoverflow.com/search?q=
+  label: '[Utils] Search StackOverflow'
+  comment: Quick search query URL prefix for StackOverflow
+  search_terms:
+  - utils
+- triggers:
+  - :s-dh
+  - :search-dockerhub
+  replace: https://hub.docker.com/search?q=
+  label: '[Utils] Search DockerHub'
+  comment: Quick search query URL prefix for DockerHub
+  search_terms:
+  - utils
+- triggers:
+  - :s-wa
+  - :search-wolframalpha
+  replace: https://www.wolframalpha.com/input/?i=
+  label: '[Utils] Search WolframAlpha'
+  comment: Quick search query URL prefix for WolframAlpha
+  search_terms:
+  - utils
+- triggers:
+  - :s-red
+  - :search-reddit
+  replace: https://www.reddit.com/search/?q=
+  label: '[Utils] Search Reddit'
+  comment: Quick search query URL prefix for Reddit
+  search_terms:
+  - utils
+- triggers:
+  - :s-bbc
+  - :search-bbc
+  replace: https://www.bbc.co.uk/search?q=
+  label: '[Utils] Search BBC'
+  comment: Quick search query URL prefix for BBC
+  search_terms:
+  - utils
+- triggers:
+  - :s-vt
+  - :search-virustotal
+  replace: https://www.virustotal.com/gui/search/
+  label: '[Utils] Search VirusTotal'
+  comment: Quick search query URL prefix for VirusTotal
+  search_terms:
+  - utils
+- triggers:
+  - :s-amz
+  - :search-amazon
+  replace: https://amazon.co.uk/s?k=
+  label: '[Utils] Search Amazon'
+  comment: Quick search query URL prefix for Amazon
+  search_terms:
+  - utils
+- triggers:
+  - :s-yt
+  - :search-youtube
+  replace: https://youtube.com/results?q=
+  label: '[Utils] Search YouTube'
+  comment: Quick search query URL prefix for YouTube
+  search_terms:
+  - utils
+- triggers:
+  - :s-maps
+  - :search-maps
+  replace: https://www.google.com/maps/search/
+  label: '[Utils] Search Google Maps'
+  comment: Quick search query URL prefix for Google Maps
+  search_terms:
+  - utils
+- triggers:
+  - :s-goo
+  - :search-google
+  replace: https://google.com/search?q=
+  label: '[Utils] Search Google'
+  comment: Quick search query URL prefix for Google
+  search_terms:
+  - utils
+- trigger: :s-choice
+  replace: '{{form_data.engine}}{{form_data.query}}'
+  vars:
+  - name: form_data
+    type: form
+    params:
+      layout: 'Search Engine: [[engine]]
 
-  # Outputs the current time (24hr)
-  - trigger: :time
-    replace: "{{time}}"
-    vars:
-      - name: time
-        type: date
-        params:
-          format: "%H:%M"
+        Query: [[query]]
 
-  # Outputs the month and year (e.g. January 2020)
-  - trigger: :month
-    replace: "{{date}}"
-    vars:
-      - name: date
-        type: date
-        params:
-          format: "%B %Y"
-
-  # Easily inputs ASCII emojis from a dropdown
-  - trigger: :lenny
-    replace: "{{smileys}}"
-    vars:
-      - name: smileys
-        type: choice
-        params:
+        '
+      fields:
+        engine:
+          type: choice
           values:
-            - '¯\\_(ツ)_/¯'
-            - "(╯°□°）╯︵ ┻━┻"
-            - "( ͡ಠ ʖ̯ ͡ಠ)"
-            - "☉ ‿ ⚆"
-            - "ʕ•ᴥ•ʔ"
-            - "⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆"
-            - "◤◢◣◥◤◢◣◥"
-            - "(づᵔ◡ᵔ)づ"
-            - "|ᵔ‿ᵔ|"
-            - "⤜(*﹏*)⤏"
-            - "ツ"
-
-  # Ouputs MIT License short text
-  - trigger: :mit-short
-    replace: "Licensed under MIT X11, © {{name}} {{year}}: {{url}}"
-    vars:
-      [
-        { name: year, type: date, params: { format: "%Y" } },
-        {
-          name: name,
-          type: choice,
-          params: { values: ["Alicia Sykes", "James Carter", "You"] },
-        },
-        {
-          name: url,
-          type: random,
-          params:
-            {
-              choices:
-                [
-                  "https://aliciasykes.com",
-                  "https://jamescarter.dev",
-                  "https://you.com",
-                ],
-            },
-        },
-      ]
-
-  # Outputs full MIT license text, from GitHub
-  - trigger: :mit-long
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          shell: cmd
-          cmd: "curl.exe 'https://gist.githubusercontent.com/Lissy93/143d2ee01ccc5c052a17/raw/a8ac96cd15847a231931b561d95d2de47066fd33/LICENSE.MD'"
-
-  # Personal email notes
-  - trigger: :kr
-    replace: "Kind Regards,\n{name}\n"
-    vars:
-      - name: name
-        type: choice
-        params:
-          values:
-            - "Alicia Sykes"
-            - "Dan Smith"
-            - "Jordan O'Hare"
-            - "Tom Wilson"
-            - "James Carter"
-            - "Me"
-
-  # Outputs git commit command, with cursor in the message block
-  - trigger: :commit
-    replace: git commit -m "$|$"
-
-  # Fetches a funny commit message from whatthecommit.com
-  - trigger: :wtc
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          shell: cmd
-          cmd: "curl.exe -s whatthecommit.com/index.txt"
-
-  # Uses Lesspass to generatre a password for a given account
-  # Requires the Lesspass CLI to be installed, see:
-  # https://github.com/lesspass/lesspass/tree/master/cli
-  - trigger: :pass
-    replace: "{{lesspass}}"
-    vars:
-      - name: "params"
-        type: form
-        params:
-          layout: |
-            Less Pass Generator
-            Website: [[site]]
-            Login: [[login]]
-            Master Password: [[pass]]
-      - name: lesspass
-        type: shell
-        params:
-          cmd: "lesspass $ESPANSO_PARAMS_SITE $ESPANSO_PARAMS_LOGIN $ESPANSO_PARAMS_PASS"
-
-  # Quick search, formulates the URL params for searching a given website
-  - triggers: [":s-ddg", ":search-duckduckgo"]
-    replace: "https://duckduckgo.com/?q="
-  - triggers: [":s-wiki", ":search-wikipedia"]
-    replace: "https://en.wikipedia.org/w/?search="
-  - triggers: [":s-gh", ":search-github"]
-    replace: "https://github.com/search?q="
-  - triggers: [":s-so", ":search-stackoverflow"]
-    replace: "https://stackoverflow.com/search?q="
-  - triggers: [":s-dh", ":search-dockerhub"]
-    replace: "https://hub.docker.com/search?q="
-  - triggers: [":s-wa", ":search-wolframalpha"]
-    replace: "https://www.wolframalpha.com/input/?i="
-  - triggers: [":s-red", ":search-reddit"]
-    replace: "https://www.reddit.com/search/?q="
-  - triggers: [":s-bbc", ":search-bbc"]
-    replace: "https://www.bbc.co.uk/search?q="
-  - triggers: [":s-vt", ":search-virustotal"]
-    replace: "https://www.virustotal.com/gui/search/"
-  - triggers: [":s-amz", ":search-amazon"]
-    replace: "https://amazon.co.uk/s?k="
-  - triggers: [":s-yt", ":search-youtube"]
-    replace: "https://youtube.com/results?q="
-  - triggers: [":s-maps", ":search-maps"]
-    replace: "https://www.google.com/maps/search/"
-  - triggers: [":s-goo", ":search-google"]
-    replace: "https://google.com/search?q="
-
-  # Quick search using interactive form
-  - trigger: ":s-choice"
-    replace: "{{form_data.engine}}{{form_data.query}}"
-    vars:
-      - name: form_data
-        type: form
-        params:
-          layout: "Search Engine: [[engine]]\nQuery: [[query]]"
-          fields:
-            engine:
-              type: choice
-              values:
-                - label: "Google"
-                  id: "https://google.com/search?q="
-                - label: "DuckDuckGo"
-                  id: "https://duckduckgo.com/?q="
-                - label: "Wikipedia"
-                  id: "https://en.wikipedia.org/w/?search="
-                - label: "GitHub"
-                  id: "https://github.com/search?q="
-                - label: "StackOverflow"
-                  id: "https://stackoverflow.com/search?q="
-                - label: "DockerHub"
-                  id: "https://hub.docker.com/search?q="
-                - label: "WolframAlpha"
-                  id: "https://www.wolframalpha.com/input/?i="
-                - label: "Reddit"
-                  id: "https://www.reddit.com/search/?q="
-                - label: "BBC"
-                  id: "https://www.bbc.co.uk/search?q="
-                - label: "VirusTotal"
-                  id: "https://www.virustotal.com/gui/search/"
-                - label: "Amazon"
-                  id: "https://amazon.co.uk/s?k="
-                - label: "YouTube"
-                  id: "https://youtube.com/results?q="
-                - label: "Google Maps"
-                  id: "https://www.google.com/maps/search/"
-            query:
-              type: text
-
-  # Similar to above, but it uses the clipboard for the search query
-  - trigger: ":swc-ddg"
-    replace: "https://duckduckgo.com/?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-wiki"
-    replace: "https://en.wikipedia.org/w/?search='{{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-gh"
-    replace: "https://github.com/search?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-so"
-    replace: "https://stackoverflow.com/search?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-dh"
-    replace: "https://hub.docker.com/search?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-wa"
-    replace: "https://www.wolframalpha.com/input/?i={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-red"
-    replace: "https://www.reddit.com/search/?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-bbc"
-    replace: "https://www.bbc.co.uk/search?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-vt"
-    replace: "https://www.virustotal.com/gui/search/{{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-amz"
-    replace: "https://amazon.co.uk/s?k={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-yt"
-    replace: "https://youtube.com/results?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-maps"
-    replace: "https://www.google.com/maps/search/{{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-  - trigger: ":swc-goo"
-    replace: "https://google.com/search?q={{clipboard}}"
-    vars: [{ name: "clipboard", type: "clipboard" }]
-
-  # Quick search using clipboard
-  - trigger: ":swc-choice"
-    replace: "{{engine}}{{clipboard}}"
-    vars:
-      - name: engine
-        type: choice
-        params:
-          values:
-            - label: "Google"
-              id: "https://google.com/search?q="
-            - label: "DuckDuckGo"
-              id: "https://duckduckgo.com/?q="
-            - label: "Wikipedia"
-              id: "https://en.wikipedia.org/w/?search="
-            - label: "GitHub"
-              id: "https://github.com/search?q="
-            - label: "StackOverflow"
-              id: "https://stackoverflow.com/search?q="
-            - label: "DockerHub"
-              id: "https://hub.docker.com/search?q="
-            - label: "WolframAlpha"
-              id: "https://www.wolframalpha.com/input/?i="
-            - label: "Reddit"
-              id: "https://www.reddit.com/search/?q="
-            - label: "BBC"
-              id: "https://www.bbc.co.uk/search?q="
-            - label: "VirusTotal"
-              id: "https://www.virustotal.com/gui/search/"
-            - label: "Amazon"
-              id: "https://amazon.co.uk/s?k="
-            - label: "YouTube"
-              id: "https://youtube.com/results?q="
-            - label: "Google Maps"
-              id: "https://www.google.com/maps/search/"
-      - name: clipboard
-        type: clipboard
-
-  # Generates fake data
-  - trigger: ":faker"
-    replace: "{{output}}"
-    vars:
-      # Supported options, each id should match a faker module
-      - name: module
-        type: choice
-        params:
-          values:
-            - label: "First Name"
-              id: "first_name"
-            - label: "Company"
-              id: "company"
-            - label: "Phone Number"
-              id: "phone_number"
-            - label: "File Name"
-              id: "file_name"
-            - label: "Street Address"
-              id: "address"
-            - label: "SSN"
-              id: "ssn"
-            - label: "Email"
-              id: "email"
-      - name: output
-        type: shell
-        params:
-          shell: cmd
-          cmd: python %CONFIG%\match\packages\utils\scripts\fake.py {{module}}
-
-  - trigger: ":lorem"
-    label: "Paragraph"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          shell: cmd
-          cmd: python %CONFIG%\match\packages\utils\scripts\fake.py paragraph
-  - trigger: ":lorem"
-    label: "Sentence"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          shell: cmd
-          cmd: python %CONFIG%\match\packages\utils\scripts\fake.py sentence
-
-  - trigger: ":envtest"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          shell: cmd
-          cmd: "set"
+          - label: Google
+            id: https://google.com/search?q=
+          - label: DuckDuckGo
+            id: https://duckduckgo.com/?q=
+          - label: Wikipedia
+            id: https://en.wikipedia.org/w/?search=
+          - label: GitHub
+            id: https://github.com/search?q=
+          - label: StackOverflow
+            id: https://stackoverflow.com/search?q=
+          - label: DockerHub
+            id: https://hub.docker.com/search?q=
+          - label: WolframAlpha
+            id: https://www.wolframalpha.com/input/?i=
+          - label: Reddit
+            id: https://www.reddit.com/search/?q=
+          - label: BBC
+            id: https://www.bbc.co.uk/search?q=
+          - label: VirusTotal
+            id: https://www.virustotal.com/gui/search/
+          - label: Amazon
+            id: https://amazon.co.uk/s?k=
+          - label: YouTube
+            id: https://youtube.com/results?q=
+          - label: Google Maps
+            id: https://www.google.com/maps/search/
+        query:
+          type: text
+  label: '[Utils] S Choice'
+  comment: '{{form_data.engine}}{{form_data.query}}'
+  search_terms:
+  - utils
+- trigger: :swc-ddg
+  replace: https://duckduckgo.com/?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Ddg'
+  comment: https://duckduckgo.com/?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-wiki
+  replace: https://en.wikipedia.org/w/?search='{{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Wiki'
+  comment: https://en.wikipedia.org/w/?search='{{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-gh
+  replace: https://github.com/search?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Gh'
+  comment: https://github.com/search?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-so
+  replace: https://stackoverflow.com/search?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc So'
+  comment: https://stackoverflow.com/search?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-dh
+  replace: https://hub.docker.com/search?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Dh'
+  comment: https://hub.docker.com/search?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-wa
+  replace: https://www.wolframalpha.com/input/?i={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Wa'
+  comment: https://www.wolframalpha.com/input/?i={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-red
+  replace: https://www.reddit.com/search/?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Red'
+  comment: https://www.reddit.com/search/?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-bbc
+  replace: https://www.bbc.co.uk/search?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Bbc'
+  comment: https://www.bbc.co.uk/search?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-vt
+  replace: https://www.virustotal.com/gui/search/{{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Vt'
+  comment: https://www.virustotal.com/gui/search/{{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-amz
+  replace: https://amazon.co.uk/s?k={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Amz'
+  comment: https://amazon.co.uk/s?k={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-yt
+  replace: https://youtube.com/results?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Yt'
+  comment: https://youtube.com/results?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-maps
+  replace: https://www.google.com/maps/search/{{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Maps'
+  comment: https://www.google.com/maps/search/{{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-goo
+  replace: https://google.com/search?q={{clipboard}}
+  vars:
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Goo'
+  comment: https://google.com/search?q={{clipboard}}
+  search_terms:
+  - utils
+- trigger: :swc-choice
+  replace: '{{engine}}{{clipboard}}'
+  vars:
+  - name: engine
+    type: choice
+    params:
+      values:
+      - label: Google
+        id: https://google.com/search?q=
+      - label: DuckDuckGo
+        id: https://duckduckgo.com/?q=
+      - label: Wikipedia
+        id: https://en.wikipedia.org/w/?search=
+      - label: GitHub
+        id: https://github.com/search?q=
+      - label: StackOverflow
+        id: https://stackoverflow.com/search?q=
+      - label: DockerHub
+        id: https://hub.docker.com/search?q=
+      - label: WolframAlpha
+        id: https://www.wolframalpha.com/input/?i=
+      - label: Reddit
+        id: https://www.reddit.com/search/?q=
+      - label: BBC
+        id: https://www.bbc.co.uk/search?q=
+      - label: VirusTotal
+        id: https://www.virustotal.com/gui/search/
+      - label: Amazon
+        id: https://amazon.co.uk/s?k=
+      - label: YouTube
+        id: https://youtube.com/results?q=
+      - label: Google Maps
+        id: https://www.google.com/maps/search/
+  - name: clipboard
+    type: clipboard
+  label: '[Utils] Swc Choice'
+  comment: '{{engine}}{{clipboard}}'
+  search_terms:
+  - utils
+- trigger: :faker
+  replace: '{{output}}'
+  vars:
+  - name: module
+    type: choice
+    params:
+      values:
+      - label: First Name
+        id: first_name
+      - label: Company
+        id: company
+      - label: Phone Number
+        id: phone_number
+      - label: File Name
+        id: file_name
+      - label: Street Address
+        id: address
+      - label: SSN
+        id: ssn
+      - label: Email
+        id: email
+  - name: output
+    type: shell
+    params:
+      shell: cmd
+      cmd: python %CONFIG%\match\packages\utils\scripts\fake.py {{module}}
+  label: '[Utils] Faker'
+  comment: '{{output}}'
+  search_terms:
+  - utils
+- trigger: :lorem
+  label: '[Utils] Lorem Ipsum Placeholder (Paragraph)'
+  replace: '{{output}}'
+  vars:
+  - name: output
+    type: shell
+    params:
+      shell: cmd
+      cmd: python %CONFIG%\match\packages\utils\scripts\fake.py paragraph
+  comment: Generates a random placeholder paragraph of lorem ipsum text.
+  search_terms:
+  - utils
+- trigger: :lorem
+  label: '[Utils] Lorem Ipsum Placeholder (Sentence)'
+  replace: '{{output}}'
+  vars:
+  - name: output
+    type: shell
+    params:
+      shell: cmd
+      cmd: python %CONFIG%\match\packages\utils\scripts\fake.py sentence
+  comment: Generates a single sentence of lorem ipsum placeholder text.
+  search_terms:
+  - utils
+- trigger: :envtest
+  replace: '{{output}}'
+  vars:
+  - name: output
+    type: shell
+    params:
+      shell: cmd
+      cmd: set
+  label: '[Utils] Environment Variables Diagnostic (cmd set)'
+  comment: Dumps current shell environment variables for debugging Espanso.
+  search_terms:
+  - utils

@@ -1,5 +1,57 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
-  - trigger: ":hello"
-    replace: "Hello from Example Package!"
+  - trigger: :hello
+    replace: Hello from Example Package!
+    label: '[Example] Hello From Example Package'
+    comment: Hello from Example Package!
+    search_terms:
+      - hello
+      - greeting
+      - _example-package
+      - example
+  - triggers:
+      - :goodbye
+      - :bye
+    replace: Goodbye from Example Package!
+    label: '[Example] Goodbye From Example Package'
+    comment: GoodBye from Example Package!
+    search_terms:
+      - _example-package
+      - example
+  - trigger: :date
+    replace: '{{now}}'
+    vars:
+      - name: now
+        type: date
+        params:
+          format: '%Y-%m-%d'
+    label: '[Example] Current Date (YYYY-MM-DD)'
+    comment: Date from Example Package!
+    search_terms:
+      - _example-package
+      - example
+  - trigger: :time
+    replace: '{{now}}'
+    vars:
+      - name: now
+        type: date
+        params:
+          format: '%H:%M:%S'
+    label: '[Example] Current Time (HH:MM)'
+    comment: Time from Example Package!
+    search_terms:
+      - _example-package
+      - example
+  - trigger: :datetime
+    replace: '{{now}}'
+    vars:
+      - name: now
+        type: date
+        params:
+          format: '%Y-%m-%d %H:%M:%S'
+    label: '[Example] Datetime'
+    comment: DateTime from Example Package!
+    search_terms:
+      - _example-package
+      - example

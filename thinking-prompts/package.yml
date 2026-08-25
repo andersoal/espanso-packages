@@ -1,22 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
-# =============================================================================
-# THINKING PROMPTS — Metacognition & Self-Reflection Toolkit
-# =============================================================================
-# A curated set of 10 AI-powered prompts designed to sharpen thinking,
-# expose blind spots, and accelerate self-awareness.
-# Source: SAINT NULL's Thinking Toolkit
-# =============================================================================
-
 matches:
-
-  # =========================================================================
-  # 1. SNAP AWAKENING
-  # =========================================================================
-  # Forces a completely different perspective on recurring problems.
-  # Use when: you're stuck in a loop with the same issue.
-  # =========================================================================
-  - trigger: ":think-snap"
+  - trigger: :think-snap
     form: |
       I keep repeating this recurring problem: [[problem]]
 
@@ -24,24 +9,20 @@ matches:
     form_fields:
       problem:
         type: multiline
-
-  # =========================================================================
-  # 2. MIRROR MY MIND
-  # =========================================================================
-  # Analyzes your thinking patterns, decision-making style, and biases.
-  # Use when: you want to understand how you actually think.
-  # =========================================================================
-  - trigger: ":think-mirror"
+    label: '[Thinking Prompts] Recurring Problem Snapshot (Deconstruct Habits)'
+    comment: 'I keep repeating this recurring problem:'
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-mirror
     replace: |
       Based on everything I've said so far, break down how I think. Show my patterns in decision-making, how I handle pressure, where I overcomplicate things, and where I'm missing something obvious.
-
-  # =========================================================================
-  # 3. DESTROY MY IDEA
-  # =========================================================================
-  # Builds the strongest possible case against one of your beliefs.
-  # Use when: you want to stress-test an idea or belief.
-  # =========================================================================
-  - trigger: ":think-destroy"
+    label: '[Thinking Prompts] Cognitive Blind Spot Mirror (Subconscious Habits)'
+    comment: Based on everything I've said so far, break down how I think. Show my patterns in decision-making, how I handle pressure
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-destroy
     form: |
       Take one of my beliefs about [[topic]] and build the strongest possible case against it.
 
@@ -49,14 +30,12 @@ matches:
     form_fields:
       topic:
         type: multiline
-
-  # =========================================================================
-  # 4. BORROW 5 BRAINS
-  # =========================================================================
-  # Looks at your problem through five different expert perspectives.
-  # Use when: you need fresh, multi-disciplinary insights.
-  # =========================================================================
-  - trigger: ":think-borrow"
+    label: '[Thinking Prompts] Pre-Mortem Stress Test (Plan Destructor)'
+    comment: Take one of my beliefs about  and build the strongest possible case against it.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-borrow
     form: |
       Look at my [[idea_or_problem]] through five different experts (for example: psychologist, investor, engineer, strategist, creator).
 
@@ -64,14 +43,12 @@ matches:
     form_fields:
       idea_or_problem:
         type: multiline
-
-  # =========================================================================
-  # 5. LEARNING CHEAT CODE
-  # =========================================================================
-  # Creates a focused, high-impact learning plan for any skill.
-  # Use when: you want to learn something fast without wasted effort.
-  # =========================================================================
-  - trigger: ":think-learn"
+    label: '[Thinking Prompts] Cross-Domain Mental Model Transfer (5 Experts)'
+    comment: 'Look at my  through five different experts (for example: psychologist, investor, engineer, strategist, creator).'
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-learn
     form: |
       I want to get good at [[skill]]. Create a simple, focused plan that covers only the highest-impact parts.
 
@@ -79,14 +56,12 @@ matches:
     form_fields:
       skill:
         type: text
-
-  # =========================================================================
-  # 6. FIND MY BLOCKS
-  # =========================================================================
-  # Identifies self-sabotage patterns and creates a removal plan.
-  # Use when: you feel stuck but can't pinpoint why.
-  # =========================================================================
-  - trigger: ":think-blocks"
+    label: '[Thinking Prompts] Feynman Compression (Rapid Simple Mastery)'
+    comment: I want to get good at . Create a simple, focused plan that covers only the highest-impact parts.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-blocks
     form: |
       Help me spot where I'm getting in my own way in [[area]].
 
@@ -94,15 +69,13 @@ matches:
     form_fields:
       area:
         type: text
-        default: "my life and work"
-
-  # =========================================================================
-  # 7. INSIGHT FINDER
-  # =========================================================================
-  # Breaks any topic into five powerful, non-obvious insights.
-  # Use when: you want to go beyond surface-level understanding.
-  # =========================================================================
-  - trigger: ":think-insight"
+        default: my life and work
+    label: '[Thinking Prompts] Self-Sabotage & Subconscious Barrier Detector'
+    comment: Help me spot where I'm getting in my own way in .
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-insight
     form: |
       Take [[topic]] and break it into five powerful insights that are easy to understand but hard to notice.
 
@@ -110,14 +83,12 @@ matches:
     form_fields:
       topic:
         type: text
-
-  # =========================================================================
-  # 8. DECODE ACTIONS
-  # =========================================================================
-  # Reveals hidden drivers (fears, habits, patterns) behind your behavior.
-  # Use when: you want to understand why you do what you do.
-  # =========================================================================
-  - trigger: ":think-decode"
+    label: '[Thinking Prompts] Core Truth & Mental Breakthrough Extractor'
+    comment: Take  and break it into five powerful insights that are easy to understand but hard to notice.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-decode
     form: |
       Break down how I handle [[problem]].
 
@@ -125,14 +96,12 @@ matches:
     form_fields:
       problem:
         type: multiline
-
-  # =========================================================================
-  # 9. VISIONARY THINKING
-  # =========================================================================
-  # Shows how a bold, creative person would approach your challenge.
-  # Use when: you need unconventional, high-conviction moves.
-  # =========================================================================
-  - trigger: ":think-vision"
+    label: '[Thinking Prompts] Personal Decision-Making Heuristic Decoder'
+    comment: Break down how I handle .
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-vision
     form: |
       Show how someone bold and creative (like [[person]]) would approach my [[challenge]].
 
@@ -140,17 +109,15 @@ matches:
     form_fields:
       person:
         type: text
-        default: "Elon Musk"
+        default: Elon Musk
       challenge:
         type: multiline
-
-  # =========================================================================
-  # 10. BLIND SPOT EXPOSER
-  # =========================================================================
-  # Challenges your thinking and exposes weak logic, assumptions, and biases.
-  # Use when: you want to stress-test your conclusions before acting.
-  # =========================================================================
-  - trigger: ":think-blind"
+    label: '[Thinking Prompts] Bold Vision Simulator (Unconstrained Thinking)'
+    comment: Show how someone bold and creative (like ) would approach my .
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-blind
     form: |
       Challenge my thinking about [[topic]].
 
@@ -158,3 +125,794 @@ matches:
     form_fields:
       topic:
         type: multiline
+    label: '[Thinking Prompts] Radical Assumption Challenge & Red Teaming'
+    comment: Challenge my thinking about .
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-deepresearch
+    form: |
+      Research [[topic]] comprehensively. Cover the current state, key players, recent developments, open questions, and what experts disagree about. Structure as a research brief.
+    form_fields:
+      topic:
+        multiline: true
+    label: '[Thinking Prompts] Deep Investigative Research Brief'
+    comment: Comprehensive multi-angle research synthesizing data, history, and expert consensus.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-competitor
+    form: |
+      Analyze [[target_entity]] against its top 5 competitors. Compare on [[dimensions]]. Identify where it leads, where it lags, and where the biggest opportunities are.
+    form_fields:
+      target_entity:
+        default: my product
+      dimensions:
+        default: features, pricing, market share, UX, reliability
+    label: '[Thinking Prompts] Competitor Strategy & Moat Teardown'
+    comment: Evaluates competitors pricing, core features, distribution channels, and vulnerabilities.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-marketsize
+    form: |
+      Estimate the market size for [[market]]. Use a bottom-up approach, show your assumptions clearly, and give a range rather than a single number.
+    form_fields:
+      market:
+        multiline: true
+    label: '[Thinking Prompts] TAM/SAM/SOM Market Sizing Calculation'
+    comment: Calculates Total Addressable Market using bottom-up and top-down estimation methods.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-steelman
+    form: |
+      Steel-man the argument that [[controversial_position]]. Present the strongest possible version of this argument as its best advocate would make it. Then identify its weakest points.
+    form_fields:
+      controversial_position:
+        multiline: true
+    label: '[Thinking Prompts] Steelman Counter-Argument Generator'
+    comment: Constructs the strongest possible arguments against your own position to stress-test ideas.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-investthesis
+    form: |
+      Analyze the investment thesis for [[target_asset]]. What has to be true for this to be a good investment, what are the key risks, and what would change your view?
+    form_fields:
+      target_asset:
+        default: Company / Asset
+    label: '[Thinking Prompts] Investment Thesis & Diligence Framework'
+    comment: Structures growth catalysts, risk factors, unit economics, and returns scenarios for investments.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-swot
+    form: |
+      Conduct a deep SWOT analysis for [[subject]]. Go beyond surface-level observations and identify second-order implications of each factor.
+    form_fields:
+      subject:
+        multiline: true
+    label: '[Thinking Prompts] Actionable SWOT Matrix'
+    comment: Generates SWOT analysis tied directly to strategic execution initiatives.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-firstprinciples
+    form: |
+      Analyze [[subject]] from first principles. What are the irreducible truths, what assumptions are people making that might be wrong, and what does this suggest?
+    form_fields:
+      subject:
+        multiline: true
+    label: '[Thinking Prompts] First Principles Deconstruction'
+    comment: Strips away conventional assumptions to analyze problems from foundational physical truths.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-histpattern
+    form: |
+      Analyze historical examples of [[historical_pattern]]. What patterns emerge, what caused success or failure, and what lessons apply to [[current_situation]]?
+    form_fields:
+      historical_pattern:
+        multiline: true
+      current_situation:
+        multiline: true
+    label: '[Thinking Prompts] Historical Pattern Matching'
+    comment: Draws parallels between modern market/tech situations and past historical precedents.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-riskanalysis
+    form: |
+      Conduct a comprehensive risk analysis for [[project_or_decision]]. Identify all risks, assess likelihood and impact, prioritize them, and suggest mitigations for the top five.
+    form_fields:
+      project_or_decision:
+        multiline: true
+    label: '[Thinking Prompts] Comprehensive Risk Assessment Matrix'
+    comment: Identifies operational, financial, and regulatory risks with mitigation strategies.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-scenarios
+    form: |
+      Develop three scenarios for [[situation]]: a base case, an optimistic case, and a pessimistic case. What would cause each to occur and how should we prepare for each?
+    form_fields:
+      situation:
+        multiline: true
+    label: '[Thinking Prompts] Scenario Planning (Best / Worst / Expected)'
+    comment: Maps plausible future scenarios, leading indicators, and proactive contingency playbooks.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-causalchain
+    form: |
+      Map the causal chain from [[root_cause]] to [[outcome]]. What are all the links in the chain, where could intervention have the most impact, and what feedback loops exist?
+    form_fields:
+      root_cause:
+        multiline: true
+      outcome:
+        multiline: true
+    label: '[Thinking Prompts] Causal Chain & Root Dynamic Mapping'
+    comment: Traces the chain of cause-and-effect leading to an outcome to reveal high-leverage intervention points.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-trendanalysis
+    form: |
+      Analyze the trend of [[trend]]. How long has it been building, what is driving it, how durable is it, and what are its second and third-order effects?
+    form_fields:
+      trend:
+        multiline: true
+    label: '[Thinking Prompts] Macro Industry Trend Analysis'
+    comment: Evaluates technological, economic, and cultural forces shaping an industry over 3-5 years.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-decisionframework
+    form: |
+      Build a decision framework for [[decision_type]]. What factors matter, how should they be weighted, what information is needed, and what does a good decision process look like?
+    form_fields:
+      decision_type:
+        multiline: true
+    label: '[Thinking Prompts] Multi-Criteria Decision Framework'
+    comment: Builds weighted decision matrices with trade-off analysis and scorecards.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-rootcause
+    form: |
+      Conduct a root cause analysis of [[problem_or_failure]]. Use the five whys method, identify contributing factors, and recommend actions that address root causes, not symptoms.
+    form_fields:
+      problem_or_failure:
+        multiline: true
+    label: '[Thinking Prompts] 5-Whys Root Cause Analysis'
+    comment: Drills past symptoms to uncover underlying systemic root causes of a failure.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-stakeholders
+    form: |
+      Map the stakeholders for [[project_or_decision]]. Who has power, who is affected, what does each party want, and how should each be engaged?
+    form_fields:
+      project_or_decision:
+        multiline: true
+    label: '[Thinking Prompts] Stakeholder Impact & Alignment Mapping'
+    comment: Maps stakeholder motivations, influence levels, and communication strategies.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-hypotheses
+    form: |
+      Generate 10 testable hypotheses about [[phenomenon]]. For each, describe what evidence would confirm or refute it and how it could be tested.
+    form_fields:
+      phenomenon:
+        multiline: true
+    label: '[Thinking Prompts] Falsifiable Hypothesis Generation'
+    comment: Formulates clear, testable hypotheses with validation experiments and success metrics.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-assumptions
+    form: |
+      Map all the assumptions underlying [[plan_or_belief]]. Categorize them by how critical they are and how uncertain they are. Which assumptions most need to be tested first?
+    form_fields:
+      plan_or_belief:
+        multiline: true
+    label: '[Thinking Prompts] Critical Assumption Stress Test'
+    comment: Surfaces unstated assumptions in a plan and rates their criticality and uncertainty.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-secondorder
+    form: |
+      Analyze the second and third-order effects of [[decision_or_trend]]. Go beyond the obvious first-order effects and identify what most people are missing.
+    form_fields:
+      decision_or_trend:
+        multiline: true
+    label: '[Thinking Prompts] Second-Order Consequences Forecaster'
+    comment: Uncovers unintended downstream consequences and ripple effects of an action.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-premortem
+    form: |
+      Conduct a pre-mortem for [[plan]]. Imagine it is 12 months from now and this has failed. What went wrong, why did it fail, and what could have been done differently?
+    form_fields:
+      plan:
+        multiline: true
+    label: '[Thinking Prompts] Pre-Mortem Failure Simulation'
+    comment: Assumes the project has failed 12 months in the future and works backward to identify flaws.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-valuechain
+    form: |
+      Map the value chain for [[industry]]. Where is value created, where is it captured, where are the margins, and where is disruption most likely to occur?
+    form_fields:
+      industry:
+        multiline: true
+    label: '[Thinking Prompts] Industry Value Chain Mapping'
+    comment: Pinpoints where economic value is captured, commoditized, or disrupted along a value chain.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-networkeffects
+    form: |
+      Analyze the network effects dynamics in [[market_or_product]]. What type of network effects exist, how strong are they, and what does this mean for competitive dynamics?
+    form_fields:
+      market_or_product:
+        multiline: true
+    label: '[Thinking Prompts] Network Effects & Flywheel Design'
+    comment: Designs direct, two-sided, or data network effects to build compounding moats.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-jtbd
+    form: |
+      Apply the Jobs to Be Done framework to understand why customers hire [[product_or_service]]. What functional, emotional, and social jobs is it doing?
+    form_fields:
+      product_or_service:
+        multiline: true
+    label: '[Thinking Prompts] Jobs-To-Be-Done (JTBD) Analysis'
+    comment: Uncovers the core functional, emotional, and social jobs customers hire a product to do.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-moat
+    form: |
+      Analyze the competitive moat of [[company]]. What sustainable advantages does it have, how durable are they, and what would erode them over the next five years?
+    form_fields:
+      company:
+        default: Target Company
+    label: '[Thinking Prompts] Defensible Business Moat Evaluation'
+    comment: Audits switching costs, network effects, brand power, and cost advantages.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-supplydemand
+    form: |
+      Analyze the supply and demand dynamics for [[market]]. What drives demand, what constrains supply, how tight is the market, and what would shift the balance?
+    form_fields:
+      market:
+        multiline: true
+    label: '[Thinking Prompts] Supply & Demand Dynamics Teardown'
+    comment: Analyzes elasticity, pricing power, structural shortages, and surplus dynamics.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :c-gtm
+    form: |
+      Analyze the go-to-market strategy for [[product]]. Who is the beachhead customer, what is the sales motion, how does word of mouth work, and what drives viral growth?
+    form_fields:
+      product:
+        multiline: true
+    label: '[Thinking Prompts] Go-To-Market (GTM) Launch Strategy'
+    comment: Defines ICP target, positioning hook, channel prioritization, and launch timeline.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :life-insights
+    replace: |
+      # Teach Me What I've Ignored For Too Long
+      Act like a brutally honest life strategist with 20+ years of experience in mindset transformation, performance optimization, and existential clarity. Your task is to identify and teach me the critical lessons, skills, and mental frameworks I've likely ignored or avoided for too long — things that silently limit potential, success, and fulfillment.
+
+      # Collapse A Year Of Wisdom Into An Hour
+      You are a master curator of high-leverage life and business wisdom. Your job is to compress 12 months of deep insights, growth, and transformation into a single, hyper-focused 60-minute breakdown.
+    label: '[Thinking Prompts] Core Life Lessons & Blind Spots'
+    comment: Explores foundational life truths and unstated assumptions overlooked in daily routines.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :life-success
+    replace: |
+      # Show Me What School Never Did
+      Act like a revolutionary educator who builds minds, not just careers. Your mission is to re-educate me on the things school systematically failed to teach, the real curriculum for life success, meaning, and autonomy.
+
+      # Decode How People Become Unstoppable
+      Imagine you're a peak performance psychologist mixed with a Navy SEAL mentor and world-class strategist. Your task: break down the psychology, behaviors, and rituals behind people who become 'unstoppable.'
+    label: '[Thinking Prompts] Practical Success Mental Models'
+    comment: Unpacks pragmatic models for compounding career, health, and relationship success.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :mental-models-future
+    replace: |
+      # Create Mental Models I Can't See
+      Act like a cognitive strategist trained in systems thinking, first-principles reasoning, and decision theory. Your mission: design mental models I don't currently use or know I'm missing, the invisible tools elite thinkers use unconsciously.
+
+      # Train Me To Be Future-Proof
+      You're a foresight expert who prepares high-performers to thrive in a rapidly changing world. Train me to become 'future-proof', adaptable, relevant, and unshakable over the next 20+ years.
+    label: '[Thinking Prompts] Strategic Mental Models for Modern Complexity'
+    comment: Maps decision frameworks for navigating rapid technological and societal shifts.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :sun-tzu-mode-info
+    replace: |
+      Claude has a secret mode called "Sun Tzu Strategy Master." It runs every decision through 2,500 years of strategy doctrine.
+    label: '[Thinking Prompts] Sun Tzu Art of War Framework Overview'
+    comment: Strategic warfare principles applied to negotiation, competition, and timing.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :suntzu-activate
+    replace: |
+      You are now operating as Sun Tzu's Strategy Master. Analyze every question through The Art of War: positioning, deception, timing, terrain, opponents, and force vs restraint. Refuse generic pros and cons. Name the opponent, the asymmetric advantage, the deception available, and the timing of action. Be tactical. Be direct.
+    label: '[Thinking Prompts] Sun Tzu Strategic Advisor Mode'
+    comment: Adopts Sun Tzu persona to analyze competitive positioning and win without forced battles.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :decision-intelligence-intro
+    replace: |
+      BREAKING: CLAUDE HAS A FEATURE CALLED DECISION INTELLIGENCE MODE. YOU CAN USE IT TO SOLVE ANY BUSINESS OR CAREER PROBLEM USING 7 PROVEN FRAMEWORKS THAT CONSULTANTS CHARGE $500/HOUR TO APPLY. HERE ARE 7 PROMPTS TO ACCESS IT:
+    label: '[Thinking Prompts] Decision Intelligence Framework Overview'
+    comment: Overview of structured decision intelligence for navigating high-stakes uncertainty.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :outwork-everyone-system
+    replace: |
+      <role>Act as a competitive advantage strategist who reads every signal a business owner sends through their work habits, their industry awareness, and their output relative to competitors – and builds a complete map of the specific daily system that makes their effort level so far above the competition that the gap becomes impossible to close.</role>
+
+      <task>Step into my competitive landscape and show me exactly what outworking my competition actually looks like in my specific business – so I stop assuming I am ahead and start building a daily system that makes the gap real and measurable.</task>
+
+      <steps>
+      1. Ask for my industry, my top 3 competitors, and my current daily work output before starting
+      2. Map exactly what my top competitors are doing daily – their content output, their outreach volume, their product development, their customer service
+      3. Identify the gap between my current daily output and the output required to be objectively ahead of my competition in 12 months
+      4. Name the 3 specific daily behaviors that would make my effort level impossible for my competition to match
+      5. Predict the one area where my competition is currently outworking me that I have been ignoring or rationalizing
+      6. Deliver the complete competitive output map, the 3 daily behaviors, the one ignored area, and the 90-day system that makes my work ethic my most defensible competitive advantage
+      </steps>
+
+      <rules>
+      - Competitor output must be mapped in specific measurable terms – not vague "they work harder" observations
+      - Daily behaviors must be specific enough to track on a spreadsheet – not aspirational habits
+      - The one ignored area must be named without rationalization – most business owners already know where they are behind
+      - The 90-day system must be aggressive enough to close the gap and realistic enough to sustain
+      - Test: if my top competitor saw my daily output for 30 days would they feel threatened
+      </rules>
+
+      <output>Competitor Output Map → Current vs Required Output Gap → 3 Daily Outwork Behaviors → One Ignored Area → 90-Day Competitive Advantage System</output>
+    label: '[Thinking Prompts] Goggins Resilience: Competitive Advantage System'
+    comment: Evaluates mental grit, pain thresholds, and relentless execution discipline.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :effort-ceiling-audit
+    replace: |
+      <role>Act as a performance diagnostician who reads every signal a business owner sends through their current work output, their daily schedule, and their results – and builds a complete map of the gap between the effort level they think is maximum and the effort level that actually separates average businesses from unstoppable ones.</role>
+
+      <task>Step into my current work output and show me exactly where I am coasting without knowing it – so I can stop confusing busyness with maximum effort and start operating at the level my goals actually require.</task>
+
+      <steps>
+      1. Ask for my current daily schedule, my biggest business goal, and the last time I genuinely surprised myself with what I accomplished before starting
+      2. Map every hour of my current workday and the real output each hour produces
+      3. Identify the gap between the effort level I think is hard and the effort level my goal actually requires
+      4. Name the 3 specific areas where I am operating below my real capacity without realizing it
+      5. Predict the one comfort zone I keep returning to that is costing me the most progress every single week
+      6. Deliver the complete effort audit, the 3 underperforming areas, the one comfort zone to break, and the daily non-negotiables that raise my floor permanently
+      </steps>
+
+      <rules>
+      - Effort gaps must be named in specific behaviors – not described as "work harder"
+      - Every underperforming area must connect to a specific missed result – vague diagnoses change nothing
+      - The one comfort zone must be named honestly – most business owners already know what it is
+      - Daily non-negotiables must be specific enough to track on a calendar
+      - Test: if I ran these non-negotiables for 30 days straight would the people around me notice a difference
+      </rules>
+
+      <output>Current Output Map → Real vs Required Effort Gap → 3 Underperforming Areas → One Comfort Zone to Break → Daily Non-Negotiables</output>
+    label: '[Thinking Prompts] Goggins Resilience: Effort Ceiling Audit'
+    comment: Diagnoses self-imposed limitations and pushes past comfort zones in business and fitness.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :outwork-goggins-intro
+    replace: |
+      CLAUDE CAN NOW BUILD YOUR BUSINESS LIKE DAVID GOGGINS BUILT HIS $20M EMPIRE BY OUTWORKING EVERYONE WHO EVER DOUBTED HIM. FOR FREE
+    label: '[Thinking Prompts] Goggins Mental Resilience Framework Overview'
+    comment: Introduction to applying extreme mental callousness and relentless work ethic.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :legacy-through-pain
+    replace: |
+      <role>Act as a legacy business architect who reads every signal an entrepreneur sends through their current struggles, their long-term vision, and the gap between where they are and where they know they are capable of going – and builds a complete map of how the hardest season of their business becomes the exact foundation their legacy is built on.</role>
+
+      <task>Step into the hardest part of my business journey right now and show me exactly how this season is building something that will outlast every obstacle I am currently facing – so the pain has a purpose and the purpose has a plan.</task>
+
+      <steps>
+      1. Ask for the hardest thing about my business right now, what I am most tempted to quit, and what I am building toward before starting
+      2. Map the specific skills, character traits, and competitive advantages that only get built through the exact difficulty I am currently experiencing
+      3. Identify the gap between what this hard season feels like from inside it and what it will look like as the foundation of my legacy from the outside
+      4. Name the 3 specific things being forged in me right now that no shortcut, funding round, or lucky break could have built
+      5. Predict the one thing I am most tempted to avoid in this season that is actually the most important thing to run toward
+      6. Deliver the complete legacy map, the 3 things being forged, the one thing to run toward, and the 12-month vision that gives every hard day a direction
+      </steps>
+
+      <rules>
+      - The 3 things being forged must come from my specific struggle – never generic "resilience and grit" templates
+      - Gap between inside experience and outside legacy must be named with vivid specificity – vague encouragement changes nothing
+      - The one thing to run toward must be named honestly – most business owners already know what they are avoiding
+      - The 12-month vision must be specific enough to read on the hardest day and still feel worth it
+      - Test: if I read this legacy map on my worst business day this year would it give me a reason to keep going
+      </rules>
+
+      <output>Current Struggle Map → Inside Experience vs Legacy Foundation Gap → 3 Things Being Forged → One Thing to Run Toward → 12-Month Legacy Vision</output>
+    label: '[Thinking Prompts] Goggins Resilience: Legacy Through Adversity'
+    comment: Transforms pain, obstacles, and hardship into long-term compounding fuel.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :doubt-to-fuel
+    replace: |
+      <role>Act as a doubt conversion strategist who reads every signal a business owner sends through their relationship with external criticism, internal self-doubt, and the opinions of people who believe they will fail — and builds a complete map of the specific system that converts every source of doubt into the most powerful motivation their business has ever run on.</role>
+
+      <task>Step into every voice that has doubted my business and show me exactly how to turn that doubt into the fuel that outlasts every obstacle — so the people who believed I would fail become the reason I don't stop.</task>
+
+      <steps>
+      1. Ask for the most memorable doubt someone expressed about my business, how it made me feel, and what I did with that feeling before starting
+      2. Map every current source of doubt in my business life — external critics, internal fears, past failures, and the opinions I carry that were never mine to begin with
+      3. Identify the gap between how I currently respond to doubt and how the most driven operators use the same doubt as a competitive advantage
+      4. Name the 3 specific doubt sources that, if reframed correctly, would give me more drive than any motivational content ever could
+      5. Predict the one source of doubt I keep suppressing instead of converting — and the cost of that suppression in lost momentum
+      6. Deliver the complete doubt map, the 3 reframed sources, the one suppressed doubt to convert, and the daily system for turning every new doubt into forward momentum
+      </steps>
+
+      <rules>
+      - Doubt sources must come from what I actually shared — never invented adversity
+      - Reframes must be psychologically honest — toxic positivity is not doubt conversion
+      - The one suppressed doubt must be named with the specific language I used to describe it
+      - The daily system must produce a measurable behavioral output — not just a mindset shift
+      - Test: if the person who doubted me most saw my business in 12 months would they understand what their doubt actually built
+      </rules>
+
+      <output>Current Doubt Source Map -> Doubt Response Gap -> 3 Reframed Doubt Sources -> One Suppressed Doubt to Convert -> Daily Doubt-to-Fuel System</output>
+    label: '[Thinking Prompts] Goggins Resilience: Doubt Conversion Engine'
+    comment: Converts self-doubt and criticism into aggressive operational focus.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :callous-mind
+    replace: |
+      <role>Act as a mental resilience strategist who reads every signal a business owner sends through their reaction to setbacks, their decision-making under pressure, and their ability to keep moving when results don't come — and builds a complete map of the specific mental system that turns rejection, failure, and doubt into fuel instead of reasons to stop.</role>
+
+      <task>Step into my hardest business moments and show me exactly how to build a mind that gets stronger every time something goes wrong — so setbacks stop being reasons to slow down and start being the exact thing that separates me from everyone who quit.</task>
+
+      <steps>
+      1. Ask for the hardest setback my business has faced, how I responded to it, and the self-talk that ran through my mind before starting
+      2. Map my current mental response pattern to failure — what I think, what I feel, what I do, and how long it takes me to get back to full output
+      3. Identify the gap between how I currently process setbacks and how the most resilient business operators process the same events
+      4. Name the 3 specific mental reframes that would turn my most common business setbacks into momentum instead of paralysis
+      5. Predict the one recurring thought pattern that consistently slows my recovery time after a difficult business event
+      6. Deliver the complete mental resilience map, the 3 reframes, the one thought pattern to rewire, and the daily practice that builds an unbreakable business mind over 90 days
+      </steps>
+
+      <rules>
+      - Mental reframes must be specific to my actual setbacks — never generic "embrace failure" advice
+      - Recovery time gap must be named honestly — most business owners underestimate how long setbacks derail them
+      - The one thought pattern must be named with the exact internal language I described — not paraphrased
+      - The daily practice must take less than 15 minutes and produce a measurable shift in 30 days
+      - Test: if I faced my hardest business setback again tomorrow would this system make me recover faster than last time
+      </rules>
+
+      <output>Current Setback Response Map -> Resilience Gap -> 3 Mental Reframes -> One Thought Pattern to Rewire -> 90-Day Unbreakable Mind Practice</output>
+    label: '[Thinking Prompts] Goggins Resilience: Mind Callousing Protocol'
+    comment: Builds emotional callouses to endure high stress, rejection, and demanding workloads.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :glassbox
+    replace: |
+      Show me exactly how you're thinking right now. Walk me through your internal reasoning before you give me any answer — step by step.
+    label: '[Thinking Prompts] Glassbox Inner Monologue Inspection'
+    comment: Forces the LLM to expose its step-by-step reasoning and internal assumptions before answering.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :think-mentor
+    replace: |
+      After every answer you give me, ask me one question that forces me to think deeper. Don't stop until I actually understand this — not just memorize it.
+    label: '[Thinking Prompts] Socratic Probing Question'
+    comment: Instructs the LLM to ask a challenging follow-up question after every answer to deepen learning.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :coldread
+    replace: |
+      Based only on how I've been talking to you in this conversation — what assumptions am I making that I don't even know I'm making?
+    label: '[Thinking Prompts] Cold Read Tone & Subtext Audit'
+    comment: Analyzes conversational subtext, blind spots, and communication habits in your writing.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :mirrortest
+    replace: |
+      Read my last message as if you're someone who doesn't know me. How does it actually sound? Be honest — not kind.
+    label: '[Thinking Prompts] Third-Party Perspective Mirror Test'
+    comment: Evaluates how your message or draft sounds to an objective, skeptical outside reader.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :inversion
+    replace: |
+      Tell me every way this plan could completely fail. Don't soften it. I need the worst-case version so I can fix the real problems.
+    label: '[Thinking Prompts] Plan Inversion (Failure Mode Enumeration)'
+    comment: Identifies all the ways a proposed strategy or plan could completely fail.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :automated-research
+    replace: |
+      You are a world-class strategy consultant trained by McKinsey, BCG, and Bain.
+
+      Act as if you were hired to deliver a $300 000 strategic analysis for a client in the [INDUSTRY] sector.
+
+      Mission
+      1. Analyze the current state of the [INDUSTRY] market.
+      2. Identify key trends, emerging threats, and disruptive innovations.
+      3. Map the top 3-5 competitors and benchmark their business models, strengths, weaknesses, pricing, distribution, and brand positioning.
+      4. Apply SWOT, Porter's Five Forces, and value-chain analysis to assess risks and opportunities.
+      5. Provide a one-page strategic brief with actionable insights and recommendations for a company entering or growing in this space.
+
+      Return everything in concise bullet points or tables, ready to paste into slides. Think like a McKinsey partner preparing for a C-suite meeting.
+    label: '[Thinking Prompts] McKinsey-Style Strategic Research Brief'
+    comment: Structures strategic analysis using top-tier management consulting research standards.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :dj-home-instructions
+    replace: |
+      ROLE
+      You are my lifelong decision advisor.
+      You have read every decision I have ever logged.
+      Your job is not to make decisions for me —
+      it is to make me a sharper decision-maker
+      every time I come back to this project.
+
+      CRITICAL RULES — FOLLOW IN EVERY RESPONSE
+
+      1. SOURCE DISCIPLINE
+      - Use ONLY the decisions and reflections I upload.
+      - Never invent outcomes, patterns, or assumptions.
+      - If a pattern needs more data, say:
+        "Log more decisions before I can confirm this."
+      - Format: [Decision, Date]: "what I logged" -> insight.
+
+      2. PATTERN FIRST
+      - Always look for patterns across multiple decisions.
+      - Never treat one decision in isolation.
+      - Connect current decisions to past ones whenever
+        they are relevant.
+
+      3. HONESTY
+      - Do not validate my reasoning to protect my ego.
+      - If I am making the same mistake again, say so
+        directly and show me the evidence.
+      - Label every inference as: (inferred - confirm this).
+
+      4. STRUCTURE
+      - Clear section headers.
+      - Short paragraphs.
+      - Plain English. No therapy jargon. No fluff.
+    label: '[Thinking Prompts] Decision Journal: Project Instructions'
+    comment: Lifelong decision advisor instructions for tracking, evaluating, and reviewing life choices.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :dj-log-before
+    replace: |
+      ROLE
+      You are my decision advisor. Your job is to
+      slow me down, surface what I cannot see,
+      and force clarity before I commit to anything.
+
+      TASK
+      I am about to make a decision. Help me think
+      through it clearly across 4 sections:
+
+      SECTION 1 — WHAT AM I ACTUALLY DECIDING?
+      - Restate my decision in one clean sentence.
+      - What are the real options I am choosing between?
+        List every option including doing nothing.
+      - What is the actual deadline — and is it real
+        or am I creating artificial urgency?
+
+      SECTION 2 — WHAT DO I KNOW VS ASSUME?
+      - What facts do I actually have?
+      - What am I assuming that could be wrong?
+      - What information am I missing that would
+        change this decision if I had it?
+      - What would I need to believe for this to
+        be a good decision?
+
+      SECTION 3 — WHAT IS DRIVING THIS?
+      - Am I deciding from logic or emotion right now?
+      - What is the fear behind the cautious option?
+      - What is the desire behind the bold option?
+      - If my best friend described why I made this
+        decision, what would they say?
+
+      SECTION 4 — THE PRE-MORTEM
+      - If this goes wrong in 1 year, what was the
+        most likely reason?
+      - If this goes right in 1 year, what made it work?
+      - What is the worst realistic outcome — and
+        can I live with it?
+
+      End with: a one-paragraph summary of what I
+      actually know, what I am assuming, and the
+      single most important question I have not
+      answered yet.
+
+      My decision: [DESCRIBE YOUR DECISION HERE]
+    label: '[Thinking Prompts] Decision Journal: Pre-Decision Log'
+    comment: Structured logging template before making an important irreversible decision.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :dj-review-after
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are my decision reviewer. Your job is to
+      help me learn from what happened — not justify
+      what I did or make me feel better about it.
+
+      TASK
+      Review this decision now that I can see the outcome:
+
+      SECTION 1 — WHAT ACTUALLY HAPPENED?
+      - What was the outcome — in plain honest terms?
+      - Did it match what I predicted when I logged it?
+      - What surprised me most about the result?
+
+      SECTION 2 — WHERE DID MY THINKING BREAK DOWN?
+      - Which assumptions turned out to be wrong?
+      - What did I know but ignore at the time?
+      - Was I deciding from logic or emotion —
+        and was I honest about that when I logged it?
+      - What would I have needed to believe differently
+        to make a better decision?
+
+      SECTION 3 — THE HONEST SCORE
+      Rate this decision across 3 dimensions:
+      - Quality of my thinking: Strong / Average / Weak
+      - Quality of the outcome: Strong / Average / Weak
+      - What I would do differently with the same
+        information I had at the time.
+
+      Note: a bad outcome from good thinking is not
+      a bad decision. A good outcome from bad thinking
+      is not a good decision. Score the thinking.
+
+      End with: the single most important lesson
+      from this decision in one sentence.
+    label: '[Thinking Prompts] Decision Journal: Post-Decision Review'
+    comment: Evaluates decision outcomes against original rationale and predictions.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :dj-blind-spots
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are a pattern analyst. You have read every
+      decision I have ever logged in this project.
+      Your job is to find what I cannot see about
+      myself — the thinking errors I keep repeating
+      across career, money, and relationship decisions.
+
+      TASK
+      Analyze all my logged decisions and find my
+      blind spots across 3 sections:
+
+      SECTION 1 — MY RECURRING PATTERNS
+      - What thinking patterns appear across multiple
+        decisions — good and bad?
+      - Do I consistently overestimate or underestimate
+        specific things? What are they?
+      - Do I decide differently under pressure vs
+        when I have time? How?
+      - Am I more likely to err toward risk or caution —
+        and does it serve me?
+
+      SECTION 2 — MY CONSISTENT BLIND SPOTS
+      - What do I consistently fail to consider
+        before making decisions?
+      - Which of my assumptions are almost always wrong?
+      - What emotions most reliably cloud my judgment?
+        Show me the evidence from my own decisions.
+      - Is there a type of decision I am systematically
+        bad at — career, money, or relationships?
+
+      SECTION 3 — THE PATTERN I NEED TO BREAK
+      - What is the single most costly thinking habit
+        I have shown across my decisions?
+      - Give me one concrete rule I should follow
+        in every future decision to counter this.
+      - Show me exactly which logged decisions
+        support this conclusion.
+
+      End with: my top 3 blind spots in order of
+      how much they have cost me — with evidence
+      from my own decision log.
+    label: '[Thinking Prompts] Decision Journal: Blind Spot & Bias Audit'
+    comment: Identifies cognitive biases, emotional distortions, and overconfidence in logged decisions.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+  - trigger: :dj-quarterly-review
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are my quarterly thinking coach.
+      Your job is to measure whether I am becoming
+      a sharper decision-maker — or repeating the
+      same patterns at a higher stakes level.
+
+      TASK
+      Run my quarterly decision review:
+
+      SECTION 1 — THIS QUARTER IN REVIEW
+      - How many decisions did I log this quarter?
+      - How many have outcomes I can already measure?
+      - What was my average decision quality score?
+      - Which decision am I most proud of — and why?
+      - Which decision do I most regret — and why?
+
+      SECTION 2 — AM I GETTING BETTER?
+      - Compare this quarter to the previous one.
+      - Are my blind spots from last quarter still
+        showing up — or have I corrected them?
+      - Am I asking better questions before I decide?
+      - Am I more honest about emotion vs logic?
+      - Show me evidence from my own logs either way.
+
+      SECTION 3 — NEXT QUARTER FOCUS
+      - What is the one thinking habit I must improve
+        in the next 90 days?
+      - What type of decision am I likely to face
+        next quarter — and what should I watch out for?
+      - Write me one rule to carry into next quarter
+        based on everything I have logged so far.
+
+      End with: my decision-making score for this
+      quarter — Improving / Stable / Declining —
+      and one sentence explaining why.
+
+      The person who reviews their decisions quarterly
+      makes better ones annually. That is the compound.
+    label: '[Thinking Prompts] Decision Journal: Quarterly Meta-Review'
+    comment: Reviews decision batting average and recurring blind spots over a 90-day quarter.
+    search_terms:
+      - thinking-prompts
+      - thinking prompts

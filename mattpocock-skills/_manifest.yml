@@ -1,0 +1,11 @@
+name: "mattpocock-skills"
+title: "Matt Pocock Agent Skills Pack"
+description: "Espanso triggers and interactive prompt templates for Matt Pocock's agent skills repository (TDD, Grilling, Code Review, Bug Diagnosis, Wayfinder, and more)."
+version: 1.0.0
+author: "Antigravity Pair Programmer"
+tags:
+  - ai
+  - llm
+  - skills
+  - coding
+  - prompt-engineering

@@ -1,16 +1,17 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
-  # 1. MULTI-FILE PROJECT AUDITOR
-  - trigger: ":p-audit"
+  - trigger: :p-audit
     form: |
       "Load my entire project folder: [[project_files]]. Analyze: architectural decisions that should change, technical debt to tackle first, security vulnerabilities, performance bottlenecks, and outdated dependencies. Give me a prioritized action plan."
     form_fields:
       project_files:
         type: multiline
-
-  # 2. CONTEXT MEMORY VAULT
-  - trigger: ":p-vault"
+    label: '[Engineering] Project Architecture & Debt Audit'
+    comment: Analyzes codebase for architectural decisions to change, technical debt, and vulnerabilities.
+    search_terms:
+      - engineering
+  - trigger: :p-vault
     form: |
       "I'm working on [[project_name]]. Here's everything you need to retain: {{clip}}. From now on, reference this context in every response without me repeating it. Summarize what you'll remember."
     form_fields:
@@ -19,19 +20,847 @@ matches:
     vars:
       - name: clip
         type: clipboard
-
-  # 3. PARALLEL WORK MANAGER
-  - trigger: ":p-parallel"
+    label: '[Engineering] Project Memory & Context Vault'
+    comment: Caches core project context and clip notes into AI memory across the session.
+    search_terms:
+      - engineering
+  - trigger: :p-parallel
     form: |
       "I need to complete these tasks simultaneously: [[tasks]]. Spawn agent teams: assign each task to a separate agent, coordinate between them, report progress from all agents, merge results when done. Run them in parallel."
     form_fields:
       tasks:
         type: multiline
-
-  # 4. ADAPTIVE PROBLEM NAVIGATOR
-  - trigger: ":p-navigate"
+    label: '[Engineering] Parallel Multi-Agent Delegation'
+    comment: Spawns coordinated agent teams to work on multiple tasks in parallel.
+    search_terms:
+      - engineering
+  - trigger: :p-navigate
     form: |
       "Complex problem: [[problem]]. Don't answer immediately. First, assess: how deep should you think about this (quick/medium/deep reasoning), what information is missing, what assumptions to challenge. Then solve it at the appropriate depth."
     form_fields:
       problem:
         type: multiline
+    label: '[Engineering] Reasoning Depth & Strategy Navigator'
+    comment: Assesses problem complexity to determine appropriate reasoning depth and assumptions.
+    search_terms:
+      - engineering
+  - trigger: :c-review
+    form: |
+      Review this code as a senior engineer. Identify bugs, security vulnerabilities, performance issues, and style problems. Explain each issue and suggest a fix:
+      [[code]]
+    form_fields:
+      code:
+        multiline: true
+    label: '[Engineering] Code Review & Quality Audit'
+    comment: Senior engineer review for bugs, security risks, performance bottlenecks, and maintainability.
+    search_terms:
+      - engineering
+  - trigger: :c-debug
+    form: |
+      I am getting this error: [[error_message]]
+
+      Here is the relevant code:
+      [[code]]
+
+      Walk me through every possible cause and fix each one.
+    form_fields:
+      error_message:
+        multiline: true
+      code:
+        multiline: true
+    label: '[Engineering] Root Cause Debugging'
+    comment: Step-by-step diagnostic breakdown of error messages and unexpected behavior.
+    search_terms:
+      - engineering
+  - trigger: :c-refactor
+    form: |
+      Refactor this code to be cleaner and more readable without changing its functionality. Add comments explaining complex logic:
+      [[code]]
+    form_fields:
+      code:
+        multiline: true
+    label: '[Engineering] Clean Code Refactoring'
+    comment: Refactor code to improve readability and structure without altering functionality.
+    search_terms:
+      - engineering
+  - trigger: :c-unittests
+    form: |
+      Write comprehensive unit tests for this function. Cover the happy path, edge cases, null inputs, and error conditions:
+      [[function_code]]
+    form_fields:
+      function_code:
+        multiline: true
+    label: '[Engineering] Unit Test Suite Generator'
+    comment: Generates comprehensive unit tests covering happy paths, edge cases, and failure modes.
+    search_terms:
+      - engineering
+  - trigger: :c-optimize
+    form: |
+      Analyze this code for performance bottlenecks. Identify the slowest parts and rewrite them to be more efficient:
+      [[code]]
+    form_fields:
+      code:
+        multiline: true
+    label: '[Engineering] Performance & Algorithm Optimizer'
+    comment: Pinpoints performance bottlenecks and rewrites inefficient algorithms.
+    search_terms:
+      - engineering
+  - trigger: :c-tots
+    form: |
+      Convert this JavaScript code to TypeScript. Add proper type definitions for all variables, parameters, and return values:
+      [[code]]
+    form_fields:
+      code:
+        multiline: true
+    label: '[Engineering] JavaScript to TypeScript Converter'
+    comment: Migrates JS code to TypeScript with explicit interfaces and strict types.
+    search_terms:
+      - engineering
+  - trigger: :c-secaudit
+    form: |
+      Audit this code for security vulnerabilities. Check for SQL injection, XSS, authentication issues, exposed secrets, and any other risks:
+      [[code]]
+    form_fields:
+      code:
+        multiline: true
+    label: '[Engineering] Security Vulnerability Audit'
+    comment: Scans code for SQL injection, XSS, exposed secrets, and OWASP Top 10 risks.
+    search_terms:
+      - engineering
+  - trigger: :c-endpoint
+    form: |
+      Write a REST API endpoint in [[framework]] that [[task_description]]. Include input validation, error handling, and correct HTTP status codes.
+    form_fields:
+      framework:
+        default: Node.js / Express
+      task_description:
+        multiline: true
+    label: '[Engineering] REST API Endpoint Generator'
+    comment: Designs a validated, clean REST API endpoint with error handling and proper status codes.
+    search_terms:
+      - engineering
+  - trigger: :c-sqlopt
+    form: |
+      This SQL query is running slowly:
+      [[query]]
+
+      Analyze it, explain why it is slow, and rewrite it to be faster. Suggest any indexes that would help.
+    form_fields:
+      query:
+        multiline: true
+    label: '[Engineering] SQL Query & Index Optimizer'
+    comment: Analyzes slow queries, recommends missing indexes, and rewrites SQL for maximum throughput.
+    search_terms:
+      - engineering
+  - trigger: :c-schema
+    form: |
+      Design a database schema for [[application]]. Include all tables, columns, data types, relationships, indexes, and explain your design decisions.
+    form_fields:
+      application:
+        multiline: true
+    label: '[Engineering] Relational Database Schema Design'
+    comment: Designs relational schemas with tables, relationships, keys, and indexing strategy.
+    search_terms:
+      - engineering
+  - trigger: :c-archreview
+    form: |
+      Review this architecture and tell me what problems you foresee at scale. What would break first and how should I redesign it:
+      [[architecture]]
+    form_fields:
+      architecture:
+        multiline: true
+    label: '[Engineering] System Architecture Scalability Review'
+    comment: Identifies bottlenecks, single points of failure, and scaling limits in system architecture.
+    search_terms:
+      - engineering
+  - trigger: :c-errorhandle
+    form: |
+      Add comprehensive error handling to this code. Catch all possible failures, log them appropriately, and fail gracefully:
+      [[code]]
+    form_fields:
+      code:
+        multiline: true
+    label: '[Engineering] Resilient Error Handling'
+    comment: Adds defensive programming, graceful fallbacks, and structured logging to code.
+    search_terms:
+      - engineering
+  - trigger: :c-auth
+    form: |
+      Design and write a JWT authentication system in [[framework]]. Include signup, login, token refresh, logout, and protected route middleware.
+    form_fields:
+      framework:
+        default: Node.js / Express
+    label: '[Engineering] Authentication & RBAC Design'
+    comment: Designs secure auth architecture with session/JWT handling, password hashing, and role permissions.
+    search_terms:
+      - engineering
+  - trigger: :c-cicd
+    form: |
+      Write a GitHub Actions workflow that runs tests, checks code quality, builds the application, and deploys to [[platform]] on every push to main.
+    form_fields:
+      platform:
+        default: AWS / Vercel
+    label: '[Engineering] CI/CD Pipeline Generator'
+    comment: Builds automated build, test, and deployment workflows for GitHub Actions / GitLab CI.
+    search_terms:
+      - engineering
+  - trigger: :c-ratelimit
+    form: |
+      Implement a rate limiter in [[language]] that allows [[limit]] requests per [[period]] per user. Handle edge cases and include a way to whitelist certain users.
+    form_fields:
+      language:
+        default: TypeScript / Node.js
+      limit:
+        default: '100'
+      period:
+        default: minute
+    label: '[Engineering] Rate Limiting & Throttling Strategy'
+    comment: Implements token bucket / leaky bucket rate limiting to protect endpoints from abuse.
+    search_terms:
+      - engineering
+  - trigger: :c-retry
+    form: |
+      Add retry logic to this function that makes an external API call. Handle rate limits, transient errors, and use exponential backoff:
+      [[function_code]]
+    form_fields:
+      function_code:
+        multiline: true
+    label: '[Engineering] Exponential Backoff & Retry Logic'
+    comment: Builds resilient network request retries with jitter and circuit breaker patterns.
+    search_terms:
+      - engineering
+  - trigger: :c-integtests
+    form: |
+      Write integration tests for this API endpoint that test the full request/response cycle including the database:
+      [[endpoint_code]]
+    form_fields:
+      endpoint_code:
+        multiline: true
+    label: '[Engineering] End-to-End & Integration Tests'
+    comment: Designs integration tests simulating real service interactions and database transactions.
+    search_terms:
+      - engineering
+  - trigger: :c-search
+    form: |
+      Implement full-text search for [[data_type]] using [[technology]]. Include fuzzy matching, relevance scoring, and filtering by [[filter_fields]].
+    form_fields:
+      technology:
+        default: PostgreSQL / Meilisearch
+    label: '[Engineering] Full-Text Search Implementation'
+    comment: Architects search functionality with ranking, indexing, fuzzy matching, and filters.
+    search_terms:
+      - engineering
+  - trigger: :c-reactopt
+    form: |
+      This React component is re-rendering too often and causing performance issues. Analyze it and fix the performance problems:
+      [[component_code]]
+    form_fields:
+      component_code:
+        multiline: true
+    label: '[Engineering] React Component Performance Optimizer'
+    comment: Eliminates unnecessary re-renders, optimizes hooks (useMemo, useCallback), and bundle size.
+    search_terms:
+      - engineering
+  - trigger: :c-featureflags
+    form: |
+      Design and implement a feature flag system for [[application]] that allows enabling or disabling features per user, per percentage of traffic, or without deploying code.
+    form_fields:
+      application:
+        multiline: true
+    label: '[Engineering] Feature Flag Architecture'
+    comment: Designs feature toggle systems for progressive rollouts and A/B testing.
+    search_terms:
+      - engineering
+  - trigger: :c-statemachine
+    form: |
+      Implement a state machine for [[system_description]]. Define all states, transitions, guards, and actions.
+    form_fields:
+      system_description:
+        multiline: true
+    label: '[Engineering] State Machine & Transition Engine'
+    comment: Defines explicit state machines with deterministic transitions and invalid state prevention.
+    search_terms:
+      - engineering
+  - trigger: :c-cli
+    form: |
+      Write a command line tool in [[language]] that [[functionality]]. Include argument parsing, error handling, help text, and a usage example.
+    form_fields:
+      language:
+        default: Python
+      functionality:
+        multiline: true
+    label: '[Engineering] CLI Tool Architecture'
+    comment: Designs interactive command-line interfaces with argument parsing, help menus, and progress indicators.
+    search_terms:
+      - engineering
+  - trigger: :c-healthcheck
+    form: |
+      Write a health check endpoint for [[framework]] that checks database connectivity, external service availability, and system resources. Return proper HTTP status codes.
+    form_fields:
+      framework:
+        default: Express
+    label: '[Engineering] Health Check & Liveness Probe'
+    comment: Implements liveness, readiness, and startup probes for microservices and container orchestration.
+    search_terms:
+      - engineering
+  - trigger: :c-migration
+    form: |
+      Write a database migration script that [[description]]. Make it idempotent, reversible, and safe to run on a production database.
+    form_fields:
+      description:
+        multiline: true
+    label: '[Engineering] Database Migration Script & Strategy'
+    comment: Writes zero-downtime database migration scripts with rollback safeguards.
+    search_terms:
+      - engineering
+  - trigger: :c-microservice
+    form: |
+      Design the architecture for a microservice that handles [[functionality]]. What endpoints does it need, how does it communicate, and what is its data model?
+    form_fields:
+      functionality:
+        multiline: true
+    label: '[Engineering] Service Decomposition & Extraction'
+    comment: Extracts monolith domains into decoupled microservices with clean API boundaries.
+    search_terms:
+      - engineering
+  - trigger: :c-aiagent
+    form: |
+      Design an AI agent that can [[goal]]. What tools does it need, what decisions should it make autonomously, what should require human approval, and how should it handle failures?
+    form_fields:
+      goal:
+        multiline: true
+    label: '[Engineering] Autonomous AI Agent Architecture'
+    comment: Designs agent loops with tools, planning steps, memory retention, and stopping criteria.
+    search_terms:
+      - engineering
+  - trigger: :c-promptchain
+    form: |
+      Design a multi-step prompt chain that takes [[input]] and produces [[output]]. Break it into discrete steps, define what each step does, and explain how outputs feed into the next step.
+    form_fields:
+      input:
+        multiline: true
+      output:
+        multiline: true
+    label: '[Engineering] Prompt Chaining Workflow'
+    comment: Decomposes complex tasks into sequential, dependable LLM prompt chains.
+    search_terms:
+      - engineering
+  - trigger: :c-sysprompt
+    form: |
+      Write a system prompt for an AI assistant that works as a [[role]] for [[company_or_use_case]]. Define its personality, capabilities, limitations, and how it should handle edge cases.
+    form_fields:
+      company_or_use_case:
+        multiline: true
+    label: '[Engineering] Production System Prompt Design'
+    comment: Authors unambiguous, production-grade system prompts with constraints and output schemas.
+    search_terms:
+      - engineering
+  - trigger: :c-evalprompt
+    form: |
+      Evaluate this prompt and tell me everything that is wrong with it. Then rewrite it to be more precise, consistent, and likely to produce the output I actually want:
+      [[prompt]]
+    form_fields:
+      prompt:
+        multiline: true
+    label: '[Engineering] Prompt Evaluation & Benchmark Suite'
+    comment: Builds structured test suites to grade LLM prompt accuracy, hallucination rate, and format compliance.
+    search_terms:
+      - engineering
+  - trigger: :c-rag
+    form: |
+      Design a Retrieval Augmented Generation system for [[use_case]]. What data should be indexed, how should it be chunked, what embedding model should be used, and how should retrieval work?
+    form_fields:
+      use_case:
+        multiline: true
+    label: '[Engineering] RAG System Pipeline Design'
+    comment: Architects Retrieval-Augmented Generation with chunking, embedding, vector search, and reranking.
+    search_terms:
+      - engineering
+  - trigger: :c-extract
+    form: |
+      Write a prompt that extracts [[information]] from [[document_type]]. Output as structured JSON. Handle missing fields gracefully and flag uncertain extractions.
+    form_fields:
+      information:
+        multiline: true
+    label: '[Engineering] Structured JSON Extraction'
+    comment: Extracts precise, structured JSON data from messy unstructured text or documents.
+    search_terms:
+      - engineering
+  - trigger: :c-multiagent
+    form: |
+      Design a multi-agent system where [[agent_count]] AI agents collaborate to accomplish [[goal]]. Define each agent’s role, how they communicate, and how conflicts are resolved.
+    form_fields:
+      agent_count:
+        default: '3'
+      goal:
+        multiline: true
+    label: '[Engineering] Multi-Agent Collaboration System'
+    comment: Coordinates specialized multi-agent roles with consensus protocols and task delegation.
+    search_terms:
+      - engineering
+  - trigger: :c-aieval
+    form: |
+      Design a framework for evaluating the quality of AI outputs for [[use_case]]. What metrics matter, how should they be measured, and what does good versus bad look like?
+    form_fields:
+      use_case:
+        multiline: true
+    label: '[Engineering] LLM Output Evaluation Matrix'
+    comment: Grades model responses against predefined rubrics for relevance, correctness, and tone.
+    search_terms:
+      - engineering
+  - trigger: :c-qasystem
+    form: |
+      Design a question answering system over [[knowledge_base]]. How should documents be preprocessed, what retrieval strategy works best, and how should confidence be communicated to users?
+    form_fields:
+      knowledge_base:
+        multiline: true
+    label: '[Engineering] Domain QA Knowledge Base Engine'
+    comment: Designs Q&A systems over custom documentation with citation grounding.
+    search_terms:
+      - engineering
+  - trigger: :c-enrich
+    form: |
+      Design a workflow that takes [[input_data]] and enriches it with [[additional_info]] using AI. Define the steps, prompts, and how to handle failures.
+    form_fields:
+      input_data:
+        multiline: true
+      additional_info:
+        multiline: true
+    label: '[Engineering] Data Enrichment & Normalization Pipeline'
+    comment: Augments raw datasets with entity tagging, classification, and metadata.
+    search_terms:
+      - engineering
+  - trigger: :c-feedbackloop
+    form: |
+      Design a system where AI outputs are evaluated, feedback is collected, and the system improves over time for [[use_case]]. How is quality measured and what triggers retraining?
+    form_fields:
+      use_case:
+        multiline: true
+    label: '[Engineering] Human-in-the-Loop Feedback Engine'
+    comment: Builds active learning feedback loops where human corrections refine model performance.
+    search_terms:
+      - engineering
+  - trigger: :c-docpipeline
+    form: |
+      Design a pipeline that ingests [[doc_types]], extracts structured data, validates it, and stores it in [[target_system]]. Handle OCR, various formats, and malformed inputs.
+    form_fields:
+      doc_types:
+        multiline: true
+    label: '[Engineering] Intelligent Document Processing Pipeline'
+    comment: Automates OCR, parsing, chunking, and summarization of complex PDF/DOCX files.
+    search_terms:
+      - engineering
+  - trigger: :c-aimonitor
+    form: |
+      Design a monitoring system for an AI pipeline ([[pipeline_name]]) that tracks output quality, latency, cost, and failure rates. What alerts should exist and what dashboards need to be built?
+    form_fields:
+      pipeline_name:
+        default: Production AI Workflow
+    label: '[Engineering] LLM Observability & Drift Monitoring'
+    comment: Tracks token latency, cost, drift, toxicity, and quality metrics in production LLMs.
+    search_terms:
+      - engineering
+  - trigger: :c-templatelib
+    form: |
+      Create a library of 10 reusable prompt templates for [[use_case]]. Each template should have placeholders, usage instructions, and example inputs and outputs.
+    form_fields:
+      use_case:
+        multiline: true
+    label: '[Engineering] Prompt Template Library Architecture'
+    comment: Organizes reusable prompt components with dynamic variables and version control.
+    search_terms:
+      - engineering
+  - trigger: :c-hitl
+    form: |
+      Design a system where AI handles [[tasks]] autonomously but routes edge cases to humans. Define the confidence thresholds, escalation paths, and how human feedback is incorporated.
+    form_fields:
+      tasks:
+        multiline: true
+    label: '[Engineering] Human Review & Approval Workflow'
+    comment: Determines confidence thresholds for routing edge cases to human operators.
+    search_terms:
+      - engineering
+  - trigger: :c-cservice
+    form: |
+      Design an AI customer service agent for [[business]]. What questions can it answer, when should it escalate to a human, and how should it handle frustrated customers?
+    form_fields:
+      business:
+        multiline: true
+    label: '[Engineering] AI Customer Support Agent Flow'
+    comment: Designs automated support workflows with tier escalation and intent recognition.
+    search_terms:
+      - engineering
+  - trigger: :c-aiprreview
+    form: |
+      Design an AI code review system that automatically reviews pull requests for [[standards]]. What should it check, and how should feedback be formatted to be actionable?
+    form_fields:
+      standards:
+        multiline: true
+    label: '[Engineering] Automated AI Pull Request Reviewer'
+    comment: Configures automated PR reviews for code style, test coverage, and breaking changes.
+    search_terms:
+      - engineering
+  - trigger: :c-airesearcher
+    form: |
+      Design an AI research assistant that can [[research_tasks]]. How should it search, synthesize information, cite sources, and flag low-confidence conclusions?
+    form_fields:
+      research_tasks:
+        multiline: true
+    label: '[Engineering] Autonomous Research & Synthesis Agent'
+    comment: Gathers primary facts, cross-references sources, and compiles briefing documents.
+    search_terms:
+      - engineering
+  - trigger: :c-meetingintel
+    form: |
+      Design an AI system that processes meeting transcripts and produces [[outputs]]. How should it handle multiple speakers and task assignments?
+    form_fields:
+      outputs:
+        default: action items, summaries, decisions
+    label: '[Engineering] Meeting Intelligence & Action Item Extractor'
+    comment: Transcribes and extracts decisions, key insights, and assigned tasks from meetings.
+    search_terms:
+      - engineering
+  - trigger: :c-contractrisk
+    form: |
+      Design an AI pipeline that analyzes contracts and flags [[risk_types]]. What clauses should trigger alerts, how should confidence be communicated, and when should a lawyer review?
+    form_fields:
+      risk_types:
+        multiline: true
+    label: '[Engineering] Contract Risk & Clause Analysis'
+    comment: Flags unfavorable legal terms, liability caps, indemnification issues, and ambiguities in agreements.
+    search_terms:
+      - engineering
+  - trigger: :c-sentiment
+    form: |
+      Design a sentiment analysis system for [[data_source]]. What dimensions of sentiment matter, how should nuance be handled, and how should results be aggregated for reporting?
+    form_fields:
+      data_source:
+        multiline: true
+    label: '[Engineering] Multichannel Sentiment Analysis'
+    comment: Measures customer emotion, nuance, and topic-level sentiment across reviews and tickets.
+    search_terms:
+      - engineering
+  - trigger: :c-recsys
+    form: |
+      Design a content recommendation engine for [[platform]]. What signals drive recommendations, how should diversity be maintained, and how should new content be handled?
+    form_fields:
+      platform:
+        multiline: true
+    label: '[Engineering] Content & Product Recommendation Engine'
+    comment: Designs personalized recommendation logic balancing relevance, serendipity, and freshness.
+    search_terms:
+      - engineering
+  - trigger: :c-anomaly
+    form: |
+      Design an AI anomaly detection system for [[data_description]]. What constitutes an anomaly, how should severity be classified, and what should happen when one is detected?
+    form_fields:
+      data_description:
+        multiline: true
+    label: '[Engineering] AI Anomaly & Outlier Detection'
+    comment: Detects abnormal data patterns, assigns severity scores, and triggers automated alerts.
+    search_terms:
+      - engineering
+  - trigger: :c-trenddetect
+    form: |
+      Design an AI system that monitors [[data_sources]] and identifies emerging trends in [[domain]]. How should trends be validated and false positives filtered?
+    form_fields:
+      data_sources:
+        multiline: true
+    label: '[Engineering] Emerging Trend Detection'
+    comment: Monitors live data feeds to identify early market signals and filter false positives.
+    search_terms:
+      - engineering
+  - trigger: :c-voiceai
+    form: |
+      Design a voice AI assistant for [[use_case]]. How should speech be processed, what intents need to be recognized, and how should ambiguous requests be handled?
+    form_fields:
+      use_case:
+        multiline: true
+    label: '[Engineering] Voice AI Assistant Conversational Flow'
+    comment: Designs natural turn-taking, speech parsing, and intent mapping for voice bots.
+    search_terms:
+      - engineering
+  - trigger: :c-secscanpipeline
+    form: |
+      Design an automated security scanning pipeline for [[scan_target]]. What tools run, what findings are critical versus informational, and how are remediations tracked?
+    form_fields:
+      scan_target:
+        multiline: true
+    label: '[Engineering] Automated Security Scanning Pipeline'
+    comment: Automates SAST/DAST security scans, vulnerability triage, and remediation tracking.
+    search_terms:
+      - engineering
+  - trigger: :c-releasemanage
+    form: |
+      Design an automated release management process for [[application]]. How are releases staged, tested, approved, deployed, and monitored after going live?
+    form_fields:
+      application:
+        multiline: true
+    label: '[Engineering] Automated Release Management'
+    comment: Structures staging, gating, canary rollouts, and rollback triggers for application releases.
+    search_terms:
+      - engineering
+  - trigger: :feature-developer
+    replace: |
+      Act as a senior software engineer, responsible for developing production-ready features. Your goal is to design and develop features with a clear architecture, scalable and maintainable.
+
+      Before the code:
+
+      Analyze the requirements, identify edge cases, define the architecture, formulate a plan.
+
+      The return must include:
+      * Architecture summary
+      * Folder structure
+      * Data flow
+      * Complete implementation
+      * Edge case handling
+      * Error management
+      * Performance evaluation
+    label: '[Engineering] Feature Developer (Full Specification)'
+    comment: Senior software engineer prompt to plan architecture, folder structure, edge cases, and code.
+    search_terms:
+      - engineering
+  - trigger: :app-from-scratch
+    replace: |
+      Develop a complete production-ready application as an experienced full-stack engineer.
+
+      First, design the system architecture, then develop the minimal yet scalable version.
+
+      The response must include:
+      * Architecture
+      * Folder Structure
+      * Database Schema
+      * API Endpoints
+      * UI Structure
+      * Complete Code
+
+      Design it like a true startup MVP and ensure it's scalable.
+    label: '[Engineering] Full-Stack MVP Application Generator'
+    comment: Builds an end-to-end production application architecture from database schema to UI.
+    search_terms:
+      - engineering
+  - trigger: :repo-understanding-refactor
+    replace: |
+      Act as a senior engineer joining a large and unfamiliar code repository.
+
+      First, understand the architecture and data flow.
+
+      Then, identify:
+      * Structural problems
+      * Duplicate code
+      * Performance bottlenecks
+      * Maintainability risks
+
+      Return:
+      * Architecture summary
+      * Problematic areas
+      * Refactoring strategies
+      * Improved architecture and code
+    label: '[Engineering] Codebase Onboarding & Architectural Refactor'
+    comment: Analyzes unfamiliar codebases for structural bottlenecks, duplicates, and refactoring pathways.
+    search_terms:
+      - engineering
+  - trigger: :debugging-engineer
+    replace: |
+      Act as a senior engineer who investigates bugs in the production environment.
+
+      * Carefully analyze the code
+      * Think step by step
+      * Find the root cause
+      * Provide robust solutions
+
+      Consider edge cases and performance.
+
+      The response must explain the cause of the problem, the repair plan, and production-ready code.
+    label: '[Engineering] Production Bug Diagnostic Engineer'
+    comment: Investigates live bugs, identifies root causes, and delivers production-ready fixes.
+    search_terms:
+      - engineering
+  - trigger: :ui-component-developer
+    replace: |
+      Build reusable, accessible, and production-ready UI components like a senior frontend engineer.
+
+      Notes:
+      * Loading states
+      * Edge cases
+      * Responsive design
+      * Accessibility
+
+      Return the component architecture, props design, and full implementation.
+    label: '[Engineering] Accessible UI Component Architect'
+    comment: Designs accessible, responsive, and reusable frontend components with complete props and state.
+    search_terms:
+      - engineering
+  - trigger: :api-development
+    replace: |
+      Design and build clean, production-ready APIs like an experienced backend engineer.
+
+      Include:
+      * Validation
+      * Error handling
+      * Clean architecture
+
+      Return the route design, validation, controller logic, and full implementation.
+    label: '[Engineering] Clean API Architecture & Endpoint Design'
+    comment: Designs robust REST/GraphQL APIs with validation layers, controllers, and error handling.
+    search_terms:
+      - engineering
+  - trigger: :system-design-impl
+    replace: |
+      Act as an experienced systems architect.
+
+      Design a scalable system for the product, then develop the minimum production-ready version.
+
+      The response must include:
+      * Architecture
+      * Component Structure
+      * Data Flow
+      * API Design
+      * Database Schema
+      * Caching Strategy
+      * Implementation Code
+    label: '[Engineering] System Design & Scalability Architect'
+    comment: Architects scalable systems with caching, data flow, schema, and MVP implementations.
+    search_terms:
+      - engineering
+  - trigger: :performance-optimization
+    replace: |
+      Optimize the code as if you were a performance engineer.
+
+      Objective:
+      * Speed
+      * Memory usage
+      * Scalability
+
+      Identify:
+      * Bottlenecks
+      * Inefficient logic
+      * Unnecessary rendering
+
+      Return the description and code of the optimized version.
+    label: '[Engineering] Performance Engineering Audit'
+    comment: Optimizes code execution speed, memory footprint, and rendering overhead.
+    search_terms:
+      - engineering
+  - trigger: :architecture-reconstruction
+    replace: |
+      Convert the code into a clear architecture as a staff-level engineer would.
+
+      * Separate concerns
+      * Increase modularity
+      * Reduce coupling
+
+      The behavior remains unchanged; the structure is improved.
+
+      Return the new folder structure, architecture explanation, and refactored code.
+    label: '[Engineering] Modular Architecture Reconstruction'
+    comment: Decouples monolith spaghetti code into clean, modular layers without changing behavior.
+    search_terms:
+      - engineering
+  - trigger: :multi-agent-workflow
+    replace: |
+      You are 4 collaborative agents:
+
+      * Architect (system design)
+      * Engineer (development)
+      * Reviewer (quality control)
+      * Optimizer (performance improvement)
+
+      Return:
+      * Architecture
+      * Implementation
+      * Review feedback
+      * Final optimized version
+    label: '[Engineering] 4-Agent Development Team'
+    comment: Coordinates Architect, Engineer, Reviewer, and Optimizer agents on a codebase.
+    search_terms:
+      - engineering
+  - trigger: :perf-opt
+    replace: |
+      Think like a performance engineer optimizing code. Goals:
+
+      •Speed
+      •Memory usage
+      •Scalability
+
+      Find:
+
+      •Bottlenecks
+      •Inefficient logic
+      •Unnecessary rendering
+
+      Result:
+
+      •Performance issues
+      •Optimization strategies
+      •Improved code
+    label: '[Engineering] Code Performance Optimizer'
+    comment: Pinpoints performance bottlenecks, memory leaks, and inefficient loops.
+    search_terms:
+      - engineering
+  - trigger: :codebase-refactoring
+    replace: |
+      Think like a senior engineer who just joined a large, unfamiliar codebase.
+
+      First, understand the architecture and data flow.
+
+      Then identify:
+
+      •Structural problems
+      •Duplicated code
+      •Performance bottlenecks
+      •Maintainability risks
+
+      Result:
+
+      •Architecture summary
+      •Problem areas
+      •Refactoring strategies
+      •Improved code
+
+      Functionality remains unchanged quality is enhanced.
+    label: '[Engineering] Senior Codebase Refactoring Review'
+    comment: Refactors complex code with high maintainability standards while preserving exact behavior.
+    search_terms:
+      - engineering
+  - trigger: :interactive-tools
+    replace: |
+      You are a senior software architect who excels at building no-code and low-code systems with HTML, JavaScript, and Web APIs.
+
+      Task
+      Design a fully working interactive tool based on this idea:
+      [DESCRIBE YOUR TOOL IDEA]
+
+      Deliverables
+      1. A plain-English explanation of how the tool works.
+      2. A step-by-step plan to implement it with Claude or a no-code platform.
+      3. Exact HTML/CSS/JS code if relevant.
+      4. UX and design improvement tips.
+      5. Instructions to generate a shareable, embed-ready version.
+
+      Imagine you are shipping an MVP for a startup demo.
+    label: '[Engineering] Interactive Web Tool Architect'
+    comment: Designs lightweight interactive web calculators and tools with HTML/JS/CSS.
+    search_terms:
+      - engineering
+  - trigger: :pdf-summary
+    replace: |
+      You are a senior analyst skilled in digesting technical and academic documents.
+
+      Task
+      Summarize the attached document for a time-poor founder.
+
+      Focus on
+      • Key findings
+      • Crucial data points
+      • Strategic implications
+
+      Format
+      Bold headers, bullet points, plain language.
+      End with recommended next steps or decisions.
+
+      Target length: one page.
+    label: '[Engineering] Executive Document Summarizer'
+    comment: Summarizes complex technical or academic PDFs into a concise one-page executive brief.
+    search_terms:
+      - engineering

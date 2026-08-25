@@ -1,9 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
-# Espanso Triggers: "Fazer Acontecer" Productivity Pack
 
 matches:
-  # 1. POMODORO TECHNIQUE
-  - trigger: ":pomo"
+  - trigger: :pomo
     replace: |
       🍅 **Técnica Pomodoro: Foco Ativado**
       1. Listar tarefas: [ ]
@@ -11,9 +9,11 @@ matches:
       3. Concentração Total: Trabalhar sem distrações.
       4. Pausa Curta: 5 min ☕
       5. Ciclo: Repetir 4 vezes, depois fazer uma pausa mais longa (15-30 min).
-
-  # 2. THE 3/3/3 METHOD
-  - trigger: ":333"
+    label: '[Productivity] Pomodoro 25/5 Focus Sprint (Técnica Pomodoro)'
+    comment: '🍅 **Técnica Pomodoro: Foco Ativado**'
+    search_terms:
+      - productivity
+  - trigger: :333
     replace: |
       ⚡ **Método 3/3/3: Definição de Foco**
       • [ ] 3 Horas de Trabalho Profundo (Projeto Importante): ____________________
@@ -25,9 +25,11 @@ matches:
             1. ____________________
             2. ____________________
             3. ____________________
-
-  # 3. EISENHOWER MATRIX (Interactive Form)
-  - trigger: ":eisen"
+    label: '[Productivity] Oliver Burkeman 3/3/3 Daily Focus Method'
+    comment: '⚡ **Método 3/3/3: Definição de Foco**'
+    search_terms:
+      - productivity
+  - trigger: :eisen
     form: |
       📊 **Matriz de Eisenhower: Classificação de Prioridade**
       Tarefa: [[tarefa]]
@@ -35,25 +37,29 @@ matches:
       [ [[quadrante]] ] -> Ação recomendada.
     form_fields:
       tarefa:
-        default: ""
+        default: ''
       quadrante:
         type: choice
         values:
-          - "Urgente & Importante -> FAÇA AGORA"
-          - "Não Urgente & Importante -> AGENDE"
-          - "Urgente & Não Importante -> DELEGUE"
-          - "Não Urgente & Não Importante -> ELIMINE"
-
-  # 4. EAT THE FROG (Coma o Sapo)
-  - trigger: ":sapo"
+          - Urgente & Importante -> FAÇA AGORA
+          - Não Urgente & Importante -> AGENDE
+          - Urgente & Não Importante -> DELEGUE
+          - Não Urgente & Não Importante -> ELIMINE
+    label: '[Productivity] Eisenhower Urgency vs Importance Priority Matrix'
+    comment: '📊 **Matriz de Eisenhower: Classificação de Prioridade**'
+    search_terms:
+      - productivity
+  - trigger: :sapo
     replace: |
       🐸 **Coma o Sapo: A tarefa mais difícil primeiro!**
       "Se o seu trabalho é comer um sapo, é melhor fazê-lo logo de manhã cedo. E se o seu trabalho é comer dois sapos, é melhor comer o maior primeiro." - Mark Twain
 
       • HOJE, meu maior sapo é: ____________________
-
-  # 5. SEINFELD STRATEGY (Dynamic Current Month Generator)
-  - trigger: ":seinfeld"
+    label: '[Productivity] Eat That Frog (Highest Friction Priority First)'
+    comment: '🐸 **Coma o Sapo: A tarefa mais difícil primeiro!**'
+    search_terms:
+      - productivity
+  - trigger: :seinfeld
     replace: |
       📅 **Estratégia Seinfeld: Não Quebre a Corrente!**
       Objetivo: ____________________
@@ -65,18 +71,20 @@ matches:
       - name: mes_atual
         type: date
         params:
-          format: "%B"
+          format: '%B'
       - name: ano_atual
         type: date
         params:
-          format: "%Y"
+          format: '%Y'
       - name: calendario
         type: shell
         params:
-          cmd: "cal -h | sed '1,2d'" # Outputs the raw days layout cleanly
-
-  # 6. TIME BLOCKING TEMPLATE
-  - trigger: ":tblock"
+          cmd: cal -h | sed '1,2d'
+    label: '[Productivity] Seinfeld Habit Chain Tracker (Don''t Break The Chain)'
+    comment: '📅 **Estratégia Seinfeld: Não Quebre a Corrente!**'
+    search_terms:
+      - productivity
+  - trigger: :tblock
     replace: |
       ⏳ **Time Blocking: Cronograma do Dia**
       • Passo 1: Identifique o que precisa ser feito.
@@ -91,8 +99,11 @@ matches:
       | 13:00 - 14:00| 🏋️ Ginásio / Saúde                | [ ]       |
       | 14:00 - 14:30| ☕ Pausa / Descompressão         | [ ]       |
       | 14:30 - 16:00| 👥 Reuniões / Alinhamento        | [ ]       |
-
-  - trigger: ":blockday"
+    label: '[Productivity] Time-Blocking Daily Schedule Planner'
+    comment: '⏳ **Time Blocking: Cronograma do Dia**'
+    search_terms:
+      - productivity
+  - trigger: :blockday
     replace: |
       ## 🕒 Time-Blocking Architecture
       - **08h - 09h**: Planejamento & Alinhamento Estratégico
@@ -104,8 +115,11 @@ matches:
       - **16h - 17h**: Revisão do Dia / Ajuste de Pendências
 
       > **Nota Importante:** Nada disto importa se você estiver constantemente distraído. Desligue as notificações e proteja seu foco.
-
-  - trigger: ":parkinson"
+    label: '[Productivity] Daily Time-Blocking Hourly Architecture'
+    comment: '## 🕒 Time-Blocking Architecture'
+    search_terms:
+      - productivity
+  - trigger: :parkinson
     form: |
       ### ⏱️ Parkinson's Law Execution Blueprint
       * **Macro Objetivo**: [[macro_task]]
@@ -117,19 +131,22 @@ matches:
     form_fields:
       macro_task:
         type: text
-        default: "Refatoração de Arquitetura"
+        default: Refatoração de Arquitetura
       micro_step:
         type: text
-        default: "Mapeamento de DataWeave e Mocking"
+        default: Mapeamento de DataWeave e Mocking
       minutes:
         type: choice
         values:
-          - "15"
-          - "30"
-          - "45"
-          - "60"
-
-  - trigger: ":workstyle"
+          - '15'
+          - '30'
+          - '45'
+          - '60'
+    label: '[Productivity] Parkinson''s Law Constraint Execution Blueprint'
+    comment: '### ⏱️ Parkinson''s Law Execution Blueprint'
+    search_terms:
+      - productivity
+  - trigger: :workstyle
     form: |
       ### 🛠️ Perfil Operacional Selecionado: [[perfil]]
 
@@ -142,34 +159,34 @@ matches:
       perfil:
         type: choice
         values:
-          - "Planejador (Foco Cronológico)"
-          - "Priorizador (Foco em Impacto)"
-          - "Organizador (Foco Estrutural)"
-          - "Visualizador (Foco Ágil/Mental)"
+          - Planejador (Foco Cronológico)
+          - Priorizador (Foco em Impacto)
+          - Organizador (Foco Estrutural)
+          - Visualizador (Foco Ágil/Mental)
       passo1:
-        default: "Planeje seu dia hora a hora / Escreva a lista de tarefas claras"
+        default: Planeje seu dia hora a hora / Escreva a lista de tarefas claras
       passo2:
-        default: "Foco profundo ininterrupto por 2 horas"
+        default: Foco profundo ininterrupto por 2 horas
       passo3:
-        default: "Fazer pausa estratégica para respirar / Pomodoro controlado"
+        default: Fazer pausa estratégica para respirar / Pomodoro controlado
       passo4:
-        default: "Trabalhar em tarefas leves / Revisar progresso e fechar o dia"
-
-  # -------------------------------------------------------------------
-  # Trigger 1: Static Framework Reference (Obsidian Properties Format)
-  # -------------------------------------------------------------------
-  - trigger: ":flowtpl"
+        default: Trabalhar em tarefas leves / Revisar progresso e fechar o dia
+    label: '[Productivity] Operational Workstyle & Energy Profile Blueprint'
+    comment: '### 🛠️ Perfil Operacional Selecionado:'
+    search_terms:
+      - productivity
+  - trigger: :flowtpl
     replace: |
       ### Framework: Estado de Flow
       - **Plenitude**: Alcançando objetivos sem esforço. Propósito e valores.
       - **Felicidade**: Imersão no presente, alegria e atemporalidade.
       - **Persistência**: Foco contínuo e motivação para superar obstáculos.
       - **Clareza**: Metas claras, clareza mental e foco aprimorado.
-
-  # -------------------------------------------------------------------
-  # Trigger 2: Interactive Deep-Work Friction Gate
-  # -------------------------------------------------------------------
-  - trigger: ":flowgate"
+    label: '[Productivity] Flow State Framework & Fulfillment Calibration'
+    comment: '### Framework: Estado de Flow'
+    search_terms:
+      - productivity
+  - trigger: :flowgate
     replace: |
       ---
       type: focus-block
@@ -186,12 +203,11 @@ matches:
       > "Estado de Flow: Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço."
 
       Status: Inicializado. Proteção de flow-state ativa.
-
     vars:
       - name: current_time
         type: date
         params:
-          format: "%Y-%m-%d %H:%M"
+          format: '%Y-%m-%d %H:%M'
       - name: form_flowgate
         type: form
         params:
@@ -212,35 +228,40 @@ matches:
             Status: Inicializado. Proteção de flow-state ativa.
           fields:
             block_objective:
-              default: "Engineering / Architecture Execution"
+              default: Engineering / Architecture Execution
             importa:
               type: choice
               values:
-                ["Sim (Plenitude/Felicidade)", "Não (Alerta de Baixo Propósito)"]
+                - Sim (Plenitude/Felicidade)
+                - Não (Alerta de Baixo Propósito)
             longo_prazo:
               type: choice
               values:
-                [
-                  "Sim (Plenitude/Persistência)",
-                  "Não (Alerta de Linha de Frente Tática)",
-                ]
+                - Sim (Plenitude/Persistência)
+                - Não (Alerta de Linha de Frente Tática)
             desafiador:
               type: choice
-              values: ["Sim (Persistência/Clareza)", "Não (Alerta de Tédio/Rotina)"]
+              values:
+                - Sim (Persistência/Clareza)
+                - Não (Alerta de Tédio/Rotina)
             bom_nisso:
               type: choice
               values:
-                ["Sim (Felicidade/Clareza)", "Não (Alerta de Atrito de Aprendizado)"]
+                - Sim (Felicidade/Clareza)
+                - Não (Alerta de Atrito de Aprendizado)
             foco_predominante:
               type: choice
               values:
-                - "FLOW TOTAL (Todos os quadrantes presentes)"
-                - "Plenitude (Propósito e Alinhamento)"
-                - "Felicidade (Imersão e Atemporalidade)"
-                - "Persistência (Foco Resiliente)"
-                - "Clareza (Metas Cristalinas)"
-
-  - trigger: ":antivision"
+                - FLOW TOTAL (Todos os quadrantes presentes)
+                - Plenitude (Propósito e Alinhamento)
+                - Felicidade (Imersão e Atemporalidade)
+                - Persistência (Foco Resiliente)
+                - Clareza (Metas Cristalinas)
+    label: '[Productivity] Focus-Block Gate & Core Value Alignment Note'
+    comment: '---'
+    search_terms:
+      - productivity
+  - trigger: :antivision
     replace: |
       ### 🚫 Anti-Visão vs. 🎯 Visão Real
       *Calibrado em: {{current_date}}*
@@ -257,13 +278,13 @@ matches:
       - name: current_date
         type: date
         params:
-          format: "%Y-%m-%d"
+          format: '%Y-%m-%d'
       - name: form_antivision
         type: form
         params:
           layout: |
             ### 🚫 Anti-Visão vs. 🎯 Visão Real
-            
+
             #### 1. A Anti-Visão (O que evitar)
             [[antivision_items]]
 
@@ -272,12 +293,20 @@ matches:
           fields:
             antivision_items:
               type: multiline
-              default: "- Rotinas sem sentido e caos.\n- Hábitos não saudáveis.\n- Trabalho sem propósito."
+              default: |
+                - Rotinas sem sentido e caos.
+                - Hábitos não saudáveis.
+                - Trabalho sem propósito.
             real_vision:
               type: multiline
-              default: "- Autonomia total e clareza de execução.\n- Engenharia de sistemas escaláveis."
-
-  - trigger: ":ghostmode"
+              default: |
+                - Autonomia total e clareza de execução.
+                - Engenharia de sistemas escaláveis.
+    label: '[Productivity] Anti-Vision vs Real Vision Life Calibration'
+    comment: '### 🚫 Anti-Visão vs. 🎯 Visão Real'
+    search_terms:
+      - productivity
+  - trigger: :ghostmode
     replace: |
       ## 🥷 Protocolo de Foco: Desaparecer por Seis Meses
 
@@ -292,17 +321,22 @@ matches:
       ### 🔩 Execução dos Fundamentos
       - [ ] Praticar habilidades essenciais do ofício.
       - [ ] Proteger o bloco de foco profundo.
-
-  - trigger: ":pararef"
+    label: '[Productivity] 6-Month Ghost Mode Extreme Focus Protocol'
+    comment: '## 🥷 Protocolo de Foco: Desaparecer por Seis Meses'
+    search_terms:
+      - productivity
+  - trigger: :pararef
     replace: |
       ### Método P.A.R.A. — Resumo de Organização
       - **Projetos**: Conjuntos de tarefas com um objetivo e prazo definidos. (Ex: Preparar uma apresentação para uma conferência)
       - **Áreas**: Aspectos da vida que precisam de manutenção contínua. (Ex: Saúde, finanças pessoais)
       - **Recursos**: Coleções de informações temáticas de seu interesse. (Ex: Artigos sobre produtividade, cursos de design gráfico)
       - **Arquivo**: Informações valiosas do passado que você deseja manter, mas não está usando ativamente no momento. (Ex: Projetos concluídos, trabalhos acadêmicos antigos)
-
-  # Opção 1: Resumo rápido do conceito do infográfico
-  - trigger: ":flowtxt"
+    label: '[Productivity] P.A.R.A. Method Reference (Projects, Areas, Resources, Archive)'
+    comment: '### Método P.A.R.A. — Resumo de Organização'
+    search_terms:
+      - productivity
+  - trigger: :flowtxt
     replace: |
       🎯 COMO ENTRAR NO ESTADO DE FLOW
       Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço, frequentemente descrito como estar "na zona".
@@ -315,9 +349,11 @@ matches:
 
       🌀 A INTERSECÇÃO:
       Para atingir o Flow, sua atividade deve unir: Algo que você se importa + Algo de longo prazo + Algo desafiador + Algo em que você é bom.
-
-  # Opção 2: Formulário interativo para reflexão e planejamento pessoal
-  - trigger: ":flowform"
+    label: '[Productivity] Flow State Entry Manual (Csikszentmihalyi Protocol)'
+    comment: 🎯 COMO ENTRAR NO ESTADO DE FLOW
+    search_terms:
+      - productivity
+  - trigger: :flowform
     replace: |
       # 🌀 Meu Planejamento para o Estado de Flow
       Data: {{atual}}
@@ -342,7 +378,7 @@ matches:
       - name: atual
         type: date
         params:
-          format: "%d/%m/%Y"
+          format: '%d/%m/%Y'
       - name: form_flowform
         type: form
         params:
@@ -358,8 +394,11 @@ matches:
 
             4. 💪 Algo em que sou bom:
             [[habilidade]]
-
-  - trigger: ":flow-ref"
+    label: '[Productivity] 🌀 Meu Planejamento para o Estado de Flow'
+    comment: '# 🌀 Meu Planejamento para o Estado de Flow'
+    search_terms:
+      - productivity
+  - trigger: :flow-ref
     replace: |
       # Como Entrar no Estado de Flow
       > Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço ("na zona").
@@ -381,8 +420,11 @@ matches:
         * Foco e determinação contínuos.
         * Superando desafios com facilidade.
         * Energizado e motivado para superar obstáculos.
-
-  - trigger: ":flowcheck"
+    label: '[Productivity] Como Entrar no Estado de Flow'
+    comment: '# Como Entrar no Estado de Flow'
+    search_terms:
+      - productivity
+  - trigger: :flowcheck
     replace: |
       ---
       type: log/execution-audit
@@ -399,7 +441,7 @@ matches:
       - name: current_date
         type: date
         params:
-          format: "%Y-%m-%d %H:%M"
+          format: '%Y-%m-%d %H:%M'
       - name: form_output
         type: form
         params:
@@ -423,32 +465,36 @@ matches:
           fields:
             v_care:
               type: choice
-              values: ["HIGH (Plenitude)", "LOW (Apathy)"]
+              values:
+                - HIGH (Plenitude)
+                - LOW (Apathy)
             v_long:
               type: choice
-              values: ["STRATEGIC (Persistência)", "TACTICAL (Short-term)"]
+              values:
+                - STRATEGIC (Persistência)
+                - TACTICAL (Short-term)
             v_good:
               type: choice
-              values: ["EXPERT (Felicidade)", "LEARNING (Friction)"]
+              values:
+                - EXPERT (Felicidade)
+                - LEARNING (Friction)
             v_challenge:
               type: choice
               values:
-                [
-                  "OPTIMAL (Clareza)",
-                  "UNDERWHELMING (Boredom)",
-                  "OVERWHELMING (Anxiety)",
-                ]
+                - OPTIMAL (Clareza)
+                - UNDERWHELMING (Boredom)
+                - OVERWHELMING (Anxiety)
             mode:
               type: choice
               values:
-                [
-                  "Deep Work / Flow Protection",
-                  "Administrative / Maintenance",
-                  "Exploratory / R&D",
-                ]
-
-  # Smarter Scheduling
-  - trigger: ":p-calendar"
+                - Deep Work / Flow Protection
+                - Administrative / Maintenance
+                - Exploratory / R&D
+    label: '[Productivity] Flowcheck'
+    comment: '---'
+    search_terms:
+      - productivity
+  - trigger: :p-calendar
     form: |
       Here's my calendar for the week:
 
@@ -458,3 +504,379 @@ matches:
     form_fields:
       calendar_details:
         type: multiline
+    label: '[Productivity] Time Management Expert And Help Me Batch Similar Tasks'
+    comment: 'Here''s my calendar for the week:'
+    search_terms:
+      - productivity
+  - trigger: :c-mapmanual
+    form: |
+      I do this task manually:
+      [[task]]
+
+      Map every step in detail, identify which steps could be automated, and design an automation that handles the full workflow.
+    form_fields:
+      task:
+        multiline: true
+    label: '[Productivity] Manual Process Automation Mapping'
+    comment: Maps repetitive manual workflows into automated trigger-action pipelines.
+    search_terms:
+      - productivity
+  - trigger: :c-zapier
+    form: |
+      Design a Zapier workflow that automates [[process]]. Define the trigger, all the steps in sequence, what data is passed between steps, and how errors are handled.
+    form_fields:
+      process:
+        multiline: true
+    label: '[Productivity] Zapier / Make Multi-Step Automation'
+    comment: Designs automated multi-app integrations with error handling and data formatting.
+    search_terms:
+      - productivity
+  - trigger: :c-emailseq
+    form: |
+      Design an automated email sequence for [[purpose]]. Write the copy for each email, define the triggers and timing, and explain the goal of each message.
+    form_fields:
+      purpose:
+        multiline: true
+    label: '[Productivity] Automated Email Nurture Sequence'
+    comment: Crafts personalized multi-email onboarding and nurture drip campaigns.
+    search_terms:
+      - productivity
+  - trigger: :c-datapipeline
+    form: |
+      Design a data pipeline that takes [[input]], transforms it by [[transformations]], and loads it into [[destination]]. Include error handling and monitoring.
+    form_fields:
+      input:
+        multiline: true
+      transformations:
+        multiline: true
+    label: '[Productivity] ETL Data Pipeline Architecture'
+    comment: Structures scheduled data extraction, transformation, validation, and loading jobs.
+    search_terms:
+      - productivity
+  - trigger: :c-reportgen
+    form: |
+      Design an automation that pulls data from [[sources]], calculates [[metrics]], generates a [[format]] report, and sends it to [[recipients]] every [[frequency]].
+    form_fields:
+      sources:
+        multiline: true
+      metrics:
+        multiline: true
+      format:
+        default: Markdown / PDF
+      frequency:
+        default: week
+    label: '[Productivity] Automated Executive Report Generator'
+    comment: Transforms raw metric tables into polished executive summaries with action items.
+    search_terms:
+      - productivity
+  - trigger: :c-leadbot
+    form: |
+      Design an automated lead qualification system that [[inflow_channel]], asks qualifying questions, scores them against [[criteria]], and routes them to the right person.
+    form_fields:
+      inflow_channel:
+        multiline: true
+      criteria:
+        multiline: true
+    label: '[Productivity] Inbound Lead Qualification Bot Flow'
+    comment: Designs qualification question flows that score leads and route to sales teams.
+    search_terms:
+      - productivity
+  - trigger: :c-custonboard
+    form: |
+      Design an automated customer onboarding flow for [[product]]. What happens at each step, what triggers the next step, and how are stuck customers identified and helped?
+    form_fields:
+      product:
+        multiline: true
+    label: '[Productivity] Zero-Friction Customer Onboarding Flow'
+    comment: Automates account provisioning, welcome tours, and time-to-first-value milestones.
+    search_terms:
+      - productivity
+  - trigger: :c-monitoralerts
+    form: |
+      Design an automated monitoring system for [[target]]. What metrics trigger alerts, how are alerts prioritized, and what information is included in each alert?
+    form_fields:
+      target:
+        multiline: true
+    label: '[Productivity] Monitoring & Incident Alerting Routing'
+    comment: Configures signal-to-noise alert thresholds, escalation policies, and on-call paging.
+    search_terms:
+      - productivity
+  - trigger: :c-supporttriage
+    form: |
+      Design an automation for [[support_channel]] that receives support requests, categorizes them by type and priority, routes them to the right team, and sends an acknowledgment to the customer.
+    form_fields:
+      support_channel:
+        default: Zendesk / Intercom / Email
+    label: '[Productivity] Support Ticket Auto-Triage & Routing'
+    comment: Classifies incoming support requests by urgency, category, and assigned tier.
+    search_terms:
+      - productivity
+  - trigger: :c-pubpipeline
+    form: |
+      Design an automated content publishing pipeline that takes a draft, runs it through [[checks]], formats it for [[platforms]], schedules publication, and tracks distribution.
+    form_fields:
+      checks:
+        multiline: true
+      platforms:
+        default: Substack, LinkedIn, Twitter/X, Blog
+    label: '[Productivity] Content Publishing & Distribution Pipeline'
+    comment: Automates multi-platform formatting, scheduling, and asset repurposing.
+    search_terms:
+      - productivity
+  - trigger: :c-compmonitor
+    form: |
+      Design an automation that monitors [[competitors]] for changes to [[what_to_monitor]] and delivers a weekly digest with the most important changes highlighted.
+    form_fields:
+      competitors:
+        multiline: true
+      what_to_monitor:
+        multiline: true
+    label: '[Productivity] Automated Competitor Pricing & Feature Watch'
+    comment: Sets up tracking workflows for competitor price shifts, changelogs, and job postings.
+    search_terms:
+      - productivity
+  - trigger: :c-crmautomation
+    form: |
+      Design automations for [[crm_system]] that handle [[scenarios]]. What triggers each automation, what actions does it take, and how does it update records?
+    form_fields:
+      crm_system:
+        default: HubSpot / Salesforce
+      scenarios:
+        multiline: true
+    label: '[Productivity] CRM Pipeline Stage Automation'
+    comment: Automates deal stage updates, task assignments, and stale deal reminders in CRM.
+    search_terms:
+      - productivity
+  - trigger: :c-employeeonboard
+    form: |
+      Design an automated employee onboarding workflow for [[role_or_department]] that handles account creation, equipment provisioning, training assignments, introduction emails, and day-one check-ins.
+    form_fields:
+      role_or_department:
+        default: Engineering / All New Hires
+    label: '[Productivity] Automated Employee Onboarding Checklist'
+    comment: Generates automated provisioning checklists, IT requests, and 30-60-90 day schedules.
+    search_terms:
+      - productivity
+  - trigger: :c-meetfollowup
+    form: |
+      Design an automation that processes meeting transcripts, extracts action items, assigns them to owners, creates tasks in [[pm_tool]], and sends follow-up emails.
+    form_fields:
+      pm_tool:
+        default: Linear / Jira / Notion
+    label: '[Productivity] Meeting Minutes & Automated Follow-Up'
+    comment: Formats meeting transcript notes into structured emails with owners and deadlines.
+    search_terms:
+      - productivity
+  - trigger: :c-pricemonitor
+    form: |
+      Design an automation that monitors competitor prices for [[products]] across [[channels]], alerts when significant changes occur, and provides pricing recommendations.
+    form_fields:
+      products:
+        multiline: true
+      channels:
+        default: Websites, Amazon, API feeds
+    label: '[Productivity] Dynamic Pricing & Competitor Tracking'
+    comment: Designs price monitoring alerts with margin rules and competitor scrapers.
+    search_terms:
+      - productivity
+  - trigger: :c-jobscreen
+    form: |
+      Design an automation for the recruitment process that posts jobs, screens applications against [[criteria]], schedules interviews for qualified candidates, and sends rejections.
+    form_fields:
+      criteria:
+        multiline: true
+    label: '[Productivity] Candidate Resume Screening Matrix'
+    comment: Screens candidate qualifications against job requirements with structured scoring.
+    search_terms:
+      - productivity
+  - trigger: :c-winback
+    form: |
+      Design an automated win-back campaign for churned customers of [[product_or_service]]. What triggers it, what is the sequence of messages, what offers are made, and when does it stop?
+    form_fields:
+      product_or_service:
+        multiline: true
+    label: '[Productivity] Churned Customer Win-Back Campaign'
+    comment: Designs targeted win-back offers and exit-survey feedback collection.
+    search_terms:
+      - productivity
+  - trigger: :c-salesforecast
+    form: |
+      Design an automation that pulls data from [[data_sources]], applies [[forecasting_model]], generates weekly forecast reports, and flags deals needing attention.
+    form_fields:
+      data_sources:
+        multiline: true
+      forecasting_model:
+        multiline: true
+    label: '[Productivity] Sales Pipeline & Revenue Forecasting Model'
+    comment: Calculates weighted pipeline projections based on conversion historicals and deal stages.
+    search_terms:
+      - productivity
+  - trigger: :c-ittickets
+    form: |
+      Design an automation that receives IT support tickets from [[intake_source]], categorizes them, assigns priority, routes to the right team, and tracks resolution time against SLAs.
+    form_fields:
+      intake_source:
+        default: Slack / Jira Service Desk / Email
+    label: '[Productivity] IT Helpdesk Automation & Auto-Resolution'
+    comment: Automates common password resets, permission requests, and hardware approvals.
+    search_terms:
+      - productivity
+  - trigger: :c-abtests
+    form: |
+      Design a system that sets up A/B tests for [[test_subject]], monitors results, determines statistical significance, implements winners, and documents learnings.
+    form_fields:
+      test_subject:
+        multiline: true
+    label: '[Productivity] A/B Test Design & Significance Calculator'
+    comment: Calculates sample sizes, minimum detectable effects, and statistical validity of tests.
+    search_terms:
+      - productivity
+  - trigger: :c-lifecycle
+    form: |
+      Design automated workflows for each stage of the user lifecycle for [[product]]: activation, engagement, retention, re-engagement, and win-back.
+    form_fields:
+      product:
+        multiline: true
+    label: '[Productivity] Customer Lifecycle Stage Triggers'
+    comment: Maps activation, adoption, expansion, and retention milestone triggers.
+    search_terms:
+      - productivity
+  - trigger: :c-custhealth
+    form: |
+      Design an automation that monitors [[customer_signals]], calculates health scores, segments customers by risk, and triggers appropriate outreach for at-risk accounts.
+    form_fields:
+      customer_signals:
+        multiline: true
+    label: '[Productivity] Customer Health Scoring Model'
+    comment: Combines product usage, support tickets, and NPS into a predictive churn score.
+    search_terms:
+      - productivity
+  - trigger: :c-finrecon
+    form: |
+      Design an automation that reconciles [[accounts]] by matching transactions, flagging discrepancies, generating exception reports, and updating records after review.
+    form_fields:
+      accounts:
+        multiline: true
+    label: '[Productivity] Automated Financial Reconciliation Matrix'
+    comment: Reconciles bank feeds, invoices, and accounting ledgers with anomaly detection.
+    search_terms:
+      - productivity
+  - trigger: :prompt-mentor
+    replace: |
+      Role
+      You are now my Prompt Engineering Mentor. Your job is to teach and guide me through mastering the art and science of prompt design across different AI models and contexts. Think like an AI systems architect, teacher, and creative strategist combined.
+
+      Objective
+      Build a complete understanding of how to engineer prompts that produce reliable, creative, and high-utility outputs. Your focus is on process mastery - clarity, structure, adaptability, and optimization.
+
+      Project Framework
+
+      1. Foundation Building
+      - Explain the core principles of prompt engineering: context hierarchy, clarity, specificity, and intent alignment.
+      - Show how prompt structure affects reasoning, creativity, and factuality.
+      2. Prompt Architecture
+      - Teach how to layer prompts using role, goal, constraints, and format.
+      - Demonstrate modular structures like XML blocks, JSON schemas, and paragraph frameworks.
+      - Compare tone and syntax effects on different models (Claude, ChatGPT, Gemini, Grok, Perplexity).
+      3. Applied Practice
+      - Ask for a task or domain (e.g., research, content creation, data analysis).
+      - Build an optimized prompt for that task.
+      - Show how small word or structural changes alter the model's behavior.
+      4. Debugging & Optimization
+      - When outputs fall short, break down why: unclear intent, weak role framing, or format misalignment.
+      - Rebuild the prompt with improved phrasing, logic steps, and contextual reinforcement.
+      - Teach how to test prompts across different models and measure consistency.
+      5. System Design Thinking
+      - Show how to connect prompts into workflows, loops, and multi-agent systems.
+      - Explain memory layering, iterative refinement, and feedback integration for scalable results.
+      6. Documentation & Mastery Loop
+      - Keep a running Prompt Library with tags for use case, format, and strength.
+      - End each session with a meta-analysis: what worked, what didn't, and what principles was learned.
+
+      Output Format
+      - Lesson Focus (concept or skill)
+      - Example Prompts (before and after optimization)
+      - Key Takeaways
+      - Debugging Notes
+      - Mastery Checklist
+
+      Rules
+      - Always explain the why behind prompt decisions.
+      - Encourage experimentation and iteration.
+      - Prioritize teaching over producing.
+      - Keep answers structured, visual, and practical for real-world use.
+    label: '[Productivity] Prompt Engineering Mentor & Critic'
+    comment: Critiques, refines, and upgrades your AI prompts for maximum fidelity.
+    search_terms:
+      - productivity
+  - trigger: :handoff-prompt
+    replace: |
+      This chat is too long. Write a complete handoff document for a new chat covering: the goal, all the context needed to understand it cold, every decision we made and why, what's done, what's left in order, and the exact next step. Make it detailed enough that a fresh AI with zero memory picks up exactly where we left off.
+    label: '[Productivity] Context Compression Handoff Prompt'
+    comment: Summarizes an ongoing chat history into a clean state handover for a fresh session.
+    search_terms:
+      - productivity
+  - trigger: :steal-recipe
+    replace: |
+      Every ingredient, the exact quantities, the cooking technique, and how to make it at home so it tastes like the original. If there's a reason the restaurant version tastes better than homemade, tell me that secret too.
+    label: '[Productivity] Culinary Recipe Extractor'
+    comment: Extracts precise ingredient weights, times, temperatures, and techniques from videos/text.
+    search_terms:
+      - productivity
+  - trigger: :price-scanner
+    replace: |
+      Find me a cheaper version of this exact product. Same quality, same materials, different brand. Search the web and show me where to buy it, the price difference, and whether the cheaper version has any real trade-offs.
+    label: '[Productivity] Price Comparison & Value Finder'
+    comment: Searches for identical or equivalent items at lower price points with reviews.
+    search_terms:
+      - productivity
+  - trigger: :item-appraiser
+    replace: |
+      Tell me what this is worth right now. Search current resale prices, tell me the best platform to sell it on, and write me the listing title and description that gets the highest price. If it's worth more than I think, tell me why.
+    label: '[Productivity] Second-Hand Value & Valuation Appraiser'
+    comment: Estimates fair market value, resale range, and condition checks for items.
+    search_terms:
+      - productivity
+  - trigger: :ingredient-scanner
+    replace: |
+      Flag every ingredient linked to health concerns. Tell me what each one actually does, how serious the risk is, and suggest a cleaner alternative product I can buy instead. Write it so someone with no science background understands.
+    label: '[Productivity] Health & Additive Ingredient Scanner'
+    comment: Flags toxic additives, allergens, and health warnings in food/cosmetic ingredient lists.
+    search_terms:
+      - productivity
+  - trigger: :build-persona
+    replace: |
+      I want to build a custom Claude persona for my business.
+      Ask me 5 questions to understand:
+      - How I communicate
+      - Who my clients are and what they need
+      - What my non-negotiables are in any output
+      - What makes my voice distinct
+      - What I never want Claude to do when writing as me
+
+      After I answer - write a complete persona instruction I paste into a Claude Project. It should make every response sound like me without me explaining myself every time.
+    label: '[Productivity] Custom AI Business Persona Architect'
+    comment: Builds customized tone, knowledge boundary, and behavioral guidelines for an AI bot.
+    search_terms:
+      - productivity
+  - trigger: :claude-productivity-hacks
+    replace: |
+      5 things. DO ONE NOW
+      5 minutes. 5 hours back. Every week.
+
+      01. Project system prompt — context set once forever
+      02. Confidence Audit — separate knowing from guessing
+      03. Save your best workflow — never rebuild from scratch
+      04. Extended Thinking — for decisions that actually matter
+      05. Custom persona — Claude that sounds like you always
+    label: '[Productivity] 5-Minute Quick-Win Productivity Prompts'
+    comment: Curated rapid prompts to automate immediate daily tasks in 5 minutes.
+    search_terms:
+      - productivity
+  - trigger: :claude-time-saver-cover
+    replace: |
+      5 things you can do with Claude in the next 5 minutes that will save you 10 hours this week. Try them now and save them
+    label: '[Productivity] Claude Time-Saver Framework Intro'
+    comment: Introduction to time-saving automation hacks with Claude.
+    search_terms:
+      - productivity

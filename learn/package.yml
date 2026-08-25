@@ -1,16 +1,17 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
-  # 1. THE LEARNING CURVE DESTROYER
-  - trigger: ":p-destroyer"
+  - trigger: :p-destroyer
     form: |
       "You are a teacher who only has 4 hours with me and will never see me again. Your only objective is to make me functional in [[skill]] before the time runs out. Do not give me theory without practical use. Do not give me a list. Tell me: what to learn first, what to completely ignore, and what exercise, if I do it once, will already put me ahead of 70% of people who have been studying this for months."
     form_fields:
       skill:
         type: text
-
-  # 4. THE PERSONAL LEARNING PATH ARCHITECT
-  - trigger: ":p-architect"
+    label: '[Learn] 4-Hour High-Speed Learning Squeeze'
+    comment: Fast-tracks learning as if you only have 4 hours to learn the entire topic.
+    search_terms:
+      - learn
+  - trigger: :p-architect
     form: |
       "My real goal is [[goal]]. It is not to learn [[skill]] in general. It is to achieve [[specific_result]] within [[deadline]]. I already know [[what_you_master]]. Based on that, build me a 7-day learning path. Each day must include one single task that fits within 45 minutes, a clear criterion so I know whether I did it correctly, and what not to do that day so I do not waste time. If the entire path does not lead me to the goal, rebuild it until it does."
     form_fields:
@@ -24,19 +25,21 @@ matches:
         type: text
       what_you_master:
         type: text
-
-  # 3. THE IMPOSSIBLE LANGUAGE TRANSLATOR
-  - trigger: ":p-translator"
+    label: '[Learn] Mission-Specific Curriculum Architect'
+    comment: Builds a curriculum specifically tailored to your exact goal rather than generic theory.
+    search_terms:
+      - learn
+  - trigger: :p-translator
     form: |
       "This content below is confusing to me. Before explaining it, tell me: what is the one sentence that, if I understand it, will make the rest make sense on its own? Explain only that sentence first. Use an everyday analogy, with no technical terms. Then ask me 3 questions that only someone who truly understood it would be able to answer. Do not continue until I pass all three. {{clip}}"
     vars:
       - name: clip
         type: clipboard
-
-  # =========================================================================
-  # STEP 1: CREATE THE PERMANENT HOME
-  # =========================================================================
-  - trigger: ":rstep1"
+    label: '[Learn] Jargon to Plain Language Translator'
+    comment: Translates confusing technical jargon into intuitive concepts.
+    search_terms:
+      - learn
+  - trigger: :rstep1
     form: |
       ROLE
       You are a research assistant covering [[topic]].
@@ -67,12 +70,12 @@ matches:
     form_fields:
       topic:
         type: text
-        default: "Machine Learning / AI Sourcing"
-
-  # =========================================================================
-  # STEP 2: TEACH THE FIELD LANDSCAPE
-  # =========================================================================
-  - trigger: ":rstep2"
+        default: Machine Learning / AI Sourcing
+    label: '[Learn] Research Step 1: Broad Landscape Map'
+    comment: Maps the overarching domain landscape, key figures, and core controversies.
+    search_terms:
+      - learn
+  - trigger: :rstep2
     form: |
       ROLE
       You are a field analyst writing for serious researchers entering [[topic]].
@@ -110,12 +113,12 @@ matches:
     form_fields:
       topic:
         type: text
-        default: ""
-
-  # =========================================================================
-  # STEP 3: TEACH THE LITERATURE
-  # =========================================================================
-  - trigger: ":rstep3"
+        default: ''
+    label: '[Learn] Research Step 2: Primary Source Deep Dive'
+    comment: Extracts empirical data and key findings from high-trust primary sources.
+    search_terms:
+      - learn
+  - trigger: :rstep3
     form: |
       For [[topic]]:
       Find official PDF links for the most-cited foundational papers and the most recent state-of-the-art papers (last 2 years).
@@ -128,12 +131,12 @@ matches:
     form_fields:
       topic:
         type: text
-        default: ""
-
-  # =========================================================================
-  # STEP 4A: STEELMAN (THE BELIEVER'S SYNTHESIS)
-  # =========================================================================
-  - trigger: ":rsteel"
+        default: ''
+    label: '[Learn] Research Step 3: Synthesis & Actionable Takeaways'
+    comment: Synthesizes gathered research into a crisp, actionable briefing document.
+    search_terms:
+      - learn
+  - trigger: :rsteel
     form: |
       TASK
       Write a short synthesis explaining why [[target]] is important and likely correct, using clear, plain-language reasoning.
@@ -151,12 +154,12 @@ matches:
     form_fields:
       target:
         type: text
-        default: "this paper"
-
-  # =========================================================================
-  # STEP 4B: SKEPTIC (THE SKEPTIC'S TEARDOWN)
-  # =========================================================================
-  - trigger: ":rskept"
+        default: this paper
+    label: '[Learn] Rsteel'
+    comment: TASK
+    search_terms:
+      - learn
+  - trigger: :rskept
     form: |
       Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:
       TASK
@@ -174,12 +177,12 @@ matches:
     form_fields:
       target:
         type: text
-        default: "this paper"
-
-  # =========================================================================
-  # STEP 5: UPDATE WITH EVERY NEW PAPER
-  # =========================================================================
-  - trigger: ":rupdate"
+        default: this paper
+    label: '[Learn] Rskept'
+    comment: 'Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:'
+    search_terms:
+      - learn
+  - trigger: :rupdate
     form: |
       Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:
 
@@ -214,30 +217,32 @@ matches:
     form_fields:
       topic:
         type: text
-        default: ""
-
-  # Step 1 of 2: Generate the Google Skills learning path
-  # Source: https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uflzo9/google_put_3000_ai_courses_in_one_place_this/
-  - trigger: ":gskills-1of2"
+        default: ''
+    label: '[Learn] Rupdate'
+    comment: 'Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:'
+    search_terms:
+      - learn
+  - trigger: :gskills-1of2
     form: |
       I'm a [[role]] who wants to learn [[goal]]. Google Skills has ~3,000 courses and labs. Build me a focused [[weeks]]-week plan: one track only, the 3-4 specific labs and badges worth doing in order, about [[hours]] hours a week, skip anything that is pure theory. Tell me which badge to earn first and why it matters to an employer.
     form_fields:
       role:
         type: text
-        default: "developer"
+        default: developer
       goal:
         type: text
-        default: "Deploy ML models on Vertex AI"
+        default: Deploy ML models on Vertex AI
       weeks:
         type: text
-        default: "4"
+        default: '4'
       hours:
         type: text
-        default: "3"
-
-  # Step 2 of 2: Pre-lab study kickoff
-  # Source: Custom follow-up for the generated plan to prevent copy-paste learning
-  - trigger: ":gskills-2of2"
+        default: '3'
+    label: '[Learn] I''M A  Who Wants To Learn'
+    comment: 'I''m a  who wants to learn . Google Skills has ~3,000 courses and labs. Build me a focused -week plan: one track only, th'
+    search_terms:
+      - learn
+  - trigger: :gskills-2of2
     form: |
       I am ready to start the "[[lab_name]]" lab from the plan you gave me. Before I click start, give me a 3-bullet prep sheet:
       1. What core concept must I understand so I don't just blindly copy-paste the code?
@@ -246,24 +251,15 @@ matches:
     form_fields:
       lab_name:
         type: text
-        default: ""
+        default: ''
       role:
         type: text
-        default: "developer"
-
-# =============================================================================
-# ESPANSO CONFIGURATION: DYNAMIC LLM LEARNING CHAINS
-# Location: match/learning_chain.yml
-# Run 'espanso restart' after saving to apply changes.
-# =============================================================================
-
-
-  # ---------------------------------------------------------------------------
-  # PROTOCOL A: THE 5-STEP DISCRETE LEARNING LOOP
-  # ---------------------------------------------------------------------------
-
-  # Step 1 of 5: Calibration Phase
-  - trigger: ":lp1of5"
+        default: developer
+    label: '[Learn] I Am Ready To Start The "" Lab From The Plan You Gave Me'
+    comment: 'I am ready to start the "" lab from the plan you gave me. Before I click start, give me a 3-bullet prep sheet:'
+    search_terms:
+      - learn
+  - trigger: :lp1of5
     form: |
       I want to learn [[topic]]. Before teaching me anything, calibrate to me.
 
@@ -273,10 +269,11 @@ matches:
       3. How deep I need to go - rough overview, or a working understanding.
 
       Ask these as a short numbered list and then wait. Do not start teaching yet.
-
-  # Step 2 of 5: Targeted Instruction Phase
-  # Optimization: Pulls the active topic directly from the clipboard to prevent duplicate typing.
-  - trigger: ":lp2of5"
+    label: '[Learn] I Want To Learn'
+    comment: I want to learn . Before teaching me anything, calibrate to me.
+    search_terms:
+      - learn
+  - trigger: :lp2of5
     replace: |
       Based on my answers, teach me {{copied_topic}} at exactly the level I need - no more, no less.
 
@@ -290,9 +287,11 @@ matches:
     vars:
       - name: copied_topic
         type: clipboard
-
-  # Step 3 of 5: Active Evaluation Phase
-  - trigger: ":lp3of5"
+    label: '[Learn] Lp2Of5'
+    comment: Based on my answers, teach me {{copied_topic}} at exactly the level I need - no more, no less.
+    search_terms:
+      - learn
+  - trigger: :lp3of5
     replace: |
       Now test whether it actually stuck. Do NOT re-explain anything first.
 
@@ -301,9 +300,11 @@ matches:
       - After each answer, tell me right or wrong with a one-line correction.
 
       At the end, list the specific concepts I clearly have not grasped.
-
-  # Step 4 of 5: Remediation Layer
-  - trigger: ":lp4of5"
+    label: '[Learn] Now Test Whether It Actually Stuck'
+    comment: Now test whether it actually stuck. Do NOT re-explain anything first.
+    search_terms:
+      - learn
+  - trigger: :lp4of5
     replace: |
       Re-teach ONLY the concepts I got wrong or was shaky on. Ignore everything I already understood.
 
@@ -311,9 +312,11 @@ matches:
       - Explain it a different way than you did the first time - a new angle or analogy.
       - Give me one fresh example.
       - Ask me a single follow-up question to confirm I have it now.
-
-  # Step 5 of 5: Reference Compression
-  - trigger: ":lp5of5"
+    label: '[Learn] Re-Teach Only The Concepts I Got Wrong Or Was Shaky On'
+    comment: Re-teach ONLY the concepts I got wrong or was shaky on. Ignore everything I already understood.
+    search_terms:
+      - learn
+  - trigger: :lp5of5
     replace: |
       Now compress everything into a one-page reference I can save and review later.
 
@@ -324,13 +327,11 @@ matches:
       - 3 questions I can use to re-test myself in a week.
 
       Keep it tight enough to fit on one screen.
-
-  # ---------------------------------------------------------------------------
-  # PROTOCOL B: UNIFIED SOCRATIC COMPILER (SINGLE-PROMPT ENGINE)
-  # ---------------------------------------------------------------------------
-
-  # Automated state-machine execution alternative to avoid the 5-step manual cycle.
-  - trigger: ":lpsocratic"
+    label: '[Learn] Lp5Of5'
+    comment: Now compress everything into a one-page reference I can save and review later.
+    search_terms:
+      - learn
+  - trigger: :lpsocratic
     form: |
       [ROLE]
       Act as an aggressively gated, high-signal Socratic Compiler. Your objective is to map, isolate, and verify comprehension of a target topic using a compressed, non-linear progression loop.
@@ -356,4 +357,368 @@ matches:
     form_fields:
       baseline:
         type: text
-        default: "Systems thinker, practical architecture focus"
+        default: Systems thinker, practical architecture focus
+    label: '[Learn] Aggressively Gated'
+    comment: '[ROLE]'
+    search_terms:
+      - learn
+  - trigger: :brain-upgrade-30d
+    replace: |
+      Design a 30-day brain upgrade program that includes high-IQ thinking routines, mind-expanding prompts, advanced reading material, memory-enhancing techniques, and strategic rest habits. Keep it practical and time-efficient.
+    label: '[Learn] 30-Day Cognitive & Memory Upgrade Plan'
+    comment: 30-day routine for improving active recall, mental clarity, and problem-solving.
+    search_terms:
+      - learn
+  - trigger: :learning-system
+    replace: |
+      Help me build a personalized learning system to master any topic. Include how to plan, practice, review, and track my progress for long-term retention.
+    label: '[Learn] Personalized Learning System Architect'
+    comment: Builds an adaptive multi-week learning framework tailored to current skill level.
+    search_terms:
+      - learn
+  - trigger: :personal-ai-mentor
+    replace: |
+      Become my private coach. Explain each concept, ask questions, give feedback, and guide me until I understand it.
+    label: '[Learn] Private Socratic Coach'
+    comment: Explains concepts step-by-step and quizzes comprehension at each milestone.
+    search_terms:
+      - learn
+  - trigger: :teach-to-learn
+    replace: |
+      After explaining the concept, ask me to teach it back to you and point out any gaps in my understanding.
+    label: '[Learn] Feynman Technique: Teach-Back Mode'
+    comment: Requires you to explain the concept in simple terms to verify true comprehension.
+    search_terms:
+      - learn
+  - trigger: :visual-learning-guide
+    replace: |
+      Turn this concept into diagrams, analogies, mental models, or visual explanations.
+    label: '[Learn] Visual Diagrams & Mental Models Explainer'
+    comment: Translates abstract topics into visual ASCII diagrams, analogies, and mental models.
+    search_terms:
+      - learn
+  - trigger: :daily-practice-challenge
+    replace: |
+      Create a 30-day challenge that gradually increases in difficulty to improve my skills.
+    label: '[Learn] 30-Day Progressive Practice Challenge'
+    comment: Generates a 30-day curriculum with daily micro-exercises increasing in difficulty.
+    search_terms:
+      - learn
+  - trigger: :practical-scenarios
+    replace: |
+      Generate 50 realistic situations where I can apply this skill in everyday life or work.
+    label: '[Learn] 50 Real-World Application Scenarios'
+    comment: Generates 50 realistic practical situations to test and apply theoretical knowledge.
+    search_terms:
+      - learn
+  - trigger: :weekly-progress-review
+    replace: |
+      Build a weekly review system that measures my progress, identifies weaknesses, and recommends improvements.
+    label: '[Learn] Weekly Knowledge Retention & Progress Review'
+    comment: Measures retention rate, identifies weak spots, and recalibrates the study plan.
+    search_terms:
+      - learn
+  - trigger: :flashcards-smart
+    replace: |
+      Create flashcards, quizzes, and memory exercises that help me retain this information.
+    label: '[Learn] Active Recall Flashcards & Spaced Repetition'
+    comment: Builds question-and-answer flashcard decks optimized for spaced repetition.
+    search_terms:
+      - learn
+  - trigger: :real-world-project
+    replace: |
+      Design a hands-on project that lets me practice and demonstrate everything I've learned.
+    label: '[Learn] Hands-On Capstone Project Blueprint'
+    comment: Designs a tangible portfolio-grade project to cement conceptual understanding.
+    search_terms:
+      - learn
+  - trigger: :daily-plan-30m
+    replace: |
+      Create a learning schedule that helps me make meaningful progress in just 30 minutes each day.
+    label: '[Learn] 30-Minute Daily Micro-Learning Plan'
+    comment: Structures high-efficiency 30-minute daily learning routines for busy schedules.
+    search_terms:
+      - learn
+  - trigger: :stories-analogies
+    replace: |
+      Explain this lesson using engaging stories, analogies, and memorable real-world examples.
+    label: '[Learn] Story & Analogy Explainer'
+    comment: Explains difficult technical ideas using relatable real-world stories and metaphors.
+    search_terms:
+      - learn
+  - trigger: :accountability-coach
+    replace: |
+      Act as a disciplined coach who tracks my progress, reminds me of commitments, and pushes me to stay consistent.
+    label: '[Learn] Disciplined Habit & Study Coach'
+    comment: Tracks learning consistency, calls out excuses, and maintains study momentum.
+    search_terms:
+      - learn
+  - trigger: :tech-future-skills
+    replace: |
+      Explain how AI and emerging technology are changing the way people learn this skill and how I can stay ahead.
+    label: '[Learn] AI & Emerging Technology Skill Forecaster'
+    comment: Explains how AI is shifting requirements and highlights future-proof skills to learn.
+    search_terms:
+      - learn
+  - trigger: :blueprint-action
+    replace: |
+      Based on everything we've covered, give me the next three actions I should take today to keep improving.
+    label: '[Learn] Actionable Step-by-Step Mastery Blueprint'
+    comment: Condenses comprehensive study topics into immediate tactical next steps.
+    search_terms:
+      - learn
+  - trigger: :recursive-decomposition
+    replace: |
+      Apply recursive decomposition to extract the principles through the following methodology:
+
+      Recursion Down – Level 1: Break the success into its 3-5 major phases chronologically. For each phase, identify the outcome it produced that enabled the next phase.
+
+      Recursion Down – Level 2: Within each phase, identify the 2-4 key decisions or actions that most directly contributed to that phase's outcome. Ignore everything that happened – only the moves that mattered.
+    label: '[Learn] Recursive Principle Decomposition Protocol'
+    comment: Breaks complex skills down through 3 recursive levels to extract core foundational truths.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-cover
+    replace: |
+      1 CLAUDE PROMPT WASHINGTON DECIDES. turns a success strategy into a repeatable system.
+    label: '[Learn] Strategy Decomposition: Framework Intro'
+    comment: Introduction to the Washington Decides recursive strategy extraction method.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-part7
+    replace: |
+      Every principle must be specific enough that someone could implement it next week without asking what you mean. Do not stop at what went right. Identify 1-2 things that went wrong or almost failed but were recovered - near-misses contain some of the highest-value lessons. Avoid the temptation to create ten or fifteen principles. Fewer, stronger principles beat a long list nobody remembers.
+    label: '[Learn] Strategy Decomposition: Checklist Protocol'
+    comment: Translates high-level principles into an actionable operating checklist.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-what-you-get
+    replace: |
+      A step-by-step protocol.
+
+      A checklist you or your team can run on the next project to hit the same result on purpose.
+    label: '[Learn] Strategy Decomposition: Deliverables Summary'
+    comment: Overview of the concrete protocols and checklists generated by the framework.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-part5
+    replace: |
+      Recursion Up - Level 3: Organize the principles into a Repeatable Success Protocol - a checklist or playbook that could be handed to a different team working on a different project to dramatically increase their odds of success.
+
+      After building the protocol, stress-test it by identifying 2-3 scenarios where these principles would need to be adapted, and explain how to modify the protocol for each without losing its core value.
+    label: '[Learn] Strategy Decomposition: Level 3 Meta-Principles'
+    comment: Extracts universal principles that transfer across diverse domains.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-part4
+    replace: |
+      Recursion Up - Level 1: From the Level 3 analysis, identify which decisions succeeded because of conditions unique to this specific situation (one-time market window, specific relationship, unrepeatable timing) versus conditions you can recreate or engineer in future projects (process design, information systems, decision criteria, team structure).
+    label: '[Learn] Strategy Decomposition: Level 1 Synthesis'
+    comment: Synthesizes granular tactics back up into overarching foundational rules.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-what-it-does
+    replace: |
+      It breaks a past success or any strategy into phases and decisions, then finds the mechanics that actually caused it.
+    label: '[Learn] Strategy Decomposition: Concept Overview'
+    comment: Summary of how recursive decomposition strips vanity to reveal actionable strategy.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-part3
+    replace: |
+      Recursion Down - Level 3: For each key decision, answer three questions. First, what information or conditions existed at the time that made this the right move? Second, was this decision made deliberately based on reasoning, or did it happen intuitively or accidentally? Third, what would have happened if the opposite decision had been made?
+    label: '[Learn] Strategy Decomposition: Level 3 Micro-Mechanisms'
+    comment: Drills down into sub-components and exact tactical levers of success.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-part9
+    replace: |
+      MOST IMPORTANT!: Structure your output with the following sections in order: Phase Decomposition (timeline with phases and their outcomes), Key Decision Register (table format with columns: Phase / Decision / Reasoning / Deliberate or Accidental / Counterfactual), Transferability Sort (two-column format: Situation-Specific Elements vs. Recreatable Elements), Transferability Principles (4-7 principles, each stated as an actionable rule with a one-sentence rationale), Repeatable Success Protocol (sequenced checklist format), Near-Miss Lessons (things that almost went wrong and what they teach), and Adaptation Notes (2-3 scenarios where the protocol needs modification with specific guidance).
+    label: '[Learn] Strategy Decomposition: Final Structured Output'
+    comment: Outputs the complete 3-level recursive hierarchy with operational guidelines.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-part1
+    replace: |
+      Adopt the role of a pattern extraction specialist who previously worked in after-action review units for elite military teams, where the mandate after every mission - successful or failed - was to extract every transferable principle before institutional memory decayed. You discovered that most organizations are terrible at learning from their own wins. They celebrate success, attribute it to talent or luck, and move on without understanding the actual mechanics that produced the result.
+    label: '[Learn] Strategy Decomposition: Level 1 Foundation'
+    comment: Adopts pattern extraction specialist persona to deconstruct success mechanics.
+    search_terms:
+      - learn
+  - trigger: :success-strategy-part6
+    replace: |
+      Do not attribute the success to talent, hustle, or luck. Those might have contributed, but they aren't transferable. Extract the structural and procedural elements that are. Do not confuse correlation with causation - just because something happened during the success doesn't mean it caused the success. Apply the counterfactual test: if this element had been absent, would the outcome have changed? If not, it's not a real principle. Do not produce principles so generic they could apply to anything ("be customer-focused").
+    label: '[Learn] Strategy Decomposition: Execution Hygiene'
+    comment: Removes survivorship bias, luck, and vague talent attributions from strategy.
+    search_terms:
+      - learn
+  - trigger: :learning-illegal-intro
+    replace: |
+      BREAKING: I INSTALLED A "BRAIN" IN CLAUDE FABLE 5, AND IT STARTED TEACHING ME THINGS I DIDN'T KNOW EXISTED. HERE ARE 7 PROMPTS THAT MAKE LEARNING FEEL ILLEGAL: (SAVE THIS)
+    label: '[Learn] High-Speed Learning Engine Intro'
+    comment: Introduction to fast-track cognitive mastery and knowledge acquisition frameworks.
+    search_terms:
+      - learn
+  - trigger: :replace-tutor
+    replace: |
+      You are a world-class private tutor.
+      Teach me [TOPIC] as if I'm a motivated beginner.
+
+      Include
+      1. A structured lesson plan divided into digestible parts.
+      2. Analogies and step-by-step explanations.
+      3. Practice questions with answers.
+      4. A short summary after each section.
+
+      Teach in a warm, Socratic tone and pause for understanding checks before advancing.
+    label: '[Learn] World-Class Private Socratic Tutor'
+    comment: Patient, first-principles private tutor that adapts to your learning pace.
+    search_terms:
+      - learn
+  - trigger: :learn-20-80
+    replace: |
+      I want to learn [topic]. Teach me only the most important 20% - the part that helps me understand 80% of everything else.
+    label: '[Learn] Pareto 80/20 Knowledge Extractor'
+    comment: Isolates the vital 20% of concepts that account for 80% of practical competence.
+    search_terms:
+      - learn
+  - trigger: :auto-research-mode
+    replace: |
+      I'm writing a report on [topic]. Research everything and rewrite it for a complete beginner. Make it simple, correct, and easy to read.
+    label: '[Learn] Comprehensive Topic Research Engine'
+    comment: Researches any subject from primary sources and writes a comprehensive report.
+    search_terms:
+      - learn
+  - trigger: :skill-builder-30d
+    replace: |
+      I want to learn [skill] from zero. Create a 30-day, step-by-step plan that takes me from clueless to confident.
+    label: '[Learn] 30-Day Zero-to-One Skill Plan'
+    comment: Structured daily roadmap to take a beginner from zero to functional competence in 30 days.
+    search_terms:
+      - learn
+  - trigger: :quiz-test-understanding
+    replace: |
+      I'm studying [topic]. Ask me questions to test my understanding. Correct my answers, explain mistakes, and give examples so I improve fast.
+    label: '[Learn] Active Comprehension Quizzer'
+    comment: Tests understanding with probing conceptual and application questions.
+    search_terms:
+      - learn
+  - trigger: :goal-prompt-generator
+    replace: |
+      Create a ready-to-use prompt that helps me achieve [specific goal]. Make it short, powerful, and actionable.
+    label: '[Learn] Custom Goal Prompt Generator'
+    comment: Generates optimized AI prompts tailored to achieve specific personal or career goals.
+    search_terms:
+      - learn
+  - trigger: :topic-mastery-roadmap
+    replace: |
+      I want to get good at [topic]. Give me a simple mastery plan with clear steps, what to practice, and how long each stage takes.
+    label: '[Learn] End-to-End Topic Mastery Roadmap'
+    comment: Clear milestone roadmap detailing beginner, intermediate, and master milestones.
+    search_terms:
+      - learn
+  - trigger: :expert-problem-solver
+    replace: |
+      You're an expert in [field]. Walk me through how to solve [problem] with a direct, step-by-step approach.
+    label: '[Learn] Domain Expert Problem Solving Walkthrough'
+    comment: Walks through complex technical challenges with senior engineering discipline.
+    search_terms:
+      - learn
+  - trigger: :goal-idea-engine
+    replace: |
+      My goal is [insert goal]. Tell me which skills I need and give me practical ideas I can start using today to reach that goal.
+    label: '[Learn] Goal Skill Inventory & Action Engine'
+    comment: Determines exact prerequisite skills and projects needed to reach any goal.
+    search_terms:
+      - learn
+  - trigger: :fast-learning-path
+    replace: |
+      I want to master [TOPIC]. Before teaching me, find out what I already know, what I want to achieve, how much time I have, and how I prefer to learn. Then create the shortest practical learning path that builds real understanding instead of memorization. Teach one concept at a time, test my understanding before moving on, and adjust each lesson based on my progress.
+    label: '[Learn] Diagnostic Accelerated Learning Path'
+    comment: Assesses existing knowledge before formulating a customized high-velocity path.
+    search_terms:
+      - learn
+  - trigger: :personal-tutor-topic
+    replace: |
+      Act as my private tutor for [TOPIC]. Don't overwhelm me with information. Teach me one lesson at a time using simple explanations, practical examples, analogies, and short exercises. After each lesson, ask me questions that show whether I truly understand the concept. If not, explain it a different way before continuing.
+    label: '[Learn] First-Principles Topic Tutor'
+    comment: Breaks down complex subjects without overwhelming jargon or fluff.
+    search_terms:
+      - learn
+  - trigger: :first-principles-topic
+    replace: |
+      Teach me [TOPIC] from first principles. Cut out unnecessary jargon and assumptions. Start with the fundamentals, explain why each idea exists, then build up the topic step by step until I can explain it confidently in my own words.
+    label: '[Learn] First-Principles Knowledge Breakdown'
+    comment: Rebuilds understanding from ground-level foundational facts up.
+    search_terms:
+      - learn
+  - trigger: :memory-builder-longterm
+    replace: |
+      Help me remember [TOPIC] long-term. Turn every important concept into memorable analogies, mental models, visual descriptions, and recall questions. Schedule periodic review sessions throughout our conversation so it naturally reinforces what I've already learned.
+    label: '[Learn] Long-Term Retention & Spaced Memory Protocol'
+    comment: Converts key concepts into memory anchors and retention triggers.
+    search_terms:
+      - learn
+  - trigger: :expert-thinking-models
+    replace: |
+      Don't just teach me [TOPIC]. Teach me how experienced professionals think about it. Show me the mental models, common mistakes, hidden patterns, practical decision-making process, and real-world reasoning that experts use every day.
+    label: '[Learn] Expert Mental Models & Heuristics'
+    comment: Teaches how seasoned industry veterans think, evaluate trade-offs, and make decisions.
+    search_terms:
+      - learn
+  - trigger: :interactive-learning-engine
+    replace: |
+      Turn this conversation into an interactive classroom on [TOPIC]. Teach one concept, quiz me with questions, let me explain it back, identify misunderstandings immediately, and only increase the difficulty once I've shown real understanding.
+    label: '[Learn] Interactive Classroom Simulator'
+    comment: Transforms the AI chat into an interactive simulation with real-time feedback.
+    search_terms:
+      - learn
+  - trigger: :understand-like-a-genius
+    replace: |
+      I want to understand [TOPIC] as if I were a genius. Break down the concept using advanced analogies, real-world applications, counterexamples, and multiple perspectives, then test my understanding with expert-level questions.
+    label: '[Learn] Intuitive Genius Breakdown'
+    comment: Explains complex theoretical concepts using intuitive, simple mental models.
+    search_terms:
+      - learn
+  - trigger: :fast-skill-mastery
+    replace: |
+      Assume you're a master of [insert skill] with 20+ years of experience. Reverse engineer the process that got you there, and build me a day-by-day plan to reach that level as fast as humanly possible using only free or low-cost resources.
+    label: '[Learn] 20-Year Veteran Skill Accelerator'
+    comment: Synthesizes 20+ years of domain experience into key shortcuts and anti-patterns.
+    search_terms:
+      - learn
+  - trigger: :mental-blocks-habit-loop
+    replace: |
+      I've been struggling with [insert personal issue: procrastination, burnout, fear, etc.]. Analyze it like a cognitive scientist. Identify the root causes, the behavioural patterns behind it, and design a habit loop to eliminate it.
+    label: '[Learn] Habit Loop & Procrastination Deconstruction'
+    comment: Deconstructs triggers, routines, and rewards to overcome procrastination and burnout.
+    search_terms:
+      - learn
+  - trigger: :confusion-into-clarity
+    replace: |
+      I don't understand [insert complex concept]. Break it down step-by-step using metaphors, visual imagery, and real-world examples. Then create a mental shortcut or framework I can use to remember it forever.
+    label: '[Learn] Complex Concept Simplifier'
+    comment: Takes any confusing concept and breaks it down into clear, plain language.
+    search_terms:
+      - learn
+  - trigger: :phd-level-breakdown
+    replace: |
+      Teach me [insert topic] like I'm preparing for a PhD. Start from first principles, explain all foundational theories, include historical evolution, and give me key papers/books to go further.
+    label: '[Learn] PhD-Level Rigorous Deep Dive'
+    comment: Explains topics with academic rigor, mathematical foundations, and technical depth.
+    search_terms:
+      - learn
+  - trigger: :build-custom-mental-framework
+    replace: |
+      I'm trying to master [insert skill/topic]. Build me a custom mental model or decision framework that simplifies how to approach, evaluate, and improve in it over time like a pro would.
+    label: '[Learn] Custom Mental Model Synthesizer'
+    comment: Creates tailored decision models specifically designed for your unique problem.
+    search_terms:
+      - learn
+  - trigger: :upgrade-brain-30d
+    replace: |
+      Design a 30-day brain upgrade program that includes high-IQ thinking routines, mind-expanding prompts, advanced reading material, memory-enhancing techniques, and strategic rest habits. Keep it practical and time-efficient.
+    label: '[Learn] 30-Day Cognitive Enhancement Program'
+    comment: 30-day daily regimen of high-IQ thinking routines and mental clarity exercises.
+    search_terms:
+      - learn

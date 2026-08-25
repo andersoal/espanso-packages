@@ -37,7 +37,35 @@ matches:
     Springfield, ST 00000
 ```
 
-Use the YAML block scalar `|` to preserve line breaks exactly.
+Use the YAML block scalar `|` to preserve line breaks exactly. Avoid single-quoted multiline strings that lead to noisy `''` escaping.
+
+## Match Metadata: Label, Comment & Search Terms
+
+Espanso matches support built-in metadata properties:
+
+```yaml
+- trigger: :c-review
+  label: "[Engineering] Code Review & Quality Audit"
+  comment: "Conducts a 2-pass code review (quality standards + edge cases/risks)"
+  search_terms:
+    - engineering
+    - code review
+    - pr
+  form: |
+    Review this code for quality and correctness:
+    [[code]]
+```
+
+- `label`: Human-readable title displayed in the Espanso search bar (`Alt + Space`) and disambiguation popups. Convention: use `[Package Tag] Descriptive Title` so triggers are easily identifiable.
+- `comment`: Contextual description explaining the prompt's intent directly in YAML without modifying output.
+- `search_terms`: Search keywords/aliases used by Espanso's fuzzy search palette to find triggers by concept.
+
+## Schema Header Directive
+
+Always include the language server schema directive at the top of every match file:
+```yaml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+```
 
 ## Organizing match files
 

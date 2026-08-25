@@ -1,68 +1,121 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
 matches:
-  # Inserts a markdown code block
   - trigger: :md-code
-    replace: "```$|$\n```"
-
-  # Inserts markdown collapsable section
+    replace: |
+      ```$|$
+      ```
+    label: "[Markdown] Code Block (Syntax Highlighted)"
+    comment: "```$|$"
+    search_terms:
+      - md-formatting
+      - markdown
   - trigger: :md-collapse
-    replace: "\n<details>\n\t<summary>$|$</summary>\n\t<p></p>\n</details>"
-
-  # Outputs markdown link, with clipboard contents as the URL
-  - trigger: ":md-link"
+    replace: "\n<details>\n\t<summary>$|$</summary>\n\t<p></p>\n</details>\n"
+    label: "[Markdown] Collapsible Dropdown (<details>)"
+    comment: <details>
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :md-link
     replace: "[$|$]({{clipboard}})"
     vars:
-      - name: "clipboard"
-        type: "clipboard"
-
-  # Creates a HTML anchor element, with clipboard contents as href
-  - trigger: ":html-link"
-    replace: '<a href="{{clipboard}}" />$|$</a>'
+      - name: clipboard
+        type: clipboard
+    label: "[Markdown] Markdown Link [text](url)"
+    comment: "[$|$]({{clipboard}})"
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :html-link
+    replace: <a href="{{clipboard}}" />$|$</a>
     vars:
-      - name: "clipboard"
-        type: "clipboard"
-
-  # Outputs BB Code link, with clipboard contents as the URL
-  - trigger: ":bb-link"
+      - name: clipboard
+        type: clipboard
+    label: '[Markdown] HTML Hyperlink (<a href="...">)'
+    comment: <a href="{{clipboard}}" />$|$</a>
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :bb-link
     replace: "[url={{clipboard}}]$|$[/url]"
     vars:
-      - name: "clipboard"
-        type: "clipboard"
-
-  # Markdown syntax
-  # Outputs a bolded text placeholder
-  - trigger: ":b"
+      - name: clipboard
+        type: clipboard
+    label: "[Markdown] BBCode Link [url=...]...[/url]"
+    comment: "[url={{clipboard}}]$|$[/url]"
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :b
     replace: "**$|$**"
     word: true
-  # Outputs italicized text placeholder
-  - trigger: ":i"
+    label: "[Markdown] Bold Text (**text**)"
+    comment: "**$|$**"
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :i
     replace: "*$|$*"
     word: true
-  # Outputs underlined text placeholder
-  - trigger: ":u"
-    replace: "__$|$__"
+    label: "[Markdown] Italic Text (*text*)"
+    comment: "*$|$*"
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :u
+    replace: __$|$__
     word: true
-  # Outputs bold italicized text placeholder
-  - trigger: ":bi"
+    label: "[Markdown] Underline Text (__text__)"
+    comment: __$|$__
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :bi
     replace: "***$|$***"
     word: true
-  # Outputs bold underlined text placeholder
-  - trigger: ":bu"
-    replace: "__**$|$**__"
+    label: "[Markdown] Bold Italic (***text***)"
+    comment: "***$|$***"
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :bu
+    replace: __**$|$**__
     word: true
-  # Outputs italic underlined text placeholder
-  - trigger: ":iu"
-    replace: "__*$|$*__"
+    label: "[Markdown] Bold Underline (__**text**__)"
+    comment: __**$|$**__
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :iu
+    replace: __*$|$*__
     word: true
-  # Outputs bold italic underlined text placeholder
-  - trigger: ":biu"
+    label: "[Markdown] Italic Underline (__*text*__)"
+    comment: __*$|$*__
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :biu
     replace: "***__$|$__***"
     word: true
-  # Outputs inline code placeholder
-  - trigger: ":ci"
+    label: "[Markdown] Bold Italic Underline (***__text__***)"
+    comment: "***__$|$__***"
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :ci
     replace: "`$|$`"
     word: true
-  # Outputs code block placeholder
-  - trigger: ":cm"
+    label: "[Markdown] Code Block Single-line"
+    comment: "`$|$`"
+    search_terms:
+      - md-formatting
+      - markdown
+  - trigger: :cm
     replace: "```$|$```"
     word: true
+    label: "[Markdown] Code Block Multi-line"
+    comment: "```$|$```"
+    search_terms:
+      - md-formatting
+      - markdown

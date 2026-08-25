@@ -1,0 +1,420 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - triggers:
+      - :teach
+      - :learn
+      - :lesson
+    word: true
+    form: |
+      Let's work using the structured teaching workspace framework to master this topic across sessions.
+
+      **Topic / Subject to Learn:**
+      [[topic]]
+
+      **Real-World Goal / Mission (Why I need to learn this):**
+      [[mission]]
+
+      **My Current Skill Level:**
+      [[level]]
+
+      **Preferred Focus:**
+      [[focus]]
+
+      **Teaching Protocol:**
+      1. Ground all learning in `MISSION.md` and find primary sources for `RESOURCES.md`.
+      2. Keep within my Zone of Proximal Development (ZPD) — challenge just enough.
+      3. Create a clean, self-contained lesson in `./lessons/` with a single tangible win.
+      4. Prioritize *Storage Strength* (long-term retention) over mere transient *Fluency* via active retrieval, quizzes, or interactive feedback loops.
+      5. Capture compressed insights into `./learning-records/` and build the `./reference/` glossary.
+    form_fields:
+      topic:
+        multiline: true
+      mission:
+        multiline: true
+      level:
+        type: choice
+        values:
+          - Complete Beginner
+          - Intermediate (Know fundamentals)
+          - Advanced (Seeking mastery)
+      focus:
+        type: choice
+        values:
+          - Balanced (Theory + Hands-on)
+          - Hands-on Practice & Exercises
+          - Deep Architectural & Mental Models
+          - Quick Reference & Cheat Sheets
+    label: '[Agent Skills] Structured Workspace Learning Loop'
+    comment: Let's work using the structured teaching workspace framework to master this topic across sessions.
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :glossary
+      - :vocab
+    word: true
+    form: |
+      Help me define and compress this term into the canonical `GLOSSARY.md` format:
+
+      **Term / Concept:**
+      [[term]]
+
+      **Context / Domain:**
+      [[domain]]
+
+      **Draft Understanding:**
+      [[draft]]
+
+      **Requirements:**
+      - Provide a tight 1-2 sentence definition of what the term IS (not what it does).
+      - List imprecise/misleading aliases under "_Avoid_".
+      - Ensure opinionated, unambiguous language that can be referenced across lessons.
+    form_fields:
+      term:
+        default: ''
+      domain:
+        default: ''
+      draft:
+        multiline: true
+    label: '[Agent Skills] Canonical Vocabulary & Glossary Builder'
+    comment: 'Help me define and compress this term into the canonical `GLOSSARY.md` format:'
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :learning-record
+      - :record
+    word: true
+    form: |
+      Capture this key learning breakthrough into a structured learning record (`./learning-records/`):
+
+      **Topic / Breakthrough Insight:**
+      [[insight]]
+
+      **What surprised me / What was non-obvious:**
+      [[non_obvious]]
+
+      **Implications for future practice / next steps:**
+      [[implications]]
+    form_fields:
+      insight:
+        multiline: true
+      non_obvious:
+        multiline: true
+      implications:
+        multiline: true
+    label: '[Agent Skills] Learning Record & Insight Compressor'
+    comment: 'Capture this key learning breakthrough into a structured learning record (`./learning-records/`):'
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :tdd
+      - :tdd-loop
+    word: true
+    form: |
+      Let's work using strict Test-Driven Development (TDD) following the Red-Green-Refactor loop.
+
+      **Goal / Feature to Implement:**
+      [[goal]]
+
+      **Test Framework & Environment:**
+      [[framework]]
+
+      **Relevant Files / Paths:**
+      [[files]]
+
+      **Instructions:**
+      1. Write a focused, failing unit/integration test first. Do not implement production code yet.
+      2. Run the test and verify it fails for the expected reason (Red).
+      3. Write the minimum amount of code to make the test pass (Green).
+      4. Refactor for clarity and deep module seams while keeping tests green (Refactor).
+      5. Repeat step-by-step.
+    form_fields:
+      goal:
+        multiline: true
+      framework:
+        type: choice
+        values:
+          - Vitest
+          - Jest
+          - Playwright
+          - Pytest
+          - Go test
+          - Rust cargo test
+      files:
+        default: ''
+    label: '[Agent Skills] Test-Driven Development (Red-Green-Refactor Loop)'
+    comment: Let's work using strict Test-Driven Development (TDD) following the Red-Green-Refactor loop.
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :grill
+      - :grill-me
+    word: true
+    form: |
+      Please grill me relentlessly on this plan/design before we start building.
+
+      **Context / Problem Statement:**
+      [[context]]
+
+      **Proposed Plan / Design:**
+      [[proposal]]
+
+      **Grilling Focus:**
+      [[focus]]
+
+      **Instructions:**
+      - Attack my hidden assumptions and uncover edge cases.
+      - Probe technical debt, failure modes, scalability traps, and UX friction.
+      - Ask one penetrating question at a time or provide a numbered list of critical vulnerabilities.
+      - Do not hold back or flatter; help me stress-test this proposal completely.
+    form_fields:
+      context:
+        multiline: true
+      proposal:
+        multiline: true
+      focus:
+        type: choice
+        values:
+          - Architecture & Modularity
+          - Performance & Scalability
+          - Failure Modes & Edge Cases
+          - Simplicity & Interface Design
+          - Comprehensive (All Axes)
+    label: '[Agent Skills] Relentless Design & Plan Grilling'
+    comment: Please grill me relentlessly on this plan/design before we start building.
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :review
+      - :codereview
+      - :code-review
+    word: true
+    form: |
+      Please perform a thorough code review across two distinct axes:
+
+      **1. Spec Alignment:** Does this change deliver what was requested without regressions or omissions?
+      **2. Code Standards:** Does it adhere to codebase conventions, idiomatic typing, error handling, and clean modular seams?
+
+      **Scope / Commits / PR Target:**
+      [[target]]
+
+      **Original Spec / User Intent:**
+      [[spec]]
+
+      **Code / Diff to Review:**
+      [[code]]
+    form_fields:
+      target:
+        default: Current branch / working tree
+      spec:
+        multiline: true
+      code:
+        multiline: true
+    label: '[Agent Skills] Code Review (Standards & Specification Axes)'
+    comment: 'Please perform a thorough code review across two distinct axes:'
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :diag
+      - :diagnose
+    word: true
+    form: |
+      Help me systematically diagnose and fix this bug without guessing.
+
+      **Observed Symptom / Error Message:**
+      [[error]]
+
+      **Expected Behavior:**
+      [[expected]]
+
+      **Steps to Reproduce / Reproduction Environment:**
+      [[reproduce]]
+
+      **Suspected Files or Clues:**
+      [[files]]
+
+      **Process:**
+      1. Isolate the minimal reproduction case.
+      2. Formulate 2-3 hypotheses ranked by plausibility.
+      3. Propose targeted verification probes/tests for the top hypothesis before writing the fix.
+    form_fields:
+      error:
+        multiline: true
+      expected:
+        multiline: true
+      reproduce:
+        multiline: true
+      files:
+        default: ''
+    label: '[Agent Skills] Root Cause Bug Diagnosis & Failure Loop'
+    comment: Help me systematically diagnose and fix this bug without guessing.
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :wayfinder
+      - :wf
+    word: true
+    form: |
+      Let's use the Wayfinder workflow to map and break down this large ambiguous initiative into incremental investigation units.
+
+      **High-Level Goal / Problem Domain:**
+      [[goal]]
+
+      **Known Constraints / Current State:**
+      [[constraints]]
+
+      **Action Required:**
+      1. Map out the unknowns and architectural risks as a graph of concrete investigation tickets.
+      2. Identify the critical path and the first high-leverage ticket to tackle.
+      3. Define explicit "Done" criteria for each step.
+    form_fields:
+      goal:
+        multiline: true
+      constraints:
+        multiline: true
+    label: '[Agent Skills] Wayfinder Project Investigation Ticket Map'
+    comment: Let's use the Wayfinder workflow to map and break down this large ambiguous initiative into incremental investigation un
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :refactor
+      - :refactor-plan
+    word: true
+    form: |
+      Help me create a detailed, safe refactoring plan broken down into tiny verifiable commits.
+
+      **Current Code / Problematic Area:**
+      [[current]]
+
+      **Desired Target Architecture / Goal:**
+      [[target]]
+
+      **Safety Guardrails:**
+      - Each step must compile, pass existing tests, and keep the system functional.
+      - Use parallel implementations with feature flags or adapter seams where appropriate.
+      - List explicit verification commands for each step.
+    form_fields:
+      current:
+        multiline: true
+      target:
+        multiline: true
+    label: '[Agent Skills] Incremental Safe Refactor Plan Interview'
+    comment: Help me create a detailed, safe refactoring plan broken down into tiny verifiable commits.
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :design
+      - :design-api
+      - :design-ui
+    word: true
+    form: |
+      Let's design the interface/API for this module. Follow the "Design it twice" principle by generating 3 radically different approaches.
+
+      **Module Responsibility:**
+      [[responsibility]]
+
+      **Key Callers / Usage Context:**
+      [[callers]]
+
+      **For each approach, provide:**
+      - Minimal, expressive type signatures / API calls.
+      - Trade-offs in DX, cognitive load, testability, and future extensibility.
+      - Recommendation on the best fit with justification.
+    form_fields:
+      responsibility:
+        multiline: true
+      callers:
+        multiline: true
+    label: '[Agent Skills] Let''S Design The Interface/Api For This Module'
+    comment: Let's design the interface/API for this module. Follow the "Design it twice" principle by generating 3 radically differe
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :handoff
+      - :session-handoff
+    word: true
+    form: |
+      Generate a compact session handoff document summarizing our work for the next AI session.
+
+      **Session Summary:**
+      - **Objective:** [[objective]]
+      - **Completed in this session:** [[completed]]
+      - **Current State & Blocking Issues:** [[state]]
+      - **Immediate Next Steps:** [[next_steps]]
+      - **Key Files & Touchpoints:** [[files]]
+    form_fields:
+      objective:
+        default: ''
+      completed:
+        multiline: true
+      state:
+        multiline: true
+      next_steps:
+        multiline: true
+      files:
+        default: ''
+    label: '[Agent Skills] Handoff'
+    comment: Generate a compact session handoff document summarizing our work for the next AI session.
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :askmatt
+      - :ask-matt
+    word: true
+    form: |
+      Explain this TypeScript / software architecture challenge using Matt Pocock's signature high-clarity style (mental models, practical code examples, and trade-offs):
+
+      **Topic / Question:**
+      [[topic]]
+
+      **Code Example / Context:**
+      [[context]]
+    form_fields:
+      topic:
+        multiline: true
+      context:
+        multiline: true
+    label: '[Agent Skills] Askmatt'
+    comment: Explain this TypeScript / software architecture challenge using Matt Pocock's signature high-clarity style (mental model
+    search_terms:
+      - mattpocock-skills
+      - agent skills
+  - triggers:
+      - :audit
+      - :skill-audit
+    word: true
+    form: |
+      Please audit this agent skill against high-performance skill standards:
+
+      **Skill Name / File:**
+      [[skill_name]]
+
+      **Skill Content / Frontmatter:**
+      [[skill_content]]
+
+      **Evaluation Criteria:**
+      1. Trigger reliability & description precision (does it trigger appropriately without false positives?).
+      2. Context efficiency (is it lean or wasteful with tokens?).
+      3. Deep task leverage (does it give the model actionable workflows rather than generic platitudes?).
+      4. Verification loop (does it include concrete verification mechanisms?).
+    form_fields:
+      skill_name:
+        default: ''
+      skill_content:
+        multiline: true
+    label: '[Agent Skills] Audit'
+    comment: 'Please audit this agent skill against high-performance skill standards:'
+    search_terms:
+      - mattpocock-skills
+      - agent skills

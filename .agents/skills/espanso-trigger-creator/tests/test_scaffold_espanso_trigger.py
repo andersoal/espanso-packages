@@ -21,6 +21,7 @@ class TestScaffoldEspansoTrigger(unittest.TestCase):
         args = argparse.Namespace(
             type="simple",
             trigger=":hi",
+            triggers="",
             replace="Hello there",
             regex="",
             var_name="output",
@@ -31,10 +32,26 @@ class TestScaffoldEspansoTrigger(unittest.TestCase):
         self.assertIn('trigger: ":hi"', scaffold)
         self.assertIn('replace: "Hello there"', scaffold)
 
+    def test_scaffold_multiple_triggers(self):
+        args = argparse.Namespace(
+            type="simple",
+            trigger="",
+            triggers=":sig,:signature",
+            replace="Jane Doe",
+            regex="",
+            var_name="output",
+            cmd="echo 'hello'",
+            fields="name,topic",
+        )
+        scaffold = generate_scaffold(args)
+        self.assertIn('triggers: [":sig", ":signature"]', scaffold)
+        self.assertIn('replace: "Jane Doe"', scaffold)
+
     def test_scaffold_regex(self):
         args = argparse.Namespace(
             type="regex",
             trigger="",
+            triggers="",
             replace="Hey {{person}}, welcome!",
             regex=r":greet\((?P<person>.*)\)",
             var_name="output",

@@ -134,7 +134,7 @@ matches:
       - finance
   - trigger: :ib-prompts-intro
     replace: |
-      BREAKING: AI CAN NOW BUILD FINANCIAL MODELS LIKE GOLDMAN SACHS ANALYSTS (FOR FREE). HERE ARE 12 CLAUDE PROMPTS THAT REPLACE $150K/YEAR INVESTMENT BANKING WORK (SAVE FOR LATER):
+      BREAKING: AI CAN NOW BUILD FINANCIAL MODELS LIKE GOLDMAN SACHS ANALYSTS (FOR FREE). HERE ARE 12 AI PROMPTS THAT REPLACE $150K/YEAR INVESTMENT BANKING WORK (SAVE FOR LATER):
     label: '[Finance] Investment Banking Financial Modeler Intro'
     comment: Goldman Sachs-style financial modeling framework for valuation and analysis.
     search_terms:

@@ -26,6 +26,28 @@ matches:
         self.assertEqual(errors, [])
         self.assertEqual(warnings, [])
 
+    def test_valid_triggers_flow_array(self):
+        content = """
+matches:
+  - triggers: [":sig", ":signature"]
+    replace: "Jane Doe | jane@example.com"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
+    def test_valid_triggers_block_array(self):
+        content = """
+matches:
+  - triggers:
+      - ":email"
+      - ":mail"
+    replace: "jane@example.com"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
     def test_valid_regex_trigger(self):
         content = """
 matches:

@@ -11,12 +11,27 @@ matches:
 - `trigger`: the exact string typed that fires the expansion. Convention: prefix with `:` since it's rare in normal English typing — but it's not required.
 - `replace`: what gets typed in its place.
 
-## Multiple triggers, one replacement
+## Multiple triggers, one replacement (YAML array / list)
 
+When you want multiple shortcuts or aliases to expand to the same replacement, use `triggers:` (plural) with a YAML array/sequence.
+
+**Flow sequence (inline array):**
 ```yaml
 - triggers: [":sig", ":signature"]
   replace: "Jane Doe | jane@example.com"
 ```
+
+**Block sequence (multi-line list):**
+```yaml
+- triggers:
+    - ":sig"
+    - ":signature"
+    - ":sign"
+  replace: "Jane Doe | jane@example.com"
+```
+
+Both styles are valid YAML and fully supported by Espanso. Use inline arrays for short 2-3 item lists and indented block lists when there are many aliases.
+
 
 ## Word-boundary matching (typo autocorrect)
 

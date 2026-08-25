@@ -480,7 +480,7 @@ matches:
       - learn
   - trigger: :success-strategy-cover
     replace: |
-      1 CLAUDE PROMPT WASHINGTON DECIDES. turns a success strategy into a repeatable system.
+      1 AI PROMPT WASHINGTON DECIDES. turns a success strategy into a repeatable system.
     label: '[Learn] Strategy Decomposition: Framework Intro'
     comment: Introduction to the Washington Decides recursive strategy extraction method.
     search_terms:
@@ -554,7 +554,7 @@ matches:
       - learn
   - trigger: :learning-illegal-intro
     replace: |
-      BREAKING: I INSTALLED A "BRAIN" IN CLAUDE FABLE 5, AND IT STARTED TEACHING ME THINGS I DIDN'T KNOW EXISTED. HERE ARE 7 PROMPTS THAT MAKE LEARNING FEEL ILLEGAL: (SAVE THIS)
+      BREAKING: I INSTALLED A "BRAIN" IN ADVANCED AI, AND IT STARTED TEACHING ME THINGS I DIDN'T KNOW EXISTED. HERE ARE 7 PROMPTS THAT MAKE LEARNING FEEL ILLEGAL: (SAVE THIS)
     label: '[Learn] High-Speed Learning Engine Intro'
     comment: Introduction to fast-track cognitive mastery and knowledge acquisition frameworks.
     search_terms:

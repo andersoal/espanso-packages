@@ -449,7 +449,7 @@ matches:
       - thinking prompts
   - trigger: :sun-tzu-mode-info
     replace: |
-      Claude has a secret mode called "Sun Tzu Strategy Master." It runs every decision through 2,500 years of strategy doctrine.
+      AI models can adopt specialized strategic frameworks like "Sun Tzu Strategy Master" to run decisions through 2,500 years of strategy doctrine.
     label: '[Thinking Prompts] Sun Tzu Art of War Framework Overview'
     comment: Strategic warfare principles applied to negotiation, competition, and timing.
     search_terms:
@@ -465,7 +465,7 @@ matches:
       - thinking prompts
   - trigger: :decision-intelligence-intro
     replace: |
-      BREAKING: CLAUDE HAS A FEATURE CALLED DECISION INTELLIGENCE MODE. YOU CAN USE IT TO SOLVE ANY BUSINESS OR CAREER PROBLEM USING 7 PROVEN FRAMEWORKS THAT CONSULTANTS CHARGE $500/HOUR TO APPLY. HERE ARE 7 PROMPTS TO ACCESS IT:
+      BREAKING: ADVANCED AI MODELS FEATURE DECISION INTELLIGENCE FRAMEWORKS. YOU CAN USE THEM TO SOLVE ANY BUSINESS OR CAREER PROBLEM USING 7 PROVEN FRAMEWORKS THAT CONSULTANTS CHARGE $500/HOUR TO APPLY. HERE ARE 7 PROMPTS TO ACCESS IT:
     label: '[Thinking Prompts] Decision Intelligence Framework Overview'
     comment: Overview of structured decision intelligence for navigating high-stakes uncertainty.
     search_terms:
@@ -531,7 +531,7 @@ matches:
       - thinking prompts
   - trigger: :outwork-goggins-intro
     replace: |
-      CLAUDE CAN NOW BUILD YOUR BUSINESS LIKE DAVID GOGGINS BUILT HIS $20M EMPIRE BY OUTWORKING EVERYONE WHO EVER DOUBTED HIM. FOR FREE
+      AI CAN NOW HELP BUILD YOUR BUSINESS LIKE DAVID GOGGINS BUILT HIS $20M EMPIRE BY OUTWORKING EVERYONE WHO EVER DOUBTED HIM. FOR FREE
     label: '[Thinking Prompts] Goggins Mental Resilience Framework Overview'
     comment: Introduction to applying extreme mental callousness and relentless work ethic.
     search_terms:

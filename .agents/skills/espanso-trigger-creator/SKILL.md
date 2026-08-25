@@ -43,7 +43,8 @@ Match files live in `match/` inside that root (`base.yml` by default). If the us
 
 | User wants... | Use | Reference |
 |---|---|---|
-| Fixed text → fixed output | Plain `trigger`/`replace` | [references/basics.md](references/basics.md) |
+| Fixed text → fixed output | Plain `trigger` or `triggers` (array) / `replace` | [references/basics.md](references/basics.md) |
+| Multiple shortcuts / aliases for same output | `triggers:` (flow `[...]` or block list) | [references/basics.md](references/basics.md) |
 | Output depends on typed input | `regex` match with capture groups | [references/regex-and-vars.md](references/regex-and-vars.md) |
 | Prompt a dialog for input | `form` | [references/forms.md](references/forms.md) |
 | Run a command / compute something | `shell` var | [references/shell-and-automation.md](references/shell-and-automation.md) |
@@ -58,6 +59,19 @@ Plain text:
 ```yaml
 - trigger: ":sig"
   replace: "Jane Doe | jane@example.com | (555) 867-5309"
+```
+
+Multiple triggers (aliases / YAML array):
+```yaml
+# Flow sequence (inline array)
+- triggers: [":sig", ":signature"]
+  replace: "Jane Doe | jane@example.com"
+
+# Block sequence (indented list)
+- triggers:
+    - ":email"
+    - ":mail"
+  replace: "jane@example.com"
 ```
 
 Built-in date var:

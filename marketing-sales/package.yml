@@ -640,9 +640,9 @@ matches:
     search_terms:
       - marketing-sales
       - marketing & sales
-  - trigger: :claude-nocode-intro
+  - trigger: :nocode-intro
     replace: |
-      Claude can now create software that makes money while you sleep, with no need to code. And for free.
+      AI can now create software that makes money while you sleep, with no need to code. And for free.
     label: '[Marketing & Sales] No-Code Software Revenue Generation Intro'
     comment: Framework for launching micro-SaaS tools and profitable digital assets.
     search_terms:

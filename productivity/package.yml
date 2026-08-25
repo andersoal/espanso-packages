@@ -777,7 +777,7 @@ matches:
       2. Prompt Architecture
       - Teach how to layer prompts using role, goal, constraints, and format.
       - Demonstrate modular structures like XML blocks, JSON schemas, and paragraph frameworks.
-      - Compare tone and syntax effects on different models (Claude, ChatGPT, Gemini, Grok, Perplexity).
+      - Compare tone and syntax effects on different AI models and runtime settings.
       3. Applied Practice
       - Ask for a task or domain (e.g., research, content creation, data analysis).
       - Build an optimized prompt for that task.
@@ -846,15 +846,15 @@ matches:
       - productivity
   - trigger: :build-persona
     replace: |
-      I want to build a custom Claude persona for my business.
+      I want to build a custom AI persona for my business.
       Ask me 5 questions to understand:
       - How I communicate
       - Who my clients are and what they need
       - What my non-negotiables are in any output
       - What makes my voice distinct
-      - What I never want Claude to do when writing as me
+      - What I never want the AI to do when writing as me
 
-      After I answer - write a complete persona instruction I paste into a Claude Project. It should make every response sound like me without me explaining myself every time.
+      After I answer - write a complete persona instruction I paste into a system prompt or project context. It should make every response sound like me without me explaining myself every time.
     label: '[Productivity] Custom AI Business Persona Architect'
     comment: Builds customized tone, knowledge boundary, and behavioral guidelines for an AI bot.
     search_terms:
@@ -868,15 +868,15 @@ matches:
       02. Confidence Audit — separate knowing from guessing
       03. Save your best workflow — never rebuild from scratch
       04. Extended Thinking — for decisions that actually matter
-      05. Custom persona — Claude that sounds like you always
+      05. Custom persona — AI that sounds like you always
     label: '[Productivity] 5-Minute Quick-Win Productivity Prompts'
     comment: Curated rapid prompts to automate immediate daily tasks in 5 minutes.
     search_terms:
       - productivity
-  - trigger: :claude-time-saver-cover
+  - trigger: :ai-time-saver-cover
     replace: |
-      5 things you can do with Claude in the next 5 minutes that will save you 10 hours this week. Try them now and save them
-    label: '[Productivity] Claude Time-Saver Framework Intro'
-    comment: Introduction to time-saving automation hacks with Claude.
+      5 things you can do with AI in the next 5 minutes that will save you 10 hours this week. Try them now and save them
+    label: '[Productivity] AI Time-Saver Framework Intro'
+    comment: Introduction to time-saving automation hacks with AI.
     search_terms:
       - productivity

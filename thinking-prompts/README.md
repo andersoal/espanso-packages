@@ -21,7 +21,7 @@ Inspired by [SAINT NULL's Thinking Toolkit](https://www.tiktok.com/@saint.null).
 
 ## How to Use
 
-Each trigger expands into a structured prompt you can paste into any AI chat (ChatGPT, Claude, etc.).
+Each trigger expands into a structured prompt you can paste into any AI chat or assistant interface.
 
 - **Interactive forms** (`:think-snap`, `:think-destroy`, `:think-borrow`, `:think-learn`, `:think-blocks`, `:think-insight`, `:think-decode`, `:think-vision`, `:think-blind`) will open a dialog asking for your specific context.
 - **Static prompts** (`:think-mirror`) work immediately based on conversation history.

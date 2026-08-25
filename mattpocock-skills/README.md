@@ -46,7 +46,7 @@ Type these double-slash shortcuts when you just want the fast slash command in a
 | `//domain` | `/domain-modeling ` | Domain modeling & ubiquitous language |
 | `//proto` | `/prototype ` | Throwaway design prototype |
 | `//qa` | `/qa ` | Interactive QA & bug filing |
-| `//handoff` | `/claude-handoff ` | Session state handoff summary |
+| `//handoff` | `/handoff ` | Session state handoff summary |
 | `//research` | `/research ` | High-trust primary source investigation |
 | `//audit` | `/skill-auditor ` | Audit and health-check agent skills |
 | `//prd` | `/to-prd ` | Turn notes / discussions into PRD |

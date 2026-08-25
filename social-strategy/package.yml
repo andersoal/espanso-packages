@@ -661,12 +661,12 @@ matches:
   search_terms:
   - social-strategy
   - social strategy
-- trigger: :claude-content-hook
-  replace: 'BYE-BYE SOCIAL MEDIA MANAGERS IN 2026. I USE CLAUDE TO DESIGN, EDIT, AND SCHEDULE 30 DAYS OF CONTENT IN 2 HOURS. HERE ARE 7 PROMPTS THAT CAN DO THE SAME FOR YOU:
+- trigger: :content-hook
+  replace: 'BYE-BYE SOCIAL MEDIA MANAGERS IN 2026. I USE AI TO DESIGN, EDIT, AND SCHEDULE 30 DAYS OF CONTENT IN 2 HOURS. HERE ARE 7 PROMPTS THAT CAN DO THE SAME FOR YOU:
 
     '
   label: '[Social Strategy] Viral Social Media Content Engine Intro'
-  comment: Introduction to automated viral social media copywriting with Claude.
+  comment: Introduction to automated viral social media copywriting with AI.
   search_terms:
   - social-strategy
   - social strategy

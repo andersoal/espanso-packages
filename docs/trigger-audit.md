@@ -2,7 +2,7 @@
 
 *Audit date: 2026-07-05. Scope: every `*/package.yml` (739 triggers across 14 packages, `_example-package` excluded).*
 
-The audit found three classes of problems: **exact duplicate triggers** (21 triggers defined 2–3 times, several with conflicting content), **prefix shadowing** (113 pairs where a short trigger without `word: true` fires the moment it is typed, making every longer trigger it prefixes untypeable), and **2 regex patterns declared with the `trigger:` key** (regex matches require the `regex:` key in espanso).
+The audit found three classes of problems: **exact duplicate triggers** (21 triggers defined 2-3 times, several with conflicting content), **prefix shadowing** (113 pairs where a short trigger without `word: true` fires the moment it is typed, making every longer trigger it prefixes untypeable), and **2 regex patterns declared with the `trigger:` key** (regex matches require the `regex:` key in espanso).
 
 All issues are fixed. The audit now reports: **711 triggers, no duplicates or shadowing.** Re-run it anytime with:
 

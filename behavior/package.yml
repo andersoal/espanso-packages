@@ -4,52 +4,80 @@ matches:
   - trigger: :pshatter
     form: |
       I am staring at "[[task]]" and can't start. Break this down into 'Ridiculously Small' steps that take less than 1 minute each. Give me the first step and tell me exactly where to put my hands to begin.
-    label: '[Behavior] Task Shatter (Overcome ADHD Inertia)'
+    label: "[Behavior] Task Shatter (Overcome ADHD Inertia)"
     comment: Breaks an intimidating task into tiny micro-steps to overcome starting paralysis.
     search_terms:
       - behavior
+      - adhd
+      - inertia
+      - task-breakdown
+      - micro-steps
+
   - trigger: :pmenu
     replace: |
       I am feeling under-stimulated. Create a 'Dopamine Menu' for me with 5-minute 'Appetizers' (quick movement), 20-minute 'Entrees' (deep work), and 10-minute 'Sides' (creative play) to keep my brain engaged.
-    label: '[Behavior] Dopamine Menu (ADHD Stimulation)'
+    label: "[Behavior] Dopamine Menu (ADHD Stimulation)"
     comment: Creates a categorized menu of quick, low-friction dopamine boosters to regain focus.
     search_terms:
       - behavior
+      - adhd
+      - dopamine-menu
+      - stimulation
+      - focus
+
   - trigger: :pdouble
     form: |
       Act as my virtual body double for the next 30 minutes. I am currently working on: [[current_focus]]. Check in every 10 minutes to ask for a status update and keep my focus anchored.
-    label: '[Behavior] Virtual Body Doubling (30m Focus)'
+    label: "[Behavior] Virtual Body Doubling (30m Focus)"
     comment: Acts as a virtual body double for an accountable 30-minute focus block.
     search_terms:
       - behavior
+      - adhd
+      - body-doubling
+      - accountability
+      - focus-block
+
   - trigger: :pswitch
     form: |
       I just finished "[[task_a]]" and need to start "[[task_b]]", but my brain is stuck. Design a 3-minute 'Mental Palace Cleanser' routine to help me transition between these two different types of energy.
-    label: '[Behavior] Task Switch & Context Reset'
+    label: "[Behavior] Task Switch & Context Reset"
     comment: Helps the brain transition cleanly between different cognitive contexts.
     search_terms:
       - behavior
+      - adhd
+      - context-switch
+      - transition
+      - mental-reset
+
   - trigger: :pgamify
     form: |
       I have a boring administrative task: [[task]]. Help me gamify this by connecting it to my current hyper-fixation: [[interest]]. Create a 'Quest' structure where finishing the task unlocks a reward.
-    label: '[Behavior] Gamify Boring Admin Tasks'
+    label: "[Behavior] Gamify Boring Admin Tasks"
     comment: Transforms repetitive administrative tasks into an engaging point/reward game.
     search_terms:
       - behavior
+      - adhd
+      - gamification
+      - quest
+      - motivation
+
   - trigger: :paudit
     form: |
       I think "[[project]]" will take [[estimated_time]], but it usually takes [[historical_reality]]. Help me 'Time-Map' this by identifying the 3 hidden sub-tasks I always forget to account for so I can set a realistic deadline.
     form_fields:
       estimated_time:
-        type: text
         default: 20 minutes
       historical_reality:
-        type: text
         default: 2 hours
-    label: '[Behavior] ADHD Time-Blindness Reality Audit'
+    label: "[Behavior] ADHD Time-Blindness Reality Audit"
     comment: Audits estimated vs actual task durations to combat time blindness.
     search_terms:
       - behavior
+      - adhd
+      - time-blindness
+      - audit
+      - planning
+
   - trigger: :ploops
     form: |
       My brain is full of 'Open Loops.' I will dump everything I'm worried about below. Categorize these into 'Now,' 'Later,' and 'Trash,' and then write a 1-sentence 'Actionable Next Step' for only the 'Now' items.
@@ -58,12 +86,17 @@ matches:
       [[raw_dump]]
     form_fields:
       raw_dump:
-        type: multiline
-    label: '[Behavior] My Brain Is Full Of ''Open Loops'
-    comment: 'My brain is full of ''Open Loops.'' I will dump everything I''m worried about below. Categorize these into ''Now,'' ''Later,'' '
+        multiline: true
+    label: "[Behavior] My Brain Is Full Of 'Open Loops'"
+    comment: "Categorizes raw open loops into Now, Later, and Trash with immediate next actions to close mental clutter."
     search_terms:
       - behavior
-  - trigger: :chapter-7-rules
+      - adhd
+      - open-loops
+      - brain-dump
+      - clarity
+
+  - trigger: :34-psychology-tricks-chapter-7-rules
     replace: |
       CHAPTER - 7
 
@@ -79,11 +112,15 @@ matches:
       28. When someone blames you unfairly, ask:
       "What makes you think that?"
       It shifts the burden of proof back to them.
-    label: '[Behavior] Psychology Rules: Strategic Unpredictability'
+    label: "[Behavior] Psychology Rules: Strategic Unpredictability"
     comment: Maintaining tactical advantage through unpredictable timing and flexibility.
     search_terms:
       - behavior
-  - trigger: :chapter-6-rules
+      - psychology
+      - unpredictability
+      - manipulation-defense
+
+  - trigger: :34-psychology-tricks-chapter-6-rules
     replace: |
       CHAPTER - 6
 
@@ -99,11 +136,15 @@ matches:
 
       24. Don't let praise blind you.
       Flattery is often a leash disguised as affection.
-    label: '[Behavior] Psychology Rules: Behavior Over Words'
+    label: "[Behavior] Psychology Rules: Behavior Over Words"
     comment: Reading behavioral actions rather than stated intentions to assess character.
     search_terms:
       - behavior
-  - trigger: :chapter-3-rules
+      - psychology
+      - behavior-over-words
+      - character
+
+  - trigger: :34-psychology-tricks-chapter-3-rules
     replace: |
       CHAPTER - 3
 
@@ -118,11 +159,15 @@ matches:
 
       12. If someone tries to guilt-trip you, ask: "What do you need me to do?"
       It forces them to admit the manipulation out loud.
-    label: '[Behavior] Psychology Rules: Verbal Mirroring'
+    label: "[Behavior] Psychology Rules: Verbal Mirroring"
     comment: Using exact word repetition to build trust and disarm resistance.
     search_terms:
       - behavior
-  - trigger: :chapter-8-rules
+      - psychology
+      - verbal-mirroring
+      - de-escalation
+
+  - trigger: :34-psychology-tricks-chapter-8-rules
     replace: |
       CHAPTER - 8
 
@@ -137,11 +182,15 @@ matches:
 
       32. Notice how people react when you win.
       Joy reveals allies; discomfort reveals hidden envy.
-    label: '[Behavior] Psychology Rules: The Power of Walking Away'
+    label: "[Behavior] Psychology Rules: The Power of Walking Away"
     comment: Establishing negotiation leverage by holding a credible willingness to walk away.
     search_terms:
       - behavior
-  - trigger: :chapter-1-rules
+      - psychology
+      - walking-away
+      - negotiation-leverage
+
+  - trigger: :34-psychology-tricks-chapter-1-rules
     replace: |
       CHAPTER - 1
 
@@ -156,11 +205,15 @@ matches:
 
       4. Delay your reactions.
       Pausing for even 5 seconds before replying breaks emotional traps instantly.
-    label: '[Behavior] Psychology Rules: Emotional Composure & Control'
+    label: "[Behavior] Psychology Rules: Emotional Composure & Control"
     comment: Rules for maintaining emotional detachment and authority under social pressure.
     search_terms:
       - behavior
-  - trigger: :chapter-2-rules
+      - psychology
+      - emotional-control
+      - composure
+
+  - trigger: :34-psychology-tricks-chapter-2-rules
     replace: |
       CHAPTER - 2
 
@@ -175,18 +228,28 @@ matches:
 
       8. Never argue with someone playing victim.
       They don't want truth, they want sympathy and power. Walk away.
-    label: '[Behavior] Psychology Rules: Strategic Questioning'
+    label: "[Behavior] Psychology Rules: Strategic Questioning"
     comment: Techniques for controlling conversations by asking targeted questions.
     search_terms:
       - behavior
+      - psychology
+      - strategic-questioning
+      - body-language
+
   - trigger: :34-psychology-tricks
+    word: true
     replace: |
       NO ONE CAN EVER CONTROL YOU IF YOU LEARN THESE 34 PSYCHOLOGY TRICKS
-    label: '[Behavior] 34 Power Psychology & Persuasion Tricks'
+    label: "[Behavior] 34 Power Psychology & Persuasion Tricks"
     comment: Comprehensive behavioral psychology principles for influence, negotiation, and composure.
     search_terms:
       - behavior
-  - trigger: :chapter-4-rules
+      - psychology
+      - persuasion
+      - influence
+      - composure
+
+  - trigger: :34-psychology-tricks-chapter-4-rules
     replace: |
       CHAPTER - 4
 
@@ -201,11 +264,15 @@ matches:
 
       16. Don't defend your boundaries just enforce them.
       Explaining boundaries invites debate. Quiet consistency commands respect.
-    label: '[Behavior] Psychology Rules: Managing Difficult Personalities'
+    label: "[Behavior] Psychology Rules: Managing Difficult Personalities"
     comment: Strategic framing and boundary setting when dealing with manipulative actors.
     search_terms:
       - behavior
-  - trigger: :chapter-9-rules
+      - psychology
+      - boundaries
+      - difficult-personalities
+
+  - trigger: :34-psychology-tricks-chapter-9-rules
     replace: |
       CHAPTER - 9
 
@@ -214,11 +281,17 @@ matches:
 
       34. Learn to enjoy solitude.
       Once you stop needing constant company, no one can ever manipulate your loneliness again.
-    label: '[Behavior] Psychology Rules: Emotional Independence'
+    label: "[Behavior] Psychology Rules: Emotional Independence"
     comment: Cultivating internal validation and making decisions free from social pressure.
     search_terms:
       - behavior
-  - trigger: :success-rules-ch5
+      - psychology
+      - emotional-independence
+      - solitude
+
+  - triggers:
+      - :34-psychology-tricks-chapter-5-rules
+      - :34-psychology-tricks-success-rules-ch5
     replace: |
       CHAPTER - 5
 
@@ -233,7 +306,11 @@ matches:
 
       20. Use silence as a weapon of peace.
       Responding less often doesn't make you cold it makes you unpredictable.
-    label: '[Behavior] Psychology Rules: Mirroring Calm Energy'
+    label: "[Behavior] Psychology Rules: Mirroring Calm Energy"
     comment: Techniques for de-escalating tension by projecting grounded composure.
     search_terms:
       - behavior
+      - psychology
+      - calm-energy
+      - confidence
+

@@ -124,7 +124,7 @@ This is reactive, single-trigger troubleshooting. For a full audit or cleanup pa
 Use this when the user asks to "review," "audit," "clean up," "rewrite," or "improve" an existing match file (or pastes a large/established config without a specific single bug) — not just when one trigger misbehaves.
 
 1. **Inventory first.** Read the whole file (or all pasted files) before commenting on anything. Note every `trigger`/`triggers`/`regex` value as you go — you need the full list to catch cross-match problems in step 3.
-2. **Per-match checklist.** For each match entry, run it against [references/patterns-and-pitfalls.md](references/patterns-and-pitfalls.md)'s debugging checklist (items 1–5: indentation, trigger/regex collision, unresolved placeholders, `word: true` correctness, shell var hygiene).
+2. **Per-match checklist.** For each match entry, run it against [references/patterns-and-pitfalls.md](references/patterns-and-pitfalls.md)'s debugging checklist (items 1-5: indentation, trigger/regex collision, unresolved placeholders, `word: true` correctness, shell var hygiene).
 3. **Cross-file/cross-match checks** (these need the full inventory, not just one match at a time):
    - Duplicate or shadowing triggers across matches/files (checklist item 7).
    - Inconsistent conventions — mixed `:`-prefix usage, inconsistent quoting style, some triggers using `triggers:` (plural) where others use `trigger:` for the same kind of shortcut.

@@ -17,10 +17,11 @@ matches:
     form_fields:
       resume:
         type: multiline
-    label: '[Career] Technical Resume & ATS Optimizer'
+    label: "[Career] Technical Resume & ATS Optimizer"
     comment: Rewrites resume bullet points to pass ATS filters and highlight technical impact.
     search_terms:
       - career
+
   - trigger: :p_fitcheck
     form: |
       Act as an elite executive talent scout and market analyst.
@@ -39,10 +40,11 @@ matches:
     form_fields:
       background:
         type: multiline
-    label: '[Career] Job Fit & Executive Talent Scout'
+    label: "[Career] Job Fit & Executive Talent Scout"
     comment: Evaluates alignment between your background and target role requirements.
     search_terms:
       - career
+
   - trigger: :p_resmatch
     form: |
       Act as an advanced ATS Optimization Engine.
@@ -64,10 +66,11 @@ matches:
         type: multiline
       resume:
         type: multiline
-    label: '[Career] Resume & Job Description Matcher'
+    label: "[Career] Resume & Job Description Matcher"
     comment: Identifies keyword gaps between your resume and a target job posting.
     search_terms:
       - career
+
   - trigger: :p_interview
     form: |
       Act as a rigorous, senior technical interviewer for the role described below.
@@ -82,10 +85,11 @@ matches:
     form_fields:
       job_posting:
         type: multiline
-    label: '[Career] Senior Technical Mock Interviewer'
+    label: "[Career] Senior Technical Mock Interviewer"
     comment: Simulates a rigorous interview for target senior engineering roles.
     search_terms:
       - career
+
   - trigger: :p_portfolio
     form: |
       Act as a pragmatic engineering advisor.
@@ -97,10 +101,11 @@ matches:
       role:
         type: text
         default: Software Engineer
-    label: '[Career] Engineering Portfolio Reviewer'
+    label: "[Career] Engineering Portfolio Reviewer"
     comment: Reviews GitHub portfolio and project showcases for hiring impact.
     search_terms:
       - career
+
   - trigger: :p_negotiate
     form: |
       Act as a world-class corporate negotiation coach.
@@ -112,10 +117,11 @@ matches:
       amount:
         type: text
         default: $150,000
-    label: '[Career] Compensation & Offer Negotiation Coach'
+    label: "[Career] Compensation & Offer Negotiation Coach"
     comment: Scripts counter-offers and negotiation leverage for job offers.
     search_terms:
       - career
+
   - trigger: :p_followup
     form: |
       Act as an expert in elite corporate communications.
@@ -129,12 +135,13 @@ matches:
         type: text
       role:
         type: text
-    label: '[Career] Expert In Elite Corporate Communications'
+    label: "[Career] Expert In Elite Corporate Communications"
     comment: Act as an expert in elite corporate communications.
     search_terms:
       - career
+
   - trigger: :pfix
-    label: '[Career] Form: paste resume'
+    label: "[Career] Form: paste resume"
     form: |
       Here is my resume:
       [[resume]]
@@ -143,11 +150,12 @@ matches:
     form_fields:
       resume:
         type: multiline
-    comment: 'Here is my resume:'
+    comment: "Here is my resume:"
     search_terms:
       - career
+
   - trigger: :pfix
-    label: '[Career] Headless: resume from master file'
+    label: "[Career] Headless: resume from master file"
     replace: |
       Here is my resume:
       {{resume}}
@@ -158,11 +166,12 @@ matches:
         type: shell
         params:
           cmd: cat "$HOME/.config/espanso/master_resume.md" 2>/dev/null || echo "[master resume not found - create $HOME/.config/espanso/master_resume.md]"
-    comment: 'Here is my resume:'
+    comment: "Here is my resume:"
     search_terms:
       - career
+
   - trigger: :pmatch
-    label: '[Career] Form: paste JD + resume'
+    label: "[Career] Form: paste JD + resume"
     form: |
       Job description:
       [[jd]]
@@ -176,11 +185,12 @@ matches:
         type: multiline
       resume:
         type: multiline
-    comment: 'Job description:'
+    comment: "Job description:"
     search_terms:
       - career
+
   - trigger: :pmatch
-    label: '[Career] Headless: JD from clipboard + master file'
+    label: "[Career] Headless: JD from clipboard + master file"
     replace: |
       Job description:
       {{jd}}
@@ -196,9 +206,10 @@ matches:
         type: shell
         params:
           cmd: cat "$HOME/.config/espanso/master_resume.md" 2>/dev/null || echo "[master resume not found - create $HOME/.config/espanso/master_resume.md]"
-    comment: 'Job description:'
+    comment: "Job description:"
     search_terms:
       - career
+
   - trigger: :pfit
     word: true
     form: |
@@ -209,10 +220,11 @@ matches:
     form_fields:
       skills:
         type: multiline
-    label: '[Career] Based On My Experience And Skills'
-    comment: 'Based on my experience and skills:'
+    label: "[Career] Based On My Experience And Skills"
+    comment: "Based on my experience and skills:"
     search_terms:
       - career
+
   - trigger: :pbullet
     form: |
       Rewrite these resume bullet points:
@@ -222,12 +234,13 @@ matches:
     form_fields:
       bullets:
         type: multiline
-    label: '[Career] Rewrite These Resume Bullet Points'
-    comment: 'Rewrite these resume bullet points:'
+    label: "[Career] Rewrite These Resume Bullet Points"
+    comment: "Rewrite these resume bullet points:"
     search_terms:
       - career
+
   - trigger: :pcover
-    label: '[Career] Form: paste job description'
+    label: "[Career] Form: paste job description"
     form: |
       Write a short, tailored cover letter for this role:
       [[jd]]
@@ -236,11 +249,12 @@ matches:
     form_fields:
       jd:
         type: multiline
-    comment: 'Write a short, tailored cover letter for this role:'
+    comment: "Write a short, tailored cover letter for this role:"
     search_terms:
       - career
+
   - trigger: :pcover
-    label: '[Career] Headless: JD from clipboard'
+    label: "[Career] Headless: JD from clipboard"
     replace: |
       Write a short, tailored cover letter for this role:
       {{jd}}
@@ -249,9 +263,10 @@ matches:
     vars:
       - name: jd
         type: clipboard
-    comment: 'Write a short, tailored cover letter for this role:'
+    comment: "Write a short, tailored cover letter for this role:"
     search_terms:
       - career
+
   - trigger: :phook
     form: |
       Write a concise LinkedIn or email message to a recruiter for this role:
@@ -261,10 +276,11 @@ matches:
     form_fields:
       jd:
         type: multiline
-    label: '[Career] Phook'
-    comment: 'Write a concise LinkedIn or email message to a recruiter for this role:'
+    label: "[Career] Phook"
+    comment: "Write a concise LinkedIn or email message to a recruiter for this role:"
     search_terms:
       - career
+
   - trigger: :popt
     form: |
       Based on my background and target roles:
@@ -274,20 +290,22 @@ matches:
     form_fields:
       background:
         type: multiline
-    label: '[Career] Based On My Background And Target Roles'
-    comment: 'Based on my background and target roles:'
+    label: "[Career] Based On My Background And Target Roles"
+    comment: "Based on my background and target roles:"
     search_terms:
       - career
+
   - trigger: :p-dream
     form: |
       "Act as a senior hiring manager and career strategist. Analyze my skills, experience, interests, constraints, and current market demand to identify the exact job roles I should target. Eliminate unsuitable roles and clearly define my ideal position, responsibilities, company type, and hiring expectations. My background: {{clip}}"
     vars:
       - name: clip
         type: clipboard
-    label: '[Career] Act As A Senior Hiring Manager And Career Strategist'
+    label: "[Career] Act As A Senior Hiring Manager And Career Strategist"
     comment: '"Act as a senior hiring manager and career strategist. Analyze my skills, experience, interests, constraints, and curren'
     search_terms:
       - career
+
   - trigger: :p-resume
     form: |
       "Act as a senior recruiter with deep ATS expertise. Create a resume tailored specifically for my target role [[job_title]]. Convert responsibilities into measurable impact, integrate role-specific keywords naturally, and structure it for fast recruiter scanning and ATS compatibility. My experience: {{clip}}. Job description: [[job_description]]"
@@ -299,36 +317,40 @@ matches:
     vars:
       - name: clip
         type: clipboard
-    label: '[Career] Act As A Senior Recruiter With Deep Ats Expertise'
+    label: "[Career] Act As A Senior Recruiter With Deep Ats Expertise"
     comment: '"Act as a senior recruiter with deep ATS expertise. Create a resume tailored specifically for my target role . Convert r'
     search_terms:
       - career
+
   - trigger: :p-linkedin
     form: |
       "Act as a recruiter who sources candidates daily on LinkedIn. Rewrite my headline, summary, and experience so my value, role fit, and expertise are immediately clear. Optimize for recruiter searches and human scanning while keeping the tone professional and credible. Profile details: {{clip}}."
     vars:
       - name: clip
         type: clipboard
-    label: '[Career] Act As A Recruiter Who Sources Candidates Daily On Linkedin'
+    label: "[Career] Act As A Recruiter Who Sources Candidates Daily On Linkedin"
     comment: '"Act as a recruiter who sources candidates daily on LinkedIn. Rewrite my headline, summary, and experience so my value, '
     search_terms:
       - career
+
   - trigger: :p-reject
     form: |
       "Review my resume exactly as a recruiter would. Identify every reason it could be rejected, ignored, or misunderstood. Highlight weak bullets, unclear positioning, missing signals, or credibility gaps, then rewrite those sections so the resume becomes interview-ready. Resume: {{clip}}."
     vars:
       - name: clip
         type: clipboard
-    label: '[Career] Review My Resume Exactly As A Recruiter Would'
+    label: "[Career] Review My Resume Exactly As A Recruiter Would"
     comment: '"Review my resume exactly as a recruiter would. Identify every reason it could be rejected, ignored, or misunderstood. H'
     search_terms:
       - career
+
   - trigger: :res-attention
     replace: I want you to evaluate my resume the same way a recruiter would during the first 10 seconds of scanning it. Tell me what stands out immediately, what feels forgettable, and whether my resume communicates enough value fast enough to compete with stronger applicants. Analyze the layout, positioning, clarity, and first impression. Explain whether this resume makes me look experienced, credible, and worth interviewing - or just average among hundreds of candidates.
-    label: '[Career] Res Attention'
+    label: "[Career] Res Attention"
     comment: I want you to evaluate my resume the same way a recruiter would during the first 10 seconds of scanning it. Tell me what
     search_terms:
       - career
+
   - trigger: :res-mindset
     form: |
       Review my resume as if you're evaluating hundreds of candidates for a highly competitive role in [[industry]]. I want a raw and realistic assessment of how my resume performs in a real hiring environment. Point out every weak area that could lower my chances of getting shortlisted - including unclear positioning, weak achievements, poor structure, generic wording, missing credibility signals, or anything that makes me look average compared to stronger candidates. Tell me what instantly creates a negative impression, what feels forgettable, and what changes would make this resume look significantly more valuable, skilled, and interview-worthy.
@@ -336,22 +358,25 @@ matches:
       industry:
         type: text
         default: the Salesforce and MuleSoft ecosystem
-    label: '[Career] Res Mindset'
+    label: "[Career] Res Mindset"
     comment: Review my resume as if you're evaluating hundreds of candidates for a highly competitive role in . I want a raw and real
     search_terms:
       - career
+
   - trigger: :res-ats
     replace: I'm targeting this specific job opportunity, and I want my resume to be optimized for both ATS systems and real recruiters. Analyze the job description alongside my resume and identify the technical terms, role-specific phrases, competencies, and industry keywords that are currently underrepresented or completely absent. Show me how to naturally integrate those elements into my resume without making it feel stuffed or artificial. Recommend improvements to my experience section, skills layout, and wording strategy so my resume aligns more closely with the expectations of this role and performs better during automated screening.
-    label: '[Career] Res Ats'
+    label: "[Career] Res Ats"
     comment: I'm targeting this specific job opportunity, and I want my resume to be optimized for both ATS systems and real recruite
     search_terms:
       - career
+
   - trigger: :res-impact
     replace: Transform the experience section of my resume into high-value achievement statements that sound compelling to recruiters and hiring managers. Replace weak or responsibility-focused lines with results-oriented descriptions that clearly communicate ownership, contribution, and business impact. Wherever my resume lacks measurable outcomes, ask strategic follow-up questions to uncover useful metrics, improvements, efficiencies, revenue impact, time savings, or performance gains. The final version should make every bullet point feel intentional, credible, and strong enough to justify an interview.
-    label: '[Career] Res Impact'
+    label: "[Career] Res Impact"
     comment: Transform the experience section of my resume into high-value achievement statements that sound compelling to recruiters
     search_terms:
       - career
+
   - trigger: :res-market
     form: |
       Study the hiring style, communication patterns, and professional expectations commonly seen in companies such as [[companies]] within [[industry]]. Then reshape my resume summary and core skills section so they reflect the mindset, priorities, and terminology valued in this field. I want my resume to feel aligned with the industry's standards and culture instead of sounding broad, outdated, or interchangeable with every other applicant. Focus on making my profile appear specialized, relevant, and naturally suited for the type of opportunities these companies offer.
@@ -362,37 +387,42 @@ matches:
       industry:
         type: text
         default: B2B digital transformation and API integration
-    label: '[Career] Res Market'
+    label: "[Career] Res Market"
     comment: Study the hiring style, communication patterns, and professional expectations commonly seen in companies such as  within
     search_terms:
       - career
+
   - trigger: :res-executive
     replace: Conduct a deep final-pass evaluation of my resume from the perspective of a recruiter reviewing top-tier candidates. Identify anything that weakens clarity, professionalism, credibility, or overall impact. This includes inconsistent writing style, repetitive sentence structure, vague descriptions, weak transitions, low-value wording, and overused corporate phrases that fail to differentiate me. Refine the language throughout the resume so every section sounds precise, intentional, and high-value. Replace generic statements with sharper positioning, stronger achievement-driven phrasing, and wording that reflects expertise, confidence, and real-world contribution. The final resume should feel polished, modern, and competitive at a professional level.
-    label: '[Career] Res Executive'
+    label: "[Career] Res Executive"
     comment: Conduct a deep final-pass evaluation of my resume from the perspective of a recruiter reviewing top-tier candidates. Ide
     search_terms:
       - career
+
   - trigger: :pcareer
     form: |
       I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
-    label: '[Career] I''M Feeling Stuck In My Career And Unsure Of My Direction'
-    comment: 'I''m feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, '
+    label: "[Career] I'M Feeling Stuck In My Career And Unsure Of My Direction"
+    comment: "I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, "
     search_terms:
       - career
+
   - trigger: :p-decision
     replace: |
-      “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, e.g. should I change jobs or stay?]. Ask 7 yes/no questions that filter step by step based on my priorities as you know them from our conversations. Make the outcomes super concrete, with clear actions (like ‘request this meeting,’ ‘update your CV,’ ‘plan a trial day’), not vague suggestions. Format it so I can screenshot it and reuse it anytime.”
-    label: '[Career] P Decision'
-    comment: '“Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, '
+      “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, e.g. should I change jobs or stay?]. Ask 7 yes/no questions that filter step by step based on my priorities as you know them from our conversations. Make the outcomes super concrete, with clear actions (like ‘request this meeting,' ‘update your CV,' ‘plan a trial day'), not vague suggestions. Format it so I can screenshot it and reuse it anytime.”
+    label: "[Career] P Decision"
+    comment: "“Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, "
     search_terms:
       - career
+
   - trigger: :p-success
     replace: |
-      “Based on my talents and character, what’s the way I can be most successful and happy in my career and life?”
-    label: '[Career] P Success'
-    comment: “Based on my talents and character, what’s the way I can be most successful and happy in my career and life?”
+      “Based on my talents and character, what's the way I can be most successful and happy in my career and life?”
+    label: "[Career] P Success"
+    comment: “Based on my talents and character, what's the way I can be most successful and happy in my career and life?”
     search_terms:
       - career
+
   - trigger: :profile-as-lp
     form: |2
 
@@ -415,10 +445,11 @@ matches:
       Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
 
       Rewritten Experience Entries → 12-Second Conversion Verdict
-    label: '[Career] Profile As Lp'
+    label: "[Career] Profile As Lp"
     comment: Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the h
     search_terms:
       - career
+
   - trigger: :ai-interview
     form: |
       Roleplay as a [[job_title]] at [[company]].
@@ -433,10 +464,11 @@ matches:
         type: text
       company:
         type: text
-    label: '[Career] Roleplay As A  At'
+    label: "[Career] Roleplay As A  At"
     comment: Roleplay as a  at .
     search_terms:
       - career
+
   - trigger: :resume-quantifier
     replace: |
       Act as a resume strategist at McKinsey & Company. Turn every bullet into measurable impact:
@@ -451,28 +483,31 @@ matches:
       * Fully quantified achievement statements
 
       Input: Your current bullet points
-    label: '[Career] McKinsey Resume Quantifier & Action Verbs'
+    label: "[Career] McKinsey Resume Quantifier & Action Verbs"
     comment: Transforms generic resume bullet points into quantified impact statements.
     search_terms:
       - career
+
   - trigger: :experience-glowup
     replace: |
       Rewrite each of my job descriptions using the XYZ formula: 'Accomplished X by doing Y, resulting in Z. Add metrics where possible. Make me sound like I drove real impact, not just 'managed tasks.'
-    label: '[Career] Job Experience & Promotion Glow-Up'
+    label: "[Career] Job Experience & Promotion Glow-Up"
     comment: Highlights leadership scope, cost savings, and revenue metrics in past job roles.
     search_terms:
       - career
+
   - trigger: :about-section-rewrite
     replace: |
       Turn my About section into a story that hooks recruiters in the first 2 lines. Use the PAS framework (Problem, Agitate, Solution). Keep it under 2000 characters and end with a clear CTA.
-    label: '[Career] LinkedIn About Section Storyteller'
+    label: "[Career] LinkedIn About Section Storyteller"
     comment: Turns a dry professional summary into a compelling career narrative that attracts recruiters.
     search_terms:
       - career
+
   - trigger: :resume-builder
     replace: |
       Act as the recruiter hiring for this role. Score my resume out of 100, list the keywords it's missing, name the 3 things that would make you reject it in 10 seconds, then rewrite the whole thing tailored to this exact job. Be brutal.
-    label: '[Career] Targeted Role-Specific Resume Builder'
+    label: "[Career] Targeted Role-Specific Resume Builder"
     comment: Tailors resume achievements directly to match target job description keywords.
     search_terms:
       - career

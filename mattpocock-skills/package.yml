@@ -50,6 +50,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :glossary
       - :vocab
@@ -82,6 +83,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :learning-record
       - :record
@@ -109,6 +111,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :tdd
       - :tdd-loop
@@ -150,6 +153,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :grill
       - :grill-me
@@ -189,6 +193,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :review
       - :codereview
@@ -220,6 +225,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :diag
       - :diagnose
@@ -257,6 +263,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :wayfinder
       - :wf
@@ -284,6 +291,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :refactor
       - :refactor-plan
@@ -311,6 +319,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :design
       - :design-api
@@ -339,6 +348,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :handoff
       - :session-handoff
@@ -368,6 +378,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :askmatt
       - :ask-matt
@@ -390,6 +401,7 @@ matches:
     search_terms:
       - mattpocock-skills
       - agent skills
+
   - triggers:
       - :audit
       - :skill-audit

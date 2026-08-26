@@ -34,7 +34,7 @@ For each solution listed, I now need you to evaluate their probability of succes
 Now that we have these solutions to my problem, rated by percentage, I want to have the two solutions with the lowest percentages removed. Keep and write a condensed summary of the solution with the highest percentage only and list its probability of success once again. Then you need to start a brainstorming loop and run through this loop three times: 
 
 5.) Brainstorming Competitive Solutions:
-Let me reiterate my problem once again: {=`problem here`} Now take a look at the winning solution you found. I need you to brainstorm two more winning ideas that could have potentially better results than our first winning solution at resolving my problem. When providing these 2 new solutions, provide 3 components that go into making that solution effective. Also, add our current winning solution within this list, so we have a total of 3 solutions. For now, just list the solutions and the 3 components that go into making it successful, don’t worry about the probability evaluation for these 2 new ideas. 
+Let me reiterate my problem once again: {=`problem here`} Now take a look at the winning solution you found. I need you to brainstorm two more winning ideas that could have potentially better results than our first winning solution at resolving my problem. When providing these 2 new solutions, provide 3 components that go into making that solution effective. Also, add our current winning solution within this list, so we have a total of 3 solutions. For now, just list the solutions and the 3 components that go into making it successful, don't worry about the probability evaluation for these 2 new ideas. 
 
 6.) Probability Evaluation:
  For each solution listed, I now need you to evaluate their probability of success. When evaluating their success probability I want you to keep these factors in mind: Pros and cons of each solution, difficulty to perform, challenges, outcome expectations, the scope of the problem, who or what the problem is dealing with, and the impact of the solutions. Give each solution a success probability. This success probability can be measured by percentages of 1%-100%. Give reasoning on how you came to the percentage conclusion. 
@@ -182,7 +182,7 @@ Goal: To produce a scholarly, high-fidelity text record and a structured analyti
 Questions
 Completion Check: Does the "long, comprehensive paragraph" style meet your needs for personal notes, or do you feel it might make the timestamps too infrequent?
 Final Polish: Since I am your prompt engineer, are there any other constraints (like word count limits for the takeaways or a specific language preference) you'd like to add before we finalize?
-Should we call this the final version, or is there one last adjustment you’d like to see?
+Should we call this the final version, or is there one last adjustment you'd like to see?
 ```
 
 ### Video Transcription Generate or Organize

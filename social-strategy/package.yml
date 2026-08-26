@@ -9,6 +9,7 @@ matches:
   comment: Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze
   search_terms:
   - social-strategy
+
   - social strategy
 - regex: :position\((?P<target_niche>.*)\)
   replace: 'Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". Define what my brand stands for, the unique angle that separates me from competitors, my brand voice and tone, visual aesthetic guidelines, and the core message that will resonate deeply with my target audience.
@@ -17,7 +18,9 @@ matches:
   label: '[Social Strategy] Brand Identity & Unique Positioning Angle'
   comment: Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". D
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :pillars
   form: 'You''re a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche [[niche]] and target audience [[audience]], create 5 content pillars that will drive maximum engagement. For each pillar, explain: why it works, the psychology behind it, 10 post ideas, and how to balance educational/entertaining/promotional content.
@@ -33,7 +36,9 @@ matches:
   label: '[Social Strategy] 5 Core Engagement Content Pillars'
   comment: 'You''re a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche  and target audience '
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :calendar
   form: 'Act as my content calendar manager. Create a complete 30-day posting schedule for [[platform]]. Include: daily post concepts, optimal posting times based on audience behavior, content format variety (carousels/reels/stories), hooks for each post, and strategic CTAs. Make it copy-paste ready.
@@ -50,7 +55,9 @@ matches:
   label: '[Social Strategy] 30-Day Multi-Platform Content Calendar'
   comment: 'Act as my content calendar manager. Create a complete 30-day posting schedule for . Include: daily post concepts, optima'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - regex: :hooks\((?P<target_niche>.*)\)
   replace: 'You''re a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}} and create 50 hook templates I can customize. Categorize them by: curiosity-driven, controversy, storytelling, listicles, bold statements. Make each one scroll-stopping.
@@ -59,7 +66,9 @@ matches:
   label: '[Social Strategy] 50 Viral Scroll-Stopping Hook Templates'
   comment: You're a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :engage
   replace: 'Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conversation starters that build relationships, collaboration outreach templates, how to turn followers into loyal fans, and a daily engagement routine that takes under 30 minutes.
@@ -68,7 +77,9 @@ matches:
   label: '[Social Strategy] Community Management & Engagement Strategy'
   comment: 'Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conver'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :analytics
   replace: 'You''re a data analyst for social media. Based on these metrics:
@@ -81,12 +92,15 @@ matches:
 
     '
   vars:
+
   - name: raw_metrics
     type: clipboard
   label: '[Social Strategy] Social Media Metrics & Performance Auditor'
   comment: 'You''re a data analyst for social media. Based on these metrics:'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :beforeafter
   replace: '### The Before-and-After Grid
@@ -109,7 +123,9 @@ matches:
   label: '[Social Strategy] Before-and-After Experiential Transformation Grid'
   comment: '### The Before-and-After Grid'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :epiphany
   replace: '### Epiphany Bridge Narrative Outline
@@ -134,7 +150,9 @@ matches:
   label: '[Social Strategy] Epiphany Bridge Storytelling Narrative Outline'
   comment: '### Epiphany Bridge Narrative Outline'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :triage
   replace: '---
@@ -181,6 +199,7 @@ matches:
 
     '
   vars:
+
   - name: current_date
     type: date
     params:
@@ -188,14 +207,18 @@ matches:
   label: '[Social Strategy] Consulting Triage Call Interaction Note'
   comment: '---'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :sigsys
   replace: "### Proprietary Signature System Design\n* Formula: $Signature System = Problem + Promise + Process$\n\n- **The Problem Core:** [State the primary high-friction marketplace inefficiency being resolved]\n- **The Promise Core:** [State the ultimate outcome achieved at Point Z]\n- **The Process Milestones:**\n  1. **Phase 1 (Quick Win / A → B):** [Low-friction intervention to establish trust and momentum]\n  2. **Phase 2 (Core Pivot):** [Implementation of the proprietary engine to resolve root obstacles]\n  3. **Phase 3 (Scale / Final Integration):** [Systemization to ensure long-term, repeatable outcomes]\n"
   label: '[Social Strategy] Proprietary Signature System Formula Design'
   comment: '### Proprietary Signature System Design'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :p-market
   form: 'Analyze the market for [[niche]]. Use only specific, data-backed insights. No generic statements.
@@ -221,7 +244,9 @@ matches:
   label: '[Social Strategy] Niche Market Demand & Competitive Teardown'
   comment: Analyze the market for . Use only specific, data-backed insights. No generic statements.
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :p-problem
   form: 'List the top 10 problems in [[industry]].
@@ -253,7 +278,9 @@ matches:
   label: '[Social Strategy] Top 10 High-Willingness-To-Pay Problems'
   comment: List the top 10 problems in .
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :p-offer
   form: 'Create a high-converting offer for: [[problem]].
@@ -285,7 +312,9 @@ matches:
   label: '[Social Strategy] High-Converting Irresistible Offer Creator'
   comment: 'Create a high-converting offer for: .'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :p-distro
   form: 'Act as a senior growth strategist.
@@ -316,7 +345,9 @@ matches:
   label: '[Social Strategy] Growth Distribution & Channel Engine'
   comment: Act as a senior growth strategist.
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :p-viral
   form: 'Create a viral content strategy for: [[niche]].
@@ -346,7 +377,9 @@ matches:
   label: '[Social Strategy] Create A Viral Content Strategy For'
   comment: 'Create a viral content strategy for: .'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :p-competitor
   form: 'Analyze the top 5 competitors in [[niche]], be specific.
@@ -381,7 +414,9 @@ matches:
   label: '[Social Strategy] Analyze The Top 5 Competitors In , Be Specific'
   comment: Analyze the top 5 competitors in , be specific.
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :p-scale
   form: 'Give me a plan to scale this business to [[target_revenue]] within [[timeframe]].
@@ -419,7 +454,9 @@ matches:
   label: '[Social Strategy] Leveraged Content Scaling Architecture'
   comment: Give me a plan to scale this business to  within .
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :yt-strategy
   form: 'Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
@@ -448,7 +485,9 @@ matches:
   label: '[Social Strategy] Act Like A Youtube Growth Strategist'
   comment: Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
   search_terms:
+
   - social-strategy
+
   - social strategy
 - regex: :yt-ideas\((?P<niche>.*)\)
   replace: 'Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, competitor analysis, and audience interest patterns.
@@ -457,7 +496,9 @@ matches:
   label: '[Social Strategy] Niche Audience & Frustration Profiler'
   comment: Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, compe
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :aipitch
   form: 'Hi [[client_name]],
@@ -466,7 +507,7 @@ matches:
     I''ve been reviewing how workflows are structured at [[company_name]] and wanted to reach out regarding our **[[studio_division]]** offerings.
 
 
-    Specifically, we’ve been helping teams implement **[[core_service]]** frameworks to optimize efficiency and drive measurable ROI.
+    Specifically, we've been helping teams implement **[[core_service]]** frameworks to optimize efficiency and drive measurable ROI.
 
 
     We typically kick things off with a structured kickoff to map out your current bottlenecks. Are you open to a quick 15-minute discovery call this week to see if this aligns with your current goals?
@@ -497,7 +538,9 @@ matches:
   label: '[Social Strategy] Aipitch'
   comment: Hi ,
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :aimenu
   replace: 'Our AI Studio Offerings:
@@ -522,7 +565,9 @@ matches:
   label: '[Social Strategy] Our Ai Studio Offerings'
   comment: 'Our AI Studio Offerings:'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :aisow
   form: '### Statement of Work: [[project_focus]]
@@ -562,7 +607,9 @@ matches:
   label: '[Social Strategy] Statement of Work: [[project_focus]]'
   comment: '### Statement of Work:'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - regex: :consult\((?P<client>.*)\)
   replace: 'Hi {{client}}, I was looking over your current operational stack. Let''s get an AI Readiness Assessment or a Tool Selection Advisory session booked for next week to map out where you''re leaking margins.
@@ -571,7 +618,9 @@ matches:
   label: '[Social Strategy] Consult    P Client'
   comment: Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selecti
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :academy
   form: 'Hi [[student_name]],
@@ -598,7 +647,9 @@ matches:
   label: '[Social Strategy] Academy'
   comment: Hi ,
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :systems
   form: '### Proposed Integration: [[system_architecture]]
@@ -630,7 +681,9 @@ matches:
   label: '[Social Strategy] Proposed Integration: [[system_architecture]]'
   comment: '### Proposed Integration:'
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :studio
   form: 'We can lock down your request for [[deliverable_type]] under our asset production umbrella. We deliver these assets at a fraction of standard traditional agency overhead because we build them utilizing optimized AI generation frameworks.
@@ -650,7 +703,9 @@ matches:
   label: '[Social Strategy] Studio'
   comment: We can lock down your request for  under our asset production umbrella. We deliver these assets at a fraction of standar
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :follow-like-comment
   replace: 'SAVE THIS FOR LATER, FOLLOW, LIKE AND COMMENT
@@ -659,7 +714,9 @@ matches:
   label: '[Social Strategy] Social Engagement Call-To-Action (CTA)'
   comment: High-converting call to action prompt encouraging saves, shares, and comments.
   search_terms:
+
   - social-strategy
+
   - social strategy
 - trigger: :content-hook
   replace: 'BYE-BYE SOCIAL MEDIA MANAGERS IN 2026. I USE AI TO DESIGN, EDIT, AND SCHEDULE 30 DAYS OF CONTENT IN 2 HOURS. HERE ARE 7 PROMPTS THAT CAN DO THE SAME FOR YOU:
@@ -668,5 +725,7 @@ matches:
   label: '[Social Strategy] Viral Social Media Content Engine Intro'
   comment: Introduction to automated viral social media copywriting with AI.
   search_terms:
+
   - social-strategy
+
   - social strategy

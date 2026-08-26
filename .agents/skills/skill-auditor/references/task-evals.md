@@ -5,7 +5,7 @@ representative work.
 
 ## Canonical Task Selection
 
-You SHALL choose 1–3 canonical tasks that the skill is meant to improve.
+You SHALL choose 1-3 canonical tasks that the skill is meant to improve.
 You SHALL prefer tasks that expose the highest-value promise of the skill.
 WHEN feasible THEN you SHALL compare the skill-active run to a no-skill or
 prior-version baseline.

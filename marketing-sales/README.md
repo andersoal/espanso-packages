@@ -154,7 +154,7 @@ Shifting the customer proposition from informational delivery to deterministic e
 
 ## Execution Prompt
 ```text
-Create 3 offer ideas in this niche. Each offer must include the promise, the transformation, what’s included, and a unique angle competitors aren’t using.
+Create 3 offer ideas in this niche. Each offer must include the promise, the transformation, what's included, and a unique angle competitors aren't using.
 
 ```
 
@@ -236,17 +236,17 @@ Days 28-30: Live Market Launch & Conversion Monitoring
 
 ## Milestone Protocol
 
-### Phase 1: Foundations (Days 1–9)
+### Phase 1: Foundations (Days 1-9)
 *   Isolate target niche using core market constraints.
 *   Run validation prompts to confirm missing market opportunities.
 *   Map complete customer profile and draft transformed offers.
 
-### Phase 2: Production (Days 10–27)
+### Phase 2: Production (Days 10-27)
 *   Produce educational and actionable short/long-form content assets.
 *   Deploy high-value lead magnets targeted at specific operational pain points.
 *   Configure automated nurturing and delivery email sequences.
 
-### Phase 3: Go-Live (Days 28–30)
+### Phase 3: Go-Live (Days 28-30)
 *   Open the checkout or sign-up channels.
 *   Direct traffic from your built-up content assets straight to your landing page.
 *   Track conversion performance and user feedback.

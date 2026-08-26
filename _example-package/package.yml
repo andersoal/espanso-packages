@@ -10,6 +10,7 @@ matches:
       - greeting
       - _example-package
       - example
+
   - triggers:
       - :goodbye
       - :bye
@@ -19,6 +20,7 @@ matches:
     search_terms:
       - _example-package
       - example
+
   - trigger: :date
     replace: '{{now}}'
     vars:
@@ -31,6 +33,7 @@ matches:
     search_terms:
       - _example-package
       - example
+
   - trigger: :time
     replace: '{{now}}'
     vars:
@@ -43,6 +46,7 @@ matches:
     search_terms:
       - _example-package
       - example
+
   - trigger: :datetime
     replace: '{{now}}'
     vars:

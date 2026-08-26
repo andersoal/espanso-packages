@@ -19,6 +19,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :engvocab
     form: |
       Teach me [[count]] powerful English words per day related to [[domain]]. Include pronunciation guides, realistic example sentences, and one memory trick or etymological hook for each to help me retain them faster.
@@ -37,6 +38,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :engchat
     form: |
       Pretend you're a native English speaker in a [[setting]]. Hold a [[duration]]-minute dialogue with me on [[topic]], and correct my grammar, syntax, and phrasing naturally as we go. Highlight better alternatives for any awkward phrasing.
@@ -55,6 +57,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :enggrammar
     form: |
       Explain English grammar rules, especially [[topic]], in the simplest, most direct way possible. Provide short, everyday professional examples and contrast them against common pitfalls made by non-native speakers.
@@ -67,6 +70,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :engimmerse
     form: |
       Build a daily [[duration]]-minute English immersion routine using podcasts, technical articles, and media content that fits an advanced professional level. Prioritize real conversational exposure and strategies for active listening.
@@ -79,6 +83,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :engcoach
     form: |
       Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English phonetics, tongue positions, and mechanics on how to sound more natural, assertive, and fluid in professional settings.
@@ -87,6 +92,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :engtrack
     form: |
       Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, listening checks, pronunciation feedback self-assessments, and tangible fluency benchmarks I can track systematically.
@@ -95,6 +101,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :engrefactor
     form: |
       Act as a rigorous communication mentor and elite technical editor. Refactor the following draft for an audience of **[[audience]]**:
@@ -119,6 +126,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :language-tutor-mode
     replace: |
       Act as my private [LANGUAGE] tutor.
@@ -133,6 +141,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :language-90d-plan
     replace: |
       Create a complete 90-day learning plan for [LANGUAGE] based on how much time I can study each day:
@@ -147,6 +156,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :language-conversation-coach
     replace: |
       Become my conversation partner for practicing [LANGUAGE].
@@ -159,6 +169,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :language-vocab-builder
     replace: |
       Help me expand my [LANGUAGE] vocabulary as efficiently as possible.
@@ -171,6 +182,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :language-simplified-grammar
     replace: |
       Teach me [LANGUAGE] grammar from beginner to advanced in the simplest way possible.
@@ -183,6 +195,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :language-learn-like-native
     replace: |
       Teach me [LANGUAGE] the same way children learn their native language.
@@ -195,6 +208,7 @@ matches:
     search_terms:
       - learn-language
       - learn language
+
   - trigger: :language-total-immersion
     replace: |
       Create a complete immersion experience in [LANGUAGE] without requiring me to travel.

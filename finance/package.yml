@@ -12,6 +12,7 @@ matches:
     comment: Analyzes business or technical systems through an elite macro-scale investor perspective.
     search_terms:
       - finance
+
   - trigger: :w_filter
     form: |
       Evaluate the technical and financial architecture of this opportunity: [[idea]]
@@ -23,6 +24,7 @@ matches:
     comment: Evaluates the asymmetric upside and risk-to-reward ratio of an opportunity.
     search_terms:
       - finance
+
   - trigger: :w_blueprint
     form: |
       Design an architectural roadmap to scale a business model from $100K to $1M/month.
@@ -36,6 +38,7 @@ matches:
     comment: Designs an architectural roadmap to scale a business model with compounding returns.
     search_terms:
       - finance
+
   - trigger: :w_decoder
     replace: |
       Conduct a root-cause breakdown of operational risk psychology and decision bottlenecks.
@@ -48,6 +51,7 @@ matches:
     comment: Root-cause breakdown of operational risk, cognitive biases, and systemic weaknesses.
     search_terms:
       - finance
+
   - trigger: :w_game
     form: |
       Deconstruct the value-capture network and supply-chain hierarchy in this space: [[industry]]
@@ -59,6 +63,7 @@ matches:
     comment: Deconstructs value capture, supply-chain hierarchy, and defensible moats.
     search_terms:
       - finance
+
   - trigger: :w_framework
     replace: |
       Contrast asymmetric wealth execution vs linear operational thinking.
@@ -70,6 +75,7 @@ matches:
     comment: Contrasts asymmetric equity-based execution against linear operational toil.
     search_terms:
       - finance
+
   - trigger: :w_leverage
     form: |
       Build an asymmetric leverage playbook for the following business infrastructure: [[business]]
@@ -83,6 +89,7 @@ matches:
     comment: Audits labor, capital, code, and content leverage in a venture.
     search_terms:
       - finance
+
   - trigger: :w_advantage
     form: |
       Construct an unassailable strategic moat within this space: [[industry]]
@@ -95,6 +102,7 @@ matches:
     comment: 'Construct an unassailable strategic moat within this space:'
     search_terms:
       - finance
+
   - trigger: :w_projection
     replace: |
       Execute an aggressive 3-year forensic financial audit on current operational trajectories.
@@ -107,6 +115,7 @@ matches:
     comment: Execute an aggressive 3-year forensic financial audit on current operational trajectories.
     search_terms:
       - finance
+
   - trigger: :w_decision
     form: |
       Deconstruct high-velocity, high-stakes decision logic and apply it to this scenario: [[situation]]
@@ -118,6 +127,7 @@ matches:
     comment: 'Deconstruct high-velocity, high-stakes decision logic and apply it to this scenario:'
     search_terms:
       - finance
+
   - trigger: :financial-prompts-value
     replace: |
       Each of these prompts replaces work that costs:
@@ -132,6 +142,7 @@ matches:
     comment: Overview of investment banking and equity analysis prompt templates.
     search_terms:
       - finance
+
   - trigger: :ib-prompts-intro
     replace: |
       BREAKING: AI CAN NOW BUILD FINANCIAL MODELS LIKE GOLDMAN SACHS ANALYSTS (FOR FREE). HERE ARE 12 AI PROMPTS THAT REPLACE $150K/YEAR INVESTMENT BANKING WORK (SAVE FOR LATER):
@@ -139,6 +150,7 @@ matches:
     comment: Goldman Sachs-style financial modeling framework for valuation and analysis.
     search_terms:
       - finance
+
   - trigger: :stock-home-instructions
     replace: |
       ROLE
@@ -175,6 +187,7 @@ matches:
     comment: Long-term value investor persona for analyzing competitive moats and balance sheets.
     search_terms:
       - finance
+
   - trigger: :stock-industry-fundamentals
     replace: |
       ROLE
@@ -220,6 +233,7 @@ matches:
     comment: Evaluates TAM, pricing power, regulatory risks, and competitive rivalry in an industry.
     search_terms:
       - finance
+
   - trigger: :stock-company-history
     replace: |
       For [Stock Name] ([Ticker]):
@@ -234,6 +248,7 @@ matches:
     comment: Tracks management track record, share repurchases, ROIC, and M&A history.
     search_terms:
       - finance
+
   - trigger: :stock-lynch-pitch
     replace: |
       TASK
@@ -266,6 +281,7 @@ matches:
     comment: Crafts a simple, jargon-free pitch explaining why an investment will compound.
     search_terms:
       - finance
+
   - trigger: :stock-munger-invert
     replace: |
       Using ONLY the documents uploaded to this project, and following the
@@ -297,6 +313,7 @@ matches:
     comment: 'Inverts the thesis: lists everything that could permanently destroy equity value.'
     search_terms:
       - finance
+
   - trigger: :stock-quarterly-update
     replace: |
       Using ONLY the documents uploaded to this project, and following the

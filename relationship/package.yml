@@ -23,6 +23,7 @@ matches:
     comment: Act as our AI Relationship Concierge and Date Night Planner. Generate exactly three distinct date options for this weeke
     search_terms:
       - relationship
+
   - trigger: :fincheck
     form: |
       Act as our joint Financial Strategist. Below is our baseline snapshot for the past week. Analyze our current spending velocity, note anything out of the ordinary, and evaluate our progress tracking toward our primary joint savings milestone ([[goal]]).
@@ -58,6 +59,7 @@ matches:
     comment: Act as our joint Financial Strategist. Below is our baseline snapshot for the past week. Analyze our current spending ve
     search_terms:
       - relationship
+
   - trigger: :loadsplit
     form: |
       Act as our domestic operations manager. We need to split the following collective list of household tasks, appointments, and chores fairly across both of us for the coming week to balance the invisible mental load evenly.
@@ -78,6 +80,7 @@ matches:
     comment: Act as our domestic operations manager. We need to split the following collective list of household tasks, appointments,
     search_terms:
       - relationship
+
   - trigger: :tripplan
     form: |
       Act as a high-end customized travel concierge. Build a personalized, day-by-day vacation itinerary using our specific, asymmetric travel profiles:
@@ -120,6 +123,7 @@ matches:
     comment: Act as a high-end customized travel concierge. Build a personalized, day-by-day vacation itinerary using our specific, a
     search_terms:
       - relationship
+
   - trigger: :memkeep
     form: |
       Act as our relationship archivist. Commit the following newly captured memories, inside jokes, and milestones into our relationship ledger:
@@ -139,6 +143,7 @@ matches:
     comment: Act as our relationship archivist. Commit the following newly captured memories, inside jokes, and milestones into our r
     search_terms:
       - relationship
+
   - trigger: :aimem
     replace: |
       Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, preferences, anything. Don't summarize or leave anything out. I want to see the full file you've built on me from our conversations.
@@ -146,6 +151,7 @@ matches:
     comment: Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, pr
     search_terms:
       - relationship
+
   - trigger: :aiprofile
     replace: |
       Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, what I ask, and what I avoid. My age range, income level, where I likely live, my situation. Show me exactly what tipped you off for each one.
@@ -153,6 +159,7 @@ matches:
     comment: Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, w
     search_terms:
       - relationship
+
   - trigger: :tradutor
     form: |
       Conteúdo para analisar:
@@ -172,6 +179,7 @@ matches:
     comment: 'Conteúdo para analisar:'
     search_terms:
       - relationship
+
   - trigger: :expert
     word: true
     form: |
@@ -196,6 +204,7 @@ matches:
     comment: Eu acho que domino . Prove que estou errado. Faça  perguntas simples que revelem lacunas de conhecimento.
     search_terms:
       - relationship
+
   - trigger: :p_difficult
     form: |
       I'm going to have this difficult conversation: [[situation]]

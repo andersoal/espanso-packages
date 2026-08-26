@@ -10,6 +10,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :md-collapse
     replace: "\n<details>\n\t<summary>$|$</summary>\n\t<p></p>\n</details>\n"
     label: "[Markdown] Collapsible Dropdown (<details>)"
@@ -17,6 +18,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :md-link
     replace: "[$|$]({{clipboard}})"
     vars:
@@ -27,6 +29,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :html-link
     replace: <a href="{{clipboard}}" />$|$</a>
     vars:
@@ -37,6 +40,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :bb-link
     replace: "[url={{clipboard}}]$|$[/url]"
     vars:
@@ -47,6 +51,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :b
     replace: "**$|$**"
     word: true
@@ -55,6 +60,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :i
     replace: "*$|$*"
     word: true
@@ -63,6 +69,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :u
     replace: __$|$__
     word: true
@@ -71,6 +78,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :bi
     replace: "***$|$***"
     word: true
@@ -79,6 +87,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :bu
     replace: __**$|$**__
     word: true
@@ -87,6 +96,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :iu
     replace: __*$|$*__
     word: true
@@ -95,6 +105,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :biu
     replace: "***__$|$__***"
     word: true
@@ -103,6 +114,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :ci
     replace: "`$|$`"
     word: true
@@ -111,6 +123,7 @@ matches:
     search_terms:
       - md-formatting
       - markdown
+
   - trigger: :cm
     replace: "```$|$```"
     word: true

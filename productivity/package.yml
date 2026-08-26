@@ -13,6 +13,7 @@ matches:
     comment: '🍅 **Técnica Pomodoro: Foco Ativado**'
     search_terms:
       - productivity
+
   - trigger: :333
     replace: |
       ⚡ **Método 3/3/3: Definição de Foco**
@@ -29,6 +30,7 @@ matches:
     comment: '⚡ **Método 3/3/3: Definição de Foco**'
     search_terms:
       - productivity
+
   - trigger: :eisen
     form: |
       📊 **Matriz de Eisenhower: Classificação de Prioridade**
@@ -49,6 +51,7 @@ matches:
     comment: '📊 **Matriz de Eisenhower: Classificação de Prioridade**'
     search_terms:
       - productivity
+
   - trigger: :sapo
     replace: |
       🐸 **Coma o Sapo: A tarefa mais difícil primeiro!**
@@ -59,6 +62,7 @@ matches:
     comment: '🐸 **Coma o Sapo: A tarefa mais difícil primeiro!**'
     search_terms:
       - productivity
+
   - trigger: :seinfeld
     replace: |
       📅 **Estratégia Seinfeld: Não Quebre a Corrente!**
@@ -84,6 +88,7 @@ matches:
     comment: '📅 **Estratégia Seinfeld: Não Quebre a Corrente!**'
     search_terms:
       - productivity
+
   - trigger: :tblock
     replace: |
       ⏳ **Time Blocking: Cronograma do Dia**
@@ -103,6 +108,7 @@ matches:
     comment: '⏳ **Time Blocking: Cronograma do Dia**'
     search_terms:
       - productivity
+
   - trigger: :blockday
     replace: |
       ## 🕒 Time-Blocking Architecture
@@ -119,6 +125,7 @@ matches:
     comment: '## 🕒 Time-Blocking Architecture'
     search_terms:
       - productivity
+
   - trigger: :parkinson
     form: |
       ### ⏱️ Parkinson's Law Execution Blueprint
@@ -146,6 +153,7 @@ matches:
     comment: '### ⏱️ Parkinson''s Law Execution Blueprint'
     search_terms:
       - productivity
+
   - trigger: :workstyle
     form: |
       ### 🛠️ Perfil Operacional Selecionado: [[perfil]]
@@ -175,6 +183,7 @@ matches:
     comment: '### 🛠️ Perfil Operacional Selecionado:'
     search_terms:
       - productivity
+
   - trigger: :flowtpl
     replace: |
       ### Framework: Estado de Flow
@@ -186,6 +195,7 @@ matches:
     comment: '### Framework: Estado de Flow'
     search_terms:
       - productivity
+
   - trigger: :flowgate
     replace: |
       ---
@@ -261,6 +271,7 @@ matches:
     comment: '---'
     search_terms:
       - productivity
+
   - trigger: :antivision
     replace: |
       ### 🚫 Anti-Visão vs. 🎯 Visão Real
@@ -306,6 +317,7 @@ matches:
     comment: '### 🚫 Anti-Visão vs. 🎯 Visão Real'
     search_terms:
       - productivity
+
   - trigger: :ghostmode
     replace: |
       ## 🥷 Protocolo de Foco: Desaparecer por Seis Meses
@@ -325,6 +337,7 @@ matches:
     comment: '## 🥷 Protocolo de Foco: Desaparecer por Seis Meses'
     search_terms:
       - productivity
+
   - trigger: :pararef
     replace: |
       ### Método P.A.R.A. — Resumo de Organização
@@ -336,6 +349,7 @@ matches:
     comment: '### Método P.A.R.A. — Resumo de Organização'
     search_terms:
       - productivity
+
   - trigger: :flowtxt
     replace: |
       🎯 COMO ENTRAR NO ESTADO DE FLOW
@@ -353,6 +367,7 @@ matches:
     comment: 🎯 COMO ENTRAR NO ESTADO DE FLOW
     search_terms:
       - productivity
+
   - trigger: :flowform
     replace: |
       # 🌀 Meu Planejamento para o Estado de Flow
@@ -398,6 +413,7 @@ matches:
     comment: '# 🌀 Meu Planejamento para o Estado de Flow'
     search_terms:
       - productivity
+
   - trigger: :flow-ref
     replace: |
       # Como Entrar no Estado de Flow
@@ -424,6 +440,7 @@ matches:
     comment: '# Como Entrar no Estado de Flow'
     search_terms:
       - productivity
+
   - trigger: :flowcheck
     replace: |
       ---
@@ -494,6 +511,7 @@ matches:
     comment: '---'
     search_terms:
       - productivity
+
   - trigger: :p-calendar
     form: |
       Here's my calendar for the week:
@@ -508,6 +526,7 @@ matches:
     comment: 'Here''s my calendar for the week:'
     search_terms:
       - productivity
+
   - trigger: :c-mapmanual
     form: |
       I do this task manually:
@@ -521,6 +540,7 @@ matches:
     comment: Maps repetitive manual workflows into automated trigger-action pipelines.
     search_terms:
       - productivity
+
   - trigger: :c-zapier
     form: |
       Design a Zapier workflow that automates [[process]]. Define the trigger, all the steps in sequence, what data is passed between steps, and how errors are handled.
@@ -531,6 +551,7 @@ matches:
     comment: Designs automated multi-app integrations with error handling and data formatting.
     search_terms:
       - productivity
+
   - trigger: :c-emailseq
     form: |
       Design an automated email sequence for [[purpose]]. Write the copy for each email, define the triggers and timing, and explain the goal of each message.
@@ -541,6 +562,7 @@ matches:
     comment: Crafts personalized multi-email onboarding and nurture drip campaigns.
     search_terms:
       - productivity
+
   - trigger: :c-datapipeline
     form: |
       Design a data pipeline that takes [[input]], transforms it by [[transformations]], and loads it into [[destination]]. Include error handling and monitoring.
@@ -553,6 +575,7 @@ matches:
     comment: Structures scheduled data extraction, transformation, validation, and loading jobs.
     search_terms:
       - productivity
+
   - trigger: :c-reportgen
     form: |
       Design an automation that pulls data from [[sources]], calculates [[metrics]], generates a [[format]] report, and sends it to [[recipients]] every [[frequency]].
@@ -569,6 +592,7 @@ matches:
     comment: Transforms raw metric tables into polished executive summaries with action items.
     search_terms:
       - productivity
+
   - trigger: :c-leadbot
     form: |
       Design an automated lead qualification system that [[inflow_channel]], asks qualifying questions, scores them against [[criteria]], and routes them to the right person.
@@ -581,6 +605,7 @@ matches:
     comment: Designs qualification question flows that score leads and route to sales teams.
     search_terms:
       - productivity
+
   - trigger: :c-custonboard
     form: |
       Design an automated customer onboarding flow for [[product]]. What happens at each step, what triggers the next step, and how are stuck customers identified and helped?
@@ -591,6 +616,7 @@ matches:
     comment: Automates account provisioning, welcome tours, and time-to-first-value milestones.
     search_terms:
       - productivity
+
   - trigger: :c-monitoralerts
     form: |
       Design an automated monitoring system for [[target]]. What metrics trigger alerts, how are alerts prioritized, and what information is included in each alert?
@@ -601,6 +627,7 @@ matches:
     comment: Configures signal-to-noise alert thresholds, escalation policies, and on-call paging.
     search_terms:
       - productivity
+
   - trigger: :c-supporttriage
     form: |
       Design an automation for [[support_channel]] that receives support requests, categorizes them by type and priority, routes them to the right team, and sends an acknowledgment to the customer.
@@ -611,6 +638,7 @@ matches:
     comment: Classifies incoming support requests by urgency, category, and assigned tier.
     search_terms:
       - productivity
+
   - trigger: :c-pubpipeline
     form: |
       Design an automated content publishing pipeline that takes a draft, runs it through [[checks]], formats it for [[platforms]], schedules publication, and tracks distribution.
@@ -623,6 +651,7 @@ matches:
     comment: Automates multi-platform formatting, scheduling, and asset repurposing.
     search_terms:
       - productivity
+
   - trigger: :c-compmonitor
     form: |
       Design an automation that monitors [[competitors]] for changes to [[what_to_monitor]] and delivers a weekly digest with the most important changes highlighted.
@@ -635,6 +664,7 @@ matches:
     comment: Sets up tracking workflows for competitor price shifts, changelogs, and job postings.
     search_terms:
       - productivity
+
   - trigger: :c-crmautomation
     form: |
       Design automations for [[crm_system]] that handle [[scenarios]]. What triggers each automation, what actions does it take, and how does it update records?
@@ -647,6 +677,7 @@ matches:
     comment: Automates deal stage updates, task assignments, and stale deal reminders in CRM.
     search_terms:
       - productivity
+
   - trigger: :c-employeeonboard
     form: |
       Design an automated employee onboarding workflow for [[role_or_department]] that handles account creation, equipment provisioning, training assignments, introduction emails, and day-one check-ins.
@@ -657,6 +688,7 @@ matches:
     comment: Generates automated provisioning checklists, IT requests, and 30-60-90 day schedules.
     search_terms:
       - productivity
+
   - trigger: :c-meetfollowup
     form: |
       Design an automation that processes meeting transcripts, extracts action items, assigns them to owners, creates tasks in [[pm_tool]], and sends follow-up emails.
@@ -667,6 +699,7 @@ matches:
     comment: Formats meeting transcript notes into structured emails with owners and deadlines.
     search_terms:
       - productivity
+
   - trigger: :c-pricemonitor
     form: |
       Design an automation that monitors competitor prices for [[products]] across [[channels]], alerts when significant changes occur, and provides pricing recommendations.
@@ -679,6 +712,7 @@ matches:
     comment: Designs price monitoring alerts with margin rules and competitor scrapers.
     search_terms:
       - productivity
+
   - trigger: :c-jobscreen
     form: |
       Design an automation for the recruitment process that posts jobs, screens applications against [[criteria]], schedules interviews for qualified candidates, and sends rejections.
@@ -689,6 +723,7 @@ matches:
     comment: Screens candidate qualifications against job requirements with structured scoring.
     search_terms:
       - productivity
+
   - trigger: :c-winback
     form: |
       Design an automated win-back campaign for churned customers of [[product_or_service]]. What triggers it, what is the sequence of messages, what offers are made, and when does it stop?
@@ -699,6 +734,7 @@ matches:
     comment: Designs targeted win-back offers and exit-survey feedback collection.
     search_terms:
       - productivity
+
   - trigger: :c-salesforecast
     form: |
       Design an automation that pulls data from [[data_sources]], applies [[forecasting_model]], generates weekly forecast reports, and flags deals needing attention.
@@ -711,6 +747,7 @@ matches:
     comment: Calculates weighted pipeline projections based on conversion historicals and deal stages.
     search_terms:
       - productivity
+
   - trigger: :c-ittickets
     form: |
       Design an automation that receives IT support tickets from [[intake_source]], categorizes them, assigns priority, routes to the right team, and tracks resolution time against SLAs.
@@ -721,6 +758,7 @@ matches:
     comment: Automates common password resets, permission requests, and hardware approvals.
     search_terms:
       - productivity
+
   - trigger: :c-abtests
     form: |
       Design a system that sets up A/B tests for [[test_subject]], monitors results, determines statistical significance, implements winners, and documents learnings.
@@ -731,6 +769,7 @@ matches:
     comment: Calculates sample sizes, minimum detectable effects, and statistical validity of tests.
     search_terms:
       - productivity
+
   - trigger: :c-lifecycle
     form: |
       Design automated workflows for each stage of the user lifecycle for [[product]]: activation, engagement, retention, re-engagement, and win-back.
@@ -741,6 +780,7 @@ matches:
     comment: Maps activation, adoption, expansion, and retention milestone triggers.
     search_terms:
       - productivity
+
   - trigger: :c-custhealth
     form: |
       Design an automation that monitors [[customer_signals]], calculates health scores, segments customers by risk, and triggers appropriate outreach for at-risk accounts.
@@ -751,6 +791,7 @@ matches:
     comment: Combines product usage, support tickets, and NPS into a predictive churn score.
     search_terms:
       - productivity
+
   - trigger: :c-finrecon
     form: |
       Design an automation that reconciles [[accounts]] by matching transactions, flagging discrepancies, generating exception reports, and updating records after review.
@@ -761,6 +802,7 @@ matches:
     comment: Reconciles bank feeds, invoices, and accounting ledgers with anomaly detection.
     search_terms:
       - productivity
+
   - trigger: :prompt-mentor
     replace: |
       Role
@@ -809,6 +851,7 @@ matches:
     comment: Critiques, refines, and upgrades your AI prompts for maximum fidelity.
     search_terms:
       - productivity
+
   - trigger: :handoff-prompt
     replace: |
       This chat is too long. Write a complete handoff document for a new chat covering: the goal, all the context needed to understand it cold, every decision we made and why, what's done, what's left in order, and the exact next step. Make it detailed enough that a fresh AI with zero memory picks up exactly where we left off.
@@ -816,6 +859,7 @@ matches:
     comment: Summarizes an ongoing chat history into a clean state handover for a fresh session.
     search_terms:
       - productivity
+
   - trigger: :steal-recipe
     replace: |
       Every ingredient, the exact quantities, the cooking technique, and how to make it at home so it tastes like the original. If there's a reason the restaurant version tastes better than homemade, tell me that secret too.
@@ -823,6 +867,7 @@ matches:
     comment: Extracts precise ingredient weights, times, temperatures, and techniques from videos/text.
     search_terms:
       - productivity
+
   - trigger: :price-scanner
     replace: |
       Find me a cheaper version of this exact product. Same quality, same materials, different brand. Search the web and show me where to buy it, the price difference, and whether the cheaper version has any real trade-offs.
@@ -830,6 +875,7 @@ matches:
     comment: Searches for identical or equivalent items at lower price points with reviews.
     search_terms:
       - productivity
+
   - trigger: :item-appraiser
     replace: |
       Tell me what this is worth right now. Search current resale prices, tell me the best platform to sell it on, and write me the listing title and description that gets the highest price. If it's worth more than I think, tell me why.
@@ -837,6 +883,7 @@ matches:
     comment: Estimates fair market value, resale range, and condition checks for items.
     search_terms:
       - productivity
+
   - trigger: :ingredient-scanner
     replace: |
       Flag every ingredient linked to health concerns. Tell me what each one actually does, how serious the risk is, and suggest a cleaner alternative product I can buy instead. Write it so someone with no science background understands.
@@ -844,6 +891,7 @@ matches:
     comment: Flags toxic additives, allergens, and health warnings in food/cosmetic ingredient lists.
     search_terms:
       - productivity
+
   - trigger: :build-persona
     replace: |
       I want to build a custom AI persona for my business.
@@ -859,7 +907,8 @@ matches:
     comment: Builds customized tone, knowledge boundary, and behavioral guidelines for an AI bot.
     search_terms:
       - productivity
-  - trigger: :claude-productivity-hacks
+
+  - trigger: :ai-productivity-hacks
     replace: |
       5 things. DO ONE NOW
       5 minutes. 5 hours back. Every week.
@@ -873,6 +922,7 @@ matches:
     comment: Curated rapid prompts to automate immediate daily tasks in 5 minutes.
     search_terms:
       - productivity
+
   - trigger: :ai-time-saver-cover
     replace: |
       5 things you can do with AI in the next 5 minutes that will save you 10 hours this week. Try them now and save them

@@ -7,8 +7,8 @@ as a static lint target.
 
 You SHALL generate:
 
-- 1–2 explicit prompts that clearly ask for the capability
-- 2–3 implicit prompts that describe the intended use case without naming the skill
+- 1-2 explicit prompts that clearly ask for the capability
+- 2-3 implicit prompts that describe the intended use case without naming the skill
 - 2 adjacent negative controls that should not trigger the skill
 - 1 ambiguous prompt near the boundary
 

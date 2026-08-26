@@ -96,33 +96,220 @@ matches:
       - brain-dump
       - clarity
 
-  - trigger: :34-psychology-tricks-chapter-7-rules
+  # --- 34 Power Psychology & Persuasion Rules ---
+
+  - triggers:
+      - :34-psychology-tricks
+      - :psy-all
+      - :psy
+    word: true
     replace: |
-      CHAPTER - 7
+      34 POWER PSYCHOLOGY & PERSUASION TRICKS
 
-      25. Stay unpredictable in your reactions.
-      Predictability is how manipulators control outcomes. Confuse their script by changing the rhythm.
+      CHAPTER 1: Emotional Composure & Control
+      1. Stay calm when someone tries to provoke you. Nothing disarms a manipulator faster than emotional control. Anger feeds them; silence starves them.
+      2. Never explain too much. Over-explaining sounds like guilt. Say what's true once then stop talking.
+      3. Learn to say "no" without explaining why. You don't owe anyone a justification for your boundaries.
+      4. Delay your reactions. Pausing for even 5 seconds before replying breaks emotional traps instantly.
 
-      26. When people overshare early, be cautious.
-      It's a trick to make you overshare too giving them leverage.
+      CHAPTER 2: Strategic Questioning
+      5. Ask questions instead of defending yourself. Manipulators hate questions because it shifts power back to you.
+      6. Observe patterns, not promises. Words are cheap. Repetition reveals truth.
+      7. Master neutral body language. No fidgeting, no overreacting. Calm posture makes others feel you're in control, even when silent.
+      8. Never argue with someone playing victim. They don't want truth, they want sympathy and power. Walk away.
 
-      27. Don't argue with emotional people
-      Match logic with calm presence.
+      CHAPTER 3: Verbal Mirroring
+      9. Repeat their exact words back. It forces accountability. They realize you heard them and can't twist it later.
+      10. Notice tone changes, not just words. What people hide is usually revealed by how they say it.
+      11. When someone lies, stay quiet and look directly at them. Silence makes liars uncomfortable. They expose themselves trying to fill the space.
+      12. If someone tries to guilt-trip you, ask: "What do you need me to do?" It forces them to admit the manipulation out loud.
 
-      28. When someone blames you unfairly, ask:
-      "What makes you think that?"
-      It shifts the burden of proof back to them.
-    label: "[Behavior] Psychology Rules: Strategic Unpredictability"
-    comment: Maintaining tactical advantage through unpredictable timing and flexibility.
+      CHAPTER 4: Managing Difficult Personalities
+      13. Compliment manipulative people strategically. A quick "You're good at that" satisfies their ego and defuses tension - without giving real power.
+      14. Never share too much about your emotions. Manipulators study feelings to learn how to control you. Keep your cards close.
+      15. Watch for sudden kindness after conflict. It's often emotional bait, not genuine care.
+      16. Don't defend your boundaries just enforce them. Explaining boundaries invites debate. Quiet consistency commands respect.
+
+      CHAPTER 5: Mirroring Calm Energy
+      17. Mirror calm energy. If they raise their voice, lower yours. It subconsciously forces them to match your tone.
+      18. Replace "I'm sorry" with "Thank you." It rewires guilt-based conditioning. "Thank you for waiting" sounds confident. "Sorry I'm late" sounds submissive.
+      19. Never compete for validation. The person who needs approval loses power first.
+      20. Use silence as a weapon of peace. Responding less often doesn't make you cold it makes you unpredictable.
+
+      CHAPTER 6: Behavior Over Words
+      21. Watch how people treat you when you say "no." That's the purest form of truth you'll ever see.
+      22. Practice emotional labeling. Instead of reacting, think: I'm feeling angry. Naming it instantly lowers its control over you.
+      23. Keep your goals private until they're visible. People can't attack what they don't know exists.
+      24. Don't let praise blind you. Flattery is often a leash disguised as affection.
+
+      CHAPTER 7: Strategic Unpredictability
+      25. Stay unpredictable in your reactions. Predictability is how manipulators control outcomes. Confuse their script by changing the rhythm.
+      26. When people overshare early, be cautious. It's a trick to make you overshare too giving them leverage.
+      27. Don't argue with emotional people. Match logic with calm presence.
+      28. When someone blames you unfairly, ask: "What makes you think that?" It shifts the burden of proof back to them.
+
+      CHAPTER 8: The Power of Walking Away
+      29. Learn to walk away mid-conflict. Power is knowing when silence says more than shouting ever will.
+      30. Use people's names when disagreeing. It grounds the conversation and lowers aggression instantly.
+      31. Don't justify success to insecure people. The more you explain your growth, the more they'll resent you.
+      32. Notice how people react when you win. Joy reveals allies; discomfort reveals hidden envy.
+
+      CHAPTER 9: Emotional Independence
+      33. Trust actions over emotions. What people do repeatedly will always expose what they feel secretly.
+      34. Learn to enjoy solitude. Once you stop needing constant company, no one can ever manipulate your loneliness again.
+    label: "[Behavior] 34 Power Psychology & Persuasion Tricks (Full Guide)"
+    comment: Complete compilation of all 34 behavioral psychology principles for influence, negotiation, and composure.
     search_terms:
       - behavior
       - psychology
-      - unpredictability
-      - manipulation-defense
+      - persuasion
+      - influence
+      - composure
+      - 34-tricks
 
-  - trigger: :34-psychology-tricks-chapter-6-rules
+  - triggers:
+      - :psy1
+      - :psy-ch1
+      - :psy-composure
+      - :34-psychology-tricks-chapter-1-rules
     replace: |
-      CHAPTER - 6
+      CHAPTER - 1: Emotional Composure & Control
+
+      1. Stay calm when someone tries to provoke you.
+      Nothing disarms a manipulator faster than emotional control. Anger feeds them; silence starves them.
+
+      2. Never explain too much.
+      Over-explaining sounds like guilt. Say what's true once then stop talking.
+
+      3. Learn to say "no" without explaining why.
+      You don't owe anyone a justification for your boundaries.
+
+      4. Delay your reactions.
+      Pausing for even 5 seconds before replying breaks emotional traps instantly.
+    label: "[Behavior] Psychology Rules: Emotional Composure & Control (Ch 1)"
+    comment: Rules for maintaining emotional detachment and authority under social pressure.
+    search_terms:
+      - behavior
+      - psychology
+      - emotional-control
+      - composure
+
+  - triggers:
+      - :psy2
+      - :psy-ch2
+      - :psy-questions
+      - :34-psychology-tricks-chapter-2-rules
+    replace: |
+      CHAPTER - 2: Strategic Questioning
+
+      5. Ask questions instead of defending yourself.
+      Manipulators hate questions because it shifts power back to you.
+
+      6. Observe patterns, not promises.
+      Words are cheap. Repetition reveals truth.
+
+      7. Master neutral body language.
+      No fidgeting, no overreacting. Calm posture makes others feel you're in control, even when silent.
+
+      8. Never argue with someone playing victim.
+      They don't want truth, they want sympathy and power. Walk away.
+    label: "[Behavior] Psychology Rules: Strategic Questioning (Ch 2)"
+    comment: Techniques for controlling conversations by asking targeted questions.
+    search_terms:
+      - behavior
+      - psychology
+      - strategic-questioning
+      - body-language
+
+  - triggers:
+      - :psy3
+      - :psy-ch3
+      - :psy-mirror
+      - :34-psychology-tricks-chapter-3-rules
+    replace: |
+      CHAPTER - 3: Verbal Mirroring
+
+      9. Repeat their exact words back.
+      It forces accountability. They realize you heard them and can't twist it later.
+
+      10. Notice tone changes, not just words.
+      What people hide is usually revealed by how they say it.
+
+      11. When someone lies, stay quiet and look directly at them.
+      Silence makes liars uncomfortable. They expose themselves trying to fill the space.
+
+      12. If someone tries to guilt-trip you, ask: "What do you need me to do?"
+      It forces them to admit the manipulation out loud.
+    label: "[Behavior] Psychology Rules: Verbal Mirroring (Ch 3)"
+    comment: Using exact word repetition to build trust and disarm resistance.
+    search_terms:
+      - behavior
+      - psychology
+      - verbal-mirroring
+      - de-escalation
+
+  - triggers:
+      - :psy4
+      - :psy-ch4
+      - :psy-boundaries
+      - :34-psychology-tricks-chapter-4-rules
+    replace: |
+      CHAPTER - 4: Managing Difficult Personalities
+
+      13. Compliment manipulative people strategically.
+      A quick "You're good at that" satisfies their ego and defuses tension - without giving real power.
+
+      14. Never share too much about your emotions.
+      Manipulators study feelings to learn how to control you. Keep your cards close.
+
+      15. Watch for sudden kindness after conflict.
+      It's often emotional bait, not genuine care.
+
+      16. Don't defend your boundaries just enforce them.
+      Explaining boundaries invites debate. Quiet consistency commands respect.
+    label: "[Behavior] Psychology Rules: Managing Difficult Personalities (Ch 4)"
+    comment: Strategic framing and boundary setting when dealing with manipulative actors.
+    search_terms:
+      - behavior
+      - psychology
+      - boundaries
+      - difficult-personalities
+
+  - triggers:
+      - :psy5
+      - :psy-ch5
+      - :psy-calm
+      - :34-psychology-tricks-chapter-5-rules
+      - :34-psychology-tricks-success-rules-ch5
+    replace: |
+      CHAPTER - 5: Mirroring Calm Energy
+
+      17. Mirror calm energy.
+      If they raise their voice, lower yours. It subconsciously forces them to match your tone.
+
+      18. Replace "I'm sorry" with "Thank you."
+      It rewires guilt-based conditioning. "Thank you for waiting" sounds confident. "Sorry I'm late" sounds submissive.
+
+      19. Never compete for validation.
+      The person who needs approval loses power first.
+
+      20. Use silence as a weapon of peace.
+      Responding less often doesn't make you cold it makes you unpredictable.
+    label: "[Behavior] Psychology Rules: Mirroring Calm Energy (Ch 5)"
+    comment: Techniques for de-escalating tension by projecting grounded composure.
+    search_terms:
+      - behavior
+      - psychology
+      - calm-energy
+      - confidence
+
+  - triggers:
+      - :psy6
+      - :psy-ch6
+      - :psy-actions
+      - :34-psychology-tricks-chapter-6-rules
+    replace: |
+      CHAPTER - 6: Behavior Over Words
 
       21. Watch how people treat you when you say "no."
       That's the purest form of truth you'll ever see.
@@ -136,7 +323,7 @@ matches:
 
       24. Don't let praise blind you.
       Flattery is often a leash disguised as affection.
-    label: "[Behavior] Psychology Rules: Behavior Over Words"
+    label: "[Behavior] Psychology Rules: Behavior Over Words (Ch 6)"
     comment: Reading behavioral actions rather than stated intentions to assess character.
     search_terms:
       - behavior
@@ -144,32 +331,41 @@ matches:
       - behavior-over-words
       - character
 
-  - trigger: :34-psychology-tricks-chapter-3-rules
+  - triggers:
+      - :psy7
+      - :psy-ch7
+      - :psy-unpredictable
+      - :34-psychology-tricks-chapter-7-rules
     replace: |
-      CHAPTER - 3
+      CHAPTER - 7: Strategic Unpredictability
 
-      9. Repeat their exact words back.
-      It forces accountability. They realize you heard them and can't twist it later.
+      25. Stay unpredictable in your reactions.
+      Predictability is how manipulators control outcomes. Confuse their script by changing the rhythm.
 
-      10. Notice tone changes, not just words.
-      What people hide is usually revealed by how they say it.
+      26. When people overshare early, be cautious.
+      It's a trick to make you overshare too giving them leverage.
 
-      11. When someone lies, stay quiet and look directly at them.
-      Silence makes liars uncomfortable. They expose themselves trying to fill the space.
+      27. Don't argue with emotional people.
+      Match logic with calm presence.
 
-      12. If someone tries to guilt-trip you, ask: "What do you need me to do?"
-      It forces them to admit the manipulation out loud.
-    label: "[Behavior] Psychology Rules: Verbal Mirroring"
-    comment: Using exact word repetition to build trust and disarm resistance.
+      28. When someone blames you unfairly, ask:
+      "What makes you think that?"
+      It shifts the burden of proof back to them.
+    label: "[Behavior] Psychology Rules: Strategic Unpredictability (Ch 7)"
+    comment: Maintaining tactical advantage through unpredictable timing and flexibility.
     search_terms:
       - behavior
       - psychology
-      - verbal-mirroring
-      - de-escalation
+      - unpredictability
+      - manipulation-defense
 
-  - trigger: :34-psychology-tricks-chapter-8-rules
+  - triggers:
+      - :psy8
+      - :psy-ch8
+      - :psy-walkaway
+      - :34-psychology-tricks-chapter-8-rules
     replace: |
-      CHAPTER - 8
+      CHAPTER - 8: The Power of Walking Away
 
       29. Learn to walk away mid-conflict.
       Power is knowing when silence says more than shouting ever will.
@@ -182,7 +378,7 @@ matches:
 
       32. Notice how people react when you win.
       Joy reveals allies; discomfort reveals hidden envy.
-    label: "[Behavior] Psychology Rules: The Power of Walking Away"
+    label: "[Behavior] Psychology Rules: The Power of Walking Away (Ch 8)"
     comment: Establishing negotiation leverage by holding a credible willingness to walk away.
     search_terms:
       - behavior
@@ -190,98 +386,20 @@ matches:
       - walking-away
       - negotiation-leverage
 
-  - trigger: :34-psychology-tricks-chapter-1-rules
+  - triggers:
+      - :psy9
+      - :psy-ch9
+      - :psy-solitude
+      - :34-psychology-tricks-chapter-9-rules
     replace: |
-      CHAPTER - 1
-
-      1. Stay calm when someone tries to provoke you.
-      Nothing disarms a manipulator faster than emotional control. Anger feeds them; silence starves them.
-
-      2. Never explain too much.
-      Over-explaining sounds like guilt. Say what's true once then stop talking.
-
-      3. Learn to say "no" without explaining why.
-      You don't owe anyone a justification for your boundaries.
-
-      4. Delay your reactions.
-      Pausing for even 5 seconds before replying breaks emotional traps instantly.
-    label: "[Behavior] Psychology Rules: Emotional Composure & Control"
-    comment: Rules for maintaining emotional detachment and authority under social pressure.
-    search_terms:
-      - behavior
-      - psychology
-      - emotional-control
-      - composure
-
-  - trigger: :34-psychology-tricks-chapter-2-rules
-    replace: |
-      CHAPTER - 2
-
-      5. Ask questions instead of defending yourself.
-      Manipulators hate questions because it shifts power back to you.
-
-      6. Observe patterns, not promises.
-      Words are cheap. Repetition reveals truth.
-
-      7. Master neutral body language.
-      No fidgeting, no overreacting. Calm posture makes others feel you're in control, even when silent.
-
-      8. Never argue with someone playing victim.
-      They don't want truth, they want sympathy and power. Walk away.
-    label: "[Behavior] Psychology Rules: Strategic Questioning"
-    comment: Techniques for controlling conversations by asking targeted questions.
-    search_terms:
-      - behavior
-      - psychology
-      - strategic-questioning
-      - body-language
-
-  - trigger: :34-psychology-tricks
-    word: true
-    replace: |
-      NO ONE CAN EVER CONTROL YOU IF YOU LEARN THESE 34 PSYCHOLOGY TRICKS
-    label: "[Behavior] 34 Power Psychology & Persuasion Tricks"
-    comment: Comprehensive behavioral psychology principles for influence, negotiation, and composure.
-    search_terms:
-      - behavior
-      - psychology
-      - persuasion
-      - influence
-      - composure
-
-  - trigger: :34-psychology-tricks-chapter-4-rules
-    replace: |
-      CHAPTER - 4
-
-      13. Compliment manipulative people strategically.
-      A quick "You're good at that" satisfies their ego and defuses tension - without giving real power.
-
-      14. Never share too much about your emotions.
-      Manipulators study feelings to learn how to control you. Keep your cards close.
-
-      15. Watch for sudden kindness after conflict.
-      It's often emotional bait, not genuine care.
-
-      16. Don't defend your boundaries just enforce them.
-      Explaining boundaries invites debate. Quiet consistency commands respect.
-    label: "[Behavior] Psychology Rules: Managing Difficult Personalities"
-    comment: Strategic framing and boundary setting when dealing with manipulative actors.
-    search_terms:
-      - behavior
-      - psychology
-      - boundaries
-      - difficult-personalities
-
-  - trigger: :34-psychology-tricks-chapter-9-rules
-    replace: |
-      CHAPTER - 9
+      CHAPTER - 9: Emotional Independence
 
       33. Trust actions over emotions.
       What people do repeatedly will always expose what they feel secretly.
 
       34. Learn to enjoy solitude.
       Once you stop needing constant company, no one can ever manipulate your loneliness again.
-    label: "[Behavior] Psychology Rules: Emotional Independence"
+    label: "[Behavior] Psychology Rules: Emotional Independence (Ch 9)"
     comment: Cultivating internal validation and making decisions free from social pressure.
     search_terms:
       - behavior
@@ -289,28 +407,4 @@ matches:
       - emotional-independence
       - solitude
 
-  - triggers:
-      - :34-psychology-tricks-chapter-5-rules
-      - :34-psychology-tricks-success-rules-ch5
-    replace: |
-      CHAPTER - 5
-
-      17. Mirror calm energy.
-      If they raise their voice, lower yours. It subconsciously forces them to match your tone.
-
-      18. Replace "I'm sorry" with "Thank you."
-      It rewires guilt-based conditioning. "Thank you for waiting" sounds confident. "Sorry I'm late" sounds submissive.
-
-      19. Never compete for validation.
-      The person who needs approval loses power first.
-
-      20. Use silence as a weapon of peace.
-      Responding less often doesn't make you cold it makes you unpredictable.
-    label: "[Behavior] Psychology Rules: Mirroring Calm Energy"
-    comment: Techniques for de-escalating tension by projecting grounded composure.
-    search_terms:
-      - behavior
-      - psychology
-      - calm-energy
-      - confidence
 

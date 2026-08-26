@@ -18,15 +18,16 @@ Trigger workflows for ADHD cognitive load management, task initiation, and behav
 
 ### Behavioral Psychology Rules
 
-| Trigger | Label | Description |
+| Shortcuts | Chapter & Topic | Description |
 |---|---|---|
-| `:34-psychology-tricks` | `[Behavior] 34 Power Psychology & Persuasion Tricks` | Header trigger for the 34 psychology principles series (`word: true`). |
-| `:34-psychology-tricks-chapter-1-rules` | `[Behavior] Psychology Rules: Emotional Composure & Control` | Detachment, silence, and reaction-delay rules. |
-| `:34-psychology-tricks-chapter-2-rules` | `[Behavior] Psychology Rules: Strategic Questioning` | Shifting conversation power through targeted inquiry and posture. |
-| `:34-psychology-tricks-chapter-3-rules` | `[Behavior] Psychology Rules: Verbal Mirroring` | Exact word repetition and silence to dismantle manipulation. |
-| `:34-psychology-tricks-chapter-4-rules` | `[Behavior] Psychology Rules: Managing Difficult Personalities` | Strategic flattery, boundary enforcement, and composure. |
-| `:34-psychology-tricks-chapter-5-rules` / `:34-psychology-tricks-success-rules-ch5` | `[Behavior] Psychology Rules: Mirroring Calm Energy` | Lowering tone, replacing apologies with appreciation, and quiet composure. |
-| `:34-psychology-tricks-chapter-6-rules` | `[Behavior] Psychology Rules: Behavior Over Words` | Emotional labeling, boundary responses, and evaluating actions over words. |
-| `:34-psychology-tricks-chapter-7-rules` | `[Behavior] Psychology Rules: Strategic Unpredictability` | Shifting burden of proof, unscripted responses, and calm presence. |
-| `:34-psychology-tricks-chapter-8-rules` | `[Behavior] Psychology Rules: The Power of Walking Away` | Grounding disagreements, walking away, and recognizing envy. |
-| `:34-psychology-tricks-chapter-9-rules` | `[Behavior] Psychology Rules: Emotional Independence` | Cultivating solitude and grounding actions over emotions. |
+| `:psy`, `:psy-all`, `:34-psychology-tricks` | **Full Guide (Rules 1–34)** | Complete 34-rule compendium across all 9 chapters (`word: true`). |
+| `:psy1`, `:psy-ch1`, `:psy-composure` | **Ch 1: Emotional Composure & Control** | Detachment, silence, and reaction-delay rules (Rules 1–4). |
+| `:psy2`, `:psy-ch2`, `:psy-questions` | **Ch 2: Strategic Questioning** | Shifting conversation power through targeted inquiry and posture (Rules 5–8). |
+| `:psy3`, `:psy-ch3`, `:psy-mirror` | **Ch 3: Verbal Mirroring** | Exact word repetition and silence to dismantle manipulation (Rules 9–12). |
+| `:psy4`, `:psy-ch4`, `:psy-boundaries` | **Ch 4: Managing Difficult Personalities** | Strategic flattery, boundary enforcement, and composure (Rules 13–16). |
+| `:psy5`, `:psy-ch5`, `:psy-calm` | **Ch 5: Mirroring Calm Energy** | Lowering tone, replacing apologies with appreciation, and quiet composure (Rules 17–20). |
+| `:psy6`, `:psy-ch6`, `:psy-actions` | **Ch 6: Behavior Over Words** | Emotional labeling, boundary responses, and evaluating actions over words (Rules 21–24). |
+| `:psy7`, `:psy-ch7`, `:psy-unpredictable` | **Ch 7: Strategic Unpredictability** | Shifting burden of proof, unscripted responses, and calm presence (Rules 25–28). |
+| `:psy8`, `:psy-ch8`, `:psy-walkaway` | **Ch 8: The Power of Walking Away** | Grounding disagreements, walking away, and recognizing envy (Rules 29–32). |
+| `:psy9`, `:psy-ch9`, `:psy-solitude` | **Ch 9: Emotional Independence** | Cultivating solitude and grounding actions over emotions (Rules 33–34). |
+

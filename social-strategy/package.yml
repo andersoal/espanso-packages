@@ -1,731 +1,716 @@
 # yaml-language-server: =https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
-- regex: :niche\((?P<target_niche>.*)\)
-  replace: 'Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze the niche "{{target_niche}}" and identify the most profitable audience segments, their biggest frustrations, emotional triggers, content consumption habits, and what type of posts make them follow, engage, and buy. Present this in a clear, actionable profile I can build content around.
-
-    '
-  label: '[Social Strategy] Niche Audience & Frustration Profiler'
-  comment: Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze
-  search_terms:
-  - social-strategy
+  - regex: :niche\((?P<target_niche>.*)\)
+    replace:
+      'Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze the niche "{{target_niche}}" and identify the most profitable audience segments, their biggest frustrations, emotional triggers, content consumption habits, and what type of posts make them follow, engage, and buy. Present this in a clear, actionable profile I can build content around.
+
+      '
+    label: "[Social Strategy] Niche Audience & Frustration Profiler"
+    comment: Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze
+    search_terms:
+      - social-strategy
+
+      - social strategy
+  - regex: :position\((?P<target_niche>.*)\)
+    replace:
+      'Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". Define what my brand stands for, the unique angle that separates me from competitors, my brand voice and tone, visual aesthetic guidelines, and the core message that will resonate deeply with my target audience.
+
+      '
+    label: "[Social Strategy] Brand Identity & Unique Positioning Angle"
+    comment: Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". D
+    search_terms:
+      - social-strategy
+
+      - social strategy
+  - trigger: :pillars
+    form:
+      "You're a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche [[niche]] and target audience [[audience]], create 5 content pillars that will drive maximum engagement. For each pillar, explain: why it works, the psychology behind it, 10 post ideas, and how to balance educational/entertaining/promotional content.
+
+      "
+    form_fields:
+      niche:
+        type: text
+        default: B2B Software Engineering
+      audience:
+        type: text
+        default: Technical Architects and Enterprise Builders
+    label: "[Social Strategy] 5 Core Engagement Content Pillars"
+    comment: "You're a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche  and target audience "
+    search_terms:
+      - social-strategy
+
+      - social strategy
+  - trigger: :calendar
+    form:
+      "Act as my content calendar manager. Create a complete 30-day posting schedule for [[platform]]. Include: daily post concepts, optimal posting times based on audience behavior, content format variety (carousels/reels/stories), hooks for each post, and strategic CTAs. Make it copy-paste ready.
 
-  - social strategy
-- regex: :position\((?P<target_niche>.*)\)
-  replace: 'Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". Define what my brand stands for, the unique angle that separates me from competitors, my brand voice and tone, visual aesthetic guidelines, and the core message that will resonate deeply with my target audience.
+      "
+    form_fields:
+      platform:
+        type: choice
+        values:
+          - LinkedIn
+          - X (Twitter)
+          - YouTube Shorts
+          - Instagram
+    label: "[Social Strategy] 30-Day Multi-Platform Content Calendar"
+    comment: "Act as my content calendar manager. Create a complete 30-day posting schedule for . Include: daily post concepts, optima"
+    search_terms:
+      - social-strategy
 
-    '
-  label: '[Social Strategy] Brand Identity & Unique Positioning Angle'
-  comment: Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". D
-  search_terms:
+      - social strategy
+  - regex: :hooks\((?P<target_niche>.*)\)
+    replace:
+      "You're a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}} and create 50 hook templates I can customize. Categorize them by: curiosity-driven, controversy, storytelling, listicles, bold statements. Make each one scroll-stopping.
 
-  - social-strategy
+      "
+    label: "[Social Strategy] 50 Viral Scroll-Stopping Hook Templates"
+    comment: You're a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}
+    search_terms:
+      - social-strategy
 
-  - social strategy
-- trigger: :pillars
-  form: 'You''re a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche [[niche]] and target audience [[audience]], create 5 content pillars that will drive maximum engagement. For each pillar, explain: why it works, the psychology behind it, 10 post ideas, and how to balance educational/entertaining/promotional content.
+      - social strategy
+  - trigger: :engage
+    replace:
+      "Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conversation starters that build relationships, collaboration outreach templates, how to turn followers into loyal fans, and a daily engagement routine that takes under 30 minutes.
 
-    '
-  form_fields:
-    niche:
-      type: text
-      default: B2B Software Engineering
-    audience:
-      type: text
-      default: Technical Architects and Enterprise Builders
-  label: '[Social Strategy] 5 Core Engagement Content Pillars'
-  comment: 'You''re a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche  and target audience '
-  search_terms:
+      "
+    label: "[Social Strategy] Community Management & Engagement Strategy"
+    comment: "Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conver"
+    search_terms:
+      - social-strategy
 
-  - social-strategy
+      - social strategy
+  - trigger: :analytics
+    replace: "You're a data analyst for social media. Based on these metrics:
 
-  - social strategy
-- trigger: :calendar
-  form: 'Act as my content calendar manager. Create a complete 30-day posting schedule for [[platform]]. Include: daily post concepts, optimal posting times based on audience behavior, content format variety (carousels/reels/stories), hooks for each post, and strategic CTAs. Make it copy-paste ready.
 
-    '
-  form_fields:
-    platform:
-      type: choice
-      values:
-      - LinkedIn
-      - X (Twitter)
-      - YouTube Shorts
-      - Instagram
-  label: '[Social Strategy] 30-Day Multi-Platform Content Calendar'
-  comment: 'Act as my content calendar manager. Create a complete 30-day posting schedule for . Include: daily post concepts, optima'
-  search_terms:
+      {{raw_metrics}}
 
-  - social-strategy
 
-  - social strategy
-- regex: :hooks\((?P<target_niche>.*)\)
-  replace: 'You''re a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}} and create 50 hook templates I can customize. Categorize them by: curiosity-driven, controversy, storytelling, listicles, bold statements. Make each one scroll-stopping.
+      Identify: what's working and why, what's underperforming and how to fix it, content gaps I should fill, optimal posting frequency, and a 90-day growth roadmap with specific KPIs to hit.
 
-    '
-  label: '[Social Strategy] 50 Viral Scroll-Stopping Hook Templates'
-  comment: You're a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}
-  search_terms:
+      "
+    vars:
+      - name: raw_metrics
+        type: clipboard
+    label: "[Social Strategy] Social Media Metrics & Performance Auditor"
+    comment: "You're a data analyst for social media. Based on these metrics:"
+    search_terms:
+      - social-strategy
 
-  - social-strategy
+      - social strategy
+  - trigger: :beforeafter
+    replace: '### The Before-and-After Grid
 
-  - social strategy
-- trigger: :engage
-  replace: 'Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conversation starters that build relationships, collaboration outreach templates, how to turn followers into loyal fans, and a daily engagement routine that takes under 30 minutes.
+      | Experiential Register | The "Before" State (Point A) | The "After" State (Point B) |
 
-    '
-  label: '[Social Strategy] Community Management & Engagement Strategy'
-  comment: 'Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conver'
-  search_terms:
+      | --- | --- | --- |
 
-  - social-strategy
+      | **Have** | | |
 
-  - social strategy
-- trigger: :analytics
-  replace: 'You''re a data analyst for social media. Based on these metrics:
+      | **Feel** | | |
 
+      | **Average Day** | | |
 
-    {{raw_metrics}}
+      | **Status** | | |
 
+      | **Good vs. Evil** | | |
 
-    Identify: what''s working and why, what''s underperforming and how to fix it, content gaps I should fill, optimal posting frequency, and a 90-day growth roadmap with specific KPIs to hit.
+      '
+    label: "[Social Strategy] Before-and-After Experiential Transformation Grid"
+    comment: "### The Before-and-After Grid"
+    search_terms:
+      - social-strategy
 
-    '
-  vars:
+      - social strategy
+  - trigger: :epiphany
+    replace: "### Epiphany Bridge Narrative Outline
 
-  - name: raw_metrics
-    type: clipboard
-  label: '[Social Strategy] Social Media Metrics & Performance Auditor'
-  comment: 'You''re a data analyst for social media. Based on these metrics:'
-  search_terms:
+      1. **Backstory:** [Establish the professional starting point to create immediate empathy]
 
-  - social-strategy
+      2. **Desire:** [Articulate the external goals and deeper internal motivations driving the change]
 
-  - social strategy
-- trigger: :beforeafter
-  replace: '### The Before-and-After Grid
+      3. **The Wall:** [Identify the insurmountable obstacle hit within the legacy framework]
 
-    | Experiential Register | The "Before" State (Point A) | The "After" State (Point B) |
+      4. **The Epiphany:** [The sudden discovery of the New Opportunity vehicle]
 
-    | --- | --- | --- |
+      5. **The Plan:** [The strategic blueprint created to test and validate this discovery]
 
-    | **Have** | | |
+      6. **The Conflict:** [The intense friction, challenges, and skepticism overcome during execution]
 
-    | **Feel** | | |
+      7. **Achievement:** [Attaining the target end result and proving the validity of the plan]
 
-    | **Average Day** | | |
+      8. **Transformation:** [The profound operational and identity shift realized from the journey]
 
-    | **Status** | | |
+      "
+    label: "[Social Strategy] Epiphany Bridge Storytelling Narrative Outline"
+    comment: "### Epiphany Bridge Narrative Outline"
+    search_terms:
+      - social-strategy
 
-    | **Good vs. Evil** | | |
+      - social strategy
+  - trigger: :triage
+    replace: '---
 
-    '
-  label: '[Social Strategy] Before-and-After Experiential Transformation Grid'
-  comment: '### The Before-and-After Grid'
-  search_terms:
+      type: interaction
 
-  - social-strategy
+      activity: triage-call
 
-  - social strategy
-- trigger: :epiphany
-  replace: '### Epiphany Bridge Narrative Outline
+      date: "{{current_date}}"
 
-    1. **Backstory:** [Establish the professional starting point to create immediate empathy]
+      status: completed
 
-    2. **Desire:** [Articulate the external goals and deeper internal motivations driving the change]
+      ---
 
-    3. **The Wall:** [Identify the insurmountable obstacle hit within the legacy framework]
+      # Triage Call Diagnostic: [Prospect Name]
 
-    4. **The Epiphany:** [The sudden discovery of the New Opportunity vehicle]
 
-    5. **The Plan:** [The strategic blueprint created to test and validate this discovery]
+      ### 1. The Problem
 
-    6. **The Conflict:** [The intense friction, challenges, and skepticism overcome during execution]
+      > What is broken or missing in their current framework, and how long has this friction persisted?
 
-    7. **Achievement:** [Attaining the target end result and proving the validity of the plan]
+      -
 
-    8. **Transformation:** [The profound operational and identity shift realized from the journey]
 
-    '
-  label: '[Social Strategy] Epiphany Bridge Storytelling Narrative Outline'
-  comment: '### Epiphany Bridge Narrative Outline'
-  search_terms:
+      ### 2. The Impact
 
-  - social-strategy
+      > What are the quantifiable financial, operational, or personal costs of continuing with state-level inaction?
 
-  - social strategy
-- trigger: :triage
-  replace: '---
+      -
 
-    type: interaction
 
-    activity: triage-call
+      ### 3. Fit & Urgency
 
-    date: "{{current_date}}"
+      > Confirm baseline parameters: Do they possess the resources, alignment, and immediate intent to solve it?
 
-    status: completed
+      -
 
-    ---
 
-    # Triage Call Diagnostic: [Prospect Name]
+      ### 4. Pipeline Disposition
 
+      - [ ] **Advance:** Qualified candidate. Book 45-Minute Strategy Session.
 
-    ### 1. The Problem
+      - [ ] **Redirect:** Unqualified/Poor fit. Disengage or route to low-barrier asynchronous asset.
 
-    > What is broken or missing in their current framework, and how long has this friction persisted?
+      '
+    vars:
+      - name: current_date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+    label: "[Social Strategy] Consulting Triage Call Interaction Note"
+    comment: "---"
+    search_terms:
+      - social-strategy
 
-    -
+      - social strategy
+  - trigger: :sigsys
+    replace: "### Proprietary Signature System Design\n* Formula: $Signature System = Problem + Promise + Process$\n\n- **The Problem Core:** [State the primary high-friction marketplace inefficiency being resolved]\n- **The Promise Core:** [State the ultimate outcome achieved at Point Z]\n- **The Process Milestones:**\n  1. **Phase 1 (Quick Win / A → B):** [Low-friction intervention to establish trust and momentum]\n  2. **Phase 2 (Core Pivot):** [Implementation of the proprietary engine to resolve root obstacles]\n  3. **Phase 3 (Scale / Final Integration):** [Systemization to ensure long-term, repeatable outcomes]\n"
+    label: "[Social Strategy] Proprietary Signature System Formula Design"
+    comment: "### Proprietary Signature System Design"
+    search_terms:
+      - social-strategy
 
+      - social strategy
+  - trigger: :p-market
+    form:
+      "Analyze the market for [[niche]]. Use only specific, data-backed insights. No generic statements.
 
-    ### 2. The Impact
 
-    > What are the quantifiable financial, operational, or personal costs of continuing with state-level inaction?
+      Deliver exactly four structured sections:
 
-    -
+      1. Market sizing: TAM, SAM, and SOM with estimated dollar values and your assumptions
 
+      2. Top 5 demand trends: each as a one-line headline + two-sentence explanation
 
-    ### 3. Fit & Urgency
+      3. Top 5 underserved opportunities: specific gaps, not broad categories
 
-    > Confirm baseline parameters: Do they possess the resources, alignment, and immediate intent to solve it?
+      4. Follow the money: 3-5 areas where VC, PE, or acquirer capital is actively flowing
 
-    -
 
+      Format each section with a bold heading, then concise bullet points. Total output: under 600 words.
 
-    ### 4. Pipeline Disposition
+      "
+    form_fields:
+      niche:
+        multiline: true
+    label: "[Social Strategy] Niche Market Demand & Competitive Teardown"
+    comment: Analyze the market for . Use only specific, data-backed insights. No generic statements.
+    search_terms:
+      - social-strategy
 
-    - [ ] **Advance:** Qualified candidate. Book 45-Minute Strategy Session.
+      - social strategy
+  - trigger: :p-problem
+    form: "List the top 10 problems in [[industry]].
 
-    - [ ] **Redirect:** Unqualified/Poor fit. Disengage or route to low-barrier asynchronous asset.
 
-    '
-  vars:
+      For each problem, score it on three dimensions:
 
-  - name: current_date
-    type: date
-    params:
-      format: '%Y-%m-%d'
-  label: '[Social Strategy] Consulting Triage Call Interaction Note'
-  comment: '---'
-  search_terms:
+      - Urgency (1-10): how painful/time-sensitive it is right now
 
-  - social-strategy
+      - Willingness to pay (1-10): how likely buyers are to spend money to solve it today
 
-  - social strategy
-- trigger: :sigsys
-  replace: "### Proprietary Signature System Design\n* Formula: $Signature System = Problem + Promise + Process$\n\n- **The Problem Core:** [State the primary high-friction marketplace inefficiency being resolved]\n- **The Promise Core:** [State the ultimate outcome achieved at Point Z]\n- **The Process Milestones:**\n  1. **Phase 1 (Quick Win / A → B):** [Low-friction intervention to establish trust and momentum]\n  2. **Phase 2 (Core Pivot):** [Implementation of the proprietary engine to resolve root obstacles]\n  3. **Phase 3 (Scale / Final Integration):** [Systemization to ensure long-term, repeatable outcomes]\n"
-  label: '[Social Strategy] Proprietary Signature System Formula Design'
-  comment: '### Proprietary Signature System Design'
-  search_terms:
+      - Growth trajectory: 'rising fast', 'stable', or 'declining'
 
-  - social-strategy
 
-  - social strategy
-- trigger: :p-market
-  form: 'Analyze the market for [[niche]]. Use only specific, data-backed insights. No generic statements.
+      Also add a 'Complaint signal' column: yes/no for whether this problem surfaces frequently in reviews, forums, or sales calls.
 
 
-    Deliver exactly four structured sections:
+      Output as a table with these exact columns:
 
-    1. Market sizing: TAM, SAM, and SOM with estimated dollar values and your assumptions
+      | # | Problem | Urgency | WTP | Trend | Complaint signal | Why it ranks here |
 
-    2. Top 5 demand trends: each as a one-line headline + two-sentence explanation
 
-    3. Top 5 underserved opportunities: specific gaps, not broad categories
+      Sort by combined Urgency + WTP score, highest first.
 
-    4. Follow the money: 3-5 areas where VC, PE, or acquirer capital is actively flowing
+      "
+    form_fields:
+      industry:
+        multiline: true
+    label: "[Social Strategy] Top 10 High-Willingness-To-Pay Problems"
+    comment: List the top 10 problems in .
+    search_terms:
+      - social-strategy
 
+      - social strategy
+  - trigger: :p-offer
+    form: "Create a high-converting offer for: [[problem]].
 
-    Format each section with a bold heading, then concise bullet points. Total output: under 600 words.
 
-    '
-  form_fields:
-    niche:
-      multiline: true
-  label: '[Social Strategy] Niche Market Demand & Competitive Teardown'
-  comment: Analyze the market for . Use only specific, data-backed insights. No generic statements.
-  search_terms:
+      Structure the output exactly like a landing page, with these labeled sections in order:
 
-  - social-strategy
+      1. Headline: one bold, benefit-driven statement
 
-  - social strategy
-- trigger: :p-problem
-  form: 'List the top 10 problems in [[industry]].
+      2. ICP: who this is for (age, role, situation, pain level)
 
+      3. Value proposition: the core transformation in one sentence
 
-    For each problem, score it on three dimensions:
+      4. Offer components: what's included (deliverables, bonuses, format)
 
-    - Urgency (1-10): how painful/time-sensitive it is right now
+      5. Pricing tiers: name, price, and what changes at each tier (low / mid / premium)
 
-    - Willingness to pay (1-10): how likely buyers are to spend money to solve it today
+      6. Guarantee: specific risk-reversal language the customer sees
 
-    - Growth trajectory: ''rising fast'', ''stable'', or ''declining''
+      7. Competitive edge: 3 reasons this beats the obvious alternatives
 
 
-    Also add a ''Complaint signal'' column: yes/no for whether this problem surfaces frequently in reviews, forums, or sales calls.
+      Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
 
+      "
+    form_fields:
+      problem:
+        multiline: true
+    label: "[Social Strategy] High-Converting Irresistible Offer Creator"
+    comment: "Create a high-converting offer for: ."
+    search_terms:
+      - social-strategy
 
-    Output as a table with these exact columns:
+      - social strategy
+  - trigger: :p-distro
+    form: "Act as a senior growth strategist.
 
-    | # | Problem | Urgency | WTP | Trend | Complaint signal | Why it ranks here |
 
+      Build a realistic 30-day distribution plan for: [[idea]], including the target audience, product type, and rough budget.
 
-    Sort by combined Urgency + WTP score, highest first.
 
-    '
-  form_fields:
-    industry:
-      multiline: true
-  label: '[Social Strategy] Top 10 High-Willingness-To-Pay Problems'
-  comment: List the top 10 problems in .
-  search_terms:
+      Deliverables:
 
-  - social-strategy
+      1. Top 5 acquisition channels: ranked by cost-efficiency for this specific audience
 
-  - social strategy
-- trigger: :p-offer
-  form: 'Create a high-converting offer for: [[problem]].
+      2. Content format per channel: one specific format that works on each (short-form video, cold email sequence, SEO article)
 
+      3. Weekly execution calendar: what happens in weeks 1, 2, 3, and 4 (not day-by-day)
 
-    Structure the output exactly like a landing page, with these labeled sections in order:
+      4. Organic vs paid split: recommended % allocation and rationale
 
-    1. Headline: one bold, benefit-driven statement
+      5. Leverage plays: 2-3 tactics that multiply reach without proportionally more effort (partnerships, repurposing, virality hooks)
 
-    2. ICP: who this is for (age, role, situation, pain level)
 
-    3. Value proposition: the core transformation in one sentence
+      Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers.
 
-    4. Offer components: what''s included (deliverables, bonuses, format)
+      "
+    form_fields:
+      idea:
+        multiline: true
+    label: "[Social Strategy] Growth Distribution & Channel Engine"
+    comment: Act as a senior growth strategist.
+    search_terms:
+      - social-strategy
 
-    5. Pricing tiers: name, price, and what changes at each tier (low / mid / premium)
+      - social strategy
+  - trigger: :p-viral
+    form: 'Create a viral content strategy for: [[niche]].
 
-    6. Guarantee: specific risk-reversal language the customer sees
 
-    7. Competitive edge: 3 reasons this beats the obvious alternatives
+      Deliver four components:
 
+      1. Hook bank: 10 high-converting hooks (not 20, prioritize quality). For each, label which emotional trigger it uses: fear of missing out, social status, curiosity, or controversy.
 
-    Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
+      2. Content format matrix: a table with these columns:
 
-    '
-  form_fields:
-    problem:
-      multiline: true
-  label: '[Social Strategy] High-Converting Irresistible Offer Creator'
-  comment: 'Create a high-converting offer for: .'
-  search_terms:
+      | Format | Platform | Ideal length | Why it spreads | Example title |
 
-  - social-strategy
+      Include 6-8 formats across at least 3 platforms.
 
-  - social strategy
-- trigger: :p-distro
-  form: 'Act as a senior growth strategist.
+      3. Shareability audit: for each format, answer "What makes someone forward/repost this?" in one sentence.
 
+      4. Repeatable content system: a simple weekly template showing how many posts, which formats, and what rotation keeps the audience engaged without burnout.
 
-    Build a realistic 30-day distribution plan for: [[idea]], including the target audience, product type, and rough budget.
 
+      Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.
 
-    Deliverables:
+      '
+    form_fields:
+      niche:
+        multiline: true
+    label: "[Social Strategy] Create A Viral Content Strategy For"
+    comment: "Create a viral content strategy for: ."
+    search_terms:
+      - social-strategy
 
-    1. Top 5 acquisition channels: ranked by cost-efficiency for this specific audience
+      - social strategy
+  - trigger: :p-competitor
+    form: "Analyze the top 5 competitors in [[niche]], be specific.
 
-    2. Content format per channel: one specific format that works on each (short-form video, cold email sequence, SEO article)
 
-    3. Weekly execution calendar: what happens in weeks 1, 2, 3, and 4 (not day-by-day)
+      For each competitor, provide a structured row covering:
 
-    4. Organic vs paid split: recommended % allocation and rationale
+      - Name + one-line description of their core offer
 
-    5. Leverage plays: 2-3 tactics that multiply reach without proportionally more effort (partnerships, repurposing, virality hooks)
+      - What they do best (their defensible strength)
 
+      - Where they are weak (product gaps, poor reviews, underserved use cases)
 
-    Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers.
+      - Which audience they ignore or underserve
 
-    '
-  form_fields:
-    idea:
-      multiline: true
-  label: '[Social Strategy] Growth Distribution & Channel Engine'
-  comment: Act as a senior growth strategist.
-  search_terms:
 
-  - social-strategy
+      Then, based on the patterns across all 5:
 
-  - social strategy
-- trigger: :p-viral
-  form: 'Create a viral content strategy for: [[niche]].
+      - Gap analysis: the 2-3 clearest white spaces no competitor is owning
 
+      - Positioning recommendation: one sharp positioning statement that would differentiate a new entrant
 
-    Deliver four components:
+      - Go-to-market angle: which ignored audience + which channel combination represents the fastest path to traction
 
-    1. Hook bank: 10 high-converting hooks (not 20, prioritize quality). For each, label which emotional trigger it uses: fear of missing out, social status, curiosity, or controversy.
 
-    2. Content format matrix: a table with these columns:
+      Output the competitor breakdown as a table, then the gap analysis and recommendations as prose.
 
-    | Format | Platform | Ideal length | Why it spreads | Example title |
+      "
+    form_fields:
+      niche:
+        multiline: true
+    label: "[Social Strategy] Analyze The Top 5 Competitors In , Be Specific"
+    comment: Analyze the top 5 competitors in , be specific.
+    search_terms:
+      - social-strategy
 
-    Include 6-8 formats across at least 3 platforms.
+      - social strategy
+  - trigger: :p-scale
+    form:
+      "Give me a plan to scale this business to [[target_revenue]] within [[timeframe]].
 
-    3. Shareability audit: for each format, answer "What makes someone forward/repost this?" in one sentence.
 
-    4. Repeatable content system: a simple weekly template showing how many posts, which formats, and what rotation keeps the audience engaged without burnout.
+      Business description:
 
+      [[business_description]]
 
-    Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.
 
-    '
-  form_fields:
-    niche:
-      multiline: true
-  label: '[Social Strategy] Create A Viral Content Strategy For'
-  comment: 'Create a viral content strategy for: .'
-  search_terms:
+      Structure the output as a phased execution roadmap with these four phases:
 
-  - social-strategy
+      Phase 1 - Stabilize (Month 1-2): what to systematize and document before scaling
 
-  - social strategy
-- trigger: :p-competitor
-  form: 'Analyze the top 5 competitors in [[niche]], be specific.
+      Phase 2 - Automate (Month 3-4): top 3 processes to automate, with specific tool recommendations
 
+      Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
 
-    For each competitor, provide a structured row covering:
+      Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier
 
-    - Name + one-line description of their core offer
 
-    - What they do best (their defensible strength)
+      Also include:
 
-    - Where they are weak (product gaps, poor reviews, underserved use cases)
+      - Top 3 bottlenecks that will appear at each phase transition
 
-    - Which audience they ignore or underserve
+      - One leading metric to track per phase (not vanity metrics)
 
 
-    Then, based on the patterns across all 5:
+      Output as a structured roadmap with phase headers, not a generic list.
 
-    - Gap analysis: the 2-3 clearest white spaces no competitor is owning
+      "
+    form_fields:
+      business_description:
+        type: multiline
+    label: "[Social Strategy] Leveraged Content Scaling Architecture"
+    comment: Give me a plan to scale this business to  within .
+    search_terms:
+      - social-strategy
 
-    - Positioning recommendation: one sharp positioning statement that would differentiate a new entrant
+      - social strategy
+  - trigger: :yt-strategy
+    form:
+      "Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
 
-    - Go-to-market angle: which ignored audience + which channel combination represents the fastest path to traction
 
+      Niche: [[niche]]
 
-    Output the competitor breakdown as a table, then the gap analysis and recommendations as prose.
+      Target Audience: [[audience]]
 
-    '
-  form_fields:
-    niche:
-      multiline: true
-  label: '[Social Strategy] Analyze The Top 5 Competitors In , Be Specific'
-  comment: Analyze the top 5 competitors in , be specific.
-  search_terms:
+      Content Goals: [[goals]]
 
-  - social-strategy
 
-  - social strategy
-- trigger: :p-scale
-  form: 'Give me a plan to scale this business to [[target_revenue]] within [[timeframe]].
+      Design a complete channel strategy including positioning, content pillars, upload frequency, and the fastest path to 1,000 subscribers and monetization.
 
+      "
+    form_fields:
+      niche:
+        type: text
+        default: Software Engineering & Architecture
+      audience:
+        type: text
+        default: Mid-to-Senior Developers
+      goals:
+        type: text
+        default: Build a scalable brand and drive organic engine inbound leads
+    label: "[Social Strategy] Act Like A Youtube Growth Strategist"
+    comment: Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
+    search_terms:
+      - social-strategy
 
-    Business description:
+      - social strategy
+  - regex: :yt-ideas\((?P<niche>.*)\)
+    replace:
+      "Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, competitor analysis, and audience interest patterns.
 
-    [[business_description]]
+      "
+    label: "[Social Strategy] Niche Audience & Frustration Profiler"
+    comment: Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, compe
+    search_terms:
+      - social-strategy
 
+      - social strategy
+  - trigger: :aipitch
+    form: |
 
-    Structure the output as a phased execution roadmap with these four phases:
+      'Hi [[client_name]],
 
-    Phase 1 - Stabilize (Month 1-2): what to systematize and document before scaling
 
-    Phase 2 - Automate (Month 3-4): top 3 processes to automate, with specific tool recommendations
+      I''ve been reviewing how workflows are structured at [[company_name]] and wanted to reach out regarding our **[[studio_division]]** offerings.
 
-    Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
 
-    Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier
+      Specifically, we've been helping teams implement **[[core_service]]** frameworks to optimize efficiency and drive measurable ROI.
 
 
-    Also include:
+      We typically kick things off with a structured kickoff to map out your current bottlenecks. Are you open to a quick 15-minute discovery call this week to see if this aligns with your current goals?
 
-    - Top 3 bottlenecks that will appear at each phase transition
 
-    - One leading metric to track per phase (not vanity metrics)
+      Best regards,
 
+      [[your_name]]
 
-    Output as a structured roadmap with phase headers, not a generic list.
+      '
+    form_fields:
+      studio_division:
+        type: choice
+        values:
+          - AI Systems Agency
+          - AI Strategy Consulting
+          - AI Intelligence Services
+          - AI Skill Academy
+          - AI Writing Studio
+          - AI Creative Studio
+          - AI Mini Product Studio
+      core_service:
+        type: text
+        default: Automated Workflow Integration
+      your_name:
+        type: text
+        default: Founder
+    label: "[Social Strategy] Aipitch"
+    comment: Hi ,
+    search_terms:
+      - social-strategy
 
-    '
-  form_fields:
-    business_description:
-      type: multiline
-  label: '[Social Strategy] Leveraged Content Scaling Architecture'
-  comment: Give me a plan to scale this business to  within .
-  search_terms:
+      - social strategy
+  - trigger: :aimenu
+    replace: "Our AI Studio Offerings:
 
-  - social-strategy
+      ---------------------------------------------------------
 
-  - social strategy
-- trigger: :yt-strategy
-  form: 'Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
+      1. AI Systems Agency (Automated business architecture)
 
+      2. AI Strategy Consulting (Readiness & roadmapping)
 
-    Niche: [[niche]]
+      3. AI Intelligence Services (Data to decisions)
 
-    Target Audience: [[audience]]
+      4. AI Skill Academy (Workforce & team training)
 
-    Content Goals: [[goals]]
+      5. AI Writing Studio (High-speed narrative delivery)
 
+      6. AI Creative Studio (Visual & audio brand assets)
 
-    Design a complete channel strategy including positioning, content pillars, upload frequency, and the fastest path to 1,000 subscribers and monetization.
+      7. AI Mini Product Studio (Lean, micro-SaaS tools)
 
-    '
-  form_fields:
-    niche:
-      type: text
-      default: Software Engineering & Architecture
-    audience:
-      type: text
-      default: Mid-to-Senior Developers
-    goals:
-      type: text
-      default: Build a scalable brand and drive organic engine inbound leads
-  label: '[Social Strategy] Act Like A Youtube Growth Strategist'
-  comment: Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
-  search_terms:
+      "
+    label: "[Social Strategy] Our Ai Studio Offerings"
+    comment: "Our AI Studio Offerings:"
+    search_terms:
+      - social-strategy
 
-  - social-strategy
+      - social strategy
+  - trigger: :aisow
+    form: "### Statement of Work: [[project_focus]]
 
-  - social strategy
-- regex: :yt-ideas\((?P<niche>.*)\)
-  replace: 'Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, competitor analysis, and audience interest patterns.
+      **Service Line:** [[studio]]
 
-    '
-  label: '[Social Strategy] Niche Audience & Frustration Profiler'
-  comment: Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, compe
-  search_terms:
+      **Pricing Model:** [[investment_tier]]
 
-  - social-strategy
 
-  - social strategy
-- trigger: :aipitch
-  form: 'Hi [[client_name]],
+      **Key Deliverables:**
 
+      * Phase 1: AI Readiness Assessment & System Scoping
 
-    I''ve been reviewing how workflows are structured at [[company_name]] and wanted to reach out regarding our **[[studio_division]]** offerings.
+      * Phase 2: Sandbox Deployment of [[project_focus]]
 
+      * Phase 3: Staff Capability Building & Integration Playbook
 
-    Specifically, we've been helping teams implement **[[core_service]]** frameworks to optimize efficiency and drive measurable ROI.
 
+      **Estimated Timeline:** 4 - 6 weeks from agreement.
 
-    We typically kick things off with a structured kickoff to map out your current bottlenecks. Are you open to a quick 15-minute discovery call this week to see if this aligns with your current goals?
+      "
+    form_fields:
+      studio:
+        type: choice
+        values:
+          - "AI Systems Agency (Target: ₹1.5L - ₹8L)"
+          - "AI Strategy Consulting (Target: ₹5K - ₹25K / session)"
+          - AI Intelligence Services (Custom Dashboarding)
+          - AI Skill Academy (Corporate Training)
+          - "AI Mini Product Studio (Target: ₹2.5K - ₹8K / month)"
+      investment_tier:
+        type: choice
+        values:
+          - Fixed Project Milestone Basis
+          - Monthly Recurring Retainer Contract
+          - Per-Session / Hourly Advisory Rate
+    label: "[Social Strategy] Statement of Work: [[project_focus]]"
+    comment: "### Statement of Work:"
+    search_terms:
+      - social-strategy
 
+      - social strategy
+  - regex: :consult\((?P<client>.*)\)
+    replace:
+      "Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selection Advisory session booked for next week to map out where you're leaking margins.
 
-    Best regards,
+      "
+    label: "[Social Strategy] Consult    P Client"
+    comment: Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selecti
+    search_terms:
+      - social-strategy
 
-    [[your_name]]
+      - social strategy
+  - trigger: :academy
+    form: "Hi [[student_name]],
 
-    '
-  form_fields:
-    studio_division:
-      type: choice
-      values:
-      - AI Systems Agency
-      - AI Strategy Consulting
-      - AI Intelligence Services
-      - AI Skill Academy
-      - AI Writing Studio
-      - AI Creative Studio
-      - AI Mini Product Studio
-    core_service:
-      type: text
-      default: Automated Workflow Integration
-    your_name:
-      type: text
-      default: Founder
-  label: '[Social Strategy] Aipitch'
-  comment: Hi ,
-  search_terms:
 
-  - social-strategy
+      Thanks for asking about our training tracks. Based on your goals, I highly recommend our **[[course_selection]]** curriculum. This module is specifically built to help teams master these exact systems in their day-to-day workflows.
 
-  - social strategy
-- trigger: :aimenu
-  replace: 'Our AI Studio Offerings:
 
-    ---------------------------------------------------------
+      Let me know if you want me to drop the syllabus link over!
 
-    1. AI Systems Agency (Automated business architecture)
+      "
+    form_fields:
+      course_selection:
+        type: choice
+        values:
+          - Prompt Writing Masterclass
+          - Workflow Automation Bootcamp
+          - AI Starter Workshop For Non-Tech Professionals
+          - Classroom AI For Educators
+          - AI Tools For Property Agents
+      student_name:
+        type: text
+        default: there
+    label: "[Social Strategy] Academy"
+    comment: Hi ,
+    search_terms:
+      - social-strategy
 
-    2. AI Strategy Consulting (Readiness & roadmapping)
+      - social strategy
+  - trigger: :systems
+    form: "### Proposed Integration: [[system_architecture]]
 
-    3. AI Intelligence Services (Data to decisions)
+      *   **Target Scope:** Production deployment of [[system_architecture]] architecture.
 
-    4. AI Skill Academy (Workforce & team training)
+      *   **Core Objective:** Zero-Touch operational execution to reduce manual overhead.
 
-    5. AI Writing Studio (High-speed narrative delivery)
+      *   **Implementation Track:** Discovery Mapping → Sandbox Testing → Staff Capability Building.
 
-    6. AI Creative Studio (Visual & audio brand assets)
+      *   **Project Fee:** [[investment_tier]] (50% upfront milestone initialization).
 
-    7. AI Mini Product Studio (Lean, micro-SaaS tools)
+      "
+    form_fields:
+      system_architecture:
+        type: choice
+        values:
+          - Smart Inbox Management
+          - Automated Billing Workflows
+          - Sales Lead Qualification
+          - Zero Touch Data Entry
+          - Candidate Screening Flows
+      investment_tier:
+        type: choice
+        values:
+          - ₹1,500,000 (Base Tier Integration)
+          - ₹4,500,000 (Mid-Market Scale)
+          - ₹8,000,000 (Enterprise Custom Architecture)
+    label: "[Social Strategy] Proposed Integration: [[system_architecture]]"
+    comment: "### Proposed Integration:"
+    search_terms:
+      - social-strategy
 
-    '
-  label: '[Social Strategy] Our Ai Studio Offerings'
-  comment: 'Our AI Studio Offerings:'
-  search_terms:
+      - social strategy
+  - trigger: :studio
+    form:
+      "We can lock down your request for [[deliverable_type]] under our asset production umbrella. We deliver these assets at a fraction of standard traditional agency overhead because we build them utilizing optimized AI generation frameworks.
 
-  - social-strategy
 
-  - social strategy
-- trigger: :aisow
-  form: '### Statement of Work: [[project_focus]]
+      When would be a good time to review your brand design guidelines?
 
-    **Service Line:** [[studio]]
+      "
+    form_fields:
+      deliverable_type:
+        type: choice
+        values:
+          - Executive Ghostwriting & Long Form Blogs
+          - Video Script Production & Audio Show Notes
+          - AI Product Photography & Short Form Video Ads
+          - Brand Identity Design & Visual Brand Systems
+    label: "[Social Strategy] Studio"
+    comment: We can lock down your request for  under our asset production umbrella. We deliver these assets at a fraction of standar
+    search_terms:
+      - social-strategy
 
-    **Pricing Model:** [[investment_tier]]
+      - social strategy
+  - trigger: :follow-like-comment
+    replace: "SAVE THIS FOR LATER, FOLLOW, LIKE AND COMMENT
 
+      "
+    label: "[Social Strategy] Social Engagement Call-To-Action (CTA)"
+    comment: High-converting call to action prompt encouraging saves, shares, and comments.
+    search_terms:
+      - social-strategy
 
-    **Key Deliverables:**
+      - social strategy
+  - trigger: :content-hook
+    replace:
+      "BYE-BYE SOCIAL MEDIA MANAGERS IN 2026. I USE AI TO DESIGN, EDIT, AND SCHEDULE 30 DAYS OF CONTENT IN 2 HOURS. HERE ARE 7 PROMPTS THAT CAN DO THE SAME FOR YOU:
 
-    * Phase 1: AI Readiness Assessment & System Scoping
+      "
+    label: "[Social Strategy] Viral Social Media Content Engine Intro"
+    comment: Introduction to automated viral social media copywriting with AI.
+    search_terms:
+      - social-strategy
 
-    * Phase 2: Sandbox Deployment of [[project_focus]]
-
-    * Phase 3: Staff Capability Building & Integration Playbook
-
-
-    **Estimated Timeline:** 4 - 6 weeks from agreement.
-
-    '
-  form_fields:
-    studio:
-      type: choice
-      values:
-      - 'AI Systems Agency (Target: ₹1.5L - ₹8L)'
-      - 'AI Strategy Consulting (Target: ₹5K - ₹25K / session)'
-      - AI Intelligence Services (Custom Dashboarding)
-      - AI Skill Academy (Corporate Training)
-      - 'AI Mini Product Studio (Target: ₹2.5K - ₹8K / month)'
-    investment_tier:
-      type: choice
-      values:
-      - Fixed Project Milestone Basis
-      - Monthly Recurring Retainer Contract
-      - Per-Session / Hourly Advisory Rate
-  label: '[Social Strategy] Statement of Work: [[project_focus]]'
-  comment: '### Statement of Work:'
-  search_terms:
-
-  - social-strategy
-
-  - social strategy
-- regex: :consult\((?P<client>.*)\)
-  replace: 'Hi {{client}}, I was looking over your current operational stack. Let''s get an AI Readiness Assessment or a Tool Selection Advisory session booked for next week to map out where you''re leaking margins.
-
-    '
-  label: '[Social Strategy] Consult    P Client'
-  comment: Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selecti
-  search_terms:
-
-  - social-strategy
-
-  - social strategy
-- trigger: :academy
-  form: 'Hi [[student_name]],
-
-
-    Thanks for asking about our training tracks. Based on your goals, I highly recommend our **[[course_selection]]** curriculum. This module is specifically built to help teams master these exact systems in their day-to-day workflows.
-
-
-    Let me know if you want me to drop the syllabus link over!
-
-    '
-  form_fields:
-    course_selection:
-      type: choice
-      values:
-      - Prompt Writing Masterclass
-      - Workflow Automation Bootcamp
-      - AI Starter Workshop For Non-Tech Professionals
-      - Classroom AI For Educators
-      - AI Tools For Property Agents
-    student_name:
-      type: text
-      default: there
-  label: '[Social Strategy] Academy'
-  comment: Hi ,
-  search_terms:
-
-  - social-strategy
-
-  - social strategy
-- trigger: :systems
-  form: '### Proposed Integration: [[system_architecture]]
-
-    *   **Target Scope:** Production deployment of [[system_architecture]] architecture.
-
-    *   **Core Objective:** Zero-Touch operational execution to reduce manual overhead.
-
-    *   **Implementation Track:** Discovery Mapping → Sandbox Testing → Staff Capability Building.
-
-    *   **Project Fee:** [[investment_tier]] (50% upfront milestone initialization).
-
-    '
-  form_fields:
-    system_architecture:
-      type: choice
-      values:
-      - Smart Inbox Management
-      - Automated Billing Workflows
-      - Sales Lead Qualification
-      - Zero Touch Data Entry
-      - Candidate Screening Flows
-    investment_tier:
-      type: choice
-      values:
-      - ₹1,500,000 (Base Tier Integration)
-      - ₹4,500,000 (Mid-Market Scale)
-      - ₹8,000,000 (Enterprise Custom Architecture)
-  label: '[Social Strategy] Proposed Integration: [[system_architecture]]'
-  comment: '### Proposed Integration:'
-  search_terms:
-
-  - social-strategy
-
-  - social strategy
-- trigger: :studio
-  form: 'We can lock down your request for [[deliverable_type]] under our asset production umbrella. We deliver these assets at a fraction of standard traditional agency overhead because we build them utilizing optimized AI generation frameworks.
-
-
-    When would be a good time to review your brand design guidelines?
-
-    '
-  form_fields:
-    deliverable_type:
-      type: choice
-      values:
-      - Executive Ghostwriting & Long Form Blogs
-      - Video Script Production & Audio Show Notes
-      - AI Product Photography & Short Form Video Ads
-      - Brand Identity Design & Visual Brand Systems
-  label: '[Social Strategy] Studio'
-  comment: We can lock down your request for  under our asset production umbrella. We deliver these assets at a fraction of standar
-  search_terms:
-
-  - social-strategy
-
-  - social strategy
-- trigger: :follow-like-comment
-  replace: 'SAVE THIS FOR LATER, FOLLOW, LIKE AND COMMENT
-
-    '
-  label: '[Social Strategy] Social Engagement Call-To-Action (CTA)'
-  comment: High-converting call to action prompt encouraging saves, shares, and comments.
-  search_terms:
-
-  - social-strategy
-
-  - social strategy
-- trigger: :content-hook
-  replace: 'BYE-BYE SOCIAL MEDIA MANAGERS IN 2026. I USE AI TO DESIGN, EDIT, AND SCHEDULE 30 DAYS OF CONTENT IN 2 HOURS. HERE ARE 7 PROMPTS THAT CAN DO THE SAME FOR YOU:
-
-    '
-  label: '[Social Strategy] Viral Social Media Content Engine Intro'
-  comment: Introduction to automated viral social media copywriting with AI.
-  search_terms:
-
-  - social-strategy
-
-  - social strategy
+      - social strategy

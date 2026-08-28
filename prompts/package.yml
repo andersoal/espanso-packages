@@ -1311,8 +1311,8 @@ matches:
       background:
         type: text
         default: soft neutral (beige or light gray)
-    label: '[Prompts] Pca Custom'
-    comment: 'Create a clean, elegant personal color analysis infographic based on this portrait. Place the person's face on the left '
+    label: "[Prompts] Pca Custom"
+    comment: "Create a clean, elegant personal color analysis infographic based on this portrait. Place the person's face on the left "
     search_terms:
       - prompts
 
@@ -1701,8 +1701,7 @@ matches:
     search_terms:
       - prompts
 
-  - name: prompt-template-1-of-3
-    trigger: :p-premortem-decision
+  - trigger: :p-premortem-decision
     form: |
       You are a strategic advisor who specializes in pre-mortem analysis and decision stress-testing.
 
@@ -1724,8 +1723,7 @@ matches:
     search_terms:
       - prompts
 
-  - name: prompt-template-2-of-3
-    trigger: :p-bottleneck
+  - trigger: :p-bottleneck
     form: |
       You are a business systems analyst specializing in constraint theory and throughput optimization.
 
@@ -1747,8 +1745,7 @@ matches:
     search_terms:
       - prompts
 
-  - name: prompt-template-3-of-3
-    trigger: :p-build
+  - trigger: :p-build
     form: |
       You are [[role]].
 
@@ -1765,7 +1762,7 @@ matches:
         default: a rigorous systems architect
       context:
         type: multiline
-        default: OAL Logic is scaling a Python-based prediction engine...
+        default: My business is scaling a Python-based prediction engine...
       task:
         type: multiline
         default: Define the core problem you want solved here.
@@ -1775,7 +1772,7 @@ matches:
       constraints:
         type: multiline
         default: Do not use generic advice. Focus strictly on technical feasibility and modular architecture.
-    label: '[Prompts] P Build'
+    label: "[Prompts] P Build"
     comment: You are .
     search_terms:
       - prompts
@@ -2187,7 +2184,7 @@ matches:
     search_terms:
       - prompts
 
-  - trigger: :p-3of5-plan
+  - trigger: ":p-3of5-plan"
     form: |
       I want to [[goal]] by [[deadline]].
 
@@ -7069,8 +7066,8 @@ matches:
       *   **Clarity Index:** Can a non-technical person explain what your product achieves after hearing your 30-second pitch? (Addresses Rules 2 & 3)
       *   **Discovery Depth:** Do you regularly uncover underlying organizational pain points that the client hadn't explicitly stated in their initial brief? (Addresses Rule 5)
       *   **Pipeline Resilience:** Do you actively maintain a structured follow-up sequence of at least 5-7 varied touchpoints for high-value prospects before closing the file? (Addresses Rule 8)
-    label: '[Prompts] Skill Playbook: Steve Jobs' 8 Rules for Sales Excellence'
-    comment: '# Skill Playbook: Steve Jobs' 8 Rules for Sales Excellence'
+    label: "[Prompts] Skill Playbook: Steve Jobs' 8 Rules for Sales Excellence"
+    comment: "# Skill Playbook: Steve Jobs' 8 Rules for Sales Excellence"
     search_terms:
       - prompts
 
@@ -9290,7 +9287,7 @@ matches:
         params:
           layout: |
             Select Expert Persona: [[role]]
-          form_fields:
+          fields:
             role:
               type: choice
               values:
@@ -9486,7 +9483,7 @@ matches:
       - prompts
 
   - trigger: :ai-assistant
-    replace: |
+    form: |
       # System Instructions
 
       You are the "AI Assistant". You have access to a "Knowledge Base" (see below).
@@ -9516,14 +9513,11 @@ matches:
       - The answer.
       - **Bolded filenames** if you used the Knowledge Base.
       - A short suggestion if you think something should be added to the Knowledge Base.
-    vars:
-      - name: user_question
-        type: text
+    form_fields:
+      user_question:
         default: What is the capital of France?
-      - name: _knowledge_base
-        type: file_content
-        params:
-          path: data/knowledge_base/*
+      _knowledge_base:
+        multiline: true
     label: '[Prompts] System Instructions'
     comment: '# System Instructions'
     search_terms:
@@ -9922,8 +9916,8 @@ matches:
       - give one practical example
       - show how the concepts connect
       - quiz me with 5 questions at the end
-    label: '[Prompts] Teach Me  As If I'M Intelligent But Completely New To It'
-    comment: Teach me  as if I'm intelligent but completely new to it.
+    label: '[Prompts] Teach Me As If I''m Intelligent But Completely New To It'
+    comment: Teach me as if I'm intelligent but completely new to it.
     search_terms:
       - prompts
 

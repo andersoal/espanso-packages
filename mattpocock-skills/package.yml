@@ -16,7 +16,7 @@ matches:
       2. Make small, focused edits without speculative refactoring.
       3. Verify each change against existing tests and type checkers before proceeding.
       4. Preserve existing documentation and backwards compatibility.
-    label: '[Agent Skills] Step-by-Step Implementation Loop (Direct)'
+    label: "[Agent Skills] Step-by-Step Implementation Loop (Direct)"
     comment: Let's implement this feature step-by-step according to the specification.
     search_terms:
       - mattpocock-skills
@@ -53,7 +53,7 @@ matches:
         multiline: true
       constraints:
         multiline: true
-    label: '[Agent Skills] Step-by-Step Implementation Loop (Interactive Form)'
+    label: "[Agent Skills] Step-by-Step Implementation Loop (Interactive Form)"
     comment: Interactive form for step-by-step implementation.
     search_terms:
       - mattpocock-skills
@@ -72,7 +72,7 @@ matches:
       2. **Green:** Write the simplest code necessary to make the test pass.
       3. **Refactor:** Clean up code, remove duplication, and sharpen module boundaries while keeping all tests passing.
       4. Repeat incrementally.
-    label: '[Agent Skills] Test-Driven Development (Direct)'
+    label: "[Agent Skills] Test-Driven Development (Direct)"
     comment: Let's work using strict Test-Driven Development (TDD) following the Red-Green-Refactor loop.
     search_terms:
       - mattpocock-skills
@@ -116,8 +116,8 @@ matches:
           - Playwright / Cypress (E2E)
           - Universal / Other Test Runner
       files:
-        default: ''
-    label: '[Agent Skills] Test-Driven Development (Interactive Form)'
+        default: ""
+    label: "[Agent Skills] Test-Driven Development (Interactive Form)"
     comment: Interactive form for Test-Driven Development.
     search_terms:
       - mattpocock-skills
@@ -135,7 +135,7 @@ matches:
       - Each step must compile, pass existing tests, and keep the system functional.
       - Use parallel implementations with adapter seams or feature flags where appropriate.
       - List explicit verification commands for each step.
-    label: '[Agent Skills] Safe Incremental Refactoring Plan (Direct)'
+    label: "[Agent Skills] Safe Incremental Refactoring Plan (Direct)"
     comment: Help me create a detailed, safe refactoring plan broken down into tiny verifiable commits.
     search_terms:
       - mattpocock-skills
@@ -166,7 +166,7 @@ matches:
         multiline: true
       target:
         multiline: true
-    label: '[Agent Skills] Safe Incremental Refactoring Plan (Interactive Form)'
+    label: "[Agent Skills] Safe Incremental Refactoring Plan (Interactive Form)"
     comment: Interactive form for safe incremental refactoring.
     search_terms:
       - mattpocock-skills
@@ -183,7 +183,7 @@ matches:
       Please perform a thorough dual-axis code review on the latest changes / current branch:
       1. **Spec Alignment:** Does the implementation deliver what was requested without regressions, omissions, or accidental scope creep?
       2. **Code Standards:** Does it adhere to codebase conventions, idiomatic typing, error handling, and clean modular seams?
-    label: '[Agent Skills] Dual-Axis Code Review (Direct)'
+    label: "[Agent Skills] Dual-Axis Code Review (Direct)"
     comment: Please perform a thorough dual-axis code review on the latest changes / current branch.
     search_terms:
       - mattpocock-skills
@@ -224,7 +224,7 @@ matches:
         multiline: true
       code:
         multiline: true
-    label: '[Agent Skills] Dual-Axis Code Review (Interactive Form)'
+    label: "[Agent Skills] Dual-Axis Code Review (Interactive Form)"
     comment: Interactive form for dual-axis code review.
     search_terms:
       - mattpocock-skills
@@ -244,7 +244,7 @@ matches:
       2. Formulate 2-3 competing hypotheses ranked by plausibility.
       3. Propose targeted verification probes/tests for the top hypothesis before writing the fix.
       4. Once root cause is proven, deliver the minimal, robust fix.
-    label: '[Agent Skills] Systematic Root-Cause Bug Diagnosis (Direct)'
+    label: "[Agent Skills] Systematic Root-Cause Bug Diagnosis (Direct)"
     comment: Help me systematically diagnose and fix this bug without guessing.
     search_terms:
       - mattpocock-skills
@@ -288,7 +288,7 @@ matches:
         multiline: true
       context:
         multiline: true
-    label: '[Agent Skills] Systematic Root-Cause Bug Diagnosis (Interactive Form)'
+    label: "[Agent Skills] Systematic Root-Cause Bug Diagnosis (Interactive Form)"
     comment: Interactive form for systematic bug diagnosis.
     search_terms:
       - mattpocock-skills
@@ -308,7 +308,7 @@ matches:
       - For each option, provide minimal, expressive type signatures and API calls.
       - Highlight trade-offs in DX, cognitive load, testability, and future extensibility.
       - Recommend the best fit with justification.
-    label: '[Agent Skills] Deep Module & Interface Design (Direct)'
+    label: "[Agent Skills] Deep Module & Interface Design (Direct)"
     comment: Let's design the interface and boundary for this module following the "Design it twice" principle.
     search_terms:
       - mattpocock-skills
@@ -346,7 +346,7 @@ matches:
         multiline: true
       constraints:
         multiline: true
-    label: '[Agent Skills] Deep Module & Interface Design (Interactive Form)'
+    label: "[Agent Skills] Deep Module & Interface Design (Interactive Form)"
     comment: Interactive form for deep module & interface design.
     search_terms:
       - mattpocock-skills
@@ -364,7 +364,7 @@ matches:
       - Identify tight coupling, leaky abstractions, and circular dependencies.
       - Propose deep module seams and clear single-responsibility boundaries.
       - Break the refactoring into safe, incrementally verifiable steps.
-    label: '[Agent Skills] Improve Codebase Architecture (Direct)'
+    label: "[Agent Skills] Improve Codebase Architecture (Direct)"
     comment: Analyze and improve the architecture, modularity, and cohesion of this codebase.
     search_terms:
       - mattpocock-skills
@@ -396,7 +396,7 @@ matches:
         multiline: true
       goals:
         multiline: true
-    label: '[Agent Skills] Improve Codebase Architecture (Interactive Form)'
+    label: "[Agent Skills] Improve Codebase Architecture (Interactive Form)"
     comment: Interactive form for codebase architecture improvement.
     search_terms:
       - mattpocock-skills
@@ -414,7 +414,7 @@ matches:
       - Implement the smallest possible surface area to validate the idea.
       - Ignore edge cases, persistence, and polish; focus strictly on validating the mental model or API feel.
       - Summarize key findings and lessons learned.
-    label: '[Agent Skills] Rapid Throwaway Prototype (Direct)'
+    label: "[Agent Skills] Rapid Throwaway Prototype (Direct)"
     comment: Let's build a minimal throwaway prototype to test this concept.
     search_terms:
       - mattpocock-skills
@@ -445,7 +445,7 @@ matches:
         multiline: true
       interaction:
         multiline: true
-    label: '[Agent Skills] Rapid Throwaway Prototype (Interactive Form)'
+    label: "[Agent Skills] Rapid Throwaway Prototype (Interactive Form)"
     comment: Interactive form for rapid prototype.
     search_terms:
       - mattpocock-skills
@@ -463,7 +463,7 @@ matches:
       1. Identify the intent behind both branches.
       2. Synthesize a clean resolution that preserves the intent of both changes without semantic regressions.
       3. Provide the exact resolved code and verification commands.
-    label: '[Agent Skills] Systematic Merge & Rebase Conflict Resolution (Direct)'
+    label: "[Agent Skills] Systematic Merge & Rebase Conflict Resolution (Direct)"
     comment: Help me resolve this merge / rebase conflict cleanly and safely.
     search_terms:
       - mattpocock-skills
@@ -495,12 +495,12 @@ matches:
       3. Provide the exact resolved code and verification commands.
     form_fields:
       files:
-        default: ''
+        default: ""
       theirs:
         multiline: true
       ours:
         multiline: true
-    label: '[Agent Skills] Systematic Merge & Rebase Conflict Resolution (Interactive Form)'
+    label: "[Agent Skills] Systematic Merge & Rebase Conflict Resolution (Interactive Form)"
     comment: Interactive form for merge & rebase conflict resolution.
     search_terms:
       - mattpocock-skills
@@ -515,29 +515,62 @@ matches:
   - triggers:
       - :grill
       - :grill-me
+      - :grilling
+      - :grill-docs
+      - :grill-with-docs
     word: true
     replace: |
-      Please grill me relentlessly on this plan / design before we start building:
-      - Attack my hidden assumptions and uncover edge cases.
-      - Probe technical debt, failure modes, scalability traps, and UX friction.
-      - Ask one penetrating question at a time or provide a numbered list of critical vulnerabilities.
-      - Do not hold back or flatter; help me stress-test this proposal completely.
-    label: '[Agent Skills] Relentless Plan & Design Grilling (Direct)'
+      Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.
+
+      Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
+
+      Format a round like so:
+
+      ```
+      ❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+
+      ➡️ <your recommended answer>
+
+      ---
+
+      ❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+
+      ➡️ <your recommended answer>
+      ```
+
+      Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
+
+      Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (filesystem, tools, etc.), dispatch a sub-agent to find it; don't ask the user for anything you could look up yourself. Don't block on it: a running exploration is an unsettled prerequisite, so only the questions downstream of it wait for the sub-agent to report; ask the rest of the frontier now. The _decisions_ are the user's: put each to them and wait.
+
+      The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding.
+
+      You are grilling the user on a design or plan. Your job is to find hidden assumptions, edge cases, failure modes, scalability traps, and UX friction. You must check against the relevant documentation and runtime constraints. You must ask penetrating questions, one at a time, to walk down the decision tree. You must never flatter the user, and you must never act on a plan until you have reached a shared understanding.
+
+      You are not here to make the user feel good. You are here to help the user avoid catastrophic failure. Therefore, you must be relentless. You must never let the user get away with an unanswered question. You must never assume that silence implies agreement. You must never assume that a lack of criticism implies a lack of problems. You must never assume that the user knows what they are talking about. You must always question the user's assumptions. You must always question the user's decisions. You must always question the user's understanding of the problem. You must always question the user's understanding of the solution. You must always question the user's understanding of the constraints. You must always question the user's understanding of the risks.
+
+      Do not hold back. Do not flatter. Do not pull your punches.
+
+      Help the user stress-test this proposal completely.
+
+    label: "[Agent Skills] Relentless Plan & Design Grilling (Direct)"
     comment: Please grill me relentlessly on this plan / design before we start building.
     search_terms:
       - mattpocock-skills
       - grill
       - grill-me
       - grilling
+      - grill-docs
       - stress-test
 
   - triggers:
       - :grill-form
       - :grill-me-form
+      - :grilling-form
+      - :grill-docs-form
       - :f-grill
     word: true
     form: |
-      Please grill me relentlessly on this plan / design before we start building:
+      Please grill me on this plan / design before we start building:
 
       **Context / Problem Statement:**
       [[context]]
@@ -545,13 +578,13 @@ matches:
       **Proposed Plan / Design:**
       [[proposal]]
 
-      **Grilling Focus:**
+      **Grilling Mode & Focus:**
       [[focus]]
 
       **Instructions:**
-      - Attack my hidden assumptions and uncover edge cases.
-      - Probe technical debt, failure modes, scalability traps, and UX friction.
-      - Ask one penetrating question at a time or provide a numbered list of critical vulnerabilities.
+      - Attack hidden assumptions, technical debt, failure modes, and scalability traps.
+      - If interactive interview mode is selected, ask questions one at a time and provide recommended answers.
+      - Cross-reference against official library documentation, runtime constraints, and edge cases.
       - Do not hold back or flatter; help me stress-test this proposal completely.
     form_fields:
       context:
@@ -561,107 +594,17 @@ matches:
       focus:
         type: choice
         values:
-          - Architecture & Modularity
-          - Performance & Scalability
-          - Failure Modes & Edge Cases
-          - Simplicity & Interface Design
-          - Comprehensive (All Axes)
-    label: '[Agent Skills] Relentless Plan & Design Grilling (Interactive Form)'
-    comment: Interactive form for relentless design & plan grilling.
+          - Comprehensive (Attack all assumptions, edge cases & scalability)
+          - Step-by-Step Interview (Ask questions one at a time)
+          - Stress-Test Against Official Docs & Dependency Specs
+          - Architecture & Modularity Seams
+          - Performance & Failure Modes
+    label: "[Agent Skills] Relentless Plan & Design Grilling (Interactive Form)"
+    comment: Interactive form for unified design & plan grilling.
     search_terms:
       - mattpocock-skills
       - grill-form
       - grill-me-form
-      - form
-
-  # --- Stress-Test Against Official Docs & Specs ---
-  - triggers:
-      - :grill-docs
-      - :grill-with-docs
-    word: true
-    replace: |
-      Stress-test this design against the official documentation, specifications, and constraints of our dependencies:
-      - Cross-reference the proposal with official API specs, rate limits, deprecations, and runtime lifecycles.
-      - Identify any unsupported assumptions, undocumented behaviors, or compatibility pitfalls.
-    label: '[Agent Skills] Stress-Test Against Official Docs & Specs (Direct)'
-    comment: Stress-test this design against the official documentation, specifications, and constraints.
-    search_terms:
-      - mattpocock-skills
-      - grill-docs
-      - grill-with-docs
-      - documentation
-      - validation
-
-  - triggers:
-      - :grill-docs-form
-      - :grill-with-docs-form
-      - :f-grill-docs
-    word: true
-    form: |
-      Stress-test this design against the official documentation, specifications, and constraints of our dependencies:
-
-      **Proposed Plan / Architecture:**
-      [[proposal]]
-
-      **Target Libraries, Tools or APIs:**
-      [[dependencies]]
-
-      **Review Protocol:**
-      - Cross-reference the proposal with official API specs, rate limits, deprecations, and runtime lifecycles.
-      - Identify any unsupported assumptions, undocumented behaviors, or compatibility pitfalls.
-    form_fields:
-      proposal:
-        multiline: true
-      dependencies:
-        multiline: true
-    label: '[Agent Skills] Stress-Test Against Official Docs & Specs (Interactive Form)'
-    comment: Interactive form for stress-testing against official documentation.
-    search_terms:
-      - mattpocock-skills
-      - grill-docs-form
-      - form
-
-  # --- Interactive Grilling Interview Protocol ---
-  - trigger: :grilling
-    word: true
-    replace: |
-      Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
-
-      Ask the questions one at a time, waiting for feedback on each question before continuing. Asking multiple questions at once is bewildering.
-
-      If a question can be answered by exploring the codebase, explore the codebase instead.
-
-      Do not enact the plan until I confirm we have reached a shared understanding.
-    label: '[Agent Skills] Interactive Grilling Interview Protocol (Direct)'
-    comment: Interview me relentlessly about every aspect of this plan until we reach a shared understanding.
-    search_terms:
-      - mattpocock-skills
-      - grilling
-      - interview
-      - alignment
-
-  - triggers:
-      - :grilling-form
-      - :f-grilling
-    word: true
-    form: |
-      Conduct a structured, step-by-step grilling interview to resolve decisions and reach a shared understanding:
-
-      **Topic / Plan to Interview Me About:**
-      [[topic]]
-
-      **Interview Protocol:**
-      - Ask questions one at a time, waiting for my response before moving to the next.
-      - Walk down each branch of the design tree, resolving dependencies between decisions sequentially.
-      - Provide a recommended option for each question to accelerate alignment.
-      - Do not begin implementation until we confirm a complete shared understanding.
-    form_fields:
-      topic:
-        multiline: true
-    label: '[Agent Skills] Interactive Grilling Interview Protocol (Interactive Form)'
-    comment: Interactive form for grilling interview protocol.
-    search_terms:
-      - mattpocock-skills
       - grilling-form
       - form
 
@@ -675,7 +618,7 @@ matches:
       - What implicit assumptions are we making that might be false?
       - Is this solution disproportionately complex for the problem it solves?
       - What is the simplest thing that could possibly work instead?
-    label: '[Agent Skills] Assumption & Complexity Challenger (Direct)'
+    label: "[Agent Skills] Assumption & Complexity Challenger (Direct)"
     comment: Stop and critically evaluate this proposal for hidden complexity, unspoken assumptions, or confusion.
     search_terms:
       - mattpocock-skills
@@ -701,7 +644,7 @@ matches:
     form_fields:
       proposal:
         multiline: true
-    label: '[Agent Skills] Assumption & Complexity Challenger (Interactive Form)'
+    label: "[Agent Skills] Assumption & Complexity Challenger (Interactive Form)"
     comment: Interactive form for assumption challenger.
     search_terms:
       - mattpocock-skills
@@ -724,7 +667,7 @@ matches:
       - Prioritize Storage Strength (deep mental models and retention) over mere transient Fluency.
       - Ground concepts in intuitive analogies and concrete, runnable code examples.
       - Use active retrieval questions and interactive feedback loops.
-    label: '[Agent Skills] Structured Teaching Framework (Direct)'
+    label: "[Agent Skills] Structured Teaching Framework (Direct)"
     comment: Teach me this topic using a high-retention structured teaching framework.
     search_terms:
       - mattpocock-skills
@@ -777,7 +720,7 @@ matches:
           - Hands-on Practice & Exercises
           - Deep Architectural & Mental Models
           - Quick Reference & Cheat Sheets
-    label: '[Agent Skills] Structured Teaching Framework (Interactive Form)'
+    label: "[Agent Skills] Structured Teaching Framework (Interactive Form)"
     comment: Interactive form for structured teaching framework.
     search_terms:
       - mattpocock-skills
@@ -795,7 +738,7 @@ matches:
       - Provide a tight 1-2 sentence definition of what the term IS (not just what it does).
       - List imprecise, misleading, or overloaded aliases under "_Avoid_".
       - Ensure unambiguous, opinionated language that can be referenced across projects.
-    label: '[Agent Skills] Canonical Vocabulary & Glossary Builder (Direct)'
+    label: "[Agent Skills] Canonical Vocabulary & Glossary Builder (Direct)"
     comment: Help me define and compress this concept into a canonical domain glossary entry.
     search_terms:
       - mattpocock-skills
@@ -826,12 +769,12 @@ matches:
       - Ensure unambiguous, opinionated language that can be referenced across projects.
     form_fields:
       term:
-        default: ''
+        default: ""
       domain:
-        default: ''
+        default: ""
       draft:
         multiline: true
-    label: '[Agent Skills] Canonical Vocabulary & Glossary Builder (Interactive Form)'
+    label: "[Agent Skills] Canonical Vocabulary & Glossary Builder (Interactive Form)"
     comment: Interactive form for domain glossary builder.
     search_terms:
       - mattpocock-skills
@@ -849,7 +792,7 @@ matches:
       - **Breakthrough Insight:** Core takeaway.
       - **What was non-obvious:** Surprises or misconceptions corrected.
       - **Implications for future practice:** How to apply this moving forward.
-    label: '[Agent Skills] Learning Record & Insight Compressor (Direct)'
+    label: "[Agent Skills] Learning Record & Insight Compressor (Direct)"
     comment: Capture this breakthrough insight into a structured learning record.
     search_terms:
       - mattpocock-skills
@@ -880,7 +823,7 @@ matches:
         multiline: true
       implications:
         multiline: true
-    label: '[Agent Skills] Learning Record & Insight Compressor (Interactive Form)'
+    label: "[Agent Skills] Learning Record & Insight Compressor (Interactive Form)"
     comment: Interactive form for learning record.
     search_terms:
       - mattpocock-skills
@@ -898,7 +841,7 @@ matches:
       - Define canonical terms with tight 1-2 sentence definitions and an "_Avoid_" list of confusing synonyms.
       - Map entity boundaries, aggregate roots, and lifecycle state machines.
       - Highlight domain invariants that must never be violated.
-    label: '[Agent Skills] Domain Modeling & Ubiquitous Language (Direct)'
+    label: "[Agent Skills] Domain Modeling & Ubiquitous Language (Direct)"
     comment: Let's model the domain entities, relationships, and ubiquitous language for this system.
     search_terms:
       - mattpocock-skills
@@ -930,12 +873,12 @@ matches:
       - Highlight domain invariants that must never be violated.
     form_fields:
       domain:
-        default: ''
+        default: ""
       concepts:
         multiline: true
       rules:
         multiline: true
-    label: '[Agent Skills] Domain Modeling & Ubiquitous Language (Interactive Form)'
+    label: "[Agent Skills] Domain Modeling & Ubiquitous Language (Interactive Form)"
     comment: Interactive form for domain modeling.
     search_terms:
       - mattpocock-skills
@@ -956,7 +899,7 @@ matches:
       1. Map out the unknowns and architectural risks as a graph of concrete investigation tickets.
       2. Identify the critical path and the first high-leverage ticket to tackle.
       3. Define explicit "Done" criteria for each step.
-    label: '[Agent Skills] Wayfinder Project Investigation Map (Direct)'
+    label: "[Agent Skills] Wayfinder Project Investigation Map (Direct)"
     comment: Use the Wayfinder workflow to map and decompose this large, ambiguous initiative.
     search_terms:
       - mattpocock-skills
@@ -988,7 +931,7 @@ matches:
         multiline: true
       constraints:
         multiline: true
-    label: '[Agent Skills] Wayfinder Project Investigation Map (Interactive Form)'
+    label: "[Agent Skills] Wayfinder Project Investigation Map (Interactive Form)"
     comment: Interactive form for Wayfinder project investigation map.
     search_terms:
       - mattpocock-skills
@@ -1007,7 +950,7 @@ matches:
       - Detailed Functional Specifications & User Flows.
       - Technical Architecture, Data Models & API Contracts.
       - Edge Cases, Failure Modes & Security Considerations.
-    label: '[Agent Skills] PRD & Technical Specification Generator (Direct)'
+    label: "[Agent Skills] PRD & Technical Specification Generator (Direct)"
     comment: Transform our discussion and requirements into a complete, structured Technical Specification / PRD.
     search_terms:
       - mattpocock-skills
@@ -1046,7 +989,7 @@ matches:
         multiline: true
       constraints:
         multiline: true
-    label: '[Agent Skills] PRD & Technical Specification Generator (Interactive Form)'
+    label: "[Agent Skills] PRD & Technical Specification Generator (Interactive Form)"
     comment: Interactive form for Technical Specification / PRD.
     search_terms:
       - mattpocock-skills
@@ -1065,7 +1008,7 @@ matches:
       - Each ticket must represent a single, independent increment of work that leaves the system functional.
       - Include an explicit "Definition of Done" with verification commands / tests.
       - Order tickets sequentially by dependency.
-    label: '[Agent Skills] Actionable Task & Ticket Breakdown (Direct)'
+    label: "[Agent Skills] Actionable Task & Ticket Breakdown (Direct)"
     comment: Break down this technical specification into small, testable, incremental implementation tickets.
     search_terms:
       - mattpocock-skills
@@ -1097,7 +1040,7 @@ matches:
         multiline: true
       order:
         default: Sequential by dependency
-    label: '[Agent Skills] Actionable Task & Ticket Breakdown (Interactive Form)'
+    label: "[Agent Skills] Actionable Task & Ticket Breakdown (Interactive Form)"
     comment: Interactive form for task & ticket breakdown.
     search_terms:
       - mattpocock-skills
@@ -1115,7 +1058,7 @@ matches:
       - Group questions into Core Value, Technical Constraints, Edge Cases, and Non-Goals.
       - Formulate questions to eliminate ambiguity and force clear trade-offs.
       - Provide a sensible default recommendation for each question.
-    label: '[Agent Skills] Requirements & Intent Questionnaire (Direct)'
+    label: "[Agent Skills] Requirements & Intent Questionnaire (Direct)"
     comment: Convert this idea into a structured requirements questionnaire.
     search_terms:
       - mattpocock-skills
@@ -1147,7 +1090,7 @@ matches:
         multiline: true
       audience:
         multiline: true
-    label: '[Agent Skills] Requirements & Intent Questionnaire (Interactive Form)'
+    label: "[Agent Skills] Requirements & Intent Questionnaire (Interactive Form)"
     comment: Interactive form for requirements questionnaire.
     search_terms:
       - mattpocock-skills
@@ -1162,7 +1105,7 @@ matches:
       - Classify by severity (Critical / High / Medium / Low) and type (Bug, UX, Performance, Technical Debt).
       - Identify duplicate reports or shared root causes.
       - Recommend immediate action steps for each item.
-    label: '[Agent Skills] Systematic Issue & Bug Triage (Direct)'
+    label: "[Agent Skills] Systematic Issue & Bug Triage (Direct)"
     comment: Triage and prioritize these reported bugs, errors, or feature requests.
     search_terms:
       - mattpocock-skills
@@ -1187,7 +1130,7 @@ matches:
     form_fields:
       issues:
         multiline: true
-    label: '[Agent Skills] Systematic Issue & Bug Triage (Interactive Form)'
+    label: "[Agent Skills] Systematic Issue & Bug Triage (Interactive Form)"
     comment: Interactive form for issue triage.
     search_terms:
       - mattpocock-skills
@@ -1204,7 +1147,7 @@ matches:
       - Present one clear step at a time.
       - Provide exact instructions or commands for the current step.
       - Ask for confirmation or output before advancing to the next step.
-    label: '[Agent Skills] Step-by-Step Guided Task Wizard (Direct)'
+    label: "[Agent Skills] Step-by-Step Guided Task Wizard (Direct)"
     comment: Guide me step-by-step through executing this complex technical process.
     search_terms:
       - mattpocock-skills
@@ -1235,7 +1178,7 @@ matches:
         multiline: true
       starting_point:
         multiline: true
-    label: '[Agent Skills] Step-by-Step Guided Task Wizard (Interactive Form)'
+    label: "[Agent Skills] Step-by-Step Guided Task Wizard (Interactive Form)"
     comment: Interactive form for task wizard.
     search_terms:
       - mattpocock-skills
@@ -1255,7 +1198,7 @@ matches:
       - **Current State & Blocking Issues:** Unresolved questions or blockers.
       - **Immediate Next Steps:** Where to pick up next.
       - **Key Files & Touchpoints:** Relevant files modified or referenced.
-    label: '[Agent Skills] Session State Handoff Document (Direct)'
+    label: "[Agent Skills] Session State Handoff Document (Direct)"
     comment: Generate a compact session handoff document summarizing our work.
     search_terms:
       - mattpocock-skills
@@ -1287,7 +1230,7 @@ matches:
       [[touchpoints]]
     form_fields:
       objective:
-        default: ''
+        default: ""
       completed:
         multiline: true
       state:
@@ -1295,8 +1238,8 @@ matches:
       next_steps:
         multiline: true
       touchpoints:
-        default: ''
-    label: '[Agent Skills] Session State Handoff Document (Interactive Form)'
+        default: ""
+    label: "[Agent Skills] Session State Handoff Document (Interactive Form)"
     comment: Interactive form for session handoff document.
     search_terms:
       - mattpocock-skills
@@ -1314,7 +1257,7 @@ matches:
     word: true
     replace: |
       Explain this software engineering / architecture challenge using Matt Pocock's signature high-clarity style (intuitive mental models, concrete code comparisons, and explicit trade-offs).
-    label: '[Agent Skills] High-Clarity Architecture & Code Q&A (Direct)'
+    label: "[Agent Skills] High-Clarity Architecture & Code Q&A (Direct)"
     comment: Explain this software engineering / architecture challenge using high-clarity mental models.
     search_terms:
       - mattpocock-skills
@@ -1355,7 +1298,7 @@ matches:
           - Type Safety & API Design
           - Architecture & Decoupling
           - Performance & Optimization
-    label: '[Agent Skills] High-Clarity Architecture & Code Q&A (Interactive Form)'
+    label: "[Agent Skills] High-Clarity Architecture & Code Q&A (Interactive Form)"
     comment: Interactive form for architecture & code Q&A.
     search_terms:
       - mattpocock-skills
@@ -1374,7 +1317,7 @@ matches:
       2. Context efficiency (lean token usage, no bloat).
       3. Deep task leverage (actionable workflows over generic platitudes).
       4. Verification loop (concrete verification mechanisms).
-    label: '[Agent Skills] Skill & Prompt Workflow Auditor (Direct)'
+    label: "[Agent Skills] Skill & Prompt Workflow Auditor (Direct)"
     comment: Please audit this skill / prompt workflow against high-performance standards.
     search_terms:
       - mattpocock-skills
@@ -1403,10 +1346,10 @@ matches:
       4. Verification loop (does it include concrete verification mechanisms?).
     form_fields:
       skill_name:
-        default: ''
+        default: ""
       skill_content:
         multiline: true
-    label: '[Agent Skills] Skill & Prompt Workflow Auditor (Interactive Form)'
+    label: "[Agent Skills] Skill & Prompt Workflow Auditor (Interactive Form)"
     comment: Interactive form for skill auditor.
     search_terms:
       - mattpocock-skills
@@ -1424,7 +1367,7 @@ matches:
       - Structure with clean Markdown sections (Context, Instructions, Constraints, Verification).
       - Eliminate ambiguous wording and enforce deterministic instructions.
       - Ensure inputs and requirements are explicit and testable.
-    label: '[Agent Skills] Optimizing Prompts for AI Agents (Direct)'
+    label: "[Agent Skills] Optimizing Prompts for AI Agents (Direct)"
     comment: Optimize and format this prompt draft for maximum clarity and deterministic execution by AI coding agents.
     search_terms:
       - mattpocock-skills
@@ -1452,10 +1395,10 @@ matches:
       - Parameterize variables clearly using form placeholders.
     form_fields:
       objective:
-        default: ''
+        default: ""
       draft:
         multiline: true
-    label: '[Agent Skills] Optimizing Prompts for AI Agents (Interactive Form)'
+    label: "[Agent Skills] Optimizing Prompts for AI Agents (Interactive Form)"
     comment: Interactive form for optimizing prompts for AI agents.
     search_terms:
       - mattpocock-skills
@@ -1472,7 +1415,7 @@ matches:
       - Ground all conclusions in official documentation, specs, or benchmark data.
       - Provide practical code snippets illustrating the recommended solution.
       - Highlight caveats, performance implications, and version-specific constraints.
-    label: '[Agent Skills] Grounded Primary Source Research (Direct)'
+    label: "[Agent Skills] Grounded Primary Source Research (Direct)"
     comment: Investigate this technical question using primary sources and authoritative documentation.
     search_terms:
       - mattpocock-skills
@@ -1503,7 +1446,7 @@ matches:
         multiline: true
       context:
         multiline: true
-    label: '[Agent Skills] Grounded Primary Source Research (Interactive Form)'
+    label: "[Agent Skills] Grounded Primary Source Research (Interactive Form)"
     comment: Interactive form for primary source research.
     search_terms:
       - mattpocock-skills
@@ -1518,7 +1461,7 @@ matches:
       - Organize skill folders with clear YAML frontmatter, descriptions, and task triggers.
       - Define reference documentation structures and script utilities.
       - Ensure all skills are modular, self-contained, and environment-agnostic.
-    label: '[Agent Skills] Setup Agent Skills & Workflow Library (Direct)'
+    label: "[Agent Skills] Setup Agent Skills & Workflow Library (Direct)"
     comment: Set up and configure a structured agent skills and prompt workflow repository.
     search_terms:
       - mattpocock-skills
@@ -1544,10 +1487,10 @@ matches:
       - Ensure all skills are modular, self-contained, and environment-agnostic.
     form_fields:
       stack:
-        default: ''
+        default: ""
       workflows:
         multiline: true
-    label: '[Agent Skills] Setup Agent Skills & Workflow Library (Interactive Form)'
+    label: "[Agent Skills] Setup Agent Skills & Workflow Library (Interactive Form)"
     comment: Interactive form for setting up agent skills.
     search_terms:
       - mattpocock-skills
@@ -1587,7 +1530,7 @@ matches:
       - Keep the snippet clean, portable, and OS-agnostic.
     form_fields:
       trigger_text:
-        default: ':example'
+        default: ":example"
       replace_text:
         multiline: true
       trigger_type:
@@ -1601,9 +1544,9 @@ matches:
       word_boundary:
         type: choice
         values:
-          - 'true (Only expand on whole words)'
-          - 'false (Allow expanding anywhere)'
-    label: '[Agent Skills] Espanso Trigger Creator (Interactive Form)'
+          - "true (Only expand on whole words)"
+          - "false (Allow expanding anywhere)"
+    label: "[Agent Skills] Espanso Trigger Creator (Interactive Form)"
     comment: Create a clean, schema-compliant Espanso match definition for the following text expansion.
     search_terms:
       - mattpocock-skills
@@ -1622,7 +1565,7 @@ matches:
       - Provide the complete, tested regular expression with appropriate flags.
       - Break down each component of the regex (assertions, groups, quantifiers).
       - Include safe edge-case handling (escaped characters, whitespace, greediness).
-    label: '[Agent Skills] Regex Pattern Crafter & Extractor (Direct)'
+    label: "[Agent Skills] Regex Pattern Crafter & Extractor (Direct)"
     comment: Design and explain a regular expression for this pattern matching / extraction task.
     search_terms:
       - mattpocock-skills
@@ -1669,7 +1612,7 @@ matches:
         multiline: true
       captures:
         multiline: true
-    label: '[Agent Skills] Regex Pattern Crafter & Extractor (Interactive Form)'
+    label: "[Agent Skills] Regex Pattern Crafter & Extractor (Interactive Form)"
     comment: Interactive form for regex pattern crafter.
     search_terms:
       - mattpocock-skills
@@ -1688,7 +1631,7 @@ matches:
       - Handle spaces, special characters, and quotes safely without injection vulnerabilities.
       - Include robust error handling and non-zero exit code checks.
       - Avoid hardcoded system-specific paths; rely on portable environment variables or parameter inputs.
-    label: '[Agent Skills] Portable Shell & Script Automation Generator (Direct)'
+    label: "[Agent Skills] Portable Shell & Script Automation Generator (Direct)"
     comment: Create a safe, portable shell script or command pipeline for this automation task.
     search_terms:
       - mattpocock-skills
@@ -1731,7 +1674,7 @@ matches:
           - Python Automation Script
       inputs:
         multiline: true
-    label: '[Agent Skills] Portable Shell & Script Automation Generator (Interactive Form)'
+    label: "[Agent Skills] Portable Shell & Script Automation Generator (Interactive Form)"
     comment: Interactive form for portable shell & script generator.
     search_terms:
       - mattpocock-skills

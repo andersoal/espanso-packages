@@ -12,9 +12,7 @@ Provides **Dual-Mode** execution for every engineering prompt — completely OS-
 
 | Direct Trigger | Form Dialog Trigger | Name | What it Does / Form Inputs |
 |---|---|---|---|
-| `:grill` (or `:grill-me`) | `:grill-form` (or `:f-grill`) | **Grill Me** | Relentlessly attacks hidden assumptions, failure modes, scalability traps, and UX friction (Inputs: Context, Proposal, Focus dropdown) |
-| `:grill-docs` (or `:grill-with-docs`) | `:grill-docs-form` (or `:f-grill-docs`) | **Grill Against Docs** | Stress-tests proposal against official library documentation and API specs (Inputs: Proposal, Dependencies) |
-| `:grilling` | `:grilling-form` (or `:f-grilling`) | **Grilling Interview** | Sequential one-question-at-a-time interview to reach shared understanding (Input: Topic) |
+| `:grill` (or `:grill-me`, `:grilling`, `:grill-docs`) | `:grill-form` (or `:grill-me-form`, `:grilling-form`, `:f-grill`) | **Relentless Plan & Design Grilling** | Attacks assumptions, failure modes, scalability traps, docs & specs (Inputs: Context, Proposal, Mode & Focus dropdown) |
 | `:implement` (or `:build`) | `:implement-form` (or `:f-implement`) | **Step-by-Step Implementation** | Step-by-step implementation against specification with tests (Inputs: Goal, Context, Constraints) |
 | `:tdd` (or `:tdd-loop`) | `:tdd-form` (or `:f-tdd`) | **TDD Workflow** | Red-Green-Refactor loop protocol (Inputs: Goal, Test Framework dropdown, Files) |
 | `:refactor` (or `:refactor-plan`) | `:refactor-form` (or `:f-refactor`) | **Refactoring Plan** | Safe incremental refactor plan with tiny verifiable commits (Inputs: Current Code, Target Architecture) |

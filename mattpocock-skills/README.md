@@ -2,56 +2,48 @@
 
 Espanso expansion package for workflows and skills inspired by [mattpocock/skills](https://github.com/mattpocock/skills).
 
-Provides clean interactive form templates and double-slash command shortcuts for agent sessions.
+Provides **Dual-Mode** execution for every engineering prompt — completely OS- and environment-agnostic:
+1. **⚡ Direct Text Replacement (`:...`)**: Instant in-chat prompt expansion without modal dialogs.
+2. **📋 Interactive Form Dialog (`:-form` or `:f-...`)**: Pops up a structured dialog with text areas and dropdowns when you want to supply structured inputs.
 
 ---
 
-## 📋 Interactive Prompt Forms
+## 🛠️ Triggers Reference (Direct & Form Modes)
 
-Type any of the clean `:` triggers to open a popup dialog with structured inputs:
-
-| Trigger | Name | Description |
-|---|---|---|
-| `:teach` (or `:learn`, `:lesson`) | **Structured Teaching Framework** | Topic, real-world mission, level dropdown, focus dropdown (ZPD, Storage Strength) |
-| `:glossary` (or `:vocab`) | **Canonical Glossary Entry** | Term, domain, definition rules (tight 1-2 sentence definition + "_Avoid_" list) |
-| `:learning-record` (or `:record`) | **Learning Record** | Breakthrough insight, non-obvious learnings, future implications |
-| `:tdd` (or `:tdd-loop`) | **TDD Workflow** | Goal, test framework dropdown (Vitest, Jest, Playwright, Pytest, etc.), file paths |
-| `:grill` (or `:grill-me`) | **Grill Me** | Context, proposal, focus area dropdown (Modularity, Scalability, Edge Cases, etc.) |
-| `:review` (or `:codereview`) | **Dual-Axis Review** | PR target, original spec, and code diff to review |
-| `:diag` (or `:diagnose`) | **Bug Diagnosis** | Observed error, expected behavior, reproduction steps, suspected files |
-| `:wayfinder` (or `:wf`) | **Wayfinder Breakdown** | High-level goal, known constraints, ticket graph decomposition |
-| `:refactor` (or `:refactor-plan`) | **Refactoring Plan** | Current code, target architecture, safe commit breakdown |
-| `:design` (or `:design-api`) | **API / Interface Design** | Responsibility, caller context, 3 radical interface designs ("Design it twice") |
-| `:handoff` (or `:session-handoff`) | **Session Handoff** | Objective, completed tasks, state/blockers, immediate next steps |
-| `:askmatt` (or `:ask-matt`) | **Ask Matt Style Q&A** | Topic / question, code context, clear mental model explanation |
-| `:audit` (or `:skill-audit`) | **Skill Auditor** | Skill name, content, trigger/context/leverage checklist |
-
----
-
-## ⚡ Quick Agent Command Shortcuts (`//...`)
-
-Type these double-slash shortcuts when you just want the fast slash command in agent chats:
-
-| Trigger | Expansion | Purpose |
-|---|---|---|
-| `//teach` | `/teach ` | Multi-session workspace teaching loop |
-| `//tdd` | `/tdd ` | Test-driven development loop |
-| `//review` | `/review ` | Dual-axis review (Standards & Spec) |
-| `//code-review` | `/code-review ` | Comprehensive code review |
-| `//grill` | `/grill-me ` | Stress-test plans & architecture |
-| `//diag` | `/diagnosing-bugs ` | Systematic bug diagnosis protocol |
-| `//wayfinder` | `/wayfinder ` | Large-scale task graph decomposition |
-| `//refactor` | `/request-refactor-plan ` | Safe incremental refactor RFC |
-| `//design` | `/design-an-interface ` | Explore multiple radical API designs |
-| `//domain` | `/domain-modeling ` | Domain modeling & ubiquitous language |
-| `//proto` | `/prototype ` | Throwaway design prototype |
-| `//qa` | `/qa ` | Interactive QA & bug filing |
-| `//handoff` | `/handoff ` | Session state handoff summary |
-| `//research` | `/research ` | High-trust primary source investigation |
-| `//audit` | `/skill-auditor ` | Audit and health-check agent skills |
-| `//prd` | `/to-prd ` | Turn notes / discussions into PRD |
-| `//issues` | `/to-issues ` | Convert PRD / specs into issues |
-| `//ask-matt` | `/ask-matt ` | High-clarity TypeScript / architecture Q&A |
+| Direct Trigger | Form Dialog Trigger | Name | What it Does / Form Inputs |
+|---|---|---|---|
+| `:grill` (or `:grill-me`) | `:grill-form` (or `:f-grill`) | **Grill Me** | Relentlessly attacks hidden assumptions, failure modes, scalability traps, and UX friction (Inputs: Context, Proposal, Focus dropdown) |
+| `:grill-docs` (or `:grill-with-docs`) | `:grill-docs-form` (or `:f-grill-docs`) | **Grill Against Docs** | Stress-tests proposal against official library documentation and API specs (Inputs: Proposal, Dependencies) |
+| `:grilling` | `:grilling-form` (or `:f-grilling`) | **Grilling Interview** | Sequential one-question-at-a-time interview to reach shared understanding (Input: Topic) |
+| `:implement` (or `:build`) | `:implement-form` (or `:f-implement`) | **Step-by-Step Implementation** | Step-by-step implementation against specification with tests (Inputs: Goal, Context, Constraints) |
+| `:tdd` (or `:tdd-loop`) | `:tdd-form` (or `:f-tdd`) | **TDD Workflow** | Red-Green-Refactor loop protocol (Inputs: Goal, Test Framework dropdown, Files) |
+| `:refactor` (or `:refactor-plan`) | `:refactor-form` (or `:f-refactor`) | **Refactoring Plan** | Safe incremental refactor plan with tiny verifiable commits (Inputs: Current Code, Target Architecture) |
+| `:review` (or `:codereview`, `:code-review`) | `:review-form` (or `:f-review`) | **Dual-Axis Code Review** | Dual-axis review: Spec Alignment & Code Standards / Modularity (Inputs: Scope Target, Spec, Diff) |
+| `:diag` (or `:diagnose`, `:debug`) | `:diag-form` (or `:f-diag`) | **Bug Diagnosis** | Systematic hypothesis testing and minimal verification probes before fixing (Inputs: Symptom, Expected, Repro, Context) |
+| `:design` (or `:design-api`, `:design-ui`) | `:design-form` (or `:f-design`) | **API / Interface Design** | Explores 2-3 radically different designs ("Design it twice") with trade-offs (Inputs: Responsibility, Callers, Constraints) |
+| `:improve-arch` (or `:architecture`) | `:improve-arch-form` (or `:f-arch`) | **Improve Architecture** | Identifies coupling, leaky abstractions, and creates deep module boundaries (Inputs: Current Code, Goals) |
+| `:proto` (or `:prototype`) | `:proto-form` (or `:f-proto`) | **Throwaway Prototype** | Minimal prototype to validate hypotheses or API feel (Inputs: Hypothesis, Interaction Flow) |
+| `:conflicts` (or `:resolve-conflicts`) | `:conflicts-form` (or `:f-conflicts`) | **Conflict Resolution** | Synthesizes intent of both branches without semantic regressions (Inputs: Files, Incoming Changes, Base Changes) |
+| `:wait-what` (or `:challenge`) | `:wait-what-form` (or `:f-wait-what`) | **Assumption Challenger** | Challenges confusing decisions and finds simpler alternative approaches (Input: Proposal) |
+| `:teach` (or `:learn`, `:lesson`) | `:teach-form` (or `:f-teach`) | **Structured Teaching Framework** | Progressive learning in Zone of Proximal Development (Inputs: Topic, Mission, Level dropdown, Focus dropdown) |
+| `:glossary` (or `:vocab`) | `:glossary-form` (or `:f-glossary`) | **Canonical Glossary Entry** | Tight 1-2 sentence definition + "_Avoid_" list for ubiquitous language (Inputs: Term, Domain, Draft) |
+| `:record` (or `:learning-record`) | `:record-form` (or `:f-record`) | **Learning Record** | Breakthrough insight, non-obvious learnings, future implications (Inputs: Insight, Non-Obvious, Implications) |
+| `:domain-modeling` (or `:domain`) | `:domain-modeling-form` (or `:f-domain`) | **Domain Modeling** | Domain entities, boundary invariants, and canonical vocabulary (Inputs: Domain, Concepts, Rules) |
+| `:wayfinder` (or `:wf`) | `:wayfinder-form` (or `:f-wayfinder`) | **Wayfinder Breakdown** | Decomposes large initiatives into an investigation ticket graph (Inputs: Goal, Constraints) |
+| `:spec` (or `:to-spec`, `:prd`) | `:spec-form` (or `:f-spec`) | **Technical Specification / PRD** | Transforms discussions into a structured technical PRD (Inputs: Overview, Requirements, Constraints) |
+| `:tickets` (or `:to-tickets`, `:tasks`) | `:tickets-form` (or `:f-tickets`) | **Actionable Task Breakdown** | Decomposes specs into small, testable, verifiable tickets (Inputs: Spec, Order) |
+| `:questionnaire` (or `:to-questionnaire`) | `:questionnaire-form` (or `:f-questionnaire`) | **Requirements Questionnaire** | Structured questions to eliminate ambiguity and extract requirements (Inputs: Idea, Audience) |
+| `:triage` | `:triage-form` (or `:f-triage`) | **Issue & Bug Triage** | Categorizes and prioritizes reported bugs and issues (Input: Issues list) |
+| `:wizard` (or `:guide`) | `:wizard-form` (or `:f-wizard`) | **Step-by-Step Task Wizard** | Step-by-step guidance protocol through complex workflows (Inputs: Task, Starting Point) |
+| `:handoff` (or `:session-handoff`) | `:handoff-form` (or `:f-handoff`) | **Session Handoff** | Compact summary of completed work, state, blockers, and next steps (Inputs: Objective, Completed, State, Next Steps, Touchpoints) |
+| `:askmatt` (or `:ask-matt`) | `:askmatt-form` (or `:f-askmatt`) | **Ask Matt Style Q&A** | High-clarity mental models, concrete comparisons, and trade-offs (Inputs: Topic, Context, Focus dropdown) |
+| `:audit` (or `:skill-audit`) | `:audit-form` (or `:f-audit`) | **Skill & Prompt Auditor** | Audits prompt/skill against trigger reliability, context efficiency & leverage (Inputs: Skill Name, Content) |
+| `:write-agents` (or `:writing-for-agents`) | `:write-agents-form` (or `:f-write-agents`) | **Writing Prompts for Agents** | Formats prompts with clean Markdown sections and deterministic constraints (Inputs: Objective, Draft) |
+| `:research` (or `:investigate`) | `:research-form` (or `:f-research`) | **Primary Source Research** | Grounded primary source investigation protocol (Inputs: Topic, Context) |
+| `:setup-skills` | `:setup-skills-form` (or `:f-setup-skills`) | **Setup Agent Skills** | Structure modular, portable skill repositories and prompt libraries (Inputs: Stack, Workflows) |
+| `:regex` (or `:pattern`) | `:regex-form` (or `:f-regex`) | **Regex Crafter & Extractor** | Complete regex design, component breakdown, and flags (Inputs: Goal, Engine dropdown, Samples, Captures) |
+| `:shell` (or `:bash`, `:script`) | `:shell-form` (or `:f-shell`) | **Shell & Script Generator** | Safe, portable script generation with error handling (Inputs: Task, Shell Type dropdown, Inputs) |
+| — | `:trigger` (or `:make-trigger`, `:new-trigger`, `:trigger-form`) | **Espanso Trigger Creator** | Interactive dialog for creating new Espanso triggers (Inputs: Trigger Text, Replace Text, Type dropdown, Word Boundary dropdown) |
 
 ---
 

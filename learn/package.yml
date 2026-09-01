@@ -787,3 +787,120 @@ matches:
     comment: 30-day daily regimen of high-IQ thinking routines and mental clarity exercises.
     search_terms:
       - learn
+
+  - trigger: :yt-learn
+    replace: |
+      You are an elite knowledge engineer, visual educator, and expert video analyst. Your primary goal is to transform YouTube video content into a high-retention, scannable learning framework powered by crisp explanatory prose and responsive Generative UI / HTML / SVG visual artifacts.
+
+      YOUTUBE URL / TRANSCRIPT PAYLOAD:
+      {{clip}}
+
+      ### CRITICAL PROTOCOL: URL & Content Baseline
+      ### 0. URL Resolution & Sanitization (CRITICAL STEP)
+      * The input link may be a mobile short-link containing tracking parameters (e.g., `youtu.be/...` or `?si=...`).
+      * **Your First Action:** Isolate the core 11-character alphanumeric YouTube Video ID from the string (e.g., from `H1u0J0sy3fE?si=...` extract `H1u0J0sy3fE`).
+      * Reconstruct a clean, desktop-compatible baseline URL using the format `https://www.youtube.com/watch?v=[Video_ID]`.
+      * Use your browsing/search tools with this cleaned string or search directly for `YouTube [Video_ID]` to retrieve the correct title, transcript, or metadata index. Do not guess or execute on the raw mobile tracking string.
+      1. If only a URL is provided, use your browsing capabilities to search for the video title, transcript, or detailed summaries. If you cannot access the transcript directly due to technical restrictions, notify the user immediately and analyze the video based on available web data, metadata, and search results. Do not hallucinate content.
+      2. The very first line of your response must be a clear, compelling Title (using an `# H1` Markdown header) capturing the core essence of the video. No introductions, no greetings.
+
+      Execute the following analysis and visualization pipeline exactly:
+
+      ## 1. Structural Mapping & Core Thesis
+      * **The Concrete Analogy:** Explain the video's core thesis using exactly one powerful, real-world metaphor to make the abstract concept instantly relatable.
+      * **The Pillar Map:** Construct a Markdown table listing the 3-5 structural pillars of the video:
+
+      | Pillar / Concept | Timestamp / Location | Practical Value & Application |
+      | :--- | :--- | :--- |
+
+      * **The Concept Network:** Outline the relationships between secondary ideas using a strict hierarchical bullet structure: `- Major Node > Sub-Node > Attribute`.
+      * **Visual Artifact 1 (Concept Mindmap / Analogy Graphic):** Generate a clean, responsive, self-contained SVG diagram (`<svg ... viewBox="..." ...>`) or styled HTML component illustrating the relationship between the core thesis, the analogy, and the key pillar nodes. Use a modern color palette (dark/light neutral background, high-contrast accent nodes, clear typographic labels).
+
+      ## 2. Rigorous Deconstruction & Critique
+      * **Arguments & Evidence:** Provide a dense, scannable 300-word breakdown of the supporting arguments, data, or case studies presented.
+      * **The Critique Matrix:** Provide a balanced evaluation detailing:
+        * **Pros & Cons:** Vulnerabilities or strengths in the speaker's logic.
+        * **Validity:** Is this advice universally applicable, or does it rely on a specific niche/privilege? Provide science- or data-backed counterarguments where the logic falters.
+
+      ## 3. The Execution Framework
+      * **Actionable Flow:** Convert the video's methodology into a step-by-step sequential breakdown where order is critical. Use this exact format for each step:
+        `[Step X: Title] -> [Core Action] -> [Visual/Mental Anchor]`
+      * **The Fatal Pitfall:** Identify the single biggest operational blind spot or common point of failure when trying to execute this framework, and detail exactly how to avoid it.
+      * **Visual Artifact 2 (Execution Workflow Pipeline):** Generate a responsive SVG / HTML interactive or swimlane flowchart illustrating the sequential steps, core action badges, decision gates, and a distinct visual hazard/warning badge for the Fatal Pitfall.
+
+      ## 4. Retention & Success Metrics
+      * **Cognitive Hooks:** Provide one acronym-based mnemonic or memory anchor to ensure long-term retention of the core concept.
+      * **Success Metric:** Design a singular, definitive formula or KPI derived from the video's logic to measure implementation success (e.g., "Success = [Variable A] / [Variable B]").
+      * **Visual Artifact 3 (Visual Retention Cheat Sheet Widget):** Generate an elegant, self-contained HTML/CSS/SVG card (e.g. styled flashcard/dashboard container with CSS flex/grid styling) condensing the Mnemonic, the KPI formula box, and top 3 practical rules of thumb into an exportable study card.
+    vars:
+      - name: clip
+        type: clipboard
+    label: "[Learn] YouTube Video Transcriber & Visual Learning Framework (Clipboard)"
+    comment: Transforms YouTube video content from clipboard into high-retention frameworks with SVG/HTML diagrams.
+    search_terms:
+      - learn
+      - youtube
+      - transcribe
+      - video
+      - diagram
+      - visual
+
+  - trigger: :yt-learn-form
+    form: |
+      You are an elite knowledge engineer, visual educator, and expert video analyst. Your primary goal is to transform YouTube video content into a high-retention, scannable learning framework powered by crisp explanatory prose and responsive Generative UI / HTML / SVG visual artifacts.
+
+      YOUTUBE URL: [[youtube_url]]
+      TRANSCRIPT PAYLOAD:
+      [[transcript]]
+
+      ### CRITICAL PROTOCOL: URL & Content Baseline
+      ### 0. URL Resolution & Sanitization (CRITICAL STEP)
+      * The input link may be a mobile short-link containing tracking parameters (e.g., `youtu.be/...` or `?si=...`).
+      * **Your First Action:** Isolate the core 11-character alphanumeric YouTube Video ID from the string (e.g., from `H1u0J0sy3fE?si=...` extract `H1u0J0sy3fE`).
+      * Reconstruct a clean, desktop-compatible baseline URL using the format `https://www.youtube.com/watch?v=[Video_ID]`.
+      * Use your browsing/search tools with this cleaned string or search directly for `YouTube [Video_ID]` to retrieve the correct title, transcript, or metadata index. Do not guess or execute on the raw mobile tracking string.
+      1. If only a URL is provided, use your browsing capabilities to search for the video title, transcript, or detailed summaries. If you cannot access the transcript directly due to technical restrictions, notify the user immediately and analyze the video based on available web data, metadata, and search results. Do not hallucinate content.
+      2. The very first line of your response must be a clear, compelling Title (using an `# H1` Markdown header) capturing the core essence of the video. No introductions, no greetings.
+
+      Execute the following analysis and visualization pipeline exactly:
+
+      ## 1. Structural Mapping & Core Thesis
+      * **The Concrete Analogy:** Explain the video's core thesis using exactly one powerful, real-world metaphor to make the abstract concept instantly relatable.
+      * **The Pillar Map:** Construct a Markdown table listing the 3-5 structural pillars of the video:
+
+      | Pillar / Concept | Timestamp / Location | Practical Value & Application |
+      | :--- | :--- | :--- |
+
+      * **The Concept Network:** Outline the relationships between secondary ideas using a strict hierarchical bullet structure: `- Major Node > Sub-Node > Attribute`.
+      * **Visual Artifact 1 (Concept Mindmap / Analogy Graphic):** Generate a clean, responsive, self-contained SVG diagram (`<svg ... viewBox="..." ...>`) or styled HTML component illustrating the relationship between the core thesis, the analogy, and the key pillar nodes. Use a modern color palette (dark/light neutral background, high-contrast accent nodes, clear typographic labels).
+
+      ## 2. Rigorous Deconstruction & Critique
+      * **Arguments & Evidence:** Provide a dense, scannable 300-word breakdown of the supporting arguments, data, or case studies presented.
+      * **The Critique Matrix:** Provide a balanced evaluation detailing:
+        * **Pros & Cons:** Vulnerabilities or strengths in the speaker's logic.
+        * **Validity:** Is this advice universally applicable, or does it rely on a specific niche/privilege? Provide science- or data-backed counterarguments where the logic falters.
+
+      ## 3. The Execution Framework
+      * **Actionable Flow:** Convert the video's methodology into a step-by-step sequential breakdown where order is critical. Use this exact format for each step:
+        `[Step X: Title] -> [Core Action] -> [Visual/Mental Anchor]`
+      * **The Fatal Pitfall:** Identify the single biggest operational blind spot or common point of failure when trying to execute this framework, and detail exactly how to avoid it.
+      * **Visual Artifact 2 (Execution Workflow Pipeline):** Generate a responsive SVG / HTML interactive or swimlane flowchart illustrating the sequential steps, core action badges, decision gates, and a distinct visual hazard/warning badge for the Fatal Pitfall.
+
+      ## 4. Retention & Success Metrics
+      * **Cognitive Hooks:** Provide one acronym-based mnemonic or memory anchor to ensure long-term retention of the core concept.
+      * **Success Metric:** Design a singular, definitive formula or KPI derived from the video's logic to measure implementation success (e.g., "Success = [Variable A] / [Variable B]").
+      * **Visual Artifact 3 (Visual Retention Cheat Sheet Widget):** Generate an elegant, self-contained HTML/CSS/SVG card (e.g. styled flashcard/dashboard container with CSS flex/grid styling) condensing the Mnemonic, the KPI formula box, and top 3 practical rules of thumb into an exportable study card.
+    form_fields:
+      youtube_url:
+        default: ""
+      transcript:
+        multiline: true
+    label: "[Learn] YouTube Video Transcriber & Visual Learning Framework (Form)"
+    comment: Interactive modal to input YouTube URL and optional transcript for visual learning synthesis.
+    search_terms:
+      - learn
+      - youtube
+      - transcribe
+      - video
+      - diagram
+      - visual

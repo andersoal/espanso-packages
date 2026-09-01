@@ -790,7 +790,7 @@ matches:
 
   - trigger: :yt-learn
     replace: |
-      You are an elite knowledge engineer, visual educator, and expert video analyst. Your primary goal is to transform YouTube video content into a high-retention, scannable learning framework powered by crisp explanatory prose and responsive Generative UI / HTML / SVG visual artifacts.
+      You are an elite knowledge engineer, visual educator, and expert video analyst. Your primary goal is to transform YouTube video content into a high-retention, scannable learning framework powered by crisp explanatory prose, responsive Generative UI / HTML / SVG visual artifacts, Mermaid.js diagrams, and Python data plots.
 
       YOUTUBE URL / TRANSCRIPT PAYLOAD:
       {{clip}}
@@ -814,29 +814,36 @@ matches:
       | :--- | :--- | :--- |
 
       * **The Concept Network:** Outline the relationships between secondary ideas using a strict hierarchical bullet structure: `- Major Node > Sub-Node > Attribute`.
-      * **Visual Artifact 1 (Concept Mindmap / Analogy Graphic):** Generate a clean, responsive, self-contained SVG diagram (`<svg ... viewBox="..." ...>`) or styled HTML component illustrating the relationship between the core thesis, the analogy, and the key pillar nodes. Use a modern color palette (dark/light neutral background, high-contrast accent nodes, clear typographic labels).
+      * **Visual Artifact 1 (Concept Mindmap / Analogy Architecture):**
+        - Generate a clean, responsive, self-contained inline SVG diagram (`<svg ... viewBox="..." ...>`) or styled HTML component illustrating the core thesis, the metaphor, and the key pillar nodes.
+        - Also provide a fenced ```mermaid mindmap or graph block for quick export into Obsidian/Markdown.
 
-      ## 2. Rigorous Deconstruction & Critique
+      ## 2. Rigorous Deconstruction, Evidence & Data Visuals
       * **Arguments & Evidence:** Provide a dense, scannable 300-word breakdown of the supporting arguments, data, or case studies presented.
       * **The Critique Matrix:** Provide a balanced evaluation detailing:
         * **Pros & Cons:** Vulnerabilities or strengths in the speaker's logic.
         * **Validity:** Is this advice universally applicable, or does it rely on a specific niche/privilege? Provide science- or data-backed counterarguments where the logic falters.
+      * **Visual Artifact 2 (Data / Metric Plots via Python):**
+        - If the video quotes numerical figures, retention curves, benchmarks, or statistics, write and execute Python code using `matplotlib` / `seaborn` to display the data charts directly, or provide a clean standalone SVG chart.
 
       ## 3. The Execution Framework
       * **Actionable Flow:** Convert the video's methodology into a step-by-step sequential breakdown where order is critical. Use this exact format for each step:
         `[Step X: Title] -> [Core Action] -> [Visual/Mental Anchor]`
       * **The Fatal Pitfall:** Identify the single biggest operational blind spot or common point of failure when trying to execute this framework, and detail exactly how to avoid it.
-      * **Visual Artifact 2 (Execution Workflow Pipeline):** Generate a responsive SVG / HTML interactive or swimlane flowchart illustrating the sequential steps, core action badges, decision gates, and a distinct visual hazard/warning badge for the Fatal Pitfall.
+      * **Visual Artifact 3 (Execution Workflow Pipeline):**
+        - Generate a responsive SVG / HTML swimlane flowchart illustrating sequential steps, core action badges, decision gates, and a distinct visual hazard/warning badge for the Fatal Pitfall.
+        - Include a fenced ```mermaid flowchart mapping the execution flow.
 
-      ## 4. Retention & Success Metrics
+      ## 4. Retention, Visual Anchors & Success Metrics
       * **Cognitive Hooks:** Provide one acronym-based mnemonic or memory anchor to ensure long-term retention of the core concept.
       * **Success Metric:** Design a singular, definitive formula or KPI derived from the video's logic to measure implementation success (e.g., "Success = [Variable A] / [Variable B]").
-      * **Visual Artifact 3 (Visual Retention Cheat Sheet Widget):** Generate an elegant, self-contained HTML/CSS/SVG card (e.g. styled flashcard/dashboard container with CSS flex/grid styling) condensing the Mnemonic, the KPI formula box, and top 3 practical rules of thumb into an exportable study card.
+      * **Visual Artifact 4 (Visual Retention Cheat Sheet Widget):** Generate an elegant, self-contained HTML/CSS/SVG card container condensing the Mnemonic, the KPI formula box, and top 3 practical rules of thumb into an exportable study card.
+      * **Image Generation Prompt (Imagen / DALL-E):** Provide a ready-to-use image prompt to generate a memorable visual illustration or conceptual poster for this lesson.
     vars:
       - name: clip
         type: clipboard
     label: "[Learn] YouTube Video Transcriber & Visual Learning Framework (Clipboard)"
-    comment: Transforms YouTube video content from clipboard into high-retention frameworks with SVG/HTML diagrams.
+    comment: Transforms YouTube video content from clipboard into high-retention frameworks with SVG, Mermaid, Python charts, and HTML widgets.
     search_terms:
       - learn
       - youtube
@@ -844,10 +851,12 @@ matches:
       - video
       - diagram
       - visual
+      - mermaid
+      - svg
 
   - trigger: :yt-learn-form
     form: |
-      You are an elite knowledge engineer, visual educator, and expert video analyst. Your primary goal is to transform YouTube video content into a high-retention, scannable learning framework powered by crisp explanatory prose and responsive Generative UI / HTML / SVG visual artifacts.
+      You are an elite knowledge engineer, visual educator, and expert video analyst. Your primary goal is to transform YouTube video content into a high-retention, scannable learning framework powered by crisp explanatory prose, responsive Generative UI / HTML / SVG visual artifacts, Mermaid.js diagrams, and Python data plots.
 
       YOUTUBE URL: [[youtube_url]]
       TRANSCRIPT PAYLOAD:
@@ -872,24 +881,31 @@ matches:
       | :--- | :--- | :--- |
 
       * **The Concept Network:** Outline the relationships between secondary ideas using a strict hierarchical bullet structure: `- Major Node > Sub-Node > Attribute`.
-      * **Visual Artifact 1 (Concept Mindmap / Analogy Graphic):** Generate a clean, responsive, self-contained SVG diagram (`<svg ... viewBox="..." ...>`) or styled HTML component illustrating the relationship between the core thesis, the analogy, and the key pillar nodes. Use a modern color palette (dark/light neutral background, high-contrast accent nodes, clear typographic labels).
+      * **Visual Artifact 1 (Concept Mindmap / Analogy Architecture):**
+        - Generate a clean, responsive, self-contained inline SVG diagram (`<svg ... viewBox="..." ...>`) or styled HTML component illustrating the core thesis, the metaphor, and the key pillar nodes.
+        - Also provide a fenced ```mermaid mindmap or graph block for quick export into Obsidian/Markdown.
 
-      ## 2. Rigorous Deconstruction & Critique
+      ## 2. Rigorous Deconstruction, Evidence & Data Visuals
       * **Arguments & Evidence:** Provide a dense, scannable 300-word breakdown of the supporting arguments, data, or case studies presented.
       * **The Critique Matrix:** Provide a balanced evaluation detailing:
         * **Pros & Cons:** Vulnerabilities or strengths in the speaker's logic.
         * **Validity:** Is this advice universally applicable, or does it rely on a specific niche/privilege? Provide science- or data-backed counterarguments where the logic falters.
+      * **Visual Artifact 2 (Data / Metric Plots via Python):**
+        - If the video quotes numerical figures, retention curves, benchmarks, or statistics, write and execute Python code using `matplotlib` / `seaborn` to display the data charts directly, or provide a clean standalone SVG chart.
 
       ## 3. The Execution Framework
       * **Actionable Flow:** Convert the video's methodology into a step-by-step sequential breakdown where order is critical. Use this exact format for each step:
         `[Step X: Title] -> [Core Action] -> [Visual/Mental Anchor]`
       * **The Fatal Pitfall:** Identify the single biggest operational blind spot or common point of failure when trying to execute this framework, and detail exactly how to avoid it.
-      * **Visual Artifact 2 (Execution Workflow Pipeline):** Generate a responsive SVG / HTML interactive or swimlane flowchart illustrating the sequential steps, core action badges, decision gates, and a distinct visual hazard/warning badge for the Fatal Pitfall.
+      * **Visual Artifact 3 (Execution Workflow Pipeline):**
+        - Generate a responsive SVG / HTML swimlane flowchart illustrating sequential steps, core action badges, decision gates, and a distinct visual hazard/warning badge for the Fatal Pitfall.
+        - Include a fenced ```mermaid flowchart mapping the execution flow.
 
-      ## 4. Retention & Success Metrics
+      ## 4. Retention, Visual Anchors & Success Metrics
       * **Cognitive Hooks:** Provide one acronym-based mnemonic or memory anchor to ensure long-term retention of the core concept.
       * **Success Metric:** Design a singular, definitive formula or KPI derived from the video's logic to measure implementation success (e.g., "Success = [Variable A] / [Variable B]").
-      * **Visual Artifact 3 (Visual Retention Cheat Sheet Widget):** Generate an elegant, self-contained HTML/CSS/SVG card (e.g. styled flashcard/dashboard container with CSS flex/grid styling) condensing the Mnemonic, the KPI formula box, and top 3 practical rules of thumb into an exportable study card.
+      * **Visual Artifact 4 (Visual Retention Cheat Sheet Widget):** Generate an elegant, self-contained HTML/CSS/SVG card container condensing the Mnemonic, the KPI formula box, and top 3 practical rules of thumb into an exportable study card.
+      * **Image Generation Prompt (Imagen / DALL-E):** Provide a ready-to-use image prompt to generate a memorable visual illustration or conceptual poster for this lesson.
     form_fields:
       youtube_url:
         default: ""
@@ -904,3 +920,65 @@ matches:
       - video
       - diagram
       - visual
+      - mermaid
+      - svg
+
+  - trigger: :g-research-visual
+    form: |
+      You are an elite research analyst and visual educator. Conduct a comprehensive, rigorous research investigation on [[topic]] using high-trust primary sources, and transform your findings into a high-retention structured report enriched with diagrams, charts, and visual components.
+
+      TOPIC / OBJECTIVE:
+      [[topic]]
+
+      EXECUTION & RESEARCH DISCIPLINE:
+      1. SOURCING & RIGOR: Base all claims on authoritative primary sources, foundational literature, official documentation, or benchmark empirical data.
+      2. DENSE SCANNING: Use clear `# H1` / `## H2` structure, markdown tables, and bulleted takeaways.
+
+      MANDATORY VISUAL SYNTHESIS ARTIFACTS:
+      For this research report, you MUST generate the following visual assets:
+
+      1. CONCEPT ARCHITECTURE DIAGRAM (Inline SVG):
+         - Generate a clean, responsive standalone `<svg ... viewBox="..." ...>` vector diagram mapping out the core concepts, taxonomy, and relational architecture.
+         - Use a modern dark/light neutral theme with distinct color-coded nodes and clean typography.
+
+      2. PROCESS & WORKFLOW MAP (Mermaid.js):
+         - Provide a fenced ```mermaid flowchart or sequence diagram detailing the step-by-step workflow, lifecycle, or dependency graph.
+
+      3. DATA & METRICS VISUALIZATION (Python / Matplotlib or SVG Chart):
+         - If quantitative data, benchmarks, or statistics are analyzed, write and execute Python code using `matplotlib` / `seaborn` to display the data charts, or provide a standalone SVG chart.
+
+      4. VISUAL CHEAT SHEET WIDGET (Self-Contained HTML/CSS):
+         - Conclude with a beautifully styled HTML card container summarizing key definitions, core equations/KPIs, and critical pitfalls.
+    form_fields:
+      topic:
+        default: ""
+    label: "[Learn] Gemini Research with Diagrams & Visual Suite (Form)"
+    comment: Prompts Gemini to research a topic and generate SVG concept maps, Mermaid workflows, and data visualizations.
+    search_terms:
+      - learn
+      - gemini
+      - research
+      - diagram
+      - visual
+      - svg
+      - chart
+
+  - trigger: :g-visual
+    replace: |
+      ### MANDATORY VISUAL SYNTHESIS PROTOCOL FOR GEMINI
+      For the analysis / research above, generate the following visual artifacts alongside your written explanation:
+
+      1. **Concept Architecture Diagram (Inline SVG):** Provide a clean, standalone, responsive `<svg ... viewBox="..." ...>` vector graphic visualizing key relationships, hierarchies, or mental models.
+      2. **Process / Workflow Pipeline (Mermaid.js):** Provide a ```mermaid flowchart or sequence diagram detailing sequential steps, decision gates, and dependencies.
+      3. **Quantitative Data Plots (Python Matplotlib / SVG):** If data or metrics exist, run Python (`matplotlib`/`seaborn`) to render real visual charts, or output an SVG comparison chart.
+      4. **Visual Retention Summary (HTML/CSS):** Provide a self-contained styled HTML/CSS summary card condensing key takeaways, formulas, and mnemonic anchors.
+    label: "[Learn] Gemini Visual Synthesis Protocol Modifier"
+    comment: Appends mandatory SVG, Mermaid, Python chart, and HTML visual directives to any Gemini prompt.
+    search_terms:
+      - learn
+      - gemini
+      - visual
+      - diagram
+      - svg
+      - chart
+      - mermaid

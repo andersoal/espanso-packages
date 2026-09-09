@@ -10,13 +10,12 @@ A modular collection of custom **[Espanso](https://espanso.org/)** text-expansio
 - 📁 [`behavior/`](./behavior) — Triggers and workflows for ADHD cognitive load management, task breakdown, and focus.
 - 📁 [`career/`](./career) — Professional framing, resume highlights, interview preparation, and career development prompts.
 - 📁 [`content-creation/`](./content-creation) — Storytelling frameworks, copywriting structures, and content creation templates.
-- 📁 [`engineering/`](./engineering) — Programming shortcuts, Git/Shell helpers, code block scaffolding, and developer utilities.
+- 📁 [`engineering/`](./engineering) — Programming shortcuts, architecture review, developer utilities, and AI Agent Skills (TDD, Code Review, Bug Diagnosis, Wayfinder, Grilling).
 - 📁 [`finance/`](./finance) — Financial planning prompts, budgeting macros, and expense tracking shortcuts.
 - 📁 [`genealogy/`](./genealogy) — AI prompts for family tree building, surname origins, public record leads, and ancestry analysis.
 - 📁 [`learn/`](./learn) — Learning frameworks, active recall study prompts, and comprehension shortcuts.
 - 📁 [`learn-language/`](./learn-language) — Vocabulary drills, grammar breakdown templates, and translation assistant workflows.
 - 📁 [`marketing-sales/`](./marketing-sales) — Pitch templates, sales frameworks, and marketing copy generators.
-- 📁 [`mattpocock-skills/`](./mattpocock-skills) — AI prompt templates & agent workflows inspired by Matt Pocock (TDD, Code Review, Bug Diagnosis, Wayfinder, Deep Module Design, Grilling).
 - 📁 [`md-formatting/`](./md-formatting) — Markdown callouts, tables, banners, badges, and document formatting shortcuts.
 - 📁 [`private/`](./private) — Personal custom triggers and private macros.
 - 📁 [`productivity/`](./productivity) — Daily review frameworks, habit tracking, focus blocks, and time management tools.
@@ -38,11 +37,23 @@ Since this is a public repository, you can install any package directly using Es
 # General syntax
 espanso install <package-name> --git https://github.com/andersoal/espanso-packages --external
 
-# Example: Install the prompts package
+espanso install behavior --git https://github.com/andersoal/espanso-packages --external
+espanso install career --git https://github.com/andersoal/espanso-packages --external
+espanso install content-creation --git https://github.com/andersoal/espanso-packages --external
+espanso install finance --git https://github.com/andersoal/espanso-packages --external
+espanso install genealogy --git https://github.com/andersoal/espanso-packages --external
+espanso install learn --git https://github.com/andersoal/espanso-packages --external
+espanso install learn-language --git https://github.com/andersoal/espanso-packages --external
+espanso install marketing-sales --git https://github.com/andersoal/espanso-packages --external
+espanso install md-formatting --git https://github.com/andersoal/espanso-packages --external
 espanso install prompts --git https://github.com/andersoal/espanso-packages --external
-
-# Example: Install the productivity package
 espanso install productivity --git https://github.com/andersoal/espanso-packages --external
+espanso install engineering --git https://github.com/andersoal/espanso-packages --external
+espanso install social-strategy --git https://github.com/andersoal/espanso-packages --external
+espanso install relationship --git https://github.com/andersoal/espanso-packages --external
+espanso install thinking-prompts --git https://github.com/andersoal/espanso-packages --external
+espanso install utils --git https://github.com/andersoal/espanso-packages --external
+
 ```
 
 ### 2. Manual Installation (Symlink / Local Copy)

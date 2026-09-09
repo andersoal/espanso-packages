@@ -1,5 +1,16 @@
 name: "engineering"
-title: "Engineering shortcuts"
-description: shortcuts to programming-related tasks
-version: 1.0.1
-author: ""
+title: "Engineering & Agent Skills Pack"
+description: "Comprehensive engineering shortcuts, programming tasks, system architecture templates, and Matt Pocock-inspired agent skills (TDD, Grilling, Code Review, Bug Diagnosis, Wayfinder, Deep Module Design)."
+version: 1.1.0
+author: "Antigravity & Community"
+tags:
+  - engineering
+  - programming
+  - development
+  - ai
+  - llm
+  - agent-skills
+  - prompt-engineering
+  - tdd
+  - code-review
+  - architecture

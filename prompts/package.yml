@@ -7831,6 +7831,7 @@ matches:
       - prompts
 
   - trigger: :improve-writing
+    word: true
     replace: |
       Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my writing.
     label: '[Prompts] Proofread My Writing Above'

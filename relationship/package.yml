@@ -160,50 +160,56 @@ matches:
     search_terms:
       - relationship
 
-  - trigger: :tradutor
+  - trigger: :plain-translator
     form: |
-      Conteúdo para analisar:
-      [[conteudo]]
+      Content to analyze:
+      [[content]]
 
-      Antes de explicar este conteúdo, me diga: Qual é a única frase que, se eu entender, fará todo o resto fazer sentido?
+      Before explaining this content, tell me: What is the single sentence that, if I understand it, will make everything else make sense?
 
-      Explique apenas essa frase.
+      Explain only that sentence.
 
-      Use uma analogia simples.
+      Use a simple analogy.
 
-      Depois me faça 3 perguntas para testar se eu realmente entendi.
+      Then ask me 3 questions to test if I truly understood.
     form_fields:
-      conteudo:
+      content:
         type: multiline
-    label: '[Relationship] Complex Content to Plain Portuguese Translator'
-    comment: 'Conteúdo para analisar:'
+    label: '[Relationship] Complex Concept to Plain English Translator'
+    comment: 'Translates complex content down to the core single sentence with a simple analogy and 3 comprehension checks.'
     search_terms:
       - relationship
+      - translation
+      - explain
+      - clarity
 
   - trigger: :expert
     word: true
     form: |
-      Eu acho que domino [[habilidade]]. Prove que estou errado. Faça [[quantidade_de_perguntas]] perguntas simples que revelem lacunas de conhecimento.
+      I think I have mastered [[skill]]. Prove me wrong. Ask [[number_of_questions]] simple questions that reveal fundamental knowledge gaps.
 
-      Para cada resposta, me diga exatamente o que ainda falta na minha base.
+      For each answer, tell me exactly what is still missing from my foundation.
     form_fields:
-      habilidade:
+      skill:
         type: text
         default: ''
-      nivel:
+      level:
         type: choice
         values:
-          - Iniciante
-          - Intermediário
-          - Avançado
-          - Especialista
-      quantidade_de_perguntas:
+          - Beginner
+          - Intermediate
+          - Advanced
+          - Expert
+      number_of_questions:
         type: text
         default: '5'
     label: '[Relationship] Skill Mastery Challenge & Blind Spot Prover'
-    comment: Eu acho que domino . Prove que estou errado. Faça  perguntas simples que revelem lacunas de conhecimento.
+    comment: 'Challenges your assumed mastery of a skill with simple diagnostic questions revealing foundational gaps.'
     search_terms:
       - relationship
+      - skill
+      - challenge
+      - mastery
 
   - trigger: :p_difficult
     form: |

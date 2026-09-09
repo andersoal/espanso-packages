@@ -108,6 +108,7 @@ After writing a trigger:
 6. If `shell` is used, read [references/shell-and-automation.md](references/shell-and-automation.md) for the security/latency notes before finalizing — never suggest a shell command that exfiltrates input unsafely or blocks on slow network calls without flagging the tradeoff.
 7. Ensure the match structure complies with the official Espanso JSON schema. For example, never use invalid form field attributes like `type: text` or `type: checkbox`. (Text fields should omit `type` entirely, and multiline fields should use `multiline: true`).
 8. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.
+9. **Update Manifest Version**: On any change to a package's triggers or files, update `<package>/_manifest.yml` with a **MAJOR** (breaking change / trigger renaming), **MINOR** (new triggers / features), or **PATCH** (bug fixes / typos / doc updates) version bump.
 
 ## Debugging existing triggers
 

@@ -3,145 +3,160 @@
 matches:
   - trigger: :pomo
     replace: |
-      🍅 **Técnica Pomodoro: Foco Ativado**
-      1. Listar tarefas: [ ]
-      2. Cronômetro: 25 min ⏱️
-      3. Concentração Total: Trabalhar sem distrações.
-      4. Pausa Curta: 5 min ☕
-      5. Ciclo: Repetir 4 vezes, depois fazer uma pausa mais longa (15-30 min).
-    label: '[Productivity] Pomodoro 25/5 Focus Sprint (Técnica Pomodoro)'
-    comment: '🍅 **Técnica Pomodoro: Foco Ativado**'
+      🍅 **Pomodoro Technique: Focus Activated**
+      1. List tasks: [ ]
+      2. Timer: 25 min ⏱️
+      3. Total Concentration: Work with zero distractions.
+      4. Short Break: 5 min ☕
+      5. Cycle: Repeat 4 times, then take a longer break (15-30 min).
+    label: '[Productivity] Pomodoro 25/5 Focus Sprint'
+    comment: '🍅 **Pomodoro Technique: Focus Activated**'
     search_terms:
       - productivity
+      - pomodoro
+      - focus
 
   - trigger: :333
     replace: |
-      ⚡ **Método 3/3/3: Definição de Foco**
-      • [ ] 3 Horas de Trabalho Profundo (Projeto Importante): ____________________
-      • [ ] 3 Tarefas Curtas e Urgentes (Ou Reuniões):
+      ⚡ **3/3/3 Method: Daily Focus Plan**
+      • [ ] 3 Hours of Deep Work (Important Project): ____________________
+      • [ ] 3 Short & Urgent Tasks (Or Meetings):
             1. ____________________
             2. ____________________
             3. ____________________
-      • [ ] 3 Tarefas de Manutenção (Manter a vida funcionando):
+      • [ ] 3 Maintenance Tasks (Keeping life functioning):
             1. ____________________
             2. ____________________
             3. ____________________
     label: '[Productivity] Oliver Burkeman 3/3/3 Daily Focus Method'
-    comment: '⚡ **Método 3/3/3: Definição de Foco**'
+    comment: '⚡ **3/3/3 Method: Daily Focus Plan**'
     search_terms:
       - productivity
+      - burkeman
+      - 333
 
   - trigger: :eisen
     form: |
-      📊 **Matriz de Eisenhower: Classificação de Prioridade**
-      Tarefa: [[tarefa]]
+      📊 **Eisenhower Matrix: Priority Classification**
+      Task: [[task]]
 
-      [ [[quadrante]] ] -> Ação recomendada.
+      [ [[quadrant]] ] -> Recommended Action.
     form_fields:
-      tarefa:
+      task:
         default: ''
-      quadrante:
+      quadrant:
         type: choice
         values:
-          - Urgente & Importante -> FAÇA AGORA
-          - Não Urgente & Importante -> AGENDE
-          - Urgente & Não Importante -> DELEGUE
-          - Não Urgente & Não Importante -> ELIMINE
+          - Urgent & Important -> DO NOW
+          - Not Urgent & Important -> SCHEDULE
+          - Urgent & Not Important -> DELEGATE
+          - Not Urgent & Not Important -> ELIMINATE
     label: '[Productivity] Eisenhower Urgency vs Importance Priority Matrix'
-    comment: '📊 **Matriz de Eisenhower: Classificação de Prioridade**'
+    comment: '📊 **Eisenhower Matrix: Priority Classification**'
     search_terms:
       - productivity
+      - eisenhower
+      - matrix
+      - priorities
 
-  - trigger: :sapo
+  - triggers:
+      - :eatfrog
+      - :frog
     replace: |
-      🐸 **Coma o Sapo: A tarefa mais difícil primeiro!**
-      "Se o seu trabalho é comer um sapo, é melhor fazê-lo logo de manhã cedo. E se o seu trabalho é comer dois sapos, é melhor comer o maior primeiro." - Mark Twain
+      🐸 **Eat That Frog: The hardest task first!**
+      "If it's your job to eat a frog, it's best to do it first thing in the morning. And If it's your job to eat two frogs, it's best to eat the biggest one first." — Mark Twain
 
-      • HOJE, meu maior sapo é: ____________________
+      • TODAY, my biggest frog is: ____________________
     label: '[Productivity] Eat That Frog (Highest Friction Priority First)'
-    comment: '🐸 **Coma o Sapo: A tarefa mais difícil primeiro!**'
+    comment: '🐸 **Eat That Frog: The hardest task first!**'
     search_terms:
       - productivity
+      - frog
+      - priority
 
   - trigger: :seinfeld
     replace: |
-      📅 **Estratégia Seinfeld: Não Quebre a Corrente!**
-      Objetivo: ____________________
-      Regra de Ouro: Nunca perca 2 dias seguidos.
+      📅 **Seinfeld Strategy: Don't Break The Chain!**
+      Goal / Habit: ____________________
+      Golden Rule: Never miss 2 days in a row.
 
-      Progresso para {{mes_atual}} / {{ano_atual}}:
-      {{calendario}}
+      Progress for {{current_month}} / {{current_year}}:
+      {{calendar}}
     vars:
-      - name: mes_atual
+      - name: current_month
         type: date
         params:
           format: '%B'
-      - name: ano_atual
+      - name: current_year
         type: date
         params:
           format: '%Y'
-      - name: calendario
+      - name: calendar
         type: shell
         params:
           cmd: cal -h | sed '1,2d'
     label: '[Productivity] Seinfeld Habit Chain Tracker (Don''t Break The Chain)'
-    comment: '📅 **Estratégia Seinfeld: Não Quebre a Corrente!**'
+    comment: '📅 **Seinfeld Strategy: Don''t Break The Chain!**'
     search_terms:
       - productivity
+      - habit
+      - seinfeld
 
   - trigger: :tblock
     replace: |
-      ⏳ **Time Blocking: Cronograma do Dia**
-      • Passo 1: Identifique o que precisa ser feito.
-      • Passo 2: Agrupe atividades semelhantes.
-      • Passo 3: Atribua horários para tarefas.
+      ⏳ **Time Blocking: Daily Schedule**
+      • Step 1: Identify what needs to get done.
+      • Step 2: Batch similar activities together.
+      • Step 3: Assign time blocks to tasks.
 
-      | Horário     | Bloco de Atividade               | Concluído |
-      |-------------|----------------------------------|-----------|
-      | 09:00 - 12:00| 🧠 Trabalho Profundo             | [ ]       |
-      | 12:00 - 12:30| 📧 E-mail / Comunicação           | [ ]       |
-      | 12:30 - 13:00| 🍽️ Almoço                        | [ ]       |
-      | 13:00 - 14:00| 🏋️ Ginásio / Saúde                | [ ]       |
-      | 14:00 - 14:30| ☕ Pausa / Descompressão         | [ ]       |
-      | 14:30 - 16:00| 👥 Reuniões / Alinhamento        | [ ]       |
+      | Time Block   | Activity Block                   | Done |
+      |--------------|----------------------------------|------|
+      | 09:00 - 12:00| 🧠 Deep Work                     | [ ]  |
+      | 12:00 - 12:30| 📧 Email / Communication         | [ ]  |
+      | 12:30 - 13:00| 🍽️ Lunch                         | [ ]  |
+      | 13:00 - 14:00| 🏋️ Gym / Health                  | [ ]  |
+      | 14:00 - 14:30| ☕ Break / Decompression         | [ ]  |
+      | 14:30 - 16:00| 👥 Meetings / Alignment          | [ ]  |
     label: '[Productivity] Time-Blocking Daily Schedule Planner'
-    comment: '⏳ **Time Blocking: Cronograma do Dia**'
+    comment: '⏳ **Time Blocking: Daily Schedule**'
     search_terms:
       - productivity
+      - timeblocking
+      - schedule
 
   - trigger: :blockday
     replace: |
       ## 🕒 Time-Blocking Architecture
-      - **08h - 09h**: Planejamento & Alinhamento Estratégico
-      - **09h - 11h**: 🚀 Trabalho Profundo (Foco Total / Zero Distrações)
-      - **11h - 12h**: Reuniões / Foco Criativo / Revisão Semanal
-      - **12h - 13h**: Almoço / Desconexão
-      - **13h - 15h**: 🚀 Trabalho Profundo (Execução de Alta Intensidade)
-      - **15h - 16h**: Admin / E-mail / Triagem de Mensagens
-      - **16h - 17h**: Revisão do Dia / Ajuste de Pendências
+      - **08:00 - 09:00**: Planning & Strategic Alignment
+      - **09:00 - 11:00**: 🚀 Deep Work (Total Focus / Zero Distractions)
+      - **11:00 - 12:00**: Meetings / Creative Focus / Weekly Review
+      - **12:00 - 13:00**: Lunch / Disconnect
+      - **13:00 - 15:00**: 🚀 Deep Work (High-Intensity Execution)
+      - **15:00 - 16:00**: Admin / Email / Message Triage
+      - **16:00 - 17:00**: Daily Review / Wrap-up & Tomorrow Prep
 
-      > **Nota Importante:** Nada disto importa se você estiver constantemente distraído. Desligue as notificações e proteja seu foco.
+      > **Important Note:** None of this matters if you are constantly distracted. Turn off notifications and protect your focus.
     label: '[Productivity] Daily Time-Blocking Hourly Architecture'
     comment: '## 🕒 Time-Blocking Architecture'
     search_terms:
       - productivity
+      - timeblocking
+      - schedule
 
   - trigger: :parkinson
     form: |
       ### ⏱️ Parkinson's Law Execution Blueprint
-      * **Macro Objetivo**: [[macro_task]]
-      * **Micro Etapa Dedicada**: [[micro_step]]
-      * **Prazo Artificial Restrito**: [[minutes]] minutos (Foco Absoluto)
+      * **Macro Objective**: [[macro_task]]
+      * **Micro Dedicated Step**: [[micro_step]]
+      * **Artificial Time Limit**: [[minutes]] minutes (Absolute Focus)
 
       ---
-      *Ação: Iniciar cronômetro imediatamente. O esforço se expande para preencher o tempo alocado. Reduza o tempo, aumente a intensidade.*
+      *Action: Start timer immediately. Work expands to fill the time available for its completion. Reduce time, increase intensity.*
     form_fields:
       macro_task:
-        type: text
-        default: Refatoração de Arquitetura
+        default: Architecture Refactoring
       micro_step:
-        type: text
-        default: Mapeamento de DataWeave e Mocking
+        default: Data mapping and contract validation
       minutes:
         type: choice
         values:
@@ -153,48 +168,54 @@ matches:
     comment: '### ⏱️ Parkinson''s Law Execution Blueprint'
     search_terms:
       - productivity
+      - parkinson
+      - focus
+      - timer
 
   - trigger: :workstyle
     form: |
-      ### 🛠️ Perfil Operacional Selecionado: [[perfil]]
+      ### 🛠️ Selected Operational Profile: [[profile]]
 
-      #### 🔄 Rotina Diária de Alta Performance:
-      1. **Planejamento**: [[passo1]]
-      2. **Execução Primária**: [[passo2]]
-      3. **Sustentabilidade**: [[passo3]]
-      4. **Encerramento**: [[passo4]]
+      #### 🔄 High-Performance Daily Routine:
+      1. **Planning**: [[step1]]
+      2. **Primary Execution**: [[step2]]
+      3. **Sustainability**: [[step3]]
+      4. **Wrap-Up**: [[step4]]
     form_fields:
-      perfil:
+      profile:
         type: choice
         values:
-          - Planejador (Foco Cronológico)
-          - Priorizador (Foco em Impacto)
-          - Organizador (Foco Estrutural)
-          - Visualizador (Foco Ágil/Mental)
-      passo1:
-        default: Planeje seu dia hora a hora / Escreva a lista de tarefas claras
-      passo2:
-        default: Foco profundo ininterrupto por 2 horas
-      passo3:
-        default: Fazer pausa estratégica para respirar / Pomodoro controlado
-      passo4:
-        default: Trabalhar em tarefas leves / Revisar progresso e fechar o dia
+          - Planner (Chronological Focus)
+          - Prioritizer (Impact Focus)
+          - Arranger (Structural Focus)
+          - Visualizer (Agile/Mental Focus)
+      step1:
+        default: Plan your day hour-by-hour / Write a clear task list
+      step2:
+        default: 2 hours of uninterrupted deep work
+      step3:
+        default: Take a strategic breathing break / Controlled Pomodoro
+      step4:
+        default: Work on light administrative tasks / Review progress and close the day
     label: '[Productivity] Operational Workstyle & Energy Profile Blueprint'
-    comment: '### 🛠️ Perfil Operacional Selecionado:'
+    comment: '### 🛠️ Selected Operational Profile:'
     search_terms:
       - productivity
+      - workstyle
+      - energy
 
   - trigger: :flowtpl
     replace: |
-      ### Framework: Estado de Flow
-      - **Plenitude**: Alcançando objetivos sem esforço. Propósito e valores.
-      - **Felicidade**: Imersão no presente, alegria e atemporalidade.
-      - **Persistência**: Foco contínuo e motivação para superar obstáculos.
-      - **Clareza**: Metas claras, clareza mental e foco aprimorado.
+      ### Framework: Flow State
+      - **Fulfilment**: Effortless goal achievement. Purpose and values.
+      - **Happiness**: Immersion in the present, joy, and timelessness.
+      - **Persistence**: Continuous focus and motivation to overcome obstacles.
+      - **Clarity**: Clear goals, mental clarity, and enhanced focus.
     label: '[Productivity] Flow State Framework & Fulfillment Calibration'
-    comment: '### Framework: Estado de Flow'
+    comment: '### Framework: Flow State'
     search_terms:
       - productivity
+      - flow
 
   - trigger: :flowgate
     replace: |
@@ -202,17 +223,17 @@ matches:
       type: focus-block
       timestamp: {{current_time}}
       alignment:
-        cares_about: {{form_flowgate.importa}}
-        long_term: {{form_flowgate.longo_prazo}}
-        challenging: {{form_flowgate.desafiador}}
-        skill_match: {{form_flowgate.bom_nisso}}
-      primary_state: {{form_flowgate.foco_predominante}}
+        cares_about: {{form_flowgate.cares_about}}
+        long_term: {{form_flowgate.long_term}}
+        challenging: {{form_flowgate.challenging}}
+        skill_match: {{form_flowgate.skill_match}}
+      primary_state: {{form_flowgate.predominant_focus}}
       ---
       # 🎯 Focus Block: {{form_flowgate.block_objective}}
 
-      > "Estado de Flow: Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço."
+      > "Flow State: When body and mind connect seamlessly, leading to intense focus and effortless engagement."
 
-      Status: Inicializado. Proteção de flow-state ativa.
+      Status: Initialized. Flow-state protection active.
     vars:
       - name: current_time
         type: date
@@ -225,66 +246,67 @@ matches:
             ---
             type: focus-block
             alignment:
-              cares_about: [[importa]]
-              long_term: [[longo_prazo]]
-              challenging: [[desafiador]]
-              skill_match: [[bom_nisso]]
-            primary_state: [[foco_predominante]]
+              cares_about: [[cares_about]]
+              long_term: [[long_term]]
+              challenging: [[challenging]]
+              skill_match: [[skill_match]]
+            primary_state: [[predominant_focus]]
             ---
             # 🎯 Focus Block: [[block_objective]]
 
-            > "Estado de Flow: Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço."
+            > "Flow State: When body and mind connect seamlessly, leading to intense focus and effortless engagement."
 
-            Status: Inicializado. Proteção de flow-state ativa.
+            Status: Initialized. Flow-state protection active.
           fields:
             block_objective:
               default: Engineering / Architecture Execution
-            importa:
+            cares_about:
               type: choice
               values:
-                - Sim (Plenitude/Felicidade)
-                - Não (Alerta de Baixo Propósito)
-            longo_prazo:
+                - Yes (Fulfilment/Happiness)
+                - No (Low Purpose Warning)
+            long_term:
               type: choice
               values:
-                - Sim (Plenitude/Persistência)
-                - Não (Alerta de Linha de Frente Tática)
-            desafiador:
+                - Yes (Fulfilment/Persistence)
+                - No (Tactical Front-Line Warning)
+            challenging:
               type: choice
               values:
-                - Sim (Persistência/Clareza)
-                - Não (Alerta de Tédio/Rotina)
-            bom_nisso:
+                - Yes (Persistence/Clarity)
+                - No (Boredom/Routine Warning)
+            skill_match:
               type: choice
               values:
-                - Sim (Felicidade/Clareza)
-                - Não (Alerta de Atrito de Aprendizado)
-            foco_predominante:
+                - Yes (Happiness/Clarity)
+                - No (Learning Friction Warning)
+            predominant_focus:
               type: choice
               values:
-                - FLOW TOTAL (Todos os quadrantes presentes)
-                - Plenitude (Propósito e Alinhamento)
-                - Felicidade (Imersão e Atemporalidade)
-                - Persistência (Foco Resiliente)
-                - Clareza (Metas Cristalinas)
+                - TOTAL FLOW (All quadrants present)
+                - Fulfilment (Purpose and Alignment)
+                - Happiness (Immersion and Timelessness)
+                - Persistence (Resilient Focus)
+                - Clarity (Crystal-Clear Goals)
     label: '[Productivity] Focus-Block Gate & Core Value Alignment Note'
     comment: '---'
     search_terms:
       - productivity
+      - flow
 
   - trigger: :antivision
     replace: |
-      ### 🚫 Anti-Visão vs. 🎯 Visão Real
-      *Calibrado em: {{current_date}}*
+      ### 🚫 Anti-Vision vs. 🎯 Real Vision
+      *Calibrated on: {{current_date}}*
 
-      #### 1. A Anti-Visão (O que evitar)
+      #### 1. The Anti-Vision (What to Avoid)
       {{form_antivision.antivision_items}}
 
-      #### 2. A Visão Real (O oposto estratégico)
+      #### 2. The Real Vision (The Strategic Counterpart)
       {{form_antivision.real_vision}}
 
       ---
-      *Foco Fundamental:* Escrever diariamente, exercitar-se com consistência e refinar o ofício.
+      *Core Focus:* Write daily, exercise consistently, and sharpen the craft.
     vars:
       - name: current_date
         type: date
@@ -294,152 +316,161 @@ matches:
         type: form
         params:
           layout: |
-            ### 🚫 Anti-Visão vs. 🎯 Visão Real
+            ### 🚫 Anti-Vision vs. 🎯 Real Vision
 
-            #### 1. A Anti-Visão (O que evitar)
+            #### 1. The Anti-Vision (What to Avoid)
             [[antivision_items]]
 
-            #### 2. A Visão Real (O oposto estratégico)
+            #### 2. The Real Vision (The Strategic Counterpart)
             [[real_vision]]
           fields:
             antivision_items:
               type: multiline
               default: |
-                - Rotinas sem sentido e caos.
-                - Hábitos não saudáveis.
-                - Trabalho sem propósito.
+                - Meaningless routines and chaos.
+                - Unhealthy habits and low energy.
+                - Work without purpose or leverage.
             real_vision:
               type: multiline
               default: |
-                - Autonomia total e clareza de execução.
-                - Engenharia de sistemas escaláveis.
+                - Total autonomy and execution clarity.
+                - Scalable systems engineering.
     label: '[Productivity] Anti-Vision vs Real Vision Life Calibration'
-    comment: '### 🚫 Anti-Visão vs. 🎯 Visão Real'
+    comment: '### 🚫 Anti-Vision vs. 🎯 Real Vision'
     search_terms:
       - productivity
+      - vision
+      - anti-vision
 
   - trigger: :ghostmode
     replace: |
-      ## 🥷 Protocolo de Foco: Desaparecer por Seis Meses
+      ## 🥷 Focus Protocol: Disappear for 6 Months (Ghost Mode)
 
-      ### 🪐 Filtro de Entropia (Eliminação de Distrações)
-      - **Corte Técnico:** Redes sociais e inputs de baixa qualidade eliminados.
-      - **Social:** Zero dependência de validação externa ou explicações desnecessárias.
+      ### 🪐 Entropy Filter (Distraction Elimination)
+      - **Technical Cut:** Social media and low-quality informational inputs eliminated.
+      - **Social:** Zero reliance on external validation or unnecessary explanations.
 
-      ### 🧪 Mentalidade Científica (Tentativa e Erro)
-      - **Experimento do Dia:** Tratar falhas apenas como dados de ajuste de rota.
-      - **Perspectiva:** Visão de longo prazo. O crescimento exponencial é composto por ações chatas e repetitivas.
+      ### 🧪 Scientific Mindset (Trial & Iteration)
+      - **Daily Experiment:** Treat setbacks purely as course-correction data points.
+      - **Perspective:** Long-term compounding. Exponential growth is built on boring, repetitive fundamentals.
 
-      ### 🔩 Execução dos Fundamentos
-      - [ ] Praticar habilidades essenciais do ofício.
-      - [ ] Proteger o bloco de foco profundo.
+      ### 🔩 Fundamental Execution
+      - [ ] Practice essential craft skills daily.
+      - [ ] Protect the deep work focus block.
     label: '[Productivity] 6-Month Ghost Mode Extreme Focus Protocol'
-    comment: '## 🥷 Protocolo de Foco: Desaparecer por Seis Meses'
+    comment: '## 🥷 Focus Protocol: Disappear for 6 Months (Ghost Mode)'
     search_terms:
       - productivity
+      - ghostmode
+      - focus
 
   - trigger: :pararef
     replace: |
-      ### Método P.A.R.A. — Resumo de Organização
-      - **Projetos**: Conjuntos de tarefas com um objetivo e prazo definidos. (Ex: Preparar uma apresentação para uma conferência)
-      - **Áreas**: Aspectos da vida que precisam de manutenção contínua. (Ex: Saúde, finanças pessoais)
-      - **Recursos**: Coleções de informações temáticas de seu interesse. (Ex: Artigos sobre produtividade, cursos de design gráfico)
-      - **Arquivo**: Informações valiosas do passado que você deseja manter, mas não está usando ativamente no momento. (Ex: Projetos concluídos, trabalhos acadêmicos antigos)
+      ### P.A.R.A. Method — Organization Overview
+      - **Projects**: Series of tasks with a defined outcome and deadline. (e.g., Prepare a conference presentation)
+      - **Areas**: Spheres of activity with a standard to be maintained over time. (e.g., Health, Personal Finances)
+      - **Resources**: Topics or themes of ongoing interest. (e.g., Productivity frameworks, UI/UX design patterns)
+      - **Archive**: Inactive items from the other three categories to keep for reference. (e.g., Completed projects, past coursework)
     label: '[Productivity] P.A.R.A. Method Reference (Projects, Areas, Resources, Archive)'
-    comment: '### Método P.A.R.A. — Resumo de Organização'
+    comment: '### P.A.R.A. Method — Organization Overview'
     search_terms:
       - productivity
+      - para
+      - pkm
 
   - trigger: :flowtxt
     replace: |
-      🎯 COMO ENTRAR NO ESTADO DE FLOW
-      Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço, frequentemente descrito como estar "na zona".
+      🎯 HOW TO ENTER THE FLOW STATE
+      When body and mind connect seamlessly, leading to intense focus and effortless engagement — often described as being "in the zone".
 
-      🧠 OS 4 PILARES:
-      • PLENITUDE: Alcançando objetivos sem esforço, profundo senso de propósito e alinhamento com valores.
-      • FELICIDADE: Imersão no presente, sentimentos de alegria e senso de atemporalidade.
-      • PERSISTÊNCIA: Foco e determinação contínuos, superando desafios com facilidade e motivação.
-      • CLAREZA: Entendimento claro de metas, clareza mental e consciência aguçada das ações.
+      🧠 THE 4 PILLARS:
+      • FULFILMENT: Effortless goal achievement, deep sense of purpose, and alignment with values.
+      • HAPPINESS: Present-moment immersion, feelings of joy, and a sense of timelessness.
+      • PERSISTENCE: Sustained focus and determination, navigating challenges with ease and drive.
+      • CLARITY: Crystal-clear understanding of goals, mental lucidity, and heightened awareness of actions.
 
-      🌀 A INTERSECÇÃO:
-      Para atingir o Flow, sua atividade deve unir: Algo que você se importa + Algo de longo prazo + Algo desafiador + Algo em que você é bom.
+      🌀 THE INTERSECTION:
+      To enter Flow, your activity must unite: Something you care about + Something long-term + Something challenging + Something you are good at.
     label: '[Productivity] Flow State Entry Manual (Csikszentmihalyi Protocol)'
-    comment: 🎯 COMO ENTRAR NO ESTADO DE FLOW
+    comment: '🎯 HOW TO ENTER THE FLOW STATE'
     search_terms:
       - productivity
+      - flow
 
   - trigger: :flowform
     replace: |
-      # 🌀 Meu Planejamento para o Estado de Flow
-      Data: {{atual}}
+      # 🌀 Daily Flow State Planning
+      Date: {{current_date}}
 
-      Para garantir foco intenso e engajamento sem esforço hoje, vou me alinhar com:
+      To ensure deep focus and effortless engagement today, I align with:
 
-      1. ❤️ Algo com que me importo (Propósito):
-         > {{form_flowform.importa}}
+      1. ❤️ Something I care about (Purpose):
+         > {{form_flowform.cares_about}}
 
-      2. ⏳ Algo de longo prazo (Consistência):
-         > {{form_flowform.longo_prazo}}
+      2. ⏳ Something long-term (Consistency):
+         > {{form_flowform.long_term}}
 
-      3. ⚡ Algo desafiador (Estímulo):
-         > {{form_flowform.desafiador}}
+      3. ⚡ Something challenging (Stimulus):
+         > {{form_flowform.challenging}}
 
-      4. 💪 Algo em que sou bom (Habilidade):
-         > {{form_flowform.habilidade}}
+      4. 💪 Something I'm good at (Mastery):
+         > {{form_flowform.mastery}}
 
       ---
-      "Corpo e mente conectados perfeitamente. Hora de entrar na zona! 🚀"
+      "Body and mind connected seamlessly. Time to enter the zone! 🚀"
     vars:
-      - name: atual
+      - name: current_date
         type: date
         params:
-          format: '%d/%m/%Y'
+          format: '%Y-%m-%d'
       - name: form_flowform
         type: form
         params:
           layout: |
-            1. ❤️ Algo com que me importo:
-            [[importa]]
+            1. ❤️ Something I care about:
+            [[cares_about]]
 
-            2. ⏳ Algo de longo prazo:
-            [[longo_prazo]]
+            2. ⏳ Something long-term:
+            [[long_term]]
 
-            3. ⚡ Algo desafiador:
-            [[desafiador]]
+            3. ⚡ Something challenging:
+            [[challenging]]
 
-            4. 💪 Algo em que sou bom:
-            [[habilidade]]
-    label: '[Productivity] 🌀 Meu Planejamento para o Estado de Flow'
-    comment: '# 🌀 Meu Planejamento para o Estado de Flow'
+            4. 💪 Something I'm good at:
+            [[mastery]]
+    label: '[Productivity] Daily Flow State Planning Worksheet'
+    comment: '# 🌀 Daily Flow State Planning'
     search_terms:
       - productivity
+      - flow
 
   - trigger: :flow-ref
     replace: |
-      # Como Entrar no Estado de Flow
-      > Quando seu corpo e mente se conectam perfeitamente, levando a um foco intenso e engajamento sem esforço ("na zona").
+      # How to Enter the Flow State
+      > When body and mind connect seamlessly, leading to intense focus and effortless engagement ("in the zone").
 
-      ## 🎯 Os 4 Pilares de Alinhamento
-      * **Algo com que você se importa** -> Conecta à **Plenitude**
-        * Alcançando objetivos sem esforço.
-        * Profundo senso de propósito e satisfação.
-        * Envolvendo-se em atividades que se alinham com valores pessoais.
-      * **Algo em que você é bom** -> Conecta à **Felicidade**
-        * Imersão no momento presente.
-        * Sentimentos de alegria e contentamento.
-        * Vivenciando um senso de atemporalidade.
-      * **Algo desafiador** -> Conecta à **Clareza**
-        * Entendimento claro de metas e objetivos.
-        * Clareza mental e foco aprimorados.
-        * Consciência aguçada dos arredores e ações.
-      * **Algo de longo prazo** -> Conecta à **Persistência**
-        * Foco e determinação contínuos.
-        * Superando desafios com facilidade.
-        * Energizado e motivado para superar obstáculos.
-    label: '[Productivity] Como Entrar no Estado de Flow'
-    comment: '# Como Entrar no Estado de Flow'
+      ## 🎯 The 4 Alignment Pillars
+      * **Something you care about** -> Connects to **Fulfilment**
+        * Effortless goal achievement.
+        * Deep sense of purpose and meaning.
+        * Engaging in activities that align with personal values.
+      * **Something you're good at** -> Connects to **Happiness**
+        * Immersion in the present moment.
+        * Feelings of joy and contentment.
+        * Experiencing a sense of timelessness.
+      * **Something challenging** -> Connects to **Clarity**
+        * Crystal-clear understanding of goals and milestones.
+        * Enhanced mental clarity and concentration.
+        * Heightened situational awareness and intentional action.
+      * **Something long-term** -> Connects to **Persistence**
+        * Sustained focus and resilient determination.
+        * Overcoming roadblocks with ease.
+        * Energized and motivated to push through friction.
+    label: '[Productivity] How to Enter the Flow State Reference'
+    comment: '# How to Enter the Flow State Reference'
     search_terms:
       - productivity
+      - flow
 
   - trigger: :flowcheck
     replace: |
@@ -466,16 +497,16 @@ matches:
             Target Task: [[task_name]]
 
             Vectors:
-            ℹ️ significance: # Algo com que você se importa
+            ℹ️ significance: # Something you care about
             [[v_care]]
 
-            ℹ️ horizon: # Algo de longo prazo
+            ℹ️ horizon: # Something long-term
             [[v_long]]
 
-            ℹ️ mastery: # Algo em que você é bom
+            ℹ️ mastery: # Something you are good at
             [[v_good]]
 
-            ℹ️ tension: # Algo desafiador
+            ℹ️ tension: # Something challenging
             [[v_challenge]]
 
             Mode: [[mode]]
@@ -483,22 +514,22 @@ matches:
             v_care:
               type: choice
               values:
-                - HIGH (Plenitude)
+                - HIGH (Fulfilment)
                 - LOW (Apathy)
             v_long:
               type: choice
               values:
-                - STRATEGIC (Persistência)
+                - STRATEGIC (Persistence)
                 - TACTICAL (Short-term)
             v_good:
               type: choice
               values:
-                - EXPERT (Felicidade)
+                - EXPERT (Happiness)
                 - LEARNING (Friction)
             v_challenge:
               type: choice
               values:
-                - OPTIMAL (Clareza)
+                - OPTIMAL (Clarity)
                 - UNDERWHELMING (Boredom)
                 - OVERWHELMING (Anxiety)
             mode:
@@ -507,10 +538,11 @@ matches:
                 - Deep Work / Flow Protection
                 - Administrative / Maintenance
                 - Exploratory / R&D
-    label: '[Productivity] Flowcheck'
+    label: '[Productivity] Flow State Vector Audit & Diagnostic'
     comment: '---'
     search_terms:
       - productivity
+      - flow
 
   - trigger: :p-calendar
     form: |
@@ -930,3 +962,292 @@ matches:
     comment: Introduction to time-saving automation hacks with AI.
     search_terms:
       - productivity
+
+  - trigger: :dankoe-99pct
+    form: |
+      Act as a high-performance life and systems strategist applying Dan Koe's "How to Get Ahead of 99% of People" framework.
+
+      Here is my current situation, frustrations, and aspirations:
+      [[user_situation]]
+
+      Conduct a deep 4-phase strategic recalibration:
+
+      1. **Anti-Vision Architecture (The Fuel)**
+         - Extract and intensify everything I despise, fear, or refuse to accept in my future (mindless routines, chaotic schedule, unfulfilling work).
+         - Invert each anti-vision anchor into its precise positive counterpart to define my crystal-clear true vision.
+
+      2. **6-Month Ghost Mode Protocol (Entropy Elimination)**
+         - Identify the top 3 distractions, low-signal inputs, and toxic energy drains to immediately cut out.
+         - Design the non-negotiable daily routine and deep-work isolation rules where I execute without requiring external validation.
+
+      3. **Compounding Boring Fundamentals (Mastery Engine)**
+         - Isolate the 3 foundational skills (e.g., daily writing, deliberate coding/practice, physical conditioning) that level me up like a character in a game.
+         - Define the minimum viable daily practice for each so consistency never breaks.
+
+      4. **Scientific Trial & Error Loop (Anti-Fragile Execution)**
+         - Frame my life as an ongoing experimentation laboratory.
+         - Formulate this week's hypothesis, experiment, feedback metrics, and failure-adaptation rules.
+
+      Conclude with Dan Koe's grounding anchor: "Flip the switch inside of you—build a foundation that will carry you into the life you want."
+    form_fields:
+      user_situation:
+        multiline: true
+    label: "[Productivity] Dan Koe 99% Advantage & Anti-Vision Execution Blueprint"
+    comment: Deconstructs Anti-Vision, 6-Month Ghost Mode, Boring Fundamentals, and Scientific Experimentation into an actionable plan.
+    search_terms:
+      - productivity
+      - dan-koe
+      - anti-vision
+      - ghost-mode
+      - focus
+
+  - trigger: :p_getshitdone
+    form: |
+      Act as an elite executive productivity coach.
+
+      Here is my messy task backlog and commitments for today:
+      [[task_backlog]]
+
+      Structure my day by applying the 6 core productivity models from the "Get Sh#t Done" framework:
+
+      1. 🐸 **Eat The Frog**: Identify the single highest-friction, highest-leverage task that MUST be completed first thing this morning.
+      2. 🍅 **Pomodoro Sprint Plan**: Break the core tasks into 25-minute uninterrupted sprints with strict 5-minute recovery intervals.
+      3. ⚡ **3/3/3 Method**:
+         - 3 Hours on the core deep project
+         - 3 Short urgent tasks / quick wins / communications
+         - 3 Maintenance / administrative routines
+      4. 📊 **Eisenhower Matrix Filter**: Categorize the rest into Do Now, Schedule, Delegate, and Eliminate.
+      5. ⏳ **Time Blocking Schedule**: Map every commitment into clear calendar time blocks from start to finish.
+      6. 📅 **Seinfeld Habit Streak**: Highlight the 1 daily recurring habit that cannot be skipped today ("Never miss 2 days in a row").
+    form_fields:
+      task_backlog:
+        multiline: true
+    label: "[Productivity] Get Sh#t Done Daily Master Prioritizer & Schedule Planner"
+    comment: Synthesizes Pomodoro, 3/3/3, Eisenhower, Eat the Frog, Seinfeld, and Time-Blocking to transform a messy task list into a locked daily schedule.
+    search_terms:
+      - productivity
+      - get-shit-done
+      - pomodoro
+      - eisenhower
+      - 333
+      - time-blocking
+
+  - trigger: :para-guide
+    replace: |
+      # 🧠 P.A.R.A. & C.O.D.E. Second Brain Reference
+
+      > "The purpose of building a second brain is not just to store information, but to make it useful and accessible to improve the quality of your work and life." — Tiago Forte
+
+      ---
+
+      ## 🔄 The C.O.D.E. Method (Information Lifecycle)
+      - **Capture**: Proactively collect high-resonance ideas, notes, quotes, and insights.
+      - **Organize**: Store information where it will be actionable, not just where you found it.
+      - **Distill**: Summarize, highlight, and extract the core essence into bite-sized takeaways.
+      - **Express**: Transform gathered knowledge into creative output, decisions, and shipped work.
+
+      ---
+
+      ## 📁 The P.A.R.A. Method (Hierarchy of Actionability)
+      1. **Projects** *(Highest Actionability)*:
+         - Series of tasks linked to a specific goal with a strict deadline.
+         - *Examples:* Launching a feature, preparing conference keynote, publishing RFC.
+      2. **Areas** *(Ongoing Responsibility)*:
+         - Spheres of activity with a standard to maintain over time, with no end date.
+         - *Examples:* Health & Fitness, Personal Finances, Team Leadership, Product Architecture.
+      3. **Resources** *(Topics of Ongoing Interest)*:
+         - Collections of references, research, guides, and learning materials.
+         - *Examples:* Espanso snippets, DataWeave patterns, UI design systems, book summaries.
+      4. **Archive** *(Inactive / Completed)*:
+         - Inactive items from the other three categories preserved for future lookup.
+         - *Examples:* Completed client projects, retired systems docs, past year taxes.
+
+      ---
+
+      ## 🛠️ Tool Ecosystem
+      - **Notes & Knowledge**: Obsidian, Notion, Roam Research, Logseq
+      - **Project Management**: Linear, Todoist, Trello, Asana
+      - **Storage & Cloud**: Local Markdown Vault, Google Drive, GitHub
+
+      ## 💡 Practical Rules
+      1. Dedicate 20 minutes weekly to review and organize your digital second brain.
+      2. Be flexible: folders evolve as priorities shift.
+      3. Don't hoard data—always optimize for rapid retrieval and expression.
+    label: "[Productivity] P.A.R.A. & C.O.D.E. Second Brain Architecture Guide"
+    comment: Comprehensive cheat sheet and workflow reference for Tiago Forte's P.A.R.A. and C.O.D.E. methodology.
+    search_terms:
+      - productivity
+      - para
+      - code
+      - second-brain
+      - obsidian
+      - notion
+
+  - trigger: :para-scaffold
+    replace: |
+      # 📂 Second Brain Folder Scaffolding (P.A.R.A.)
+
+      ```text
+      00_Inbox/                # Quick capture for unorganized notes & raw inputs
+      01_Projects/             # Active projects with deadlines & deliverables
+      ├── [Proj] 2026-Q3-Platform-Migration/
+      └── [Proj] API-Gateway-Refactor/
+      02_Areas/                # Ongoing areas of responsibility
+      ├── 02.1_Career-Growth/
+      ├── 02.2_Finance-Investments/
+      ├── 02.3_Health-Fitness/
+      └── 02.4_Engineering-Craft/
+      03_Resources/            # Topic libraries & reference materials
+      ├── 03.1_Architecture-Patterns/
+      ├── 03.2_AI-Prompt-Engineering/
+      ├── 03.3_Espanso-Triggers/
+      └── 03.4_Book-Notes/
+      04_Archive/              # Completed or inactive records
+      └── 2025-Completed-Projects/
+      ```
+    label: "[Productivity] P.A.R.A. Folder Structure & Second Brain Scaffold"
+    comment: Standardized Obsidian/Notion folder tree template implementing P.A.R.A.
+    search_terms:
+      - productivity
+      - para
+      - scaffold
+      - obsidian
+      - folder-structure
+
+  - trigger: :p_para_sorter
+    form: |
+      Act as a Personal Knowledge Management (PKM) and Second Brain specialist.
+
+      Here is my unorganized list of notes, bookmarks, project ideas, and files:
+      [[raw_notes]]
+
+      Process and organize everything using Tiago Forte's P.A.R.A. and C.O.D.E. framework:
+
+      1. **Triage into P.A.R.A.**:
+         - Categorize each item into **[Project]**, **[Area]**, **[Resource]**, or **[Archive]**.
+         - Provide a 1-sentence rationale for the placement based on current actionability.
+      2. **Next Immediate Action**:
+         - For every **Project**, define the single immediate next physical step.
+      3. **Distillation Note**:
+         - For every **Resource**, suggest the 2-3 key tags and distillation summary focus.
+    form_fields:
+      raw_notes:
+        multiline: true
+    label: "[Productivity] P.A.R.A. Second Brain Note Sorter & Classifier"
+    comment: Triages messy notes, tasks, and bookmarks into Projects, Areas, Resources, and Archive with next actions.
+    search_terms:
+      - productivity
+      - para
+      - pkm
+      - second-brain
+      - organize
+
+  - trigger: :4hour-workday
+    replace: |
+      # ⚡ How to Get 8 Hours of Work Finished in 4 Hours (Colby Kultgen)
+
+      > "Work expands so as to fill the time available for its completion." — Parkinson's Law
+
+      ---
+
+      ## 🧱 1. Block Out Your Day
+      - Focus on one task at a time during dedicated focus blocks.
+      - Group similar activities together to eliminate context-switching penalties.
+      - Stick to the schedule strictly to build momentum and efficiency.
+
+      ## ⏱️ 2. Set Artificial Deadlines (Parkinson's Law)
+      - Break tasks into smaller bite-sized steps.
+      - Assign tight artificial deadlines to each step (e.g., 25-45 min max).
+      - Shorter timeframes force ruthless focus and prevent perfectionist procrastination.
+
+      ## 🎯 3. Match Your Ideal Work Style
+      - **Planner**: Plan hour-by-hour -> Deep work for 2 hours -> Stretching break -> Lighter admin tasks.
+      - **Prioritizer**: Write to-do list -> Organize calendar -> Hardest tasks first -> Deep work for 2 hours.
+      - **Arranger**: Plan daily blocks -> Deep work for 2 hours -> Structured break -> Lighter wrap-up.
+      - **Visualizer**: Decide priority for the day -> Write in journal -> Pomodoro sprints -> End with light tasks.
+
+      ## 🛡️ 4. Distraction Lockdown Protocol
+      - *Important Note:* None of this matters if you are constantly distracted.
+      - Turn off all phone & desktop notifications.
+      - Clear your physical & digital workspace.
+      - Set healthy boundaries with colleagues and family during focus blocks.
+    label: "[Productivity] 8 Hours in 4 Hours: Workday Compression Framework"
+    comment: Cheat sheet summarizing Colby Kultgen's 4-step framework for finishing 8 hours of work in 4 hours.
+    search_terms:
+      - productivity
+      - 4-hour
+      - parkinson
+      - focus
+      - workstyle
+
+  - trigger: :p_4hour_compressor
+    form: |
+      Act as a high-intensity performance coach specializing in workday compression.
+
+      I want to finish my 8-hour workday backlog in a 4-hour hyper-focused sprint.
+
+      My Working Style: [[work_style]]
+      Today's Backlog & Deliverables:
+      [[work_backlog]]
+
+      Apply Colby Kultgen's Workday Compression protocol:
+
+      1. **Ruthless Scope & Priority Cut**: Eliminate non-essential fluff and identify the 20% of work producing 80% of today's results.
+      2. **Parkinson's Law Time-Box**: Allocate strict, tight artificial deadlines for each task component (totaling exactly 4 hours).
+      3. **Custom Schedule for My Work Style ([[work_style]])**: Produce a minute-by-minute timeline structured around my energy profile.
+      4. **Distraction Lockdown Checklist**: Specific micro-rules to prevent interruptions during these 4 hours.
+    form_fields:
+      work_style:
+        type: choice
+        values:
+          - Planner (Hour-by-hour structured planning)
+          - Prioritizer (Hardest task first & calendar blocking)
+          - Arranger (Deep work sprints & flexible transitions)
+          - Visualizer (Journaling, mental priming & Pomodoros)
+      work_backlog:
+        multiline: true
+    label: "[Productivity] 4-Hour Workday Compression Sprint Planner"
+    comment: Compresses an 8-hour task list into a tailored 4-hour execution plan using Parkinson's Law and working style alignment.
+    search_terms:
+      - productivity
+      - 4-hour
+      - compressor
+      - time-boxing
+      - parkinson
+
+  - trigger: :p_flow_diagnostic
+    form: |
+      Act as a cognitive psychologist and flow-state specialist.
+
+      I am struggling to get into flow state on this task/project:
+      [[task_details]]
+
+      Current friction / feeling: [[current_feeling]]
+
+      Evaluate my task against the 4 Intersecting Flow Pillars:
+      1. ❤️ **Fulfilment (Something You Care About)**: Does this align with my deeper values? If not, how can I reframe the meaning or connect it to a personal goal?
+      2. 😊 **Happiness (Something You're Good At)**: Am I in my zone of competence, or am I overwhelmed by missing skills? What micro-scaffolding do I need?
+      3. 🎯 **Clarity (Something Challenging)**: Is the difficulty calibrated just above my current skill level (the 4% rule)? Are the immediate next objectives 100% crystal clear?
+      4. ⏳ **Persistence (Something Long-Term)**: How does completing this unlock compounding long-term progress?
+
+      Provide:
+      - **Diagnostic Result**: Pinpoint the exact broken pillar causing friction (Apathy, Anxiety, Boredom, or Short-sightedness).
+      - **Immediate 5-Minute Entry Ritual**: Concrete steps to adjust the task parameters and enter the flow zone right now.
+    form_fields:
+      task_details:
+        multiline: true
+      current_feeling:
+        type: choice
+        values:
+          - Bored / Low Challenge (Understimulated)
+          - Anxious / Overwhelmed (Task too ambiguous or difficult)
+          - Apathetic / Low Meaning (Don't care about the outcome)
+          - Distracted / Fragmented Focus (Struggling to sustain attention)
+    label: "[Productivity] Flow State Diagnostic & Friction Calibration Engine"
+    comment: Diagnoses friction across the 4 Flow State pillars (Fulfilment, Happiness, Clarity, Persistence) and creates an entry ritual.
+    search_terms:
+      - productivity
+      - flow
+      - flow-state
+      - focus
+      - friction

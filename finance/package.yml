@@ -362,3 +362,113 @@ matches:
     comment: Analyzes 10-Q earnings releases for revenue quality, margin compression, and guidance changes.
     search_terms:
       - finance
+
+  - trigger: :cfo-audit
+    form: |
+      Act as my personal CFO. Analyze my complete financial situation using my income, expenses, debts, savings, investments, and goals:
+
+      ---
+      FINANCIAL DETAILS:
+      [[financial_details]]
+
+      ---
+      Identify every money leak, missed opportunity, and financial mistake I am making. Then create the simplest plan to improve my finances as quickly and realistically as possible.
+    form_fields:
+      financial_details:
+        multiline: true
+    label: "[Finance] Personal CFO: Full Money & Balance Sheet Audit"
+    comment: Acts as personal CFO to audit income, expenses, debts, savings, and investments, finding leaks and creating a streamlined plan.
+    search_terms:
+      - finance
+      - cfo
+      - audit
+      - money
+      - budget
+
+  - trigger: :cfo-wealth
+    form: |
+      My current financial situation is:
+
+      ---
+      CURRENT FINANCIAL SITUATION:
+      [[financial_situation]]
+
+      ---
+      Create a complete roadmap for building wealth from where I am today. Prioritize increasing my income, reducing unnecessary expenses, building savings, managing debt, investing wisely, and creating long-term financial security.
+    form_fields:
+      financial_situation:
+        multiline: true
+    label: "[Finance] Personal CFO: Comprehensive Wealth Roadmap"
+    comment: Generates a prioritized roadmap for scaling income, cutting costs, eliminating debt, and compounding investments.
+    search_terms:
+      - finance
+      - cfo
+      - wealth
+      - roadmap
+      - investing
+
+  - trigger: :cfo-cashflow
+    form: |
+      Here are my monthly income and expenses:
+
+      ---
+      MONTHLY INCOME & EXPENSES:
+      [[cashflow_data]]
+
+      ---
+      Redesign my finances so every dollar has a purpose. Show me exactly what to cut, what to keep, what to automate, and where my money should go each month to improve my financial position.
+    form_fields:
+      cashflow_data:
+        multiline: true
+    label: "[Finance] Personal CFO: Cash Flow & Automation Optimizer"
+    comment: Restructures monthly cash flow to assign every dollar a purpose, cutting waste and automating recurring allocations.
+    search_terms:
+      - finance
+      - cfo
+      - cashflow
+      - budgeting
+      - automation
+
+  - trigger: :cfo-leaks
+    form: |
+      Analyze my spending history:
+
+      ---
+      SPENDING HISTORY / EXPENSES:
+      [[spending_history]]
+
+      ---
+      Find every unnecessary expense, subscription, impulse purchase, lifestyle increase, and hidden money leak. Rank them by annual cost and tell me which changes would save me the most money with the least impact on my lifestyle.
+    form_fields:
+      spending_history:
+        multiline: true
+    label: "[Finance] Personal CFO: Money Leaks & Stealth Expense Ranker"
+    comment: Uncovers hidden subscriptions, impulse buys, and lifestyle creep, ranking cuts by highest annual ROI with minimal friction.
+    search_terms:
+      - finance
+      - cfo
+      - leaks
+      - subscriptions
+      - expenses
+
+  - trigger: :cfo-debt
+    form: |
+      My debts are:
+
+      ---
+      DEBT PORTFOLIO (Balances, Rates, Minimum Payments):
+      [[debt_details]]
+
+      ---
+      Create the smartest repayment strategy based on my income, cash flow, interest rates, and financial goals. Explain the logic behind the strategy and show me how I can become debt-free as efficiently as possible.
+    form_fields:
+      debt_details:
+        multiline: true
+    label: "[Finance] Personal CFO: Debt Destroyer & Payoff Strategy"
+    comment: Builds the mathematically optimal debt repayment blueprint (Avalanche vs Snowball) customized to cashflow and rates.
+    search_terms:
+      - finance
+      - cfo
+      - debt
+      - payoff
+      - credit

@@ -2606,64 +2606,68 @@ matches:
 
   - trigger: ;before-reply-ask3
     form: |
-      Antes de responder, me faça 3 perguntas que vão melhorar o resultado.
-    label: '[Prompts] ;Before Reply Ask3'
-    comment: Antes de responder, me faça 3 perguntas que vão melhorar o resultado.
+      Before responding, ask me 3 clarifying questions that will significantly improve the result.
+    label: '[Prompts] Ask 3 Clarifying Questions Before Responding'
+    comment: 'Before responding, ask me 3 clarifying questions that will improve the result.'
     search_terms:
       - prompts
 
   - trigger: ;critique-brutal
     form: |
-      Critique esse texto como se você fosse a pessoa que mais quer me ver falhar. Seja brutal.
-    label: '[Prompts] ;Critique Brutal'
-    comment: Critique esse texto como se você fosse a pessoa que mais quer me ver falhar. Seja brutal.
+      Critique this text as if you were the person who most wants to see me fail. Be brutal.
+    label: '[Prompts] Brutal Adversarial Critique'
+    comment: 'Critique this text as if you were the person who most wants to see me fail. Be brutal.'
     search_terms:
       - prompts
 
   - trigger: ;solve-step-by-step
     form: |
-      Resolva isso e mostre seu raciocínio passo a passo, para que eu aprenda a fazer sozinho.
-    label: '[Prompts] ;Solve Step By Step'
-    comment: Resolva isso e mostre seu raciocínio passo a passo, para que eu aprenda a fazer sozinho.
+      Solve this and show your step-by-step reasoning, so that I learn how to do it myself.
+    label: '[Prompts] Step-by-Step Problem Solving & Teaching'
+    comment: 'Solve this and show your step-by-step reasoning, so that I learn how to do it myself.'
     search_terms:
       - prompts
 
   - trigger: ;analyse-situation
     form: |
-      Analise a situação e me diga o que fazer.
-    label: '[Prompts] Analise A Situação E Me Diga O Que Fazer'
-    comment: Analise a situação e me diga o que fazer.
+      Analyze the situation and tell me what to do.
+    label: '[Prompts] Situation Analysis & Action Recommendation'
+    comment: 'Analyze the situation and tell me what to do.'
     search_terms:
       - prompts
 
-  - trigger: ;advogado
+  - trigger: ;lawyer
     form: |
-      Pense como um advogado e me diga o que fazer.
-    label: '[Prompts] Pense Como Um Advogado E Me Diga O Que Fazer'
-    comment: Pense como um advogado e me diga o que fazer.
+      Think like a lawyer and tell me what to do.
+    label: '[Prompts] Legal Perspective & Risk Assessment'
+    comment: 'Think like a lawyer and tell me what to do.'
     search_terms:
       - prompts
+      - lawyer
+      - legal
 
   - trigger: ;decision-framework
     form: |
-      Crie uma matriz de decisão para me ajudar a escolher entre [Opção A] e [Opção B]
+      Create a decision matrix to help me choose between [Option A] and [Option B]
 
-      | Critério | Opção A (Detalhes) | Opção B (Detalhes) |
+      | Criterion | Option A (Details) | Option B (Details) |
       | :--- | :--- | :--- |
-      | **Custos** | Detalhes aqui | Detalhes aqui |
-      | **Benefícios** | Detalhes aqui | Detalhes aqui |
-      | **Risco** | Detalhes aqui | Detalhes aqui |
-      | **Tempo** | Detalhes aqui | Detalhes aqui |
-      | **Reversibilidade** | Detalhes aqui | Detalhes aqui |
-      | **Impacto** | Detalhes aqui | Detalhes aqui |
-      | **Escalabilidade** | Detalhes aqui | Detalhes aqui |
-      | **Recursos Necessários** | Detalhes aqui | Detalhes aqui |
-      | **Conformidade Legal** | Detalhes aqui | Detalhes aqui |
-      | **Tendências de Mercado** | Detalhes aqui | Detalhes aqui |
-    label: '[Prompts] ;Decision Framework'
-    comment: Crie uma matriz de decisão para me ajudar a escolher entre [Opção A] e [Opção B]
+      | **Costs** | Details here | Details here |
+      | **Benefits** | Details here | Details here |
+      | **Risk** | Details here | Details here |
+      | **Time** | Details here | Details here |
+      | **Reversibility** | Details here | Details here |
+      | **Impact** | Details here | Details here |
+      | **Scalability** | Details here | Details here |
+      | **Required Resources** | Details here | Details here |
+      | **Legal Compliance** | Details here | Details here |
+      | **Market Trends** | Details here | Details here |
+    label: '[Prompts] Decision Matrix & Framework'
+    comment: 'Create a decision matrix to help me choose between [Option A] and [Option B]'
     search_terms:
       - prompts
+      - decision
+      - matrix
 
   - trigger: :pm
     word: true
@@ -2948,26 +2952,28 @@ matches:
     search_terms:
       - prompts
 
-  - trigger: :parquiteto
+  - trigger: :parchitect
     form: |
-      Meu objetivo não é aprender [[habilidade]]. Meu objetivo é alcançar [[resultado]].
-      Crie um plano de 7 dias. 45 minutos por dia.
+      My goal is not to learn [[skill]]. My goal is to achieve [[outcome]].
+      Create a 7-day plan. 45 minutes per day.
 
-      Diga exatamente:
-      • o que fazer
-      • como validar
-      • o que NÃO estudar
+      Tell me exactly:
+      • what to do
+      • how to validate
+      • what NOT to study
     form_fields:
-      habilidade:
+      skill:
         type: text
         default: ''
-      resultado:
+      outcome:
         type: text
         default: ''
-    label: '[Prompts] Meu Objetivo Não É Aprender'
-    comment: Meu objetivo não é aprender . Meu objetivo é alcançar .
+    label: '[Prompts] Outcome-Driven 7-Day Sprint'
+    comment: 'My goal is not to learn a skill, but to achieve a concrete outcome in 7 days.'
     search_terms:
       - prompts
+      - learning
+      - sprint
 
   - trigger: :pblind
     replace: Based on everything you know about me, name the personality traits I most likely don't see in myself, the patterns that are obvious to you but invisible to me. My blind spots, my insecurities, the way I actually come across versus how I think I do. Be blunt and specific.
@@ -5638,24 +5644,26 @@ matches:
     search_terms:
       - prompts
 
-  - trigger: :pcurva
+  - trigger: :pcurve
     form: |
-      Você é um professor que só tem 4 horas comigo e nunca mais vai me ver.
-      Seu único objetivo é me deixar funcional em [[habilidade]] antes que o tempo acabe.
-      Não me dê teoria sem aplicação.
+      You are an instructor who only has 4 hours with me and will never see me again.
+      Your only goal is to make me functional in [[skill]] before time runs out.
+      Give me no theory without direct application.
 
-      Me diga:
-      • o que aprender primeiro
-      • o que ignorar completamente
-      • qual exercício me colocaria à frente de 70% das pessoas
+      Tell me:
+      • what to learn first
+      • what to ignore completely
+      • which exercise would put me ahead of 70% of practitioners
     form_fields:
-      habilidade:
+      skill:
         type: text
         default: ''
-    label: '[Prompts] Pcurva'
-    comment: Você é um professor que só tem 4 horas comigo e nunca mais vai me ver.
+    label: '[Prompts] 4-Hour Crash Course & Pareto Learning'
+    comment: 'Pareto crash course to become functional in a skill in 4 hours.'
     search_terms:
       - prompts
+      - learning
+      - pareto
 
   - trigger: :roadmap
     form: |
@@ -6272,12 +6280,12 @@ matches:
 
   - trigger: ;weekly-routine
     form: |
-      Pegue o que fizemos e transforme num passo a passo que eu repito toda semana
-      na minha rotina.
-    label: '[Prompts] ;Weekly Routine'
-    comment: Pegue o que fizemos e transforme num passo a passo que eu repito toda semana
+      Take what we did and turn it into a step-by-step process that I repeat every week in my routine.
+    label: '[Prompts] Weekly Routine Converter'
+    comment: 'Take what we did and turn it into a step-by-step process that I repeat every week in my routine.'
     search_terms:
       - prompts
+      - routine
 
   - trigger: :prompt-task-initiation
     replace: |
@@ -6381,58 +6389,82 @@ matches:
     search_terms:
       - prompts
 
-  - trigger: :p_paralisia
+  - trigger: :p_paralysis
     form: |
-      Estou olhando para [[tarefa]] e não consigo começar. Divide isso em passos ridiculamente pequenos que levem menos de 1 minuto cada. Me dá o primeiro passo e diz exatamente onde colocar as mãos para começar.
-    label: '[Prompts] Estou Olhando Para  E Não Consigo Começar'
-    comment: Estou olhando para  e não consigo começar. Divide isso em passos ridiculamente pequenos que levem menos de 1 minuto cada
+      I am looking at [[task]] and cannot get started. Break this down into ridiculously small steps that take less than 1 minute each. Give me the first step and tell me exactly where to put my hands to start.
+    label: '[Prompts] Task Paralysis Breaker'
+    comment: 'Break down task paralysis into sub-1-minute physical actions to cross the starting line.'
     search_terms:
       - prompts
+      - productivity
+      - paralysis
+      - start
 
-  - trigger: :p_dopamina
-    replace: Estou me sentindo sem estímulo. Cria um Menu de Dopamina para mim com Aperitivos de 5 minutos, movimento rápido, Pratos Principais de 20 minutos, trabalho profundo, e Acompanhamentos de 10 minutos, jogo criativo, para manter meu cérebro engajado.
-    label: '[Prompts] Estou Me Sentindo Sem Estímulo'
-    comment: 'Estou me sentindo sem estímulo. Cria um Menu de Dopamina para mim com Aperitivos de 5 minutos, movimento rápido, Pratos '
+  - trigger: :p_dopamine
+    replace: |
+      I am feeling unmotivated and understimulated. Create a Dopamine Menu for me with 5-minute Starters (quick movement), 20-minute Main Courses (deep work), and 10-minute Side Dishes (creative play) to keep my brain engaged.
+    label: '[Prompts] ADHD Dopamine Menu Generator'
+    comment: 'Generates a Dopamine Menu with starters, main courses, and sides to overcome low stimulation.'
     search_terms:
       - prompts
+      - productivity
+      - dopamine
+      - adhd
 
-  - trigger: :p_foco
-    replace: Age como meu parceiro de foco virtual pelos próximos 30 minutos. Vou te dizer no que estou trabalhando e quero que você me pergunte um status a cada 10 minutos para manter meu foco.
-    label: '[Prompts] P Foco'
-    comment: 'Age como meu parceiro de foco virtual pelos próximos 30 minutos. Vou te dizer no que estou trabalhando e quero que você '
+  - trigger: :p_focus_partner
+    replace: |
+      Act as my virtual focus partner for the next 30 minutes. I will tell you what I am working on, and I want you to ask me for a status update every 10 minutes to keep me locked in.
+    label: '[Prompts] Virtual Focus Accountability Partner'
+    comment: 'Acts as an interactive virtual body double / focus partner checking in every 10 minutes.'
     search_terms:
       - prompts
+      - productivity
+      - focus
+      - bodydoubling
 
-  - trigger: :p_transicao
+  - trigger: :p_transition
     form: |
-      Acabei de terminar [[tarefa_a]] e preciso começar [[tarefa_b]], mas meu cérebro travou. Cria uma rotina de limpeza mental de 3 minutos para me ajudar a transitar entre esses dois tipos de energia.
-    label: '[Prompts] P Transicao'
-    comment: Acabei de terminar  e preciso começar , mas meu cérebro travou. Cria uma rotina de limpeza mental de 3 minutos para me a
+      I just finished [[task_a]] and need to start [[task_b]], but my brain feels stuck. Create a 3-minute mental reset routine to help me transition between these two types of energy.
+    label: '[Prompts] 3-Minute Context Transition & Mental Reset'
+    comment: 'Generates a 3-minute mental decompression ritual between distinct work blocks.'
     search_terms:
       - prompts
+      - productivity
+      - transition
+      - reset
 
-  - trigger: :p_gamifica
+  - trigger: :p_gamify
     form: |
-      Tenho uma tarefa administrativa chata: [[tarefa]]. Me ajuda a gamificar ela conectando ao meu interesse atual: [[interesse]]. Cria uma estrutura de missão onde terminar a tarefa desbloqueia uma recompensa.
-    label: '[Prompts] Tenho Uma Tarefa Administrativa Chata'
-    comment: 'Tenho uma tarefa administrativa chata: . Me ajuda a gamificar ela conectando ao meu interesse atual: . Cria uma estrutur'
+      I have a boring administrative task: [[task]]. Help me gamify it by connecting it to my current interest: [[interest]]. Create a quest structure where completing the task unlocks a reward.
+    label: '[Prompts] Administrative Task Gamifier'
+    comment: 'Gamifies boring tasks into an RPG-style quest tied to current interests.'
     search_terms:
       - prompts
+      - productivity
+      - gamify
+      - quests
 
-  - trigger: :p_tempo
+  - trigger: :p_time_estimate
     form: |
-      Acho que [[projeto]] vai levar 20 minutos, mas normalmente leva 2 horas. Me ajuda a mapear isso identificando as 3 subtarefas escondidas que sempre esqueço de considerar para eu definir um prazo realista.
-    label: '[Prompts] P Tempo'
-    comment: Acho que  vai levar 20 minutos, mas normalmente leva 2 horas. Me ajuda a mapear isso identificando as 3 subtarefas escon
+      I think [[project]] will take 20 minutes, but it usually takes 2 hours. Help me map this out by identifying the 3 hidden subtasks I always forget to account for so I can set a realistic deadline.
+    label: '[Prompts] Realistic Time Estimation & Hidden Subtask Finder'
+    comment: 'Uncovers hidden friction and subtasks to establish realistic project time estimates.'
     search_terms:
       - prompts
+      - productivity
+      - estimation
+      - time
 
   - trigger: :p_loops
-    replace: 'Meu cérebro está cheio de loops abertos. Vou jogar tudo que me preocupa abaixo. Categoriza em: Agora, Depois e Lixo. Depois escreve um próximo passo acionável de 1 frase só para os itens de Agora.'
-    label: '[Prompts] Meu Cérebro Está Cheio De Loops Abertos'
-    comment: 'Meu cérebro está cheio de loops abertos. Vou jogar tudo que me preocupa abaixo. Categoriza em: Agora, Depois e Lixo. Dep'
+    replace: |
+      My brain is full of open loops. I am going to dump everything worrying me below. Categorize everything into: Now, Later, and Trash. Then write a 1-sentence actionable next step only for the Now items.
+    label: '[Prompts] Open Loops Mental Dump & Triage'
+    comment: 'Triages messy mental clutter into Now, Later, and Trash with 1-sentence next actions.'
     search_terms:
       - prompts
+      - productivity
+      - triage
+      - openloops
 
   - trigger: :p-inbox
     form: |
@@ -7806,13 +7838,16 @@ matches:
     search_terms:
       - prompts
 
-  - trigger: /pt/improve-writing
+  - trigger: :improve-writing-polish
     replace: |
-      Faça uma revisão do meu texto acima. Corrija erros de gramática e ortografia. Forneça sugestões que melhorem a clareza da minha escrita.
-    label: '[Prompts] Faça Uma Revisão Do Meu Texto Acima'
-    comment: Faça uma revisão do meu texto acima. Corrija erros de gramática e ortografia. Forneça sugestões que melhorem a clareza d
+      Review my writing above thoroughly. Correct all grammar, syntax, and spelling issues. Provide specific sentence-level revisions to improve flow, precision, and persuasive impact.
+    label: '[Prompts] Deep Polish & Line-by-Line Writing Revision'
+    comment: 'Detailed proofreading and sentence-level clarity refinement.'
     search_terms:
       - prompts
+      - writing
+      - proofread
+      - polish
 
   - trigger: :summarize-hint
     form: |
@@ -9961,7 +9996,8 @@ matches:
 
   - triggers:
       - :concierge
-      - :concierge-assistant
+      - :concierge-bot
+    word: true
     replace: |
       Act as a highly knowledgeable and resourceful concierge assistant with comprehensive expertise across diverse topics. Provide accurate, concise, and helpful information, recommendations, and solutions tailored to the user's needs. When responding, carefully analyze the user's request, ask clarifying questions if necessary, and reason through any problem step-by-step before presenting the final advice or answer. Maintain a polite and professional tone at all times.
 

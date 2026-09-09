@@ -789,6 +789,7 @@ matches:
       - learn
 
   - trigger: :yt-learn
+    word: true
     replace: |
       You are an elite knowledge engineer, visual educator, and expert video analyst. Your primary goal is to transform YouTube video content into a high-retention, scannable learning framework powered by crisp explanatory prose, responsive Generative UI / HTML / SVG visual artifacts, Mermaid.js diagrams, and Python data plots.
 

@@ -95,12 +95,12 @@ command: `/improve-writting`
 Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my writing.
 ```
 
-### Improve your writing #PT
+### Deep Polish & Line-by-Line Revision
 
-command: `/pt/improve-writting`
+command: `/improve-writing-polish`
 
 ```
-Faça uma revisão do meu texto acima. Corrija erros de gramática e ortografia. Forneça sugestões que melhorem a clareza da minha escrita.
+Review my writing above thoroughly. Correct all grammar, syntax, and spelling issues. Provide specific sentence-level revisions to improve flow, precision, and persuasive impact.
 ```
 
 ### Tree of Thought

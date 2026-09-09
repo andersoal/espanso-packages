@@ -67,113 +67,189 @@ matches:
 
   - trigger: :sj.val
     replace: |
-      ### 1. Crie uma Proposta de Valor Única
-      * **Diferencie seu produto**
-      * **Destaque os aspectos de resolução de problemas únicos**
-      * **Comunique paixão pela sua oferta**
+      ### 1. Create a Unique Value Proposition (UVP)
+      * **Differentiate your product**: Highlight the radical uniqueness of your solution.
+      * **Highlight problem resolution**: Show why alternative approaches fail.
+      * **Communicate authentic passion**: The founder's conviction sells more than technical specs.
 
-      > "Você tem que encontrar o que ama. E isso é tão verdade para o seu trabalho quanto para os seus amantes." — Steve Jobs
-    label: "[Marketing & Sales] Solution-Problem Fit Validation Interview"
-    comment: "### 1. Crie uma Proposta de Valor Única"
+      > "You have to find what you love. And that is as true for your work as it is for your lovers." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 1: Unique Value Proposition"
+    comment: "Steve Jobs Rule 1: Create a distinct and differentiated Unique Value Proposition."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - sales
+      - uvp
+      - pitch
 
   - trigger: :sj.ben
     replace: |
-      ### 2. Foque nos Benefícios, Não nos Recursos
-      * **Enfatize como o produto melhora vidas**
-      * **Traduza as especificações em vantagens para o cliente**
-      * **Venda a experiência, não apenas o produto**
+      ### 2. Focus on Benefits, Not Features
+      * **Real-life improvement**: Emphasize the practical transformation the customer experiences.
+      * **Translate specs into advantages**: Nobody wants 5GB of storage; they want 1,000 songs in their pocket.
+      * **Sell the full experience**: Connect daily usage to the customer's status and relief.
 
-      > "Você tem que começar com a experiência do cliente e, a partir dela, trabalhar em direção à tecnologia - e não o contrário." — Steve Jobs
-    label: "[Marketing & Sales] Foque nos Benefícios, Não nos Recursos"
-    comment: "### 2. Foque nos Benefícios, Não nos Recursos"
+      > "You've got to start with the customer experience and work backwards to the technology — not the other way around." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 2: Benefits Over Features"
+    comment: "Steve Jobs Rule 2: Focus on Benefits and Experience rather than technical specifications."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - benefits
+      - features
+      - copywriting
 
   - trigger: :sj.sim
     replace: |
-      ### 3. Mantenha sua Mensagem Simples
-      * **Crie apresentações claras e concisas**
-      * **Evite sobrecarregar com detalhes técnicos**
-      * **Destile ideias complexas em mensagens simples**
+      ### 3. Keep Your Message Simple
+      * **Clear, direct presentations**: Eliminate corporate jargon and ambiguity.
+      * **Avoid technical overload**: Communicate the essential points that drive buying decisions.
+      * **Distill complex ideas**: If a child cannot understand the premise, simplify further.
 
-      > "Esse tem sido um dos meus mantras — foco e simplicidade. O simples pode ser mais difícil que o complexo." — Steve Jobs
-    label: "[Marketing & Sales] Mantenha sua Mensagem Simples"
-    comment: "### 3. Mantenha sua Mensagem Simples"
+      > "That's been one of my mantras — focus and simplicity. Simple can be harder than complex." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 3: Radical Simplicity"
+    comment: "Steve Jobs Rule 3: Keep your message simple and distilled."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - simplicity
+      - messaging
+      - pitch
 
   - trigger: :sj.story
     replace: |
-      ### 4. Conte uma História Envolvente
-      * **Use narrativas para tornar os produtos relacionáveis**
-      * **Conecte-se emocionalmente com seu público**
-      * **Compartilhe histórias de sucesso impactantes**
+      ### 4. Tell a Compelling Story
+      * **Transformative narrative**: Position the customer as the hero and your product as the guide.
+      * **Immediate emotional connection**: The human brain decides with emotion and justifies with logic.
+      * **Impactful success stories**: Demonstrate undeniable before-and-after transformations.
 
-      > "A pessoa mais poderosa do mundo é o contador de histórias. O contador de histórias define a visão, os valores e a agenda de uma geração inteira que virá." — Steve Jobs
-    label: "[Marketing & Sales] Conte uma História Envolvente"
-    comment: "### 4. Conte uma História Envolvente"
+      > "The most powerful person in the world is the story teller. The storyteller sets the vision, values and agenda of an entire generation that is to come." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 4: Compelling Storytelling"
+    comment: "Steve Jobs Rule 4: Tell a compelling story that builds an emotional connection."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - storytelling
+      - narrative
+      - story
 
   - trigger: :sj.aud
     replace: |
-      ### 5. Conheça seu Público
-      * **Pesquise os prospects minuciosamente**
-      * **Entenda as dores e necessidades**
-      * **Personalize a abordagem com base no perfil do cliente**
+      ### 5. Know Your Audience Deeply
+      * **Relentless customer research**: Uncover frustrations prospects don't articulate in formal surveys.
+      * **Pain and desire mapping**: Understand the real root pain versus the superficial symptom.
+      * **Hyper-personalized approach**: Show that you understand the problem better than they do themselves.
 
-      > "Aproximem-se mais do que nunca de seus clientes. Tão perto que você diz a eles o que eles precisam bem antes que eles percebam." — Steve Jobs
-    label: "[Marketing & Sales] Conheça seu Público"
-    comment: "### 5. Conheça seu Público"
+      > "Get closer than ever to your customers. So close that you tell them what they need well before they realize it themselves." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 5: Deep Customer Empathy"
+    comment: "Steve Jobs Rule 5: Know your audience so intimately that you anticipate their needs."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - audience
+      - customer-research
+      - avatar
 
   - trigger: :sj.exp
     replace: |
-      ### 6. Crie uma Experiência, Não Apenas um Produto
-      * **Foque em toda a jornada do cliente**
-      * **Garanta pontos de contato positivos**
-      * **Priorize a experiência do cliente no processo de vendas**
+      ### 6. Create an Experience, Not Just a Product
+      * **End-to-end customer journey**: From packaging/onboarding through post-purchase support.
+      * **Delightful touchpoints**: Remove all friction and create memorable 'wow' moments.
+      * **Experience as retention engine**: Products are easily copied; memorable experiences build enduring loyalty.
 
-      > "Você tem que começar com a experiência do cliente e, a partir dela, trabalhar em direção à tecnologia — e não o contrário." — Steve Jobs
-    label: "[Marketing & Sales] Crie uma Experiência, Não Apenas um Produto"
-    comment: "### 6. Crie uma Experiência, Não Apenas um Produto"
+      > "You've got to start with the customer experience and work backwards to the technology — not the other way around." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 6: End-to-End Customer Experience"
+    comment: "Steve Jobs Rule 6: Create a memorable end-to-end experience across all customer touchpoints."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - experience
+      - cx
+      - onboarding
 
   - trigger: :sj.pol
     replace: |
-      ### 7. Não Tenha Medo de Polarizar
-      * **Destaque confiantemente as qualidades**
+      ### 7. Don't Be Afraid to Polarize
+      * **Bold positioning**: Trying to please everyone guarantees you will be remembered by no one.
+      * **Highlight clear contrasts**: Openly declare what you stand for and what you reject in the market.
+      * **Lead the category**: Create an audacious point of view that compels the market to take a side.
 
-      > "Muitas vezes, as pessoas não sabem o que querem até que você mostre a elas." — Steve Jobs
-    label: "[Marketing & Sales] Não Tenha Medo de Polarizar"
-    comment: "### 7. Não Tenha Medo de Polarizar"
+      > "A lot of times, people don't know what they want until you show it to them." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 7: Bold Polarizing Positioning"
+    comment: "Steve Jobs Rule 7: Don't be afraid to take a bold, polarizing stance."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - positioning
+      - polarization
+      - differentiation
 
   - trigger: :sj.per
     replace: |
-      ### 8. Persistência Diante da Rejeição
-      * **Use a rejeição como uma oportunidade de aprendizado**
-      * **Ajuste a abordagem e continue pressionando**
-      * **Permaneça comprometido com sua visão**
+      ### 8. Relentless Perseverance in the Face of Rejection
+      * **Rejection as calibration**: Every 'no' is market feedback to refine your product and messaging.
+      * **Continuous iteration**: Adapt the execution without abandoning your core conviction.
+      * **Unwavering commitment**: Long-term resilience consistently beats intermittent talent.
 
-      > "Estou convencido de que cerca de metade do que separa os empreendedores bem-sucedidos dos não-bem-sucedidos é a pura perseverança." — Steve Jobs
-    label: "[Marketing & Sales] Persistência Diante da Rejeição"
-    comment: "### 8. Persistência Diante da Rejeição"
+      > "I'm convinced that about half of what separates the successful entrepreneurs from the non-successful ones is pure perseverance." — Steve Jobs
+    label: "[Marketing & Sales] Steve Jobs Rule 8: Relentless Perseverance"
+    comment: "Steve Jobs Rule 8: Unwavering perseverance and resilience in the face of rejection."
     search_terms:
       - marketing-sales
-      - marketing & sales
+      - steve-jobs
+      - perseverance
+      - resilience
+      - mindset
+
+  - trigger: :sj-rules
+    replace: |
+      # 🍎 Steve Jobs' 8 Rules for Sales & Marketing Excellence
+
+      1. **Create a Unique Value Proposition**: Differentiate radically, solve high-friction pain points, and communicate authentic conviction.
+      2. **Focus on Benefits, Not Features**: Translate technical specs into tangible customer life improvements ("1,000 songs in your pocket").
+      3. **Keep Your Message Simple**: Distill complex ideas into unmistakable, jargon-free clarity.
+      4. **Tell a Compelling Story**: Frame the customer as the hero on a transformational journey.
+      5. **Know Your Audience**: Understand prospects so deeply you offer what they need before they can articulate it.
+      6. **Create an Experience, Not Just a Product**: Engineer delight across every touchpoint from first click to support.
+      7. **Don't Be Afraid to Polarize**: Take an unapologetic stance that repels the wrong crowd and magnetizes true advocates.
+      8. **Persist in the Face of Rejection**: Treat market friction as iteration data and persevere through initial resistance.
+    label: "[Marketing & Sales] Steve Jobs' 8 Rules for Sales Excellence (Master Summary)"
+    comment: Complete 8-rule sales & copywriting cheat sheet inspired by Steve Jobs.
+    search_terms:
+      - marketing-sales
+      - steve-jobs
+      - sales-rules
+      - copywriting
+      - pitch
+
+  - trigger: :sj-sales-audit
+    form: |
+      Act as an elite product marketing strategist and brand copywriter channeling Steve Jobs' sales philosophy.
+
+      Here is my current product/service pitch, landing page copy, or sales offer:
+      [[sales_copy]]
+
+      Audit and rewrite this offer against **Steve Jobs' 8 Rules for Sales Excellence**:
+
+      1. **Unique Value Proposition**: Does this sound differentiated, or does it blend into the market noise?
+      2. **Feature-to-Benefit Translation**: Rewrite every feature/spec bullet point into an emotional, high-leverage benefit that improves the user's reality.
+      3. **Radical Simplification**: Strip away corporate jargon, buzzwords, and technical bloat until the core message is punchy and undeniable.
+      4. **Compelling Story Hook**: Craft a 3-act narrative hook framing the customer's struggle and ultimate victory.
+      5. **Audience Empathy Check**: Highlight unstated fears and desires this copy addresses.
+      6. **End-to-End Experience Design**: Suggest 2 ways to elevate the customer experience beyond the commodity product.
+      7. **Polarizing Edge**: Sharpen the stance so it takes a clear, confident point of view against legacy solutions.
+      8. **Final High-Conversion Pitch**: Output a complete, ready-to-publish rewrite of the copy that embodies these 8 principles.
+    form_fields:
+      sales_copy:
+        multiline: true
+    label: "[Marketing & Sales] Steve Jobs 8-Rules Sales & Pitch Audit Engine"
+    comment: Audits and rewrites product copy, landing pages, or pitches using Steve Jobs' 8 Rules for Sales Excellence.
+    search_terms:
+      - marketing-sales
+      - steve-jobs
+      - sales-audit
+      - copywriting
+      - pitch-rewrite
 
   - trigger: :p-canva
     form: |

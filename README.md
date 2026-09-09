@@ -10,9 +10,9 @@ A modular collection of custom **[Espanso](https://espanso.org/)** text-expansio
 - 📁 [`behavior/`](./behavior) — Triggers and workflows for ADHD cognitive load management, task breakdown, and focus.
 - 📁 [`career/`](./career) — Professional framing, resume highlights, interview preparation, and career development prompts.
 - 📁 [`content-creation/`](./content-creation) — Storytelling frameworks, copywriting structures, and content creation templates.
-- 📁 [`docs/`](./docs) — Documentation, ADRs, and trigger conflict audit reports ([`trigger-audit.md`](./docs/trigger-audit.md)).
 - 📁 [`engineering/`](./engineering) — Programming shortcuts, Git/Shell helpers, code block scaffolding, and developer utilities.
 - 📁 [`finance/`](./finance) — Financial planning prompts, budgeting macros, and expense tracking shortcuts.
+- 📁 [`genealogy/`](./genealogy) — AI prompts for family tree building, surname origins, public record leads, and ancestry analysis.
 - 📁 [`learn/`](./learn) — Learning frameworks, active recall study prompts, and comprehension shortcuts.
 - 📁 [`learn-language/`](./learn-language) — Vocabulary drills, grammar breakdown templates, and translation assistant workflows.
 - 📁 [`marketing-sales/`](./marketing-sales) — Pitch templates, sales frameworks, and marketing copy generators.
@@ -22,7 +22,6 @@ A modular collection of custom **[Espanso](https://espanso.org/)** text-expansio
 - 📁 [`productivity/`](./productivity) — Daily review frameworks, habit tracking, focus blocks, and time management tools.
 - 📁 [`prompts/`](./prompts) — General-purpose AI prompts, system instructions, and persona modifiers.
 - 📁 [`relationship/`](./relationship) — Interpersonal communication, empathetic feedback frameworks, and conflict resolution templates.
-- 📁 [`scripts/`](./scripts) — Repository maintenance tools and validation scripts ([`check_triggers.py`](./scripts/check_triggers.py)).
 - 📁 [`social-strategy/`](./social-strategy) — Niche research, content calendars, viral hook design, and social media analytics frameworks.
 - 📁 [`thinking-prompts/`](./thinking-prompts) — 10 AI-powered metacognition and self-reflection prompts inspired by SAINT NULL's Thinking Toolkit.
 - 📁 [`utils/`](./utils) — Date/time generators, text transforms, system shortcuts, and Espanso macros.
@@ -75,7 +74,7 @@ This repository includes custom tooling to ensure trigger hygiene, prevent short
 ### Run Trigger Audit Script
 
 ```bash
-python scripts/check_triggers.py
+python .meta/scripts/check_triggers.py
 ```
 
 The script scans all package YAML files to identify:
@@ -84,7 +83,7 @@ The script scans all package YAML files to identify:
 - Missing or malformed manifest fields
 - Syntax & structural warnings
 
-Detailed audit reports are generated in [`docs/trigger-audit.md`](./docs/trigger-audit.md).
+Detailed audit reports are generated in [`trigger-audit.md`](./.meta/docs/trigger-audit.md).
 
 ---
 
@@ -99,11 +98,12 @@ cp -r _example-package my-new-package
 
 1. Edit `my-new-package/_manifest.yml` to set package `name`, `title`, `description`, and `author`.
 2. Add your Espanso triggers inside `my-new-package/package.yml` (or subfiles under `my-new-package/match/`).
-3. Run `python scripts/check_triggers.py` to verify trigger uniqueness and syntax correctness.
+3. Run `python .meta/scripts/check_triggers.py` to verify trigger uniqueness and syntax correctness.
 
 ---
 
 ## 📄 License
 
 This collection is distributed under the [MIT License](./LICENSE). Individual packages may include specific licensing requirements in their respective manifests.
+
 

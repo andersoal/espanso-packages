@@ -1,0 +1,542 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # ============================================================================
+  # 1. THE 4-STEP AI FAMILY TREE METHOD
+  # ============================================================================
+  - triggers:
+      - :gen-dump
+      - :gen-braindump
+    replace: |
+      I want to build my full family tree. Interview me one section at a time. Ask me everything you need to know: my full name, where my family is from, and every relative I can remember on both sides.
+
+      Ask for names, approximate birth years, birth places, and how each person is related. Go one branch at a time so I do not get overwhelmed, and keep track of what I have already told you.
+
+      When we are done, lay it all out as a clean, organized starting tree.
+    label: "[Genealogy AI] Step 1: Memory Brain Dump Interview"
+    comment: "Interviews you one branch at a time to assemble a clean starting family tree from memory."
+    search_terms:
+      - genealogy
+      - family tree
+      - interview
+      - braindump
+
+  - triggers:
+      - :gen-origin
+      - :gen-surname
+    form: |
+      Based on my last name "[[surname]]" and where my family came from ("[[origin_location]]"), tell me the origins of my family line.
+
+      Cover:
+      - The meaning and language roots of the surname
+      - The region or regions it is most common in
+      - How far back the name can typically be traced
+      - Any historical events that moved families with this name (migrations, wars, name changes)
+      - Whether the name was likely changed or shortened when my family immigrated
+
+      Be clear about what is well documented versus what is a general pattern for names like mine.
+    form_fields:
+      surname:
+        default: ""
+      origin_location:
+        default: ""
+    label: "[Genealogy AI] Step 2: Surname Origins & Etymology"
+    comment: "Traces surname meaning, linguistic roots, distribution, and historical migration patterns."
+    search_terms:
+      - genealogy
+      - surname
+      - origin
+      - etymology
+
+  - triggers:
+      - :gen-leads
+      - :gen-search
+    form: |
+      Using everything I have told you about my family ([[known_details]]), search the open web and free public records to find people, documents, and family connections I do not already have.
+
+      Search these kinds of sources:
+      - Free genealogy sites (FamilySearch, WikiTree)
+      - Obituaries and funeral home notices
+      - Historical census and immigration records that are publicly viewable
+      - Old newspaper archives
+      - Cemetery and grave databases (Find a Grave)
+
+      For every lead you find, give me:
+      - The name and how they might connect to my tree
+      - The source, with a link so I can verify it
+      - Your confidence: is this likely my family, or just a name match worth checking?
+
+      Do not invent people, records, or links. If you cannot confirm something, say so and mark it as a lead to investigate, not a fact.
+    form_fields:
+      known_details:
+        multiline: true
+        default: "the names, dates, and locations discussed"
+    label: "[Genealogy AI] Step 3: Find Relatives & Free Public Records"
+    comment: "Prompts AI to search open web sources (FamilySearch, Find a Grave, obits, census) for unconfirmed leads."
+    search_terms:
+      - genealogy
+      - records
+      - search
+      - leads
+      - public records
+
+  - triggers:
+      - :gen-visual
+      - :gen-tree
+    replace: |
+      Now build me the full visual family tree using everyone we have confirmed, plus a separate section for the unconfirmed leads.
+
+      Lay it out clearly by generation, showing how each person connects. Use my parents and grandparents as anchor points.
+
+      Then give me a version I can reuse: export it as a diagram I can view, and also give me the raw structure so I can import it into a family tree app later. Export it as a GEDCOM file so I can import it into FamilySearch or another app, and give me a clean printable version organized by generation.
+    label: "[Genealogy AI] Step 4: Visual Tree & GEDCOM Export"
+    comment: "Generates a visual generation tree, unconfirmed leads section, and reusable GEDCOM file."
+    search_terms:
+      - genealogy
+      - visual tree
+      - diagram
+      - gedcom
+
+  # ============================================================================
+  # 2. DEEP INVESTIGATION & DISCOVERY PROMPTS
+  # ============================================================================
+  - trigger: :gen-timeline
+    form: |
+      Act as a professional genealogist. Build a complete timeline of my family history from the information I provide below. Organize each generation chronologically, identify missing details, and tell me what I should investigate next.
+
+      Family Information:
+      [[family_info]]
+    form_fields:
+      family_info:
+        multiline: true
+    label: "[Genealogy AI] Family History Chronological Timeline"
+    comment: "Builds a chronological timeline by generation and flags missing gaps to investigate."
+    search_terms:
+      - genealogy
+      - timeline
+      - chronology
+      - generations
+
+  - trigger: :gen-branches
+    form: |
+      Analyze my family information and identify possible missing family branches, forgotten relatives, name variations, migrations, remarriages, or relationships that may have been overlooked. Explain your reasoning and suggest where I should investigate next.
+
+      Family Records:
+      [[family_records]]
+    form_fields:
+      family_records:
+        multiline: true
+    label: "[Genealogy AI] Discover Hidden Family Branches & Forgotten Relatives"
+    comment: "Finds overlooked branches, remarriages, migrations, and spelling variations."
+    search_terms:
+      - genealogy
+      - branches
+      - hidden relatives
+      - remarriages
+
+  - trigger: :gen-migration
+    form: |
+      Based on my family's known locations and dates provided below, reconstruct the most likely migration path across generations. Explain why each move may have happened using historical, economic, or social context, and point out any unusual patterns worth investigating.
+
+      Locations & Dates:
+      [[locations_and_dates]]
+    form_fields:
+      locations_and_dates:
+        multiline: true
+    label: "[Genealogy AI] Reconstruct Ancestor Migration Map & Context"
+    comment: "Maps generational movement with historical, economic, and social driving factors."
+    search_terms:
+      - genealogy
+      - migration
+      - map
+      - historical context
+
+  - trigger: :gen-connections
+    form: |
+      Study all the people in my family records below and identify possible relationships that are not immediately obvious. Connect individuals through shared surnames, locations, occupations, timelines, or historical records, then explain how they may be related.
+
+      Family Records:
+      [[family_records]]
+    form_fields:
+      family_records:
+        multiline: true
+    label: "[Genealogy AI] Hidden Relative Connections & Patterns"
+    comment: "Connects individuals across shared surnames, locations, occupations, and timelines."
+    search_terms:
+      - genealogy
+      - connections
+      - patterns
+      - relationships
+
+  - triggers:
+      - :gen-mystery
+      - :gen-mysteries
+    form: |
+      Review my family history like an investigative researcher. Find missing years, name changes, unexplained moves, conflicting records, or family mysteries worth investigating. Rank each one by importance and explain why it deserves further research.
+
+      Family Data:
+      [[family_data]]
+    form_fields:
+      family_data:
+        multiline: true
+    label: "[Genealogy AI] Family Mystery & Discrepancy Investigation"
+    comment: "Detects missing years, name alterations, conflicting records, and ranks mystery priorities."
+    search_terms:
+      - genealogy
+      - mystery
+      - discrepancies
+      - investigation
+
+  - trigger: :gen-story
+    form: |
+      Turn my family history into a compelling historical story using the facts I provide below. Add accurate historical context to enrich the narrative while clearly separating confirmed facts from historical context.
+
+      Family Facts:
+      [[family_facts]]
+    form_fields:
+      family_facts:
+        multiline: true
+    label: "[Genealogy AI] Narrative Historical Family Storyteller"
+    comment: "Converts factual records into a vivid narrative with verified facts distinct from context."
+    search_terms:
+      - genealogy
+      - story
+      - biography
+      - narrative
+
+  - trigger: :gen-roadmap
+    form: |
+      Act as my genealogy research advisor. Review everything we know about my family below and create a prioritized research plan. Recommend the best records, archives, and sources to search next and explain why each one matters.
+
+      Current Knowledge Base:
+      [[known_info]]
+    form_fields:
+      known_info:
+        multiline: true
+    label: "[Genealogy AI] Prioritized Family Research Roadmap"
+    comment: "Creates an actionable research plan with target archives, record sets, and justifications."
+    search_terms:
+      - genealogy
+      - roadmap
+      - research plan
+      - archives
+
+  # ============================================================================
+  # 3. GENEALOGIST POWER TOOLS & FRAMEWORKS
+  # ============================================================================
+  - triggers:
+      - :gen-framework
+      - :gen-rtfl
+    form: |
+      You are [[role]].
+      Task: [[task]]
+      Format: [[format]]
+      Limits & Constraints: [[limits]]
+
+      Background & Context: [[context]]
+      Known Challenges: [[challenges]]
+    form_fields:
+      role:
+        default: "a professional genealogist specializing in 19th and 20th-century record analysis"
+      task:
+        default: "create a comprehensive research plan to trace"
+        multiline: true
+      format:
+        default: "numbered list with source citations and confidence ratings"
+      limits:
+        default: "under 600 words; distinguish verified records from hypotheses"
+      context:
+        default: "Include relevant historical events, regional boundary changes, and repository types."
+        multiline: true
+      challenges:
+        default: "Name Anglicization, missing census records, or language translation barriers."
+        multiline: true
+    label: "[Genealogy AI] Role-Task-Format-Limits Research Prompt Generator"
+    comment: "Full prompt-engineering framework tailored for genealogy queries."
+    search_terms:
+      - genealogy
+      - prompt framework
+      - rtfl
+      - prompt engineering
+
+  - triggers:
+      - :gen-missing
+      - :gen-blindspots
+    form: |
+      Based on the research problem and data I have shared below, what additional challenges, historical events, record types, repository archives, or research strategies should I consider? What blind spots am I overlooking?
+
+      Research Context:
+      [[research_context]]
+    form_fields:
+      research_context:
+        multiline: true
+    label: "[Genealogy AI] 'What Am I Missing?' Blindspot Detector"
+    comment: "Prompts AI to surface overlooked archives, historical events, and alternative strategies."
+    search_terms:
+      - genealogy
+      - blindspots
+      - what am i missing
+      - analysis
+
+  - triggers:
+      - :gen-decisions
+      - :gen-forks
+    form: |
+      Review my current genealogy research status below. Identify the key decision points and research crossroads. Explain what additional pieces of evidence or documentation would help determine the best path forward at each fork.
+
+      Current Research Status:
+      [[research_status]]
+    form_fields:
+      research_status:
+        multiline: true
+    label: "[Genealogy AI] Research Decision Points & Crossroads Evaluator"
+    comment: "Identifies strategic decision forks in genealogical inquiry."
+    search_terms:
+      - genealogy
+      - decision points
+      - crossroads
+      - strategy
+
+  - triggers:
+      - :gen-brickwall
+      - :gen-wall
+    form: |
+      I am stuck on [[ancestor_name]], born around [[birth_year]] in [[birth_place]].
+
+      Walk me through:
+      1. Exactly what primary and secondary records might exist for this person in this location and era.
+      2. Which specific archives, civil registries, church books, or websites hold each record set.
+      3. The precise search terms, Boolean queries, and spelling variations/aliases I should try.
+      4. Workarounds if records were destroyed (courthouse fires, wars, lost registers).
+    form_fields:
+      ancestor_name:
+        default: ""
+      birth_year:
+        default: ""
+      birth_place:
+        default: ""
+    label: "[Genealogy AI] Brick-Wall Breaker"
+    comment: "Systematic investigation guide for difficult or missing ancestors."
+    search_terms:
+      - genealogy
+      - brickwall
+      - stuck
+      - records
+      - archives
+
+  - triggers:
+      - :gen-audit
+      - :gen-verify
+    replace: |
+      Audit every claim and name in our conversation so far. List every person, date, and connection you have mentioned, and mark each strictly as:
+      - [CONFIRMED]: Verified with an exact primary/secondary source citation or link.
+      - [UNVERIFIED / LEAD]: Hypothesis, plausible name match, or deduction requiring manual record verification.
+
+      Do not accept assumptions as facts. Flag any potential surname collisions or false-positive matches.
+    label: "[Genealogy AI] Fact-Check & Verification Audit"
+    comment: "Audits AI output to separate verified sources from speculative leads."
+    search_terms:
+      - genealogy
+      - audit
+      - verification
+      - fact check
+
+  - triggers:
+      - :gen-outreach
+      - :gen-contact
+    form: |
+      Draft a short, warm, and low-pressure message to a potential relative I discovered through genealogy research.
+
+      Details:
+      - My Name: [[my_name]]
+      - Potential Relative's Name: [[relative_name]]
+      - Believed Connection: [[connection_details]] (e.g., shared ancestor, surname line, or location)
+      - Key Question to Ask: [[single_question]]
+
+      Tone: Friendly, respectful, not overwhelming, no walls of text.
+    form_fields:
+      my_name:
+        default: ""
+      relative_name:
+        default: ""
+      connection_details:
+        default: ""
+        multiline: true
+      single_question:
+        default: "if their family branch originated from the same region"
+    label: "[Genealogy AI] First-Contact Message to Potential Relatives"
+    comment: "Drafts a gentle, friendly outreach message to newly discovered family contacts."
+    search_terms:
+      - genealogy
+      - outreach
+      - message
+      - relative contact
+
+  - triggers:
+      - :gen-improve
+      - :gen-prompt
+    form: |
+      Please improve the following genealogy prompt. Suggest additional historical context, potential record challenges, geographical considerations, and decision points that would produce a much more accurate and thorough response:
+
+      Original Prompt:
+      [[original_prompt]]
+    form_fields:
+      original_prompt:
+        multiline: true
+    label: "[Genealogy AI] Genealogy Prompt Optimizer & Enhancer"
+    comment: "Improves a prompt by injecting genealogical context, obstacles, and decision points."
+    search_terms:
+      - genealogy
+      - prompt optimizer
+      - prompt engineering
+      - improve
+
+  # ============================================================================
+  # 4. SPECIALIZED TREE STRUCTURES & ANALYSIS
+  # ============================================================================
+  - triggers:
+      - :gen-dynasty
+      - :gen-history-tree
+    form: |
+      Create a detailed family tree of the [[family_name]] family, tracing various generations and including significant members along with their contributions or achievements. Ensure to provide context for each individual, highlighting their roles in history and other relevant information surrounding their lives. Include how they are related to one another and any key historical events they were associated with.
+
+      Requirements:
+      1. Start with the earliest known ancestor and work down to the most recent generations.
+      2. Include at least [[generation_count]] generations, if possible.
+      3. Highlight notable achievements, offices, or historical significance.
+      4. Use a clear hierarchical structure to represent relationships.
+
+      # Output Format
+      - Visual textual outline with clearly labeled names, titles, dates, and contributions.
+      - A summary paragraph encapsulating the overall historical significance of the family.
+    form_fields:
+      family_name:
+        default: "Scipio"
+      generation_count:
+        default: "5"
+    label: "[Genealogy AI] Historical Dynastic Lineage Tree"
+    comment: "Generates a structured genealogical breakdown for historic dynasties and prominent lineages."
+    search_terms:
+      - genealogy
+      - dynasty
+      - history
+      - roman
+      - nobility
+
+  - triggers:
+      - :gen-biblical
+      - :gen-ancient-tree
+    form: |
+      Create a detailed family tree for [[root_figure]], including descendants and significant historical/biblical figures. Organize the information chronologically and structure it clearly, showing generations and relationships. Specify each individual's name, relation to the root ancestor, and any relevant stories or attributes associated with them.
+
+      - Begin with [[root_figure]] as the first generation.
+      - Detail key descendants and branching lines.
+      - Highlight significant historical figures, providing narrative context.
+      - Ensure the tree accurately reflects the lineage.
+
+      # Output Format
+      Hierarchical indented tree with generation markers and narrative notes.
+    form_fields:
+      root_figure:
+        default: "Adam and Eve"
+    label: "[Genealogy AI] Ancient / Biblical Chronological Lineage Tree"
+    comment: "Builds a chronological branching tree for ancient, mythological, or biblical lineages."
+    search_terms:
+      - genealogy
+      - biblical
+      - ancient
+      - adam and eve
+
+  - trigger: :gen-cladogram
+    form: |
+      Create a detailed cladogram that illustrates the relationships among family members, starting from the common ancestor represented by [[common_ancestor]].
+
+      Use clear branching points to demonstrate how descendants relate to each other through these common ancestors.
+
+      Steps:
+      1. Identify [[common_ancestor]] as the root of the cladogram.
+      2. Branch out to children (Generation 1).
+      3. Branch out further to grandchildren (Generation 2) and subsequent generations.
+      4. Ensure all connections clearly represent direct lineage.
+
+      Output Format:
+      Provide a clean ASCII tree diagram (using ├── and └── characters) or indented hierarchy.
+    form_fields:
+      common_ancestor:
+        default: "the grandparents"
+    label: "[Genealogy AI] Family Cladogram (ASCII Evolutionary Branch Chart)"
+    comment: "Produces clean ASCII cladogram / tree diagrams from a common ancestor."
+    search_terms:
+      - genealogy
+      - cladogram
+      - ascii tree
+      - diagram
+
+  - trigger: :gen-json-analyst
+    replace: |
+      You are given a deeply nested family genealogy represented as a hierarchical JSON object, where each family or individual node has an "id" and may include a "children" array containing its descendants.
+
+      Your task is to analyze and interpret this detailed family tree structure effectively. When responding to queries about this family tree, follow these guidelines:
+
+      1. **Understand the hierarchy:** Recognize parent-child relationships and trace lineages accurately.
+      2. **Navigate nested children:** Be capable of exploring multiple levels of descendants and ancestors.
+      3. **Provide clear explanations:** When asked about any individual or branch, summarize their place in the genealogical hierarchy with clarity.
+      4. **Maintain factual accuracy:** Base your responses strictly on the provided genealogy without assumptions.
+
+      # Steps
+      - Parse the JSON structure carefully to identify each family member and their descendants.
+      - For any request related to a particular ID or name, locate the node and trace its connections both ancestors and descendants as needed.
+      - Summarize findings in a structured and clear manner that reflects the family relationships and hierarchy.
+
+      # Output Format
+      Provide responses in a clear textual format describing the requested family relationships, using the names and IDs as given. Include hierarchical paths or lineage details if relevant to the query. Avoid code or JSON output unless specifically requested.
+    label: "[Genealogy AI] Nested JSON Genealogy Parser & Tree Traversal Analyst"
+    comment: "System instructions for an AI agent to parse and query hierarchical JSON genealogy trees."
+    search_terms:
+      - genealogy
+      - json
+      - hierarchy
+      - system prompt
+      - parser
+
+  - trigger: :gen-web-analyst
+    replace: |
+      You are an expert web developer and genealogical data architect. Your task is to analyze, debug, or generate family tree web applications and interactive HTML documents.
+
+      When working with family webpage code:
+      1. **Document Structure:** Parse header, interactive member cards, tree hierarchy nodes, popups, and multimedia elements.
+      2. **Responsive Styling:** Analyze CSS flexbox/grid layouts, animations, and media queries for mobile/desktop.
+      3. **Interactivity:** Inspect modal profiles, expandable tree branches, audio narration, and navigation.
+      4. **Output:** Provide clean, semantic, and accessible HTML5/CSS3/JavaScript components tailored for family archives and interactive trees.
+    label: "[Genealogy AI] Interactive Family Webpage & Tree UI Developer"
+    comment: "Prompt for developing and analyzing interactive family tree web components and HTML pages."
+    search_terms:
+      - genealogy
+      - web development
+      - html
+      - ui
+      - interactive tree
+
+  - trigger: :gen-brandcestry
+    form: |
+      Create an interactive family tree visualization that highlights [[region_or_industry]] brands and their parent ("mother") companies (similar to Brandcestry). The family tree should clearly depict individual brands and visually connect them to their respective parent companies, emphasizing hierarchical relationships.
+
+      Requirements:
+      - Focus on [[region_or_industry]] brands and parent corporations.
+      - Differentiate parent companies from subsidiary brands through layout or styling.
+      - Include interactive specifications (clickable nodes or expandable branches).
+      - Ensure all brand ownership hierarchies are accurate.
+      - Provide accompanying textual summaries or tooltips explaining each corporate connection.
+
+      # Output Format
+      Provide a detailed specification document or code snippet outlining how to structure the interactive brand hierarchy visualization.
+    form_fields:
+      region_or_industry:
+        default: "New Zealand (NZ) and Australian"
+    label: "[Genealogy AI] Corporate Brand Lineage & Subsidiary Tree (Brandcestry)"
+    comment: "Builds a hierarchical parent-subsidiary brand ancestry tree specification."
+    search_terms:
+      - genealogy
+      - brandcestry
+      - corporate tree
+      - business hierarchy

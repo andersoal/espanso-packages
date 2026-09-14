@@ -46,7 +46,7 @@ matches:
       - utils
   - trigger: :gbp
     replace: £
-    label: "[Utils] Gbp"
+    label: "[Utils] British Pound Currency Symbol (£)"
     comment: £
     search_terms:
       - utils
@@ -58,13 +58,13 @@ matches:
       - utils
   - trigger: :jpy
     replace: ¥
-    label: "[Utils] Jpy"
+    label: "[Utils] Japanese Yen Currency Symbol (¥)"
     comment: ¥
     search_terms:
       - utils
   - trigger: :inr
     replace: ₹
-    label: "[Utils] Inr"
+    label: "[Utils] Indian Rupee Currency Symbol (₹)"
     comment: ₹
     search_terms:
       - utils
@@ -177,57 +177,57 @@ matches:
   - trigger: :-
     replace: -$|$-
     word: true
-    label: "[Utils] "
+    label: "[Utils] Hyphen / Dash Pair (-|-)"
     comment: -$|$-
     search_terms:
       - utils
   - trigger: :hr
     replace: <hr />
-    label: "[Utils] HTML Horizontal Rule"
+    label: "[Utils] HTML Horizontal Rule (<hr />)"
     comment: <hr />
     search_terms:
       - utils
   - trigger: :br
     replace: <br />
     word: true
-    label: "[Utils] Br"
+    label: "[Utils] HTML Line Break (<br />)"
     comment: <br />
     search_terms:
       - utils
   - trigger: :div
     replace: <div>$|$</div>
-    label: "[Utils] <Div>$|$</Div>"
+    label: "[Utils] HTML Div Container (<div>...</div>)"
     comment: <div>$|$</div>
     search_terms:
       - utils
   - trigger: :span
     replace: <span>$|$</span>
-    label: "[Utils] <Span>$|$</Span>"
+    label: "[Utils] HTML Inline Span (<span>...</span>)"
     comment: <span>$|$</span>
     search_terms:
       - utils
   - trigger: :h1
     replace: <h1>$|$</h1>
-    label: "[Utils] <H1>$|$</H1>"
+    label: "[Utils] HTML Heading 1 (<h1>...</h1>)"
     comment: <h1>$|$</h1>
     search_terms:
       - utils
   - trigger: :h2
     replace: <h2>$|$</h2>
-    label: "[Utils] <H2>$|$</H2>"
+    label: "[Utils] HTML Heading 2 (<h2>...</h2>)"
     comment: <h2>$|$</h2>
     search_terms:
       - utils
   - trigger: :h3
     replace: <h3>$|$</h3>
-    label: "[Utils] <H3>$|$</H3>"
+    label: "[Utils] HTML Heading 3 (<h3>...</h3>)"
     comment: <h3>$|$</h3>
     search_terms:
       - utils
   - trigger: :para
     replace: <p>$|$</p>
     word: true
-    label: "[Utils] Para"
+    label: "[Utils] HTML Paragraph (<p>...</p>)"
     comment: <p>$|$</p>
     search_terms:
       - utils
@@ -243,7 +243,7 @@ matches:
             Tag Name: [[element]]
 
             "
-    label: "[Utils] Tag"
+    label: "[Utils] Custom HTML Tag Pair (<tag>...</tag>)"
     comment: <{{html.element}}>$|$</{{html.element}}>
     search_terms:
       - utils
@@ -277,7 +277,7 @@ matches:
         type: date
         params:
           format: "%B %Y"
-    label: "[Utils] Month {{date}} format %B %Y"
+    label: "[Utils] Current Month & Year (Month YYYY)"
     comment: "{{date}}"
     search_terms:
       - utils
@@ -299,7 +299,7 @@ matches:
             - "|ᵔ‿ᵔ|"
             - ⤜(*﹏*)⤏
             - ツ
-    label: "[Utils] Smileys"
+    label: "[Utils] Kaomoji Emoticon Selector (Lenny Face ( ͡° ͜ʖ ͡°))"
     comment: "{{smileys}}"
     search_terms:
       - utils
@@ -326,7 +326,7 @@ matches:
             - https://aliciasykes.com
             - https://jamescarter.dev
             - https://you.com
-    label: "[Utils] Licensed Under Mit X11, ©"
+    label: "[Utils] MIT License One-Liner (Short Copyright Notice)"
     comment: "Licensed under MIT X11, © {{name}} {{year}}: {{url}}"
     search_terms:
       - utils
@@ -338,7 +338,7 @@ matches:
         params:
           shell: cmd
           cmd: curl.exe 'https://gist.githubusercontent.com/Lissy93/143d2ee01ccc5c052a17/raw/a8ac96cd15847a231931b561d95d2de47066fd33/LICENSE.MD'
-    label: "[Utils] Mit Long"
+    label: "[Utils] MIT License Full Text (Complete Legal Notice)"
     comment: "{{output}}"
     search_terms:
       - utils
@@ -359,13 +359,13 @@ matches:
             - Tom Wilson
             - James Carter
             - Me
-    label: "[Utils] Kind Regards,"
+    label: "[Utils] Email Sign-off (Kind Regards & Name)"
     comment: Kind Regards,
     search_terms:
       - utils
   - trigger: :commit
     replace: git commit -m "$|$"
-    label: '[Utils] Git Commit -M "$|$'
+    label: '[Utils] Git Commit Command (git commit -m "$|$")'
     comment: git commit -m "$|$
     search_terms:
       - utils
@@ -377,7 +377,7 @@ matches:
         params:
           shell: cmd
           cmd: curl.exe -s whatthecommit.com/index.txt
-    label: "[Utils] What the commit"
+    label: "[Utils] Random Git Commit Message (whatthecommit.com)"
     comment: "{{output}}"
     search_terms:
       - utils
@@ -401,7 +401,7 @@ matches:
         type: shell
         params:
           cmd: lesspass $ESPANSO_PARAMS_SITE $ESPANSO_PARAMS_LOGIN $ESPANSO_PARAMS_PASS
-    label: "[Utils] Pass"
+    label: "[Utils] Deterministic Password Generator (LessPass Form)"
     comment: "{{lesspass}}"
     search_terms:
       - utils
@@ -753,7 +753,7 @@ matches:
         params:
           shell: cmd
           cmd: python %CONFIG%\match\packages\utils\scripts\fake.py {{module}}
-    label: "[Utils] Faker"
+    label: "[Utils] Fake Test Data Generator (Names, Addresses & Numbers)"
     comment: "{{output}}"
     search_terms:
       - utils

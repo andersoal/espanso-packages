@@ -54,7 +54,7 @@ matches:
         type: date
         params:
           format: '%Y-%m-%d %H:%M:%S'
-    label: '[Example] Datetime'
+    label: '[Example] Current Datetime (YYYY-MM-DD HH:MM:SS)'
     comment: DateTime from Example Package!
     search_terms:
       - _example-package

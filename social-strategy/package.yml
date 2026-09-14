@@ -365,7 +365,7 @@ matches:
     form_fields:
       niche:
         multiline: true
-    label: "[Social Strategy] Create A Viral Content Strategy For"
+    label: "[Social Strategy] Viral Content Strategy (Platform Matrix & Hook Bank)"
     comment: "Create a viral content strategy for: ."
     search_terms:
       - social-strategy
@@ -401,7 +401,7 @@ matches:
     form_fields:
       niche:
         multiline: true
-    label: "[Social Strategy] Analyze The Top 5 Competitors In , Be Specific"
+    label: "[Social Strategy] Competitor Teardown (Moats, Weaknesses & White Spaces)"
     comment: Analyze the top 5 competitors in , be specific.
     search_terms:
       - social-strategy
@@ -472,7 +472,7 @@ matches:
       goals:
         type: text
         default: Build a scalable brand and drive organic engine inbound leads
-    label: "[Social Strategy] Act Like A Youtube Growth Strategist"
+    label: "[Social Strategy] YouTube Channel Strategist (Positioning & 1K Sub Roadmap)"
     comment: Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
     search_terms:
       - social-strategy
@@ -482,8 +482,9 @@ matches:
     replace:
       "Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, competitor analysis, and audience interest patterns.
 
+
       "
-    label: "[Social Strategy] Niche Audience & Frustration Profiler"
+    label: "[Social Strategy] YouTube Video Ideas (20 High-CTR Viral Concepts)"
     comment: Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, compe
     search_terms:
       - social-strategy
@@ -526,7 +527,7 @@ matches:
       your_name:
         type: text
         default: Founder
-    label: "[Social Strategy] Aipitch"
+    label: "[Social Strategy] AI Agency Cold Pitch (15-Minute Discovery Call Hook)"
     comment: Hi ,
     search_terms:
       - social-strategy
@@ -552,7 +553,7 @@ matches:
       7. AI Mini Product Studio (Lean, micro-SaaS tools)
 
       "
-    label: "[Social Strategy] Our Ai Studio Offerings"
+    label: "[Social Strategy] AI Agency Services Menu (7 Modular Studio Offerings)"
     comment: "Our AI Studio Offerings:"
     search_terms:
       - social-strategy
@@ -593,7 +594,7 @@ matches:
           - Fixed Project Milestone Basis
           - Monthly Recurring Retainer Contract
           - Per-Session / Hourly Advisory Rate
-    label: "[Social Strategy] Statement of Work: [[project_focus]]"
+    label: "[Social Strategy] Statement of Work (SOW Phases, Deliverables & Pricing)"
     comment: "### Statement of Work:"
     search_terms:
       - social-strategy
@@ -604,7 +605,7 @@ matches:
       "Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selection Advisory session booked for next week to map out where you're leaking margins.
 
       "
-    label: "[Social Strategy] Consult    P Client"
+    label: "[Social Strategy] AI Advisory Invitation (Regex Client Operational Stack)"
     comment: Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selecti
     search_terms:
       - social-strategy
@@ -632,7 +633,7 @@ matches:
       student_name:
         type: text
         default: there
-    label: "[Social Strategy] Academy"
+    label: "[Social Strategy] Corporate AI Academy (Curriculum Recommendation & Syllabus)"
     comment: Hi ,
     search_terms:
       - social-strategy
@@ -665,7 +666,7 @@ matches:
           - ₹1,500,000 (Base Tier Integration)
           - ₹4,500,000 (Mid-Market Scale)
           - ₹8,000,000 (Enterprise Custom Architecture)
-    label: "[Social Strategy] Proposed Integration: [[system_architecture]]"
+    label: "[Social Strategy] Enterprise Systems Integration (Zero-Touch Architecture Proposal)"
     comment: "### Proposed Integration:"
     search_terms:
       - social-strategy
@@ -687,7 +688,7 @@ matches:
           - Video Script Production & Audio Show Notes
           - AI Product Photography & Short Form Video Ads
           - Brand Identity Design & Visual Brand Systems
-    label: "[Social Strategy] Studio"
+    label: "[Social Strategy] Turnkey Creative Studio (Asset Production Proposal)"
     comment: We can lock down your request for  under our asset production umbrella. We deliver these assets at a fraction of standar
     search_terms:
       - social-strategy

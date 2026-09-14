@@ -98,7 +98,7 @@ matches:
       -> Proprietary Distribution: Building structural channels that competitors cannot easily buy or replicate.
       -> Network Effects: Designing systems where each new node inherently adds systemic value to the platform.
       -> Positioning & Defensibility: Becoming the structural standard so competing becomes economically irrational.
-    label: '[Finance] Construct An Unassailable Strategic Moat Within This Space'
+    label: '[Finance] Strategic Moat Architecture (Defensibility & Network Effects)'
     comment: 'Construct an unassailable strategic moat within this space:'
     search_terms:
       - finance
@@ -111,7 +111,7 @@ matches:
       -> Which structural mistakes, overhead costs, or single points of failure will inflict the largest financial toll?
       -> What operational inefficiencies or lack of scaling engines must be corrected immediately?
       Do not pad the response. Give a direct, clinical, and data-driven critique.
-    label: '[Finance] W Projection'
+    label: '[Finance] Forensic Financial Audit (3-Year Wealth Trajectory & Risk Scenarios)'
     comment: Execute an aggressive 3-year forensic financial audit on current operational trajectories.
     search_terms:
       - finance
@@ -123,7 +123,7 @@ matches:
       -> Asymmetric Speed: When to deploy aggressive, messy execution to secure a market position.
       -> Absolute Defusal: When to ruthlessly reject opportunities that distract from the core engine.
       -> Risk Mitigation: How to construct systemic safety nets to shield the core business when executing high-risk experiments.
-    label: '[Finance] W Decision'
+    label: '[Finance] High-Stakes Decision Logic (Asymmetric Velocity & Risk Defusal)'
     comment: 'Deconstruct high-velocity, high-stakes decision logic and apply it to this scenario:'
     search_terms:
       - finance

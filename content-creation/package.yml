@@ -87,7 +87,7 @@ matches:
       niche:
         type: text
         default: Solopreneurship
-    label: "[Content Creation] Ccideas"
+    label: "[Content Creation] Content Idea Generator (50 Audience-Targeted Ideas)"
     comment: Act as a creative content strategist known for generating endless ideas. Based on my niche , generate 50 highly relevant
     search_terms:
       - content-creation
@@ -99,7 +99,7 @@ matches:
     form_fields:
       audience_desc:
         type: multiline
-    label: "[Content Creation] Ccaudience"
+    label: "[Content Creation] Target Audience Profiler (Pains, Desires & Language)"
     comment: Analyze my target audience  and identify their biggest problems, interests, fears, desires. Use this information to guid
     search_terms:
       - content-creation
@@ -111,7 +111,7 @@ matches:
     form_fields:
       topic:
         type: text
-    label: "[Content Creation] Generate Powerful Hooks For Content Related To My Topic"
+    label: "[Content Creation] Attention-Grabbing Hooks (Scroll-Stopping Topic Openers)"
     comment: Generate powerful Hooks for content related to my topic . Ensure the hooks are attention-grabbing and designed to make v
     search_terms:
       - content-creation
@@ -123,7 +123,7 @@ matches:
     form_fields:
       topic:
         type: text
-    label: "[Content Creation] Ccbuild"
+    label: "[Content Creation] Structured Content Builder (Beginning, Core Points & Conclusion)"
     comment: Create structured content for the topic  that includes a clear beginning, main points, and conclusion. Ensure the conten
     search_terms:
       - content-creation
@@ -141,7 +141,7 @@ matches:
     vars:
       - name: copied_text
         type: clipboard
-    label: "[Content Creation] Take This Existing Content"
+    label: "[Content Creation] Content Repurposing Engine (Multi-Platform Variation Generator)"
     comment: "Take this existing content:"
     search_terms:
       - content-creation
@@ -163,7 +163,7 @@ matches:
           - Ultra HD 4K
           - Ultra HD 8K
           - Full HD (1080p)
-    label: "[Content Creation] Photorest"
+    label: "[Content Creation] Period Photo Restoration (Scratch Removal & Upscaling)"
     comment: Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as . First, anal
     search_terms:
       - content-creation
@@ -172,7 +172,7 @@ matches:
   - trigger: :prmonolith
     replace: |
       Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, damage, fading, scratches, tears, folds, worn-out areas, or being in black and white. First, analyze the image to identify the approximate era and original photographic process to ensure a historically accurate restoration. Make it look fresh and clear by gently sharpening soft edges and facial features without overdoing it, smoothing out grainy spots or noise if present, and reconstructing missing parts with realistic textures that match the original. If colors are faded or absent, bring them back naturally and vibrantly but true to the era's photographic technology without looking artificial; balance colors to match natural lighting, adjust brightness and contrast so everything pops nicely, and maintain original tonality. Add subtle details to faces, objects, or backgrounds that might have been lost, like fine lines in clothing, lifelike skin textures, or small elements in the scenery, while keeping the overall feel authentic, preserving natural grain patterns, and not changing the composition. Ensure the whole image is balanced, with no harsh shadows or washed-out areas, remove technical defects while respecting the nostalgic charm and exposure qualities of the time. Finally, upscale it to a higher resolution like Full HD 32k for better clarity, outputting in a photo-realistic style that looks like a professionally restored or recent high-quality photo.
-    label: "[Content Creation] Prmonolith"
+    label: "[Content Creation] Deep Photo Restoration (Headless Color & Grain Recovery)"
     comment: Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, dam
     search_terms:
       - content-creation
@@ -180,7 +180,7 @@ matches:
 
   - trigger: :srps
     replace: Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture. Intelligent smoothing while preserving natural pores and realistic texture without a plastic skin effect. Preserved original skin tone and undertone, balanced lighting, refined contrast, high-end beauty editorial finish, clean cinematic execution.
-    label: "[Content Creation] Srps"
+    label: "[Content Creation] Skin Retouching Prompt (Natural Texture & Blemish Removal)"
     comment: Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture
     search_terms:
       - content-creation
@@ -208,7 +208,7 @@ matches:
                 - eyes, eyebrows, eyelashes, beard, and hair
                 - eyes, eyebrows, eyelashes, and hair
                 - eyes, eyebrows, and facial features
-    label: "[Content Creation] Srf"
+    label: "[Content Creation] Skin Retouching Form (Subject & Detail Preservation Settings)"
     comment: Professional skin retouching for a {{form.subject}}, advanced imperfection correction, eliminating acne and irregular sk
     search_terms:
       - content-creation
@@ -221,7 +221,7 @@ matches:
       Details: Recover natural skin pores, fine lines, individual hair strands, eyelashes, and precise fabric weave textures. Clean, stable edges with sharp, realistic rendering.
       Lighting & Color: Retain original color science, white balance, lighting direction, intensity, and shadow behavior with expanded dynamic range.
       Negative Constraints: Remove compression artifacts, noise, and grain. Avoid smoothing, plastic skin, artificial gloss, warping, facial drift, or hallucinated details.
-    label: "[Content Creation] Up4K"
+    label: "[Content Creation] 4K Photorealistic Upscaler (High-Frequency Microtexture Polish)"
     comment: 4K photorealistic upscale and high-frequency detail reconstruction.
     search_terms:
       - content-creation
@@ -255,7 +255,7 @@ matches:
           - soft natural lighting
           - dramatic studio lighting
           - high-end commercial lighting
-    label: "[Content Creation] Pstudio"
+    label: "[Content Creation] Luxury Product Photography (Commercial Studio Lighting Form)"
     comment: ", premium product photography, luxury advertising, elegant lighting with , subtle reflections on surface, high-end comme"
     search_terms:
       - content-creation
@@ -263,7 +263,7 @@ matches:
 
   - regex: :ps\((?P<subject>.*)\)
     replace: "{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality."
-    label: "[Content Creation] Ps    P Subject"
+    label: "[Content Creation] Studio Product Photography (Regex Subject Capture)"
     comment: "{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections"
     search_terms:
       - content-creation
@@ -271,7 +271,7 @@ matches:
 
   - trigger: :rawstudio
     replace: Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.
-    label: "[Content Creation] Rawstudio"
+    label: "[Content Creation] Raw Studio Lighting Setup (Black Backdrop & Surface Reflection)"
     comment: "Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, "
     search_terms:
       - content-creation
@@ -294,7 +294,7 @@ matches:
           - product design, branding geometry, texture, or shape
           - landscape elements, architectural structures, or perspective
           - original subject matter and core details
-    label: "[Content Creation] Imgclean"
+    label: "[Content Creation] Background Cleaner & Element Remover (Composition Preserver)"
     comment: "Keep the image background and core composition exactly as is. Remove only the following elements: ."
     search_terms:
       - content-creation
@@ -302,7 +302,7 @@ matches:
 
   - regex: :ic\((?P<elements>.*)\)
     replace: "Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT RULE: Do not modify, hallucinate, or alter the original subject matter and core details. Preserve the original pixels, lighting, color palette, and quality completely."
-    label: "[Content Creation] Ic    P Elements"
+    label: "[Content Creation] Background Cleaner (Regex Element Capture)"
     comment: "Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT R"
     search_terms:
       - content-creation
@@ -331,7 +331,7 @@ matches:
           - "refined makeup, sharp eyeliner, crisp cosmetic details, "
           - "natural character lines, authentic skin maturity, "
           - ""
-    label: "[Content Creation] Retouch"
+    label: "[Content Creation] Editorial Portrait Retouching (Pore Preservation & Upscaling)"
     comment: Professional skin retouching with premium sharpness, advanced imperfection correction; eliminates pimples, acne, blackhe
     search_terms:
       - content-creation
@@ -353,7 +353,7 @@ matches:
       bg_details:
         type: text
         default: architecture, lighting, shadows, and depth
-    label: "[Content Creation] Remove All  In The Background Of The Uploaded Image"
+    label: "[Content Creation] Background Object Removal (Preserve Main Subject Exactly)"
     comment: Remove all  in the background of the uploaded image. Preserve the  exactly. Do not change the subject's . Reconstruct th
     search_terms:
       - content-creation
@@ -453,7 +453,7 @@ matches:
           - dramatic textured depth
           - clean professional definition
         default: high-detail scale
-    label: "[Content Creation] Portrait"
+    label: "[Content Creation] Cinematic Portrait Rig (Custom Lighting, Atmosphere & Scale)"
     comment: ", fully preserving every original detail of the photo without changes, except for the lighting and the . Enhance  the ba"
     search_terms:
       - content-creation
@@ -579,7 +579,7 @@ matches:
           - photo taken with natural tones
           - photo taken with uniform tones
           - photo taken with uneven tones
-    label: "[Content Creation] Precise Correction Of Deficient Lighting"
+    label: "[Content Creation] Deficient Lighting Corrector (Shadow Balance & Color Cast Fix)"
     comment: Precise correction of deficient lighting. Preserve  and the essence of the scene.
     search_terms:
       - content-creation
@@ -609,7 +609,7 @@ matches:
       custom_focus:
         type: text
         default: ""
-    label: "[Content Creation] Correctchin"
+    label: "[Content Creation] Camera Angle & Perspective Fix (Jawline & Chin Distortion Correction)"
     comment: correct the unflattering camera angle in this uploaded photo, keeping the subject's face, features, identity, and the en
     search_terms:
       - content-creation
@@ -636,7 +636,7 @@ matches:
           - gaze direction
           - gaze looking directly at the camera
           - gaze matching their natural head positioning
-    label: "[Content Creation] Eyerescue"
+    label: "[Content Creation] Eye Rescue Inpainting (Natural Open Eyes Restoration)"
     comment: In the uploaded , identify  with closed or partially closed eyes and naturally open only the affected eyes. Match the ey
     search_terms:
       - content-creation
@@ -693,7 +693,7 @@ matches:
       mood:
         type: text
         default: ethereal, carefree, premium vacation editorial, Pinterest-core
-    label: "[Content Creation] Structured Recipe & Culinary Guide Formatter"
+    label: "[Content Creation] Dreamy Aesthetic Portrait Generator (Atmospheric Likeness Transformation)"
     comment: Transform the subject in this photo into a dreamy aesthetic  portrait while preserving their recognizable facial structu
     search_terms:
       - content-creation
@@ -701,7 +701,7 @@ matches:
 
   - trigger: :fixface
     replace: Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes, beard/hair, and age.
-    label: "[Content Creation] Fixface"
+    label: "[Content Creation] Facial Identity Preserver (Reference-Matched Realism)"
     comment: Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes
     search_terms:
       - content-creation
@@ -729,7 +729,7 @@ matches:
       </rules>
 
       <output>Skill Intersection -> 3 Business Models -> Validation Check -> Strongest Model -> Positioning Statement</output>
-    label: "[Content Creation] Prompt Idea"
+    label: "[Content Creation] Dan Koe Solo Business: Idea Extraction (Topic & Sub-Niches)"
     comment: <role>Act as a one-person business strategist who applies Dan Koe's philosophy of monetizing a single skill, interest, a
     search_terms:
       - content-creation
@@ -757,7 +757,7 @@ matches:
       </rules>
 
       <output>Transformation Definition -> Offer Structure -> Premium Price -> Delivery Method -> One-Paragraph Offer Description</output>
-    label: "[Content Creation] Prompt Offer"
+    label: "[Content Creation] Dan Koe Solo Business: Offer Architecture (High-Leverage Value)"
     comment: "<role>Act as an offer architect who builds irresistible one-person business offers using Dan Koe's principle of selling "
     search_terms:
       - content-creation
@@ -785,7 +785,7 @@ matches:
       </rules>
 
       <output>Core Thesis -> Content Expansion Map -> Cross-Platform System -> Weekly Schedule -> Authority Building Arc</output>
-    label: "[Content Creation] Prompt Content"
+    label: "[Content Creation] Dan Koe Solo Business: Content Flywheel (Pillars & Distribution)"
     comment: "<role>Act as a one-person content strategist who applies Dan Koe's content system of writing about one topic from every "
     search_terms:
       - content-creation
@@ -813,7 +813,7 @@ matches:
       </rules>
 
       <output>Customer Journey Map -> Lead Capture -> Nurture Sequence -> Conversion Mechanism -> Automated Sales Flow</output>
-    label: "[Content Creation] Prompt Sales"
+    label: "[Content Creation] Dan Koe Solo Business: Automated Sales Machine (Funnel Systems)"
     comment: <role>Act as a one-person sales system architect who builds automated pipelines that attract, nurture, and convert ideal
     search_terms:
       - content-creation
@@ -843,7 +843,7 @@ matches:
       </rules>
 
       <output>Time Audit -> Productization Plan -> Digital Product Design -> Passive Income Layer -> 12-Month Scaling Roadmap</output>
-    label: "[Content Creation] Prompt Scale"
+    label: "[Content Creation] Dan Koe Solo Business: Scaling Blueprint (Leverage & Operations)"
     comment: <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
     search_terms:
       - content-creation
@@ -884,7 +884,7 @@ matches:
         type: text
       time:
         type: text
-    label: "[Content Creation] Prompt Scale Fast"
+    label: "[Content Creation] Dan Koe Solo Business: Rapid Growth Protocols (Aggressive Velocity)"
     comment: <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
     search_terms:
       - content-creation

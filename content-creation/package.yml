@@ -1078,3 +1078,202 @@ matches:
     search_terms:
       - content-creation
       - content creation
+
+  # --- 10 Writing & Voice Refinement Prompts (@umohai) ---
+
+  - triggers:
+      - :kill-ai-voice
+      - :ai-voice-kill
+      - :humanize-voice
+    form: |
+      Rewrite this so it sounds like me, not like an assistant. Here is how I actually write:
+      [[writing_sample]]
+
+      Match my sentence length, my rhythm and my vocabulary. Do not add a single word I never use.
+    form_fields:
+      writing_sample:
+        multiline: true
+    label: "[Content Creation] Kill The AI Voice (Sample Mimicry)"
+    comment: Rewrites text to match your natural sentence length, cadence, and vocabulary using 3 reference paragraphs.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - tone
+      - voice
+      - humanize
+      - editing
+
+  - triggers:
+      - :cliche-pass
+      - :strip-cliches
+      - :anti-cliche
+    form: |
+      List every phrase in this draft that appears in thousands of other articles. Replace each one with something specific to my situation: [[context]].
+    form_fields:
+      context:
+        multiline: true
+    label: "[Content Creation] The Cliche Pass (Context Specificity)"
+    comment: Flags overused tropes and generic phrases, replacing them with context-specific phrasing.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - cliches
+      - editing
+      - specificity
+      - style
+
+  - triggers:
+      - :argue-back
+      - :make-it-argue
+      - :devils-advocate-draft
+    replace: |
+      Take the opposite position to what I just wrote and make the strongest possible case against it. Then tell me which of my points actually survive.
+    label: "[Content Creation] Make It Argue Back (Counter-Argument Stress Test)"
+    comment: Forces the model to adopt an adversarial position against your draft to test logical robustness.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - editing
+      - critique
+      - devils-advocate
+      - stress-test
+
+  - triggers:
+      - :force-specifics
+      - :concrete-examples
+      - :no-generalities
+    replace: |
+      Every time you make a general claim in this draft, replace it with a concrete number, name or example. If you do not have one, ask me for it instead of inventing it.
+    label: "[Content Creation] Force Specifics (Concrete Evidence)"
+    comment: Replaces abstract or generalized claims with concrete figures, names, and real-world examples without hallucinating.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - editing
+      - precision
+      - concrete
+      - examples
+
+  - triggers:
+      - :strip-hedging
+      - :remove-hedging
+      - :direct-voice
+    replace: |
+      Remove every hedge and softener from this. No might, no could, no perhaps, no it is important to note. Say the thing directly.
+    label: "[Content Creation] Strip The Hedging (Direct Assertion)"
+    comment: Removes weak modal verbs, qualifying filler, and timid tone to enforce direct, assertive writing.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - editing
+      - conciseness
+      - direct
+      - assertive
+
+  - triggers:
+      - :steal-structure
+      - :copy-skeleton
+      - :outline-mimic
+    form: |
+      Analyse the structure of this piece I admire:
+      [[admired_piece]]
+
+      Give me the skeleton as a numbered outline, then apply that exact skeleton to my topic: [[topic]]
+    form_fields:
+      admired_piece:
+        multiline: true
+      topic:
+        multiline: true
+    label: "[Content Creation] Steal A Structure (Outline Reverse Engineering)"
+    comment: Extracts structural outline from an admired article/essay and applies it to a target topic.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - structure
+      - outline
+      - framework
+      - reverse-engineer
+
+  - triggers:
+      - :five-whys
+      - :5-whys-writing
+      - :drill-down-why
+    form: |
+      I want to write about [[topic]]. Ask me why does that matter, five times in a row, waiting for my answer each time, until we reach the real point.
+    form_fields:
+      topic:
+        multiline: true
+    label: "[Content Creation] Five Whys (Find The Core Thesis)"
+    comment: Uses 5-Whys interrogation technique interactively to drill down to the core narrative thesis.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - brainstorming
+      - five-whys
+      - thesis
+      - clarity
+
+  - triggers:
+      - :write-bad-version
+      - :bad-version-first
+      - :boring-draft
+    replace: |
+      Write the most boring, obvious version of this first. Then tell me exactly what makes it boring, and write the version that fixes each thing you named.
+    label: "[Content Creation] Write The Bad Version (Flaw Contrast)"
+    comment: Generates the most predictable/boring draft first, diagnoses the weaknesses, then rewrites to fix them.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - drafting
+      - creativity
+      - refactor
+      - contrast
+
+  - triggers:
+      - :sceptical-reader
+      - :skeptical-reader
+      - :dropoff-audit
+    form: |
+      You are a sceptical [[target_audience]]. Read this and list every single place you would stop reading, and why you would stop there.
+    form_fields:
+      target_audience:
+        default: reader
+    label: "[Content Creation] The Sceptical Reader Audit (Drop-off Analysis)"
+    comment: Simulates a skeptical target persona to pinpoint drop-off friction points and loss of engagement.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - audience
+      - review
+      - friction
+      - skepticism
+
+  - triggers:
+      - :voice-lock
+      - :lock-voice
+      - :tone-enforce
+    form: |
+      For the rest of this chat, before every answer, restate my voice rules back to me in one line: [[rules]]. Then answer. If you drift, I will type voice and you reset.
+    form_fields:
+      rules:
+        multiline: true
+    label: "[Content Creation] Voice Lock (Tone & Style Guardrail)"
+    comment: Establishes a persistent voice constraint with a one-line restatement check and reset trigger.
+    search_terms:
+      - content-creation
+      - content creation
+      - writing
+      - system-prompt
+      - voice
+      - tone
+      - guardrails
+

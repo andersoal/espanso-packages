@@ -135,13 +135,13 @@ matches:
         type: text
       role:
         type: text
-    label: "[Career] Expert In Elite Corporate Communications"
+    label: "[Career] Recruiter Follow-Up (High-Impact Post-Application Message)"
     comment: Act as an expert in elite corporate communications.
     search_terms:
       - career
 
   - trigger: :pfix
-    label: "[Career] Form: paste resume"
+    label: "[Career] Resume Callback Optimizer (Interactive Form: Paste Resume)"
     form: |
       Here is my resume:
       [[resume]]
@@ -155,7 +155,7 @@ matches:
       - career
 
   - trigger: :pfix
-    label: "[Career] Headless: resume from master file"
+    label: "[Career] Resume Callback Optimizer (Headless: Master Resume File)"
     replace: |
       Here is my resume:
       {{resume}}
@@ -171,7 +171,7 @@ matches:
       - career
 
   - trigger: :pmatch
-    label: "[Career] Form: paste JD + resume"
+    label: "[Career] Job Match & Gap Closer (Interactive Form: Paste JD + Resume)"
     form: |
       Job description:
       [[jd]]
@@ -190,7 +190,7 @@ matches:
       - career
 
   - trigger: :pmatch
-    label: "[Career] Headless: JD from clipboard + master file"
+    label: "[Career] Job Match & Gap Closer (Headless: Clipboard JD + Master File)"
     replace: |
       Job description:
       {{jd}}
@@ -220,7 +220,7 @@ matches:
     form_fields:
       skills:
         type: multiline
-    label: "[Career] Based On My Experience And Skills"
+    label: "[Career] Hidden Role Discovery (10 High-Demand Career Paths)"
     comment: "Based on my experience and skills:"
     search_terms:
       - career
@@ -234,13 +234,13 @@ matches:
     form_fields:
       bullets:
         type: multiline
-    label: "[Career] Rewrite These Resume Bullet Points"
+    label: "[Career] Resume Bullet Polish (Results-Focused & 2-Line Compression)"
     comment: "Rewrite these resume bullet points:"
     search_terms:
       - career
 
   - trigger: :pcover
-    label: "[Career] Form: paste job description"
+    label: "[Career] Tailored Cover Letter (Interactive Form: Paste JD)"
     form: |
       Write a short, tailored cover letter for this role:
       [[jd]]
@@ -254,7 +254,7 @@ matches:
       - career
 
   - trigger: :pcover
-    label: "[Career] Headless: JD from clipboard"
+    label: "[Career] Tailored Cover Letter (Headless: JD from Clipboard)"
     replace: |
       Write a short, tailored cover letter for this role:
       {{jd}}
@@ -276,7 +276,7 @@ matches:
     form_fields:
       jd:
         type: multiline
-    label: "[Career] Phook"
+    label: "[Career] Recruiter Cold Outreach (High-Response LinkedIn/Email Hook)"
     comment: "Write a concise LinkedIn or email message to a recruiter for this role:"
     search_terms:
       - career
@@ -290,7 +290,7 @@ matches:
     form_fields:
       background:
         type: multiline
-    label: "[Career] Based On My Background And Target Roles"
+    label: "[Career] Job Application Strategy (Weekly Cadence & Follow-Up System)"
     comment: "Based on my background and target roles:"
     search_terms:
       - career
@@ -301,7 +301,7 @@ matches:
     vars:
       - name: clip
         type: clipboard
-    label: "[Career] Act As A Senior Hiring Manager And Career Strategist"
+    label: "[Career] Target Role Clarifier (Ideal Position & Market Demand Alignment)"
     comment: '"Act as a senior hiring manager and career strategist. Analyze my skills, experience, interests, constraints, and curren'
     search_terms:
       - career
@@ -317,7 +317,7 @@ matches:
     vars:
       - name: clip
         type: clipboard
-    label: "[Career] Act As A Senior Recruiter With Deep Ats Expertise"
+    label: "[Career] Role-Specific ATS Resume (Impact Metrics & Keyword Integration)"
     comment: '"Act as a senior recruiter with deep ATS expertise. Create a resume tailored specifically for my target role . Convert r'
     search_terms:
       - career
@@ -328,7 +328,7 @@ matches:
     vars:
       - name: clip
         type: clipboard
-    label: "[Career] Act As A Recruiter Who Sources Candidates Daily On Linkedin"
+    label: "[Career] LinkedIn Profile Overhaul (Headline, Summary & Recruiter Search)"
     comment: '"Act as a recruiter who sources candidates daily on LinkedIn. Rewrite my headline, summary, and experience so my value, '
     search_terms:
       - career
@@ -339,7 +339,7 @@ matches:
     vars:
       - name: clip
         type: clipboard
-    label: "[Career] Review My Resume Exactly As A Recruiter Would"
+    label: "[Career] Resume Rejection Audit (Weak Signals & Credibility Gap Fixes)"
     comment: '"Review my resume exactly as a recruiter would. Identify every reason it could be rejected, ignored, or misunderstood. H'
     search_terms:
       - career
@@ -479,7 +479,7 @@ matches:
   - trigger: :pcareer
     form: |
       I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
-    label: "[Career] I'M Feeling Stuck In My Career And Unsure Of My Direction"
+    label: "[Career] Career Direction Reset (10 Deep Questions & 90-Day Plan)"
     comment: "I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, "
     search_terms:
       - career
@@ -487,7 +487,7 @@ matches:
   - trigger: :p-decision
     replace: |
       “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, e.g. should I change jobs or stay?]. Ask 7 yes/no questions that filter step by step based on my priorities as you know them from our conversations. Make the outcomes super concrete, with clear actions (like ‘request this meeting,' ‘update your CV,' ‘plan a trial day'), not vague suggestions. Format it so I can screenshot it and reuse it anytime.”
-    label: "[Career] P Decision"
+    label: "[Career] Career Dilemma Decision Tree (7-Question Filter & Actionable Outcomes)"
     comment: "“Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, "
     search_terms:
       - career
@@ -495,7 +495,7 @@ matches:
   - trigger: :p-success
     replace: |
       “Based on my talents and character, what's the way I can be most successful and happy in my career and life?”
-    label: "[Career] P Success"
+    label: "[Career] Core Strengths Alignment (Talent, Character & Happiness Roadmap)"
     comment: “Based on my talents and character, what's the way I can be most successful and happy in my career and life?”
     search_terms:
       - career
@@ -522,7 +522,7 @@ matches:
       Output: Rewritten Headline → One-Screen About Section → Featured Section Audit
 
       Rewritten Experience Entries → 12-Second Conversion Verdict
-    label: "[Career] Profile As Lp"
+    label: "[Career] LinkedIn Profile Landing Page (Justin Welsh 12-Second Conversion)"
     comment: Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the h
     search_terms:
       - career
@@ -541,7 +541,7 @@ matches:
         type: text
       company:
         type: text
-    label: "[Career] Roleplay As A  At"
+    label: "[Career] Interactive Behavioral Mock Interview (Roleplay & Progressive Difficulty)"
     comment: Roleplay as a  at .
     search_terms:
       - career

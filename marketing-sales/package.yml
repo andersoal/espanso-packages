@@ -257,7 +257,7 @@ matches:
     form_fields:
       topic:
         type: text
-    label: "[Marketing & Sales] Generate Canva-Ready Graphic Ideas With Text Overlays For"
+    label: "[Marketing & Sales] Canva Graphic Generator (Text Overlays & Visual Themes)"
     comment: "'Generate Canva-ready graphic ideas with text overlays for .'"
     search_terms:
       - marketing-sales
@@ -281,7 +281,7 @@ matches:
     form_fields:
       niche:
         type: text
-    label: "[Marketing & Sales] Write Captions With A Mix Of Storytelling And Cta"
+    label: "[Marketing & Sales] Social Caption Writer (Storytelling & High-Conversion CTA)"
     comment: '"Write captions with a mix of storytelling and CTA. Add 5 to 7 high-quality, targeted, and trending hashtags for ."'
     search_terms:
       - marketing-sales
@@ -293,7 +293,7 @@ matches:
     form_fields:
       niche:
         type: text
-    label: "[Marketing & Sales] P Engagement"
+    label: "[Marketing & Sales] Audience Engagement Strategy (Conversation-Starter Tactics)"
     comment: '"Draft 15 comment replies that feel authentic, witty, and brand-aligned for ."'
     search_terms:
       - marketing-sales
@@ -311,7 +311,7 @@ matches:
           - Instagram
           - TikTok
           - YouTube Shorts
-    label: "[Marketing & Sales] P Schedule"
+    label: "[Marketing & Sales] Multi-Platform Posting Schedule (30-Day Strategic Cadence)"
     comment: '"Suggest the best posting schedule (times + frequency) for maximum reach on ."'
     search_terms:
       - marketing-sales
@@ -340,7 +340,7 @@ matches:
                 - "100"
                 - "250"
                 - "500"
-    label: "[Marketing & Sales] Here Are The Industries To Evaluate"
+    label: "[Marketing & Sales] Industry Evaluation & TAM Ranking (B2B Niche Scoring)"
     comment: "Here are the industries to evaluate:"
     search_terms:
       - marketing-sales
@@ -367,7 +367,7 @@ matches:
                 - customer support ticket routing
                 - outbound lead generation pipelines
                 - automated invoicing & financial collection
-    label: "[Marketing & Sales] I Help  Businesses Save Money By Installing A"
+    label: "[Marketing & Sales] Irresistible Agency Offer (B2B ROI & Transformation Positioning)"
     comment: "I help  businesses save money by installing A.I tools that handle {{form1.function}}. Build me a 3-tier offer: a $2,000 "
     search_terms:
       - marketing-sales
@@ -393,7 +393,7 @@ matches:
                 - "60"
                 - "90"
                 - "120"
-    label: "[Marketing & Sales] Write Me 5 Cold Email Variations For  Business Owners"
+    label: "[Marketing & Sales] Cold Outreach Sequences (5 Multi-Angle Email Variations)"
     comment: "Write me 5 cold email variations for  business owners. Lead with the cost of their current manual process. Offer to cut "
     search_terms:
       - marketing-sales
@@ -408,7 +408,7 @@ matches:
     vars:
       - name: objections_list
         type: clipboard
-    label: "[Marketing & Sales] Here Are The Most Common Objections I Hear On Sales Calls"
+    label: "[Marketing & Sales] Sales Objection Inversion (Bulletproof Reframing Scripts)"
     comment: "Here are the most common objections I hear on sales calls:"
     search_terms:
       - marketing-sales
@@ -424,7 +424,7 @@ matches:
           layout: |
             AI Tool Name: [[tool]]
             Client Niche: [[niche]]
-    label: "[Marketing & Sales] Ponboard"
+    label: "[Marketing & Sales] Client Onboarding Flow (Seamless Welcome & Integration Checklist)"
     comment: Build me a step-by-step client onboarding checklist for installing  for a  business. Include what I need from the client
     search_terms:
       - marketing-sales
@@ -440,7 +440,7 @@ matches:
           layout: |
             Installed Tool: [[tool]]
             Client Niche:    [[niche]]
-    label: "[Marketing & Sales] I Just Installed  For A  Client"
+    label: "[Marketing & Sales] Client Upsell & Expansion (Retention & Revenue Growth Proposals)"
     comment: "I just installed  for a  client. Based on their business type, what are 3 other A.I tools I could offer that would save "
     search_terms:
       - marketing-sales
@@ -466,7 +466,7 @@ matches:
             Deals Closed:     [[deals]]
             Weekly Revenue:   [[revenue]]
             Installs Finished: [[installs]]
-    label: "[Marketing & Sales] Here Are My Numbers This Week"
+    label: "[Marketing & Sales] CEO Weekly Metrics Audit (Outreach, Closes & Bottleneck Diagnosis)"
     comment: "Here are my numbers this week:"
     search_terms:
       - marketing-sales
@@ -503,7 +503,7 @@ matches:
       audience:
         type: text
         default: Professionals & Founders
-    label: "[Marketing & Sales] Hooks"
+    label: "[Marketing & Sales] Attention Hook Library (50 Viral Scroll-Stopping Templates)"
     comment: "Give me 20 scroll-stopping content hooks for my content on the topic of: ."
     search_terms:
       - marketing-sales
@@ -525,7 +525,7 @@ matches:
     form_fields:
       brief:
         type: multiline
-    label: "[Marketing & Sales] Abcopy"
+    label: "[Marketing & Sales] A/B Ad Copy Generator (Split-Test Headlines & Body Angles)"
     comment: Analyze the following core offering/brief and create 3 distinct high-performance ad copy variations.
     search_terms:
       - marketing-sales
@@ -533,7 +533,7 @@ matches:
 
   - regex: :hash\((?P<niche>.*)\)
     replace: "Find 30 optimized, high-intent hashtags for the following market sector: {{niche}}. Group the final output cleanly into broad, medium-density, and long-tail niche subcategories."
-    label: "[Marketing & Sales] Niche Audience & Frustration Profiler"
+    label: "[Marketing & Sales] Viral Hashtag Strategy (Tiered Reach & Community Tags)"
     comment: "Find 30 optimized, high-intent hashtags for the following market sector: {{niche}}. Group the final output cleanly into "
     search_terms:
       - marketing-sales
@@ -551,7 +551,7 @@ matches:
       role:
         type: text
         default: VP of Sales
-    label: "[Marketing & Sales] Lidm"
+    label: "[Marketing & Sales] LinkedIn DM Outreach (Permission-Based High-Conversion Inquiries)"
     comment: Draft a sequence of 5 initial connection messages and 3 strategic follow-up DMs based on the following input parameters.
     search_terms:
       - marketing-sales
@@ -567,7 +567,7 @@ matches:
     vars:
       - name: reviews
         type: clipboard
-    label: "[Marketing & Sales] Analyze The Following Competitor Customer Reviews"
+    label: "[Marketing & Sales] Competitor Review Mining (Customer Pain Points & Feature Gaps)"
     comment: Analyze the following competitor customer reviews. Extract recurring complaints, deep-seated frustrations, system bottle
     search_terms:
       - marketing-sales
@@ -575,7 +575,7 @@ matches:
 
   - regex: :palette\((?P<mood>.*)\)
     replace: Act as an expert UI/UX developer. Based on the target brand atmosphere of '{{mood}}', generate 5 cohesive digital color palettes. Provide hex codes, asset application rules, accessibility contrast compliance targets, and primary/secondary role definitions.
-    label: "[Marketing & Sales] Palette    P Mood"
+    label: "[Marketing & Sales] Brand Color Palette (HEX Codes & Mood Psychology)"
     comment: "Act as an expert UI/UX developer. Based on the target brand atmosphere of '{{mood}}', generate 5 cohesive digital color "
     search_terms:
       - marketing-sales
@@ -590,7 +590,7 @@ matches:
     vars:
       - name: clipboard_competitors
         type: clipboard
-    label: "[Marketing & Sales] Analyze The 5 Competitors Listed Below"
+    label: "[Marketing & Sales] Competitor Matrix Analysis (Pricing, Moats & Weaknesses)"
     comment: Analyze the 5 competitors listed below. Generate a structural feature markdown comparison sheet containing functional ma
     search_terms:
       - marketing-sales
@@ -636,7 +636,7 @@ matches:
       icp:
         type: text
         default: Enterprise CTOs navigating legacy migrations
-    label: "[Marketing & Sales] Brlang"
+    label: "[Marketing & Sales] Audience Language Extractor (Exact Slang, Tropes & Frustrations)"
     comment: "Using the audience analysis for , build a 3-part language library for my ICP:"
     search_terms:
       - marketing-sales
@@ -652,7 +652,7 @@ matches:
       outcomes:
         type: text
         default: Reduced engineering bottlenecks, predictable scale
-    label: "[Marketing & Sales] Help Me Develop Three To Five Content Pillars For"
+    label: "[Marketing & Sales] Brand Content Pillars (Authority, Relatability & Conversion Topics)"
     comment: Help me develop three to five content pillars for . Each pillar must be anchored to a specific belief or observation rat
     search_terms:
       - marketing-sales
@@ -667,7 +667,7 @@ matches:
     form_fields:
       samples:
         type: multiline
-    label: "[Marketing & Sales] Brvoice"
+    label: "[Marketing & Sales] Brand Voice & Tone Architecture (Rules, Cadence & Personality)"
     comment: "Analyse my writing samples provided below and build a voice profile: sentence structure, vocabulary, tone, openings/clos"
     search_terms:
       - marketing-sales
@@ -691,7 +691,7 @@ matches:
         type: text
       proof:
         type: text
-    label: "[Marketing & Sales] Brposition"
+    label: "[Marketing & Sales] Brand Positioning Matrix (Differentiated Category Design)"
     comment: "Write a 70-90 word, first-person positioning statement based on the following attributes:"
     search_terms:
       - marketing-sales
@@ -708,7 +708,7 @@ matches:
     form_fields:
       overview:
         type: multiline
-    label: "[Marketing & Sales] Broffer"
+    label: "[Marketing & Sales] Irresistible Offer Blueprint (Value Stacking & Guarantee)"
     comment: "Define your offer, audience, and competitors based on this overview: ."
     search_terms:
       - marketing-sales

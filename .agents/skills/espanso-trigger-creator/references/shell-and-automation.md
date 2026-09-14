@@ -14,6 +14,28 @@
 
 The `cmd` runs in the system shell; stdout becomes the var's value.
 
+## Shell Extension Parameters
+
+- `cmd` (string, required): The shell command or executable to execute.
+- `trim` (boolean, optional, default: `true`): Automatically strips leading and trailing whitespaces and newlines from command stdout. Highly recommended to prevent stray blank lines in replacements.
+- `shell` (string, optional): The shell to execute the command with. Common options:
+  - Windows: `powershell`, `cmd`, or `wsl`
+  - macOS/Linux: `bash`, `sh`
+- `debug` (boolean, optional): When `true`, logs the executed command, exit code, and stdout/stderr in Espanso's logs (`espanso log`).
+
+Example specifying shell and trim:
+```yaml
+- trigger: ":branch"
+  replace: "Current git branch: {{branch}}"
+  vars:
+    - name: branch
+      type: shell
+      params:
+        cmd: "git rev-parse --abbrev-ref HEAD"
+        trim: true
+        shell: bash
+```
+
 ## Common automation patterns
 
 Date-stamped status line:

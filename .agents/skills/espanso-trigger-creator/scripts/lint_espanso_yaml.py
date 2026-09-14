@@ -12,8 +12,8 @@ import sys
 import yaml
 import jsonschema
 
-# Regex to match placeholders like {{variable}} in the replacement template
-PLACEHOLDER_RE = re.compile(r"\{\{([a-zA-Z0-9_\.]+)\}\}")
+# Regex to match placeholders like {{variable}} in the replacement template (ignoring escaped \{\{...}})
+PLACEHOLDER_RE = re.compile(r"(?<!\\)\{\{([a-zA-Z0-9_\.]+)\}\}")
 
 # Regex to match form fields like [[field]] in a form layout
 FORM_FIELD_RE = re.compile(r"\[\[([a-zA-Z0-9_-]+)\]\]")
@@ -95,8 +95,11 @@ class MatchEntryChecker:
     1-indexed match number so users can locate the entry in the file.
     """
 
-    def __init__(self, match_idx: int, entry: dict) -> None:
+    def __init__(
+        self, match_idx: int, entry: dict, global_vars: set[str] | None = None
+    ) -> None:
         self.entry = entry
+        self.global_vars = global_vars or set()
         self.errors: list[str] = []
         self.warnings: list[str] = []
         self._message_prefix = f"Match #{match_idx}"
@@ -148,7 +151,7 @@ class MatchEntryChecker:
         in the 'regex' trigger. Malformed var entries are reported as they
         are encountered.
         """
-        defined_vars: set[str] = set()
+        defined_vars: set[str] = set(self.global_vars)
         vars_list = self.entry.get("vars", [])
         if isinstance(vars_list, list):
             for var_idx, var_item in enumerate(vars_list):
@@ -311,13 +314,15 @@ class MatchEntryChecker:
                 break
 
 
-def check_match_entry(match_idx: int, entry: dict) -> tuple[list[str], list[str]]:
+def check_match_entry(
+    match_idx: int, entry: dict, global_vars: set[str] | None = None
+) -> tuple[list[str], list[str]]:
     """Validate a single match entry in an Espanso file.
 
     Returns:
         (errors, warnings) lists.
     """
-    return MatchEntryChecker(match_idx, entry).run()
+    return MatchEntryChecker(match_idx, entry, global_vars=global_vars).run()
 
 
 def _parse_yaml_root(text: str) -> tuple[dict | None, list[str]]:
@@ -337,7 +342,9 @@ def _parse_yaml_root(text: str) -> tuple[dict | None, list[str]]:
     return data, []
 
 
-def _check_matches(matches_value: object) -> tuple[list[str], list[str]]:
+def _check_matches(
+    matches_value: object, global_vars: set[str] | None = None
+) -> tuple[list[str], list[str]]:
     """Validate the top-level 'matches' value and each of its entries."""
     errors: list[str] = []
     warnings: list[str] = []
@@ -351,7 +358,7 @@ def _check_matches(matches_value: object) -> tuple[list[str], list[str]]:
         if not isinstance(entry, dict):
             errors.append(f"Match #{idx} is not a dictionary.")
             continue
-        entry_errors, entry_warnings = check_match_entry(idx, entry)
+        entry_errors, entry_warnings = check_match_entry(idx, entry, global_vars=global_vars)
         errors.extend(entry_errors)
         warnings.extend(entry_warnings)
 
@@ -371,7 +378,14 @@ def lint_yaml_content(text: str) -> tuple[list[str], list[str]]:
     # Run JSON Schema Validation first
     errors = validate_against_schema(data)
 
-    match_errors, warnings = _check_matches(data.get("matches"))
+    global_vars: set[str] = set()
+    raw_global_vars = data.get("global_vars", [])
+    if isinstance(raw_global_vars, list):
+        for g_var in raw_global_vars:
+            if isinstance(g_var, dict) and "name" in g_var and isinstance(g_var["name"], str):
+                global_vars.add(g_var["name"])
+
+    match_errors, warnings = _check_matches(data.get("matches"), global_vars=global_vars)
     errors.extend(match_errors)
     return errors, warnings
 

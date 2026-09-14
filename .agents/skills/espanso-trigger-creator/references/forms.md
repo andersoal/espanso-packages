@@ -30,26 +30,56 @@ Typing `:greet` opens a dialog box with a text field for `name`; Espanso fills `
 - Every `[[field]]` placeholder in `layout`/`form` needs either a default text-field behavior (automatic) or an explicit entry under `form_fields` if you want non-default behavior (dropdown, default value, multiline, etc.).
 - Fields without an entry in `form_fields` default to a single-line text input.
 
-## Field types
+## Form Submission & Shortcuts
 
+- **Submit**: Press `Ctrl + Enter` on Windows/Linux or `Cmd + Enter` on macOS.
+- **Cancel**: Press `Escape`.
+- **Navigate fields**: Use `Tab` and `Shift + Tab` to move focus between input fields.
+
+## Field Controls and Types
+
+According to the official Espanso specification, `type` is only used for choice and list controls. Never specify `type: text`!
+
+### 1. Single-line Text Field (Default)
+Omit `type` entirely.
 ```yaml
 form_fields:
-  priority:
-    type: choice
-    values:
-      - "Low"
-      - "Medium"
-      - "High"
-  notes:
-    multiline: true
-  confirmed:
-    type: choice
-    values:
-      - "Yes"
-      - "No"
+  client_name:
+    default: "Acme Corp"
 ```
 
-Common field configurations: text input (default), multiline text input (`multiline: true`), and choice/list selections (`type: choice` or `type: list` with `values`).
+### 2. Multi-line Text Area
+Omit `type`, set `multiline: true`.
+```yaml
+form_fields:
+  notes:
+    multiline: true
+    default: "Initial thoughts..."
+```
+
+### 3. Choice Box (Dropdown)
+Set `type: choice` with a list of options in `values:`.
+```yaml
+form_fields:
+  tier:
+    type: choice
+    values:
+      - "Free"
+      - "Pro"
+      - "Enterprise"
+```
+
+### 4. List Box (Selectable List)
+Set `type: list` with options in `values:`.
+```yaml
+form_fields:
+  environment:
+    type: list
+    values:
+      - "Development"
+      - "Staging"
+      - "Production"
+```
 
 ## Two-stage forms (form result feeds a second form/layout)
 

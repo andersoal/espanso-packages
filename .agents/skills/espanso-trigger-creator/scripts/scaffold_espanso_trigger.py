@@ -13,7 +13,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--type",
-        choices=("simple", "regex", "date", "form", "shell"),
+        choices=("simple", "regex", "date", "form", "shell", "choice"),
         required=True,
         help="Type of trigger scaffold to generate",
     )
@@ -62,6 +62,16 @@ def parse_args() -> argparse.Namespace:
         default="General",
         help="Category or package tag for label (default: 'General')",
     )
+    parser.add_argument(
+        "--values",
+        default="Option 1,Option 2",
+        help="Comma-separated values for choice type",
+    )
+    parser.add_argument(
+        "--propagate-case",
+        action="store_true",
+        help="Enable propagate_case: true on the match",
+    )
     return parser.parse_args()
 
 
@@ -91,9 +101,10 @@ def generate_scaffold(args: argparse.Namespace) -> str:
     if trigger_type == "simple":
         header = _format_trigger_header(args, ":hello")
         lbl = _format_label_line(args, "Text Snippet", "Quick Expansion")
+        case_line = "    propagate_case: true\n" if getattr(args, "propagate_case", False) else ""
         return f"""{header}
     replace: "{args.replace}"
-{lbl}"""
+{lbl}{case_line}"""
 
     elif trigger_type == "regex":
         reg = args.regex or r":greet\((?P<person>.*)\)"
@@ -153,6 +164,24 @@ def generate_scaffold(args: argparse.Namespace) -> str:
         type: shell
         params:
           cmd: "{cmd}"
+"""
+
+    elif trigger_type == "choice":
+        header = _format_trigger_header(args, ":choice")
+        var_name = args.var_name if args.var_name != "output" else "val"
+        raw_vals = getattr(args, "values", "") or "Option 1,Option 2"
+        values = [v.strip() for v in raw_vals.split(",") if v.strip()]
+        values_yaml = "\n".join(f'          - "{v}"' for v in values)
+        lbl = _format_label_line(args, "Option Selection", "Interactive Choice Dropdown")
+        case_line = "    propagate_case: true\n" if getattr(args, "propagate_case", False) else ""
+        return f"""{header}
+    replace: "{{{{{var_name}}}}}"
+{lbl}{case_line}    vars:
+      - name: {var_name}
+        type: choice
+        params:
+          values:
+{values_yaml}
 """
 
     return ""

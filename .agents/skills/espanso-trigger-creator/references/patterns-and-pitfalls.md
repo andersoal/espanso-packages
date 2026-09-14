@@ -12,6 +12,10 @@ When a user reports "my trigger isn't working" or pastes broken YAML, check in t
 6. **File not loaded.** Confirm the match file lives under `match/` in the Espanso config dir and has a top-level `matches:` key. New files need Espanso restarted (`espanso restart`) or may auto-reload depending on install/version — when in doubt, suggest a restart.
 7. **Multiple matches with the same trigger.** Espanso uses the most specific/most recently loaded match when triggers collide across files. Exact duplicate triggers are allowed only when each match has a unique `label:` (which activates Espanso's disambiguation menu).
 8. **Prefix shadowing.** A trigger without `word: true` fires immediately when typed. Shorter triggers (e.g. `:act`, `:mck`, `:brain-upgrade`) shadow longer triggers (e.g. `:action-plan`, `:mckinsey-deck`, `:brain-upgrade-30d`). Always make prefix triggers distinct or use `word: true`.
+9. **Unescaped double curly braces.** Literal `{{foo}}` in template code (Handlebars, Jinja, Vue) causes Espanso to seek a nonexistent variable `foo`. Escape as `\\{\\{foo\\}\\}` (quoted) or `\{\{foo\}\}` (block scalar `|`).
+10. **Package naming violations.** Package directories and manifest `name` fields must strictly match `^[a-z0-9-]+$` (lowercase alphanumeric + hyphens only). Underscores (`_`) and uppercase letters are invalid in Espanso package names.
+11. **Invalid form field `type: text`.** Single-line and multi-line text fields in `form_fields` must omit `type` completely (use `multiline: true` for text areas). Specifying `type: text` violates the schema.
+12. **Cursor hint typos.** The cursor placement hint must be written exactly as `$|$`. Variations like `$|` or `$$` are typed out as literal text.
 
 ## Pattern: prefer composability over one giant match file
 
@@ -88,6 +92,49 @@ Labels appear in the search palette and disambiguation menus. If a label simply 
 
 - trigger: ":act"
   label: "[Prompts] Role Persona Prompt (Interactive Persona & Task Formulation)"
+```
+
+## Anti-pattern: invalid package directory or manifest naming
+
+Espanso packages are strict: package names must only contain lowercase alphanumeric characters and hyphens.
+
+```yaml
+# BAD — underscores and uppercase break official package specifications
+name: "My_Cool_Package"
+
+# GOOD — lowercase alphanumeric and hyphens only (^[a-z0-9-]+$)
+name: "my-cool-package"
+```
+
+## Anti-pattern: unescaped template variables in code snippets
+
+When expanding template code (e.g. Jinja, Liquid, Handlebars, Helm), literal double curly braces will be treated by Espanso as missing variables unless properly escaped.
+
+```yaml
+# BAD — Espanso errors on missing variable 'item.name'
+- trigger: ":item-tpl"
+  replace: "<span>{{ item.name }}</span>"
+
+# GOOD — escaped curly braces
+- trigger: ":item-tpl"
+  replace: "<span>\\{\\{ item.name \\}\\}</span>"
+```
+
+## Anti-pattern: specifying `type: text` on form fields
+
+Espanso forms only accept `type: choice` or `type: list`. Setting `type: text` violates the JSON schema.
+
+```yaml
+# BAD — invalid field type
+form_fields:
+  author:
+    type: text
+    default: "Jane"
+
+# GOOD — omit type entirely for text inputs
+form_fields:
+  author:
+    default: "Jane"
 ```
 
 ## When the user actually needs `espanso-dynamic-forms`

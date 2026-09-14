@@ -45,21 +45,32 @@ Match files live in `match/` inside that root (`base.yml` by default). If the us
 |---|---|---|
 | Fixed text → fixed output | Plain `trigger` or `triggers` (array) / `replace` | [references/basics.md](references/basics.md) |
 | Multiple shortcuts / aliases for same output | `triggers:` (flow `[...]` or block list) | [references/basics.md](references/basics.md) |
+| Case-adaptive text (hello/Hello/HELLO) | `propagate_case: true` | [references/basics.md](references/basics.md) |
+| Initial cursor placed at a specific spot | Cursor hint `$|$` in `replace` | [references/basics.md](references/basics.md) |
 | Output depends on typed input | `regex` match with capture groups | [references/regex-and-vars.md](references/regex-and-vars.md) |
-| Prompt a dialog for input | `form` | [references/forms.md](references/forms.md) |
-| Run a command / compute something | `shell` var | [references/shell-and-automation.md](references/shell-and-automation.md) |
-| Date/time, clipboard, random, or other built-ins | built-in var types | [references/regex-and-vars.md](references/regex-and-vars.md) |
+| Interactive search/dropdown selection | `choice` extension (`type: choice`) | [references/regex-and-vars.md](references/regex-and-vars.md) |
+| Prompt a dialog with multiple inputs | `form` (`layout` + `form_fields`) | [references/forms.md](references/forms.md) |
+| Run a command / compute something | `shell` var (`cmd`, `trim`, `shell`) | [references/shell-and-automation.md](references/shell-and-automation.md) |
+| Date/time (offsets, timezone, locale), clipboard, random | built-in var types (`date`, `clipboard`, `random`) | [references/regex-and-vars.md](references/regex-and-vars.md) |
 | Script generates the *entire form layout* at runtime | defer to `espanso-dynamic-forms` skill | — |
 
 Read the relevant reference file(s) before writing nontrivial triggers — they hold the syntax details, gotchas, and security notes so this file stays short. For straightforward asks you may already know enough from this file's examples below; for anything regex/shell/form-related, skim the reference first.
 
 ## Minimal examples (for the simple, no-reference-needed cases)
 
-Plain text:
+Plain text with cursor placement:
 ```yaml
-- trigger: ":sig"
-  label: "[Personal] Email Signature (Standard Full Contact Details)"
-  replace: "Jane Doe | jane@example.com | (555) 867-5309"
+- trigger: ":fn"
+  label: "[Code] JavaScript Function (Template with Initial Cursor Inside)"
+  replace: "function $|$() {\n\n}"
+```
+
+Case-adaptive replacement:
+```yaml
+- trigger: "greet"
+  label: "[Text] Greeting (Case Adaptive Hello Expansion)"
+  replace: "hello"
+  propagate_case: true
 ```
 
 Multiple triggers (aliases / YAML array):
@@ -77,16 +88,17 @@ Multiple triggers (aliases / YAML array):
   replace: "jane@example.com"
 ```
 
-Built-in date var:
+Built-in date var with offset (e.g. tomorrow):
 ```yaml
-- trigger: ":today"
-  label: "[General] Current Date (ISO YYYY-MM-DD Format)"
+- trigger: ":tomorrow"
+  label: "[General] Tomorrow's Date (ISO Format with 86400s Offset)"
   replace: "{{date}}"
   vars:
     - name: date
       type: date
       params:
         format: "%Y-%m-%d"
+        offset: 86400
 ```
 
 Word-boundary fix (typo autocorrect):
@@ -95,6 +107,21 @@ Word-boundary fix (typo autocorrect):
   label: "[Autocorrect] The (Fix Typo Teh to The)"
   replace: "the"
   word: true
+```
+
+Interactive choice dialog:
+```yaml
+- trigger: ":status"
+  label: "[General] Status Selector (Choose from Active List)"
+  replace: "Status: {{val}}"
+  vars:
+    - name: val
+      type: choice
+      params:
+        values:
+          - "In Progress"
+          - "Under Review"
+          - "Completed"
 ```
 
 For anything beyond these patterns — regex captures, multi-step forms, shell commands, clipboard manipulation, chained vars — read the matching reference file first, then build.
@@ -116,8 +143,12 @@ After writing a trigger:
 5. Check for prefix collisions and shadowing (e.g. `:act` shadowing `:action-blueprint`). Ensure duplicate triggers have distinct labels.
 6. If `shell` is used, read [references/shell-and-automation.md](references/shell-and-automation.md) for the security/latency notes before finalizing — never suggest a shell command that exfiltrates input unsafely or blocks on slow network calls without flagging the tradeoff.
 7. Ensure the match structure complies with the official Espanso JSON schema. For example, never use invalid form field attributes like `type: text` or `type: checkbox`. (Text fields should omit `type` entirely, and multiline fields should use `multiline: true`).
-8. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.
-9. **Update Manifest Version**: On any change to a package's triggers or files, update `<package>/_manifest.yml` with a **MAJOR** (breaking change / trigger renaming), **MINOR** (new triggers / features), or **PATCH** (bug fixes / typos / doc updates) version bump.
+8. **Cursor Placement**: If an initial cursor landing position is desired after expansion, verify `$|$` is placed inside `replace:` (e.g. `function $|$()`).
+9. **Case Propagation**: When matching words/greetings typed in lowercase, Titlecase, or UPPERCASE, verify `propagate_case: true` is configured where appropriate.
+10. **Escaping Curly Braces**: If literal `{{` and `}}` are needed in `replace` (e.g., in code templates or Jinja/Handlebars), verify they are escaped as `\\{\\{...}}` in quoted strings or `\{\{...}}` in block scalars.
+11. **Package Specification**: If creating or updating a package, ensure the package directory and manifest `name` match `^[a-z0-9-]+$` (lowercase letters, numbers, hyphens only), and that `_manifest.yml`, `package.yml`, and `README.md` are all present.
+12. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.
+13. **Update Manifest Version**: On any change to a package's triggers or files, update `<package>/_manifest.yml` with a **MAJOR** (breaking change / trigger renaming), **MINOR** (new triggers / features), or **PATCH** (bug fixes / typos / doc updates) version bump.
 
 ## Debugging existing triggers
 

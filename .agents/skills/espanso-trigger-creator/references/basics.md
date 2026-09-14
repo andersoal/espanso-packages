@@ -43,6 +43,33 @@ Both styles are valid YAML and fully supported by Espanso. Use inline arrays for
 
 `word: true` requires the trigger be surrounded by word boundaries (so it fires on "teh " or "teh." but not inside "Teheran"). Without it, Espanso matches substrings anywhere, which is usually what you want for `:`-prefixed triggers but *not* for bare-word autocorrects.
 
+## Cursor placement (`$|$`)
+
+Espanso supports positioning the cursor at a specific point inside the replacement after expansion by inserting the cursor hint `$|$`:
+
+```yaml
+- trigger: ":fn"
+  replace: "function $|$() {\n\n}"
+```
+
+When you type `:fn`, Espanso types `function () {\n\n}` and places your cursor right between the space and parentheses.
+
+## Case propagation (`propagate_case: true`)
+
+`propagate_case: true` enables case-adaptive expansions. Espanso recognizes uppercase and capitalized trigger variants and adapts the output accordingly:
+
+```yaml
+- trigger: "greet"
+  replace: "hello"
+  propagate_case: true
+```
+
+- Typing `greet` yields `hello`
+- Typing `Greet` yields `Hello`
+- Typing `GREET` yields `HELLO`
+
+Note: When using `propagate_case: true`, the `trigger` must be defined in all lowercase.
+
 ## Multi-line replacements
 
 ```yaml
@@ -79,6 +106,59 @@ Espanso matches support built-in metadata properties:
   - **No Raw Placeholders**: Never leave raw variables like `[[topic]]` or `{{date}}` inside labels.
 - `comment`: Contextual description explaining the prompt's intent directly in YAML without modifying output.
 - `search_terms`: Search keywords/aliases used by Espanso's fuzzy search palette to find triggers by concept.
+
+## Match Disambiguation
+
+When multiple matches share the exact same trigger, Espanso displays a native disambiguation dialog keyed by `label:`, allowing you to choose the desired expansion:
+
+```yaml
+- trigger: ":quote"
+  label: "[Quotes] Steve Jobs (Stay Hungry Stay Foolish)"
+  replace: "Stay hungry, stay foolish."
+
+- trigger: ":quote"
+  label: "[Quotes] Alan Kay (Invent the Future)"
+  replace: "The best way to predict the future is to invent it."
+```
+
+Each duplicate trigger must have a unique, descriptive `label:` so the disambiguation popup is clear.
+
+## Injection Modes (`force_mode: clipboard` vs `keys`)
+
+By default, Espanso injects text using emulated keystrokes or automatically switches to clipboard injection for large snippets. You can explicitly enforce clipboard or keystroke injection on a specific match:
+
+```yaml
+- trigger: ":huge-template"
+  replace: |
+    ... large multiline content ...
+  force_mode: clipboard
+```
+
+- `force_mode: clipboard`: Fast and reliable for large text blocks, emojis, or non-ASCII characters.
+- `force_mode: keys`: Emulates keyboard typing directly; useful when an application restricts clipboard access or pasting.
+
+## Global Variables (`global_vars:`)
+
+To share variables across multiple matches within the same YAML file, declare `global_vars:` at the root level before `matches:`:
+
+```yaml
+global_vars:
+  - name: company
+    type: echo
+    params:
+      echo: "Acme Corporation"
+  - name: my_date
+    type: date
+    params:
+      format: "%Y-%m-%d"
+
+matches:
+  - trigger: ":co"
+    replace: "Welcome to {{company}}!"
+
+  - trigger: ":notice"
+    replace: "Published by {{company}} on {{my_date}}."
+```
 
 ## Schema Header Directive
 

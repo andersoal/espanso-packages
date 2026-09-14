@@ -231,6 +231,31 @@ matches:
         self.assertEqual(errors, [])
         self.assertTrue(any("label is empty" in warn for warn in warnings))
 
+    def test_resolved_placeholder_via_global_vars(self):
+        content = """
+global_vars:
+  - name: company
+    type: echo
+    params:
+      echo: "Acme Corp"
+matches:
+  - trigger: ":co"
+    replace: "Welcome to {{company}}!"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
+    def test_escaped_curly_braces_ignored(self):
+        content = """
+matches:
+  - trigger: ":tmpl"
+    replace: "Hello \\\\{\\\\{not_a_var\\\\}\\\\}"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
 
 if __name__ == "__main__":
     unittest.main()

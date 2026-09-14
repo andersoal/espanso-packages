@@ -130,6 +130,41 @@ class TestScaffoldEspansoTrigger(unittest.TestCase):
         scaffold = generate_scaffold(args)
         self.assertIn('label: "[Personal] Signature (Full Details)"', scaffold)
 
+    def test_scaffold_choice(self):
+        args = argparse.Namespace(
+            type="choice",
+            trigger=":status",
+            triggers="",
+            replace="Hello World",
+            regex="",
+            var_name="status_val",
+            cmd="echo 'hello'",
+            fields="name,topic",
+            values="Active,Paused,Completed",
+        )
+        scaffold = generate_scaffold(args)
+        self.assertIn('trigger: ":status"', scaffold)
+        self.assertIn('type: choice', scaffold)
+        self.assertIn('- "Active"', scaffold)
+        self.assertIn('- "Paused"', scaffold)
+        self.assertIn('- "Completed"', scaffold)
+        self.assertIn('replace: "{{status_val}}"', scaffold)
+
+    def test_scaffold_propagate_case(self):
+        args = argparse.Namespace(
+            type="simple",
+            trigger="greet",
+            triggers="",
+            replace="hello",
+            regex="",
+            var_name="output",
+            cmd="echo 'hello'",
+            fields="name,topic",
+            propagate_case=True,
+        )
+        scaffold = generate_scaffold(args)
+        self.assertIn('propagate_case: true', scaffold)
+
 
 if __name__ == "__main__":
     unittest.main()

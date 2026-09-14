@@ -176,6 +176,61 @@ matches:
         errors, warnings = lint_yaml_content(content)
         self.assertTrue(any("Schema violation at matches -> 0: Additional properties are not allowed ('invalid_match_key' was unexpected)" in err for err in errors))
 
+    def test_valid_ergonomic_label(self):
+        content = """
+matches:
+  - trigger: ":sig"
+    label: "[Personal] Email Signature (Standard Full Contact Details)"
+    replace: "Jane Doe | jane@example.com"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
+    def test_label_raw_placeholder_warning(self):
+        content = """
+matches:
+  - trigger: ":act"
+    label: "[Prompts] [[Persona]]"
+    replace: "Act as a persona"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("contains raw variable placeholders" in warn for warn in warnings))
+
+    def test_label_dangling_connector_warning(self):
+        content = """
+matches:
+  - trigger: ":draft"
+    label: "[Prompts] Write A First Draft Of"
+    replace: "Draft text"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("ends with dangling connector/preposition" in warn for warn in warnings))
+
+    def test_label_lazy_trigger_repeat_warning(self):
+        content = """
+matches:
+  - trigger: ":prmresearch"
+    label: "[Prompts] Prmresearch"
+    replace: "Research text"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("lazily repeats trigger name" in warn for warn in warnings))
+
+    def test_label_empty_warning(self):
+        content = """
+matches:
+  - trigger: ":sig"
+    label: ""
+    replace: "Jane Doe"
+"""
+        errors, warnings = lint_yaml_content(content)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("label is empty" in warn for warn in warnings))
+
 
 if __name__ == "__main__":
     unittest.main()

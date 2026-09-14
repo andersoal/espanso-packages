@@ -52,6 +52,16 @@ def parse_args() -> argparse.Namespace:
         default="name,topic",
         help="Comma-separated field names for form layout",
     )
+    parser.add_argument(
+        "--label",
+        default="",
+        help="Human-readable label following standard: '[<Tag>] <Concept> (<Complement>)'",
+    )
+    parser.add_argument(
+        "--tag",
+        default="General",
+        help="Category or package tag for label (default: 'General')",
+    )
     return parser.parse_args()
 
 
@@ -66,28 +76,40 @@ def _format_trigger_header(args: argparse.Namespace, default_trigger: str) -> st
     return f'  - trigger: "{trig}"'
 
 
+def _format_label_line(args: argparse.Namespace, default_concept: str, default_complement: str) -> str:
+    """Format the label line ensuring high ergonomics: [<Tag>] <Concept> (<Complement>)."""
+    custom_label = getattr(args, "label", "")
+    if custom_label:
+        return f'    label: "{custom_label}"\n'
+    tag = getattr(args, "tag", "") or "General"
+    return f'    label: "[{tag}] {default_concept} ({default_complement})"\n'
+
+
 def generate_scaffold(args: argparse.Namespace) -> str:
     trigger_type = args.type
 
     if trigger_type == "simple":
         header = _format_trigger_header(args, ":hello")
+        lbl = _format_label_line(args, "Text Snippet", "Quick Expansion")
         return f"""{header}
     replace: "{args.replace}"
-"""
+{lbl}"""
 
     elif trigger_type == "regex":
         reg = args.regex or r":greet\((?P<person>.*)\)"
         rep = args.replace if args.replace != "Hello World" else "Hey {{person}}, welcome!"
+        lbl = _format_label_line(args, "Dynamic Greeting", "Personalized Name Variable")
         return f"""  - regex: "{reg}"
     replace: "{rep}"
-"""
+{lbl}"""
 
     elif trigger_type == "date":
         header = _format_trigger_header(args, ":today")
         var_name = args.var_name or "date"
+        lbl = _format_label_line(args, "Current Date", "ISO YYYY-MM-DD Format")
         return f"""{header}
     replace: "{{{{{var_name}}}}}"
-    vars:
+{lbl}    vars:
       - name: {var_name}
         type: date
         params:
@@ -110,11 +132,12 @@ def generate_scaffold(args: argparse.Namespace) -> str:
             fields_lines.append(f"      {field}:")
             fields_lines.append(f"        default: \"\"")
         fields_str = "\n".join(fields_lines)
+        lbl = _format_label_line(args, "Interactive Form", "Fillable Fields Dialog")
 
         return f"""{header}
     form: |
 {layout_str}
-    form_fields:
+{lbl}    form_fields:
 {fields_str}
 """
 
@@ -122,9 +145,10 @@ def generate_scaffold(args: argparse.Namespace) -> str:
         header = _format_trigger_header(args, ":shell")
         var_name = args.var_name or "output"
         cmd = args.cmd
+        lbl = _format_label_line(args, "Shell Automation", "Dynamic Command Output")
         return f"""{header}
     replace: "{{{{{var_name}}}}}"
-    vars:
+{lbl}    vars:
       - name: {var_name}
         type: shell
         params:

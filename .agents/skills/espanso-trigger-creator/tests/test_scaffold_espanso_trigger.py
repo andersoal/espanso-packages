@@ -112,6 +112,23 @@ class TestScaffoldEspansoTrigger(unittest.TestCase):
         self.assertIn('replace: "{{my_cmd}}"', scaffold)
         self.assertIn("type: shell", scaffold)
         self.assertIn('cmd: "curl ifconfig.me"', scaffold)
+        self.assertIn('label: "[General] Shell Automation (Dynamic Command Output)"', scaffold)
+
+    def test_scaffold_with_custom_label(self):
+        args = argparse.Namespace(
+            type="simple",
+            trigger=":sig",
+            triggers="",
+            replace="Jane Doe",
+            label="[Personal] Signature (Full Details)",
+            tag="Personal",
+            regex="",
+            var_name="output",
+            cmd="echo 'hello'",
+            fields="name,topic",
+        )
+        scaffold = generate_scaffold(args)
+        self.assertIn('label: "[Personal] Signature (Full Details)"', scaffold)
 
 
 if __name__ == "__main__":

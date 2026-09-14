@@ -35,6 +35,11 @@ WARN_CLIPBOARD_STATUS = (
 # must omit 'type' entirely.
 VALID_FORM_FIELD_TYPES = ("choice", "list")
 
+# Trailing prepositions and connectors that indicate truncated label text
+CONNECTORS = (
+    "for", "to", "with", "about", "on", "of", "in", "at", "into", "as", "a", "an", "the"
+)
+
 # File extensions recognized as Espanso YAML files
 YAML_SUFFIXES = (".yml", ".yaml")
 
@@ -103,6 +108,7 @@ class MatchEntryChecker:
             self._check_placeholders(defined_vars)
             self._check_form_layout()
             self._check_clipboard_status_leak()
+            self._check_label_ergonomics()
         return self.errors, self.warnings
 
     def _error(self, message: str) -> None:
@@ -256,6 +262,53 @@ class MatchEntryChecker:
                 self._warn(
                     f"replace text contains clipboard status feedback '{status_phrase}'. Hint: Return the payload directly."
                 )
+
+    def _check_label_ergonomics(self) -> None:
+        """Warn when label violates ergonomic conventions (raw placeholder, dangling connector, lazy trigger repeat)."""
+        label_val = self.entry.get("label")
+        if label_val is None:
+            return
+
+        if not isinstance(label_val, str):
+            self._error(f"label must be a string, got {type(label_val).__name__}.")
+            return
+
+        lbl = label_val.strip()
+        if not lbl:
+            self._warn("label is empty. Hint: use '[Package Tag] Intuitive Concept (Complementary Context/Action)'.")
+            return
+
+        # Check for unparsed template tokens in label
+        if "[[" in lbl or "]]" in lbl or "{{" in lbl or "}}" in lbl:
+            self._warn(
+                f"label '{lbl}' contains raw variable placeholders. Replace with a human-readable description."
+            )
+
+        # Check for trailing connector/preposition indicating a cut-off sentence
+        paren_match = re.search(r"\((.*?)\)$", lbl)
+        tail_text = paren_match.group(1).strip() if paren_match else lbl
+        tail_words = tail_text.split()
+        if tail_words and tail_words[-1].lower() in CONNECTORS:
+            self._warn(
+                f"label '{lbl}' ends with dangling connector/preposition '{tail_words[-1]}'. Provide complete context."
+            )
+
+        # Check for lazy trigger repeat
+        triggers = []
+        if "trigger" in self.entry and isinstance(self.entry["trigger"], str):
+            triggers.append(self.entry["trigger"])
+        if "triggers" in self.entry and isinstance(self.entry["triggers"], list):
+            triggers.extend([t for t in self.entry["triggers"] if isinstance(t, str)])
+
+        cleaned_lbl = re.sub(r"^\[.*?\]\s*", "", lbl).strip()
+        for trig in triggers:
+            clean_trig = trig.lstrip(":;|-").replace("-", "").replace("_", "").lower()
+            clean_lbl_concept = re.sub(r"\s*\(.*?\)$", "", cleaned_lbl).replace("-", "").replace("_", "").replace(" ", "").lower()
+            if clean_trig and clean_lbl_concept == clean_trig:
+                self._warn(
+                    f"label '{lbl}' lazily repeats trigger name '{trig}'. Use an intuitive concept name."
+                )
+                break
 
 
 def check_match_entry(match_idx: int, entry: dict) -> tuple[list[str], list[str]]:

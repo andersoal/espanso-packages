@@ -2,14 +2,17 @@
 matches:
   # Plain text replacement
   - trigger: ":sig"
+    label: "[Personal] Email Signature (Standard Full Contact Details)"
     replace: "Jane Doe | jane@example.com"
 
   # Regex trigger
   - regex: ":greet\\((?P<person>.*)\\)"
+    label: "[Greetings] Friendly Greeting (Personalized Name Salutation)"
     replace: "Hey {{person}}, hope you're doing well!"
 
   # Date variable
   - trigger: ":today"
+    label: "[General] Current Date (ISO YYYY-MM-DD Format)"
     replace: "{{date}}"
     vars:
       - name: date
@@ -19,6 +22,7 @@ matches:
 
   # Form variable
   - trigger: ":followup"
+    label: "[Email] Follow-Up Note (Interactive Recipient & Topic Form)"
     form: |
       Hi [[name]],
       Following up on [[topic]] — let me know if you have questions.
@@ -30,6 +34,7 @@ matches:
 
   # Shell variable
   - trigger: ":myip"
+    label: "[Network] Public IP Lookup (Fetch External IP via Curl)"
     replace: "{{output}}"
     vars:
       - name: output

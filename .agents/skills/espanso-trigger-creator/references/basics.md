@@ -60,7 +60,7 @@ Espanso matches support built-in metadata properties:
 
 ```yaml
 - trigger: :c-review
-  label: "[Engineering] Code Review & Quality Audit"
+  label: "[Engineering] Code Review & Quality Audit (2-Pass Standards & Risks)"
   comment: "Conducts a 2-pass code review (quality standards + edge cases/risks)"
   search_terms:
     - engineering
@@ -71,7 +71,12 @@ Espanso matches support built-in metadata properties:
     [[code]]
 ```
 
-- `label`: Human-readable title displayed in the Espanso search bar (`Alt + Space`) and disambiguation popups. Convention: use `[Package Tag] Descriptive Title` so triggers are easily identifiable.
+- `label`: Human-readable title displayed in the Espanso search bar (`Alt + Space`) and disambiguation popups.
+  - **Standard Format**: `[<Package Tag>] <Intuitive Recall Concept> (<Complementary Context/Snippet/Action>)`
+  - **Intuitive Recall Concept**: Use an easy-to-remember title describing the primary action or topic. Avoid raw trigger repeats (`[Marketing] Pceo` is bad; `[Marketing] CEO & Founder Profile` is good).
+  - **Complementary Context**: Add parenthesized detail describing what the prompt actually does, the output format, or form fields involved (`(Interactive Persona Formulation)`).
+  - **No Truncated Prepositions**: Avoid ending labels with prepositions/connectors (`[Prompts] Write A First Draft Of` is bad; `[Prompts] First Draft Generator (Initial Version from Angle)` is good).
+  - **No Raw Placeholders**: Never leave raw variables like `[[topic]]` or `{{date}}` inside labels.
 - `comment`: Contextual description explaining the prompt's intent directly in YAML without modifying output.
 - `search_terms`: Search keywords/aliases used by Espanso's fuzzy search palette to find triggers by concept.
 

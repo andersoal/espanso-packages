@@ -62,6 +62,34 @@ cmd: "%CONFIG%/scripts/build_report.sh"
 
 If a trigger's output depends on a script or external source (shell call, file read), make sure there's a sane fallback or bound — a runaway/huge output from a misbehaving command will type out character-by-character into whatever app has focus, which is hard to interrupt mid-expansion.
 
+## Anti-pattern: lazy, truncated, or raw trigger labels
+
+Labels appear in the search palette and disambiguation menus. If a label simply repeats the trigger name, ends in a dangling preposition, or contains raw placeholder tokens, the user loses context and searchability.
+
+```yaml
+# BAD — lazy raw trigger repeat
+- trigger: ":prmresearch"
+  label: "[Prompts] Prmresearch"
+
+# BAD — truncated sentence ending in preposition
+- trigger: ":chain-draft"
+  label: "[Prompts] Write A First Draft Of"
+
+# BAD — unparsed template variable
+- trigger: ":act"
+  label: "[Prompts] [[Persona]]"
+
+# GOOD — intuitive recall title with complementary context/action
+- trigger: ":prmresearch"
+  label: "[Prompts] Academic Research Audit (Methodology Findings & Limitations Critique)"
+
+- trigger: ":chain-draft"
+  label: "[Prompts] First Draft Generator (Initial Version from Angle)"
+
+- trigger: ":act"
+  label: "[Prompts] Role Persona Prompt (Interactive Persona & Task Formulation)"
+```
+
 ## When the user actually needs `espanso-dynamic-forms`
 
 If the user describes wanting a *runtime-generated* form layout — i.e., the set of fields or even the structure of the form itself isn't fixed in YAML but produced by a script/binary at expansion time based on a provider/operation contract — that's the `espanso-dynamic-forms` skill's territory, not this one. Signs of this need:

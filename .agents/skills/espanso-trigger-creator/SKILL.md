@@ -58,6 +58,7 @@ Read the relevant reference file(s) before writing nontrivial triggers — they 
 Plain text:
 ```yaml
 - trigger: ":sig"
+  label: "[Personal] Email Signature (Standard Full Contact Details)"
   replace: "Jane Doe | jane@example.com | (555) 867-5309"
 ```
 
@@ -65,18 +66,21 @@ Multiple triggers (aliases / YAML array):
 ```yaml
 # Flow sequence (inline array)
 - triggers: [":sig", ":signature"]
+  label: "[General] Email Signature (Short Multi-Trigger Alias)"
   replace: "Jane Doe | jane@example.com"
 
 # Block sequence (indented list)
 - triggers:
     - ":email"
     - ":mail"
+  label: "[General] Email Address (Direct Address Paste)"
   replace: "jane@example.com"
 ```
 
 Built-in date var:
 ```yaml
 - trigger: ":today"
+  label: "[General] Current Date (ISO YYYY-MM-DD Format)"
   replace: "{{date}}"
   vars:
     - name: date
@@ -88,6 +92,7 @@ Built-in date var:
 Word-boundary fix (typo autocorrect):
 ```yaml
 - trigger: "teh"
+  label: "[Autocorrect] The (Fix Typo Teh to The)"
   replace: "the"
   word: true
 ```
@@ -99,8 +104,12 @@ For anything beyond these patterns — regex captures, multi-step forms, shell c
 After writing a trigger:
 1. Ensure line 1 of the match file retains `# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json` for IDE validation.
 2. Confirm YAML indentation is consistent (2 spaces, no tabs) and multi-line strings in `form:` or `replace:` use literal block scalar `|` (avoid single-quoted multi-line strings with `''` escaping).
-3. Ensure the match is well-documented with:
-   - `label: "[Package Tag] Complete Descriptive Title"` (never a raw/lazy repeat of the trigger name).
+3. Ensure the match is well-documented with high-ergonomics metadata:
+   - **Label Standard**: `label: "[<Package Tag>] <Intuitive Recall Concept> (<Complementary Context/Snippet/Action>)"`
+     - **Intuitive Recall Concept**: Clear, memorable concept title explaining what the trigger accomplishes (never a raw/lazy repeat of the trigger name, e.g. `:pceo` -> `CEO & Founder Profile`, never `Pceo`; `:pmatch` -> `Job Match Analysis`, never `Pmatch`).
+     - **Complementary Context**: Meaningful parenthetical detail indicating what the snippet produces, key input variables, or framework applied (e.g. `(Interactive Persona Formulation)`, `(STAR Method)`, `(Plain Language & Everyday Analogies)`).
+     - **No Truncated Prepositions**: Never leave sentence fragments ending in prepositions or connecting words ("For", "To", "With", "About", "On", "Of", "In", "At", "Into", "As", "A", "An", "The").
+     - **No Raw Placeholders**: Never include unparsed template tokens like `[[...]]` or `{{...}}` in labels.
    - `comment: "..."` describing the prompt's intent and context.
    - `search_terms:` containing the package name and key aliases for fuzzy search discovery.
 4. If `regex` is used, mention that `trigger` and `regex` are mutually exclusive on the same match — never include both.
@@ -125,12 +134,15 @@ This is reactive, single-trigger troubleshooting. For a full audit or cleanup pa
 Use this when the user asks to "review," "audit," "clean up," "rewrite," or "improve" an existing match file (or pastes a large/established config without a specific single bug) — not just when one trigger misbehaves.
 
 1. **Inventory first.** Read the whole file (or all pasted files) before commenting on anything. Note every `trigger`/`triggers`/`regex` value as you go — you need the full list to catch cross-match problems in step 3.
-2. **Per-match checklist.** For each match entry, run it against [references/patterns-and-pitfalls.md](references/patterns-and-pitfalls.md)'s debugging checklist (items 1-5: indentation, trigger/regex collision, unresolved placeholders, `word: true` correctness, shell var hygiene).
+2. **Per-match checklist.** For each match entry, run it against [references/patterns-and-pitfalls.md](references/patterns-and-pitfalls.md)'s debugging checklist (items 1-5: indentation, trigger/regex collision, unresolved placeholders, `word: true` correctness, shell var hygiene) and verify metadata:
+   - Check `label:` follows `[<Package Tag>] <Intuitive Concept> (<Complementary Context/Action>)`.
+   - Ensure labels do not use raw trigger names, do not end in prepositions ("For", "To", "With", etc.), and contain no unparsed `[[field]]` placeholders.
 3. **Cross-file/cross-match checks** (these need the full inventory, not just one match at a time):
    - Duplicate or shadowing triggers across matches/files (checklist item 7).
    - Inconsistent conventions — mixed `:`-prefix usage, inconsistent quoting style, some triggers using `triggers:` (plural) where others use `trigger:` for the same kind of shortcut.
    - Files that have grown past ~15-20 matches with no topic split (see "prefer composability" pattern in patterns-and-pitfalls.md).
 4. **Anti-pattern sweep.** Check every match against the anti-patterns in patterns-and-pitfalls.md specifically:
+   - Lazy, truncated, or raw trigger labels (violating the ergonomic label pattern).
    - Hardcoded absolute paths in `cmd:` → should use `%CONFIG%`.
    - Status-text leakage (replace text describes a side effect instead of delivering the payload).
    - Shell vars interpolating regex/form captures directly into `cmd` without quoting or env-var isolation — flag every instance, not just the first (see shell-and-automation.md security note).

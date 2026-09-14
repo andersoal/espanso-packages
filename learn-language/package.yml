@@ -14,7 +14,7 @@ matches:
           - practical phrases and professional communication
           - technical architecture explanations and engineering leadership
           - high-pressure business meetings and negotiations
-    label: '[Learn Language] Professional English Tutor'
+    label: '[Learn Language] Professional English Tutor (Conversational Practical Plan)'
     comment: 'Act as a professional English tutor. Design a -day conversational English plan focused on  and real-world communication '
     search_terms:
       - learn-language
@@ -33,7 +33,7 @@ matches:
           - general professional interactions
           - software engineering and systems architecture
           - strategic leadership and project orchestration
-    label: '[Learn Language] Teach Me  Powerful English Words Per Day Related To'
+    label: '[Learn Language] Daily Vocabulary Builder (High-Impact Words & Memory Hooks)'
     comment: Teach me  powerful English words per day related to . Include pronunciation guides, realistic example sentences, and one
     search_terms:
       - learn-language
@@ -52,7 +52,7 @@ matches:
       topic:
         type: text
         default: casual business topics or strategic alignment
-    label: '[Learn Language] Pretend You''Re A Native English Speaker In A'
+    label: '[Learn Language] Native Speaker Dialogue (Real-Time Grammar & Phrasing Corrections)'
     comment: 'Pretend you''re a native English speaker in a . Hold a -minute dialogue with me on , and correct my grammar, syntax, and '
     search_terms:
       - learn-language
@@ -65,7 +65,7 @@ matches:
       topic:
         type: text
         default: participles, verb conjugations, and complex sentence structures
-    label: '[Learn Language] Enggrammar'
+    label: '[Learn Language] English Grammar Explainer (Clear Rules & Practical Pitfalls)'
     comment: Explain English grammar rules, especially , in the simplest, most direct way possible. Provide short, everyday professio
     search_terms:
       - learn-language
@@ -78,7 +78,7 @@ matches:
       duration:
         type: text
         default: '30'
-    label: '[Learn Language] Engimmerse'
+    label: '[Learn Language] English Immersion Routine (Daily Focused Input Plan)'
     comment: Build a daily -minute English immersion routine using podcasts, technical articles, and media content that fits an advan
     search_terms:
       - learn-language
@@ -87,7 +87,7 @@ matches:
   - trigger: :engcoach
     form: |
       Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English phonetics, tongue positions, and mechanics on how to sound more natural, assertive, and fluid in professional settings.
-    label: '[Learn Language] Engcoach'
+    label: '[Learn Language] Pronunciation & Vocal Coach (Delivery Mechanics & Fluidity Drills)'
     comment: Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English p
     search_terms:
       - learn-language
@@ -96,7 +96,7 @@ matches:
   - trigger: :engtrack
     form: |
       Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, listening checks, pronunciation feedback self-assessments, and tangible fluency benchmarks I can track systematically.
-    label: '[Learn Language] Create A Weekly Progress Tracker For Learning English'
+    label: '[Learn Language] Fluency Progress Tracker (Weekly Benchmarks & Retention Checks)'
     comment: Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, lis
     search_terms:
       - learn-language
@@ -121,7 +121,7 @@ matches:
           - Technical Architects & Engineering Leads
           - Executive Stakeholders (C-Level / Business Directors)
           - Cross-Functional Project Teams
-    label: '[Learn Language] Engrefactor'
+    label: '[Learn Language] Executive Communication Refactor (Eliminate Passive Voice & Polish Tone)'
     comment: 'Act as a rigorous communication mentor and elite technical editor. Refactor the following draft for an audience of ****:'
     search_terms:
       - learn-language

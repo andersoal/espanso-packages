@@ -161,7 +161,7 @@ matches:
       target:
         type: text
         default: this paper
-    label: "[Learn] Rsteel"
+    label: "[Learn] Steelman Thesis (Strongest Plain-Language Justification)"
     comment: TASK
     search_terms:
       - learn
@@ -185,7 +185,7 @@ matches:
       target:
         type: text
         default: this paper
-    label: "[Learn] Rskept"
+    label: "[Learn] Skeptical Red-Team (Methodology Flaws & Replication Audit)"
     comment: "Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:"
     search_terms:
       - learn
@@ -226,7 +226,7 @@ matches:
       topic:
         type: text
         default: ""
-    label: "[Learn] Rupdate"
+    label: "[Learn] Literature Update Analysis (New Paper vs Established Canon)"
     comment: "Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:"
     search_terms:
       - learn
@@ -247,7 +247,7 @@ matches:
       hours:
         type: text
         default: "3"
-    label: "[Learn] I'M A  Who Wants To Learn"
+    label: "[Learn] Google Cloud Skills Roadmap (Focused Course & Badge Plan)"
     comment: "I'm a  who wants to learn . Google Skills has ~3,000 courses and labs. Build me a focused -week plan: one track only, th"
     search_terms:
       - learn
@@ -265,7 +265,7 @@ matches:
       role:
         type: text
         default: developer
-    label: '[Learn] I Am Ready To Start The "" Lab From The Plan You Gave Me'
+    label: '[Learn] Google Cloud Lab Prep Sheet (Key Concepts & Traps Before Starting)'
     comment: 'I am ready to start the "" lab from the plan you gave me. Before I click start, give me a 3-bullet prep sheet:'
     search_terms:
       - learn
@@ -280,7 +280,7 @@ matches:
       3. How deep I need to go - rough overview, or a working understanding.
 
       Ask these as a short numbered list and then wait. Do not start teaching yet.
-    label: "[Learn] I Want To Learn"
+    label: "[Learn] Learning Protocol 1/5: Calibration (Prior Knowledge & Scope)"
     comment: I want to learn . Before teaching me anything, calibrate to me.
     search_terms:
       - learn
@@ -299,7 +299,7 @@ matches:
     vars:
       - name: copied_topic
         type: clipboard
-    label: "[Learn] Lp2Of5"
+    label: "[Learn] Learning Protocol 2/5: Targeted Instruction (Concept-by-Concept)"
     comment: Based on my answers, teach me {{copied_topic}} at exactly the level I need - no more, no less.
     search_terms:
       - learn
@@ -313,7 +313,7 @@ matches:
       - After each answer, tell me right or wrong with a one-line correction.
 
       At the end, list the specific concepts I clearly have not grasped.
-    label: "[Learn] Now Test Whether It Actually Stuck"
+    label: "[Learn] Learning Protocol 3/5: Retention Quiz (6 Interactive Questions)"
     comment: Now test whether it actually stuck. Do NOT re-explain anything first.
     search_terms:
       - learn
@@ -326,7 +326,7 @@ matches:
       - Explain it a different way than you did the first time - a new angle or analogy.
       - Give me one fresh example.
       - Ask me a single follow-up question to confirm I have it now.
-    label: "[Learn] Re-Teach Only The Concepts I Got Wrong Or Was Shaky On"
+    label: "[Learn] Learning Protocol 4/5: Remediation (Targeted Concept Re-Teaching)"
     comment: Re-teach ONLY the concepts I got wrong or was shaky on. Ignore everything I already understood.
     search_terms:
       - learn
@@ -342,7 +342,7 @@ matches:
       - 3 questions I can use to re-test myself in a week.
 
       Keep it tight enough to fit on one screen.
-    label: "[Learn] Lp5Of5"
+    label: "[Learn] Learning Protocol 5/5: Cheat Sheet (1-Page Review & Traps)"
     comment: Now compress everything into a one-page reference I can save and review later.
     search_terms:
       - learn

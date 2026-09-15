@@ -6,7 +6,6 @@ matches:
       Act as a professional English tutor. Design a [[days]]-day conversational English plan focused on [[focus]] and real-world communication instead of theory. Tailor the tone to be highly practical for an international market.
     form_fields:
       days:
-        type: text
         default: '30'
       focus:
         type: choice
@@ -25,7 +24,6 @@ matches:
       Teach me [[count]] powerful English words per day related to [[domain]]. Include pronunciation guides, realistic example sentences, and one memory trick or etymological hook for each to help me retain them faster.
     form_fields:
       count:
-        type: text
         default: '10'
       domain:
         type: choice
@@ -44,13 +42,10 @@ matches:
       Pretend you're a native English speaker in a [[setting]]. Hold a [[duration]]-minute dialogue with me on [[topic]], and correct my grammar, syntax, and phrasing naturally as we go. Highlight better alternatives for any awkward phrasing.
     form_fields:
       setting:
-        type: text
         default: professional office / corporate environment
       duration:
-        type: text
         default: '10'
       topic:
-        type: text
         default: casual business topics or strategic alignment
     label: '[Learn Language] Native Speaker Dialogue (Real-Time Grammar & Phrasing Corrections)'
     comment: 'Pretend you''re a native English speaker in a . Hold a -minute dialogue with me on , and correct my grammar, syntax, and '
@@ -63,7 +58,6 @@ matches:
       Explain English grammar rules, especially [[topic]], in the simplest, most direct way possible. Provide short, everyday professional examples and contrast them against common pitfalls made by non-native speakers.
     form_fields:
       topic:
-        type: text
         default: participles, verb conjugations, and complex sentence structures
     label: '[Learn Language] English Grammar Explainer (Clear Rules & Practical Pitfalls)'
     comment: Explain English grammar rules, especially , in the simplest, most direct way possible. Provide short, everyday professio
@@ -76,7 +70,6 @@ matches:
       Build a daily [[duration]]-minute English immersion routine using podcasts, technical articles, and media content that fits an advanced professional level. Prioritize real conversational exposure and strategies for active listening.
     form_fields:
       duration:
-        type: text
         default: '30'
     label: '[Learn Language] English Immersion Routine (Daily Focused Input Plan)'
     comment: Build a daily -minute English immersion routine using podcasts, technical articles, and media content that fits an advan

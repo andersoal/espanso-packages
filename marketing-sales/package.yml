@@ -254,9 +254,6 @@ matches:
   - trigger: :p-canva
     form: |
       'Generate Canva-ready graphic ideas with text overlays for [[topic]].'
-    form_fields:
-      topic:
-        type: text
     label: "[Marketing & Sales] Canva Graphic Generator (Text Overlays & Visual Themes)"
     comment: "'Generate Canva-ready graphic ideas with text overlays for .'"
     search_terms:
@@ -266,9 +263,6 @@ matches:
   - trigger: :p-script
     form: |
       'Write short, engaging, and scroll-stopping 30-second scripts for videos about [[topic]].'
-    form_fields:
-      topic:
-        type: text
     label: "[Marketing & Sales] High-Conversion Video & Sales Scriptwriter"
     comment: "'Write short, engaging, and scroll-stopping 30-second scripts for videos about .'"
     search_terms:
@@ -278,9 +272,6 @@ matches:
   - trigger: :p-captions
     form: |
       "Write captions with a mix of storytelling and CTA. Add 5 to 7 high-quality, targeted, and trending hashtags for [[niche]]."
-    form_fields:
-      niche:
-        type: text
     label: "[Marketing & Sales] Social Caption Writer (Storytelling & High-Conversion CTA)"
     comment: '"Write captions with a mix of storytelling and CTA. Add 5 to 7 high-quality, targeted, and trending hashtags for ."'
     search_terms:
@@ -290,9 +281,6 @@ matches:
   - trigger: :p-engagement
     form: |
       "Draft 15 comment replies that feel authentic, witty, and brand-aligned for [[niche]]."
-    form_fields:
-      niche:
-        type: text
     label: "[Marketing & Sales] Audience Engagement Strategy (Conversation-Starter Tactics)"
     comment: '"Draft 15 comment replies that feel authentic, witty, and brand-aligned for ."'
     search_terms:
@@ -358,7 +346,6 @@ matches:
             Operational Function: [[function]]
           fields:
             niche:
-              type: text
               default: SaaS
             function:
               type: choice
@@ -385,7 +372,6 @@ matches:
             Word Limit Constraint: [[words]]
           fields:
             niche:
-              type: text
               default: Real Estate
             words:
               type: choice
@@ -498,10 +484,8 @@ matches:
       Target Audience Demographics: [[audience]].
     form_fields:
       topic:
-        type: text
         default: ""
       audience:
-        type: text
         default: Professionals & Founders
     label: "[Marketing & Sales] Attention Hook Library (50 Viral Scroll-Stopping Templates)"
     comment: "Give me 20 scroll-stopping content hooks for my content on the topic of: ."
@@ -524,7 +508,7 @@ matches:
       Enforce exact platform character counts for each variation.
     form_fields:
       brief:
-        type: multiline
+        multiline: true
     label: "[Marketing & Sales] A/B Ad Copy Generator (Split-Test Headlines & Body Angles)"
     comment: Analyze the following core offering/brief and create 3 distinct high-performance ad copy variations.
     search_terms:
@@ -546,10 +530,7 @@ matches:
       Core Value Proposition/Offer: [[offer]]
       Target Persona/Role: [[role]]
     form_fields:
-      offer:
-        type: text
       role:
-        type: text
         default: VP of Sales
     label: "[Marketing & Sales] LinkedIn DM Outreach (Permission-Based High-Conversion Inquiries)"
     comment: Draft a sequence of 5 initial connection messages and 3 strategic follow-up DMs based on the following input parameters.
@@ -605,7 +586,7 @@ matches:
       Ensure thorough error handling states, accurate nodes, data transformations, and conditional route fallbacks are baked into the JSON structure.
     form_fields:
       process:
-        type: multiline
+        multiline: true
     label: "[Marketing & Sales] Enterprise Automation Architect"
     comment: Act as an enterprise automation architect. Build an architectural map and the accompanying complete, production-ready n8
     search_terms:
@@ -617,7 +598,6 @@ matches:
       Act as a market research expert. For my defined audience: [[audience]], create a detailed profile: top 10 problems, exact language they use, current solutions, what's failing, and their emotional state. Keep it specific to this stage, there should be no generic founder insights.
     form_fields:
       audience:
-        type: text
         default: B2B Technical Architects
     label: "[Marketing & Sales] Market Research Expert"
     comment: "Act as a market research expert. For my defined audience: , create a detailed profile: top 10 problems, exact language t"
@@ -634,7 +614,6 @@ matches:
       Keep phrasing raw, specific, and true to how they actually speak.
     form_fields:
       icp:
-        type: text
         default: Enterprise CTOs navigating legacy migrations
     label: "[Marketing & Sales] Audience Language Extractor (Exact Slang, Tropes & Frustrations)"
     comment: "Using the audience analysis for , build a 3-part language library for my ICP:"
@@ -647,10 +626,8 @@ matches:
       Help me develop three to five content pillars for [[business_domain]]. Each pillar must be anchored to a specific belief or observation rather than a broad topic area. Each pillar must be distinct enough that a post from one could not plausibly sit within another. Each pillar must connect to the business outcomes my audience cares about: [[outcomes]].
     form_fields:
       business_domain:
-        type: text
         default: API Management and Decoupled Architecture
       outcomes:
-        type: text
         default: Reduced engineering bottlenecks, predictable scale
     label: "[Marketing & Sales] Brand Content Pillars (Authority, Relatability & Conversion Topics)"
     comment: Help me develop three to five content pillars for . Each pillar must be anchored to a specific belief or observation rat
@@ -666,7 +643,7 @@ matches:
       [[samples]]
     form_fields:
       samples:
-        type: multiline
+        multiline: true
     label: "[Marketing & Sales] Brand Voice & Tone Architecture (Rules, Cadence & Personality)"
     comment: "Analyse my writing samples provided below and build a voice profile: sentence structure, vocabulary, tone, openings/clos"
     search_terms:
@@ -682,15 +659,6 @@ matches:
       - Why me (proof): [[proof]]
 
       Make it clear, specific, and instantly recognisable to your ideal client.
-    form_fields:
-      target:
-        type: text
-      outcome:
-        type: text
-      method:
-        type: text
-      proof:
-        type: text
     label: "[Marketing & Sales] Brand Positioning Matrix (Differentiated Category Design)"
     comment: "Write a 70-90 word, first-person positioning statement based on the following attributes:"
     search_terms:
@@ -707,7 +675,7 @@ matches:
       For each, write 2 - 3 clear, specific sentences, no vague claims.
     form_fields:
       overview:
-        type: multiline
+        multiline: true
     label: "[Marketing & Sales] Irresistible Offer Blueprint (Value Stacking & Guarantee)"
     comment: "Define your offer, audience, and competitors based on this overview: ."
     search_terms:

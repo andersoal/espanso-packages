@@ -1,4 +1,4 @@
-# yaml-language-server: =https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
   - triggers:
@@ -563,8 +563,6 @@ matches:
                   id: https://youtube.com/results?q=
                 - label: Google Maps
                   id: https://www.google.com/maps/search/
-            query:
-              type: text
     label: "[Utils] Search Chooser"
     comment: "{{form_data.engine}}{{form_data.query}}"
     search_terms:

@@ -103,6 +103,7 @@ class MatchEntryChecker:
         self.errors: list[str] = []
         self.warnings: list[str] = []
         self._message_prefix = f"Match #{match_idx}"
+        self._form_var_names: set[str] = set()
 
     def run(self) -> tuple[list[str], list[str]]:
         """Execute every check and return (errors, warnings)."""
@@ -179,6 +180,8 @@ class MatchEntryChecker:
 
         if var_item.get("type") == "shell":
             self._check_shell_command(name, var_item)
+        if var_item.get("type") == "form":
+            self._form_var_names.add(name)
         return name
 
     def _check_shell_command(self, name: str, var_item: dict) -> None:
@@ -197,9 +200,17 @@ class MatchEntryChecker:
         return set()
 
     def _check_placeholders(self, defined_vars: set[str]) -> None:
-        """Report {{placeholders}} in replace that no variable resolves."""
+        """Report {{placeholders}} in replace that no variable resolves.
+
+        A 'type: form' var exposes its captured fields as '{{varname.field}}';
+        those dotted references resolve against the var name's base, not the
+        full dotted string.
+        """
         placeholders = set(PLACEHOLDER_RE.findall(self._replace_text()))
         for placeholder in placeholders - defined_vars:
+            base = placeholder.split(".", 1)[0]
+            if base in self._form_var_names:
+                continue
             self._error(
                 f"references placeholder '{{{{{placeholder}}}}}' in replace, but it is not defined in vars or regex captures."
             )

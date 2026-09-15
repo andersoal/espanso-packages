@@ -46,7 +46,6 @@ matches:
       Create a 30-day social media content calendar for [[niche]], mixing videos, carousels, and captions.
     form_fields:
       niche:
-        type: text
         default: software engineering
     label: "[Content Creation] 30-Day Omnichannel Content Calendar"
     comment: Create a 30-day social media content calendar for , mixing videos, carousels, and captions.
@@ -59,7 +58,6 @@ matches:
       Write 20 scroll-stopping and engaging hooks for TikTok/Instagram posts for [[topic]].
     form_fields:
       topic:
-        type: text
         default: architecture
     label: "[Content Creation] 50 Viral Video & Post Hooks Library"
     comment: Write 20 scroll-stopping and engaging hooks for TikTok/Instagram posts for .
@@ -72,7 +70,6 @@ matches:
       Act as a professional content creator who has experience producing high-performing content across multiple platforms. From now on, whenever I give you a topic, create content that is engaging, valuable, and easy to understand. Focus on clarity, creativity, and usefulness so every piece of content feels intentional and audience-focused. My niche is: [[niche]].
     form_fields:
       niche:
-        type: text
         default: Digital Marketing & AI Productivity
     label: "[Content Creation] Omnichannel Content Creator Persona Activation"
     comment: Act as a professional content creator who has experience producing high-performing content across multiple platforms. Fr
@@ -85,7 +82,6 @@ matches:
       Act as a creative content strategist known for generating endless ideas. Based on my niche [[niche]], generate 50 highly relevant content ideas that solve problems, answer common questions, or provide valuable insights that my audience cares about.
     form_fields:
       niche:
-        type: text
         default: Solopreneurship
     label: "[Content Creation] Content Idea Generator (50 Audience-Targeted Ideas)"
     comment: Act as a creative content strategist known for generating endless ideas. Based on my niche , generate 50 highly relevant
@@ -98,7 +94,7 @@ matches:
       Analyze my target audience [[audience_desc]] and identify their biggest problems, interests, fears, desires. Use this information to guide future content ideas so every piece of content directly addresses their needs.
     form_fields:
       audience_desc:
-        type: multiline
+        multiline: true
     label: "[Content Creation] Target Audience Profiler (Pains, Desires & Language)"
     comment: Analyze my target audience  and identify their biggest problems, interests, fears, desires. Use this information to guid
     search_terms:
@@ -108,9 +104,6 @@ matches:
   - trigger: :cchooks
     form: |
       Generate powerful Hooks for content related to my topic [[topic]]. Ensure the hooks are attention-grabbing and designed to make viewers or readers stop scrolling and pay attention immediately.
-    form_fields:
-      topic:
-        type: text
     label: "[Content Creation] Attention-Grabbing Hooks (Scroll-Stopping Topic Openers)"
     comment: Generate powerful Hooks for content related to my topic . Ensure the hooks are attention-grabbing and designed to make v
     search_terms:
@@ -120,9 +113,6 @@ matches:
   - trigger: :ccbuild
     form: |
       Create structured content for the topic [[topic]] that includes a clear beginning, main points, and conclusion. Ensure the content flows logically and delivers value step-by-step so the audience understands the message easily.
-    form_fields:
-      topic:
-        type: text
     label: "[Content Creation] Structured Content Builder (Beginning, Core Points & Conclusion)"
     comment: Create structured content for the topic  that includes a clear beginning, main points, and conclusion. Ensure the conten
     search_terms:
@@ -152,10 +142,8 @@ matches:
       Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as [[damage]]. First, analyze the image to identify the approximate era ([[era]]) and original photographic process to ensure a historically accurate restoration. Make it look fresh and clear by gently sharpening soft edges and facial features without overdoing it, smoothing out grainy spots or noise if present, and reconstructing missing parts with realistic textures that match the original. If colors are faded or absent, bring them back naturally and vibrantly but true to the era's photographic technology without looking artificial; balance colors to match natural lighting, adjust brightness and contrast so everything pops nicely, and maintain original tonality. Add subtle details to faces, objects, or backgrounds that might have been lost, like fine lines in clothing, lifelike skin textures, or small elements in the scenery, while keeping the overall feel authentic, preserving natural grain patterns, and not changing the composition. Ensure the whole image is balanced, with no harsh shadows or washed-out areas, remove technical defects while respecting the nostalgic charm and exposure qualities of the time. Finally, upscale it to [[resolution]] for better clarity, outputting in a photo-realistic style that looks like a professionally restored or recent high-quality photo.
     form_fields:
       damage:
-        type: text
         default: blurring, damage, fading, scratches, tears, folds, worn-out areas
       era:
-        type: text
         default: automatic detection
       resolution:
         type: choice
@@ -285,7 +273,6 @@ matches:
       STRICT RULE: Do not modify, hallucinate, or alter the [[asset_type]]. Preserve the original pixels, lighting, color palette, and quality completely.
     form_fields:
       elements:
-        type: text
         default: logos and text overlays
       asset_type:
         type: choice
@@ -342,16 +329,12 @@ matches:
       Remove all [[remove_target]] in the background of the uploaded image. Preserve the [[preserve_subject]] exactly. Do not change the subject's [[avoid_changes]]. Reconstruct the background naturally where the [[remove_target]] were removed, matching the original location, [[bg_details]]. Do not crop, blur, or stylize. The result must look as if the photo had originally been taken without [[remove_target]] in the background.
     form_fields:
       remove_target:
-        type: text
         default: people
       preserve_subject:
-        type: text
         default: main subject
       avoid_changes:
-        type: text
         default: face, body, clothing, pose, or expression
       bg_details:
-        type: text
         default: architecture, lighting, shadows, and depth
     label: "[Content Creation] Background Object Removal (Preserve Main Subject Exactly)"
     comment: Remove all  in the background of the uploaded image. Preserve the  exactly. Do not change the subject's . Reconstruct th
@@ -435,7 +418,6 @@ matches:
           - warm cinematic lighting
         default: warm, radiant color atmosphere
       backlight_focus:
-        type: text
         default: loose strands of hair inside
       detail_scale:
         type: choice
@@ -607,7 +589,6 @@ matches:
           - severe
           - extreme
       custom_focus:
-        type: text
         default: ""
     label: "[Content Creation] Camera Angle & Perspective Fix (Jawline & Chin Distortion Correction)"
     comment: correct the unflattering camera angle in this uploaded photo, keeping the subject's face, features, identity, and the en
@@ -628,7 +609,6 @@ matches:
           - candid shot
           - ""
       target_person:
-        type: text
         default: any person
       gaze_direction:
         type: choice
@@ -661,19 +641,14 @@ matches:
           - dramatic high-contrast cinematic lighting
           - soft-focus diffused morning window light
       pose:
-        type: text
         default: standing at the shoreline with bare feet in shallow water
       wardrobe:
-        type: text
         default: "relaxed white linen beachwear: a flowy white linen sundress, loose linen shirt, or linen trousers depending on the subject"
       hair:
-        type: text
         default: softly tousled by ocean breeze
       lens_effect:
-        type: text
         default: soft lens flare from a low sun angle
       color_grade:
-        type: text
         default: warm orange-pink color grade with slightly blown highlights
       depth_of_field:
         type: choice
@@ -682,7 +657,6 @@ matches:
           - ultra-shallow f/1.2 bokeh depth of field
           - deep architectural focus
       background:
-        type: text
         default: blurred ocean horizon
       grain:
         type: choice
@@ -691,7 +665,6 @@ matches:
           - vintage Polaroid
           - subtle 35mm film
       mood:
-        type: text
         default: ethereal, carefree, premium vacation editorial, Pinterest-core
     label: "[Content Creation] Dreamy Aesthetic Portrait Generator (Atmospheric Likeness Transformation)"
     comment: Transform the subject in this photo into a dreamy aesthetic  portrait while preserving their recognizable facial structu
@@ -877,13 +850,6 @@ matches:
       </rules>
 
       <output>Time Audit -> Productization Plan -> Digital Product Design -> Passive Income Layer -> 12-Month Scaling Roadmap</output>
-    form_fields:
-      revenue:
-        type: text
-      offer:
-        type: text
-      time:
-        type: text
     label: "[Content Creation] Dan Koe Solo Business: Rapid Growth Protocols (Aggressive Velocity)"
     comment: <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
     search_terms:
@@ -1085,6 +1051,7 @@ matches:
       - :kill-ai-voice
       - :ai-voice-kill
       - :humanize-voice
+    word: true
     form: |
       Rewrite this so it sounds like me, not like an assistant. Here is how I actually write:
       [[writing_sample]]

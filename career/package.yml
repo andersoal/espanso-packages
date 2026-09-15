@@ -16,7 +16,7 @@ matches:
       [[resume]]
     form_fields:
       resume:
-        type: multiline
+        multiline: true
     label: "[Career] Technical Resume & ATS Optimizer"
     comment: Rewrites resume bullet points to pass ATS filters and highlight technical impact.
     search_terms:
@@ -39,7 +39,7 @@ matches:
       [[background]]
     form_fields:
       background:
-        type: multiline
+        multiline: true
     label: "[Career] Job Fit & Executive Talent Scout"
     comment: Evaluates alignment between your background and target role requirements.
     search_terms:
@@ -63,9 +63,9 @@ matches:
       [[resume]]
     form_fields:
       job_desc:
-        type: multiline
+        multiline: true
       resume:
-        type: multiline
+        multiline: true
     label: "[Career] Resume & Job Description Matcher"
     comment: Identifies keyword gaps between your resume and a target job posting.
     search_terms:
@@ -84,7 +84,7 @@ matches:
       [[job_posting]]
     form_fields:
       job_posting:
-        type: multiline
+        multiline: true
     label: "[Career] Senior Technical Mock Interviewer"
     comment: Simulates a rigorous interview for target senior engineering roles.
     search_terms:
@@ -99,7 +99,6 @@ matches:
       Generate 3 highly targeted project ideas or portfolio execution examples that a senior professional can rapidly build within a 7-day cycle. Every project blueprint must be engineered to provide undeniable, undeniable proof of elite skill execution to demanding employers and instantly elevate architectural credibility. Focus on complex integrations, real-time data handling, or system performance bottlenecks.
     form_fields:
       role:
-        type: text
         default: Software Engineer
     label: "[Career] Engineering Portfolio Reviewer"
     comment: Reviews GitHub portfolio and project showcases for hiring impact.
@@ -115,7 +114,6 @@ matches:
       Draft a professional, authoritative, and deeply confident script engineered to negotiate a 15-20% compensation expansion. The narrative must remain intensely collaborative, grounded in massive value delivery, and completely free of pushy, arrogant, or defensive language. Provide both an email framework and an active verbal dialogue script.
     form_fields:
       amount:
-        type: text
         default: $150,000
     label: "[Career] Compensation & Offer Negotiation Coach"
     comment: Scripts counter-offers and negotiation leverage for job offers.
@@ -130,11 +128,6 @@ matches:
       Target Role: [[role]]
 
       Write a highly crisp, high-impact follow-up message optimized for a professional network platform or direct communication channel. The text must forcefully but elegantly reinforce my precise fit for the role, anchor on immediate value delivery, and maintain top-of-mind recall with the recruiter. Keep it persuasive, deeply respectful, and highly professional.
-    form_fields:
-      recruiter_name:
-        type: text
-      role:
-        type: text
     label: "[Career] Recruiter Follow-Up (High-Impact Post-Application Message)"
     comment: Act as an expert in elite corporate communications.
     search_terms:
@@ -149,7 +142,7 @@ matches:
       Rewrite it to maximize interview callbacks. Use strong action verbs, quantified results, and ATS-friendly formatting, without exaggeration.
     form_fields:
       resume:
-        type: multiline
+        multiline: true
     comment: "Here is my resume:"
     search_terms:
       - career
@@ -182,9 +175,9 @@ matches:
       Identify missing keywords and rewrite my resume so it matches this role as closely as possible while staying honest.
     form_fields:
       jd:
-        type: multiline
+        multiline: true
       resume:
-        type: multiline
+        multiline: true
     comment: "Job description:"
     search_terms:
       - career
@@ -219,7 +212,7 @@ matches:
       List 10 roles I'm qualified for that I might be overlooking. Rank them by hiring demand and response likelihood.
     form_fields:
       skills:
-        type: multiline
+        multiline: true
     label: "[Career] Hidden Role Discovery (10 High-Demand Career Paths)"
     comment: "Based on my experience and skills:"
     search_terms:
@@ -233,7 +226,7 @@ matches:
       Make them clearer, more results-focused, and more impressive to recruiters in under 2 lines each.
     form_fields:
       bullets:
-        type: multiline
+        multiline: true
     label: "[Career] Resume Bullet Polish (Results-Focused & 2-Line Compression)"
     comment: "Rewrite these resume bullet points:"
     search_terms:
@@ -248,7 +241,7 @@ matches:
       Make it sound human, confident, and specific, not generic or AI-written.
     form_fields:
       jd:
-        type: multiline
+        multiline: true
     comment: "Write a short, tailored cover letter for this role:"
     search_terms:
       - career
@@ -275,7 +268,7 @@ matches:
       The goal is to spark interest and get a reply, not ask for a favor.
     form_fields:
       jd:
-        type: multiline
+        multiline: true
     label: "[Career] Recruiter Cold Outreach (High-Response LinkedIn/Email Hook)"
     comment: "Write a concise LinkedIn or email message to a recruiter for this role:"
     search_terms:
@@ -289,7 +282,7 @@ matches:
       Create a smarter application strategy. Tell me how many roles to apply for weekly, how to customize efficiently, and how to follow up.
     form_fields:
       background:
-        type: multiline
+        multiline: true
     label: "[Career] Job Application Strategy (Weekly Cadence & Follow-Up System)"
     comment: "Based on my background and target roles:"
     search_terms:
@@ -310,10 +303,8 @@ matches:
     form: |
       "Act as a senior recruiter with deep ATS expertise. Create a resume tailored specifically for my target role [[job_title]]. Convert responsibilities into measurable impact, integrate role-specific keywords naturally, and structure it for fast recruiter scanning and ATS compatibility. My experience: {{clip}}. Job description: [[job_description]]"
     form_fields:
-      job_title:
-        type: text
       job_description:
-        type: multiline
+        multiline: true
     vars:
       - name: clip
         type: clipboard
@@ -536,11 +527,6 @@ matches:
       - Ask one challenging question at a time
       - After each answer, provide: Critique (strengths) & Refinement (how to improve impact)
       - Gradually increase difficulty level
-    form_fields:
-      job_title:
-        type: text
-      company:
-        type: text
     label: "[Career] Interactive Behavioral Mock Interview (Roleplay & Progressive Difficulty)"
     comment: Roleplay as a  at .
     search_terms:

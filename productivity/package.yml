@@ -33,7 +33,7 @@ matches:
     search_terms:
       - productivity
       - burkeman
-      - 333
+      - "333"
 
   - trigger: :eisen
     form: |
@@ -325,13 +325,13 @@ matches:
             [[real_vision]]
           fields:
             antivision_items:
-              type: multiline
+              multiline: true
               default: |
                 - Meaningless routines and chaos.
                 - Unhealthy habits and low energy.
                 - Work without purpose or leverage.
             real_vision:
-              type: multiline
+              multiline: true
               default: |
                 - Total autonomy and execution clarity.
                 - Scalable systems engineering.
@@ -553,7 +553,7 @@ matches:
       Act as a time management expert and help me batch similar tasks, reduce context switching, and free up focus time.
     form_fields:
       calendar_details:
-        type: multiline
+        multiline: true
     label: '[Productivity] Time Management Expert And Help Me Batch Similar Tasks'
     comment: 'Here''s my calendar for the week:'
     search_terms:
@@ -1029,7 +1029,7 @@ matches:
       - get-shit-done
       - pomodoro
       - eisenhower
-      - 333
+      - "333"
       - time-blocking
 
   - trigger: :para-guide

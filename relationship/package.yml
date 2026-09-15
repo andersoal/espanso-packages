@@ -14,10 +14,8 @@ matches:
       3. ✨ NEW THING NEITHER OF US HAS TRIED (Activity, interactive class, or unconventional event)
     form_fields:
       city:
-        type: text
         default: Austin, TX
       budget:
-        type: text
         default: '60'
     label: '[Relationship] Creative Date & Activity Concierge'
     comment: Act as our AI Relationship Concierge and Date Night Planner. Generate exactly three distinct date options for this weeke
@@ -38,22 +36,16 @@ matches:
       Provide a concise 10-minute check-in brief summarizing wins, variations, and automated pacing.
     form_fields:
       rent:
-        type: text
         default: '2100'
       groceries:
-        type: text
         default: '187'
       dining:
-        type: text
         default: '96'
       subs:
-        type: text
         default: '43'
       unusual:
-        type: text
         default: None
       goal:
-        type: text
         default: Europe Trip Fund
     label: '[Relationship] Joint Financial Alignment & Budgeting'
     comment: Act as our joint Financial Strategist. Below is our baseline snapshot for the past week. Analyze our current spending ve
@@ -70,7 +62,7 @@ matches:
       Please assess the time commitment and complexity of each item, then output a balanced, fair weekly schedule assigning specific days and responsibilities to each person.
     form_fields:
       tasks:
-        type: multiline
+        multiline: true
         default: |
           - Call dentist to reschedule Jake's appointment
           - Mid-week grocery run
@@ -96,28 +88,20 @@ matches:
       Synthesize these parameters into a single harmonious itinerary that accommodates both paces gracefully, highlighting optimal food spots and flight tracking guidelines.
     form_fields:
       destination:
-        type: text
         default: Lisbon, Portugal
       dates:
-        type: text
         default: September
       pace_a:
-        type: text
         default: Slow, coffee first
       food_a:
-        type: text
         default: No shellfish
       vibe_a:
-        type: text
         default: Mix of culture + rest
       pace_b:
-        type: text
         default: Early hike ok
       food_b:
-        type: text
         default: Eats everything
       vibe_b:
-        type: text
         default: Wants at least 1 adventure
     label: '[Relationship] Bespoke Travel & Itinerary Concierge'
     comment: Act as a high-end customized travel concierge. Build a personalized, day-by-day vacation itinerary using our specific, a
@@ -134,7 +118,7 @@ matches:
       Cross-reference our ongoing timeline, summarize structural themes of growth over the past year, and construct a warm anniversary card prompt, reflective toast suggestion, or surprise gift idea based on these logged details.
     form_fields:
       entries:
-        type: multiline
+        multiline: true
         default: |
           - First time making homemade pizza together (the dough disaster)
           - Adopted our dog Luna
@@ -174,7 +158,7 @@ matches:
       Then ask me 3 questions to test if I truly understood.
     form_fields:
       content:
-        type: multiline
+        multiline: true
     label: '[Relationship] Complex Concept to Plain English Translator'
     comment: 'Translates complex content down to the core single sentence with a simple analogy and 3 comprehension checks.'
     search_terms:
@@ -186,12 +170,11 @@ matches:
   - trigger: :expert
     word: true
     form: |
-      I think I have mastered [[skill]]. Prove me wrong. Ask [[number_of_questions]] simple questions that reveal fundamental knowledge gaps.
+      I think I have mastered [[skill]] at a [[level]] level. Prove me wrong. Ask [[number_of_questions]] simple questions that reveal fundamental knowledge gaps.
 
       For each answer, tell me exactly what is still missing from my foundation.
     form_fields:
       skill:
-        type: text
         default: ''
       level:
         type: choice
@@ -201,7 +184,6 @@ matches:
           - Advanced
           - Expert
       number_of_questions:
-        type: text
         default: '5'
     label: '[Relationship] Skill Mastery Challenge & Blind Spot Prover'
     comment: 'Challenges your assumed mastery of a skill with simple diagnostic questions revealing foundational gaps.'
@@ -218,13 +200,6 @@ matches:
       My goal is: [[outcome]]
 
       Give me three ways to approach this: a direct approach, a diplomatic approach, and a data-driven approach. For each, tell me the risk and the expected reaction.
-    form_fields:
-      situation:
-        type: text
-      profile:
-        type: text
-      outcome:
-        type: text
     label: '[Relationship] Difficult Conversation Preparation Coach'
     comment: 'I''m going to have this difficult conversation:'
     search_terms:

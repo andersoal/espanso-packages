@@ -4,9 +4,6 @@ matches:
   - trigger: :p-destroyer
     form: |
       "You are a teacher who only has 4 hours with me and will never see me again. Your only objective is to make me functional in [[skill]] before the time runs out. Do not give me theory without practical use. Do not give me a list. Tell me: what to learn first, what to completely ignore, and what exercise, if I do it once, will already put me ahead of 70% of people who have been studying this for months."
-    form_fields:
-      skill:
-        type: text
     label: "[Learn] 4-Hour High-Speed Learning Squeeze"
     comment: Fast-tracks learning as if you only have 4 hours to learn the entire topic.
     search_terms:
@@ -15,17 +12,6 @@ matches:
   - trigger: :p-architect
     form: |
       "My real goal is [[goal]]. It is not to learn [[skill]] in general. It is to achieve [[specific_result]] within [[deadline]]. I already know [[what_you_master]]. Based on that, build me a 7-day learning path. Each day must include one single task that fits within 45 minutes, a clear criterion so I know whether I did it correctly, and what not to do that day so I do not waste time. If the entire path does not lead me to the goal, rebuild it until it does."
-    form_fields:
-      goal:
-        type: text
-      skill:
-        type: text
-      specific_result:
-        type: text
-      deadline:
-        type: text
-      what_you_master:
-        type: text
     label: "[Learn] Mission-Specific Curriculum Architect"
     comment: Builds a curriculum specifically tailored to your exact goal rather than generic theory.
     search_terms:
@@ -72,7 +58,6 @@ matches:
          - Define jargon on first use - plain English.
     form_fields:
       topic:
-        type: text
         default: Machine Learning / AI Sourcing
     label: "[Learn] Research Step 1: Broad Landscape Map"
     comment: Maps the overarching domain landscape, key figures, and core controversies.
@@ -116,7 +101,6 @@ matches:
       - What kind of work tends to get cited
     form_fields:
       topic:
-        type: text
         default: ""
     label: "[Learn] Research Step 2: Primary Source Deep Dive"
     comment: Extracts empirical data and key findings from high-trust primary sources.
@@ -135,7 +119,6 @@ matches:
       Do not use blogs, summaries, or third-party mirrors.
     form_fields:
       topic:
-        type: text
         default: ""
     label: "[Learn] Research Step 3: Synthesis & Actionable Takeaways"
     comment: Synthesizes gathered research into a crisp, actionable briefing document.
@@ -159,7 +142,6 @@ matches:
       WRITING STYLE - Plain English, short sentences. No buzzwords, no hype.
     form_fields:
       target:
-        type: text
         default: this paper
     label: "[Learn] Steelman Thesis (Strongest Plain-Language Justification)"
     comment: TASK
@@ -183,7 +165,6 @@ matches:
       WRITING STYLE - Plain English, short, direct, skeptical. No hand-waving.
     form_fields:
       target:
-        type: text
         default: this paper
     label: "[Learn] Skeptical Red-Team (Methodology Flaws & Replication Audit)"
     comment: "Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:"
@@ -224,7 +205,6 @@ matches:
       - Field impact vs the hype: Bigger / Same / Smaller
     form_fields:
       topic:
-        type: text
         default: ""
     label: "[Learn] Literature Update Analysis (New Paper vs Established Canon)"
     comment: "Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:"
@@ -236,16 +216,12 @@ matches:
       I'm a [[role]] who wants to learn [[goal]]. Google Skills has ~3,000 courses and labs. Build me a focused [[weeks]]-week plan: one track only, the 3-4 specific labs and badges worth doing in order, about [[hours]] hours a week, skip anything that is pure theory. Tell me which badge to earn first and why it matters to an employer.
     form_fields:
       role:
-        type: text
         default: developer
       goal:
-        type: text
         default: Deploy ML models on Vertex AI
       weeks:
-        type: text
         default: "4"
       hours:
-        type: text
         default: "3"
     label: "[Learn] Google Cloud Skills Roadmap (Focused Course & Badge Plan)"
     comment: "I'm a  who wants to learn . Google Skills has ~3,000 courses and labs. Build me a focused -week plan: one track only, th"
@@ -260,10 +236,8 @@ matches:
       3. How does this specific skill translate to a real-world [[role]] task?
     form_fields:
       lab_name:
-        type: text
         default: ""
       role:
-        type: text
         default: developer
     label: '[Learn] Google Cloud Lab Prep Sheet (Key Concepts & Traps Before Starting)'
     comment: 'I am ready to start the "" lab from the plan you gave me. Before I click start, give me a 3-bullet prep sheet:'
@@ -372,7 +346,6 @@ matches:
       Acknowledge receipt of parameters by executing STATE 01 for [Topic] immediately. Do not dump the entire field.
     form_fields:
       baseline:
-        type: text
         default: Systems thinker, practical architecture focus
     label: "[Learn] Aggressively Gated"
     comment: "[ROLE]"

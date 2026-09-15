@@ -1,4 +1,4 @@
-# yaml-language-server: =https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
   - regex: :niche\((?P<target_niche>.*)\)
@@ -30,10 +30,8 @@ matches:
       "
     form_fields:
       niche:
-        type: text
         default: B2B Software Engineering
       audience:
-        type: text
         default: Technical Architects and Enterprise Builders
     label: "[Social Strategy] 5 Core Engagement Content Pillars"
     comment: "You're a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche  and target audience "
@@ -440,7 +438,7 @@ matches:
       "
     form_fields:
       business_description:
-        type: multiline
+        multiline: true
     label: "[Social Strategy] Leveraged Content Scaling Architecture"
     comment: Give me a plan to scale this business to  within .
     search_terms:
@@ -464,13 +462,10 @@ matches:
       "
     form_fields:
       niche:
-        type: text
         default: Software Engineering & Architecture
       audience:
-        type: text
         default: Mid-to-Senior Developers
       goals:
-        type: text
         default: Build a scalable brand and drive organic engine inbound leads
     label: "[Social Strategy] YouTube Channel Strategist (Positioning & 1K Sub Roadmap)"
     comment: Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
@@ -522,10 +517,8 @@ matches:
           - AI Creative Studio
           - AI Mini Product Studio
       core_service:
-        type: text
         default: Automated Workflow Integration
       your_name:
-        type: text
         default: Founder
     label: "[Social Strategy] AI Agency Cold Pitch (15-Minute Discovery Call Hook)"
     comment: Hi ,
@@ -631,7 +624,6 @@ matches:
           - Classroom AI For Educators
           - AI Tools For Property Agents
       student_name:
-        type: text
         default: there
     label: "[Social Strategy] Corporate AI Academy (Curriculum Recommendation & Syllabus)"
     comment: Hi ,

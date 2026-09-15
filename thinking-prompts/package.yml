@@ -8,7 +8,7 @@ matches:
       Give me one unexpected exercise that forces me to see it from a completely different angle, and the first small action I should take today.
     form_fields:
       problem:
-        type: multiline
+        multiline: true
     label: "[Thinking Prompts] Recurring Problem Snapshot (Deconstruct Habits)"
     comment: "I keep repeating this recurring problem:"
     search_terms:
@@ -31,7 +31,7 @@ matches:
       Use logic, real-world examples, and edge cases. Then give me 3 questions I can ask myself to test if my belief actually holds up.
     form_fields:
       topic:
-        type: multiline
+        multiline: true
     label: "[Thinking Prompts] Pre-Mortem Stress Test (Plan Destructor)"
     comment: Take one of my beliefs about  and build the strongest possible case against it.
     search_terms:
@@ -45,7 +45,7 @@ matches:
       For each one, explain what they would focus on, what they'd ignore, and what they'd do next.
     form_fields:
       idea_or_problem:
-        type: multiline
+        multiline: true
     label: "[Thinking Prompts] Cross-Domain Mental Model Transfer (5 Experts)"
     comment: "Look at my  through five different experts (for example: psychologist, investor, engineer, strategist, creator)."
     search_terms:
@@ -57,9 +57,6 @@ matches:
       I want to get good at [[skill]]. Create a simple, focused plan that covers only the highest-impact parts.
 
       Break it into clear steps, daily actions, and what I should practice to improve fast without wasting time.
-    form_fields:
-      skill:
-        type: text
     label: "[Thinking Prompts] Feynman Compression (Rapid Simple Mastery)"
     comment: I want to get good at . Create a simple, focused plan that covers only the highest-impact parts.
     search_terms:
@@ -73,7 +70,6 @@ matches:
       Show the patterns, habits, or decisions that are slowing me down, and give me a simple plan to remove or replace them starting this week.
     form_fields:
       area:
-        type: text
         default: my life and work
     label: "[Thinking Prompts] Self-Sabotage & Subconscious Barrier Detector"
     comment: Help me spot where I'm getting in my own way in .
@@ -86,9 +82,6 @@ matches:
       Take [[topic]] and break it into five powerful insights that are easy to understand but hard to notice.
 
       For each one, explain it simply and show how it actually applies in real life.
-    form_fields:
-      topic:
-        type: text
     label: "[Thinking Prompts] Core Truth & Mental Breakthrough Extractor"
     comment: Take  and break it into five powerful insights that are easy to understand but hard to notice.
     search_terms:
@@ -102,7 +95,7 @@ matches:
       Identify the hidden drivers behind my actions (patterns, fears, habits), explain why they show up, and suggest one practical way to respond differently next time.
     form_fields:
       problem:
-        type: multiline
+        multiline: true
     label: "[Thinking Prompts] Personal Decision-Making Heuristic Decoder"
     comment: Break down how I handle .
     search_terms:
@@ -116,10 +109,9 @@ matches:
       Explain how their thinking differs from mine and what specific moves they would make first.
     form_fields:
       person:
-        type: text
         default: Elon Musk
       challenge:
-        type: multiline
+        multiline: true
     label: "[Thinking Prompts] Bold Vision Simulator (Unconstrained Thinking)"
     comment: Show how someone bold and creative (like ) would approach my .
     search_terms:
@@ -133,7 +125,7 @@ matches:
       Point out weak logic, hidden assumptions, and biases. Then reframe the situation in a clearer, more useful way I can act on immediately.
     form_fields:
       topic:
-        type: multiline
+        multiline: true
     label: "[Thinking Prompts] Radical Assumption Challenge & Red Teaming"
     comment: Challenge my thinking about .
     search_terms:

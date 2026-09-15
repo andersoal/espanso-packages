@@ -1,7 +1,7 @@
 name: "engineering"
 title: "Engineering & Agent Skills Pack"
 description: "Comprehensive engineering shortcuts, programming tasks, system architecture templates, and Matt Pocock-inspired agent skills (TDD, Grilling, Code Review, Bug Diagnosis, Wayfinder, Deep Module Design)."
-version: 1.1.1
+version: 1.1.2
 author: "Antigravity & Community"
 tags:
   - engineering

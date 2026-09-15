@@ -289,7 +289,7 @@ matches:
       - career
 
   - trigger: :p-dream
-    form: |
+    replace: |
       "Act as a senior hiring manager and career strategist. Analyze my skills, experience, interests, constraints, and current market demand to identify the exact job roles I should target. Eliminate unsuitable roles and clearly define my ideal position, responsibilities, company type, and hiring expectations. My background: {{clip}}"
     vars:
       - name: clip
@@ -314,7 +314,7 @@ matches:
       - career
 
   - trigger: :p-linkedin
-    form: |
+    replace: |
       "Act as a recruiter who sources candidates daily on LinkedIn. Rewrite my headline, summary, and experience so my value, role fit, and expertise are immediately clear. Optimize for recruiter searches and human scanning while keeping the tone professional and credible. Profile details: {{clip}}."
     vars:
       - name: clip
@@ -325,7 +325,7 @@ matches:
       - career
 
   - trigger: :p-reject
-    form: |
+    replace: |
       "Review my resume exactly as a recruiter would. Identify every reason it could be rejected, ignored, or misunderstood. Highlight weak bullets, unclear positioning, missing signals, or credibility gaps, then rewrite those sections so the resume becomes interview-ready. Resume: {{clip}}."
     vars:
       - name: clip
@@ -468,7 +468,7 @@ matches:
       - refinement
 
   - trigger: :pcareer
-    form: |
+    replace: |
       I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
     label: "[Career] Career Direction Reset (10 Deep Questions & 90-Day Plan)"
     comment: "I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, "
@@ -492,8 +492,7 @@ matches:
       - career
 
   - trigger: :profile-as-lp
-    form: |2
-
+    replace: |
       Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the highest-converting landing page you will ever own. Job-seekers optimize for keywords. Operators optimize for one specific reader who, if they understood what you do in 12 seconds, would either book a call, subscribe, or remember you for later.
 
       Rebuild my profile as a landing page:

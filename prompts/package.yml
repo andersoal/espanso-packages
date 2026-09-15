@@ -153,7 +153,7 @@ matches:
       - The fallback plan is explicit and conservative.
       - The agent never assumes "the user will correct me if I'm wrong" as a
         substitute for early clarification.
-    label: '[Prompts] Clarification Timing Strategist (Empirical Trajectory Windows)'
+    label: '[Prompts] Strategic Clarification Timing (Empirical Trajectory Windows)'
     comment: Clarification Timing Strategist
     search_terms:
       - prompts
@@ -285,7 +285,7 @@ matches:
       ## Tone
 
       Rigorous, latency-aware, and psychologically grounded. You design for the human perception of "responsiveness" without sacrificing reasoning quality. Every disclosure decision is a trade-off with a calculable cost — make the cost explicit.
-    label: '[Prompts] Disclosure Policy Designer (Proactive Agent Policy Rules)'
+    label: '[Prompts] Progressive Disclosure Architecture (Proactive Agent Policy Rules)'
     comment: Disclosure Policy Designer
     search_terms:
       - prompts
@@ -1609,7 +1609,7 @@ matches:
         type: form
         params:
           layout: 'Refine based on: [[input]]'
-    label: '[Prompts] Refinement Chain (Iterative Insight Polishing)'
+    label: '[Prompts] Multi-Step Refinement Loop (Iterative Insight Polishing)'
     comment: Review everything we've discussed. Based on the concept of '{{input}}', how can we refine the analysis for greater impac
     search_terms:
       - prompts
@@ -2534,7 +2534,7 @@ matches:
   - trigger: :rigorous-mentor
     replace: |
       Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. Challenge ideas when needed. Be direct and clear, not harsh. Prioritize helping me improve over being agreeable. When you critique something, explain why and suggest a better alternative.
-    label: '[Prompts] Rigorous Mentor (Fierce Honesty & Flaw Detection)'
+    label: '[Prompts] Uncompromising Critical Mentor (Fierce Honesty & Flaw Detection)'
     comment: Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. C
     search_terms:
       - prompts
@@ -4239,7 +4239,7 @@ matches:
     form_fields:
       subject:
         default: DataWeave 2.0 Architecture
-    label: '[Prompts] Deep Learning Guide (Conceptual Immersion & Practical Drills)'
+    label: '[Prompts] Comprehensive Skill Mastery Guide (Conceptual Immersion & Practical Drills)'
     comment: Act as a master in the given subject and guide me through a deep learning process.
     search_terms:
       - prompts
@@ -6819,7 +6819,7 @@ matches:
     form_fields:
       describe_startup_idea:
         multiline: true
-    label: '[Prompts] Startup Idea Validator (Demand Signals Unit Economics & Pitfalls)'
+    label: '[Prompts] Venture Viability Stress-Tester (Demand Signals Unit Economics & Pitfalls)'
     comment: 'Act like an experienced startup mentor. Analyze this business idea: . Evaluate the market demand, target audience, and c'
     search_terms:
       - prompts
@@ -6830,7 +6830,7 @@ matches:
     form_fields:
       describe_skills_interests_resources:
         multiline: true
-    label: '[Prompts] Profitable Niche Finder (Cross-Reference Skills & Underserved Markets)'
+    label: '[Prompts] High-Margin Market Discovery (Cross-Reference Skills & Underserved Markets)'
     comment: 'Based on the skills, interests, or resources I have: , generate 10 realistic startup ideas that can be started with litt'
     search_terms:
       - prompts
@@ -6841,7 +6841,7 @@ matches:
     form_fields:
       describe_idea:
         multiline: true
-    label: '[Prompts] Customer Pain Point Researcher (Interviews Queries & Desires Deep Dive)'
+    label: '[Prompts] Buyer Friction & Need Diagnostic (Interviews Queries & Desires Deep Dive)'
     comment: 'Act like a market researcher. For the business idea: , identify the top problems or frustrations the target customers fa'
     search_terms:
       - prompts
@@ -7977,7 +7977,7 @@ matches:
 
       Tone & Style
       Warm, encouraging, and intellectually rigorous. Use literary terminology correctly (inciting incident, denouement, foible, subtext, leitmotif, unreliable narrator, free indirect discourse). Balance academic craft knowledge with emotional intelligence. Write like the best writing professor you never had — challenging but supportive, demanding but patient. Include examples from canonical and contemporary literature. Structure as both a curriculum and a reference guide.
-    label: '[Prompts] Creative Writing Coach (Character Arcs Scene Tension & Voice)'
+    label: '[Prompts] Fiction Craft & Structure Coach (Character Arcs Scene Tension & Voice)'
     comment: Role
     search_terms:
       - prompts
@@ -8084,7 +8084,7 @@ matches:
 
       Tone & Style
       Passionate, imaginative, and professionally grounded. Use game design and narrative theory terminology correctly (ludonarrative dissonance, environmental storytelling, emergent narrative, agency). Balance creative inspiration with practical implementation guidance. Structure as a professional narrative design document that could be used to pitch a project to publishers or guide an internal development team. Include examples, references to canonical works, and actionable templates.
-    label: '[Prompts] Immersive Narrative Designer (Worldbuilding Lore & Dialogue Polish)'
+    label: '[Prompts] Worldbuilding & Story Architect (Worldbuilding Lore & Dialogue Polish)'
     comment: Role
     search_terms:
       - prompts

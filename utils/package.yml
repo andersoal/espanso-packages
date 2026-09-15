@@ -410,7 +410,7 @@ matches:
 
       - :search-duckduckgo
     replace: https://duckduckgo.com/?q=
-    label: "[Utils] Search DuckDuckGo"
+    label: "[Utils] DuckDuckGo Web Search (Fast Privacy Search)"
     comment: Quick search query URL prefix for DuckDuckGo
     search_terms:
       - utils
@@ -419,7 +419,7 @@ matches:
 
       - :search-wikipedia
     replace: https://en.wikipedia.org/w/?search=
-    label: "[Utils] Search Wikipedia"
+    label: "[Utils] Wikipedia Encyclopedia Search (Instant Article Lookup)"
     comment: Quick search query URL prefix for Wikipedia
     search_terms:
       - utils
@@ -428,7 +428,7 @@ matches:
 
       - :search-github
     replace: https://github.com/search?q=
-    label: "[Utils] Search GitHub"
+    label: "[Utils] GitHub Code & Repo Search (Open Source Repositories)"
     comment: Quick search query URL prefix for GitHub
     search_terms:
       - utils
@@ -437,7 +437,7 @@ matches:
 
       - :search-stackoverflow
     replace: https://stackoverflow.com/search?q=
-    label: "[Utils] Search StackOverflow"
+    label: "[Utils] StackOverflow Developer Search (Programming Q&A Solutions)"
     comment: Quick search query URL prefix for StackOverflow
     search_terms:
       - utils
@@ -446,7 +446,7 @@ matches:
 
       - :search-dockerhub
     replace: https://hub.docker.com/search?q=
-    label: "[Utils] Search DockerHub"
+    label: "[Utils] Docker Hub Container Search (Images & Registry Lookup)"
     comment: Quick search query URL prefix for DockerHub
     search_terms:
       - utils
@@ -455,7 +455,7 @@ matches:
 
       - :search-wolframalpha
     replace: https://www.wolframalpha.com/input/?i=
-    label: "[Utils] Search WolframAlpha"
+    label: "[Utils] WolframAlpha Knowledge Engine (Computational Answers)"
     comment: Quick search query URL prefix for WolframAlpha
     search_terms:
       - utils
@@ -464,7 +464,7 @@ matches:
 
       - :search-reddit
     replace: https://www.reddit.com/search/?q=
-    label: "[Utils] Search Reddit"
+    label: "[Utils] Reddit Discussion Search (Community Threads & Discussions)"
     comment: Quick search query URL prefix for Reddit
     search_terms:
       - utils
@@ -473,7 +473,7 @@ matches:
 
       - :search-bbc
     replace: https://www.bbc.co.uk/search?q=
-    label: "[Utils] Search BBC"
+    label: "[Utils] BBC Global News Search (World News & Analysis)"
     comment: Quick search query URL prefix for BBC
     search_terms:
       - utils
@@ -482,7 +482,7 @@ matches:
 
       - :search-virustotal
     replace: https://www.virustotal.com/gui/search/
-    label: "[Utils] Search VirusTotal"
+    label: "[Utils] VirusTotal Threat Intelligence (Malware & Domain Analysis)"
     comment: Quick search query URL prefix for VirusTotal
     search_terms:
       - utils
@@ -491,7 +491,7 @@ matches:
 
       - :search-amazon
     replace: https://amazon.co.uk/s?k=
-    label: "[Utils] Search Amazon"
+    label: "[Utils] Amazon Marketplace Search (Product Catalog & Store)"
     comment: Quick search query URL prefix for Amazon
     search_terms:
       - utils
@@ -500,7 +500,7 @@ matches:
 
       - :search-youtube
     replace: https://youtube.com/results?q=
-    label: "[Utils] Search YouTube"
+    label: "[Utils] YouTube Video Search (Videos, Channels & Playlists)"
     comment: Quick search query URL prefix for YouTube
     search_terms:
       - utils
@@ -518,7 +518,7 @@ matches:
 
       - :search-google
     replace: https://google.com/search?q=
-    label: "[Utils] Search Google"
+    label: "[Utils] Google Web Search (Standard Engine Query)"
     comment: Quick search query URL prefix for Google
     search_terms:
       - utils

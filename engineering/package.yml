@@ -669,7 +669,7 @@ matches:
       * Edge case handling
       * Error management
       * Performance evaluation
-    label: "[Engineering] Feature Developer (Full Specification)"
+    label: "[Engineering] Production Feature Specification (Architecture & Implementation Plan)"
     comment: Senior software engineer prompt to plan architecture, folder structure, edge cases, and code.
     search_terms:
       - engineering

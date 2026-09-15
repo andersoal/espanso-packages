@@ -149,50 +149,34 @@ matches:
       - social-strategy
 
       - social strategy
-  - trigger: :triage
-    replace: '---
-
-      type: interaction
-
-      activity: triage-call
-
-      date: "{{current_date}}"
-
-      status: completed
-
+  - triggers:
+      - :triage
+      - :triage-call
+    word: true
+    replace: |
       ---
-
+      type: interaction
+      activity: triage-call
+      date: "{{current_date}}"
+      status: completed
+      ---
       # Triage Call Diagnostic: [Prospect Name]
 
-
       ### 1. The Problem
-
       > What is broken or missing in their current framework, and how long has this friction persisted?
-
       -
-
 
       ### 2. The Impact
-
       > What are the quantifiable financial, operational, or personal costs of continuing with state-level inaction?
-
       -
-
 
       ### 3. Fit & Urgency
-
       > Confirm baseline parameters: Do they possess the resources, alignment, and immediate intent to solve it?
-
       -
 
-
       ### 4. Pipeline Disposition
-
       - [ ] **Advance:** Qualified candidate. Book 45-Minute Strategy Session.
-
       - [ ] **Redirect:** Unqualified/Poor fit. Disengage or route to low-barrier asynchronous asset.
-
-      '
     vars:
       - name: current_date
         type: date

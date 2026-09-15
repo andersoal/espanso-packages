@@ -1114,7 +1114,7 @@ matches:
       - :no-generalities
     replace: |
       Every time you make a general claim in this draft, replace it with a concrete number, name or example. If you do not have one, ask me for it instead of inventing it.
-    label: "[Content Creation] Force Specifics (Concrete Evidence)"
+    label: "[Content Creation] Concrete Detail Enforcer (Concrete Evidence)"
     comment: Replaces abstract or generalized claims with concrete figures, names, and real-world examples without hallucinating.
     search_terms:
       - content-creation
@@ -1176,7 +1176,7 @@ matches:
     form_fields:
       topic:
         multiline: true
-    label: "[Content Creation] Five Whys (Find The Core Thesis)"
+    label: "[Content Creation] Root Thesis Deep Dive (Find The Core Thesis)"
     comment: Uses 5-Whys interrogation technique interactively to drill down to the core narrative thesis.
     search_terms:
       - content-creation
@@ -1233,7 +1233,7 @@ matches:
     form_fields:
       rules:
         multiline: true
-    label: "[Content Creation] Voice Lock (Tone & Style Guardrail)"
+    label: "[Content Creation] Authorial Voice Guardrail (Tone & Style Guardrail)"
     comment: Establishes a persistent voice constraint with a one-line restatement check and reset trigger.
     search_terms:
       - content-creation

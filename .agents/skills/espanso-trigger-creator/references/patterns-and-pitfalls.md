@@ -16,8 +16,13 @@ When a user reports "my trigger isn't working" or pastes broken YAML, check in t
 10. **Package naming violations.** Package directories and manifest `name` fields must strictly match `^[a-z0-9-]+$` (lowercase alphanumeric + hyphens only). Underscores (`_`) and uppercase letters are invalid in Espanso package names.
 11. **Invalid form field `type: text`.** Single-line and multi-line text fields in `form_fields` must omit `type` completely (use `multiline: true` for text areas). Specifying `type: text` violates the schema.
 12. **Cursor hint typos.** The cursor placement hint must be written exactly as `$|$`. Variations like `$|` or `$$` are typed out as literal text.
+13. **Using `comment:` property on matches.** Espanso does not index or display `comment:` match properties. Always use native YAML `# <description>` comments (with hashtag) inside the match block.
 14. **Hyphenated form variable names.** Variables in forms (e.g. `[[field-name]]`) can be parsed as subtraction expressions in templating engines. Always use snake_case (`[[field_name]]`).
 15. **Choice var schema compliance.** In `vars: type: choice`, the official JSON schema requires `params.values` to contain `{ id: "...", label: "..." }` objects. Plain string arrays are only valid under `form_fields:`.
+16. **Missing `depends_on` with environment variables.** When accessing `$ESPANSO_<NAME>` in `shell:` or `script:`, Espanso cannot detect variable dependencies automatically. Declare `depends_on: ["var_name"]`.
+17. **`uppercase_style` without `propagate_case: true`.** `uppercase_style` is only valid when `propagate_case: true` is enabled on the match.
+18. **Unintentional newlines with `markdown:`.** If expanding markdown inserts an unwanted trailing newline or paragraph, add `paragraph: true` to the match.
+
 
 ## Pattern: prefer composability over one giant match file
 
@@ -138,6 +143,25 @@ form_fields:
   author:
     default: "Jane"
 ```
+
+## Anti-pattern: using `comment:` property on matches
+
+Espanso does not index or search the `comment:` match property. Defining `comment:` as a YAML property wastes schema space and violates repo metadata hygiene.
+
+```yaml
+# BAD — YAML key comment
+- trigger: :prompt
+  label: "[Marketing] Copy Audit"
+  comment: "Evaluates copywriting effectiveness"
+  replace: "..."
+
+# GOOD — native YAML # hashtag comment
+- trigger: :prompt
+  label: "[Marketing] Copy Audit"
+  # Evaluates copywriting effectiveness
+  replace: "..."
+```
+
 
 ## When the user actually needs `espanso-dynamic-forms`
 

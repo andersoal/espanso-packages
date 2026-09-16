@@ -45,13 +45,20 @@ Match files live in `match/` inside that root (`base.yml` by default). If the us
 |---|---|---|
 | Fixed text → fixed output | Plain `trigger` or `triggers` (array) / `replace` | [references/basics.md](references/basics.md) |
 | Multiple shortcuts / aliases for same output | `triggers:` (flow `[...]` or block list) | [references/basics.md](references/basics.md) |
-| Case-adaptive text (hello/Hello/HELLO) | `propagate_case: true` | [references/basics.md](references/basics.md) |
+| Case-adaptive text (hello/Hello/HELLO) | `propagate_case: true` (optional `uppercase_style`) | [references/basics.md](references/basics.md) |
 | Initial cursor placed at a specific spot | Cursor hint `$|$` in `replace` | [references/basics.md](references/basics.md) |
-| Output depends on typed input | `regex` match with capture groups | [references/regex-and-vars.md](references/regex-and-vars.md) |
+| Word boundary check (whole word vs prefix only) | `word: true` (whole word) or `left_word: true` (word start) | [references/basics.md](references/basics.md) |
+| Output depends on typed input | `regex` match with capture groups `(?P<name>...)` | [references/regex-and-vars.md](references/regex-and-vars.md) |
+| Rich formatted text (Markdown or HTML) | `markdown:` (with optional `paragraph: true`) or `html:` | [references/basics.md](references/basics.md) |
+| Paste an image file | `image_path: "$CONFIG/images/..."` | [references/basics.md](references/basics.md) |
+| Force clipboard paste / override injection | `force_clipboard: true` or `force_mode: clipboard` | [references/basics.md](references/basics.md) |
 | Interactive search/dropdown selection | `choice` extension (`type: choice`) | [references/regex-and-vars.md](references/regex-and-vars.md) |
 | Prompt a dialog with multiple inputs | `form` (`layout` + `form_fields`) | [references/forms.md](references/forms.md) |
-| Run a command / compute something | `shell` var (`cmd`, `trim`, `shell`) | [references/shell-and-automation.md](references/shell-and-automation.md) |
-| Date/time (offsets, timezone, locale), clipboard, random | built-in var types (`date`, `clipboard`, `random`) | [references/regex-and-vars.md](references/regex-and-vars.md) |
+| Run a command in shell | `shell` var (`cmd`, `trim`, `shell`, `debug`) | [references/shell-and-automation.md](references/shell-and-automation.md) |
+| Run an external binary directly (safe args) | `script` var (`args`, `trim`) | [references/shell-and-automation.md](references/shell-and-automation.md) |
+| Date/time (offsets, timezone, locale), clipboard, random | built-in var types (`date`, `clipboard`, `random`, `echo`) | [references/regex-and-vars.md](references/regex-and-vars.md) |
+| Reusable template snippets / anchors | YAML `anchors:` and `anchor: &name` | [references/basics.md](references/basics.md) |
+| Modular match files / private sets | Root `imports:` and file-level `global_vars:` | [references/basics.md](references/basics.md) |
 | Script generates the *entire form layout* at runtime | defer to `espanso-dynamic-forms` skill | — |
 
 Read the relevant reference file(s) before writing nontrivial triggers — they hold the syntax details, gotchas, and security notes so this file stays short. For straightforward asks you may already know enough from this file's examples below; for anything regex/shell/form-related, skim the reference first.

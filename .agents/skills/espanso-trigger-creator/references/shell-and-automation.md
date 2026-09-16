@@ -16,14 +16,17 @@ The `cmd` runs in the system shell; stdout becomes the var's value.
 
 ## Shell Extension Parameters
 
-- `cmd` (string, required): The shell command or executable to execute.
-- `trim` (boolean, optional, default: `true`): Automatically strips leading and trailing whitespaces and newlines from command stdout. Highly recommended to prevent stray blank lines in replacements.
-- `shell` (string, optional): The shell to execute the command with. Common options:
-  - Windows: `powershell`, `cmd`, or `wsl`
-  - macOS/Linux: `bash`, `sh`
-- `debug` (boolean, optional): When `true`, logs the executed command, exit code, and stdout/stderr in Espanso's logs (`espanso log`).
+- `cmd` (`string`, required): The shell command or executable to execute.
+- `shell` (`string` enum, optional): Shell binary to use. Supported options in schema:
+  - `bash`, `sh`, `zsh`, `fish`, `nu`, `pwsh`: Cross-platform shells (available on any OS with the binary installed on PATH).
+  - `cmd`, `powershell`, `wsl`, `wsl2`: Windows-specific shells (invoke Windows/WSL binaries). Note: Windows `cmd` does not support multiline inline code.
+  - Platform defaults: PowerShell on Windows, bash on Linux, user's login shell on macOS.
+- `trim` (`boolean`, optional, default: `true`): Automatically strips leading and trailing whitespaces and newlines from command stdout. Disable (`trim: false`) only if preserving exact whitespace is essential.
+- `debug` (`boolean`, optional): When `true`, logs the executed command, exit code, and stdout/stderr in Espanso's logs (`espanso log`).
+- `inject_vars` (`boolean`, optional, default `true`): If set to `false`, prevents parsing `{{var}}` placeholders inside `cmd`.
+- `depends_on` (`array` of `string`, optional): Declares prerequisite variables that must be evaluated first.
 
-Example specifying shell and trim:
+Example specifying shell, trim, and debug:
 ```yaml
 - trigger: ":branch"
   replace: "Current git branch: {{branch}}"
@@ -32,9 +35,86 @@ Example specifying shell and trim:
       type: shell
       params:
         cmd: "git rev-parse --abbrev-ref HEAD"
-        trim: true
         shell: bash
+        trim: true
+        debug: true
 ```
+
+## Script Extension (`type: script`)
+
+While `shell` executes commands via a shell interpreter, the **Script Extension** calls an external binary or executable directly, passing arguments as a list:
+
+```yaml
+- trigger: ":calc"
+  replace: "Result: {{output}}"
+  vars:
+    - name: output
+      type: script
+      params:
+        args:
+          - python
+          - "%CONFIG%/scripts/calculate.py"
+          - "arg1"
+        trim: true
+```
+
+### Why use `script` instead of `shell`?
+- **Security**: The arguments in `args:` are passed directly to the binary's process invocation without shell expansion, making it inherently safe against shell command injection.
+- **No Escaping Hassles**: Special characters, spaces, and quotes in arguments do not require complex shell quote escaping.
+
+### Inline Scripts
+Scripts can also be executed inline using `args:`:
+```yaml
+- trigger: ":fruits"
+  replace: "{{output}}"
+  vars:
+    - name: output
+      type: script
+      params:
+        args:
+          - python
+          - -c
+          - |
+            fruits = ["apple", "banana", "cherry"]
+            print(", ".join(fruits))
+        trim: true
+```
+*Note for Windows users: Windows enforces an 8,191-character limit on command-line arguments, so large scripts should be stored in separate `.py`/`.ps1` files under `%CONFIG%/scripts/`.*
+
+## Environment Variables & Variable Chaining
+
+When Espanso evaluates a `shell` or `script` variable, it automatically exposes all previously evaluated variables as uppercase environment variables prefixed with `ESPANSO_`:
+- `myname` becomes `ESPANSO_MYNAME`
+- `form1.city` becomes `ESPANSO_FORM1_CITY`
+- `CONFIG` points to the Espanso configuration directory
+
+### Reading Environment Variables by Shell:
+- **Bash / WSL / Linux / macOS**: `$ESPANSO_MYNAME`
+- **Windows PowerShell**: `$env:ESPANSO_MYNAME`
+- **Windows Command Prompt (cmd)**: `%ESPANSO_MYNAME%`
+- **Python Scripts**: `os.environ["ESPANSO_MYNAME"]`
+
+### Declaring `depends_on` for Environment Variables
+When using environment variables instead of template interpolation (`{{var}}`), Espanso cannot automatically detect dependencies between variables. You MUST explicitly declare `depends_on`:
+```yaml
+global_vars:
+  - name: user_id
+    type: shell
+    params:
+      cmd: "whoami"
+  - name: report
+    type: shell
+    depends_on: ["user_id"]
+    params:
+      cmd: "echo 'Active user: '$ESPANSO_USER_ID"
+```
+
+## UTF-8 Output Encoding Tips
+If commands or scripts output non-ASCII or foreign-language characters, ensure stdout is configured for UTF-8:
+- **Python**: `import sys; sys.stdout.reconfigure(encoding='utf-8')`
+- **PowerShell**: `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8`
+- **Bash**: `export LANG='en_US.UTF-8'`
+
 
 ## Common automation patterns
 

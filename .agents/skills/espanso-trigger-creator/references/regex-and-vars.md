@@ -95,13 +95,46 @@ Inserts current clipboard contents. Useful for wrapping/transforming whatever wa
           - "Tails"
 ```
 
-### echo (static passthrough, rarely needed directly but useful for composing)
+### echo (static passthrough, composing, and global defaults)
 ```yaml
 vars:
   - name: greeting
     type: echo
     params:
       echo: "Hello"
+```
+
+### match (nested match)
+Includes the output of an existing trigger inside another match:
+```yaml
+- trigger: ":one"
+  replace: "nested"
+
+- trigger: ":nested"
+  replace: "This is a {{output}} match"
+  vars:
+    - name: output
+      type: match
+      params:
+        trigger: ":one"
+```
+
+### form (verbose form syntax inside vars)
+Defines an interactive form layout within a variable, allowing the result to be passed directly to subsequent script or shell variables:
+```yaml
+- trigger: ":user"
+  replace: "User {{form1.name}} with role {{form1.role}}"
+  vars:
+    - name: form1
+      type: form
+      params:
+        layout: |
+          Name: [[name]]
+          Role: [[role]]
+        fields:
+          role:
+            type: choice
+            values: ["Admin", "Member", "Guest"]
 ```
 
 ## Variable Injection in `params`
@@ -119,6 +152,55 @@ Espanso supports injecting earlier variables or regex captures into subsequent v
 ```
 
 Espanso evaluates `vars` in sequential order from top to bottom. A variable can only reference variables or regex captures that precede it.
+
+### Date Offset Variable Injection
+The `offset` parameter in `date` vars can be a number (e.g. `86400`) or a string supporting variable injection:
+```yaml
+- regex: ":offset_date\\((?P<days>\\d+)\\)"
+  replace: "Future date: {{future}}"
+  vars:
+    - name: sec
+      type: shell
+      params:
+        cmd: "expr {{days}} \\* 86400"
+    - name: future
+      type: date
+      params:
+        format: "%Y-%m-%d"
+        offset: "{{sec}}"
+```
+
+## Disabling Variable Injection (`inject_vars: false`)
+
+If a variable's `params` contain curly brackets that should NOT be expanded by Espanso (for example, code strings or template literals), specify `inject_vars: false`:
+
+```yaml
+- trigger: ":tpl"
+  replace: "Output: {{output}}"
+  vars:
+    - name: output
+      type: echo
+      inject_vars: false
+      params:
+        echo: "{{literal_var}}"
+```
+
+## Controlling Execution Order (`depends_on`)
+
+When using environment variables (`$ESPANSO_<VAR>`) in shell commands or when coordinating global variables (`global_vars:`), Espanso cannot automatically detect variable dependencies. Use `depends_on:` to enforce the evaluation order:
+
+```yaml
+global_vars:
+  - name: one
+    type: shell
+    params:
+      cmd: "echo first"
+  - name: two
+    type: shell
+    depends_on: ["one"]
+    params:
+      cmd: "echo $ESPANSO_ONE then second"
+```
 
 ## Escaping Curly Brackets (`\{\{...}}`)
 
@@ -146,3 +228,4 @@ If curly braces are not escaped, Espanso will attempt to look up a variable name
 - **regex**: user encodes a parameter *inline* in the trigger itself (e.g., `:greet(Nikto)`). Fast, no dialog popup, but less discoverable and harder to read for multi-field inputs.
 - **choice**: user types a trigger and selects an option from an interactive dropdown before insertion.
 - **form**: user is prompted in a dialog for one or more values *after* typing the trigger. Best for multi-field forms. See references/forms.md.
+

@@ -67,6 +67,19 @@ form_fields:
       - "Free"
       - "Pro"
       - "Enterprise"
+    default: "Free"
+```
+
+You can also specify `values:` as a multiline string scalar (or populate it dynamically from a shell variable like `values: "{{files}}"`). When using a multiline string, enable `trim_string_values: true` to trim line whitespaces and drop empty lines:
+```yaml
+form_fields:
+  tier:
+    type: choice
+    values: |
+      Free
+      Pro
+      Enterprise
+    trim_string_values: true
 ```
 
 ### 4. List Box (Selectable List)
@@ -79,7 +92,25 @@ form_fields:
       - "Development"
       - "Staging"
       - "Production"
+    default: "Development"
+    separator: ", "
 ```
+
+- **Multiple Selection**: From Espanso v2.4.0, holding `Ctrl` or `Shift` allows selecting multiple items.
+- `separator`: The delimiter string used to join multiple selected items (default: `", "`).
+
+### Form Field Properties Reference
+
+| Control Type | Property | Type | Default | Description |
+|---|---|---|---|---|
+| Text / Multiline | `multiline` | `boolean` | `false` | When `true`, renders a multiline text area. |
+| Text / Multiline | `default` | `string` | `""` | Initial pre-filled text in the field. |
+| Choice / List | `type` | `string` | — | Must be `"choice"` or `"list"`. |
+| Choice / List | `values` | `array` or `string` | — | List of options as array or multiline string. |
+| Choice / List | `default` | `string` | `""` | Initial selected option. |
+| Choice / List | `trim_string_values` | `boolean` | `false` | Trims whitespace and removes blank lines when `values` is multiline string. |
+| List | `separator` | `string` | `", "` | Joining separator when multiple items are selected. |
+
 
 ## Two-stage forms (form result feeds a second form/layout)
 

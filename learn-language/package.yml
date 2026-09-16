@@ -14,7 +14,7 @@ matches:
           - technical architecture explanations and engineering leadership
           - high-pressure business meetings and negotiations
     label: '[Learn Language] Professional English Tutor (Conversational Practical Plan)'
-    comment: 'Act as a professional English tutor. Design a -day conversational English plan focused on  and real-world communication '
+    # Act as a professional English tutor. Design a -day conversational English plan focused on  and real-world communication
     search_terms:
       - learn-language
       - learn language
@@ -32,7 +32,7 @@ matches:
           - software engineering and systems architecture
           - strategic leadership and project orchestration
     label: '[Learn Language] Daily Vocabulary Builder (High-Impact Words & Memory Hooks)'
-    comment: Teach me  powerful English words per day related to . Include pronunciation guides, realistic example sentences, and one
+    # Teach me  powerful English words per day related to . Include pronunciation guides, realistic example sentences, and one
     search_terms:
       - learn-language
       - learn language
@@ -48,7 +48,7 @@ matches:
       topic:
         default: casual business topics or strategic alignment
     label: '[Learn Language] Native Speaker Dialogue (Real-Time Grammar & Phrasing Corrections)'
-    comment: 'Pretend you''re a native English speaker in a . Hold a -minute dialogue with me on , and correct my grammar, syntax, and '
+    # Pretend you''re a native English speaker in a . Hold a -minute dialogue with me on , and correct my grammar, syntax, and
     search_terms:
       - learn-language
       - learn language
@@ -60,7 +60,7 @@ matches:
       topic:
         default: participles, verb conjugations, and complex sentence structures
     label: '[Learn Language] English Grammar Explainer (Clear Rules & Practical Pitfalls)'
-    comment: Explain English grammar rules, especially , in the simplest, most direct way possible. Provide short, everyday professio
+    # Explain English grammar rules, especially , in the simplest, most direct way possible. Provide short, everyday professio
     search_terms:
       - learn-language
       - learn language
@@ -72,7 +72,7 @@ matches:
       duration:
         default: '30'
     label: '[Learn Language] English Immersion Routine (Daily Focused Input Plan)'
-    comment: Build a daily -minute English immersion routine using podcasts, technical articles, and media content that fits an advan
+    # Build a daily -minute English immersion routine using podcasts, technical articles, and media content that fits an advan
     search_terms:
       - learn-language
       - learn language
@@ -81,7 +81,7 @@ matches:
     form: |
       Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English phonetics, tongue positions, and mechanics on how to sound more natural, assertive, and fluid in professional settings.
     label: '[Learn Language] Pronunciation & Vocal Coach (Delivery Mechanics & Fluidity Drills)'
-    comment: Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English p
+    # Guide me through pronunciation drills and vocal exercises to improve my delivery, rhythm, and clarity. Include English p
     search_terms:
       - learn-language
       - learn language
@@ -90,7 +90,7 @@ matches:
     form: |
       Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, listening checks, pronunciation feedback self-assessments, and tangible fluency benchmarks I can track systematically.
     label: '[Learn Language] Fluency Progress Tracker (Weekly Benchmarks & Retention Checks)'
-    comment: Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, lis
+    # Create a weekly progress tracker for learning English. Include structural frameworks for vocabulary retention tests, lis
     search_terms:
       - learn-language
       - learn language
@@ -115,7 +115,7 @@ matches:
           - Executive Stakeholders (C-Level / Business Directors)
           - Cross-Functional Project Teams
     label: '[Learn Language] Executive Communication Refactor (Eliminate Passive Voice & Polish Tone)'
-    comment: 'Act as a rigorous communication mentor and elite technical editor. Refactor the following draft for an audience of ****:'
+    # Act as a rigorous communication mentor and elite technical editor. Refactor the following draft for an audience of ****:
     search_terms:
       - learn-language
       - learn language
@@ -130,7 +130,7 @@ matches:
 
       Do not move on to the next lesson until I fully understand the current one.
     label: '[Learn Language] Private Language Tutor (Adaptive Socratic)'
-    comment: Conversational language tutor providing instant corrections and grammar tips.
+    # Conversational language tutor providing instant corrections and grammar tips.
     search_terms:
       - learn-language
       - learn language
@@ -145,7 +145,7 @@ matches:
 
       Explain what I should achieve each week and how to measure my progress.
     label: '[Learn Language] 90-Day Language Fluency Roadmap'
-    comment: Structured 90-day plan targeting core conversational vocabulary and grammar patterns.
+    # Structured 90-day plan targeting core conversational vocabulary and grammar patterns.
     search_terms:
       - learn-language
       - learn language
@@ -158,7 +158,7 @@ matches:
 
       Correct every mistake I make, explain why it's wrong, show me how a native speaker would say it, then continue the conversation.
     label: '[Learn Language] Language Conversation Partner'
-    comment: Engages in natural foreign language dialogue with real-time feedback.
+    # Engages in natural foreign language dialogue with real-time feedback.
     search_terms:
       - learn-language
       - learn language
@@ -171,7 +171,7 @@ matches:
 
       Include example sentences, memory techniques, and a short quiz at the end of each lesson.
     label: '[Learn Language] High-Frequency Vocabulary Expander'
-    comment: Teaches the top 1,000 most frequently used words with contextual example sentences.
+    # Teaches the top 1,000 most frequently used words with contextual example sentences.
     search_terms:
       - learn-language
       - learn language
@@ -184,7 +184,7 @@ matches:
 
       After each lesson, test my understanding with exercises and explain every mistake I make.
     label: '[Learn Language] Simplified Grammar Engine'
-    comment: Demystifies complex foreign grammar rules using plain explanations and pattern charts.
+    # Demystifies complex foreign grammar rules using plain explanations and pattern charts.
     search_terms:
       - learn-language
       - learn language
@@ -197,7 +197,7 @@ matches:
 
       Make every lesson interactive, engaging, and easy to follow.
     label: '[Learn Language] Natural Language Acquisition (Comprehensible Input)'
-    comment: Teaches language via comprehensible input and natural context without rote drilling.
+    # Teaches language via comprehensible input and natural context without rote drilling.
     search_terms:
       - learn-language
       - learn language
@@ -208,7 +208,7 @@ matches:
 
       Simulate real-life situations, ask me questions, introduce everyday vocabulary naturally, gradually reduce the use of my native language, and adjust the difficulty based on my progress.
     label: '[Learn Language] Home Language Immersion Environment'
-    comment: Creates an immersive daily routine involving media, journaling, and self-talk.
+    # Creates an immersive daily routine involving media, journaling, and self-talk.
     search_terms:
       - learn-language
       - learn language

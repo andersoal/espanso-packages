@@ -18,7 +18,7 @@ matches:
       budget:
         default: '60'
     label: '[Relationship] Creative Date & Activity Concierge'
-    comment: Act as our AI Relationship Concierge and Date Night Planner. Generate exactly three distinct date options for this weeke
+    # Act as our AI Relationship Concierge and Date Night Planner. Generate exactly three distinct date options for this weeke
     search_terms:
       - relationship
 
@@ -48,7 +48,7 @@ matches:
       goal:
         default: Europe Trip Fund
     label: '[Relationship] Joint Financial Alignment & Budgeting'
-    comment: Act as our joint Financial Strategist. Below is our baseline snapshot for the past week. Analyze our current spending ve
+    # Act as our joint Financial Strategist. Below is our baseline snapshot for the past week. Analyze our current spending ve
     search_terms:
       - relationship
 
@@ -69,7 +69,7 @@ matches:
           - Order anniversary/birthday gift
           - Drop dog off at the groomer (10am Sat)
     label: '[Relationship] Domestic Labor & Mental Load Balancing'
-    comment: Act as our domestic operations manager. We need to split the following collective list of household tasks, appointments,
+    # Act as our domestic operations manager. We need to split the following collective list of household tasks, appointments,
     search_terms:
       - relationship
 
@@ -104,7 +104,7 @@ matches:
       vibe_b:
         default: Wants at least 1 adventure
     label: '[Relationship] Bespoke Travel & Itinerary Concierge'
-    comment: Act as a high-end customized travel concierge. Build a personalized, day-by-day vacation itinerary using our specific, a
+    # Act as a high-end customized travel concierge. Build a personalized, day-by-day vacation itinerary using our specific, a
     search_terms:
       - relationship
 
@@ -124,7 +124,7 @@ matches:
           - Adopted our dog Luna
           - Celebrated career promotion dinner at Rosewood
     label: '[Relationship] Relationship Archivist & Memory Keeper'
-    comment: Act as our relationship archivist. Commit the following newly captured memories, inside jokes, and milestones into our r
+    # Act as our relationship archivist. Commit the following newly captured memories, inside jokes, and milestones into our r
     search_terms:
       - relationship
 
@@ -132,7 +132,7 @@ matches:
     replace: |
       Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, preferences, anything. Don't summarize or leave anything out. I want to see the full file you've built on me from our conversations.
     label: '[Relationship] Stored AI Memory & Relationship Overview'
-    comment: Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, pr
+    # Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, pr
     search_terms:
       - relationship
 
@@ -140,7 +140,7 @@ matches:
     replace: |
       Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, what I ask, and what I avoid. My age range, income level, where I likely live, my situation. Show me exactly what tipped you off for each one.
     label: '[Relationship] Unstated Behavioral Pattern Profiler'
-    comment: Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, w
+    # Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, w
     search_terms:
       - relationship
 
@@ -160,7 +160,7 @@ matches:
       content:
         multiline: true
     label: '[Relationship] Complex Concept to Plain English Translator'
-    comment: 'Translates complex content down to the core single sentence with a simple analogy and 3 comprehension checks.'
+    # Translates complex content down to the core single sentence with a simple analogy and 3 comprehension checks.
     search_terms:
       - relationship
       - translation
@@ -186,7 +186,7 @@ matches:
       number_of_questions:
         default: '5'
     label: '[Relationship] Skill Mastery Challenge & Blind Spot Prover'
-    comment: 'Challenges your assumed mastery of a skill with simple diagnostic questions revealing foundational gaps.'
+    # Challenges your assumed mastery of a skill with simple diagnostic questions revealing foundational gaps.
     search_terms:
       - relationship
       - skill
@@ -201,6 +201,6 @@ matches:
 
       Give me three ways to approach this: a direct approach, a diplomatic approach, and a data-driven approach. For each, tell me the risk and the expected reaction.
     label: '[Relationship] Difficult Conversation Preparation Coach'
-    comment: 'I''m going to have this difficult conversation:'
+    # I''m going to have this difficult conversation:
     search_terms:
       - relationship

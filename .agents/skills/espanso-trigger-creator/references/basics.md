@@ -81,14 +81,14 @@ Note: When using `propagate_case: true`, the `trigger` must be defined in all lo
 
 Use the YAML block scalar `|` to preserve line breaks exactly. Avoid single-quoted multiline strings that lead to noisy `''` escaping.
 
-## Match Metadata: Label, Comment & Search Terms
+## Match Metadata: Label & Search Terms
 
 Espanso matches support built-in metadata properties:
 
 ```yaml
 - trigger: :c-review
   label: "[Engineering] Code Review & Quality Audit (2-Pass Standards & Risks)"
-  comment: "Conducts a 2-pass code review (quality standards + edge cases/risks)"
+  # Conducts a 2-pass code review (quality standards + edge cases/risks)
   search_terms:
     - engineering
     - code review
@@ -104,7 +104,7 @@ Espanso matches support built-in metadata properties:
   - **Complementary Context**: Add parenthesized detail describing what the prompt actually does, the output format, or form fields involved (`(Interactive Persona Formulation)`).
   - **No Truncated Prepositions**: Avoid ending labels with prepositions/connectors (`[Prompts] Write A First Draft Of` is bad; `[Prompts] First Draft Generator (Initial Version from Angle)` is good).
   - **No Raw Placeholders**: Never leave raw variables like `[[topic]]` or `{{date}}` inside labels.
-- `comment`: Contextual description explaining the prompt's intent directly in YAML without modifying output.
+- `# <Context/Notes>`: Native YAML comments starting with `#` (hashtag) placed inside the match block to document intent and instructions. Never use a `comment:` YAML property.
 - `search_terms`: Search keywords/aliases used by Espanso's fuzzy search palette to find triggers by concept.
 
 ## Match Disambiguation

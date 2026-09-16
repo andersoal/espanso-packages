@@ -6,7 +6,7 @@ matches:
       - :rarrow
     replace: →
     label: "[Utils] Right Arrow (→)"
-    comment: →
+    # →
     search_terms:
       - utils
   - triggers:
@@ -14,70 +14,70 @@ matches:
       - :larrow
     replace: ←
     label: "[Utils] Left Arrow (←)"
-    comment: ←
+    # ←
     search_terms:
       - utils
   - triggers:
       - :uarrow
     replace: ↑
     label: "[Utils] Up Arrow (↑)"
-    comment: ↑
+    # ↑
     search_terms:
       - utils
   - triggers:
       - :darrow
     replace: ↓
     label: "[Utils] Down Arrow (↓)"
-    comment: ↓
+    # ↓
     search_terms:
       - utils
   - triggers:
       - :lrarrow
     replace: ↔
     label: "[Utils] Left-Right Arrow (↔)"
-    comment: ↔
+    # ↔
     search_terms:
       - utils
   - trigger: :eur
     replace: €
     label: "[Utils] Euro Currency Symbol (€)"
-    comment: €
+    # €
     search_terms:
       - utils
   - trigger: :gbp
     replace: £
     label: "[Utils] British Pound Currency Symbol (£)"
-    comment: £
+    # £
     search_terms:
       - utils
   - trigger: :usd
     replace: $
     label: "[Utils] Dollar Currency Symbol ($)"
-    comment: $
+    # $
     search_terms:
       - utils
   - trigger: :jpy
     replace: ¥
     label: "[Utils] Japanese Yen Currency Symbol (¥)"
-    comment: ¥
+    # ¥
     search_terms:
       - utils
   - trigger: :inr
     replace: ₹
     label: "[Utils] Indian Rupee Currency Symbol (₹)"
-    comment: ₹
+    # ₹
     search_terms:
       - utils
   - trigger: :btc
     replace: ฿
     label: "[Utils] Bitcoin Currency Symbol (฿)"
-    comment: ฿
+    # ฿
     search_terms:
       - utils
   - trigger: :eth
     replace: Ξ
     label: "[Utils] Ethereum Currency Symbol (Ξ)"
-    comment: Ξ
+    # Ξ
     search_terms:
       - utils
   - triggers:
@@ -86,7 +86,7 @@ matches:
       - ":copyright:"
     replace: ©
     label: "[Utils] Copyright Symbol (©)"
-    comment: ©
+    # ©
     search_terms:
       - utils
   - trigger: :ip
@@ -97,7 +97,7 @@ matches:
         params:
           cmd: curl 'https://api.ipify.org'
     label: "[Utils] Public IP Address (API lookup)"
-    comment: "{{output}}"
+    # {{output}}
     search_terms:
       - utils
   - trigger: :weather
@@ -108,127 +108,127 @@ matches:
         params:
           cmd: curl 'http://wttr.in/?format=3'
     label: "[Utils] Live Weather Report (curl wttr.in)"
-    comment: "{{output}}"
+    # {{output}}
     search_terms:
       - utils
   - trigger: :(
     replace: ($|$)
     word: true
     label: "[Utils] Parenthesis Pair ()"
-    comment: ($|$)
+    # ($|$)
     search_terms:
       - utils
   - trigger: :[
     replace: "[$|$]"
     word: true
     label: "[Utils] Square Bracket Pair []"
-    comment: "[$|$]"
+    # [$|$]
     search_terms:
       - utils
   - trigger: :{
     replace: "{$|$}"
     word: true
     label: "[Utils] Curly Brace Pair {}"
-    comment: "{$|$}"
+    # {$|$}
     search_terms:
       - utils
   - trigger: :<
     replace: <$|$>
     word: true
     label: "[Utils] Angle Bracket Pair <>"
-    comment: <$|$>
+    # <$|$>
     search_terms:
       - utils
   - trigger: :`
     replace: "`$|$`"
     word: true
     label: "[Utils] Backtick Code Pair ``"
-    comment: "`$|$`"
+    # `$|$`
     search_terms:
       - utils
   - trigger: :'
     replace: "'$|$'"
     word: true
     label: "[Utils] Single Quote Pair ''"
-    comment: $|$
+    # $|$
     search_terms:
       - utils
   - trigger: :"
     replace: '"$|$"'
     word: true
     label: '[Utils] Double Quote Pair ""'
-    comment: $|$
+    # $|$
     search_terms:
       - utils
   - trigger: :_
     replace: _$|$_
     word: true
     label: "[Utils] Underscore Pair __"
-    comment: _$|$_
+    # _$|$_
     search_terms:
       - utils
   - trigger: :*
     replace: "*$|$*"
     word: true
     label: "[Utils] Asterisk Pair **"
-    comment: "*$|$*"
+    # *$|$*
     search_terms:
       - utils
   - trigger: :-
     replace: -$|$-
     word: true
     label: "[Utils] Hyphen / Dash Pair (-|-)"
-    comment: -$|$-
+    # -$|$-
     search_terms:
       - utils
   - trigger: :hr
     replace: <hr />
     label: "[Utils] HTML Horizontal Rule (<hr />)"
-    comment: <hr />
+    # <hr />
     search_terms:
       - utils
   - trigger: :br
     replace: <br />
     word: true
     label: "[Utils] HTML Line Break (<br />)"
-    comment: <br />
+    # <br />
     search_terms:
       - utils
   - trigger: :div
     replace: <div>$|$</div>
     label: "[Utils] HTML Div Container (<div>...</div>)"
-    comment: <div>$|$</div>
+    # <div>$|$</div>
     search_terms:
       - utils
   - trigger: :span
     replace: <span>$|$</span>
     label: "[Utils] HTML Inline Span (<span>...</span>)"
-    comment: <span>$|$</span>
+    # <span>$|$</span>
     search_terms:
       - utils
   - trigger: :h1
     replace: <h1>$|$</h1>
     label: "[Utils] HTML Heading 1 (<h1>...</h1>)"
-    comment: <h1>$|$</h1>
+    # <h1>$|$</h1>
     search_terms:
       - utils
   - trigger: :h2
     replace: <h2>$|$</h2>
     label: "[Utils] HTML Heading 2 (<h2>...</h2>)"
-    comment: <h2>$|$</h2>
+    # <h2>$|$</h2>
     search_terms:
       - utils
   - trigger: :h3
     replace: <h3>$|$</h3>
     label: "[Utils] HTML Heading 3 (<h3>...</h3>)"
-    comment: <h3>$|$</h3>
+    # <h3>$|$</h3>
     search_terms:
       - utils
   - trigger: :para
     replace: <p>$|$</p>
     word: true
     label: "[Utils] HTML Paragraph (<p>...</p>)"
-    comment: <p>$|$</p>
+    # <p>$|$</p>
     search_terms:
       - utils
   - trigger: :tag
@@ -244,7 +244,7 @@ matches:
 
             "
     label: "[Utils] Custom HTML Tag Pair (<tag>...</tag>)"
-    comment: <{{html.element}}>$|$</{{html.element}}>
+    # <{{html.element}}>$|$</{{html.element}}>
     search_terms:
       - utils
   - trigger: :date
@@ -255,7 +255,7 @@ matches:
         type: date
         params:
           format: "%d/%m/%y"
-    comment: "{{date}}"
+    # {{date}}
     label: "[Utils] Current Date (YYYY-MM-DD)"
     search_terms:
       - utils
@@ -267,7 +267,7 @@ matches:
         params:
           format: "%H:%M"
     label: "[Utils] Current Time (HH:MM)"
-    comment: "{{time}}"
+    # {{time}}
     search_terms:
       - utils
   - trigger: :month
@@ -278,7 +278,7 @@ matches:
         params:
           format: "%B %Y"
     label: "[Utils] Current Month & Year (Month YYYY)"
-    comment: "{{date}}"
+    # {{date}}
     search_terms:
       - utils
   - trigger: :lenny
@@ -288,19 +288,30 @@ matches:
         type: choice
         params:
           values:
-            - ¯\\_(ツ)_/¯
-            - (╯°□°）╯︵ ┻━┻
-            - ( ͡ಠ ʖ̯ ͡ಠ)
-            - ☉ ‿ ⚆
-            - ʕ•ᴥ•ʔ
-            - ⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆
-            - ◤◢◣◥◤◢◣◥
-            - (づᵔ◡ᵔ)づ
-            - "|ᵔ‿ᵔ|"
-            - ⤜(*﹏*)⤏
-            - ツ
+            - id: "¯\\_(ツ)_/¯"
+              label: "¯\\_(ツ)_/¯"
+            - id: "(╯°□°）╯︵ ┻━┻"
+              label: "(╯°□°）╯︵ ┻━┻"
+            - id: "( ͡ಠ ʖ̯ ͡ಠ)"
+              label: "( ͡ಠ ʖ̯ ͡ಠ)"
+            - id: "☉ ‿ ⚆"
+              label: "☉ ‿ ⚆"
+            - id: "ʕ•ᴥ•ʔ"
+              label: "ʕ•ᴥ•ʔ"
+            - id: "⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆"
+              label: "⋆｡˚ ☁︎ ˚｡⋆｡˚☽˚｡⋆"
+            - id: "◤◢◣◥◤◢◣◥"
+              label: "◤◢◣◥◤◢◣◥"
+            - id: "(づᵔ◡ᵔ)づ"
+              label: "(づᵔ◡ᵔ)づ"
+            - id: "|ᵔ‿ᵔ|"
+              label: "|ᵔ‿ᵔ|"
+            - id: "⤜(*﹏*)⤏"
+              label: "⤜(*﹏*)⤏"
+            - id: "ツ"
+              label: "ツ"
     label: "[Utils] Kaomoji Emoticon Selector (Lenny Face ( ͡° ͜ʖ ͡°))"
-    comment: "{{smileys}}"
+    # {{smileys}}
     search_terms:
       - utils
   - trigger: :mit-short
@@ -315,9 +326,12 @@ matches:
         type: choice
         params:
           values:
-            - Alicia Sykes
-            - James Carter
-            - You
+            - id: "Alicia Sykes"
+              label: "Alicia Sykes"
+            - id: "James Carter"
+              label: "James Carter"
+            - id: "You"
+              label: "You"
 
       - name: url
         type: random
@@ -327,7 +341,7 @@ matches:
             - https://jamescarter.dev
             - https://you.com
     label: "[Utils] MIT License One-Liner (Short Copyright Notice)"
-    comment: "Licensed under MIT X11, © {{name}} {{year}}: {{url}}"
+    # Licensed under MIT X11, © {{name}} {{year}}: {{url}}
     search_terms:
       - utils
   - trigger: :mit-long
@@ -339,34 +353,39 @@ matches:
           shell: cmd
           cmd: curl.exe 'https://gist.githubusercontent.com/Lissy93/143d2ee01ccc5c052a17/raw/a8ac96cd15847a231931b561d95d2de47066fd33/LICENSE.MD'
     label: "[Utils] MIT License Full Text (Complete Legal Notice)"
-    comment: "{{output}}"
+    # {{output}}
     search_terms:
       - utils
   - trigger: :kr
-    replace: "Kind Regards,
+    replace: |
+      Kind Regards,
 
-      {name}
-
-      "
+      {{name}}
     vars:
       - name: name
         type: choice
         params:
           values:
-            - Alicia Sykes
-            - Dan Smith
-            - Jordan O'Hare
-            - Tom Wilson
-            - James Carter
-            - Me
+            - id: "Alicia Sykes"
+              label: "Alicia Sykes"
+            - id: "Dan Smith"
+              label: "Dan Smith"
+            - id: "Jordan O'Hare"
+              label: "Jordan O'Hare"
+            - id: "Tom Wilson"
+              label: "Tom Wilson"
+            - id: "James Carter"
+              label: "James Carter"
+            - id: "Me"
+              label: "Me"
     label: "[Utils] Email Sign-off (Kind Regards & Name)"
-    comment: Kind Regards,
+    # Kind Regards,
     search_terms:
       - utils
   - trigger: :commit
     replace: git commit -m "$|$"
     label: '[Utils] Git Commit Command (git commit -m "$|$")'
-    comment: git commit -m "$|$
+    # git commit -m "$|$
     search_terms:
       - utils
   - trigger: :wtc
@@ -378,7 +397,7 @@ matches:
           shell: cmd
           cmd: curl.exe -s whatthecommit.com/index.txt
     label: "[Utils] Random Git Commit Message (whatthecommit.com)"
-    comment: "{{output}}"
+    # {{output}}
     search_terms:
       - utils
   - trigger: :pass
@@ -402,7 +421,7 @@ matches:
         params:
           cmd: lesspass $ESPANSO_PARAMS_SITE $ESPANSO_PARAMS_LOGIN $ESPANSO_PARAMS_PASS
     label: "[Utils] Deterministic Password Generator (LessPass Form)"
-    comment: "{{lesspass}}"
+    # {{lesspass}}
     search_terms:
       - utils
   - triggers:
@@ -411,7 +430,7 @@ matches:
       - :search-duckduckgo
     replace: https://duckduckgo.com/?q=
     label: "[Utils] DuckDuckGo Web Search (Fast Privacy Search)"
-    comment: Quick search query URL prefix for DuckDuckGo
+    # Quick search query URL prefix for DuckDuckGo
     search_terms:
       - utils
   - triggers:
@@ -420,7 +439,7 @@ matches:
       - :search-wikipedia
     replace: https://en.wikipedia.org/w/?search=
     label: "[Utils] Wikipedia Encyclopedia Search (Instant Article Lookup)"
-    comment: Quick search query URL prefix for Wikipedia
+    # Quick search query URL prefix for Wikipedia
     search_terms:
       - utils
   - triggers:
@@ -429,7 +448,7 @@ matches:
       - :search-github
     replace: https://github.com/search?q=
     label: "[Utils] GitHub Code & Repo Search (Open Source Repositories)"
-    comment: Quick search query URL prefix for GitHub
+    # Quick search query URL prefix for GitHub
     search_terms:
       - utils
   - triggers:
@@ -438,7 +457,7 @@ matches:
       - :search-stackoverflow
     replace: https://stackoverflow.com/search?q=
     label: "[Utils] StackOverflow Developer Search (Programming Q&A Solutions)"
-    comment: Quick search query URL prefix for StackOverflow
+    # Quick search query URL prefix for StackOverflow
     search_terms:
       - utils
   - triggers:
@@ -447,7 +466,7 @@ matches:
       - :search-dockerhub
     replace: https://hub.docker.com/search?q=
     label: "[Utils] Docker Hub Container Search (Images & Registry Lookup)"
-    comment: Quick search query URL prefix for DockerHub
+    # Quick search query URL prefix for DockerHub
     search_terms:
       - utils
   - triggers:
@@ -456,7 +475,7 @@ matches:
       - :search-wolframalpha
     replace: https://www.wolframalpha.com/input/?i=
     label: "[Utils] WolframAlpha Knowledge Engine (Computational Answers)"
-    comment: Quick search query URL prefix for WolframAlpha
+    # Quick search query URL prefix for WolframAlpha
     search_terms:
       - utils
   - triggers:
@@ -465,7 +484,7 @@ matches:
       - :search-reddit
     replace: https://www.reddit.com/search/?q=
     label: "[Utils] Reddit Discussion Search (Community Threads & Discussions)"
-    comment: Quick search query URL prefix for Reddit
+    # Quick search query URL prefix for Reddit
     search_terms:
       - utils
   - triggers:
@@ -474,7 +493,7 @@ matches:
       - :search-bbc
     replace: https://www.bbc.co.uk/search?q=
     label: "[Utils] BBC Global News Search (World News & Analysis)"
-    comment: Quick search query URL prefix for BBC
+    # Quick search query URL prefix for BBC
     search_terms:
       - utils
   - triggers:
@@ -483,7 +502,7 @@ matches:
       - :search-virustotal
     replace: https://www.virustotal.com/gui/search/
     label: "[Utils] VirusTotal Threat Intelligence (Malware & Domain Analysis)"
-    comment: Quick search query URL prefix for VirusTotal
+    # Quick search query URL prefix for VirusTotal
     search_terms:
       - utils
   - triggers:
@@ -492,7 +511,7 @@ matches:
       - :search-amazon
     replace: https://amazon.co.uk/s?k=
     label: "[Utils] Amazon Marketplace Search (Product Catalog & Store)"
-    comment: Quick search query URL prefix for Amazon
+    # Quick search query URL prefix for Amazon
     search_terms:
       - utils
   - triggers:
@@ -501,7 +520,7 @@ matches:
       - :search-youtube
     replace: https://youtube.com/results?q=
     label: "[Utils] YouTube Video Search (Videos, Channels & Playlists)"
-    comment: Quick search query URL prefix for YouTube
+    # Quick search query URL prefix for YouTube
     search_terms:
       - utils
   - triggers:
@@ -510,7 +529,7 @@ matches:
       - :search-maps
     replace: https://www.google.com/maps/search/
     label: "[Utils] Search Google Maps"
-    comment: Quick search query URL prefix for Google Maps
+    # Quick search query URL prefix for Google Maps
     search_terms:
       - utils
   - triggers:
@@ -519,7 +538,7 @@ matches:
       - :search-google
     replace: https://google.com/search?q=
     label: "[Utils] Google Web Search (Standard Engine Query)"
-    comment: Quick search query URL prefix for Google
+    # Quick search query URL prefix for Google
     search_terms:
       - utils
   - trigger: :s-choice
@@ -564,7 +583,7 @@ matches:
                 - label: Google Maps
                   id: https://www.google.com/maps/search/
     label: "[Utils] Search Chooser"
-    comment: "{{form_data.engine}}{{form_data.query}}"
+    # {{form_data.engine}}{{form_data.query}}
     search_terms:
       - utils
   - trigger: :swc-ddg
@@ -573,7 +592,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] DuckDuckGo Search from Clipboard"
-    comment: https://duckduckgo.com/?q={{clipboard}}
+    # https://duckduckgo.com/?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-wiki
@@ -582,7 +601,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] Wikipedia Search from Clipboard"
-    comment: https://en.wikipedia.org/w/?search='{{clipboard}}
+    # https://en.wikipedia.org/w/?search='{{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-gh
@@ -591,7 +610,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] Github Search from Clipboard"
-    comment: https://github.com/search?q={{clipboard}}
+    # https://github.com/search?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-so
@@ -600,7 +619,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] StackOverflow Search from Clipboard"
-    comment: https://stackoverflow.com/search?q={{clipboard}}
+    # https://stackoverflow.com/search?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-dh
@@ -609,7 +628,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] DockerHub Search from Clipboard"
-    comment: https://hub.docker.com/search?q={{clipboard}}
+    # https://hub.docker.com/search?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-wa
@@ -618,7 +637,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] WolframAlpha Search from Clipboard"
-    comment: https://www.wolframalpha.com/input/?i={{clipboard}}
+    # https://www.wolframalpha.com/input/?i={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-red
@@ -627,7 +646,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] Reddit Search from Clipboard"
-    comment: https://www.reddit.com/search/?q={{clipboard}}
+    # https://www.reddit.com/search/?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-bbc
@@ -636,7 +655,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] BBC Search from Clipboard"
-    comment: https://www.bbc.co.uk/search?q={{clipboard}}
+    # https://www.bbc.co.uk/search?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-vt
@@ -645,7 +664,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] VirusTotal Search from Clipboard"
-    comment: https://www.virustotal.com/gui/search/{{clipboard}}
+    # https://www.virustotal.com/gui/search/{{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-amz
@@ -654,7 +673,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] Amazon Search from Clipboard"
-    comment: https://amazon.co.uk/s?k={{clipboard}}
+    # https://amazon.co.uk/s?k={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-yt
@@ -663,7 +682,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] YouTube Search from Clipboard"
-    comment: https://youtube.com/results?q={{clipboard}}
+    # https://youtube.com/results?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-maps
@@ -672,7 +691,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] Google Maps Search from Clipboard"
-    comment: https://www.google.com/maps/search/{{clipboard}}
+    # https://www.google.com/maps/search/{{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-goo
@@ -681,7 +700,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] Google Search from Clipboard"
-    comment: https://google.com/search?q={{clipboard}}
+    # https://google.com/search?q={{clipboard}}
     search_terms:
       - utils
   - trigger: :swc-choice
@@ -721,7 +740,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Utils] Search Chooser from Clipboard"
-    comment: "{{engine}}{{clipboard}}"
+    # {{engine}}{{clipboard}}
     search_terms:
       - utils
   - trigger: :faker
@@ -752,7 +771,7 @@ matches:
           shell: cmd
           cmd: python %CONFIG%\match\packages\utils\scripts\fake.py {{module}}
     label: "[Utils] Fake Test Data Generator (Names, Addresses & Numbers)"
-    comment: "{{output}}"
+    # {{output}}
     search_terms:
       - utils
   - trigger: :lorem
@@ -764,7 +783,7 @@ matches:
         params:
           shell: cmd
           cmd: python %CONFIG%\match\packages\utils\scripts\fake.py paragraph
-    comment: Generates a random placeholder paragraph of lorem ipsum text.
+    # Generates a random placeholder paragraph of lorem ipsum text.
     search_terms:
       - utils
   - trigger: :lorem
@@ -776,7 +795,7 @@ matches:
         params:
           shell: cmd
           cmd: python %CONFIG%\match\packages\utils\scripts\fake.py sentence
-    comment: Generates a single sentence of lorem ipsum placeholder text.
+    # Generates a single sentence of lorem ipsum placeholder text.
     search_terms:
       - utils
   - trigger: :envtest
@@ -788,6 +807,6 @@ matches:
           shell: cmd
           cmd: set
     label: "[Utils] Environment Variables Diagnostic (cmd set)"
-    comment: Dumps current shell environment variables for debugging Espanso.
+    # Dumps current shell environment variables for debugging Espanso.
     search_terms:
       - utils

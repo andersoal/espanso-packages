@@ -10,7 +10,7 @@ matches:
       4. Short Break: 5 min ☕
       5. Cycle: Repeat 4 times, then take a longer break (15-30 min).
     label: '[Productivity] Pomodoro 25/5 Focus Sprint'
-    comment: '🍅 **Pomodoro Technique: Focus Activated**'
+    # 🍅 **Pomodoro Technique: Focus Activated**
     search_terms:
       - productivity
       - pomodoro
@@ -29,7 +29,7 @@ matches:
             2. ____________________
             3. ____________________
     label: '[Productivity] Oliver Burkeman 3/3/3 Daily Focus Method'
-    comment: '⚡ **3/3/3 Method: Daily Focus Plan**'
+    # ⚡ **3/3/3 Method: Daily Focus Plan**
     search_terms:
       - productivity
       - burkeman
@@ -52,7 +52,7 @@ matches:
           - Urgent & Not Important -> DELEGATE
           - Not Urgent & Not Important -> ELIMINATE
     label: '[Productivity] Eisenhower Urgency vs Importance Priority Matrix'
-    comment: '📊 **Eisenhower Matrix: Priority Classification**'
+    # 📊 **Eisenhower Matrix: Priority Classification**
     search_terms:
       - productivity
       - eisenhower
@@ -68,7 +68,7 @@ matches:
 
       • TODAY, my biggest frog is: ____________________
     label: '[Productivity] Eat That Frog (Highest Friction Priority First)'
-    comment: '🐸 **Eat That Frog: The hardest task first!**'
+    # 🐸 **Eat That Frog: The hardest task first!**
     search_terms:
       - productivity
       - frog
@@ -96,7 +96,7 @@ matches:
         params:
           cmd: cal -h | sed '1,2d'
     label: '[Productivity] Seinfeld Habit Chain Tracker (Don''t Break The Chain)'
-    comment: '📅 **Seinfeld Strategy: Don''t Break The Chain!**'
+    # 📅 **Seinfeld Strategy: Don''t Break The Chain!**
     search_terms:
       - productivity
       - habit
@@ -118,7 +118,7 @@ matches:
       | 14:00 - 14:30| ☕ Break / Decompression         | [ ]  |
       | 14:30 - 16:00| 👥 Meetings / Alignment          | [ ]  |
     label: '[Productivity] Time-Blocking Daily Schedule Planner'
-    comment: '⏳ **Time Blocking: Daily Schedule**'
+    # ⏳ **Time Blocking: Daily Schedule**
     search_terms:
       - productivity
       - timeblocking
@@ -137,7 +137,7 @@ matches:
 
       > **Important Note:** None of this matters if you are constantly distracted. Turn off notifications and protect your focus.
     label: '[Productivity] Daily Time-Blocking Hourly Architecture'
-    comment: '## 🕒 Time-Blocking Architecture'
+    # ## 🕒 Time-Blocking Architecture
     search_terms:
       - productivity
       - timeblocking
@@ -165,7 +165,7 @@ matches:
           - '45'
           - '60'
     label: '[Productivity] Parkinson''s Law Constraint Execution Blueprint'
-    comment: '### ⏱️ Parkinson''s Law Execution Blueprint'
+    # ### ⏱️ Parkinson''s Law Execution Blueprint
     search_terms:
       - productivity
       - parkinson
@@ -198,7 +198,7 @@ matches:
       step4:
         default: Work on light administrative tasks / Review progress and close the day
     label: '[Productivity] Operational Workstyle & Energy Profile Blueprint'
-    comment: '### 🛠️ Selected Operational Profile:'
+    # ### 🛠️ Selected Operational Profile:
     search_terms:
       - productivity
       - workstyle
@@ -212,7 +212,7 @@ matches:
       - **Persistence**: Continuous focus and motivation to overcome obstacles.
       - **Clarity**: Clear goals, mental clarity, and enhanced focus.
     label: '[Productivity] Flow State Framework & Fulfillment Calibration'
-    comment: '### Framework: Flow State'
+    # ### Framework: Flow State
     search_terms:
       - productivity
       - flow
@@ -289,7 +289,7 @@ matches:
                 - Persistence (Resilient Focus)
                 - Clarity (Crystal-Clear Goals)
     label: '[Productivity] Focus-Block Gate & Core Value Alignment Note'
-    comment: '---'
+    # ---
     search_terms:
       - productivity
       - flow
@@ -336,7 +336,7 @@ matches:
                 - Total autonomy and execution clarity.
                 - Scalable systems engineering.
     label: '[Productivity] Anti-Vision vs Real Vision Life Calibration'
-    comment: '### 🚫 Anti-Vision vs. 🎯 Real Vision'
+    # ### 🚫 Anti-Vision vs. 🎯 Real Vision
     search_terms:
       - productivity
       - vision
@@ -358,7 +358,7 @@ matches:
       - [ ] Practice essential craft skills daily.
       - [ ] Protect the deep work focus block.
     label: '[Productivity] 6-Month Ghost Mode Extreme Focus Protocol'
-    comment: '## 🥷 Focus Protocol: Disappear for 6 Months (Ghost Mode)'
+    # ## 🥷 Focus Protocol: Disappear for 6 Months (Ghost Mode)
     search_terms:
       - productivity
       - ghostmode
@@ -372,7 +372,7 @@ matches:
       - **Resources**: Topics or themes of ongoing interest. (e.g., Productivity frameworks, UI/UX design patterns)
       - **Archive**: Inactive items from the other three categories to keep for reference. (e.g., Completed projects, past coursework)
     label: '[Productivity] P.A.R.A. Method Reference (Projects, Areas, Resources, Archive)'
-    comment: '### P.A.R.A. Method — Organization Overview'
+    # ### P.A.R.A. Method — Organization Overview
     search_terms:
       - productivity
       - para
@@ -392,7 +392,7 @@ matches:
       🌀 THE INTERSECTION:
       To enter Flow, your activity must unite: Something you care about + Something long-term + Something challenging + Something you are good at.
     label: '[Productivity] Flow State Entry Manual (Csikszentmihalyi Protocol)'
-    comment: '🎯 HOW TO ENTER THE FLOW STATE'
+    # 🎯 HOW TO ENTER THE FLOW STATE
     search_terms:
       - productivity
       - flow
@@ -439,7 +439,7 @@ matches:
             4. 💪 Something I'm good at:
             [[mastery]]
     label: '[Productivity] Daily Flow State Planning Worksheet'
-    comment: '# 🌀 Daily Flow State Planning'
+    # # 🌀 Daily Flow State Planning
     search_terms:
       - productivity
       - flow
@@ -467,7 +467,7 @@ matches:
         * Overcoming roadblocks with ease.
         * Energized and motivated to push through friction.
     label: '[Productivity] How to Enter the Flow State Reference'
-    comment: '# How to Enter the Flow State Reference'
+    # # How to Enter the Flow State Reference
     search_terms:
       - productivity
       - flow
@@ -539,7 +539,7 @@ matches:
                 - Administrative / Maintenance
                 - Exploratory / R&D
     label: '[Productivity] Flow State Vector Audit & Diagnostic'
-    comment: '---'
+    # ---
     search_terms:
       - productivity
       - flow
@@ -555,7 +555,7 @@ matches:
       calendar_details:
         multiline: true
     label: '[Productivity] Time Management Expert And Help Me Batch Similar Tasks'
-    comment: 'Here''s my calendar for the week:'
+    # Here''s my calendar for the week:
     search_terms:
       - productivity
 
@@ -569,7 +569,7 @@ matches:
       task:
         multiline: true
     label: '[Productivity] Manual Process Automation Mapping'
-    comment: Maps repetitive manual workflows into automated trigger-action pipelines.
+    # Maps repetitive manual workflows into automated trigger-action pipelines.
     search_terms:
       - productivity
 
@@ -580,7 +580,7 @@ matches:
       process:
         multiline: true
     label: '[Productivity] Zapier / Make Multi-Step Automation'
-    comment: Designs automated multi-app integrations with error handling and data formatting.
+    # Designs automated multi-app integrations with error handling and data formatting.
     search_terms:
       - productivity
 
@@ -591,7 +591,7 @@ matches:
       purpose:
         multiline: true
     label: '[Productivity] Automated Email Nurture Sequence'
-    comment: Crafts personalized multi-email onboarding and nurture drip campaigns.
+    # Crafts personalized multi-email onboarding and nurture drip campaigns.
     search_terms:
       - productivity
 
@@ -604,7 +604,7 @@ matches:
       transformations:
         multiline: true
     label: '[Productivity] ETL Data Pipeline Architecture'
-    comment: Structures scheduled data extraction, transformation, validation, and loading jobs.
+    # Structures scheduled data extraction, transformation, validation, and loading jobs.
     search_terms:
       - productivity
 
@@ -621,7 +621,7 @@ matches:
       frequency:
         default: week
     label: '[Productivity] Automated Executive Report Generator'
-    comment: Transforms raw metric tables into polished executive summaries with action items.
+    # Transforms raw metric tables into polished executive summaries with action items.
     search_terms:
       - productivity
 
@@ -634,7 +634,7 @@ matches:
       criteria:
         multiline: true
     label: '[Productivity] Inbound Lead Qualification Bot Flow'
-    comment: Designs qualification question flows that score leads and route to sales teams.
+    # Designs qualification question flows that score leads and route to sales teams.
     search_terms:
       - productivity
 
@@ -645,7 +645,7 @@ matches:
       product:
         multiline: true
     label: '[Productivity] Zero-Friction Customer Onboarding Flow'
-    comment: Automates account provisioning, welcome tours, and time-to-first-value milestones.
+    # Automates account provisioning, welcome tours, and time-to-first-value milestones.
     search_terms:
       - productivity
 
@@ -656,7 +656,7 @@ matches:
       target:
         multiline: true
     label: '[Productivity] Monitoring & Incident Alerting Routing'
-    comment: Configures signal-to-noise alert thresholds, escalation policies, and on-call paging.
+    # Configures signal-to-noise alert thresholds, escalation policies, and on-call paging.
     search_terms:
       - productivity
 
@@ -667,7 +667,7 @@ matches:
       support_channel:
         default: Zendesk / Intercom / Email
     label: '[Productivity] Support Ticket Auto-Triage & Routing'
-    comment: Classifies incoming support requests by urgency, category, and assigned tier.
+    # Classifies incoming support requests by urgency, category, and assigned tier.
     search_terms:
       - productivity
 
@@ -680,7 +680,7 @@ matches:
       platforms:
         default: Substack, LinkedIn, Twitter/X, Blog
     label: '[Productivity] Content Publishing & Distribution Pipeline'
-    comment: Automates multi-platform formatting, scheduling, and asset repurposing.
+    # Automates multi-platform formatting, scheduling, and asset repurposing.
     search_terms:
       - productivity
 
@@ -693,7 +693,7 @@ matches:
       what_to_monitor:
         multiline: true
     label: '[Productivity] Automated Competitor Pricing & Feature Watch'
-    comment: Sets up tracking workflows for competitor price shifts, changelogs, and job postings.
+    # Sets up tracking workflows for competitor price shifts, changelogs, and job postings.
     search_terms:
       - productivity
 
@@ -706,7 +706,7 @@ matches:
       scenarios:
         multiline: true
     label: '[Productivity] CRM Pipeline Stage Automation'
-    comment: Automates deal stage updates, task assignments, and stale deal reminders in CRM.
+    # Automates deal stage updates, task assignments, and stale deal reminders in CRM.
     search_terms:
       - productivity
 
@@ -717,7 +717,7 @@ matches:
       role_or_department:
         default: Engineering / All New Hires
     label: '[Productivity] Automated Employee Onboarding Checklist'
-    comment: Generates automated provisioning checklists, IT requests, and 30-60-90 day schedules.
+    # Generates automated provisioning checklists, IT requests, and 30-60-90 day schedules.
     search_terms:
       - productivity
 
@@ -728,7 +728,7 @@ matches:
       pm_tool:
         default: Linear / Jira / Notion
     label: '[Productivity] Meeting Minutes & Automated Follow-Up'
-    comment: Formats meeting transcript notes into structured emails with owners and deadlines.
+    # Formats meeting transcript notes into structured emails with owners and deadlines.
     search_terms:
       - productivity
 
@@ -741,7 +741,7 @@ matches:
       channels:
         default: Websites, Amazon, API feeds
     label: '[Productivity] Dynamic Pricing & Competitor Tracking'
-    comment: Designs price monitoring alerts with margin rules and competitor scrapers.
+    # Designs price monitoring alerts with margin rules and competitor scrapers.
     search_terms:
       - productivity
 
@@ -752,7 +752,7 @@ matches:
       criteria:
         multiline: true
     label: '[Productivity] Candidate Resume Screening Matrix'
-    comment: Screens candidate qualifications against job requirements with structured scoring.
+    # Screens candidate qualifications against job requirements with structured scoring.
     search_terms:
       - productivity
 
@@ -763,7 +763,7 @@ matches:
       product_or_service:
         multiline: true
     label: '[Productivity] Churned Customer Win-Back Campaign'
-    comment: Designs targeted win-back offers and exit-survey feedback collection.
+    # Designs targeted win-back offers and exit-survey feedback collection.
     search_terms:
       - productivity
 
@@ -776,7 +776,7 @@ matches:
       forecasting_model:
         multiline: true
     label: '[Productivity] Sales Pipeline & Revenue Forecasting Model'
-    comment: Calculates weighted pipeline projections based on conversion historicals and deal stages.
+    # Calculates weighted pipeline projections based on conversion historicals and deal stages.
     search_terms:
       - productivity
 
@@ -787,7 +787,7 @@ matches:
       intake_source:
         default: Slack / Jira Service Desk / Email
     label: '[Productivity] IT Helpdesk Automation & Auto-Resolution'
-    comment: Automates common password resets, permission requests, and hardware approvals.
+    # Automates common password resets, permission requests, and hardware approvals.
     search_terms:
       - productivity
 
@@ -798,7 +798,7 @@ matches:
       test_subject:
         multiline: true
     label: '[Productivity] A/B Test Design & Significance Calculator'
-    comment: Calculates sample sizes, minimum detectable effects, and statistical validity of tests.
+    # Calculates sample sizes, minimum detectable effects, and statistical validity of tests.
     search_terms:
       - productivity
 
@@ -809,7 +809,7 @@ matches:
       product:
         multiline: true
     label: '[Productivity] Customer Lifecycle Stage Triggers'
-    comment: Maps activation, adoption, expansion, and retention milestone triggers.
+    # Maps activation, adoption, expansion, and retention milestone triggers.
     search_terms:
       - productivity
 
@@ -820,7 +820,7 @@ matches:
       customer_signals:
         multiline: true
     label: '[Productivity] Customer Health Scoring Model'
-    comment: Combines product usage, support tickets, and NPS into a predictive churn score.
+    # Combines product usage, support tickets, and NPS into a predictive churn score.
     search_terms:
       - productivity
 
@@ -831,7 +831,7 @@ matches:
       accounts:
         multiline: true
     label: '[Productivity] Automated Financial Reconciliation Matrix'
-    comment: Reconciles bank feeds, invoices, and accounting ledgers with anomaly detection.
+    # Reconciles bank feeds, invoices, and accounting ledgers with anomaly detection.
     search_terms:
       - productivity
 
@@ -880,7 +880,7 @@ matches:
       - Prioritize teaching over producing.
       - Keep answers structured, visual, and practical for real-world use.
     label: '[Productivity] Prompt Engineering Mentor & Critic'
-    comment: Critiques, refines, and upgrades your AI prompts for maximum fidelity.
+    # Critiques, refines, and upgrades your AI prompts for maximum fidelity.
     search_terms:
       - productivity
 
@@ -888,7 +888,7 @@ matches:
     replace: |
       This chat is too long. Write a complete handoff document for a new chat covering: the goal, all the context needed to understand it cold, every decision we made and why, what's done, what's left in order, and the exact next step. Make it detailed enough that a fresh AI with zero memory picks up exactly where we left off.
     label: '[Productivity] Context Compression Handoff Prompt'
-    comment: Summarizes an ongoing chat history into a clean state handover for a fresh session.
+    # Summarizes an ongoing chat history into a clean state handover for a fresh session.
     search_terms:
       - productivity
 
@@ -896,7 +896,7 @@ matches:
     replace: |
       Every ingredient, the exact quantities, the cooking technique, and how to make it at home so it tastes like the original. If there's a reason the restaurant version tastes better than homemade, tell me that secret too.
     label: '[Productivity] Culinary Recipe Extractor'
-    comment: Extracts precise ingredient weights, times, temperatures, and techniques from videos/text.
+    # Extracts precise ingredient weights, times, temperatures, and techniques from videos/text.
     search_terms:
       - productivity
 
@@ -904,7 +904,7 @@ matches:
     replace: |
       Find me a cheaper version of this exact product. Same quality, same materials, different brand. Search the web and show me where to buy it, the price difference, and whether the cheaper version has any real trade-offs.
     label: '[Productivity] Price Comparison & Value Finder'
-    comment: Searches for identical or equivalent items at lower price points with reviews.
+    # Searches for identical or equivalent items at lower price points with reviews.
     search_terms:
       - productivity
 
@@ -912,7 +912,7 @@ matches:
     replace: |
       Tell me what this is worth right now. Search current resale prices, tell me the best platform to sell it on, and write me the listing title and description that gets the highest price. If it's worth more than I think, tell me why.
     label: '[Productivity] Second-Hand Value & Valuation Appraiser'
-    comment: Estimates fair market value, resale range, and condition checks for items.
+    # Estimates fair market value, resale range, and condition checks for items.
     search_terms:
       - productivity
 
@@ -920,7 +920,7 @@ matches:
     replace: |
       Flag every ingredient linked to health concerns. Tell me what each one actually does, how serious the risk is, and suggest a cleaner alternative product I can buy instead. Write it so someone with no science background understands.
     label: '[Productivity] Health & Additive Ingredient Scanner'
-    comment: Flags toxic additives, allergens, and health warnings in food/cosmetic ingredient lists.
+    # Flags toxic additives, allergens, and health warnings in food/cosmetic ingredient lists.
     search_terms:
       - productivity
 
@@ -936,7 +936,7 @@ matches:
 
       After I answer - write a complete persona instruction I paste into a system prompt or project context. It should make every response sound like me without me explaining myself every time.
     label: '[Productivity] Custom AI Business Persona Architect'
-    comment: Builds customized tone, knowledge boundary, and behavioral guidelines for an AI bot.
+    # Builds customized tone, knowledge boundary, and behavioral guidelines for an AI bot.
     search_terms:
       - productivity
 
@@ -951,7 +951,7 @@ matches:
       04. Extended Thinking — for decisions that actually matter
       05. Custom persona — AI that sounds like you always
     label: '[Productivity] 5-Minute Quick-Win Productivity Prompts'
-    comment: Curated rapid prompts to automate immediate daily tasks in 5 minutes.
+    # Curated rapid prompts to automate immediate daily tasks in 5 minutes.
     search_terms:
       - productivity
 
@@ -959,7 +959,7 @@ matches:
     replace: |
       5 things you can do with AI in the next 5 minutes that will save you 10 hours this week. Try them now and save them
     label: '[Productivity] AI Time-Saver Framework Intro'
-    comment: Introduction to time-saving automation hacks with AI.
+    # Introduction to time-saving automation hacks with AI.
     search_terms:
       - productivity
 
@@ -993,7 +993,7 @@ matches:
       user_situation:
         multiline: true
     label: "[Productivity] Dan Koe 99% Advantage & Anti-Vision Execution Blueprint"
-    comment: Deconstructs Anti-Vision, 6-Month Ghost Mode, Boring Fundamentals, and Scientific Experimentation into an actionable plan.
+    # Deconstructs Anti-Vision, 6-Month Ghost Mode, Boring Fundamentals, and Scientific Experimentation into an actionable plan.
     search_terms:
       - productivity
       - dan-koe
@@ -1023,7 +1023,7 @@ matches:
       task_backlog:
         multiline: true
     label: "[Productivity] Get Sh#t Done Daily Master Prioritizer & Schedule Planner"
-    comment: Synthesizes Pomodoro, 3/3/3, Eisenhower, Eat the Frog, Seinfeld, and Time-Blocking to transform a messy task list into a locked daily schedule.
+    # Synthesizes Pomodoro, 3/3/3, Eisenhower, Eat the Frog, Seinfeld, and Time-Blocking to transform a messy task list into a locked daily schedule.
     search_terms:
       - productivity
       - get-shit-done
@@ -1074,7 +1074,7 @@ matches:
       2. Be flexible: folders evolve as priorities shift.
       3. Don't hoard data—always optimize for rapid retrieval and expression.
     label: "[Productivity] P.A.R.A. & C.O.D.E. Second Brain Architecture Guide"
-    comment: Comprehensive cheat sheet and workflow reference for Tiago Forte's P.A.R.A. and C.O.D.E. methodology.
+    # Comprehensive cheat sheet and workflow reference for Tiago Forte's P.A.R.A. and C.O.D.E. methodology.
     search_terms:
       - productivity
       - para
@@ -1106,7 +1106,7 @@ matches:
       └── 2025-Completed-Projects/
       ```
     label: "[Productivity] P.A.R.A. Folder Structure & Second Brain Scaffold"
-    comment: Standardized Obsidian/Notion folder tree template implementing P.A.R.A.
+    # Standardized Obsidian/Notion folder tree template implementing P.A.R.A.
     search_terms:
       - productivity
       - para
@@ -1134,7 +1134,7 @@ matches:
       raw_notes:
         multiline: true
     label: "[Productivity] P.A.R.A. Second Brain Note Sorter & Classifier"
-    comment: Triages messy notes, tasks, and bookmarks into Projects, Areas, Resources, and Archive with next actions.
+    # Triages messy notes, tasks, and bookmarks into Projects, Areas, Resources, and Archive with next actions.
     search_terms:
       - productivity
       - para
@@ -1172,7 +1172,7 @@ matches:
       - Clear your physical & digital workspace.
       - Set healthy boundaries with colleagues and family during focus blocks.
     label: "[Productivity] 8 Hours in 4 Hours: Workday Compression Framework"
-    comment: Cheat sheet summarizing Colby Kultgen's 4-step framework for finishing 8 hours of work in 4 hours.
+    # Cheat sheet summarizing Colby Kultgen's 4-step framework for finishing 8 hours of work in 4 hours.
     search_terms:
       - productivity
       - 4-hour
@@ -1207,7 +1207,7 @@ matches:
       work_backlog:
         multiline: true
     label: "[Productivity] 4-Hour Workday Compression Sprint Planner"
-    comment: Compresses an 8-hour task list into a tailored 4-hour execution plan using Parkinson's Law and working style alignment.
+    # Compresses an 8-hour task list into a tailored 4-hour execution plan using Parkinson's Law and working style alignment.
     search_terms:
       - productivity
       - 4-hour
@@ -1244,7 +1244,7 @@ matches:
           - Apathetic / Low Meaning (Don't care about the outcome)
           - Distracted / Fragmented Focus (Struggling to sustain attention)
     label: "[Productivity] Flow State Diagnostic & Friction Calibration Engine"
-    comment: Diagnoses friction across the 4 Flow State pillars (Fulfilment, Happiness, Clarity, Persistence) and creates an entry ritual.
+    # Diagnoses friction across the 4 Flow State pillars (Fulfilment, Happiness, Clarity, Persistence) and creates an entry ritual.
     search_terms:
       - productivity
       - flow

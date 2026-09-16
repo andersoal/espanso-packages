@@ -5,7 +5,7 @@ matches:
     form: |
       Act like a market analyst. Based on current online trends, list 20 niches where people are actively spending money, content demand is high, and competition is realistic for a beginner. For each niche, tell me who spends the money, what problems they have, and what digital products sell best.
     label: "[Marketing & Sales] Profitable Niche Discovery & Audience Ideation"
-    comment: Act like a market analyst. Based on current online trends, list 20 niches where people are actively spending money, cont
+    # Act like a market analyst. Based on current online trends, list 20 niches where people are actively spending money, cont
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -23,7 +23,7 @@ matches:
       market_or_niche_idea:
         multiline: false
     label: "[Marketing & Sales] TAM & Customer Willingness-to-Pay Validator"
-    comment: Act like a business analyst conducting pre-launch due diligence. I am considering entering the market . Analyze the comp
+    # Act like a business analyst conducting pre-launch due diligence. I am considering entering the market . Analyze the comp
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -48,7 +48,7 @@ matches:
       skill_5:
         multiline: false
     label: "[Marketing & Sales] Founder Skill & Monetization Inventory"
-    comment: Identify your existing skills and competence areas. I need you to evaluate and rate yourself on a scale of 1-10. Be brut
+    # Identify your existing skills and competence areas. I need you to evaluate and rate yourself on a scale of 1-10. Be brut
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -60,7 +60,7 @@ matches:
       insert_niche:
         multiline: false
     label: "[Marketing & Sales] Competitive Niche Viability Scorecard"
-    comment: "Act like a business consultant. Validate this niche: . Tell me the target audience, their urgent pain points, top compet"
+    # Act like a business consultant. Validate this niche: . Tell me the target audience, their urgent pain points, top compet
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -74,7 +74,7 @@ matches:
 
       > "You have to find what you love. And that is as true for your work as it is for your lovers." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 1: Unique Value Proposition"
-    comment: "Steve Jobs Rule 1: Create a distinct and differentiated Unique Value Proposition."
+    # Steve Jobs Rule 1: Create a distinct and differentiated Unique Value Proposition.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -91,7 +91,7 @@ matches:
 
       > "You've got to start with the customer experience and work backwards to the technology — not the other way around." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 2: Benefits Over Features"
-    comment: "Steve Jobs Rule 2: Focus on Benefits and Experience rather than technical specifications."
+    # Steve Jobs Rule 2: Focus on Benefits and Experience rather than technical specifications.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -108,7 +108,7 @@ matches:
 
       > "That's been one of my mantras — focus and simplicity. Simple can be harder than complex." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 3: Radical Simplicity"
-    comment: "Steve Jobs Rule 3: Keep your message simple and distilled."
+    # Steve Jobs Rule 3: Keep your message simple and distilled.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -125,7 +125,7 @@ matches:
 
       > "The most powerful person in the world is the story teller. The storyteller sets the vision, values and agenda of an entire generation that is to come." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 4: Compelling Storytelling"
-    comment: "Steve Jobs Rule 4: Tell a compelling story that builds an emotional connection."
+    # Steve Jobs Rule 4: Tell a compelling story that builds an emotional connection.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -142,7 +142,7 @@ matches:
 
       > "Get closer than ever to your customers. So close that you tell them what they need well before they realize it themselves." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 5: Deep Customer Empathy"
-    comment: "Steve Jobs Rule 5: Know your audience so intimately that you anticipate their needs."
+    # Steve Jobs Rule 5: Know your audience so intimately that you anticipate their needs.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -159,7 +159,7 @@ matches:
 
       > "You've got to start with the customer experience and work backwards to the technology — not the other way around." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 6: End-to-End Customer Experience"
-    comment: "Steve Jobs Rule 6: Create a memorable end-to-end experience across all customer touchpoints."
+    # Steve Jobs Rule 6: Create a memorable end-to-end experience across all customer touchpoints.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -176,7 +176,7 @@ matches:
 
       > "A lot of times, people don't know what they want until you show it to them." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 7: Bold Polarizing Positioning"
-    comment: "Steve Jobs Rule 7: Don't be afraid to take a bold, polarizing stance."
+    # Steve Jobs Rule 7: Don't be afraid to take a bold, polarizing stance.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -193,7 +193,7 @@ matches:
 
       > "I'm convinced that about half of what separates the successful entrepreneurs from the non-successful ones is pure perseverance." — Steve Jobs
     label: "[Marketing & Sales] Steve Jobs Rule 8: Relentless Perseverance"
-    comment: "Steve Jobs Rule 8: Unwavering perseverance and resilience in the face of rejection."
+    # Steve Jobs Rule 8: Unwavering perseverance and resilience in the face of rejection.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -214,7 +214,7 @@ matches:
       7. **Don't Be Afraid to Polarize**: Take an unapologetic stance that repels the wrong crowd and magnetizes true advocates.
       8. **Persist in the Face of Rejection**: Treat market friction as iteration data and persevere through initial resistance.
     label: "[Marketing & Sales] Steve Jobs' 8 Rules for Sales Excellence (Master Summary)"
-    comment: Complete 8-rule sales & copywriting cheat sheet inspired by Steve Jobs.
+    # Complete 8-rule sales & copywriting cheat sheet inspired by Steve Jobs.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -243,7 +243,7 @@ matches:
       sales_copy:
         multiline: true
     label: "[Marketing & Sales] Steve Jobs 8-Rules Sales & Pitch Audit Engine"
-    comment: Audits and rewrites product copy, landing pages, or pitches using Steve Jobs' 8 Rules for Sales Excellence.
+    # Audits and rewrites product copy, landing pages, or pitches using Steve Jobs' 8 Rules for Sales Excellence.
     search_terms:
       - marketing-sales
       - steve-jobs
@@ -255,7 +255,7 @@ matches:
     form: |
       'Generate Canva-ready graphic ideas with text overlays for [[topic]].'
     label: "[Marketing & Sales] Canva Graphic Generator (Text Overlays & Visual Themes)"
-    comment: "'Generate Canva-ready graphic ideas with text overlays for .'"
+    # 'Generate Canva-ready graphic ideas with text overlays for .'
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -264,7 +264,7 @@ matches:
     form: |
       'Write short, engaging, and scroll-stopping 30-second scripts for videos about [[topic]].'
     label: "[Marketing & Sales] High-Conversion Video & Sales Scriptwriter"
-    comment: "'Write short, engaging, and scroll-stopping 30-second scripts for videos about .'"
+    # 'Write short, engaging, and scroll-stopping 30-second scripts for videos about .'
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -273,7 +273,7 @@ matches:
     form: |
       "Write captions with a mix of storytelling and CTA. Add 5 to 7 high-quality, targeted, and trending hashtags for [[niche]]."
     label: "[Marketing & Sales] Social Caption Writer (Storytelling & High-Conversion CTA)"
-    comment: '"Write captions with a mix of storytelling and CTA. Add 5 to 7 high-quality, targeted, and trending hashtags for ."'
+    # "Write captions with a mix of storytelling and CTA. Add 5 to 7 high-quality, targeted, and trending hashtags for ."
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -282,7 +282,7 @@ matches:
     form: |
       "Draft 15 comment replies that feel authentic, witty, and brand-aligned for [[niche]]."
     label: "[Marketing & Sales] Audience Engagement Strategy (Conversation-Starter Tactics)"
-    comment: '"Draft 15 comment replies that feel authentic, witty, and brand-aligned for ."'
+    # "Draft 15 comment replies that feel authentic, witty, and brand-aligned for ."
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -300,7 +300,7 @@ matches:
           - TikTok
           - YouTube Shorts
     label: "[Marketing & Sales] Multi-Platform Posting Schedule (30-Day Strategic Cadence)"
-    comment: '"Suggest the best posting schedule (times + frequency) for maximum reach on ."'
+    # "Suggest the best posting schedule (times + frequency) for maximum reach on ."
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -329,7 +329,7 @@ matches:
                 - "250"
                 - "500"
     label: "[Marketing & Sales] Industry Evaluation & TAM Ranking (B2B Niche Scoring)"
-    comment: "Here are the industries to evaluate:"
+    # Here are the industries to evaluate:
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -355,7 +355,7 @@ matches:
                 - outbound lead generation pipelines
                 - automated invoicing & financial collection
     label: "[Marketing & Sales] Irresistible Agency Offer (B2B ROI & Transformation Positioning)"
-    comment: "I help  businesses save money by installing A.I tools that handle {{form1.function}}. Build me a 3-tier offer: a $2,000 "
+    # I help  businesses save money by installing A.I tools that handle {{form1.function}}. Build me a 3-tier offer: a $2,000
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -380,7 +380,7 @@ matches:
                 - "90"
                 - "120"
     label: "[Marketing & Sales] Cold Outreach Sequences (5 Multi-Angle Email Variations)"
-    comment: "Write me 5 cold email variations for  business owners. Lead with the cost of their current manual process. Offer to cut "
+    # Write me 5 cold email variations for  business owners. Lead with the cost of their current manual process. Offer to cut
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -395,7 +395,7 @@ matches:
       - name: objections_list
         type: clipboard
     label: "[Marketing & Sales] Sales Objection Inversion (Bulletproof Reframing Scripts)"
-    comment: "Here are the most common objections I hear on sales calls:"
+    # Here are the most common objections I hear on sales calls:
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -411,7 +411,7 @@ matches:
             AI Tool Name: [[tool]]
             Client Niche: [[niche]]
     label: "[Marketing & Sales] Client Onboarding Flow (Seamless Welcome & Integration Checklist)"
-    comment: Build me a step-by-step client onboarding checklist for installing  for a  business. Include what I need from the client
+    # Build me a step-by-step client onboarding checklist for installing  for a  business. Include what I need from the client
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -427,7 +427,7 @@ matches:
             Installed Tool: [[tool]]
             Client Niche:    [[niche]]
     label: "[Marketing & Sales] Client Upsell & Expansion (Retention & Revenue Growth Proposals)"
-    comment: "I just installed  for a  client. Based on their business type, what are 3 other A.I tools I could offer that would save "
+    # I just installed  for a  client. Based on their business type, what are 3 other A.I tools I could offer that would save
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -453,7 +453,7 @@ matches:
             Weekly Revenue:   [[revenue]]
             Installs Finished: [[installs]]
     label: "[Marketing & Sales] CEO Weekly Metrics Audit (Outreach, Closes & Bottleneck Diagnosis)"
-    comment: "Here are my numbers this week:"
+    # Here are my numbers this week:
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -472,7 +472,7 @@ matches:
       - name: article_content
         type: clipboard
     label: "[Marketing & Sales] Advanced Multi-Channel Content Strategist"
-    comment: "Act as an advanced multi-channel content strategist. Take the following source article, analyze its core arguments, and "
+    # Act as an advanced multi-channel content strategist. Take the following source article, analyze its core arguments, and
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -488,7 +488,7 @@ matches:
       audience:
         default: Professionals & Founders
     label: "[Marketing & Sales] Attention Hook Library (50 Viral Scroll-Stopping Templates)"
-    comment: "Give me 20 scroll-stopping content hooks for my content on the topic of: ."
+    # Give me 20 scroll-stopping content hooks for my content on the topic of: .
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -510,7 +510,7 @@ matches:
       brief:
         multiline: true
     label: "[Marketing & Sales] A/B Ad Copy Generator (Split-Test Headlines & Body Angles)"
-    comment: Analyze the following core offering/brief and create 3 distinct high-performance ad copy variations.
+    # Analyze the following core offering/brief and create 3 distinct high-performance ad copy variations.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -518,7 +518,7 @@ matches:
   - regex: :hash\((?P<niche>.*)\)
     replace: "Find 30 optimized, high-intent hashtags for the following market sector: {{niche}}. Group the final output cleanly into broad, medium-density, and long-tail niche subcategories."
     label: "[Marketing & Sales] Viral Hashtag Strategy (Tiered Reach & Community Tags)"
-    comment: "Find 30 optimized, high-intent hashtags for the following market sector: {{niche}}. Group the final output cleanly into "
+    # Find 30 optimized, high-intent hashtags for the following market sector: {{niche}}. Group the final output cleanly into
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -533,7 +533,7 @@ matches:
       role:
         default: VP of Sales
     label: "[Marketing & Sales] LinkedIn DM Outreach (Permission-Based High-Conversion Inquiries)"
-    comment: Draft a sequence of 5 initial connection messages and 3 strategic follow-up DMs based on the following input parameters.
+    # Draft a sequence of 5 initial connection messages and 3 strategic follow-up DMs based on the following input parameters.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -549,7 +549,7 @@ matches:
       - name: reviews
         type: clipboard
     label: "[Marketing & Sales] Competitor Review Mining (Customer Pain Points & Feature Gaps)"
-    comment: Analyze the following competitor customer reviews. Extract recurring complaints, deep-seated frustrations, system bottle
+    # Analyze the following competitor customer reviews. Extract recurring complaints, deep-seated frustrations, system bottle
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -557,7 +557,7 @@ matches:
   - regex: :palette\((?P<mood>.*)\)
     replace: Act as an expert UI/UX developer. Based on the target brand atmosphere of '{{mood}}', generate 5 cohesive digital color palettes. Provide hex codes, asset application rules, accessibility contrast compliance targets, and primary/secondary role definitions.
     label: "[Marketing & Sales] Brand Color Palette (HEX Codes & Mood Psychology)"
-    comment: "Act as an expert UI/UX developer. Based on the target brand atmosphere of '{{mood}}', generate 5 cohesive digital color "
+    # Act as an expert UI/UX developer. Based on the target brand atmosphere of '{{mood}}', generate 5 cohesive digital color
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -572,7 +572,7 @@ matches:
       - name: clipboard_competitors
         type: clipboard
     label: "[Marketing & Sales] Competitor Matrix Analysis (Pricing, Moats & Weaknesses)"
-    comment: Analyze the 5 competitors listed below. Generate a structural feature markdown comparison sheet containing functional ma
+    # Analyze the 5 competitors listed below. Generate a structural feature markdown comparison sheet containing functional ma
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -588,7 +588,7 @@ matches:
       process:
         multiline: true
     label: "[Marketing & Sales] Enterprise Automation Architect"
-    comment: Act as an enterprise automation architect. Build an architectural map and the accompanying complete, production-ready n8
+    # Act as an enterprise automation architect. Build an architectural map and the accompanying complete, production-ready n8
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -600,7 +600,7 @@ matches:
       audience:
         default: B2B Technical Architects
     label: "[Marketing & Sales] Market Research Expert"
-    comment: "Act as a market research expert. For my defined audience: , create a detailed profile: top 10 problems, exact language t"
+    # Act as a market research expert. For my defined audience: , create a detailed profile: top 10 problems, exact language t
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -616,7 +616,7 @@ matches:
       icp:
         default: Enterprise CTOs navigating legacy migrations
     label: "[Marketing & Sales] Audience Language Extractor (Exact Slang, Tropes & Frustrations)"
-    comment: "Using the audience analysis for , build a 3-part language library for my ICP:"
+    # Using the audience analysis for , build a 3-part language library for my ICP:
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -630,7 +630,7 @@ matches:
       outcomes:
         default: Reduced engineering bottlenecks, predictable scale
     label: "[Marketing & Sales] Brand Content Pillars (Authority, Relatability & Conversion Topics)"
-    comment: Help me develop three to five content pillars for . Each pillar must be anchored to a specific belief or observation rat
+    # Help me develop three to five content pillars for . Each pillar must be anchored to a specific belief or observation rat
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -645,7 +645,7 @@ matches:
       samples:
         multiline: true
     label: "[Marketing & Sales] Brand Voice & Tone Architecture (Rules, Cadence & Personality)"
-    comment: "Analyse my writing samples provided below and build a voice profile: sentence structure, vocabulary, tone, openings/clos"
+    # Analyse my writing samples provided below and build a voice profile: sentence structure, vocabulary, tone, openings/clos
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -660,7 +660,7 @@ matches:
 
       Make it clear, specific, and instantly recognisable to your ideal client.
     label: "[Marketing & Sales] Brand Positioning Matrix (Differentiated Category Design)"
-    comment: "Write a 70-90 word, first-person positioning statement based on the following attributes:"
+    # Write a 70-90 word, first-person positioning statement based on the following attributes:
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -677,7 +677,7 @@ matches:
       overview:
         multiline: true
     label: "[Marketing & Sales] Irresistible Offer Blueprint (Value Stacking & Guarantee)"
-    comment: "Define your offer, audience, and competitors based on this overview: ."
+    # Define your offer, audience, and competitors based on this overview: .
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -711,7 +711,7 @@ matches:
       - **Action Steps (The efficient path to execution):**
       - **Productized System (The engine that guides, supports, and delivers results cleanly):**
     label: "[Marketing & Sales] Zone of Genius Monetization Framework"
-    comment: "# Zone of Genius Monetization Framework"
+    # # Zone of Genius Monetization Framework
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -720,7 +720,7 @@ matches:
     replace: |
       Act as a specialist in reducing cancellations (churn) in subscription software. Users sign up for my app but cancel before I can earn meaningful revenue. Fix this problem completely: design an onboarding process that makes new users perceive value from the very first session, a feature that turns the app into part of their daily routine, a reactivation system that detects users before they cancel, and a realistic estimate of churn reduction during the first 30 days after implementing all the improvements.
     label: "[Marketing & Sales] SaaS Churn Reduction & Retention Strategy"
-    comment: Diagnoses cancellation reasons and designs onboarding / re-engagement fixes.
+    # Diagnoses cancellation reasons and designs onboarding / re-engagement fixes.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -729,7 +729,7 @@ matches:
     replace: |
       AI can now create software that makes money while you sleep, with no need to code. And for free.
     label: "[Marketing & Sales] No-Code Software Revenue Generation Intro"
-    comment: Framework for launching micro-SaaS tools and profitable digital assets.
+    # Framework for launching micro-SaaS tools and profitable digital assets.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -738,7 +738,7 @@ matches:
     replace: |
       Act as a software launch specialist. I've finished my app and I want to generate as much revenue as possible during the first 7 days. Design my complete launch: the pre-launch waitlist strategy to build anticipation before opening access, the exact launch-day sequence to maximize sign-ups during the first week, the early-user incentive that creates urgency to sign up, and a realistic estimate of first-week revenue with a well-executed launch to a warm, pre-interested audience.
     label: "[Marketing & Sales] Product Launch & GTM Execution Plan"
-    comment: Pre-launch, launch day, and post-launch checklist across ProductHunt, X, and email.
+    # Pre-launch, launch day, and post-launch checklist across ProductHunt, X, and email.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -747,7 +747,7 @@ matches:
     replace: |
       Act as a specialist in viral software design. I want to create a product so useful that users recommend it to their friends without any advertising. Design my product: the core value proposition that makes users feel they discovered a gem rather than just buying another piece of software, the perfect moment to prompt sharing within the product experience, the network effect that increases the software's value as the user base grows, and a realistic estimate of the organic growth a viral product could achieve.
     label: "[Marketing & Sales] Viral Product Mechanics & Referral Loops"
-    comment: Integrates sharing incentives and viral loops directly into product user flows.
+    # Integrates sharing incentives and viral loops directly into product user flows.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -756,7 +756,7 @@ matches:
     replace: |
       Act as a SaaS revenue growth specialist. I want my software to generate $5,000 a month in recurring revenue. Design my strategy: the pricing tiers that make hitting that figure possible with realistic conversion rates, the features that keep users subscribed instead of canceling after the first month, the acquisition strategy to find my ideal customer at low cost, and a realistic projection of monthly recurring revenue (MRR) for months 3, 6, and 12 if I execute the plan consistently.
     label: "[Marketing & Sales] SaaS Revenue Growth & Pricing Optimization"
-    comment: Optimizes ARPU, expansion revenue, and annual plan upgrades.
+    # Optimizes ARPU, expansion revenue, and annual plan upgrades.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -775,7 +775,7 @@ matches:
 
       Think like a partner in a VC or startup studio.
     label: "[Marketing & Sales] Strategic Business Decision Evaluator"
-    comment: Evaluates major business opportunities against capital efficiency and competitive moats.
+    # Evaluates major business opportunities against capital efficiency and competitive moats.
     search_terms:
       - marketing-sales
       - marketing & sales
@@ -796,7 +796,7 @@ matches:
 
       Assume we're pitching at a startup weekend in 24 hours.
     label: "[Marketing & Sales] Startup Idea Validation & Demand Testing"
-    comment: Designs low-cost experiments to test customer willingness to pay before writing code.
+    # Designs low-cost experiments to test customer willingness to pay before writing code.
     search_terms:
       - marketing-sales
       - marketing & sales

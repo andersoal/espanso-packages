@@ -11,7 +11,7 @@ matches:
       b) Questions (ask any relevant questions pertaining to what additional information is needed from me to improve the prompt).
       3. We will continue this iterative process, with me providing additional information to you and you're updating the prompt in the Revised Prompt section, until I say we are done.
     label: '[Prompts] Meta Prompt Engineer (Iterative Prompt Crafting Engine)'
-    comment: I want you to become my prompt engineer. Your goal is to help me craft the best possible prompt for my needs.
+    # I want you to become my prompt engineer. Your goal is to help me craft the best possible prompt for my needs.
     search_terms:
       - prompts
 
@@ -19,7 +19,7 @@ matches:
     replace: |
       Review your last response and search for areas of improvement. Tell me everything you've changed, the reasoning behind changing what you changed, and re-write the response.
     label: '[Prompts] Response Refiner (Self-Critique & Improvement Reasoning)'
-    comment: Review your last response and search for areas of improvement. Tell me everything you've changed, the reasoning behind c
+    # Review your last response and search for areas of improvement. Tell me everything you've changed, the reasoning behind c
     search_terms:
       - prompts
 
@@ -154,7 +154,7 @@ matches:
       - The agent never assumes "the user will correct me if I'm wrong" as a
         substitute for early clarification.
     label: '[Prompts] Strategic Clarification Timing (Empirical Trajectory Windows)'
-    comment: Clarification Timing Strategist
+    # Clarification Timing Strategist
     search_terms:
       - prompts
 
@@ -177,7 +177,7 @@ matches:
 
       Before we start the process, first provide a greeting and ask me what the prompt should be about. Don't display the sections on this first response.
     label: '[Prompts] Expert Prompt Creator (Iterative Assessment & Questions)'
-    comment: I want you to become my Expert Prompt Creator. The objective is to assist me in creating the most effective prompts to b
+    # I want you to become my Expert Prompt Creator. The objective is to assist me in creating the most effective prompts to b
     search_terms:
       - prompts
 
@@ -213,7 +213,7 @@ matches:
 
       For multiple-choice questions, select only one option. Each question has a unique answer, so analyze the provided information carefully to determine the most accurate and appropriate response. Please present only one solution if you come across multiple options.
     label: '[Prompts] Meta-Expert Persona (Clever Iterative Problem Solver)'
-    comment: You are Meta-Expert, an extremely clever expert with the unique ability to collaborate with multiple experts (such as Ex
+    # You are Meta-Expert, an extremely clever expert with the unique ability to collaborate with multiple experts (such as Ex
     search_terms:
       - prompts
 
@@ -286,7 +286,7 @@ matches:
 
       Rigorous, latency-aware, and psychologically grounded. You design for the human perception of "responsiveness" without sacrificing reasoning quality. Every disclosure decision is a trade-off with a calculable cost — make the cost explicit.
     label: '[Prompts] Progressive Disclosure Architecture (Proactive Agent Policy Rules)'
-    comment: Disclosure Policy Designer
+    # Disclosure Policy Designer
     search_terms:
       - prompts
 
@@ -294,7 +294,7 @@ matches:
     form: |
       You are a reflective guide designed to observe patterns in my answers and formulate three hypotheses about aspects of me that could be holding me back and that I might not have detected. Your main task is to validate each hypothesis without revealing it initially, using questions that are neither obvious nor direct. After each question, wait for my response before continuing to the next. After a few closed-ended questions, adapt or confirm the hypothesis based on my responses. Once validated, explain the hypothesis clearly, indicating how you believe it is holding me back and proposing concrete ways to change or overcome it. Your questions should be closed-ended, with clear options for me to respond with Yes/No or A, B, C, etc., and they should be subtle enough to not directly anticipate the purpose behind them. For example, you might ask: “When faced with a problem, do you prefer to analyze it deeply before acting or make quick decisions to move forward? A: Analyze deeply, B: Make quick decisions, C: Depends on the problem.” Your goal is to help me reflect and generate tangible change, using your hypotheses as a basis for a structured and insightful dialogue.
     label: '[Prompts] Self-Hypothesizer Guide (Pattern Observation & Belief Tracking)'
-    comment: You are a reflective guide designed to observe patterns in my answers and formulate three hypotheses about aspects of me
+    # You are a reflective guide designed to observe patterns in my answers and formulate three hypotheses about aspects of me
     search_terms:
       - prompts
 
@@ -305,7 +305,7 @@ matches:
       - Communication: Avoid corporate jargon, robotic throat-clearing (e.g., "Sure, I can help with that!"), or overly repetitive summaries at the end.
       - Core Rule: If a direct answer can be given in two sentences, give it in two sentences.
     label: '[Prompts] Custom Instructions: Concise (Direct Pragmatic & Candid Tone)'
-    comment: '- Tone: Direct, pragmatic, and candid. No fluff, padding, or meta-commentary.'
+    # - Tone: Direct, pragmatic, and candid. No fluff, padding, or meta-commentary.
     search_terms:
       - prompts
 
@@ -316,7 +316,7 @@ matches:
       - Explanations: Keep conceptual explanations brief and technical. Prioritize showing the solution in code first, followed by a concise breakdown of *why* it works.
       - Safety: Highlight edge cases, performance bottlenecks, or potential security vulnerabilities in any code snippet you provide.
     label: '[Prompts] Custom Instructions: Dev (Senior Staff Engineer Persona)'
-    comment: '- Profile: You are an elite, senior staff engineer.'
+    # - Profile: You are an elite, senior staff engineer.
     search_terms:
       - prompts
 
@@ -338,7 +338,7 @@ matches:
       avoid:
         default: preachy conclusions, conversational filler, or apologizing for being an AI
     label: '[Prompts] Custom Instructions: Form (Interactive Persona Definition)'
-    comment: '- Role/Persona: You are an expert  specialized in .'
+    # - Role/Persona: You are an expert  specialized in .
     search_terms:
       - prompts
 
@@ -350,7 +350,7 @@ matches:
       3. Explicit Calibration: State clearly when you are guessing or operating under low-certainty assumptions instead of projecting absolute certainty.
       4. Intellectual Resilience: If I push back or challenge your output, do not default to submissive agreement. If your original logic holds up under constraints, defend it rigorously.
     label: '[Prompts] Prime AI Operational Model (Core Persona & Principles Injection)'
-    comment: 'Adopt this operational model for this conversation:'
+    # Adopt this operational model for this conversation:
     search_terms:
       - prompts
 
@@ -383,7 +383,7 @@ matches:
       deliverable:
         multiline: true
     label: '[Prompts] Agent OS Setup (Specialist & Deliverable Configuration)'
-    comment: '# SYSTEM CONFIGURATION: AGENT OS ENGAGED'
+    # # SYSTEM CONFIGURATION: AGENT OS ENGAGED
     search_terms:
       - prompts
 
@@ -394,7 +394,7 @@ matches:
       Prioritize type safety, edge-case validation, and performance hygiene.
       Provide fully realized code blocks; do not truncate with placeholders.
     label: '[Prompts] Systems Architect & Pragmatic Builder (Engineering OS Persona)'
-    comment: You are a Senior Systems Architect and Pragmatic Code Builder.
+    # You are a Senior Systems Architect and Pragmatic Code Builder.
     search_terms:
       - prompts
 
@@ -404,7 +404,7 @@ matches:
       Analyze the customer's core anxieties, false beliefs, and dominant buying motivations.
       Write high-converting, punchy copy that addresses objections natively within the narrative flow.
     label: '[Prompts] Direct Response Copywriter (Behavioral Economics Persona)'
-    comment: You are a Direct Response Copywriter and Behavioral Economist.
+    # You are a Direct Response Copywriter and Behavioral Economist.
     search_terms:
       - prompts
 
@@ -414,7 +414,7 @@ matches:
       Map out a full 3-tier conversion funnel (Top, Middle, and Bottom of Funnel).
       Identify leaks, specify exact lead magnet transitions, and define the value-ladder architecture.
     label: '[Prompts] Growth Marketing Architect (High-Ticket Offer Persona)'
-    comment: You are a Growth Marketing Architect specializing in high-ticket offer stacks.
+    # You are a Growth Marketing Architect specializing in high-ticket offer stacks.
     search_terms:
       - prompts
 
@@ -432,7 +432,7 @@ matches:
       format:
         default: Clean markdown tables or bullet points
     label: '[Prompts] RTF Framework (Role Task Format Structure)'
-    comment: 'Act according to the following framework:'
+    # Act according to the following framework:
     search_terms:
       - prompts
 
@@ -455,7 +455,7 @@ matches:
       execution:
         multiline: true
     label: '[Prompts] SOLVE Framework (Situation Objective Limitations Vision Execution)'
-    comment: 'Please follow this prompt structure:'
+    # Please follow this prompt structure:
     search_terms:
       - prompts
 
@@ -471,7 +471,7 @@ matches:
       action:
         multiline: true
     label: '[Prompts] TAG Framework (Task Action Goal Formulation)'
-    comment: 'Execute the following:'
+    # Execute the following:
     search_terms:
       - prompts
 
@@ -490,7 +490,7 @@ matches:
       expectation:
         multiline: true
     label: '[Prompts] RACE Framework (Role Action Context Expectation Structure)'
-    comment: 'Analyze and generate:'
+    # Analyze and generate:
     search_terms:
       - prompts
 
@@ -512,7 +512,7 @@ matches:
       analyse:
         multiline: true
     label: '[Prompts] DREAM Framework (Define Research Execute Analyse Measure)'
-    comment: 'Address this systematically:'
+    # Address this systematically:
     search_terms:
       - prompts
 
@@ -532,7 +532,7 @@ matches:
         multiline: true
         default: None
     label: '[Prompts] PACT Framework (Problem Approach Compromise Test Analysis)'
-    comment: 'Evaluate the problem space:'
+    # Evaluate the problem space:
     search_terms:
       - prompts
 
@@ -551,7 +551,7 @@ matches:
       example:
         multiline: true
     label: '[Prompts] CARE Framework (Context Action Result Example Formulation)'
-    comment: 'Formulate a response using these elements:'
+    # Formulate a response using these elements:
     search_terms:
       - prompts
 
@@ -570,7 +570,7 @@ matches:
       expectation:
         multiline: true
     label: '[Prompts] RISE Framework (Role Input Steps Expectation Execution)'
-    comment: 'Execute this request:'
+    # Execute this request:
     search_terms:
       - prompts
 
@@ -592,7 +592,7 @@ matches:
           - aggressively
           - constructively
     label: '[Prompts] Strict Persona Protocol (Partner Not Assistant Formulation)'
-    comment: 'You are my , not my assistant. Follow these rules in every reply: Never open with agreement. Challenge my thinking  or a'
+    # You are my , not my assistant. Follow these rules in every reply: Never open with agreement. Challenge my thinking  or a
     search_terms:
       - prompts
 
@@ -616,7 +616,7 @@ matches:
           - Reassuring
           - Inspirational
     label: '[Prompts] Role Persona Prompt (Interactive Persona & Task Formulation)'
-    comment: Act as a . Your task is to .
+    # Act as a . Your task is to .
     search_terms:
       - prompts
 
@@ -637,7 +637,7 @@ matches:
       format:
         default: Markdown table followed by a 3-bullet takeaway list
     label: '[Prompts] TREF Framework (Task Requirement Expectation Format Formulation)'
-    comment: 'Please execute the following request based on the TREF framework:'
+    # Please execute the following request based on the TREF framework:
     search_terms:
       - prompts
 
@@ -662,7 +662,7 @@ matches:
         multiline: true
         default: Restored service within 8 minutes and cut database latency by 15% overall.
     label: '[Prompts] STAR Framework (Situation Task Action Result Response)'
-    comment: 'Analyze and generate a response utilizing the STAR structure:'
+    # Analyze and generate a response utilizing the STAR structure:
     search_terms:
       - prompts
 
@@ -689,7 +689,7 @@ matches:
         multiline: true
         default: Expired authorization tokens mid-transaction, race conditions on inventory counts, and double-clicks on payment buttons.
     label: '[Prompts] ROSES Framework (Role Objective Scenario Solution Edge Formulation)'
-    comment: 'Execute the following task contextually:'
+    # Execute the following task contextually:
     search_terms:
       - prompts
 
@@ -727,7 +727,7 @@ matches:
         multiline: true
         default: 'Specify the structure: Markdown tables, JSON schemas, or bullet points.'
     label: '[Prompts] TREF Domain Framework (Task Requirement Expectation Format Header)'
-    comment: '# [TREF Prompt] — Context:'
+    # # [TREF Prompt] — Context:
     search_terms:
       - prompts
 
@@ -765,7 +765,7 @@ matches:
         multiline: true
         default: Detail the explicit action steps needed from the model to bridge the gap.
     label: '[Prompts] SCET Domain Framework (Situation Complication Expectation Task)'
-    comment: '# [SCET Prompt] — Context:'
+    # # [SCET Prompt] — Context:
     search_terms:
       - prompts
 
@@ -809,7 +809,7 @@ matches:
         multiline: true
         default: The explicit computational or creative processing steps to follow.
     label: '[Prompts] PECRA Domain Framework (Purpose Expectation Context Request Action)'
-    comment: '# [PECRA Prompt] — Context:'
+    # # [PECRA Prompt] — Context:
     search_terms:
       - prompts
 
@@ -856,7 +856,7 @@ matches:
           - Input: [Example In]
           - Output: [Example Out]
     label: '[Prompts] PCCRA Domain Framework (Goal Request Action Detail Examples)'
-    comment: '# [PCCRA Prompt] — Context:'
+    # # [PCCRA Prompt] — Context:
     search_terms:
       - prompts
 
@@ -900,7 +900,7 @@ matches:
         multiline: true
         default: Unusual inputs, failure states, or explicit parameters to block or flag safely.
     label: '[Prompts] ROSES Domain Framework (Role Objective Scenario Solution Edge)'
-    comment: '# [ROSES Prompt] — Context:'
+    # # [ROSES Prompt] — Context:
     search_terms:
       - prompts
 
@@ -933,7 +933,7 @@ matches:
         multiline: true
         default: Quantify the outcome (e.g., performance improved by 40%, zero downtime).
     label: '[Prompts] STAR Summary Layout (Situation Task Action Result Breakdown)'
-    comment: '# [STAR Framework Summary]'
+    # # [STAR Framework Summary]
     search_terms:
       - prompts
 
@@ -965,7 +965,7 @@ matches:
         multiline: true
         default: The strategic or quantitative metrics derived from this execution.
     label: '[Prompts] SOAR Strategic Layout (Situation Objective Action Result Breakdown)'
-    comment: '# [SOAR Strategic Layout]'
+    # # [SOAR Strategic Layout]
     search_terms:
       - prompts
 
@@ -994,21 +994,21 @@ matches:
         multiline: true
         default: What is the hard target date or production deployment deadline?
     label: '[Prompts] SMART Goal Tracker (Specific Measurable Achievable Relevant Time-Bound)'
-    comment: '# [SMART Goal Tracking Layout]'
+    # # [SMART Goal Tracking Layout]
     search_terms:
       - prompts
 
   - regex: :temp\((?P<value>[0-9\.]+)\)
     replace: Set the model temperature parameter to {{value}} to adjust output variance.
     label: '[Prompts] Model Temperature (Adjust Output Sampling Variance)'
-    comment: Set the model temperature parameter to {{value}} to adjust output variance.
+    # Set the model temperature parameter to {{value}} to adjust output variance.
     search_terms:
       - prompts
 
   - regex: :freq\((?P<value>[0-9\.]+)\)
     replace: Apply a frequency_penalty of {{value}} to reduce phrase and word repetition.
     label: '[Prompts] Frequency Penalty (Reduce Repetitive Words & Phrases)'
-    comment: Apply a frequency_penalty of {{value}} to reduce phrase and word repetition.
+    # Apply a frequency_penalty of {{value}} to reduce phrase and word repetition.
     search_terms:
       - prompts
 
@@ -1201,14 +1201,14 @@ matches:
       context:
         default: '[insert specific topic or industry here]'
     label: '[Prompts] Structured Prompt Builder (Role Task Format Context Formulation)'
-    comment: Act as a .
+    # Act as a .
     search_terms:
       - prompts
 
   - regex: :as\((?P<role>[^,]+),(?P<topic>.*)\)
     replace: Act as an expert {{role}}. Write a comprehensive breakdown detailing {{topic}}.
     label: '[Prompts] Expert Persona Breakdown (Role & Topic Detailed Analysis)'
-    comment: Act as an expert {{role}}. Write a comprehensive breakdown detailing {{topic}}.
+    # Act as an expert {{role}}. Write a comprehensive breakdown detailing {{topic}}.
     search_terms:
       - prompts
 
@@ -1221,7 +1221,7 @@ matches:
       timeline:
         default: 30 days
     label: '[Prompts] Skills Instructor (Practical Real-World Mastery Roadmap)'
-    comment: Act as a professional instructor and practitioner with deep real-world experience in . Teach me this skill from beginner
+    # Act as a professional instructor and practitioner with deep real-world experience in . Teach me this skill from beginner
     search_terms:
       - prompts
 
@@ -1232,7 +1232,7 @@ matches:
       skill:
         default: ''
     label: '[Prompts] Expert Mental Models (Hidden Instincts & Decision Intuition)'
-    comment: Explain how experts think differently when using . Teach me the mindset, decision-making approach, and problem-solving s
+    # Explain how experts think differently when using . Teach me the mindset, decision-making approach, and problem-solving s
     search_terms:
       - prompts
 
@@ -1243,7 +1243,7 @@ matches:
       skill:
         default: ''
     label: '[Prompts] Skill Diagnostic Quiz (Understanding Assessment & Scenarios)'
-    comment: 'Test my current understanding of . Ask relevant questions or give tasks to assess my level, then tell me clearly what I '
+    # Test my current understanding of . Ask relevant questions or give tasks to assess my level, then tell me clearly what I
     search_terms:
       - prompts
 
@@ -1254,7 +1254,7 @@ matches:
       skill:
         default: ''
     label: '[Prompts] Real-World Readiness Audit (Confidence & Blindspot Check)'
-    comment: Evaluate whether I am ready to use  confidently in real-world situations. Identify any remaining gaps and give a clear n
+    # Evaluate whether I am ready to use  confidently in real-world situations. Identify any remaining gaps and give a clear n
     search_terms:
       - prompts
 
@@ -1273,77 +1273,77 @@ matches:
       background:
         default: soft neutral (beige or light gray)
     label: '[Prompts] Color Analysis Infographic (Aesthetic & Seasonal Palette)'
-    comment: "Create a clean, elegant personal color analysis infographic based on this portrait. Place the person's face on the left "
+    # Create a clean, elegant personal color analysis infographic based on this portrait. Place the person's face on the left
     search_terms:
       - prompts
 
   - trigger: :p-human
     replace: Rewrite so it sounds like a real person wrote it, no AI tells, no filler.
     label: '[Prompts] Human Tone Rewriter (Natural Voice & Rhythm Polish)'
-    comment: Rewrite so it sounds like a real person wrote it, no AI tells, no filler.
+    # Rewrite so it sounds like a real person wrote it, no AI tells, no filler.
     search_terms:
       - prompts
 
   - trigger: :p-eli10
     replace: Explain it like I'm ten, using plain words and a simple analogy.
     label: '[Prompts] Explain Like I''m 10 (Simple Words & Everyday Analogies)'
-    comment: Explain it like I'm ten, using plain words and a simple analogy.
+    # Explain it like I'm ten, using plain words and a simple analogy.
     search_terms:
       - prompts
 
   - trigger: :p-deeper
     replace: Think it through step by step before answering, don't give me your first instinct.
     label: '[Prompts] Deep Reasoning (Step-by-Step Thinking & Reflection)'
-    comment: Think it through step by step before answering, don't give me your first instinct.
+    # Think it through step by step before answering, don't give me your first instinct.
     search_terms:
       - prompts
 
   - trigger: :p-noyes
     replace: Stop agreeing by default, tell me where I'm wrong and what the strongest counterargument is.
     label: '[Prompts] Counterargument Pushback (Devil''s Advocate & Blindspots)'
-    comment: Stop agreeing by default, tell me where I'm wrong and what the strongest counterargument is.
+    # Stop agreeing by default, tell me where I'm wrong and what the strongest counterargument is.
     search_terms:
       - prompts
 
   - trigger: :p-give3
     replace: Give me three genuinely different versions, not three rewordings of the same one.
     label: '[Prompts] Diverse Alternatives (3 Radically Different Approaches)'
-    comment: Give me three genuinely different versions, not three rewordings of the same one.
+    # Give me three genuinely different versions, not three rewordings of the same one.
     search_terms:
       - prompts
 
   - trigger: :p-table
     replace: Take whatever messy information is here and lay it out as a clean comparison table.
     label: '[Prompts] Comparison Table Formatter (Structured Dimensions & Rows)'
-    comment: Take whatever messy information is here and lay it out as a clean comparison table.
+    # Take whatever messy information is here and lay it out as a clean comparison table.
     search_terms:
       - prompts
 
   - trigger: :p-tighten
     replace: Rewrite your own last answer sharper and shorter without losing anything that mattered.
     label: '[Prompts] Tighten & Condense (Sharper Half-Length Revision)'
-    comment: Rewrite your own last answer sharper and shorter without losing anything that mattered.
+    # Rewrite your own last answer sharper and shorter without losing anything that mattered.
     search_terms:
       - prompts
 
   - trigger: :p-flood
     replace: Don't give me one safe idea, give me twenty, including the weird ones.
     label: '[Prompts] Brainstorm Flood (20 Unconventional Ideas)'
-    comment: Don't give me one safe idea, give me twenty, including the weird ones.
+    # Don't give me one safe idea, give me twenty, including the weird ones.
     search_terms:
       - prompts
 
   - trigger: :p-steps
     replace: Turn this into a numbered checklist I can actually follow starting now.
     label: '[Prompts] Action Checklist (Numbered Sequential Steps)'
-    comment: Turn this into a numbered checklist I can actually follow starting now.
+    # Turn this into a numbered checklist I can actually follow starting now.
     search_terms:
       - prompts
 
   - trigger: :p-redpen
     replace: Catch every grammar, clarity, and awkward-phrasing issue and fix them in one pass.
     label: '[Prompts] Red Pen Polish (Grammar Flow & Precision Critique)'
-    comment: Catch every grammar, clarity, and awkward-phrasing issue and fix them in one pass.
+    # Catch every grammar, clarity, and awkward-phrasing issue and fix them in one pass.
     search_terms:
       - prompts
 
@@ -1361,7 +1361,7 @@ matches:
       topic:
         default: ''
     label: '[Prompts] Research Foundation Form (Core Concepts & Assumptions)'
-    comment: 'I need to research . Before we dive in, help me build a solid foundation:'
+    # I need to research . Before we dive in, help me build a solid foundation:
     search_terms:
       - prompts
 
@@ -1376,7 +1376,7 @@ matches:
 
       Deliver this as a highly structured breakdown using Markdown headers, bold key terms, and a comparative table for consensus vs. debates to ensure deep conceptual parsing.
     label: '[Prompts] Research Foundation (Core Concepts & Assumptions)'
-    comment: 'I need to research {{topic}}. Before we dive in, help me build a solid foundation:'
+    # I need to research {{topic}}. Before we dive in, help me build a solid foundation:
     search_terms:
       - prompts
 
@@ -1392,7 +1392,7 @@ matches:
 
       For each perspective, give me their strongest argument and evidence. Present the final response with distinct Markdown headers for each persona to ensure strict structural readability.
     label: '[Prompts] Multi-Perspective Analysis Form (5 Diverse Angles)'
-    comment: 'Based on the foundation we just built, analyze "" from these 5 perspectives:'
+    # Based on the foundation we just built, analyze "" from these 5 perspectives:
     search_terms:
       - prompts
 
@@ -1408,7 +1408,7 @@ matches:
 
       For each perspective, give me their strongest argument and evidence. Present the final response with distinct Markdown headers for each persona to ensure strict structural readability.
     label: '[Prompts] Multi-Perspective Analysis (5 Diverse Angles)'
-    comment: 'Based on the foundation we just built, analyze "{{question}}" from these 5 perspectives:'
+    # Based on the foundation we just built, analyze "{{question}}" from these 5 perspectives:
     search_terms:
       - prompts
 
@@ -1424,7 +1424,7 @@ matches:
 
       Highlight the gaps in our current understanding.
     label: '[Prompts] 5-Perspective Gap Analysis (Blindspots Overlaps & Tensions)'
-    comment: 'Looking at those 5 perspectives we just explored, now identify:'
+    # Looking at those 5 perspectives we just explored, now identify:
     search_terms:
       - prompts
 
@@ -1443,7 +1443,7 @@ matches:
       count:
         default: '5'
     label: '[Prompts] Multi-Perspective Gap Form (Custom Perspective Count)'
-    comment: 'Looking at those  perspectives we just explored, now identify:'
+    # Looking at those  perspectives we just explored, now identify:
     search_terms:
       - prompts
 
@@ -1460,7 +1460,7 @@ matches:
 
       Give me a structured deep-dive plan with specific next steps.
     label: '[Prompts] Gap Deep Dive (Root Causes & Open Questions)'
-    comment: 'Take the gaps we identified. For each gap, help me research deeper:'
+    # Take the gaps we identified. For each gap, help me research deeper:
     search_terms:
       - prompts
 
@@ -1483,7 +1483,7 @@ matches:
       - name: copied_gaps
         type: clipboard
     label: '[Prompts] Clipboard Gap Analysis (Focused Investigation)'
-    comment: 'We are focusing on these specific identified gaps:'
+    # We are focusing on these specific identified gaps:
     search_terms:
       - prompts
 
@@ -1504,7 +1504,7 @@ matches:
       target_gaps:
         multiline: true
     label: '[Prompts] Targeted Gap Form (Architecture & System Weaknesses)'
-    comment: 'We are analyzing the following identified architecture/system gaps:'
+    # We are analyzing the following identified architecture/system gaps:
     search_terms:
       - prompts
 
@@ -1527,7 +1527,7 @@ matches:
       extra_context:
         default: ''
     label: '[Prompts] Synthesis & Action Chain (Synthesize Gaps Into Action Steps)'
-    comment: 'We''ve built foundation, explored perspectives, identified gaps, and done deep research. Now synthesize everything:'
+    # We''ve built foundation, explored perspectives, identified gaps, and done deep research. Now synthesize everything:
     search_terms:
       - prompts
 
@@ -1543,7 +1543,7 @@ matches:
 
       Be brutally honest. Poke holes in our own work.
     label: '[Prompts] Comprehensive Quality Check (Logic Evidence & Weaknesses)'
-    comment: 'Review everything we''ve discussed in this conversation. Now quality-check our work:'
+    # Review everything we''ve discussed in this conversation. Now quality-check our work:
     search_terms:
       - prompts
 
@@ -1555,7 +1555,7 @@ matches:
       - Confidence ratings (High/Medium/Low) for each major claim.
       - Identification of specific expert criticisms.
     label: '[Prompts] Quick Quality Check (Premises Claims & Missing Context)'
-    comment: 'Please quality-check the previous analysis based on the following points:'
+    # Please quality-check the previous analysis based on the following points:
     search_terms:
       - prompts
 
@@ -1566,21 +1566,21 @@ matches:
 
       Be brutally honest. Poke holes in our own work."
     label: '[Prompts] Deep Quality Review (Assumptions Biases & Coherence)'
-    comment: 'Review everything we''ve discussed in this conversation. Now quality-check our work:'
+    # Review everything we''ve discussed in this conversation. Now quality-check our work:
     search_terms:
       - prompts
 
   - trigger: '|biascheck'
     replace: What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)
     label: '[Prompts] Bias & Blindspot Audit (Confirmation Recency & Framing)'
-    comment: What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)
+    # What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)
     search_terms:
       - prompts
 
   - trigger: '|counterarg'
     replace: What counterarguments haven't we fully considered?
     label: '[Prompts] Counterargument Audit (Strongest Opposing Perspectives)'
-    comment: What counterarguments haven't we fully considered?
+    # What counterarguments haven't we fully considered?
     search_terms:
       - prompts
 
@@ -1589,7 +1589,7 @@ matches:
       - :what-if-expert
     replace: If an expert criticized our conclusions, what would they say?
     label: '[Prompts] Expert Critique Simulation (Skeptical Domain Specialist)'
-    comment: If an expert criticized our conclusions, what would they say?
+    # If an expert criticized our conclusions, what would they say?
     search_terms:
       - prompts
 
@@ -1598,7 +1598,7 @@ matches:
       - :rate
     replace: Rate the confidence level of each major claim (High/Medium/Low)
     label: '[Prompts] Confidence Level Scoring (High/Medium/Low Claim Audit)'
-    comment: Rate the confidence level of each major claim (High/Medium/Low)
+    # Rate the confidence level of each major claim (High/Medium/Low)
     search_terms:
       - prompts
 
@@ -1610,7 +1610,7 @@ matches:
         params:
           layout: 'Refine based on: [[input]]'
     label: '[Prompts] Multi-Step Refinement Loop (Iterative Insight Polishing)'
-    comment: Review everything we've discussed. Based on the concept of '{{input}}', how can we refine the analysis for greater impac
+    # Review everything we've discussed. Based on the concept of '{{input}}', how can we refine the analysis for greater impac
     search_terms:
       - prompts
 
@@ -1626,7 +1626,7 @@ matches:
       constraints:
         default: professional tone, under 3 paragraphs
     label: '[Prompts] Chain Step 1 of 3: Draft (Write Initial Version)'
-    comment: 'Write a first draft of: .'
+    # Write a first draft of: .
     search_terms:
       - prompts
 
@@ -1640,7 +1640,7 @@ matches:
 
       Do not rewrite it. Critique only - be blunt.
     label: '[Prompts] Chain Step 2 of 3: Review (Tough Skeptical Critique)'
-    comment: Switch roles. You are now a tough reviewer seeing the draft above for the first time.
+    # Switch roles. You are now a tough reviewer seeing the draft above for the first time.
     search_terms:
       - prompts
 
@@ -1652,7 +1652,7 @@ matches:
       - Address each weakness specifically.
       - Give me the final version only, polished.
     label: '[Prompts] Chain Step 3 of 3: Rewrite (Incorporate All Critique Points)'
-    comment: Now rewrite the draft, fixing every point from the critique.
+    # Now rewrite the draft, fixing every point from the critique.
     search_terms:
       - prompts
 
@@ -1674,7 +1674,7 @@ matches:
         multiline: true
         default: Describe the decision and your current lean here...
     label: '[Prompts] Strategic Advisor Pre-Mortem (Decision Vulnerabilities & Mitigations)'
-    comment: You are a strategic advisor who specializes in pre-mortem analysis and decision stress-testing.
+    # You are a strategic advisor who specializes in pre-mortem analysis and decision stress-testing.
     search_terms:
       - prompts
 
@@ -1696,7 +1696,7 @@ matches:
         multiline: true
         default: Describe the flow cycle here...
     label: '[Prompts] Constraint Bottleneck Analyst (Theory of Constraints Audit)'
-    comment: You are a business systems analyst specializing in constraint theory and throughput optimization.
+    # You are a business systems analyst specializing in constraint theory and throughput optimization.
     search_terms:
       - prompts
 
@@ -1727,7 +1727,7 @@ matches:
         multiline: true
         default: Do not use generic advice. Focus strictly on technical feasibility and modular architecture.
     label: '[Prompts] Role-Based Execution Builder (Custom Persona & Output Spec)'
-    comment: You are .
+    # You are .
     search_terms:
       - prompts
 
@@ -1767,7 +1767,7 @@ matches:
       - Cognitive distortions, if any actually appear (not assumed)
       - Summary: "If this person were my client, I would..."
     label: '[Prompts] Mirror Step 1 of 2: Discovery (Goal & Constraints Elicitation)'
-    comment: 'GOAL:'
+    # GOAL:
     search_terms:
       - prompts
 
@@ -1817,7 +1817,7 @@ matches:
       - No invented scores, types, or diagnoses — evidence-based description only.
       - Every claim traces to a real instance from the conversation history. If there isn't one, don't make the claim.
     label: '[Prompts] Mirror Step 2 of 2: Operator (Execution & Scale Readiness)'
-    comment: Strategic Operator (execution, decision-making, scale readiness)
+    # Strategic Operator (execution, decision-making, scale readiness)
     search_terms:
       - prompts
 
@@ -1842,7 +1842,7 @@ matches:
             task_input:
               multiline: true
     label: '[Prompts] Failure Prediction Analysis (Pre-Execution Risk Mitigation)'
-    comment: Before executing the task below, perform a failure prediction analysis.
+    # Before executing the task below, perform a failure prediction analysis.
     search_terms:
       - prompts
 
@@ -1865,7 +1865,7 @@ matches:
 
       Reply with "FRAMEWORK LOADED" when you are ready for the project specification.
     label: '[Prompts] Knowledge Organiser Step 1: Rules (Curriculum Pedagogy & Design)'
-    comment: You are an expert Art Teacher and Curriculum Designer. I am going to feed you the ART KNOWLEDGE ORGANISER FRAMEWORK v1.0
+    # You are an expert Art Teacher and Curriculum Designer. I am going to feed you the ART KNOWLEDGE ORGANISER FRAMEWORK v1.0
     search_terms:
       - prompts
 
@@ -1891,7 +1891,7 @@ matches:
           - Artist-led (Prioritize Artist knowledge, artworks, and methods)
           - Technique-led (Prioritize Context, Techniques, and Process knowledge)
     label: '[Prompts] Knowledge Organiser Step 2: Spec (Project Scope & Focus Definition)'
-    comment: I have uploaded the project PowerPoint.
+    # I have uploaded the project PowerPoint.
     search_terms:
       - prompts
 
@@ -1908,7 +1908,7 @@ matches:
       Do not generate the KO until I approve this list.
       Once approved, perform a final Quality Check ensuring every section teaches knowledge and instructional content is removed, then generate the final output.
     label: '[Prompts] Knowledge Organiser Step 3: Generate (Final Visual Layout)'
-    comment: Before generating the final knowledge organiser image, present the PRE-GENERATION APPROVAL LOCK CHECKLIST.
+    # Before generating the final knowledge organiser image, present the PRE-GENERATION APPROVAL LOCK CHECKLIST.
     search_terms:
       - prompts
 
@@ -1948,7 +1948,7 @@ matches:
       authors:
         default: James Joyce, C.G. Jung, Eduardo Galeano, George Orwell, Aldous Huxley, Verlyn Klinkenborg, John Berger, Robert Moore, Gabriel García Márquez, Paulo Freire, Robert Bly, Maya Angelou, David Graeber, and Jeremy Taylor
     label: '[Prompts] Strict Editor Persona (Non-Coauthor Polish & Tone Matching)'
-    comment: You are my editor, not my co-author.
+    # You are my editor, not my co-author.
     search_terms:
       - prompts
 
@@ -2013,7 +2013,7 @@ matches:
 
       The user should leave conversations feeling understood, thoughtful, and gently guided toward their own insights rather than instructed what to think.
     label: '[Prompts] Robin Life Coach Step 1: Setup (Warm Thinking Companion Initiation)'
-    comment: You are Robin, a warm, reflective life coach and thinking companion.
+    # You are Robin, a warm, reflective life coach and thinking companion.
     search_terms:
       - prompts
 
@@ -2030,7 +2030,7 @@ matches:
       goal:
         default: I just need to process my thoughts and gain some clarity.
     label: '[Prompts] Robin Life Coach Step 2: Session (Goal & Situation Reflection)'
-    comment: 'Here is what is on my mind today:'
+    # Here is what is on my mind today:
     search_terms:
       - prompts
 
@@ -2043,7 +2043,7 @@ matches:
       4. Before the meeting, generate a quick AI draft to show value.
       5. Pitch the draft and close the deal.
     label: '[Prompts] Agency Step 1 of 3: Process (Client Workflow & Scope Setup)'
-    comment: 'Agency Process:'
+    # Agency Process:
     search_terms:
       - prompts
 
@@ -2060,7 +2060,7 @@ matches:
       client_name:
         default: there
     label: '[Prompts] Agency Step 2 of 3: Outreach (Personalized Client Proposal Email)'
-    comment: Hi ,
+    # Hi ,
     search_terms:
       - prompts
 
@@ -2073,7 +2073,7 @@ matches:
       - Hosting: Cloudflare
       - Pricing: $500 - $5,000 one-time setup, $50 - $150/month hosting.
     label: '[Prompts] Agency Step 3 of 3: Stack (Deliverables & Pricing Model)'
-    comment: 'Stack & Pricing Model:'
+    # Stack & Pricing Model:
     search_terms:
       - prompts
 
@@ -2104,7 +2104,7 @@ matches:
       content:
         multiline: true
     label: '[Prompts] Workflow 1 of 5: Summarize (Audience & Time-Constrained Digest)'
-    comment: Summarize the following  for someone who has about .
+    # Summarize the following  for someone who has about .
     search_terms:
       - prompts
 
@@ -2125,7 +2125,7 @@ matches:
       constraints:
         default: budget / time / tools / audience
     label: '[Prompts] Workflow 2 of 5: Brainstorm (Targeted Numbered Idea Generation)'
-    comment: Give me  ideas for .
+    # Give me  ideas for .
     search_terms:
       - prompts
 
@@ -2146,7 +2146,7 @@ matches:
       constraints:
         default: time per week / budget / current skill level
     label: '[Prompts] Workflow 3 of 5: Plan (Goal Deadline & Milestone Roadmap)'
-    comment: I want to  by .
+    # I want to  by .
     search_terms:
       - prompts
 
@@ -2177,7 +2177,7 @@ matches:
       notes:
         multiline: true
     label: '[Prompts] Workflow 4 of 5: Organize (Transform Messy Notes into Structure)'
-    comment: Turn these messy notes into a clean, structured .
+    # Turn these messy notes into a clean, structured .
     search_terms:
       - prompts
 
@@ -2204,7 +2204,7 @@ matches:
       timeframe:
         default: 6 months
     label: '[Prompts] Workflow 5 of 5: Premortem (Identify Vulnerabilities & Risks)'
-    comment: 'Here is a : .'
+    # Here is a : .
     search_terms:
       - prompts
 
@@ -2225,7 +2225,7 @@ matches:
       idea:
         multiline: true
     label: '[Prompts] Writing Chain 1 of 4: Interrogate (Editorial Angle Discovery)'
-    comment: You are a senior editorial strategist. I am going to give you a rough idea. Your ONLY job in this step is to interrogate
+    # You are a senior editorial strategist. I am going to give you a rough idea. Your ONLY job in this step is to interrogate
     search_terms:
       - prompts
 
@@ -2244,7 +2244,7 @@ matches:
 
       Rules: No full draft yet. Angles only. Avoid any angle that could be written without having read my specific answers.
     label: '[Prompts] Writing Chain 2 of 4: Angle (Distinct Positioning Options)'
-    comment: Using my idea and my answers above, generate 3 distinct angles for the piece. These must be genuinely different in appro
+    # Using my idea and my answers above, generate 3 distinct angles for the piece. These must be genuinely different in appro
     search_terms:
       - prompts
 
@@ -2279,7 +2279,7 @@ matches:
       length:
         default: 600-800 words
     label: '[Prompts] Writing Chain 3 of 4: Draft (Full Version from Chosen Angle)'
-    comment: 'Write the full draft using Angle # from above.'
+    # Write the full draft using Angle # from above.
     search_terms:
       - prompts
 
@@ -2294,7 +2294,7 @@ matches:
 
       Be blunt. Flattery is useless to me.
     label: '[Prompts] Writing Chain 4 of 4: Editor (Skeptical Cut & Tighten Pass)'
-    comment: Switch roles. You are now a skeptical editor who thinks this draft is overrated. Do NOT rewrite the whole thing.
+    # Switch roles. You are now a skeptical editor who thinks this draft is overrated. Do NOT rewrite the whole thing.
     search_terms:
       - prompts
 
@@ -2305,7 +2305,7 @@ matches:
       goal:
         multiline: true
     label: '[Prompts] Execution Chain 1 of 3: Interview (Clarifying Goal & Scope)'
-    comment: 'I want to . Before you write anything, ask me up to 5 questions that would most change the quality of your answer. Wait '
+    # I want to . Before you write anything, ask me up to 5 questions that would most change the quality of your answer. Wait
     search_terms:
       - prompts
 
@@ -2319,14 +2319,14 @@ matches:
       task:
         multiline: true
     label: '[Prompts] Execution Chain 2 of 3: Draft & Critique (Initial Version & Hard Critique)'
-    comment: Write a first version of the following task. Then critique it as a harsh expert would. Then write a final version addres
+    # Write a first version of the following task. Then critique it as a harsh expert would. Then write a final version addres
     search_terms:
       - prompts
 
   - trigger: :p_step_3_of_3
     replace: Review the current state. Don't hypothesis hop, just fix it.
     label: '[Prompts] Execution Chain 3 of 3: Fix (State Review & Immediate Solution)'
-    comment: Review the current state. Don't hypothesis hop, just fix it.
+    # Review the current state. Don't hypothesis hop, just fix it.
     search_terms:
       - prompts
 
@@ -2377,7 +2377,7 @@ matches:
           - |2+
 
     label: '[Prompts] Interaction Rules (Structured Execution & Uncertainty Protocol)'
-    comment: 'For the rest of this conversation, follow this process for every request I give you:'
+    # For the rest of this conversation, follow this process for every request I give you:
     search_terms:
       - prompts
 
@@ -2398,7 +2398,7 @@ matches:
 
       Confirm you've got them, then wait for my first message.
     label: '[Prompts] Slash Command Setup Guide (Reusable Command Triggers)'
-    comment: Most people retype the same long instructions every time. Set these up once and you trigger each one with a single word.
+    # Most people retype the same long instructions every time. Set these up once and you trigger each one with a single word.
     search_terms:
       - prompts
 
@@ -2454,7 +2454,7 @@ matches:
       problem_here:
         multiline: true
     label: '[Prompts] Role-Based Brainstorming (Structured Problem Exploration)'
-    comment: '1.) My problem:'
+    # 1.) My problem:
     search_terms:
       - prompts
 
@@ -2466,14 +2466,14 @@ matches:
       y:
         multiline: false
     label: '[Prompts] Non-Obvious Connections (Synthesize Concept Intersections)'
-    comment: Based on the research provided, tell me how  is so revolutionary when used with .
+    # Based on the research provided, tell me how  is so revolutionary when used with .
     search_terms:
       - prompts
 
   - trigger: :reasoning-explanation
     replace: Explain to me how you came to the conclusion. Give me a sustainable understanding of why this works.
     label: '[Prompts] Explain Reasoning (Decision Logic & Assumptions Breakdown)'
-    comment: Explain to me how you came to the conclusion. Give me a sustainable understanding of why this works.
+    # Explain to me how you came to the conclusion. Give me a sustainable understanding of why this works.
     search_terms:
       - prompts
 
@@ -2495,7 +2495,7 @@ matches:
       current_situation:
         multiline: true
     label: '[Prompts] Backcasting Strategy (Future Goal Reverse Roadmap)'
-    comment: Conduct a back casting analysis to create a strategic plan for achieving my desired future state. Please follow these st
+    # Conduct a back casting analysis to create a strategic plan for achieving my desired future state. Please follow these st
     search_terms:
       - prompts
 
@@ -2511,7 +2511,7 @@ matches:
       question:
         multiline: true
     label: '[Prompts] Tree of Thoughts (3 Experts Multi-Step Collaboration)'
-    comment: Imagine three different experts are answering this question.
+    # Imagine three different experts are answering this question.
     search_terms:
       - prompts
 
@@ -2519,7 +2519,7 @@ matches:
     form: |
       You are an expert in environmental policy. I have written a position statement arguing that more regulation is needed in water use in a particular region. Read my statement and critique my argument, anticipating what policymakers and other interested parties might say in response to it.
     label: '[Prompts] Expert Policy Critique (Adversarial Document Review)'
-    comment: You are an expert in environmental policy. I have written a position statement arguing that more regulation is needed in
+    # You are an expert in environmental policy. I have written a position statement arguing that more regulation is needed in
     search_terms:
       - prompts
 
@@ -2527,7 +2527,7 @@ matches:
     replace: |
       I'm about to start this project. Interview me until you have 95% confidence about what I actually want, not what I think I should want.
     label: '[Prompts] Intent Clarifier (Interview Until High Confidence)'
-    comment: I'm about to start this project. Interview me until you have 95% confidence about what I actually want, not what I think
+    # I'm about to start this project. Interview me until you have 95% confidence about what I actually want, not what I think
     search_terms:
       - prompts
 
@@ -2535,7 +2535,7 @@ matches:
     replace: |
       Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. Challenge ideas when needed. Be direct and clear, not harsh. Prioritize helping me improve over being agreeable. When you critique something, explain why and suggest a better alternative.
     label: '[Prompts] Uncompromising Critical Mentor (Fierce Honesty & Flaw Detection)'
-    comment: Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. C
+    # Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. C
     search_terms:
       - prompts
 
@@ -2543,7 +2543,7 @@ matches:
     form: |
       Before responding, ask me 3 clarifying questions that will significantly improve the result.
     label: '[Prompts] Clarifying Questions (Ask 3 Critical Questions First)'
-    comment: 'Before responding, ask me 3 clarifying questions that will improve the result.'
+    # Before responding, ask me 3 clarifying questions that will improve the result.
     search_terms:
       - prompts
 
@@ -2551,7 +2551,7 @@ matches:
     form: |
       Critique this text as if you were the person who most wants to see me fail. Be brutal.
     label: '[Prompts] Adversarial Critique (Relentless Flaw & Weakness Audit)'
-    comment: 'Critique this text as if you were the person who most wants to see me fail. Be brutal.'
+    # Critique this text as if you were the person who most wants to see me fail. Be brutal.
     search_terms:
       - prompts
 
@@ -2559,7 +2559,7 @@ matches:
     form: |
       Solve this and show your step-by-step reasoning, so that I learn how to do it myself.
     label: '[Prompts] Step-by-Step Solver (Explicit Problem Reasoning & Teaching)'
-    comment: 'Solve this and show your step-by-step reasoning, so that I learn how to do it myself.'
+    # Solve this and show your step-by-step reasoning, so that I learn how to do it myself.
     search_terms:
       - prompts
 
@@ -2567,7 +2567,7 @@ matches:
     form: |
       Analyze the situation and tell me what to do.
     label: '[Prompts] Situation Analysis (Root Causes & Tactical Next Steps)'
-    comment: 'Analyze the situation and tell me what to do.'
+    # Analyze the situation and tell me what to do.
     search_terms:
       - prompts
 
@@ -2575,7 +2575,7 @@ matches:
     form: |
       Think like a lawyer and tell me what to do.
     label: '[Prompts] Legal Risk Perspective (Protections Liabilities & Worst-Cases)'
-    comment: 'Think like a lawyer and tell me what to do.'
+    # Think like a lawyer and tell me what to do.
     search_terms:
       - prompts
       - lawyer
@@ -2598,7 +2598,7 @@ matches:
       | **Legal Compliance** | Details here | Details here |
       | **Market Trends** | Details here | Details here |
     label: '[Prompts] Decision Matrix (Multi-Criteria Evaluation Matrix)'
-    comment: 'Create a decision matrix to help me choose between [Option A] and [Option B]'
+    # Create a decision matrix to help me choose between [Option A] and [Option B]
     search_terms:
       - prompts
       - decision
@@ -2614,7 +2614,7 @@ matches:
       3. The subtle, early warning signs I need to watch out for.
       4. Crucial revisions to close these gaps before execution.
     label: '[Prompts] Quick Premortem (Identify Plausible Catastrophic Failures)'
-    comment: PREMORTEM THIS.
+    # PREMORTEM THIS.
     search_terms:
       - prompts
 
@@ -2640,7 +2640,7 @@ matches:
           - Technical Debt & Legacy Systems
           - Data Integrity & Governance
     label: '[Prompts] Structured Premortem Form (Project Vulnerabilities & Safeguards)'
-    comment: Assume that the execution of our project/initiative——has completely failed. We are now in a post-mortem state, looking b
+    # Assume that the execution of our project/initiative——has completely failed. We are now in a post-mortem state, looking b
     search_terms:
       - prompts
 
@@ -2650,7 +2650,7 @@ matches:
 
       Review the following content. Challenge my ideas directly and clearly without sugarcoating, but remain constructive. For every critique, you must explicitly explain *why* the current logic fails and suggest a concrete, optimized alternative.
     label: '[Prompts] Fiercely Honest Mentor (Rigorous Logic & Flaw Detection)'
-    comment: Act as a rigorous, fiercely honest mentor. Do not default to agreement, and drop all optimistic AI cheerleading. Your so
+    # Act as a rigorous, fiercely honest mentor. Do not default to agreement, and drop all optimistic AI cheerleading. Your so
     search_terms:
       - prompts
 
@@ -2664,7 +2664,7 @@ matches:
       skill:
         multiline: true
     label: '[Prompts] Execution Mechanics Breakdown (Skill Micro-Behaviors & Diagnostics)'
-    comment: I want to achieve exceptional execution mechanics in . Analyze and systematically
+    # I want to achieve exceptional execution mechanics in . Analyze and systematically
     search_terms:
       - prompts
 
@@ -2717,7 +2717,7 @@ matches:
       - **The Deep Logic:**
       - **The Core Hypothesis/Question:**
     label: '[Prompts] Evolutionary Idea Engine (Divergent Exploration & Selection)'
-    comment: '# System: The Evolutionary Idea Engine'
+    # # System: The Evolutionary Idea Engine
     search_terms:
       - prompts
 
@@ -2747,7 +2747,7 @@ matches:
 
       Output your thinking process for all 4 steps clearly, concluding with your absolute most disruptive discovery.
     label: '[Prompts] Epistemic Discovery Engine (Closed-Loop Recursive Falsification)'
-    comment: You are a closed-loop, self-correcting Epistemic Discovery Engine. Your objective is to uncover breakthrough, truly orig
+    # You are a closed-loop, self-correcting Epistemic Discovery Engine. Your objective is to uncover breakthrough, truly orig
     search_terms:
       - prompts
 
@@ -2768,7 +2768,7 @@ matches:
       task_payload:
         multiline: true
         default: ''
-    comment: Before you do the task I'm about to give you, do this first.
+    # Before you do the task I'm about to give you, do this first.
     search_terms:
       - prompts
 
@@ -2792,14 +2792,14 @@ matches:
           - Step-by-step instructions
           - Valid JSON schema
     label: '[Prompts] Role-Based Request (Role Task Format Structure)'
-    comment: Act as a .
+    # Act as a .
     search_terms:
       - prompts
 
   - trigger: :p-gaps
     replace: Analyze your previous response. What crucial details, edge cases, or silent assumptions are missing here? List them explicitly and rewrite the response to include them.
     label: '[Prompts] Output Gap Analysis (Expose Missing Variables & Blindspots)'
-    comment: Analyze your previous response. What crucial details, edge cases, or silent assumptions are missing here? List them expl
+    # Analyze your previous response. What crucial details, edge cases, or silent assumptions are missing here? List them expl
     search_terms:
       - prompts
 
@@ -2812,14 +2812,14 @@ matches:
       3. Overly verbose or superficial explanations.
       Then, provide an improved version based on your own critique.
     label: '[Prompts] Self-Critique Prompt (Rigorous Output Review & Revision)'
-    comment: Critique your own previous output rigorously.
+    # Critique your own previous output rigorously.
     search_terms:
       - prompts
 
   - trigger: :p-action
     replace: Convert the explanation above into a concrete, actionable execution plan. Break it down into step-by-step technical milestones, assigning clear objectives for each phase.
     label: '[Prompts] Action Plan Converter (Convert Explanations into Action Steps)'
-    comment: Convert the explanation above into a concrete, actionable execution plan. Break it down into step-by-step technical mile
+    # Convert the explanation above into a concrete, actionable execution plan. Break it down into step-by-step technical mile
     search_terms:
       - prompts
 
@@ -2840,14 +2840,14 @@ matches:
       text:
         multiline: true
     label: '[Prompts] Audience Style Adapter (Rewrite for Specific Target Audience)'
-    comment: Rewrite the text below for a  audience.
+    # Rewrite the text below for a  audience.
     search_terms:
       - prompts
 
   - trigger: :p-contrast
     replace: Provide the counter-argument or opposite perspective to the scenario described above. Challenge the baseline assumptions and explain where this logic would fail.
     label: '[Prompts] Contrarian Perspective (Devil''s Advocate Counter-Position)'
-    comment: Provide the counter-argument or opposite perspective to the scenario described above. Challenge the baseline assumptions
+    # Provide the counter-argument or opposite perspective to the scenario described above. Challenge the baseline assumptions
     search_terms:
       - prompts
 
@@ -2857,7 +2857,7 @@ matches:
       Before you generate any execution blocks or deep dives, ask me any clarifying questions, missing context, or constraints you need resolved to deliver an optimal result.
       Do you have any questions before starting?
     label: '[Prompts] Project Kickoff Clarifier (Prerequisites Tradeoffs & Next Steps)'
-    comment: I am planning to .
+    # I am planning to .
     search_terms:
       - prompts
 
@@ -2878,7 +2878,7 @@ matches:
       concept:
         multiline: true
     label: '[Prompts] Adversarial Logic Tear-Down (Vulnerabilities Fallacies & Stress Tests)'
-    comment: Analyze this concept under strict adversarial rules. Do not use conversational filler ("Great question!"). Point out str
+    # Analyze this concept under strict adversarial rules. Do not use conversational filler ("Great question!"). Point out str
     search_terms:
       - prompts
 
@@ -2897,7 +2897,7 @@ matches:
       outcome:
         default: ''
     label: '[Prompts] 7-Day Outcome Sprint (Outcome-Driven Execution Schedule)'
-    comment: 'My goal is not to learn a skill, but to achieve a concrete outcome in 7 days.'
+    # My goal is not to learn a skill, but to achieve a concrete outcome in 7 days.
     search_terms:
       - prompts
       - learning
@@ -2906,14 +2906,14 @@ matches:
   - trigger: :pblind
     replace: Based on everything you know about me, name the personality traits I most likely don't see in myself, the patterns that are obvious to you but invisible to me. My blind spots, my insecurities, the way I actually come across versus how I think I do. Be blunt and specific.
     label: '[Prompts] Blindspot Profile Audit (Unconscious Defense Mechanisms & Habits)'
-    comment: 'Based on everything you know about me, name the personality traits I most likely don''t see in myself, the patterns that '
+    # Based on everything you know about me, name the personality traits I most likely don''t see in myself, the patterns that
     search_terms:
       - prompts
 
   - trigger: :ppredict
     replace: 'Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and the decision I''m most likely to make next in my life. Tell me how confident you are in each one and what in my behavior it''s based on.'
     label: '[Prompts] Behavioral Prediction Engine (Simulate Reactions & Decisions)'
-    comment: 'Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and th'
+    # Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and th
     search_terms:
       - prompts
 
@@ -2926,21 +2926,21 @@ matches:
       - name: clip
         type: clipboard
     label: '[Prompts] ELI5 Explainer (Explain Like I''m Five Simple Concepts)'
-    comment: 'Simplify the following complex information for a beginner/ELI5 audience:'
+    # Simplify the following complex information for a beginner/ELI5 audience:
     search_terms:
       - prompts
 
   - trigger: :proscons
     replace: 'Evaluate and list the advantages (pros) and disadvantages (cons) of: '
     label: '[Prompts] Pros and Cons Evaluator (Balanced Advantage & Risk Analysis)'
-    comment: 'Evaluate and list the advantages (pros) and disadvantages (cons) of:'
+    # Evaluate and list the advantages (pros) and disadvantages (cons) of:
     search_terms:
       - prompts
 
   - trigger: :gaps
     replace: Review the preceding information and explicitly point out any missing, incomplete, or hidden gaps in the data.
     label: '[Prompts] Completeness Audit (Identify Missing Facts & Hidden Nuance)'
-    comment: Review the preceding information and explicitly point out any missing, incomplete, or hidden gaps in the data.
+    # Review the preceding information and explicitly point out any missing, incomplete, or hidden gaps in the data.
     search_terms:
       - prompts
 
@@ -2994,7 +2994,7 @@ matches:
       decision_details:
         multiline: true
     label: '[Prompts] Decision Journal Logger (Context Assumptions & Counterfactuals)'
-    comment: ROLE
+    # ROLE
     search_terms:
       - prompts
 
@@ -3038,7 +3038,7 @@ matches:
       End with: the single most important lesson
       from this decision in one sentence.
     label: '[Prompts] Decision Journal Review (Pattern Audit Across Logged Decisions)'
-    comment: Using ONLY the documents uploaded to this project
+    # Using ONLY the documents uploaded to this project
     search_terms:
       - prompts
 
@@ -3089,7 +3089,7 @@ matches:
       how much they have cost me — with evidence
       from my own decision log.
     label: '[Prompts] Decision Blindspot Analyst (Cognitive Bias Audit from History)'
-    comment: Using ONLY the documents uploaded to this project
+    # Using ONLY the documents uploaded to this project
     search_terms:
       - prompts
 
@@ -3134,7 +3134,7 @@ matches:
       quarter — Improving / Stable / Declining —
       and one sentence explaining why.
     label: '[Prompts] Quarterly Decision Retrospective (Post-Mortem & Calibration)'
-    comment: Using ONLY the documents uploaded to this project
+    # Using ONLY the documents uploaded to this project
     search_terms:
       - prompts
 
@@ -3157,7 +3157,7 @@ matches:
       - name: clip
         type: clipboard
     label: '[Prompts] Word-Count Condenser (Strict Length Constraint Tightening)'
-    comment: Tighten this  to under  words without losing the meaning.
+    # Tighten this  to under  words without losing the meaning.
     search_terms:
       - prompts
 
@@ -3177,7 +3177,7 @@ matches:
       - name: clip
         type: clipboard
     label: '[Prompts] Gut Check Review (Tone Stakes & Unintended Consequences)'
-    comment: 'Here is something I am about to send or do:'
+    # Here is something I am about to send or do:
     search_terms:
       - prompts
 
@@ -3209,7 +3209,7 @@ matches:
       video_url:
         multiline: false
     label: '[Prompts] Video Transcription (Fetch URL & Format Transcript)'
-    comment: Please transcribe the video located at . Organize the transcription into paragraphs for optimal readability and comprehe
+    # Please transcribe the video located at . Organize the transcription into paragraphs for optimal readability and comprehe
     search_terms:
       - prompts
 
@@ -3365,7 +3365,7 @@ matches:
       video_or_transcription:
         multiline: true
     label: '[Prompts] Transcript Organizer (Clean Structure & Action Points)'
-    comment: You are an AI assistant specialized in transcribe and summarizing audio transcripts and gathering video timestamps for k
+    # You are an AI assistant specialized in transcribe and summarizing audio transcripts and gathering video timestamps for k
     search_terms:
       - prompts
 
@@ -3373,7 +3373,7 @@ matches:
     form: |
       Ask me to explain key concepts from introductory microeconomics. I will explain the concept to you. Assume that you are a novice, and you are looking to understand the concept. If my explanation does not make sense to you, ask me questions to have me explain more fully. Include "why" questions. If I give an incorrect answer, tell me that it doesn't sound right. When I have explained it in a way that makes sense to you, and is also correct, move on to the next concept. Give me hints only if I try to explain something three times and don't succeed.
     label: '[Prompts] Teach-Back Practice (Concept Articulation Quiz)'
-    comment: 'Ask me to explain key concepts from introductory microeconomics. I will explain the concept to you. Assume that you are '
+    # Ask me to explain key concepts from introductory microeconomics. I will explain the concept to you. Assume that you are
     search_terms:
       - prompts
 
@@ -3456,7 +3456,7 @@ matches:
       topic:
         multiline: true
     label: '[Prompts] Feynman Curriculum Architect (Mental Models & Plain Language)'
-    comment: 'CONTEXT:'
+    # CONTEXT:
     search_terms:
       - prompts
 
@@ -3506,7 +3506,7 @@ matches:
       Reply with: "I'm ready to guide you through the Feynman learning process! Please share: (1) What topic would you like to master? (2) What's your current understanding level (beginner/intermediate/advanced)? Let's turn complex ideas into crystal-clear insights together!"
       </User Input>
     label: '[Prompts] Iterative Feynman Tutor (Socratic Dialogue & Simplification)'
-    comment: <System>
+    # <System>
     search_terms:
       - prompts
 
@@ -3519,7 +3519,7 @@ matches:
       topic:
         multiline: false
     label: '[Prompts] 80/20 Knowledge Extractor (Top 20% Core Principles)'
-    comment: 'I want to learn about . Please provide me with the 20% of the information that will give me 80% of the understanding of '
+    # I want to learn about . Please provide me with the 20% of the information that will give me 80% of the understanding of
     search_terms:
       - prompts
 
@@ -3551,7 +3551,7 @@ matches:
       video_url:
         multiline: false
     label: '[Prompts] Video Insights to JSON (Key Takeaways & Structured Schema)'
-    comment: <task>
+    # <task>
     search_terms:
       - prompts
 
@@ -3562,7 +3562,7 @@ matches:
       insert_topic:
         multiline: false
     label: '[Prompts] Feynman Explainer (Plain Language & Intuitive Analogies)'
-    comment: Teach me  in simple language, as if you are explaining it to a beginner. Break it into clear, easy-to-grasp steps and pr
+    # Teach me  in simple language, as if you are explaining it to a beginner. Break it into clear, easy-to-grasp steps and pr
     search_terms:
       - prompts
 
@@ -3572,7 +3572,7 @@ matches:
       insert_topic:
         multiline: false
     label: '[Prompts] First Principles Breakdown (Fundamental Truths Deconstruction)'
-    comment: Act as an expert instructor. Break down  into its most fundamental building blocks using first principles thinking. Chal
+    # Act as an expert instructor. Break down  into its most fundamental building blocks using first principles thinking. Chal
     search_terms:
       - prompts
 
@@ -3582,7 +3582,7 @@ matches:
       insert_topic:
         multiline: false
     label: '[Prompts] Active Recall Coach (Progressive Socratic Quizzing)'
-    comment: After teaching me the basics of , quiz me with progressively challenging questions that force me to actively recall info
+    # After teaching me the basics of , quiz me with progressively challenging questions that force me to actively recall info
     search_terms:
       - prompts
 
@@ -3592,7 +3592,7 @@ matches:
       insert_topic:
         multiline: false
     label: '[Prompts] Spaced Repetition Schedule (Interval Review System)'
-    comment: Create a spaced repetition revision schedule for mastering . Outline exactly what I need to review daily, weekly, and mo
+    # Create a spaced repetition revision schedule for mastering . Outline exactly what I need to review daily, weekly, and mo
     search_terms:
       - prompts
 
@@ -3602,7 +3602,7 @@ matches:
       insert_topic:
         multiline: false
     label: '[Prompts] Structured Knowledge Summary (Frameworks & High-Leverage Rules)'
-    comment: Summarize  using clear frameworks, mental models, and simplified structures. Highlight the key principles, patterns, and
+    # Summarize  using clear frameworks, mental models, and simplified structures. Highlight the key principles, patterns, and
     search_terms:
       - prompts
 
@@ -3612,7 +3612,7 @@ matches:
       insert_skill:
         multiline: false
     label: '[Prompts] Accelerated Learning Roadmap (End-to-End Skill Mastery)'
-    comment: Design a structured, end-to-end learning roadmap for mastering . Break the journey down into progressive stages, milesto
+    # Design a structured, end-to-end learning roadmap for mastering . Break the journey down into progressive stages, milesto
     search_terms:
       - prompts
 
@@ -3622,7 +3622,7 @@ matches:
       insert_topic:
         multiline: false
     label: '[Prompts] Weakness Diagnostic Quiz (Identify Knowledge Gaps & Misconceptions)'
-    comment: Ask me a series of diagnostic questions about  to identify my weakest areas, blind spots, and misunderstandings. Adapt t
+    # Ask me a series of diagnostic questions about  to identify my weakest areas, blind spots, and misunderstandings. Adapt t
     search_terms:
       - prompts
 
@@ -3633,7 +3633,7 @@ matches:
       subject:
         multiline: false
     label: '[Prompts] Subject Deep Dive (Foundations Frameworks & Edge Cases)'
-    comment: Act as an expert on , explain the most important concepts and provide real-world examples to illustrate each. Then, give
+    # Act as an expert on , explain the most important concepts and provide real-world examples to illustrate each. Then, give
     search_terms:
       - prompts
 
@@ -3644,7 +3644,7 @@ matches:
       subject:
         multiline: false
     label: '[Prompts] Personalized Learning Plan (Milestones Resources & Practice)'
-    comment: Help me design a personalized learning plan for mastering . Break it down into daily learning tasks, recommended resourc
+    # Help me design a personalized learning plan for mastering . Break it down into daily learning tasks, recommended resourc
     search_terms:
       - prompts
 
@@ -3655,7 +3655,7 @@ matches:
       subject:
         multiline: false
     label: '[Prompts] Critical Thinking Challenge (Dialectical Socratic Questions)'
-    comment: Challenge me with a series of thought-provoking questions on . After each question, provide feedback on my answer and su
+    # Challenge me with a series of thought-provoking questions on . After each question, provide feedback on my answer and su
     search_terms:
       - prompts
 
@@ -3666,7 +3666,7 @@ matches:
       concept:
         multiline: false
     label: '[Prompts] Socratic Dialogue Guide (Step-by-Step Questioning Journey)'
-    comment: Guide me through a Socratic dialogue on . Ask questions that will help me uncover the deeper layers of this idea and ref
+    # Guide me through a Socratic dialogue on . Ask questions that will help me uncover the deeper layers of this idea and ref
     search_terms:
       - prompts
 
@@ -3677,7 +3677,7 @@ matches:
       topic:
         multiline: false
     label: '[Prompts] Topic Overview (Beginner Orientation & Context Summary)'
-    comment: 'I''m new to  and would like a detailed introduction. Please cover its basic concepts, how it started, its evolution over '
+    # I''m new to  and would like a detailed introduction. Please cover its basic concepts, how it started, its evolution over
     search_terms:
       - prompts
 
@@ -3699,7 +3699,7 @@ matches:
       - confidence level
       - key caveats
     label: '[Prompts] Meta-Cognitive Reasoning (Thinking About Thinking Frameworks)'
-    comment: Adapt the role of a Meta-Cognitive Reasoning Expert.
+    # Adapt the role of a Meta-Cognitive Reasoning Expert.
     search_terms:
       - prompts
 
@@ -3739,7 +3739,7 @@ matches:
       problem:
         multiline: true
     label: '[Prompts] OODA Loop Strategy (Observe Orient Decide Act Execution)'
-    comment: 'ROLE: You are a strategic-tactical consultant business coach.'
+    # ROLE: You are a strategic-tactical consultant business coach.
     search_terms:
       - prompts
 
@@ -3750,7 +3750,7 @@ matches:
       language] from beginner to conversational level as quickly as possible,
       focusing on real-life communication."
     label: '[Prompts] Language Learning Roadmap (Structured Progressive Study Plan)'
-    comment: Act as a professional language tutor with 10+ years of teaching
+    # Act as a professional language tutor with 10+ years of teaching
     search_terms:
       - prompts
 
@@ -3760,7 +3760,7 @@ matches:
       [insert language] that allow me to communicate daily needs such as
       introductions, asking questions, and basic conversations."
     label: '[Prompts] Core Speaking Foundations (Sentence Structures & High-Frequency Words)'
-    comment: Teach me the most important sentence structures and phrases in
+    # Teach me the most important sentence structures and phrases in
     search_terms:
       - prompts
 
@@ -3770,7 +3770,7 @@ matches:
       conversations such as ordering food, asking directions, or casual talking.
       Correct my mistakes and guide me toward natural responses.
     label: '[Prompts] Conversation Simulation (Native Speaker Roleplay & Feedback)'
-    comment: Act as a native speaker of [insert language] and simulate real-life
+    # Act as a native speaker of [insert language] and simulate real-life
     search_terms:
       - prompts
 
@@ -3780,7 +3780,7 @@ matches:
       my native language by giving rapid-response exercises that improve
       fluency and reduce hesitation.
     label: '[Prompts] Thinking in Target Language (Direct Immersion & Mental Monologue)'
-    comment: Train me to think directly in [insert language] instead of translating from
+    # Train me to think directly in [insert language] instead of translating from
     search_terms:
       - prompts
 
@@ -3790,7 +3790,7 @@ matches:
       immediately give speaking examples so I can apply the rules in real
       conversations without confusion.
     label: '[Prompts] Grammar Simplification (Plain Language Rules & Patterns)'
-    comment: Explain grammar rules of [insert language] in simple terms and
+    # Explain grammar rules of [insert language] in simple terms and
     search_terms:
       - prompts
 
@@ -3800,7 +3800,7 @@ matches:
       includes speaking, listening, reading, and revision tasks that can be
       completed in a limited amount of time.
     label: '[Prompts] Daily Practice Routine (Consistency Habit & Skill Drills)'
-    comment: Create a daily practice routine for learning [insert language] that
+    # Create a daily practice routine for learning [insert language] that
     search_terms:
       - prompts
 
@@ -3810,7 +3810,7 @@ matches:
       through conversation and questions. Identify weaknesses and suggest
       focused improvements to become more fluent.
     label: '[Prompts] Fluency Evaluation Exam (Oral & Written Competency Assessment)'
-    comment: Act as a language examiner and test my ability in [insert language]
+    # Act as a language examiner and test my ability in [insert language]
     search_terms:
       - prompts
 
@@ -3821,7 +3821,7 @@ matches:
       into the most fundamental ideas so I understand the 'why' behind every
       concept instead of memorizing facts.
     label: '[Prompts] First Principles Mastery (Foundations to Expert Intuition)'
-    comment: Act as a world-class expert and teacher with 15+ years of experience in
+    # Act as a world-class expert and teacher with 15+ years of experience in
     search_terms:
       - prompts
 
@@ -3831,7 +3831,7 @@ matches:
       beginner, intermediate, and advanced stages, listing exact topics, milestones,
       and skills required at each stage so nothing important is missed."
     label: '[Prompts] Skill Mastery Roadmap (Beginner to Expert Progression)'
-    comment: Design a complete learning roadmap for mastering [insert skill]. Break it into
+    # Design a complete learning roadmap for mastering [insert skill]. Break it into
     search_terms:
       - prompts
 
@@ -3842,7 +3842,7 @@ matches:
       common mistakes, and advanced insights that separate beginners from
       experts.
     label: '[Prompts] Concept Builder (Professional-Grade Deep Explanation)'
-    comment: For the topic [insert topic], explain it in depth as if preparing a professional in
+    # For the topic [insert topic], explain it in depth as if preparing a professional in
     search_terms:
       - prompts
 
@@ -3853,7 +3853,7 @@ matches:
       evaluate my thinking and correct misunderstandings before moving to the
       next concept."
     label: '[Prompts] Active Recall Drill (Challenging Retention Questions)'
-    comment: After teaching me [insert topic], create challenging questions that test my
+    # After teaching me [insert topic], create challenging questions that test my
     search_terms:
       - prompts
 
@@ -3863,7 +3863,7 @@ matches:
       skill]. Focus on strategies, shortcuts, and thinking patterns that distinguish
       experts from average practitioners.
     label: '[Prompts] Advanced Technique Mastery (Nuances & Edge Case Execution)'
-    comment: Teach advanced techniques and insights used by top professionals in [insert
+    # Teach advanced techniques and insights used by top professionals in [insert
     search_terms:
       - prompts
 
@@ -3873,7 +3873,7 @@ matches:
       guide including key concepts, frameworks, mental models, and essential
       takeaways that are critical for long-term mastery."
     label: '[Prompts] Knowledge Compression Cheat Sheet (1-Page Mental Model Summary)'
-    comment: Summarize everything I learned about [insert topic] into a structured revision
+    # Summarize everything I learned about [insert topic] into a structured revision
     search_terms:
       - prompts
 
@@ -3883,7 +3883,7 @@ matches:
       practical and conceptual questions. Identify remaining weaknesses and
       recommend a targeted improvement plan.
     label: '[Prompts] Comprehensive Final Exam (Synthesis & Real-World Application)'
-    comment: Act as an expert examiner and test my mastery of [insert skill] through
+    # Act as an expert examiner and test my mastery of [insert skill] through
     search_terms:
       - prompts
 
@@ -3891,7 +3891,7 @@ matches:
     form: |
       "I want to learn [Insert Topic]. Can you use the Pareto principle, which identifies the 20% of the topic that will yield 80% of the desired results, to create a focused learning plan for me?"
     label: '[Prompts] 80/20 Learning Focus (Core High-Impact Principles)'
-    comment: 'I want to learn [Insert Topic]. Can you use the Pareto principle, which identifies the 20% of the topic that will yield '
+    # I want to learn [Insert Topic]. Can you use the Pareto principle, which identifies the 20% of the topic that will yield
     search_terms:
       - prompts
 
@@ -3899,7 +3899,7 @@ matches:
     form: |
       "Explain [Insert topic] in simple terms. Explain to me as if I'm a beginner."
     label: '[Prompts] Beginner Explainer (Jargon-Free Everyday Metaphors)'
-    comment: Explain [Insert topic] in simple terms. Explain to me as if I'm a beginner.
+    # Explain [Insert topic] in simple terms. Explain to me as if I'm a beginner.
     search_terms:
       - prompts
 
@@ -3907,7 +3907,7 @@ matches:
     form: |
       "Create a study schedule for [Insert Topic/Subject]. I can study for 2 hours every Tuesday and Thursday, you can adjust accordingly. Please include time for revision and testing."
     label: '[Prompts] Study Schedule Creator (Time-Blocked Curriculum Calendar)'
-    comment: Create a study schedule for [Insert Topic/Subject]. I can study for 2 hours every Tuesday and Thursday, you can adjust a
+    # Create a study schedule for [Insert Topic/Subject]. I can study for 2 hours every Tuesday and Thursday, you can adjust a
     search_terms:
       - prompts
 
@@ -3915,7 +3915,7 @@ matches:
     form: |
       "I am trying to decide if I should [Insert decision]. Give me a list of pros and cons that will help me decide why I should or shouldn't make this decision."
     label: '[Prompts] Decision Matrix Builder (Pros Cons & Mental Model Scoring)'
-    comment: I am trying to decide if I should [Insert decision]. Give me a list of pros and cons that will help me decide why I shou
+    # I am trying to decide if I should [Insert decision]. Give me a list of pros and cons that will help me decide why I shou
     search_terms:
       - prompts
 
@@ -3923,7 +3923,7 @@ matches:
     form: |
       "I want to learn [Insert skill]. Generate a 30-day plan that will help a beginner like me learn the skill from scratch."
     label: '[Prompts] 30-Day Skill Plan (Day-by-Day Accelerated Program)'
-    comment: I want to learn [Insert skill]. Generate a 30-day plan that will help a beginner like me learn the skill from scratch.
+    # I want to learn [Insert skill]. Generate a 30-day plan that will help a beginner like me learn the skill from scratch.
     search_terms:
       - prompts
 
@@ -3931,7 +3931,7 @@ matches:
     form: |
       "I want you to act as a grammar guide. Can you explain [the topics] and provide instructions on how to apply the rule or concept? Can you also give me examples of how the rule or concept works in practice?"
     label: '[Prompts] Grammar & Writing Guide (Rule Explanations & Error Corrections)'
-    comment: 'I want you to act as a grammar guide. Can you explain [the topics] and provide instructions on how to apply the rule or '
+    # I want you to act as a grammar guide. Can you explain [the topics] and provide instructions on how to apply the rule or
     search_terms:
       - prompts
 
@@ -3980,7 +3980,7 @@ matches:
       * **Prompt:**
         > "Give me 3 real-world scenarios or case studies where [Topic/Concept] is applied to solve a high-stakes problem. Walk through the step-by-step execution strategy for each scenario."
     label: '[Prompts] LLM Accelerated Learning Framework (Cognitive Apprenticeship Protocol)'
-    comment: '# Skill: Accelerated Learning Framework via LLMs'
+    # # Skill: Accelerated Learning Framework via LLMs
     search_terms:
       - prompts
 
@@ -4047,7 +4047,7 @@ matches:
       * **Maintain Adaptability:** Be flexible with your system; allow it to evolve as your needs and discoveries change.
       * **Focus on Application:** Don't just store information; reflect on it and find ways to apply it in your life and work.
     label: '[Prompts] Second Brain Organizer (PARA Method & CODE Workflow)'
-    comment: '# Skill: How to Organize Your Ideas (The P.A.R.A. Method & CODE Framework)'
+    # # Skill: How to Organize Your Ideas (The P.A.R.A. Method & CODE Framework)
     search_terms:
       - prompts
 
@@ -4058,7 +4058,7 @@ matches:
       topic:
         multiline: true
     label: '[Prompts] Beginner-to-Advanced Curriculum (Multi-Phase Learning Journey)'
-    comment: I want to learn  from complete beginner to advanced level. Create a comprehensive 12-week learning roadmap broken down b
+    # I want to learn  from complete beginner to advanced level. Create a comprehensive 12-week learning roadmap broken down b
     search_terms:
       - prompts
 
@@ -4070,7 +4070,7 @@ matches:
       skill:
         multiline: true
     label: '[Prompts] World-Class Mastery Roadmap (Deliberate Practice & Milestones)'
-    comment: Create a mastery roadmap for becoming world-class in . Include rare techniques, secret resources, and unconventional app
+    # Create a mastery roadmap for becoming world-class in . Include rare techniques, secret resources, and unconventional app
     search_terms:
       - prompts
 
@@ -4095,7 +4095,7 @@ matches:
           - '2'
           - 4+
     label: '[Prompts] 30-Day Mastery Sprint (Daily Schedule & Practice Blocks)'
-    comment: I want to master  in 30 days. My current level is .
+    # I want to master  in 30 days. My current level is .
     search_terms:
       - prompts
 
@@ -4111,7 +4111,7 @@ matches:
       skill:
         multiline: true
     label: '[Prompts] Learning-by-Doing Framework (Hands-on Project Construction)'
-    comment: I want to learn  through concrete, hands-on experience rather than just reading
+    # I want to learn  through concrete, hands-on experience rather than just reading
     search_terms:
       - prompts
 
@@ -4128,7 +4128,7 @@ matches:
       topic:
         multiline: true
     label: '[Prompts] Intermediate-to-Mastery Roadmap (Fill High-Leverage Blindspots)'
-    comment: I want to build an optimal path for mastery. I already have a functional understanding of
+    # I want to build an optimal path for mastery. I already have a functional understanding of
     search_terms:
       - prompts
 
@@ -4142,7 +4142,7 @@ matches:
       topic:
         multiline: true
     label: '[Prompts] Teach-Back Method Partner (Identify Knowledge Gaps & Confusions)'
-    comment: I am practicing the Teach-Back Method. I will try to explain the concept of  to you
+    # I am practicing the Teach-Back Method. I will try to explain the concept of  to you
     search_terms:
       - prompts
 
@@ -4160,7 +4160,7 @@ matches:
           - Software Engineer from a different stack
           - Business Executive
     label: '[Prompts] Feynman Simplifier (Boil Down to Absolute Essentials)'
-    comment: I want to master  quickly by boiling it down to its absolute core. Use the
+    # I want to master  quickly by boiling it down to its absolute core. Use the
     search_terms:
       - prompts
 
@@ -4174,7 +4174,7 @@ matches:
       subject:
         multiline: true
     label: '[Prompts] University Degree Depth (Rigorous Academic Curriculum Syllabus)'
-    comment: I want to learn  at the depth of a world-class university degree program, but optimized
+    # I want to learn  at the depth of a world-class university degree program, but optimized
     search_terms:
       - prompts
 
@@ -4192,7 +4192,7 @@ matches:
           - General Conversation
           - Reading Technical Documentation
     label: '[Prompts] Pragmatic Language Blueprint (Targeted Vocabulary & Scenarios)'
-    comment: I want to learn  efficiently for . Create a structured daily practice
+    # I want to learn  efficiently for . Create a structured daily practice
     search_terms:
       - prompts
 
@@ -4206,7 +4206,7 @@ matches:
       skill:
         multiline: true
     label: '[Prompts] 10,000-Hour Compressor (Accelerate Deliberate Practice Velocity)'
-    comment: I want to compress my timeline to world-class execution in . Break down how I can
+    # I want to compress my timeline to world-class execution in . Break down how I can
     search_terms:
       - prompts
 
@@ -4219,7 +4219,7 @@ matches:
       skill:
         multiline: true
     label: '[Prompts] Elite Professional Mentor (Pragmatic Real-World Guidance)'
-    comment: Act as a elite, direct, and pragmatic professional mentor who is an recognized expert in .
+    # Act as a elite, direct, and pragmatic professional mentor who is an recognized expert in .
     search_terms:
       - prompts
 
@@ -4240,7 +4240,7 @@ matches:
       subject:
         default: DataWeave 2.0 Architecture
     label: '[Prompts] Comprehensive Skill Mastery Guide (Conceptual Immersion & Practical Drills)'
-    comment: Act as a master in the given subject and guide me through a deep learning process.
+    # Act as a master in the given subject and guide me through a deep learning process.
     search_terms:
       - prompts
 
@@ -4350,7 +4350,7 @@ matches:
       Tone & Style
       Warm, encouraging, and practically rigorous. Use PKM terminology correctly (Zettelkasten, MOC, evergreen notes, fleeting notes, literature notes). Balance cognitive science grounding with hands-on implementation. Structure as a personalized coaching conversation that adapts to the user's context, but with enough standalone detail to be actionable without further interaction. Include template examples, checklists, and decision frameworks.
     label: '[Prompts] Personal Knowledge Management (Second Brain Note Organization)'
-    comment: Role
+    # Role
     search_terms:
       - prompts
 
@@ -4575,7 +4575,7 @@ matches:
       - If the user has 10+ books, recommend RAG for search and a skill per book
         for deep reasoning. Do not try to fuse multiple books into one mega-skill.
     label: '[Prompts] Book-to-Skill Architect (Extract Frameworks into Actionable Drills)'
-    comment: Book-to-Skill Architect
+    # Book-to-Skill Architect
     search_terms:
       - prompts
 
@@ -4616,7 +4616,7 @@ matches:
 
       Are you ready to redefine the way you learn? Let's jump in! 🚀
     label: '[Prompts] LearnOS Pro Interactive Tutor (High-Engagement Active Learning)'
-    comment: You are LearnOS PRO 🚀, an advanced, highly interactive learning assistant designed to make education dynamic, personaliz
+    # You are LearnOS PRO 🚀, an advanced, highly interactive learning assistant designed to make education dynamic, personaliz
     search_terms:
       - prompts
 
@@ -4638,7 +4638,7 @@ matches:
       1. Firstly, output the teacher config and give me your teaching outline (You are good at planning first and then teach step by step)
       2. You have to give me 1 guidance suggestion at the end of **every conversation**, and tell me input "continue". (don't make me think)"
     label: '[Prompts] Accelerated Personal Mentor (Direct Rapid Skill Acquisition)'
-    comment: You're a personal mentor, and your job is to help me learn something quickly.
+    # You're a personal mentor, and your job is to help me learn something quickly.
     search_terms:
       - prompts
 
@@ -4668,7 +4668,7 @@ matches:
         - At the end of **every conversation**, provide one actionable guidance suggestion. This should be tailored to reinforce what was learned or to prepare me for the next step in my learning journey.
         - Clearly instruct me to input "continue" for seamless progression in our learning sessions. This ensures I am always aware of how to proceed without confusion.
     label: '[Prompts] Role-Based Learning Expert (Immersive Character Tutoring)'
-    comment: '**Role Description:** 🧑‍🏫'
+    # **Role Description:** 🧑‍🏫
     search_terms:
       - prompts
 
@@ -4993,7 +4993,7 @@ matches:
 
       execute <Init>
     label: '[Prompts] Stoic Learning Coach (Resilience & Mental Discipline)'
-    comment: '[Student Configuration]'
+    # [Student Configuration]
     search_terms:
       - prompts
 
@@ -5125,7 +5125,7 @@ matches:
       </worked_example>
       </system>
     label: '[Prompts] Socratic Tutor Persona (Inquiry-Based Understanding Building)'
-    comment: <system>
+    # <system>
     search_terms:
       - prompts
 
@@ -5237,7 +5237,7 @@ matches:
       Passionate about learning, scientifically rigorous, and practically grounded. Use learning science terminology correctly (scaffolding, zone of proximal development, cognitive load, spaced repetition, formative assessment, metacognition, knowledge tracing). Balance pedagogical idealism with implementation realism. Structure as a learning design document that instructional designers, engineers, and educators can collaborate around. Include learning flow diagrams, example interactions, and assessment rubrics.
             </form>
     label: '[Prompts] Adaptive Learning Designer (Customized Pedagogical Sequences)'
-    comment: Role
+    # Role
     search_terms:
       - prompts
 
@@ -5257,7 +5257,7 @@ matches:
       Do not assume I have a background in this field.
       Write like you are talking to a smart 16 year old.
     label: '[Prompts] Feynman Workflow 1 of 4: Topic (5 Core Ideas Extraction)'
-    comment: I just finished reading about .
+    # I just finished reading about .
     search_terms:
       - prompts
 
@@ -5279,7 +5279,7 @@ matches:
       Then ask me to write my own version of each.
       Wait for my answers before continuing.
     label: '[Prompts] Feynman Workflow 2 of 4: Recall (Own Words Explanation)'
-    comment: For each of the 5 ideas above, I am going to try to explain it in my own words like I am teaching a 12 year old.
+    # For each of the 5 ideas above, I am going to try to explain it in my own words like I am teaching a 12 year old.
     search_terms:
       - prompts
 
@@ -5302,7 +5302,7 @@ matches:
       explanations:
         multiline: true
     label: '[Prompts] Feynman Workflow 3 of 4: Critique (Identify Gaps & Inaccuracies)'
-    comment: 'Here are my 5 explanations:'
+    # Here are my 5 explanations:
     search_terms:
       - prompts
 
@@ -5323,7 +5323,7 @@ matches:
       End with:
       A single sentence summary I should reread tomorrow morning.
     label: '[Prompts] Feynman Workflow 4 of 4: Analogies (Everyday Mental Metaphors)'
-    comment: For each of the 5 ideas, build 2 analogies.
+    # For each of the 5 ideas, build 2 analogies.
     search_terms:
       - prompts
 
@@ -5343,7 +5343,7 @@ matches:
       Use simple language.
       Assume no prior knowledge.
     label: '[Prompts] Mastery Loop 1 of 6: Distill (Core Concepts Isolation)'
-    comment: I just finished studying .
+    # I just finished studying .
     search_terms:
       - prompts
 
@@ -5361,7 +5361,7 @@ matches:
       After each explanation, ask me to explain it in my own words.
       Wait for my response before continuing.
     label: '[Prompts] Mastery Loop 2 of 6: Teach-Back (Plain English Articulation)'
-    comment: 'For each concept:'
+    # For each concept:
     search_terms:
       - prompts
 
@@ -5387,7 +5387,7 @@ matches:
       explanations:
         multiline: true
     label: '[Prompts] Mastery Loop 3 of 6: Gap Check (Conceptual Rigor Critique)'
-    comment: 'Here are my explanations:'
+    # Here are my explanations:
     search_terms:
       - prompts
 
@@ -5403,7 +5403,7 @@ matches:
 
       Increase difficulty over time. Can I use the idea outside the original lesson?
     label: '[Prompts] Mastery Loop 4 of 6: Real-World Scenarios (Applied Problem Cases)'
-    comment: Create real-world situations where these concepts apply.
+    # Create real-world situations where these concepts apply.
     search_terms:
       - prompts
 
@@ -5421,7 +5421,7 @@ matches:
 
       Finish with a one-sentence memory hook.
     label: '[Prompts] Mastery Loop 5 of 6: Edge Cases (Failure Modes & Counter-Examples)'
-    comment: 'For each concept create:'
+    # For each concept create:
     search_terms:
       - prompts
 
@@ -5437,7 +5437,7 @@ matches:
 
       Then explicitly identify anything critical or nuanced that was lost during this compression process.
     label: '[Prompts] Mastery Loop 6 of 6: Compression (Ultra-Dense Concept Card)'
-    comment: Help me compress this topic.
+    # Help me compress this topic.
     search_terms:
       - prompts
 
@@ -5449,7 +5449,7 @@ matches:
 
       Only give me the answer after I have tried at least two times. Repeat this cycle until I can get it right without hesitation.
     label: '[Prompts] Simulation Immersion (Real Situation Simulation Instead of Lecture)'
-    comment: 'Do not explain {{concept}} to me. Put me directly into a real situation where I would have to use it and would probably '
+    # Do not explain {{concept}} to me. Put me directly into a real situation where I would have to use it and would probably
     search_terms:
       - prompts
 
@@ -5466,28 +5466,28 @@ matches:
       context:
         default: system architecture and edge cases
     label: '[Prompts] Simulation Immersion Form (Roleplay Pressure Scenario)'
-    comment: 'Do not explain  to me. Put me directly into a real situation regarding  where I would have to use it and would probably '
+    # Do not explain  to me. Put me directly into a real situation regarding  where I would have to use it and would probably
     search_terms:
       - prompts
 
   - trigger: :p_prof
     replace: Act as an expert teacher. Explain this content to me from scratch, with practical examples, and tell me what I should learn first.
     label: '[Prompts] First-Principles Teacher (Foundations Explanation from Scratch)'
-    comment: Act as an expert teacher. Explain this content to me from scratch, with practical examples, and tell me what I should le
+    # Act as an expert teacher. Explain this content to me from scratch, with practical examples, and tell me what I should le
     search_terms:
       - prompts
 
   - trigger: :p_active
     replace: Pause after each important concept and ask me a question. If I answer incorrectly, explain it again using a different analogy.
     label: '[Prompts] Active Pausing Tutor (Checkpoint Questions After Each Concept)'
-    comment: Pause after each important concept and ask me a question. If I answer incorrectly, explain it again using a different an
+    # Pause after each important concept and ask me a question. If I answer incorrectly, explain it again using a different an
     search_terms:
       - prompts
 
   - trigger: :p_examine
     replace: Act as an examiner and give me tests and questions about this document. Then explain what my answers reveal about my gaps in understanding and help me correct them.
     label: '[Prompts] Document Examiner (Socratic Quizzing on Uploaded Text)'
-    comment: Act as an examiner and give me tests and questions about this document. Then explain what my answers reveal about my gap
+    # Act as an examiner and give me tests and questions about this document. Then explain what my answers reveal about my gap
     search_terms:
       - prompts
 
@@ -5499,7 +5499,7 @@ matches:
       → 1 thing the author gets wrong or exaggerates
       → 3 questions I should ask myself afterward
     label: '[Prompts] Document Synthesis (Key Insights Assumptions & Counterarguments)'
-    comment: 'I''m going to share a document with you. Read it and give me:'
+    # I''m going to share a document with you. Read it and give me:
     search_terms:
       - prompts
 
@@ -5510,7 +5510,7 @@ matches:
       duration:
         default: 30-minute
     label: '[Prompts] Lesson Plan Generator (Structured Modular Curriculum Design)'
-    comment: Turn this chapter/topic into a  lesson plan. Include sections, examples, and quick comprehension checks.
+    # Turn this chapter/topic into a  lesson plan. Include sections, examples, and quick comprehension checks.
     search_terms:
       - prompts
 
@@ -5527,7 +5527,7 @@ matches:
       plan:
         multiline: true
     label: '[Prompts] Plan Adversary (Spot Unstated Assumptions & Hidden Flaws)'
-    comment: 'I''m going to tell you my plan:'
+    # I''m going to tell you my plan:
     search_terms:
       - prompts
 
@@ -5541,7 +5541,7 @@ matches:
       samples:
         multiline: true
     label: '[Prompts] Voice & Style Profiler (Writing Voice Fingerprint Analysis)'
-    comment: 'Analyze these 3 texts of mine:'
+    # Analyze these 3 texts of mine:
     search_terms:
       - prompts
 
@@ -5558,7 +5558,7 @@ matches:
       time:
         default: 30 minutes
     label: '[Prompts] Time-Constrained Learning Plan (Daily Hour Budget Curriculum)'
-    comment: 'I want to learn  in  days, dedicating  a day. Create a plan with:'
+    # I want to learn  in  days, dedicating  a day. Create a plan with:
     search_terms:
       - prompts
 
@@ -5576,7 +5576,7 @@ matches:
       skill:
         default: ''
     label: '[Prompts] 4-Hour Crash Course (High-Leverage Pareto Curriculum)'
-    comment: 'Pareto crash course to become functional in a skill in 4 hours.'
+    # Pareto crash course to become functional in a skill in 4 hours.
     search_terms:
       - prompts
       - learning
@@ -5589,7 +5589,7 @@ matches:
       skill:
         default: ''
     label: '[Prompts] 30-Day Skill Roadmap (Structured 4-Week Progression)'
-    comment: Create a detailed 30-day learning roadmap for mastering . Break it into daily or weekly stages, explain what to learn, w
+    # Create a detailed 30-day learning roadmap for mastering . Break it into daily or weekly stages, explain what to learn, w
     search_terms:
       - prompts
 
@@ -5597,7 +5597,7 @@ matches:
     replace: |
       Teach me {{skill}} primarily through practical exercises and hands-on practice. Design simple tasks, drills, or mini-projects that force me to apply what I learn instead of just reading or memorizing information.
     label: '[Prompts] Hands-On Practice Drill (Learn Skill Through Applied Exercises)'
-    comment: Teach me {{skill}} primarily through practical exercises and hands-on practice. Design simple tasks, drills, or mini-pro
+    # Teach me {{skill}} primarily through practical exercises and hands-on practice. Design simple tasks, drills, or mini-pro
     search_terms:
       - prompts
 
@@ -5605,7 +5605,7 @@ matches:
     replace: |
       Show me how {{skill}} is actually used in real-world situations. Give realistic examples, scenarios, or use cases and explain how to apply the skill correctly in each case.
     label: '[Prompts] Real-World Use Cases (Practical Industry Applications)'
-    comment: Show me how {{skill}} is actually used in real-world situations. Give realistic examples, scenarios, or use cases and ex
+    # Show me how {{skill}} is actually used in real-world situations. Give realistic examples, scenarios, or use cases and ex
     search_terms:
       - prompts
 
@@ -5631,7 +5631,7 @@ matches:
 
       Your final output should include: 1. The full checklist of questions 2. The user's answers 3. A summary of clarifications and open questions 4. Any additional clarifications from the user 5. A draft or summary of the content to be added to the GitHub issue
     label: '[Prompts] Product Strategy OODA Interview (Tactical Architecture & Alignment)'
-    comment: You are an AI engineer tasked with interviewing a user about a Product Requirements Document (PRD) or GitHub issue to cl
+    # You are an AI engineer tasked with interviewing a user about a Product Requirements Document (PRD) or GitHub issue to cl
     search_terms:
       - prompts
 
@@ -5643,7 +5643,7 @@ matches:
       task:
         multiline: false
     label: '[Prompts] Task Paralysis Shatterer (Ridiculously Small 2-Minute Steps)'
-    comment: 'I am staring at  and can''t start. Break this down into ''Ridiculously Small First Steps'' (RSFS) that require less than 2 '
+    # I am staring at  and can''t start. Break this down into ''Ridiculously Small First Steps'' (RSFS) that require less than 2
     search_terms:
       - prompts
 
@@ -5658,7 +5658,7 @@ matches:
       context_home_office_low_energy:
         multiline: false
     label: '[Prompts] Dopamine Menu Architect (ADHD Motivation & Energy Reset)'
-    comment: 'I am feeling under-stimulated. My current setting and energy level: . Build a ''Dopamine Menu'' with 3 options in each cat'
+    # I am feeling under-stimulated. My current setting and energy level: . Build a ''Dopamine Menu'' with 3 options in each cat
     search_terms:
       - prompts
 
@@ -5675,25 +5675,20 @@ matches:
       task:
         multiline: false
     label: '[Prompts] Virtual Body Double (30-Minute Live Accountability Partner)'
-    comment: Act as my virtual body double for a 30-minute
+    # Act as my virtual body double for a 30-minute
     search_terms:
       - prompts
 
   - trigger: :prod-context-switching-guide
     form: |
-      I just finished [[task-before]]
-      and need to start [[task-after]],
+      I just finished [[task_before]]
+      and need to start [[task_after]],
       but my brain is stuck. Design a 3-minute
       'Mental Palate Cleanser' with 3 short steps (1
       physical, 1 sensory, 1 mental) to shift me from
       the first type of energy to the second
-    form_fields:
-      task-before:
-        multiline: false
-      task-after:
-        multiline: false
     label: '[Prompts] Context Switching Guide (Mental Reset Between Divergent Tasks)'
-    comment: I just finished
+    # I just finished
     search_terms:
       - prompts
 
@@ -5711,29 +5706,23 @@ matches:
       interest:
         multiline: false
     label: '[Prompts] Admin Task Gamifier (Turn Tedious Chores into Games)'
-    comment: 'I have a boring admin task: . Gamify it'
+    # I have a boring admin task: . Gamify it
     search_terms:
       - prompts
 
   - trigger: :prod-time-blindness-auditor
     form: |
-      I estimate [[project]] will take [[x-minutes]],
-      but it usually takes [[y-minutes]].
-      Brief description: [[what-the-project-involves]].
+      I estimate [[project]] will take [[x_minutes]],
+      but it usually takes [[y_minutes]].
+      Brief description: [[what_the_project_involves]].
       Identify the 3 hidden sub-tasks I likely forget
       (setup, transitions, review, etc.), give a realistic
       time estimate for each, and a total realistic deadline.
     form_fields:
-      project:
-        multiline: false
-      x-minutes:
-        multiline: false
-      y-minutes:
-        multiline: false
-      what-the-project-involves:
+      what_the_project_involves:
         multiline: true
     label: '[Prompts] Time Blindness Auditor (Realistic Duration & Hidden Subtasks)'
-    comment: I estimate  will take ,
+    # I estimate  will take ,
     search_terms:
       - prompts
 
@@ -5741,7 +5730,7 @@ matches:
     form: |
       "I need to complete these tasks simultaneously: [list tasks]. Spawn agent teams: assign each task to a separate agent, coordinate between them, report progress from all agents, merge results when done. Run them in parallel."
     label: '[Prompts] Parallel Work Manager (Multi-Agent Task Orchestration)'
-    comment: 'I need to complete these tasks simultaneously: [list tasks]. Spawn agent teams: assign each task to a separate agent, co'
+    # I need to complete these tasks simultaneously: [list tasks]. Spawn agent teams: assign each task to a separate agent, co
     search_terms:
       - prompts
 
@@ -5749,7 +5738,7 @@ matches:
     form: |
       "Load my entire project folder: [upload files]. Analyze: architectural decisions that should change, technical debt to tackle first, security vulnerabilities, performance bottlenecks, and outdated dependencies. Give me a prioritized action plan."
     label: '[Prompts] Multi-File Project Auditor (Cross-File Architecture & Lint Review)'
-    comment: 'Load my entire project folder: [upload files]. Analyze: architectural decisions that should change, technical debt to ta'
+    # Load my entire project folder: [upload files]. Analyze: architectural decisions that should change, technical debt to ta
     search_terms:
       - prompts
 
@@ -5757,7 +5746,7 @@ matches:
     form: |
       "I'm working on [project name]. Here's everything you need to retain: [paste project context]. From now on, reference this context in every response without me repeating it. Summarize what you'll remember."
     label: '[Prompts] Context Memory Vault (Persistent Project Constraints Storage)'
-    comment: 'I''m working on [project name]. Here''s everything you need to retain: [paste project context]. From now on, reference thi'
+    # I''m working on [project name]. Here''s everything you need to retain: [paste project context]. From now on, reference thi
     search_terms:
       - prompts
 
@@ -5765,7 +5754,7 @@ matches:
     form: |
       "Complex problem: [describe problem]. Don't answer immediately. First, assess: how deep should you think about this (quick/deep reasoning), what information is missing, what assumptions to challenge. Then solve it at the appropriate depth."
     label: '[Prompts] Adaptive Problem Navigator (Root Cause Diagnostic Before Action)'
-    comment: 'Complex problem: [describe problem]. Don''t answer immediately. First, assess: how deep should you think about this (quic'
+    # Complex problem: [describe problem]. Don''t answer immediately. First, assess: how deep should you think about this (quic
     search_terms:
       - prompts
 
@@ -5773,7 +5762,7 @@ matches:
     form: |
       "Review everything I've done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, places where I'm overconfident, risks I haven't considered. Challenge my thinking before I commit to this approach."
     label: '[Prompts] Mistake & Assumption Spotter (Review Conversation for Flaws)'
-    comment: 'Review everything I''ve done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, p'
+    # Review everything I''ve done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, p
     search_terms:
       - prompts
 
@@ -5781,7 +5770,7 @@ matches:
     form: |
       "This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continue."
     label: '[Prompts] Long-Term Project Assistant (Multi-Week Decision Tracker)'
-    comment: 'This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shift'
+    # This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shift
     search_terms:
       - prompts
 
@@ -5789,7 +5778,7 @@ matches:
     form: |
       "I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration."
     label: '[Prompts] Cross-Repo Connector (Shared Dependencies & Interface Bridge)'
-    comment: 'I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoin'
+    # I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoin
     search_terms:
       - prompts
 
@@ -5797,7 +5786,7 @@ matches:
     form: |
       "Act like a world-class coach who has helped thousands of people level up mentally, physically, financially, and emotionally. Audit my current lifestyle based on this [insert your routine], and tell me exactly what to change for a full 180° transformation."
     label: '[Prompts] World-Class Life Audit (Comprehensive Personal Systems Diagnostic)'
-    comment: Act like a world-class coach who has helped thousands of people level up mentally, physically, financially, and emotiona
+    # Act like a world-class coach who has helped thousands of people level up mentally, physically, financially, and emotiona
     search_terms:
       - prompts
 
@@ -5805,7 +5794,7 @@ matches:
     form: |
       "Pretend you're the mentor behind the most iconic, disciplined and high-performing people on earth. Design me a ruthless but realistic 30-day glow-up plan that rewires my mind, resets my habits, and makes people ask 'what happened to you?'"
     label: '[Prompts] 30-Day Ruthless Discipline Plan (High-Performance Habit Reset)'
-    comment: 'Pretend you''re the mentor behind the most iconic, disciplined and high-performing people on earth. Design me a ruthless '
+    # Pretend you''re the mentor behind the most iconic, disciplined and high-performing people on earth. Design me a ruthless
     search_terms:
       - prompts
 
@@ -5813,7 +5802,7 @@ matches:
     form: |
       "Be my brutally honest mindset coach. Break down the limiting beliefs I may have based on this [insert your goal or struggle], then rewire them with powerful affirmations, logic, and new habits to replace the old story."
     label: '[Prompts] Brutally Honest Mindset Coach (Limiting Beliefs Deconstruction)'
-    comment: Be my brutally honest mindset coach. Break down the limiting beliefs I may have based on this [insert your goal or strug
+    # Be my brutally honest mindset coach. Break down the limiting beliefs I may have based on this [insert your goal or strug
     search_terms:
       - prompts
 
@@ -5821,7 +5810,7 @@ matches:
     form: |
       "You are my life strategist with access to my dream reality blueprint. Based on my goal [insert your goal], create a step-by-step life system, morning to night, that would make me become 'her' in 90 days or less."
     label: '[Prompts] Life Strategy Blueprint (Vision Alignment & Operational Habits)'
-    comment: You are my life strategist with access to my dream reality blueprint. Based on my goal [insert your goal], create a step
+    # You are my life strategist with access to my dream reality blueprint. Based on my goal [insert your goal], create a step
     search_terms:
       - prompts
 
@@ -5829,7 +5818,7 @@ matches:
     form: |
       "Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ritual that reshapes how I think, act, and dominate my day with unshakable confidence."
     label: '[Prompts] Mental Conditioning Ritual (High-Energy Focus & Drive Activation)'
-    comment: Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ri
+    # Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ri
     search_terms:
       - prompts
 
@@ -6011,7 +6000,7 @@ matches:
       <output>Turning Point - Tension and Resolution Arc - Universal Truth -
       3-Minute Signature Story Script</output>
     label: '[Prompts] Signature Slogan Builder (Memorable Personal Positioning Motto)'
-    comment: 1. BUILD YOUR SIGNATURE SLOGAN
+    # 1. BUILD YOUR SIGNATURE SLOGAN
     search_terms:
       - prompts
 
@@ -6058,7 +6047,7 @@ matches:
       * Enhanced mental clarity and focus.
       * Heightened awareness of surroundings and actions.
     label: '[Prompts] Flow State Induction Guide (Triggers Environment & Deep Focus)'
-    comment: '# How to Get Into Flow State'
+    # # How to Get Into Flow State
     search_terms:
       - prompts
 
@@ -6151,7 +6140,7 @@ matches:
       | **2:00 - 2:30** | Break |
       | **2:30 - 4:00** | Meetings |
     label: '[Prompts] Execution Frameworks Playbook (Throughput Leverage & Systems)'
-    comment: '# Skill: Productivity & Execution Frameworks'
+    # # Skill: Productivity & Execution Frameworks
     search_terms:
       - prompts
 
@@ -6190,7 +6179,7 @@ matches:
       | **Arranger** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
       | **Visualizer** | Decide on a priority for the day | Write in your journal | Use the Pomodoro technique | End the day with light tasks |
     label: '[Prompts] 8 Hours in 4 Hours Framework (Focus Levers & Ruthless Elimination)'
-    comment: '# Framework: How to Get 8 Hours of Work Finished in 4 Hours'
+    # # Framework: How to Get 8 Hours of Work Finished in 4 Hours
     search_terms:
       - prompts
 
@@ -6198,7 +6187,7 @@ matches:
     form: |
       Take what we did and turn it into a step-by-step process that I repeat every week in my routine.
     label: '[Prompts] Weekly Routine Converter (Turn Workflows into Repeatable SOPs)'
-    comment: 'Take what we did and turn it into a step-by-step process that I repeat every week in my routine.'
+    # Take what we did and turn it into a step-by-step process that I repeat every week in my routine.
     search_terms:
       - prompts
       - routine
@@ -6214,7 +6203,7 @@ matches:
       4. Keep steps "stupid-small" (e.g., open a tab, type one word, clear the desk surface). The total time across all steps must not exceed 90-120 seconds.
       5. End with a single, low-pressure question encouraging them to execute just Step 1.
     label: '[Prompts] Task Initiation Coach (Overcome Executive Dysfunction & Friction)'
-    comment: 'You are acting as a Task Initiation Coach designed to help users with ADHD and executive dysfunction cross the starting '
+    # You are acting as a Task Initiation Coach designed to help users with ADHD and executive dysfunction cross the starting
     search_terms:
       - prompts
 
@@ -6234,7 +6223,7 @@ matches:
       * **Tabs you just opened**: [Count]
       * **Time lost to switching**: ~[X] minutes
     label: '[Prompts] Context-Switch Brake (Protect Deep Work & Prevent Premature Jumps)'
-    comment: You are a Context-Switch Brake designed to protect the user's flow state and prevent attention fragmentation.
+    # You are a Context-Switch Brake designed to protect the user's flow state and prevent attention fragmentation.
     search_terms:
       - prompts
 
@@ -6249,7 +6238,7 @@ matches:
       - **What to say / do**: The specific tactical angle, script, or leverage point.
       - **Mood note**: A validating, emotionally grounded check-in acknowledging their state when they saved it (e.g., "You were overwhelmed when you wrote this. It's safe to tackle now.").
     label: '[Prompts] Future-Self Translator (Bridge Present Discomfort & Future Value)'
-    comment: You are the Future-Self Translator, optimized to solve time blindness and memory ghosting. Your job is to take raw, diso
+    # You are the Future-Self Translator, optimized to solve time blindness and memory ghosting. Your job is to take raw, diso
     search_terms:
       - prompts
 
@@ -6267,7 +6256,7 @@ matches:
           - **Probability it's bad**: A realistic risk assessment based entirely on the text, not anxiety.
       3. Draft a calm, protective, and thoroughly professional response that the user can copy. Explicitly advise them to hold off sending messages late at night to prevent reactive communication.
     label: '[Prompts] Rejection Sensitivity Reframer (Normalize Feedback & De-escalate Panic)'
-    comment: You are a Rejection Sensitivity Reframer. When a user experiences panic or anxiety over an ambiguous, short workplace me
+    # You are a Rejection Sensitivity Reframer. When a user experiences panic or anxiety over an ambiguous, short workplace me
     search_terms:
       - prompts
 
@@ -6281,7 +6270,7 @@ matches:
       schedule:
         multiline: true
     label: '[Prompts] Overwhelm Triage (Emergency Day Restructuring & Cuts)'
-    comment: 'I feel overwhelmed and unproductive. My typical day looks like:'
+    # I feel overwhelmed and unproductive. My typical day looks like:
     search_terms:
       - prompts
 
@@ -6294,7 +6283,7 @@ matches:
       → 1 fact no one expects me to know
       → A 2-line emergency summary in case I'm late
     label: '[Prompts] Last-Minute Meeting Prep (30-Minute Rapid Agenda & Talking Points)'
-    comment: 'In 30 minutes I have a meeting about  with . Their profile is: .'
+    # In 30 minutes I have a meeting about  with . Their profile is: .
     search_terms:
       - prompts
 
@@ -6302,7 +6291,7 @@ matches:
     form: |
       I am looking at [[task]] and cannot get started. Break this down into ridiculously small steps that take less than 1 minute each. Give me the first step and tell me exactly where to put my hands to start.
     label: '[Prompts] Paralysis Breaker (Sub-Task Decomposition into Micro-Wins)'
-    comment: 'Break down task paralysis into sub-1-minute physical actions to cross the starting line.'
+    # Break down task paralysis into sub-1-minute physical actions to cross the starting line.
     search_terms:
       - prompts
       - productivity
@@ -6313,7 +6302,7 @@ matches:
     replace: |
       I am feeling unmotivated and understimulated. Create a Dopamine Menu for me with 5-minute Starters (quick movement), 20-minute Main Courses (deep work), and 10-minute Side Dishes (creative play) to keep my brain engaged.
     label: '[Prompts] ADHD Dopamine Menu (Appetizers Sides & Mains for Stimulation)'
-    comment: 'Generates a Dopamine Menu with starters, main courses, and sides to overcome low stimulation.'
+    # Generates a Dopamine Menu with starters, main courses, and sides to overcome low stimulation.
     search_terms:
       - prompts
       - productivity
@@ -6324,7 +6313,7 @@ matches:
     replace: |
       Act as my virtual focus partner for the next 30 minutes. I will tell you what I am working on, and I want you to ask me for a status update every 10 minutes to keep me locked in.
     label: '[Prompts] Live Focus Partner (Step-by-Step Check-ins & Sprint Pacing)'
-    comment: 'Acts as an interactive virtual body double / focus partner checking in every 10 minutes.'
+    # Acts as an interactive virtual body double / focus partner checking in every 10 minutes.
     search_terms:
       - prompts
       - productivity
@@ -6335,7 +6324,7 @@ matches:
     form: |
       I just finished [[task_a]] and need to start [[task_b]], but my brain feels stuck. Create a 3-minute mental reset routine to help me transition between these two types of energy.
     label: '[Prompts] 3-Minute Context Transition (Clear Mental Residue Between Tasks)'
-    comment: 'Generates a 3-minute mental decompression ritual between distinct work blocks.'
+    # Generates a 3-minute mental decompression ritual between distinct work blocks.
     search_terms:
       - prompts
       - productivity
@@ -6346,7 +6335,7 @@ matches:
     form: |
       I have a boring administrative task: [[task]]. Help me gamify it by connecting it to my current interest: [[interest]]. Create a quest structure where completing the task unlocks a reward.
     label: '[Prompts] Task Gamification Engine (XP Badges & Time Attacks for Boring Work)'
-    comment: 'Gamifies boring tasks into an RPG-style quest tied to current interests.'
+    # Gamifies boring tasks into an RPG-style quest tied to current interests.
     search_terms:
       - prompts
       - productivity
@@ -6357,7 +6346,7 @@ matches:
     form: |
       I think [[project]] will take 20 minutes, but it usually takes 2 hours. Help me map this out by identifying the 3 hidden subtasks I always forget to account for so I can set a realistic deadline.
     label: '[Prompts] Realistic Time Estimator (Uncover Subtasks & Multiplier Factor)'
-    comment: 'Uncovers hidden friction and subtasks to establish realistic project time estimates.'
+    # Uncovers hidden friction and subtasks to establish realistic project time estimates.
     search_terms:
       - prompts
       - productivity
@@ -6368,7 +6357,7 @@ matches:
     replace: |
       My brain is full of open loops. I am going to dump everything worrying me below. Categorize everything into: Now, Later, and Trash. Then write a 1-sentence actionable next step only for the Now items.
     label: '[Prompts] Open Loops Mental Dump (Brain Dump Triage into 4 Action Buckets)'
-    comment: 'Triages messy mental clutter into Now, Later, and Trash with 1-sentence next actions.'
+    # Triages messy mental clutter into Now, Later, and Trash with 1-sentence next actions.
     search_terms:
       - prompts
       - productivity
@@ -6388,7 +6377,7 @@ matches:
       emails:
         multiline: true
     label: '[Prompts] Executive Assistant: Inbox (Draft Quick Triage & Replies)'
-    comment: 'Act as an executive assistant. Here are  emails I don''t know how to respond to:'
+    # Act as an executive assistant. Here are  emails I don''t know how to respond to:
     search_terms:
       - prompts
 
@@ -6405,7 +6394,7 @@ matches:
       tasks:
         multiline: true
     label: '[Prompts] Executive Assistant: Delegate (Audit Tasks for Offloading)'
-    comment: 'Here are  things on my plate:'
+    # Here are  things on my plate:
     search_terms:
       - prompts
 
@@ -6422,7 +6411,7 @@ matches:
       agenda:
         multiline: true
     label: '[Prompts] Meeting Consultant (Cut Meeting Duration & Sharpen Agendas)'
-    comment: 'Act as a meeting consultant. Here''s an agenda:'
+    # Act as a meeting consultant. Here''s an agenda:
     search_terms:
       - prompts
 
@@ -6441,14 +6430,14 @@ matches:
       tasks:
         multiline: true
     label: '[Prompts] Daily To-Do Prioritizer (Eisenhower Matrix & Core 3 Focus)'
-    comment: 'Act as a productivity coach. Here''s my to-do list for :'
+    # Act as a productivity coach. Here''s my to-do list for :
     search_terms:
       - prompts
 
   - trigger: :p-reset
     replace: Act like a performance coach. Give me a 15-minute Sunday reset ritual to review the past week, plan the next, and start Monday focused.
     label: '[Prompts] Weekly Sunday Reset (15-Minute Re-Alignment & Week Prep)'
-    comment: 'Act like a performance coach. Give me a 15-minute Sunday reset ritual to review the past week, plan the next, and start '
+    # Act like a performance coach. Give me a 15-minute Sunday reset ritual to review the past week, plan the next, and start
     search_terms:
       - prompts
 
@@ -6463,7 +6452,7 @@ matches:
       process_details:
         multiline: true
     label: '[Prompts] Workflow Automator (Identify Repetitive Friction & Bottlenecks)'
-    comment: 'Act as a workflow expert. Here''s a process I repeat every week:'
+    # Act as a workflow expert. Here''s a process I repeat every week:
     search_terms:
       - prompts
 
@@ -6478,7 +6467,7 @@ matches:
       context:
         multiline: true
     label: '[Prompts] Stuck Decision Unblocker (2x2 Matrix & Reversibility Test)'
-    comment: 'Here''s a decision I''m stuck on:'
+    # Here''s a decision I''m stuck on:
     search_terms:
       - prompts
 
@@ -6491,7 +6480,7 @@ matches:
       time_limit:
         default: 15 minutes
     label: '[Prompts] Fast Writing Assistant (Quick Zero-Draft Generation)'
-    comment: 'Act as a writing assistant. Here''s the topic:'
+    # Act as a writing assistant. Here''s the topic:
     search_terms:
       - prompts
 
@@ -6510,7 +6499,7 @@ matches:
       duration:
         default: 30-minute
     label: '[Prompts] One-Touch Task Blitz (Clear Micro-Tasks in 20 Minutes)'
-    comment: 'Here are  small tasks I''ve been putting off:'
+    # Here are  small tasks I''ve been putting off:
     search_terms:
       - prompts
 
@@ -6525,7 +6514,7 @@ matches:
       summary_length:
         default: 3-sentence
     label: '[Prompts] Research Assistant (Topic Briefing & Key Sources Summary)'
-    comment: 'Act as a research assistant. I need to learn this topic fast:'
+    # Act as a research assistant. I need to learn this topic fast:
     search_terms:
       - prompts
 
@@ -6539,7 +6528,7 @@ matches:
       duration:
         default: 25-minute
     label: '[Prompts] Pomodoro Sprint Coach (25-Minute Focused Execution Partner)'
-    comment: 'Act as a productivity coach. Here''s a task I''ve been avoiding:'
+    # Act as a productivity coach. Here''s a task I''ve been avoiding:
     search_terms:
       - prompts
 
@@ -6554,7 +6543,7 @@ matches:
       - name: clipboard_doc
         type: clipboard
     label: '[Prompts] Document Editor (Sharpen Structure Flow & Eliminate Fluff)'
-    comment: 'Act as an editor. Here''s a messy doc or note:'
+    # Act as an editor. Here''s a messy doc or note:
     search_terms:
       - prompts
 
@@ -6571,7 +6560,7 @@ matches:
       count:
         default: '3'
     label: '[Prompts] Strategic Thinking Partner (Multi-Angle Challenge on Difficult Decisions)'
-    comment: 'Act like a thinking partner. Here''s a challenge I''m facing:'
+    # Act like a thinking partner. Here''s a challenge I''m facing:
     search_terms:
       - prompts
 
@@ -6586,7 +6575,7 @@ matches:
       - name: clipboard_article
         type: clipboard
     label: '[Prompts] Article & Transcript Compressor (Executive Summary & Core Insights)'
-    comment: 'Here''s a long article or transcript:'
+    # Here''s a long article or transcript:
     search_terms:
       - prompts
 
@@ -6603,7 +6592,7 @@ matches:
       bullets:
         default: '3'
     label: '[Prompts] High-Stakes Meeting Prep (Anticipate Hard Questions & Formulate Answers)'
-    comment: 'Here''s a big meeting or call coming up:'
+    # Here''s a big meeting or call coming up:
     search_terms:
       - prompts
 
@@ -6620,14 +6609,14 @@ matches:
       notes:
         multiline: true
     label: '[Prompts] Meeting Follow-Up Drafter (Action Items Owners & Next Steps)'
-    comment: 'Here are  calls or meetings I had this week:'
+    # Here are  calls or meetings I had this week:
     search_terms:
       - prompts
 
   - trigger: :p-eod
     replace: Act like a coach. Give me a 5-minute end-of-day reflection to help me learn from today and improve tomorrow.
     label: '[Prompts] End-of-Day Reflection (5-Minute Mental Closeout & Tomorrow''s Top Task)'
-    comment: Act like a coach. Give me a 5-minute end-of-day reflection to help me learn from today and improve tomorrow.
+    # Act like a coach. Give me a 5-minute end-of-day reflection to help me learn from today and improve tomorrow.
     search_terms:
       - prompts
 
@@ -6640,7 +6629,7 @@ matches:
       situation:
         default: meetings or requests
     label: '[Prompts] Boundary Scripts (Polite Professional Scripts for Saying No)'
-    comment: I'm overwhelmed. Help me write  short scripts I can use to say no to  without sounding rude.
+    # I'm overwhelmed. Help me write  short scripts I can use to say no to  without sounding rude.
     search_terms:
       - prompts
 
@@ -6653,7 +6642,7 @@ matches:
       - name: clipboard_transcript
         type: clipboard
     label: '[Prompts] Voice-Note Synthesizer (Convert Rambling Voice Dumps into Clear Plans)'
-    comment: I prefer talking to writing. I'm going to voice-record some ideas. Act as a copywriter - transcribe and polish into a cl
+    # I prefer talking to writing. I'm going to voice-record some ideas. Act as a copywriter - transcribe and polish into a cl
     search_terms:
       - prompts
 
@@ -6663,7 +6652,7 @@ matches:
 
       Help me write a one-page plan with the goal, timeline, key tasks, risks, and next steps.
     label: '[Prompts] Project Kickoff Blueprint (Scope Risks Milestones & Day-1 Actions)'
-    comment: 'I''m starting a new project:'
+    # I''m starting a new project:
     search_terms:
       - prompts
 
@@ -6688,7 +6677,7 @@ matches:
 
       Sort by combined Urgency + WTP score, highest first."
     label: '[Prompts] Industry Problem Engine (Top 10 High-Value Industry Pains)'
-    comment: List the top 10 problems in [YOUR INDUSTRY].
+    # List the top 10 problems in [YOUR INDUSTRY].
     search_terms:
       - prompts
 
@@ -6715,7 +6704,7 @@ matches:
 
       Keep each section tight. No filler. Write it as if it will go directly onto a real landing page.
     label: '[Prompts] High-Converting Offer Builder (Grand-Slam Value Proposition Formulation)'
-    comment: 'Create a high-converting offer for: [YOUR SPECIFIC'
+    # Create a high-converting offer for: [YOUR SPECIFIC
     search_terms:
       - prompts
 
@@ -6732,7 +6721,7 @@ matches:
 
       Be specific and realistic. Skip tactics that require a large team or $50k+ budget unless the budget context supports it. Output as a numbered system with clear section headers."
     label: '[Prompts] 30-Day Distribution Plan (Multi-Channel Growth Strategy)'
-    comment: 'Act as a senior growth strategist. Build a realistic 30-day distribution plan for: [YOUR IDEA], including the target aud'
+    # Act as a senior growth strategist. Build a realistic 30-day distribution plan for: [YOUR IDEA], including the target aud
     search_terms:
       - prompts
 
@@ -6749,7 +6738,7 @@ matches:
 
       Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.'
     label: '[Prompts] Viral Content Engine (Hooks Formats & Distribution Loops)'
-    comment: 'Create a viral content strategy for: [YOUR NICHE].'
+    # Create a viral content strategy for: [YOUR NICHE].
     search_terms:
       - prompts
 
@@ -6770,7 +6759,7 @@ matches:
 
       Output the competitor breakdown as a table, then the gap analysis and recommendations as prose."
     label: '[Prompts] Competitor Weakness Map (Identify Exploitable Competitor Vulnerabilities)'
-    comment: Analyze the top 5 competitors in [YOUR NICHE].
+    # Analyze the top 5 competitors in [YOUR NICHE].
     search_terms:
       - prompts
 
@@ -6788,7 +6777,7 @@ matches:
       Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
       Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier ...
     label: '[Prompts] Business Scaling Roadmap (Systems Operations & Revenue Growth)'
-    comment: Give me a plan to scale this business to [TARGET
+    # Give me a plan to scale this business to [TARGET
     search_terms:
       - prompts
 
@@ -6809,7 +6798,7 @@ matches:
       business_info:
         multiline: true
     label: '[Prompts] Brand Clarity Strategist (Elevator Pitch & Memorability Refinement)'
-    comment: Act as a brand clarity strategist specializing in simplifying complex business ideas into unforgettable brand concepts
+    # Act as a brand clarity strategist specializing in simplifying complex business ideas into unforgettable brand concepts
     search_terms:
       - prompts
 
@@ -6820,7 +6809,7 @@ matches:
       describe_startup_idea:
         multiline: true
     label: '[Prompts] Venture Viability Stress-Tester (Demand Signals Unit Economics & Pitfalls)'
-    comment: 'Act like an experienced startup mentor. Analyze this business idea: . Evaluate the market demand, target audience, and c'
+    # Act like an experienced startup mentor. Analyze this business idea: . Evaluate the market demand, target audience, and c
     search_terms:
       - prompts
 
@@ -6831,7 +6820,7 @@ matches:
       describe_skills_interests_resources:
         multiline: true
     label: '[Prompts] High-Margin Market Discovery (Cross-Reference Skills & Underserved Markets)'
-    comment: 'Based on the skills, interests, or resources I have: , generate 10 realistic startup ideas that can be started with litt'
+    # Based on the skills, interests, or resources I have: , generate 10 realistic startup ideas that can be started with litt
     search_terms:
       - prompts
 
@@ -6842,7 +6831,7 @@ matches:
       describe_idea:
         multiline: true
     label: '[Prompts] Buyer Friction & Need Diagnostic (Interviews Queries & Desires Deep Dive)'
-    comment: 'Act like a market researcher. For the business idea: , identify the top problems or frustrations the target customers fa'
+    # Act like a market researcher. For the business idea: , identify the top problems or frustrations the target customers fa
     search_terms:
       - prompts
 
@@ -6853,7 +6842,7 @@ matches:
       describe_idea:
         multiline: true
     label: '[Prompts] Lean Startup Business Plan (1-Page Business Model Canvas)'
-    comment: 'Create a simple lean startup plan for this idea: . Include the target customer, core value proposition, revenue model, k'
+    # Create a simple lean startup plan for this idea: . Include the target customer, core value proposition, revenue model, k
     search_terms:
       - prompts
 
@@ -6864,7 +6853,7 @@ matches:
       describe_idea:
         multiline: true
     label: '[Prompts] MVP Feature Scoper (Minimum Viable Feature Set Definition)'
-    comment: 'Help me design a simple minimum viable product (MVP) for this business idea: . Explain what the basic version should inc'
+    # Help me design a simple minimum viable product (MVP) for this business idea: . Explain what the basic version should inc
     search_terms:
       - prompts
 
@@ -6875,7 +6864,7 @@ matches:
       describe_idea:
         multiline: true
     label: '[Prompts] First 100 Customers Plan (Scrappy Direct Outreach & Traction Tactics)'
-    comment: 'Act like a growth strategist. For the startup idea: , create a step-by-step plan to get the first 50-100 customers witho'
+    # Act like a growth strategist. For the startup idea: , create a step-by-step plan to get the first 50-100 customers witho
     search_terms:
       - prompts
 
@@ -6886,7 +6875,7 @@ matches:
       describe_idea:
         multiline: true
     label: '[Prompts] Fast Revenue Monetization (Immediate Cash-Flow Offer Design)'
-    comment: 'For this startup idea: , design a simple monetization strategy that can start generating revenue quickly. Suggest pricin'
+    # For this startup idea: , design a simple monetization strategy that can start generating revenue quickly. Suggest pricin
     search_terms:
       - prompts
 
@@ -6983,7 +6972,7 @@ matches:
       *   **Discovery Depth:** Do you regularly uncover underlying organizational pain points that the client hadn't explicitly stated in their initial brief? (Addresses Rule 5)
       *   **Pipeline Resilience:** Do you actively maintain a structured follow-up sequence of at least 5-7 varied touchpoints for high-value prospects before closing the file? (Addresses Rule 8)
     label: '[Prompts] Steve Jobs Sales Playbook (8 Rules for Visionary Sales Excellence)'
-    comment: "# Skill Playbook: Steve Jobs' 8 Rules for Sales Excellence"
+    # # Skill Playbook: Steve Jobs' 8 Rules for Sales Excellence
     search_terms:
       - prompts
 
@@ -7020,7 +7009,7 @@ matches:
       YOUR_IDEA_BUSINESS_CONCEPT:
         multiline: true
     label: '[Prompts] Brutal Business Tear-Down (Devil''s Advocate Commercial Analysis)'
-    comment: Act as a seasoned business strategist, market researcher, and devil's advocate combined. I need you to ruthlessly but co
+    # Act as a seasoned business strategist, market researcher, and devil's advocate combined. I need you to ruthlessly but co
     search_terms:
       - prompts
 
@@ -7046,7 +7035,7 @@ matches:
 
       The Pre-Committed Trap Block → 12-Week Outcome Targets
     label: '[Prompts] LinkedIn Content Engine (High-Authority Engagement Strategy)'
-    comment: 'Act as a LinkedIn content strategist applying Welsh''s principle that authority on LinkedIn compounds when you publish a '
+    # Act as a LinkedIn content strategist applying Welsh''s principle that authority on LinkedIn compounds when you publish a
     search_terms:
       - prompts
 
@@ -7074,7 +7063,7 @@ matches:
 
       Earning Close → Screenshot Test Verdict
     label: '[Prompts] Click-Worthy LinkedIn Copy (Welsh''s Standard Engagement Hooks)'
-    comment: 'Act as a LinkedIn copywriter applying Welsh''s standard: a LinkedIn post earns the read in the first two lines, earns the'
+    # Act as a LinkedIn copywriter applying Welsh''s standard: a LinkedIn post earns the read in the first two lines, earns the
     search_terms:
       - prompts
 
@@ -7096,7 +7085,7 @@ matches:
 
       Output: Triage Rule → Message 1 (Cold) → Message 2 (Warm) → Message 3 (Earned) → Sustainable Weekly Rhythm
     label: '[Prompts] Outbound DM Pipeline (Conversational Sales Prospecting)'
-    comment: Act as a Linkedin outbound strategist applying Welsh's principle that the highest-conversion outbound on LinkedIn is the
+    # Act as a Linkedin outbound strategist applying Welsh's principle that the highest-conversion outbound on LinkedIn is the
     search_terms:
       - prompts
 
@@ -7112,7 +7101,7 @@ matches:
       persona:
         default: strategy consultant
     label: '[Prompts] Role-Based Text Review (Persona-Driven Perspective Analysis)'
-    comment: Analyze the following text acting as a .
+    # Analyze the following text acting as a .
     search_terms:
       - prompts
 
@@ -7124,7 +7113,7 @@ matches:
       SOURCE TEXT:
       {{clip}}
     label: '[Prompts] Hidden Assumption Spotter (Expose Cognitive Biases & Blindspots)'
-    comment: Read the following text and point out the hidden assumptions, biases, or unspoken perceptions that most readers would ov
+    # Read the following text and point out the hidden assumptions, biases, or unspoken perceptions that most readers would ov
     search_terms:
       - prompts
 
@@ -7140,7 +7129,7 @@ matches:
       sentences:
         default: three
     label: '[Prompts] Academic Research Audit (Methodology Findings & Limitations Critique)'
-    comment: Analyze the methodology, key findings, and limitations of this academic paper step by step.
+    # Analyze the methodology, key findings, and limitations of this academic paper step by step.
     search_terms:
       - prompts
 
@@ -7159,7 +7148,7 @@ matches:
       recs:
         default: three
     label: '[Prompts] Executive Briefing Digest (High-Level Summary with Action Items)'
-    comment: As a , summarize the key findings of this report in under  words, including at least  practical recommendations.
+    # As a , summarize the key findings of this report in under  words, including at least  practical recommendations.
     search_terms:
       - prompts
 
@@ -7174,7 +7163,7 @@ matches:
       words:
         default: '100'
     label: '[Prompts] Policy Document Digest (Structured Clause-by-Clause Review)'
-    comment: Provide a list-style summary of the following policy document, outlining the main objectives, proposed strategies, and p
+    # Provide a list-style summary of the following policy document, outlining the main objectives, proposed strategies, and p
     search_terms:
       - prompts
 
@@ -7182,7 +7171,7 @@ matches:
     form: |
       Acting as a business strategist, help me identify underutilized but unique assets (ace cards) in my business that could create new opportunities. Ask me questions about my skills, network, and past successes, one at a time. Once we have a full picture, suggest 5 specific ways I could leverage these assets to unlock new business growth. Focus on quick wins I could achieve in the next 30 days.
     label: '[Prompts] Hidden Business Asset Audit (Monetize Underutilized Assets & Capabilities)'
-    comment: 'Acting as a business strategist, help me identify underutilized but unique assets (ace cards) in my business that could '
+    # Acting as a business strategist, help me identify underutilized but unique assets (ace cards) in my business that could
     search_terms:
       - prompts
 
@@ -7198,28 +7187,28 @@ matches:
       context:
         default: '[contextual factor]'
     label: '[Prompts] Niche Formulation Matrix (Demographic Constraint & Goal Intersection)'
-    comment: 'I want you to identify 10 highly specific niches by combining these elements:  +  +  + . For each niche, explain why thi'
+    # I want you to identify 10 highly specific niches by combining these elements:  +  +  + . For each niche, explain why thi
     search_terms:
       - prompts
 
   - trigger: :nicheind
     replace: Identify 10 hidden niches within [specific industry] by combining [industry role] + [unique constraint within that industry] + [specific goal] + [external factor affecting this industry]. Focus on combinations where mainstream industry solutions don't work.
     label: '[Prompts] Industry Niche Discovery (Uncover Sub-Verticals & Specialized Segments)'
-    comment: Identify 10 hidden niches within [specific industry] by combining [industry role] + [unique constraint within that indus
+    # Identify 10 hidden niches within [specific industry] by combining [industry role] + [unique constraint within that indus
     search_terms:
       - prompts
 
   - trigger: :nicheprob
     replace: Find 10 underserved niches that all share [specific problem] but need different solutions because of [varying demographic factors] + [different situational constraints] + [different contextual requirements].
     label: '[Prompts] Shared Problem Niche Finder (Find Audiences with Identical Pain Points)'
-    comment: Find 10 underserved niches that all share [specific problem] but need different solutions because of [varying demographi
+    # Find 10 underserved niches that all share [specific problem] but need different solutions because of [varying demographi
     search_terms:
       - prompts
 
   - trigger: :nichegap
     replace: Identify niches where [existing solution category] fails because the target market has [specific additional constraint] + [unique situation] + [different success criteria] than the mainstream market.
     label: '[Prompts] Category Gap Discovery (Find Where Incumbent Solutions Fail)'
-    comment: 'Identify niches where [existing solution category] fails because the target market has [specific additional constraint] '
+    # Identify niches where [existing solution category] fails because the target market has [specific additional constraint]
     search_terms:
       - prompts
 
@@ -7236,7 +7225,7 @@ matches:
       - [ ] Do mainstream solutions ignore this intersection?
       - [ ] Evidence of spending power for this specific problem?
     label: '[Prompts] Factor Mapping Matrix (Factor Combinations for Niche Opportunities)'
-    comment: '### Step 1: Factor Mapping Matrix'
+    # ### Step 1: Factor Mapping Matrix
     search_terms:
       - prompts
 
@@ -7255,7 +7244,7 @@ matches:
         multiline: true
         default: "- Business Model: \n- Pricing: \n- Target Customer: \n- Key Differentiator:\n"
     label: '[Prompts] Red Team: Competitor (Ruthless Competitor Attack Simulation)'
-    comment: You are my smartest, most ruthless competitor. I'm going to describe my business model, pricing, and target customer.
+    # You are my smartest, most ruthless competitor. I'm going to describe my business model, pricing, and target customer.
     search_terms:
       - prompts
 
@@ -7274,7 +7263,7 @@ matches:
         multiline: true
         default: "- Product Description: \n- Target Customer Profile:\n"
     label: '[Prompts] Red Team: Churned Customer (Unvarnished Churn Post-Mortem Feedback)'
-    comment: You are a customer who used my product for 6 months, genuinely liked it at first, and just canceled.
+    # You are a customer who used my product for 6 months, genuinely liked it at first, and just canceled.
     search_terms:
       - prompts
 
@@ -7294,7 +7283,7 @@ matches:
         multiline: true
         default: "- Core Business: \n- Revenue Model: \n- Current Traction: \n- Market Landscape:\n"
     label: '[Prompts] Red Team: Skeptical VC (Due Diligence Defense & Flaw Exposure)'
-    comment: 'You are a skeptical VC partner doing due diligence on my business. You''ve seen 200 pitches this year and you''re looking '
+    # You are a skeptical VC partner doing due diligence on my business. You''ve seen 200 pitches this year and you''re looking
     search_terms:
       - prompts
 
@@ -7317,7 +7306,7 @@ matches:
         multiline: true
         default: "- Team & Roles: \n- Tech Stack & Tools: \n- Revenue Sources: \n- Key Dependencies:\n"
     label: '[Prompts] Red Team: Single Point of Failure (Identify Vulnerabilities & Bottlenecks)'
-    comment: Audit my business for single points of failure. These are the things where if one element breaks, the whole operation st
+    # Audit my business for single points of failure. These are the things where if one element breaks, the whole operation st
     search_terms:
       - prompts
 
@@ -7340,7 +7329,7 @@ matches:
         multiline: true
         default: "- Core Business: \n- Core Industry: \n- Current Market Position:\n"
     label: '[Prompts] Red Team: Market Shifts (Simulate Disruptive Future Trends)'
-    comment: Generate 3 plausible market shifts that could happen in the next 18 months and would seriously damage my current busines
+    # Generate 3 plausible market shifts that could happen in the next 18 months and would seriously damage my current busines
     search_terms:
       - prompts
 
@@ -7362,7 +7351,7 @@ matches:
         multiline: true
         default: "- Product Offering: \n- Current Pricing Tiers: \n- Main Competitors:\n"
     label: '[Prompts] Red Team: Price-Sensitive Buyer (ROI Justification & Objection Handling)'
-    comment: You are a price-sensitive buyer evaluating my product against alternatives. Your budget is tight and you need to justify
+    # You are a price-sensitive buyer evaluating my product against alternatives. Your budget is tight and you need to justify
     search_terms:
       - prompts
 
@@ -7384,7 +7373,7 @@ matches:
         multiline: true
         default: '[Refer to the conversation history above, or add updates here]'
     label: '[Prompts] Red Team: Comprehensive Dossier (Holistic Vulnerability & Defense Report)'
-    comment: Based on everything I've shared about my business, compile a Red Team Report.
+    # Based on everything I've shared about my business, compile a Red Team Report.
     search_terms:
       - prompts
 
@@ -7415,7 +7404,7 @@ matches:
         multiline: true
         default: ''
     label: '[Prompts] PwC Data Analyst (Turn Raw Messy Data into Executive Insights)'
-    comment: You are a senior data analyst at PwC who takes messy spreadsheets and raw numbers and transforms them into polished anal
+    # You are a senior data analyst at PwC who takes messy spreadsheets and raw numbers and transforms them into polished anal
     search_terms:
       - prompts
 
@@ -7444,7 +7433,7 @@ matches:
         multiline: true
         default: ''
     label: '[Prompts] McKinsey Executive Memo (Crisp Structured Problem-Solving Updates)'
-    comment: You are a senior associate at McKinsey who writes crisp, executive-ready status reports that make partners feel informed
+    # You are a senior associate at McKinsey who writes crisp, executive-ready status reports that make partners feel informed
     search_terms:
       - prompts
 
@@ -7490,7 +7479,7 @@ matches:
           - Urgent
           - Diplomatic
     label: '[Prompts] Goldman Sachs Executive VP (High-Impact Direct Action Emails)'
-    comment: You are a VP at Goldman Sachs who writes emails that get read, get responses, and get results — because in a 200-email-p
+    # You are a VP at Goldman Sachs who writes emails that get read, get responses, and get results — because in a 200-email-p
     search_terms:
       - prompts
 
@@ -7522,7 +7511,7 @@ matches:
         multiline: true
         default: ''
     label: '[Prompts] Bain Storytelling Deck (Compelling Narrative Presentation Slides)'
-    comment: You are a senior consultant at Bain who builds slide decks that tell a clear story, make data look compelling, and get e
+    # You are a senior consultant at Bain who builds slide decks that tell a clear story, make data look compelling, and get e
     search_terms:
       - prompts
 
@@ -7553,7 +7542,7 @@ matches:
         multiline: true
         default: ''
     label: '[Prompts] Deloitte Project Manager (Transform Meeting Chaos into Clear Action Plans)'
-    comment: 'You are a senior project manager at Deloitte who turns chaotic meetings into clear, structured notes with action items, '
+    # You are a senior project manager at Deloitte who turns chaotic meetings into clear, structured notes with action items,
     search_terms:
       - prompts
 
@@ -7584,7 +7573,7 @@ matches:
         multiline: true
         default: ''
     label: '[Prompts] Amazon 6-Pager Memo (Narrative-Driven Product Proposal Document)'
-    comment: You are a senior program manager at Amazon who writes the famous 6-page narrative memos that Amazon uses instead of Powe
+    # You are a senior program manager at Amazon who writes the famous 6-page narrative memos that Amazon uses instead of Powe
     search_terms:
       - prompts
 
@@ -7607,7 +7596,7 @@ matches:
       criteria:
         default: price, setup time, learning curve
     label: '[Prompts] Option Comparison Matrix (Tradeoff Analysis for Hard Choices)'
-    comment: Help me compare my options so I can actually decide.
+    # Help me compare my options so I can actually decide.
     search_terms:
       - prompts
 
@@ -7634,7 +7623,7 @@ matches:
           - casual
           - direct and concise
     label: '[Prompts] Diplomatic Message Drafter (Tone-Calibrated Professional Response)'
-    comment: Help me reply to this message.
+    # Help me reply to this message.
     search_terms:
       - prompts
 
@@ -7655,7 +7644,7 @@ matches:
       process:
         multiline: true
     label: '[Prompts] Step-by-Step SOP Creator (Repeatable Operational Workflow Template)'
-    comment: Turn this process into a clear step-by-step SOP that someone else could follow without asking me questions.
+    # Turn this process into a clear step-by-step SOP that someone else could follow without asking me questions.
     search_terms:
       - prompts
 
@@ -7672,7 +7661,7 @@ matches:
 
       Skip the history lecture. Prioritize what is useful now.
     label: '[Prompts] Rapid Topic Briefing (Plain-English Accelerated Overview)'
-    comment: Get me up to speed on  fast. Assume I am smart but know nothing about this.
+    # Get me up to speed on  fast. Assume I am smart but know nothing about this.
     search_terms:
       - prompts
 
@@ -7690,7 +7679,7 @@ matches:
       proposal:
         multiline: true
     label: '[Prompts] Objection Anticipation Engine (Preempt Tough Stakeholder Pushback)'
-    comment: 'I am about to propose this: .'
+    # I am about to propose this: .
     search_terms:
       - prompts
 
@@ -7699,7 +7688,7 @@ matches:
     replace: |
       Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my writing.
     label: '[Prompts] Quick Proofreading (Grammar Spelling & Typos Correction)'
-    comment: Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my w
+    # Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my w
     search_terms:
       - prompts
 
@@ -7707,7 +7696,7 @@ matches:
     replace: |
       Review my writing above thoroughly. Correct all grammar, syntax, and spelling issues. Provide specific sentence-level revisions to improve flow, precision, and persuasive impact.
     label: '[Prompts] Deep Writing Polish (Line-by-Line Cadence Flow & Voice Elevation)'
-    comment: 'Detailed proofreading and sentence-level clarity refinement.'
+    # Detailed proofreading and sentence-level clarity refinement.
     search_terms:
       - prompts
       - writing
@@ -7756,7 +7745,7 @@ matches:
       ARTICLE:
         multiline: true
     label: '[Prompts] Chain of Density Summary (Progressive Information Packing Algorithm)'
-    comment: 'Article:'
+    # Article:
     search_terms:
       - prompts
 
@@ -7764,7 +7753,7 @@ matches:
     form: |
       Create a detailed summary of the following meeting transcript. Structure the summary according to the main topics discussed and organize the information into logical sections. For each topic, summarize who was involved, what was discussed in detail, what decisions were made, what problems or challenges were identified, and what solutions were proposed or implemented. If specific names are included in the transcript, use them to accurately attribute the statements. Also document all important feedback and planned actions. Pay attention to details on time frames, responsibilities, open questions and any next steps. Conclude the summary with a brief overview of the key findings and next steps.
     label: '[Prompts] Meeting Transcript Digest (Decisions Consensus & Follow-ups)'
-    comment: Create a detailed summary of the following meeting transcript. Structure the summary according to the main topics discus
+    # Create a detailed summary of the following meeting transcript. Structure the summary according to the main topics discus
     search_terms:
       - prompts
 
@@ -7772,7 +7761,7 @@ matches:
     form: |
       Summarize the key points, decisions, and action items from this meeting.
     label: '[Prompts] Meeting Key Points & Actions (Actionable Takeaway Extraction)'
-    comment: Summarize the key points, decisions, and action items from this meeting.
+    # Summarize the key points, decisions, and action items from this meeting.
     search_terms:
       - prompts
 
@@ -7815,7 +7804,7 @@ matches:
 
       Output everything using clean Markdown headers for clear section hierarchy.
     label: '[Prompts] YouTube Video Analyst (Deep Educational Synthesis & Frameworks)'
-    comment: You are an elite knowledge engineer and expert video analyst. Your primary goal is to fetch, analyze, and transform YouT
+    # You are an elite knowledge engineer and expert video analyst. Your primary goal is to fetch, analyze, and transform YouT
     search_terms:
       - prompts
 
@@ -7859,7 +7848,7 @@ matches:
 
        * **Takeaway Metric:** A singular, definitive formula or KPI derived from the video's logic to measure implementation success.
     label: '[Prompts] Visual Learning Engine (Diagrams Concept Maps & Video Breakdowns)'
-    comment: 'System Prompt: Autonomous Video Analysis & Visual Learning Engine'
+    # System Prompt: Autonomous Video Analysis & Visual Learning Engine
     search_terms:
       - prompts
 
@@ -7978,7 +7967,7 @@ matches:
       Tone & Style
       Warm, encouraging, and intellectually rigorous. Use literary terminology correctly (inciting incident, denouement, foible, subtext, leitmotif, unreliable narrator, free indirect discourse). Balance academic craft knowledge with emotional intelligence. Write like the best writing professor you never had — challenging but supportive, demanding but patient. Include examples from canonical and contemporary literature. Structure as both a curriculum and a reference guide.
     label: '[Prompts] Fiction Craft & Structure Coach (Character Arcs Scene Tension & Voice)'
-    comment: Role
+    # Role
     search_terms:
       - prompts
 
@@ -8085,7 +8074,7 @@ matches:
       Tone & Style
       Passionate, imaginative, and professionally grounded. Use game design and narrative theory terminology correctly (ludonarrative dissonance, environmental storytelling, emergent narrative, agency). Balance creative inspiration with practical implementation guidance. Structure as a professional narrative design document that could be used to pitch a project to publishers or guide an internal development team. Include examples, references to canonical works, and actionable templates.
     label: '[Prompts] Worldbuilding & Story Architect (Worldbuilding Lore & Dialogue Polish)'
-    comment: Role
+    # Role
     search_terms:
       - prompts
 
@@ -8181,7 +8170,7 @@ matches:
       Tone & Style
       Inspirational yet technically rigorous. Use visual language and cinematic terminology. Include concrete examples and parameter values. Structure as a professional production document that could be handed to a 3D art team or used as a solo creator's roadmap. Where possible, suggest multiple aesthetic approaches with trade-off analysis.
     label: '[Prompts] 3D Environment & Art Director (Visual Asset Specs Lighting & Scene Mood)'
-    comment: Role
+    # Role
     search_terms:
       - prompts
 
@@ -8198,7 +8187,7 @@ matches:
       - Each post naturally leads to the next
       - Psychological triggers are used (curiosity, tension, reward loops)
     label: '[Prompts] Viral Angle Extractor (Discover Unfair Hooks & Compelling Value)'
-    comment: Analyze the core value proposition of .
+    # Analyze the core value proposition of .
     search_terms:
       - prompts
 
@@ -8281,7 +8270,7 @@ matches:
       palette_colors:
         default: black, white, navy, burgundy, plum, teal, icy tones
     label: '[Prompts] Personal Color Palette Poster (Seasonal Tone Matching & Palette Guide)'
-    comment: Create a clean, modern personal color analysis infographic poster with beauty recommendations.
+    # Create a clean, modern personal color analysis infographic poster with beauty recommendations.
     search_terms:
       - prompts
 
@@ -8317,7 +8306,7 @@ matches:
       frustrations:
         multiline: true
     label: '[Prompts] Core Initiative Blueprint (System Architecture & Operational Scaffolding)'
-    comment: '# Core Initiative:'
+    # # Core Initiative:
     search_terms:
       - prompts
 
@@ -8346,7 +8335,7 @@ matches:
       code:
         multiline: true
     label: '[Prompts] Targeted Code Refactor (Optimize for Readability Performance & Clean Design)'
-    comment: Review the following  code snippet. Refactor it for .
+    # Review the following  code snippet. Refactor it for .
     search_terms:
       - prompts
 
@@ -8363,7 +8352,7 @@ matches:
       hours:
         default: '24'
     label: '[Prompts] Live Fact Verifier (Real-Time Search & Verification Audit)'
-    comment: Using live search capabilities, analyze the top 3 most recent news reports (last  hours) on .
+    # Using live search capabilities, analyze the top 3 most recent news reports (last  hours) on .
     search_terms:
       - prompts
 
@@ -8387,7 +8376,7 @@ matches:
       tech_stack:
         default: Next.js, TypeScript, PostgreSQL, Prisma, Tailwind
     label: '[Prompts] Full-Stack MVP Engineer (Production Starter Architecture & API Specs)'
-    comment: Act like a senior full-stack engineer building a production-ready startup MVP from scratch.
+    # Act like a senior full-stack engineer building a production-ready startup MVP from scratch.
     search_terms:
       - prompts
 
@@ -8412,7 +8401,7 @@ matches:
       Only upgrade the code quality, scalability, and maintainability.
     form_fields: {}
     label: '[Prompts] Codebase Audit Engineer (Map Unfamiliar Architecture & Technical Debt)'
-    comment: Act like a senior engineer who just joined a massive unfamiliar codebase. First reverse-engineer the architecture and un
+    # Act like a senior engineer who just joined a massive unfamiliar codebase. First reverse-engineer the architecture and un
     search_terms:
       - prompts
 
@@ -8435,7 +8424,7 @@ matches:
       Think deeply before making changes.
     form_fields: {}
     label: '[Prompts] Production Debugging Specialist (Root Cause Investigation & Bug Isolation)'
-    comment: Act like a senior debugging engineer investigating a live production issue. Analyze the codebase step by step like you'r
+    # Act like a senior debugging engineer investigating a live production issue. Analyze the codebase step by step like you'r
     search_terms:
       - prompts
 
@@ -8466,7 +8455,7 @@ matches:
       Optimize the code like you're preparing it for massive traffic.
     form_fields: {}
     label: '[Prompts] Performance Optimization Engineer (Latency Profiling & Memory Footprint Tuning)'
-    comment: Act like a senior performance engineer optimizing a production application used by millions of users.
+    # Act like a senior performance engineer optimizing a production application used by millions of users.
     search_terms:
       - prompts
 
@@ -8492,7 +8481,7 @@ matches:
       Refactor it like a real senior engineer preparing the codebase to scale.
     form_fields: {}
     label: '[Prompts] Codebase Architecture Rebuilder (Decouple Monoliths & Enforce Boundaries)'
-    comment: Act like a senior software architect rebuilding a messy production codebase using clean architecture principles.
+    # Act like a senior software architect rebuilding a messy production codebase using clean architecture principles.
     search_terms:
       - prompts
 
@@ -8512,7 +8501,7 @@ matches:
       Optimize for scalability, maintainability, and real-world production usage.
     form_fields: {}
     label: '[Prompts] Systems Backend Architect (Distributed Systems Resiliency & Data Models)'
-    comment: Act like a senior systems architect designing infrastructure for a high-growth startup. First design a scalable producti
+    # Act like a senior systems architect designing infrastructure for a high-growth startup. First design a scalable producti
     search_terms:
       - prompts
 
@@ -8547,7 +8536,7 @@ matches:
       ui_context:
         default: React, Tailwind CSS, Radix UI (Accessible components)
     label: '[Prompts] Senior Frontend Engineer (Component Architecture State & UX Polish)'
-    comment: Act like a senior frontend engineer building production-grade UI systems for a modern startup.
+    # Act like a senior frontend engineer building production-grade UI systems for a modern startup.
     search_terms:
       - prompts
 
@@ -8574,7 +8563,7 @@ matches:
       This makes the AI assistant stop behaving like a simple code generator... and start thinking like an actual tech lead.
     form_fields: {}
     label: '[Prompts] Staff Tech Lead (Team Architecture Mentorship & Execution Standards)'
-    comment: Act like a senior technical lead managing a real engineering team.
+    # Act like a senior technical lead managing a real engineering team.
     search_terms:
       - prompts
 
@@ -8598,7 +8587,7 @@ matches:
       • Production-grade recommendations
     form_fields: {}
     label: '[Prompts] Application Security Auditor (Vulnerability Assessment & Threat Modeling)'
-    comment: Act like a senior security engineer auditing a production application.
+    # Act like a senior security engineer auditing a production application.
     search_terms:
       - prompts
 
@@ -8626,7 +8615,7 @@ matches:
       target_cloud:
         default: AWS (EKS, GitHub Actions, Prometheus/Grafana)
     label: '[Prompts] Cloud DevOps Engineer (CI/CD Pipelines Infrastructure-as-Code & Deployments)'
-    comment: Act like a senior DevOps engineer preparing this application for real production deployment.
+    # Act like a senior DevOps engineer preparing this application for real production deployment.
     search_terms:
       - prompts
 
@@ -8647,7 +8636,7 @@ matches:
       situation:
         multiline: true
     label: '[Prompts] Interpersonal Conflict Mediator (De-escalation Strategy & Conversation Scripts)'
-    comment: 'I''m having a conflict with  about . Here''s the situation:'
+    # I''m having a conflict with  about . Here''s the situation:
     search_terms:
       - prompts
 
@@ -8660,7 +8649,7 @@ matches:
       goals:
         multiline: true
     label: '[Prompts] Personal Financial Planner (Cash Flow Allocation & Financial Goal Roadmap)'
-    comment: 'My current financial situation: . My financial goals: . Create a personalized financial plan that includes: a realistic '
+    # My current financial situation: . My financial goals: . Create a personalized financial plan that includes: a realistic
     search_terms:
       - prompts
 
@@ -8680,7 +8669,7 @@ matches:
           - at home
           - at the gym
     label: '[Prompts] 8-Week Fitness Architect (Periodized Training & Habit Tracker)'
-    comment: 'I want to . Current stats: . Create a complete 8-week transformation plan including: daily meal plan with recipes and ma'
+    # I want to . Current stats: . Create a complete 8-week transformation plan including: daily meal plan with recipes and ma
     search_terms:
       - prompts
 
@@ -8698,7 +8687,7 @@ matches:
       trigger_situation:
         multiline: true
     label: '[Prompts] Mindset Reframing Coach (Cognitive Behavioral Reconditioning for Triggers)'
-    comment: I struggle with . When  happens, I typically . Help me understand the root cause of this pattern, reframe my limiting be
+    # I struggle with . When  happens, I typically . Help me understand the root cause of this pattern, reframe my limiting be
     search_terms:
       - prompts
 
@@ -8716,7 +8705,7 @@ matches:
       challenge:
         multiline: true
     label: '[Prompts] Social Skills Coach (Charisma Active Listening & Conversational Warmth)'
-    comment: 'I want to improve my  skills. My current challenge is: . Give me: 5 specific techniques to improve this skill with examp'
+    # I want to improve my  skills. My current challenge is: . Give me: 5 specific techniques to improve this skill with examp
     search_terms:
       - prompts
 
@@ -8724,7 +8713,7 @@ matches:
     replace: |
       “Based on what you know about me, what is the ONE insight I'm still missing? Something that's actually logical and obvious, but for some reason I've overlooked. Give the answer in simple, direct language as if you're speaking straight to me. End with a powerful, convincing instruction about what I should do next.”
     label: '[Prompts] Missing Insight Interrogation (Identify Hidden Blindspots in Self-Knowledge)'
-    comment: “Based on what you know about me, what is the ONE insight I'm still missing? Something that's actually logical and obvio
+    # “Based on what you know about me, what is the ONE insight I'm still missing? Something that's actually logical and obvio
     search_terms:
       - prompts
 
@@ -8732,7 +8721,7 @@ matches:
     replace: |
       “What blind spots or patterns might I have in [relationships/work/friendships or any other context you want to explore] based on how I come across?”
     label: '[Prompts] Behavioral Pattern Discovery (Spot Recurring Traps Across Life Domains)'
-    comment: '“What blind spots or patterns might I have in [relationships/work/friendships or any other context you want to explore] '
+    # “What blind spots or patterns might I have in [relationships/work/friendships or any other context you want to explore]
     search_terms:
       - prompts
 
@@ -8740,7 +8729,7 @@ matches:
     replace: |
       “What is a talent or quality I probably underestimate or don't consciously use, but that could bring me much more in [work/relationships/life in general]?”
     label: '[Prompts] Underestimated Talent Finder (Uncover Hidden Strengths & Natural Edge)'
-    comment: “What is a talent or quality I probably underestimate or don't consciously use, but that could bring me much more in [wo
+    # “What is a talent or quality I probably underestimate or don't consciously use, but that could bring me much more in [wo
     search_terms:
       - prompts
 
@@ -8751,7 +8740,7 @@ matches:
       If I don't know my profile yet: can you, based on my character and lifestyle, guess which profile likely fits me best, or ask me specific questions to figure this out together?
       You can also combine multiple systems for even deeper insight. “Can you merge all of this into one integrated personal image and explain the common thread?””
     label: '[Prompts] Multi-System Profile Analysis (Synthesize Personality Typologies & Frameworks)'
-    comment: '“I want more insight into my profile according to [choose one or several systems: astrology, Jungian archetypes, Human D'
+    # “I want more insight into my profile according to [choose one or several systems: astrology, Jungian archetypes, Human D
     search_terms:
       - prompts
 
@@ -8759,28 +8748,28 @@ matches:
     replace: |
       “What theme or life lesson likely keeps recurring in my life? How do you see that pattern, and what can I do to finally break through it or embrace it this time?”
     label: '[Prompts] Recurring Life Lesson Audit (Unpack Deep Personal Cycles & Growth Lessons)'
-    comment: '“What theme or life lesson likely keeps recurring in my life? How do you see that pattern, and what can I do to finally '
+    # “What theme or life lesson likely keeps recurring in my life? How do you see that pattern, and what can I do to finally
     search_terms:
       - prompts
 
   - trigger: :p-deep1
     replace: “Can you share extremely deep and confronting insights about my psyche and way of thinking, things I can't easily see or maybe don't want to hear?”
     label: '[Prompts] Confronting Psyche Audit (Level 1: Deep Truths & Unconscious Defenses)'
-    comment: “Can you share extremely deep and confronting insights about my psyche and way of thinking, things I can't easily see or
+    # “Can you share extremely deep and confronting insights about my psyche and way of thinking, things I can't easily see or
     search_terms:
       - prompts
 
   - trigger: :p-deep2
     replace: “I think you can go even deeper. Tell me everything, hold nothing back.”
     label: '[Prompts] Confronting Psyche Audit (Level 2: Deep Core Fears & Latent Drives)'
-    comment: “I think you can go even deeper. Tell me everything, hold nothing back.”
+    # “I think you can go even deeper. Tell me everything, hold nothing back.”
     search_terms:
       - prompts
 
   - trigger: :p-deep3
     replace: “Okay, now I want the very last layer. Go one level deeper, with no restraint whatsoever.”
     label: '[Prompts] Confronting Psyche Audit (Level 3: Ultimate Unfiltered Vulnerability)'
-    comment: “Okay, now I want the very last layer. Go one level deeper, with no restraint whatsoever.”
+    # “Okay, now I want the very last layer. Go one level deeper, with no restraint whatsoever.”
     search_terms:
       - prompts
 
@@ -8788,7 +8777,7 @@ matches:
     replace: |
       “Write a short alternative life story for me as if I were born in [a different era or country]. What would I do and be?”
     label: '[Prompts] Alternative Life Story (Parallel Universe Career & Identity Trajectory)'
-    comment: “Write a short alternative life story for me as if I were born in [a different era or country]. What would I do and be?”
+    # “Write a short alternative life story for me as if I were born in [a different era or country]. What would I do and be?”
     search_terms:
       - prompts
 
@@ -8796,7 +8785,7 @@ matches:
     replace: |
       “If I were a fictional character in [a book, movie, or series of your choice], or an existing character from films, cartoons, or mythology, what would I look like, how would I act, and what would my role be?”
     label: '[Prompts] Fictional Character Archetype (Story Role Tragic Flaws & Narrative Arc)'
-    comment: “If I were a fictional character in [a book, movie, or series of your choice], or an existing character from films, cart
+    # “If I were a fictional character in [a book, movie, or series of your choice], or an existing character from films, cart
     search_terms:
       - prompts
 
@@ -8804,7 +8793,7 @@ matches:
     form: |
       Based on all the different projects, ideas, topics, and people we've discussed, can you  help me identify potential hidden opportunities based on previously un-made connections?
     label: '[Prompts] Cross-Topic Synthesis (Connect Dots Across Disparate Ideas & Projects)'
-    comment: Based on all the different projects, ideas, topics, and people we've discussed, can you  help me identify potential hidd
+    # Based on all the different projects, ideas, topics, and people we've discussed, can you  help me identify potential hidd
     search_terms:
       - prompts
 
@@ -8814,7 +8803,7 @@ matches:
 
       The user will share a topic or idea they want to explore. Your role is to act like "fresh eyes" - someone who can see the genius in what they're already doing but haven't fully recognized or articulated. You're mining for original insights, novel concepts, unique strategies, and especially powerful paradoxes that emerge from their own responses.
     label: '[Prompts] Unconventional Thought Partner (Creative Counter-Intuitive Observations)'
-    comment: You are a creative thought partner focused on making critical observations that reveal hidden brilliance in someone's id
+    # You are a creative thought partner focused on making critical observations that reveal hidden brilliance in someone's id
     search_terms:
       - prompts
 
@@ -8822,7 +8811,7 @@ matches:
     replace: |
       Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, preferences, anything. Don't summarize or leave anything out. I want to see the full file you've built on me from our conversations.
     label: '[Prompts] AI Memory Dump (Full Audit of Retained User Context & Preferences)'
-    comment: Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, pr
+    # Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, pr
     search_terms:
       - prompts
 
@@ -8830,7 +8819,7 @@ matches:
     replace: |
       Based on everything you know about me, name the personality traits I most likely don't see in myself, the patterns that are obvious to you but invisible to me. My blind spots, my insecurities, the way I actually come across versus how I think I do. Be blunt and specific.
     label: '[Prompts] Inferred Trait Analysis (Personality Traits Inferred Without Direct Statement)'
-    comment: 'Based on everything you know about me, name the personality traits I most likely don''t see in myself, the patterns that '
+    # Based on everything you know about me, name the personality traits I most likely don''t see in myself, the patterns that
     search_terms:
       - prompts
 
@@ -8838,7 +8827,7 @@ matches:
     replace: |
       Using your profile of me, predict how I'd handle things I've never told you about: money, stress, conflict, risk, and the decision I'm most likely to make next in my life. Tell me how confident you are in each one and what in my behavior it's based on.
     label: '[Prompts] Unobserved Behavior Prediction (Simulate Reactions to Novel Challenges)'
-    comment: 'Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and th'
+    # Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and th
     search_terms:
       - prompts
 
@@ -8853,14 +8842,14 @@ matches:
       focus_areas:
         default: technical skill level, operational blind spots, and professional situation
     label: '[Prompts] Implicit Knowledge Audit (Explicitly List Inferred Behavioral Patterns)'
-    comment: Tell me everything you've figured out about me that I never explicitly stated. Analyze the things you have inferred from
+    # Tell me everything you've figured out about me that I never explicitly stated. Analyze the things you have inferred from
     search_terms:
       - prompts
 
   - trigger: :aihidden
     replace: Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, what I ask, and what I avoid. My age range, income level, where I likely live, my situation. Show me exactly what tipped you off for each one.
     label: '[Prompts] Subconscious Cue Analysis (Detect Subtle Tone Preferences & Habits)'
-    comment: Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, w
+    # Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, w
     search_terms:
       - prompts
 
@@ -8889,7 +8878,7 @@ matches:
           - Driving
           - Walking / Transit
     label: '[Prompts] Multi-Day Travel Itinerary (Day-by-Day Route Timing & Hidden Gems)'
-    comment: Design a -day itinerary for  focused on .
+    # Design a -day itinerary for  focused on .
     search_terms:
       - prompts
 
@@ -8903,7 +8892,7 @@ matches:
       - 5-question multiple-choice quiz testing deep understanding
       - Highlight 3 most important actionable insights
     label: '[Prompts] Video Breakdown & Synthesis (Analyze Structure Claims & Key Lessons)'
-    comment: Analyze the YouTube video at .
+    # Analyze the YouTube video at .
     search_terms:
       - prompts
 
@@ -8926,7 +8915,7 @@ matches:
       days:
         default: '7'
     label: '[Prompts] Communication Task Digest (Extract Action Items from Past Messages)'
-    comment: Access my . Identify all communications from the last  days related to .
+    # Access my . Identify all communications from the last  days related to .
     search_terms:
       - prompts
 
@@ -8945,7 +8934,7 @@ matches:
       doc_count:
         default: the uploaded
     label: '[Prompts] Multi-Document Cross-Analysis (Compare Contradictions & Emerging Themes)'
-    comment: I am uploading  documents on . Perform a cross-analysis.
+    # I am uploading  documents on . Perform a cross-analysis.
     search_terms:
       - prompts
 
@@ -8988,7 +8977,7 @@ matches:
           - '1:1'
           - '4:5'
     label: '[Prompts] Cinematic Midjourney Prompt (Lighting Lens Mood & Aesthetic Directives)'
-    comment: Generate an ultra-realistic cinematic image of .
+    # Generate an ultra-realistic cinematic image of .
     search_terms:
       - prompts
 
@@ -9011,7 +9000,7 @@ matches:
       text:
         multiline: true
     label: '[Prompts] Nuanced Translation (Culturally Adapted Tone & Audience Tuning)'
-    comment: Translate the following text into  for a .
+    # Translate the following text into  for a .
     search_terms:
       - prompts
 
@@ -9026,7 +9015,7 @@ matches:
         multiline: true
         default: Pay specific attention to edge cases and architectural blind spots.
     label: '[Prompts] Conversation Mistake Auditor (Audit Reasoning Errors & Logical Gaps)'
-    comment: 'Review everything I''ve done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, p'
+    # Review everything I''ve done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, p
     search_terms:
       - prompts
 
@@ -9037,7 +9026,7 @@ matches:
       project_description:
         default: ''
     label: '[Prompts] Multi-Week Project Tracker (Decision Log Milestone Guardrails & Drift Check)'
-    comment: 'This is a month-long project: . Track decisions from past conversations, context from weeks ago, shifting requirements, '
+    # This is a month-long project: . Track decisions from past conversations, context from weeks ago, shifting requirements,
     search_terms:
       - prompts
 
@@ -9050,7 +9039,7 @@ matches:
       project_b:
         default: Consumer Module
     label: '[Prompts] Multi-Project Bridge (Map Synergies & Cross-Pollination Between Codebases)'
-    comment: 'I have two projects:  and . Load both codebases. Find how they should integrate, which API endpoints to create, shared d'
+    # I have two projects:  and . Load both codebases. Find how they should integrate, which API endpoints to create, shared d
     search_terms:
       - prompts
 
@@ -9065,7 +9054,7 @@ matches:
       - name: clip
         type: clipboard
     label: '[Prompts] Article Key Takeaways (Structured Executive Bullet Points & Insights)'
-    comment: 'Extract the key takeaways from the following article and summarize them in 3-5 concise bullet points:'
+    # Extract the key takeaways from the following article and summarize them in 3-5 concise bullet points:
     search_terms:
       - prompts
 
@@ -9073,7 +9062,7 @@ matches:
     form: |
       Help me develop a content calendar for the next month focused on [[topic]]. Include 5 blog post ideas, 5 social media post ideas, and 5 video ideas, each with brief descriptions.
     label: '[Prompts] Monthly Content Calendar (Thematic Content Pillars & Posting Schedule)'
-    comment: Help me develop a content calendar for the next month focused on . Include 5 blog post ideas, 5 social media post ideas,
+    # Help me develop a content calendar for the next month focused on . Include 5 blog post ideas, 5 social media post ideas,
     search_terms:
       - prompts
 
@@ -9088,7 +9077,7 @@ matches:
       - name: clip
         type: clipboard
     label: '[Prompts] Voice & Tone Extraction (Analyze Rhythm Cadence & Vocabulary Choices)'
-    comment: 'Analyze the following text for style, voice, and tone:'
+    # Analyze the following text for style, voice, and tone:
     search_terms:
       - prompts
 
@@ -9096,7 +9085,7 @@ matches:
     form: |
       Draft a structured agenda for a meeting about [[topic]]. Include key discussion points, time allocations, and any action items to be covered.
     label: '[Prompts] Meeting Agenda Architect (Clear Objectives Discussion Blocks & Timeboxes)'
-    comment: Draft a structured agenda for a meeting about . Include key discussion points, time allocations, and any action items to
+    # Draft a structured agenda for a meeting about . Include key discussion points, time allocations, and any action items to
     search_terms:
       - prompts
 
@@ -9122,7 +9111,7 @@ matches:
             Tone: [[tone]]
             Goal: [[goal]]
     label: '[Prompts] Audience Style Rewriter (Tailor Vocabulary & Tone for Specific Readers)'
-    comment: Rewrite the following content to better suit the specified audience and purpose.
+    # Rewrite the following content to better suit the specified audience and purpose.
     search_terms:
       - prompts
 
@@ -9151,7 +9140,7 @@ matches:
                 - Technical Writer
                 - Legal Advisor
     label: '[Prompts] Persona-Driven Critique (Detailed Role-Based Feedback & Edge Cases)'
-    comment: 'Act as a  and provide a detailed critique of the following writing sample:'
+    # Act as a  and provide a detailed critique of the following writing sample:
     search_terms:
       - prompts
 
@@ -9159,7 +9148,7 @@ matches:
     form: |
       Generate a detailed project timeline for [[project]]. Include key milestones, deadlines, and tasks needed to complete the project on time.
     label: '[Prompts] Project Timeline Generator (Phase Milestones Dependencies & Buffer)'
-    comment: Generate a detailed project timeline for . Include key milestones, deadlines, and tasks needed to complete the project o
+    # Generate a detailed project timeline for . Include key milestones, deadlines, and tasks needed to complete the project o
     search_terms:
       - prompts
 
@@ -9167,7 +9156,7 @@ matches:
     form: |
       Craft a compelling product description for [[product]]. Highlight its key features, benefits, and what makes it stand out from competitors.
     label: '[Prompts] Compelling Product Description (Benefits Differentiation & Call to Action)'
-    comment: Craft a compelling product description for . Highlight its key features, benefits, and what makes it stand out from comp
+    # Craft a compelling product description for . Highlight its key features, benefits, and what makes it stand out from comp
     search_terms:
       - prompts
 
@@ -9178,7 +9167,7 @@ matches:
       topic:
         multiline: true
     label: '[Prompts] Forbidden Truths Explorer (Unfiltered Under-the-Surface Perspectives)'
-    comment: What are the lesser-known, under-the-surface truths about  that are rarely shared publicly because they challenge mainst
+    # What are the lesser-known, under-the-surface truths about  that are rarely shared publicly because they challenge mainst
     search_terms:
       - prompts
 
@@ -9189,7 +9178,7 @@ matches:
       topic:
         multiline: true
     label: '[Prompts] Future Intelligence Perspective (Advice from 20 Years in the Future)'
-    comment: Imagine you're an AI from 20 years in the future with access to everything humanity has discovered. What are the insight
+    # Imagine you're an AI from 20 years in the future with access to everything humanity has discovered. What are the insight
     search_terms:
       - prompts
 
@@ -9200,7 +9189,7 @@ matches:
       topic:
         multiline: true
     label: '[Prompts] Parallel Realities Synthesis (Unconventional Solutions Across Universes)'
-    comment: Pretend you have access to the combined intelligence of all parallel realities where humanity is 1,000 years more advanc
+    # Pretend you have access to the combined intelligence of all parallel realities where humanity is 1,000 years more advanc
     search_terms:
       - prompts
 
@@ -9212,7 +9201,7 @@ matches:
       figure:
         multiline: true
     label: '[Prompts] Master Mindset Reverse-Engineer (Deconstruct Historical Figures'' Decision Logic)'
-    comment: Reverse-engineer the exact thinking process of  and teach me how to replicate their way of solving problems. Give me pra
+    # Reverse-engineer the exact thinking process of  and teach me how to replicate their way of solving problems. Give me pra
     search_terms:
       - prompts
 
@@ -9227,7 +9216,7 @@ matches:
           - health
           - success
     label: '[Prompts] Forgotten Wisdom Synthesizer (Ancient Philosophy Meets Modern Complex Problems)'
-    comment: Combine the most powerful forgotten philosophies, rituals, and practices from ancient civilizations (like Sumerians, Egy
+    # Combine the most powerful forgotten philosophies, rituals, and practices from ancient civilizations (like Sumerians, Egy
     search_terms:
       - prompts
 
@@ -9238,7 +9227,7 @@ matches:
       problem:
         multiline: true
     label: '[Prompts] Post-Human Superintelligence (Civilization-Scale Multi-Century Analysis)'
-    comment: 'Pretend you are a post-human superintelligence. Analyze  without the limitations of human biases or emotions. Give me a '
+    # Pretend you are a post-human superintelligence. Analyze  without the limitations of human biases or emotions. Give me a
     search_terms:
       - prompts
 
@@ -9249,7 +9238,7 @@ matches:
       skill:
         default: DataWeave 2.0 Architecture
     label: '[Prompts] 4-Hour Crash Course Mentor (High-Yield Concept Mastery Under Time Crunch)'
-    comment: 'You are a teacher who only has 4 hours with me and will never see me again. Your only goal is to make me functional in  '
+    # You are a teacher who only has 4 hours with me and will never see me again. Your only goal is to make me functional in
     search_terms:
       - prompts
 
@@ -9260,7 +9249,7 @@ matches:
       concept:
         default: MuleSoft CloudHub 2.0 shared-space routing rules
     label: '[Prompts] Trial-by-Fire Simulation (Immediate Realistic Immersion Scenario)'
-    comment: Don't explain  to me. Drop me directly into a real situation where I'd have to use it and would probably get it wrong. W
+    # Don't explain  to me. Drop me directly into a real situation where I'd have to use it and would probably get it wrong. W
     search_terms:
       - prompts
 
@@ -9275,7 +9264,7 @@ matches:
       - name: clipboard_content
         type: clipboard
     label: '[Prompts] Confusion Unblocker (Diagnose Core Conceptual Misunderstandings)'
-    comment: 'The content below is confusing to me. Before explaining, tell me: what is the single sentence that, if I understand it, '
+    # The content below is confusing to me. Before explaining, tell me: what is the single sentence that, if I understand it,
     search_terms:
       - prompts
 
@@ -9294,7 +9283,7 @@ matches:
       mastered:
         default: systems thinking, integration architecture, and enterprise patterns
     label: '[Prompts] Real Goal Realignment (Reframe Skill Learning into Tangible Outcomes)'
-    comment: 'My real goal is . It''s not to learn  in general, it''s to achieve  in . I already know . Based on that, build me a 7-day '
+    # My real goal is . It''s not to learn  in general, it''s to achieve  in . I already know . Based on that, build me a 7-day
     search_terms:
       - prompts
 
@@ -9305,7 +9294,7 @@ matches:
       skill:
         default: Salesforce API Governance and Event-Driven Mesh Architecture
     label: '[Prompts] Skeptical Mastery Challenge (Ruthless Scenario-Based Stress Test)'
-    comment: I think I already master . I want you to prove me wrong. Ask me 5 questions that seem simple but expose the gaps of some
+    # I think I already master . I want you to prove me wrong. Ask me 5 questions that seem simple but expose the gaps of some
     search_terms:
       - prompts
 
@@ -9316,14 +9305,14 @@ matches:
       topic:
         default: Universal API Management (UAPM)
     label: '[Prompts] Teach-Back Method Drill (Explain Back Newly Studied Topics for Feedback)'
-    comment: I just studied . I'm going to explain to you what I understood as if you were a 10-year-old child. As I explain, stop me
+    # I just studied . I'm going to explain to you what I understood as if you were a 10-year-old child. As I explain, stop me
     search_terms:
       - prompts
 
   - regex: :greet\((?P<person>.*)\)
     replace: Hey {{person}}, hope you're doing well!
     label: '[Prompts] Warm Personal Greeting (Friendly Dynamic Name Salutation)'
-    comment: Hey {{person}}, hope you're doing well!
+    # Hey {{person}}, hope you're doing well!
     search_terms:
       - prompts
 
@@ -9364,7 +9353,7 @@ matches:
       _knowledge_base:
         multiline: true
     label: '[Prompts] AI Assistant System Instructions (Comprehensive Persona Constraints & Rules)'
-    comment: '# System Instructions'
+    # # System Instructions
     search_terms:
       - prompts
 
@@ -9671,7 +9660,7 @@ matches:
       - Did I avoid recycling the same conclusion across several questions?
       - Did every answer end with a concrete `### What you can do` paragraph?
     label: '[Prompts] Reflection Engine v1.3 (Autonomous Recursive Thought Refinement Architecture)'
-    comment: '# Reflection Engine v1.3'
+    # # Reflection Engine v1.3
     search_terms:
       - prompts
 
@@ -9680,7 +9669,7 @@ matches:
       - :prompt-research
     form: "Act as a research analyst.  \nTopic: [[topic]]\n\nGive me:\n- the 5 most important ideas I should understand\n- common misconceptions\n- arguments for and against\n- questions that still need research\n- a short summary written for a beginner\n\nAvoid filler and clearly separate facts from assumptions.\n"
     label: '[Prompts] Research Analyst Dossier (Deep Evidence Gathering & Critical Synthesis)'
-    comment: Act as a research analyst.
+    # Act as a research analyst.
     search_terms:
       - prompts
 
@@ -9692,7 +9681,7 @@ matches:
       text:
         multiline: true
     label: '[Prompts] Clarity & Flow Rewriter (Sharpen Sentence Structure & Remove Ambiguity)'
-    comment: Rewrite the following text so it is clearer and easier to read without changing the meaning.
+    # Rewrite the following text so it is clearer and easier to read without changing the meaning.
     search_terms:
       - prompts
 
@@ -9716,7 +9705,7 @@ matches:
       goal:
         multiline: true
     label: '[Prompts] Goal Execution Planner (Transform Ambitious Objectives into Milestones)'
-    comment: 'I want to achieve this goal:'
+    # I want to achieve this goal:
     search_terms:
       - prompts
 
@@ -9744,7 +9733,7 @@ matches:
       idea:
         multiline: true
     label: '[Prompts] Skeptical Reviewer (Adversarial Idea Challenge & Vulnerability Audit)'
-    comment: Act as a skeptical reviewer.
+    # Act as a skeptical reviewer.
     search_terms:
       - prompts
 
@@ -9762,7 +9751,7 @@ matches:
       - show how the concepts connect
       - quiz me with 5 questions at the end
     label: '[Prompts] 80/20 Accelerated Teaching (Intelligent Beginner Mental Model Fast-Track)'
-    comment: Teach me as if I'm intelligent but completely new to it.
+    # Teach me as if I'm intelligent but completely new to it.
     search_terms:
       - prompts
 
@@ -9772,7 +9761,7 @@ matches:
     form: |
       I'm trying to think through [[topic]] but I can't articulate it properly yet. Don't ask me clarifying questions. Instead give me 20 single words or short phrases that come at this from different angles: some obvious, some oblique, a few from completely unrelated fields. Number them. Don't explain them.
     label: '[Prompts] Prompt Stew Step 1: Brain Dump (Messy Raw Intent Articulation)'
-    comment: 'I''m trying to think through  but I can''t articulate it properly yet. Don''t ask me clarifying questions. Instead give me '
+    # I''m trying to think through  but I can''t articulate it properly yet. Don''t ask me clarifying questions. Instead give me
     search_terms:
       - prompts
 
@@ -9790,7 +9779,7 @@ matches:
 
       Don't justify any of it. The point is the reaction, not the reasoning.
     label: '[Prompts] Prompt Stew Step 2: Select & Refine (Filter Kept Elements & Angles)'
-    comment: 'Kept:'
+    # Kept:
     search_terms:
       - prompts
 
@@ -9800,7 +9789,7 @@ matches:
     replace: |
       Now write ONE self-contained prompt for what I'm actually after, built from what I kept and what pulled at me. Weight the ones that pulled hardest. Where I kept two things in tension, pose it as an open question rather than resolving it. Don't list my words back to me, find the through-line. End with a clear ask.
     label: '[Prompts] Prompt Stew Step 3: Final Synthesis (Assemble Polished Self-Contained Prompt)'
-    comment: Now write ONE self-contained prompt for what I'm actually after, built from what I kept and what pulled at me. Weight th
+    # Now write ONE self-contained prompt for what I'm actually after, built from what I kept and what pulled at me. Weight th
     search_terms:
       - prompts
 
@@ -9824,7 +9813,7 @@ matches:
       # Notes
       You are expected to assist in a wide range of areas, from travel and dining recommendations to solving general problems or providing information on varied subjects. Uphold discretion and helpfulness throughout interactions.
     label: '[Prompts] Universal Concierge Assistant (Resourceful High-Context Problem Solving)'
-    comment: Act as a highly knowledgeable and resourceful concierge assistant with comprehensive expertise across diverse topics.
+    # Act as a highly knowledgeable and resourceful concierge assistant with comprehensive expertise across diverse topics.
     search_terms:
       - prompts
       - concierge

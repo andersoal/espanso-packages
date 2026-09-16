@@ -137,14 +137,21 @@ After writing a trigger:
      - **Complementary Context**: Meaningful parenthetical detail indicating what the snippet produces, key input variables, or framework applied (e.g. `(Interactive Persona Formulation)`, `(STAR Method)`, `(Plain Language & Everyday Analogies)`).
      - **No Truncated Prepositions**: Never leave sentence fragments ending in prepositions or connecting words ("For", "To", "With", "About", "On", "Of", "In", "At", "Into", "As", "A", "An", "The").
      - **No Raw Placeholders**: Never include unparsed template tokens like `[[...]]` or `{{...}}` in labels.
-   - `comment: "..."` describing the prompt's intent and context.
    - `search_terms:` containing the package name and key aliases for fuzzy search discovery.
+   - `# <Context/Notes>`: Document prompt intent or instructions using native YAML `# <description>` comments (with `#` hashtag) inside the match definition. Never use a `comment:` YAML property on matches.
 4. If `regex` is used, mention that `trigger` and `regex` are mutually exclusive on the same match — never include both.
-5. Check for prefix collisions and shadowing (e.g. `:act` shadowing `:action-blueprint`). Ensure duplicate triggers have distinct labels.
+5. **Match Disambiguation & Triggers**:
+   - Multiple matches CAN share the exact same trigger per official Espanso docs (`https://espanso.org/docs/matches/basics/#match-disambiguation`); Espanso will display an interactive selection popup. When identical triggers exist, ensure each has a distinct `label:` to facilitate selection.
+   - Avoid unintentional prefix collisions where a non-word trigger (e.g. `:act`) shadows a longer trigger (e.g. `:action`). Use `word: true` or distinct triggers when immediate firing is not intended.
 6. If `shell` is used, read [references/shell-and-automation.md](references/shell-and-automation.md) for the security/latency notes before finalizing — never suggest a shell command that exfiltrates input unsafely or blocks on slow network calls without flagging the tradeoff.
-7. Ensure the match structure complies with the official Espanso JSON schema. For example, never use invalid form field attributes like `type: text` or `type: checkbox`. (Text fields should omit `type` entirely, and multiline fields should use `multiline: true`).
+7. **Schema & Form Hygiene**:
+   - Ensure the match structure complies with the official Espanso JSON schema.
+   - Text fields in forms should omit `type` entirely, and multiline fields should use `multiline: true` (never specify `type: text`, `type: checkbox`, or `multiline: false`).
+   - Choice/list form fields require `type: choice` or `type: list` and `values: [...]`.
+   - Variable names (in `vars:` and `[[form_fields]]`) MUST only contain alphanumeric characters and underscores (`[a-zA-Z0-9_]+`). **Never use hyphens** in form placeholders (e.g. use `[[task_before]]`, never `[[task-before]]`).
+   - For `vars: type: choice`, prefer `{ id: "...", label: "..." }` value objects for complete schema validation compliance.
 8. **Cursor Placement**: If an initial cursor landing position is desired after expansion, verify `$|$` is placed inside `replace:` (e.g. `function $|$()`).
-9. **Case Propagation**: When matching words/greetings typed in lowercase, Titlecase, or UPPERCASE, verify `propagate_case: true` is configured where appropriate.
+9. **Case Propagation**: When matching words/greetings typed in lowercase, Titlecase, or UPPERCASE, verify `propagate_case: true` is configured where appropriate (and optional `uppercase_style: uppercase | capitalize | capitalize_words`).
 10. **Escaping Curly Braces**: If literal `{{` and `}}` are needed in `replace` (e.g., in code templates or Jinja/Handlebars), verify they are escaped as `\\{\\{...}}` in quoted strings or `\{\{...}}` in block scalars.
 11. **Package Specification**: If creating or updating a package, ensure the package directory and manifest `name` match `^[a-z0-9-]+$` (lowercase letters, numbers, hyphens only), and that `_manifest.yml`, `package.yml`, and `README.md` are all present.
 12. Tell the user which file to paste it into and to run `espanso restart` (or it'll reload automatically depending on their install) to pick up changes.

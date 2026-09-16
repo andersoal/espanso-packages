@@ -16,6 +16,8 @@ When a user reports "my trigger isn't working" or pastes broken YAML, check in t
 10. **Package naming violations.** Package directories and manifest `name` fields must strictly match `^[a-z0-9-]+$` (lowercase alphanumeric + hyphens only). Underscores (`_`) and uppercase letters are invalid in Espanso package names.
 11. **Invalid form field `type: text`.** Single-line and multi-line text fields in `form_fields` must omit `type` completely (use `multiline: true` for text areas). Specifying `type: text` violates the schema.
 12. **Cursor hint typos.** The cursor placement hint must be written exactly as `$|$`. Variations like `$|` or `$$` are typed out as literal text.
+14. **Hyphenated form variable names.** Variables in forms (e.g. `[[field-name]]`) can be parsed as subtraction expressions in templating engines. Always use snake_case (`[[field_name]]`).
+15. **Choice var schema compliance.** In `vars: type: choice`, the official JSON schema requires `params.values` to contain `{ id: "...", label: "..." }` objects. Plain string arrays are only valid under `form_fields:`.
 
 ## Pattern: prefer composability over one giant match file
 

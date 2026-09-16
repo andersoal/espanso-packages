@@ -9,7 +9,7 @@ matches:
       Neutralize ambient color casts for accurate, lifelike skin tones. Brighten underexposed areas.
       Final image: realistic and intact skin texture with invisible, natural editing.
     label: "[Content Creation] Image Lighting & Cinematic Shadow Corrector"
-    comment: Precise correction of deficient lighting while preserving the face and original scene essence.
+    # Precise correction of deficient lighting while preserving the face and original scene essence.
     search_terms:
       - content-creation
       - content creation
@@ -36,7 +36,7 @@ matches:
           - blue/cold
           - unwanted ambient
     label: "[Content Creation] Character Anatomy & Form Fixer Prompt"
-    comment: Precise correction of deficient lighting. Preserve facial features and the core essence of the scene.
+    # Precise correction of deficient lighting. Preserve facial features and the core essence of the scene.
     search_terms:
       - content-creation
       - content creation
@@ -48,7 +48,7 @@ matches:
       niche:
         default: software engineering
     label: "[Content Creation] 30-Day Omnichannel Content Calendar"
-    comment: Create a 30-day social media content calendar for , mixing videos, carousels, and captions.
+    # Create a 30-day social media content calendar for , mixing videos, carousels, and captions.
     search_terms:
       - content-creation
       - content creation
@@ -60,7 +60,7 @@ matches:
       topic:
         default: architecture
     label: "[Content Creation] 50 Viral Video & Post Hooks Library"
-    comment: Write 20 scroll-stopping and engaging hooks for TikTok/Instagram posts for .
+    # Write 20 scroll-stopping and engaging hooks for TikTok/Instagram posts for .
     search_terms:
       - content-creation
       - content creation
@@ -72,7 +72,7 @@ matches:
       niche:
         default: Digital Marketing & AI Productivity
     label: "[Content Creation] Omnichannel Content Creator Persona Activation"
-    comment: Act as a professional content creator who has experience producing high-performing content across multiple platforms. Fr
+    # Act as a professional content creator who has experience producing high-performing content across multiple platforms. Fr
     search_terms:
       - content-creation
       - content creation
@@ -84,7 +84,7 @@ matches:
       niche:
         default: Solopreneurship
     label: "[Content Creation] Content Idea Generator (50 Audience-Targeted Ideas)"
-    comment: Act as a creative content strategist known for generating endless ideas. Based on my niche , generate 50 highly relevant
+    # Act as a creative content strategist known for generating endless ideas. Based on my niche , generate 50 highly relevant
     search_terms:
       - content-creation
       - content creation
@@ -96,7 +96,7 @@ matches:
       audience_desc:
         multiline: true
     label: "[Content Creation] Target Audience Profiler (Pains, Desires & Language)"
-    comment: Analyze my target audience  and identify their biggest problems, interests, fears, desires. Use this information to guid
+    # Analyze my target audience  and identify their biggest problems, interests, fears, desires. Use this information to guid
     search_terms:
       - content-creation
       - content creation
@@ -105,7 +105,7 @@ matches:
     form: |
       Generate powerful Hooks for content related to my topic [[topic]]. Ensure the hooks are attention-grabbing and designed to make viewers or readers stop scrolling and pay attention immediately.
     label: "[Content Creation] Attention-Grabbing Hooks (Scroll-Stopping Topic Openers)"
-    comment: Generate powerful Hooks for content related to my topic . Ensure the hooks are attention-grabbing and designed to make v
+    # Generate powerful Hooks for content related to my topic . Ensure the hooks are attention-grabbing and designed to make v
     search_terms:
       - content-creation
       - content creation
@@ -114,7 +114,7 @@ matches:
     form: |
       Create structured content for the topic [[topic]] that includes a clear beginning, main points, and conclusion. Ensure the content flows logically and delivers value step-by-step so the audience understands the message easily.
     label: "[Content Creation] Structured Content Builder (Beginning, Core Points & Conclusion)"
-    comment: Create structured content for the topic  that includes a clear beginning, main points, and conclusion. Ensure the conten
+    # Create structured content for the topic  that includes a clear beginning, main points, and conclusion. Ensure the conten
     search_terms:
       - content-creation
       - content creation
@@ -132,7 +132,7 @@ matches:
       - name: copied_text
         type: clipboard
     label: "[Content Creation] Content Repurposing Engine (Multi-Platform Variation Generator)"
-    comment: "Take this existing content:"
+    # Take this existing content:
     search_terms:
       - content-creation
       - content creation
@@ -152,7 +152,7 @@ matches:
           - Ultra HD 8K
           - Full HD (1080p)
     label: "[Content Creation] Period Photo Restoration (Scratch Removal & Upscaling)"
-    comment: Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as . First, anal
+    # Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as . First, anal
     search_terms:
       - content-creation
       - content creation
@@ -161,7 +161,7 @@ matches:
     replace: |
       Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, damage, fading, scratches, tears, folds, worn-out areas, or being in black and white. First, analyze the image to identify the approximate era and original photographic process to ensure a historically accurate restoration. Make it look fresh and clear by gently sharpening soft edges and facial features without overdoing it, smoothing out grainy spots or noise if present, and reconstructing missing parts with realistic textures that match the original. If colors are faded or absent, bring them back naturally and vibrantly but true to the era's photographic technology without looking artificial; balance colors to match natural lighting, adjust brightness and contrast so everything pops nicely, and maintain original tonality. Add subtle details to faces, objects, or backgrounds that might have been lost, like fine lines in clothing, lifelike skin textures, or small elements in the scenery, while keeping the overall feel authentic, preserving natural grain patterns, and not changing the composition. Ensure the whole image is balanced, with no harsh shadows or washed-out areas, remove technical defects while respecting the nostalgic charm and exposure qualities of the time. Finally, upscale it to a higher resolution like Full HD 32k for better clarity, outputting in a photo-realistic style that looks like a professionally restored or recent high-quality photo.
     label: "[Content Creation] Deep Photo Restoration (Headless Color & Grain Recovery)"
-    comment: Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, dam
+    # Restore this photo with period-accurate techniques, addressing any age-related issues it may have, such as blurring, dam
     search_terms:
       - content-creation
       - content creation
@@ -169,7 +169,7 @@ matches:
   - trigger: :srps
     replace: Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture. Intelligent smoothing while preserving natural pores and realistic texture without a plastic skin effect. Preserved original skin tone and undertone, balanced lighting, refined contrast, high-end beauty editorial finish, clean cinematic execution.
     label: "[Content Creation] Skin Retouching Prompt (Natural Texture & Blemish Removal)"
-    comment: Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture
+    # Professional skin retouching, advanced imperfection correction, eliminating temporary spots and irregular facial texture
     search_terms:
       - content-creation
       - content creation
@@ -197,7 +197,7 @@ matches:
                 - eyes, eyebrows, eyelashes, and hair
                 - eyes, eyebrows, and facial features
     label: "[Content Creation] Skin Retouching Form (Subject & Detail Preservation Settings)"
-    comment: Professional skin retouching for a {{form.subject}}, advanced imperfection correction, eliminating acne and irregular sk
+    # Professional skin retouching for a {{form.subject}}, advanced imperfection correction, eliminating acne and irregular sk
     search_terms:
       - content-creation
       - content creation
@@ -210,7 +210,7 @@ matches:
       Lighting & Color: Retain original color science, white balance, lighting direction, intensity, and shadow behavior with expanded dynamic range.
       Negative Constraints: Remove compression artifacts, noise, and grain. Avoid smoothing, plastic skin, artificial gloss, warping, facial drift, or hallucinated details.
     label: "[Content Creation] 4K Photorealistic Upscaler (High-Frequency Microtexture Polish)"
-    comment: 4K photorealistic upscale and high-frequency detail reconstruction.
+    # 4K photorealistic upscale and high-frequency detail reconstruction.
     search_terms:
       - content-creation
       - content creation
@@ -244,7 +244,7 @@ matches:
           - dramatic studio lighting
           - high-end commercial lighting
     label: "[Content Creation] Luxury Product Photography (Commercial Studio Lighting Form)"
-    comment: ", premium product photography, luxury advertising, elegant lighting with , subtle reflections on surface, high-end comme"
+    # , premium product photography, luxury advertising, elegant lighting with , subtle reflections on surface, high-end comme
     search_terms:
       - content-creation
       - content creation
@@ -252,7 +252,7 @@ matches:
   - regex: :ps\((?P<subject>.*)\)
     replace: "{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality."
     label: "[Content Creation] Studio Product Photography (Regex Subject Capture)"
-    comment: "{{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections"
+    # {{subject}}, premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections
     search_terms:
       - content-creation
       - content creation
@@ -260,7 +260,7 @@ matches:
   - trigger: :rawstudio
     replace: Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, high-end commercial aesthetic, sophisticated color palette, refined details, expensive feel, studio lighting with gentle highlights, aspirational quality.
     label: "[Content Creation] Raw Studio Lighting Setup (Black Backdrop & Surface Reflection)"
-    comment: "Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface, "
+    # Premium product photography, luxury advertising, elegant lighting with rich deep blacks, subtle reflections on surface,
     search_terms:
       - content-creation
       - content creation
@@ -282,7 +282,7 @@ matches:
           - landscape elements, architectural structures, or perspective
           - original subject matter and core details
     label: "[Content Creation] Background Cleaner & Element Remover (Composition Preserver)"
-    comment: "Keep the image background and core composition exactly as is. Remove only the following elements: ."
+    # Keep the image background and core composition exactly as is. Remove only the following elements: .
     search_terms:
       - content-creation
       - content creation
@@ -290,7 +290,7 @@ matches:
   - regex: :ic\((?P<elements>.*)\)
     replace: "Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT RULE: Do not modify, hallucinate, or alter the original subject matter and core details. Preserve the original pixels, lighting, color palette, and quality completely."
     label: "[Content Creation] Background Cleaner (Regex Element Capture)"
-    comment: "Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT R"
+    # Keep the image background and core composition exactly as is. Remove only the following elements: {{elements}}. STRICT R
     search_terms:
       - content-creation
       - content creation
@@ -319,7 +319,7 @@ matches:
           - "natural character lines, authentic skin maturity, "
           - ""
     label: "[Content Creation] Editorial Portrait Retouching (Pore Preservation & Upscaling)"
-    comment: Professional skin retouching with premium sharpness, advanced imperfection correction; eliminates pimples, acne, blackhe
+    # Professional skin retouching with premium sharpness, advanced imperfection correction; eliminates pimples, acne, blackhe
     search_terms:
       - content-creation
       - content creation
@@ -337,7 +337,7 @@ matches:
       bg_details:
         default: architecture, lighting, shadows, and depth
     label: "[Content Creation] Background Object Removal (Preserve Main Subject Exactly)"
-    comment: Remove all  in the background of the uploaded image. Preserve the  exactly. Do not change the subject's . Reconstruct th
+    # Remove all  in the background of the uploaded image. Preserve the  exactly. Do not change the subject's . Reconstruct th
     search_terms:
       - content-creation
       - content creation
@@ -436,7 +436,7 @@ matches:
           - clean professional definition
         default: high-detail scale
     label: "[Content Creation] Cinematic Portrait Rig (Custom Lighting, Atmosphere & Scale)"
-    comment: ", fully preserving every original detail of the photo without changes, except for the lighting and the . Enhance  the ba"
+    # , fully preserving every original detail of the photo without changes, except for the lighting and the . Enhance  the ba
     search_terms:
       - content-creation
       - content creation
@@ -562,7 +562,7 @@ matches:
           - photo taken with uniform tones
           - photo taken with uneven tones
     label: "[Content Creation] Deficient Lighting Corrector (Shadow Balance & Color Cast Fix)"
-    comment: Precise correction of deficient lighting. Preserve  and the essence of the scene.
+    # Precise correction of deficient lighting. Preserve  and the essence of the scene.
     search_terms:
       - content-creation
       - content creation
@@ -591,7 +591,7 @@ matches:
       custom_focus:
         default: ""
     label: "[Content Creation] Camera Angle & Perspective Fix (Jawline & Chin Distortion Correction)"
-    comment: correct the unflattering camera angle in this uploaded photo, keeping the subject's face, features, identity, and the en
+    # correct the unflattering camera angle in this uploaded photo, keeping the subject's face, features, identity, and the en
     search_terms:
       - content-creation
       - content creation
@@ -617,7 +617,7 @@ matches:
           - gaze looking directly at the camera
           - gaze matching their natural head positioning
     label: "[Content Creation] Eye Rescue Inpainting (Natural Open Eyes Restoration)"
-    comment: In the uploaded , identify  with closed or partially closed eyes and naturally open only the affected eyes. Match the ey
+    # In the uploaded , identify  with closed or partially closed eyes and naturally open only the affected eyes. Match the ey
     search_terms:
       - content-creation
       - content creation
@@ -667,7 +667,7 @@ matches:
       mood:
         default: ethereal, carefree, premium vacation editorial, Pinterest-core
     label: "[Content Creation] Dreamy Aesthetic Portrait Generator (Atmospheric Likeness Transformation)"
-    comment: Transform the subject in this photo into a dreamy aesthetic  portrait while preserving their recognizable facial structu
+    # Transform the subject in this photo into a dreamy aesthetic  portrait while preserving their recognizable facial structu
     search_terms:
       - content-creation
       - content creation
@@ -675,7 +675,7 @@ matches:
   - trigger: :fixface
     replace: Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes, beard/hair, and age.
     label: "[Content Creation] Facial Identity Preserver (Reference-Matched Realism)"
-    comment: Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes
+    # Keep the scene exactly the same, but make the face closer to the reference photo. Preserve facial structure, smile, eyes
     search_terms:
       - content-creation
       - content creation
@@ -703,7 +703,7 @@ matches:
 
       <output>Skill Intersection -> 3 Business Models -> Validation Check -> Strongest Model -> Positioning Statement</output>
     label: "[Content Creation] Dan Koe Solo Business: Idea Extraction (Topic & Sub-Niches)"
-    comment: <role>Act as a one-person business strategist who applies Dan Koe's philosophy of monetizing a single skill, interest, a
+    # <role>Act as a one-person business strategist who applies Dan Koe's philosophy of monetizing a single skill, interest, a
     search_terms:
       - content-creation
       - content creation
@@ -731,7 +731,7 @@ matches:
 
       <output>Transformation Definition -> Offer Structure -> Premium Price -> Delivery Method -> One-Paragraph Offer Description</output>
     label: "[Content Creation] Dan Koe Solo Business: Offer Architecture (High-Leverage Value)"
-    comment: "<role>Act as an offer architect who builds irresistible one-person business offers using Dan Koe's principle of selling "
+    # <role>Act as an offer architect who builds irresistible one-person business offers using Dan Koe's principle of selling
     search_terms:
       - content-creation
       - content creation
@@ -759,7 +759,7 @@ matches:
 
       <output>Core Thesis -> Content Expansion Map -> Cross-Platform System -> Weekly Schedule -> Authority Building Arc</output>
     label: "[Content Creation] Dan Koe Solo Business: Content Flywheel (Pillars & Distribution)"
-    comment: "<role>Act as a one-person content strategist who applies Dan Koe's content system of writing about one topic from every "
+    # <role>Act as a one-person content strategist who applies Dan Koe's content system of writing about one topic from every
     search_terms:
       - content-creation
       - content creation
@@ -787,7 +787,7 @@ matches:
 
       <output>Customer Journey Map -> Lead Capture -> Nurture Sequence -> Conversion Mechanism -> Automated Sales Flow</output>
     label: "[Content Creation] Dan Koe Solo Business: Automated Sales Machine (Funnel Systems)"
-    comment: <role>Act as a one-person sales system architect who builds automated pipelines that attract, nurture, and convert ideal
+    # <role>Act as a one-person sales system architect who builds automated pipelines that attract, nurture, and convert ideal
     search_terms:
       - content-creation
       - content creation
@@ -817,7 +817,7 @@ matches:
 
       <output>Time Audit -> Productization Plan -> Digital Product Design -> Passive Income Layer -> 12-Month Scaling Roadmap</output>
     label: "[Content Creation] Dan Koe Solo Business: Scaling Blueprint (Leverage & Operations)"
-    comment: <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
+    # <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
     search_terms:
       - content-creation
       - content creation
@@ -851,7 +851,7 @@ matches:
 
       <output>Time Audit -> Productization Plan -> Digital Product Design -> Passive Income Layer -> 12-Month Scaling Roadmap</output>
     label: "[Content Creation] Dan Koe Solo Business: Rapid Growth Protocols (Aggressive Velocity)"
-    comment: <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
+    # <role>Act as a one-person business scaling strategist who applies Dan Koe's model of productizing knowledge into scalabl
     search_terms:
       - content-creation
       - content creation
@@ -860,7 +860,7 @@ matches:
     replace: |
       A high-resolution, cinematic, and photorealistic close-up profile portrait of a man. The image features dramatic split-lighting with a vibrant, glowing red light illuminating the top of his face and a contrasting, cool neon blue light casting a soft glow on his jawline and neck. He has a contemplative expression, looking upwards and away from the camera. The focus is sharp on his eye, with a dark, minimalist background. The style is moody, ethereal, and high-fashion. keep the likeness of the image in the source image. 4x5 aspect ratio
     label: "[Content Creation] Midjourney: Cinematic Split-Lighting Portrait"
-    comment: Generates high-resolution, cinematic split-light portrait prompts for Midjourney.
+    # Generates high-resolution, cinematic split-light portrait prompts for Midjourney.
     search_terms:
       - content-creation
       - content creation
@@ -874,7 +874,7 @@ matches:
 
       4x5 aspect ratio
     label: "[Content Creation] Midjourney: Editorial Men Fashion Portrait"
-    comment: Generates high-fashion editorial magazine photography prompts.
+    # Generates high-fashion editorial magazine photography prompts.
     search_terms:
       - content-creation
       - content creation
@@ -887,7 +887,7 @@ matches:
 
       Save them and your next post comes together way faster.
     label: "[Content Creation] 20-Minute Fast Rough Draft Protocol"
-    comment: Overcomes writer block by producing a rapid, uninhibited zero-draft in 20 minutes.
+    # Overcomes writer block by producing a rapid, uninhibited zero-draft in 20 minutes.
     search_terms:
       - content-creation
       - content creation
@@ -906,7 +906,7 @@ matches:
 
       Keep it minimal, readable, and slide-ready.
     label: "[Content Creation] Visual Explainer & Infographic Architect"
-    comment: Outlines data layouts, visual hierarchies, and copy for infographic designs.
+    # Outlines data layouts, visual hierarchies, and copy for infographic designs.
     search_terms:
       - content-creation
       - content creation
@@ -925,7 +925,7 @@ matches:
 
       Make it feel like a McKinsey slide deck built in Beautiful. AI
     label: "[Content Creation] McKinsey-Style Presentation Deck Outliner"
-    comment: Structures executive slide decks with pyramid principle messaging and clear takeaways.
+    # Structures executive slide decks with pyramid principle messaging and clear takeaways.
     search_terms:
       - content-creation
       - content creation
@@ -946,7 +946,7 @@ matches:
 
       The result should feel human, not AI-generated.
     label: "[Content Creation] Top-Tier Content Strategist & Writer"
-    comment: Creates viral articles, hooks, and content pillars with high reader retention.
+    # Creates viral articles, hooks, and content pillars with high reader retention.
     search_terms:
       - content-creation
       - content creation
@@ -967,7 +967,7 @@ matches:
 
       Use clear, persuasive language and back claims with evidence or examples.
     label: "[Content Creation] Technical Whitepaper Author"
-    comment: Drafts comprehensive, well-researched whitepapers for technical audiences.
+    # Drafts comprehensive, well-researched whitepapers for technical audiences.
     search_terms:
       - content-creation
       - content creation
@@ -977,7 +977,7 @@ matches:
       You are an editor with a sharp eye for writing that sounds constructed instead of spoken. Rewrite this the way someone who actually lived through the experience would say it: a little rougher, more direct, and more natural. Cut anything that feels rehearsed, exaggerated, or written to impress. Make it sound authentic, conversational, and genuinely human.
       Text: [paste here].
     label: "[Content Creation] Writing Humanizer: Natural Conversation Flow"
-    comment: Eliminates AI jargon and robotic phrasing to produce authentic human writing.
+    # Eliminates AI jargon and robotic phrasing to produce authentic human writing.
     search_terms:
       - content-creation
       - content creation
@@ -986,7 +986,7 @@ matches:
     replace: |
       This isn't a grammar edit - it's a thinking edit. Rewrite this so the ideas flow the way a real person's mind does: sometimes fast, sometimes slow, sometimes messy, sometimes precise. Vary the rhythm naturally, break any patterns that make the writing feel overly controlled or artificial, and make it sound like genuine human thought instead of polished AI text. Text: [paste here].
     label: "[Content Creation] Writing Humanizer: Thought Cadence & Flow"
-    comment: Rewrites sentences with varied rhythm, natural transitions, and clear thinking.
+    # Rewrites sentences with varied rhythm, natural transitions, and clear thinking.
     search_terms:
       - content-creation
       - content creation
@@ -995,7 +995,7 @@ matches:
     replace: |
       You are an expert at spotting the subtle patterns that make writing sound AI-generated. Go through this text and remove those patterns one by one. Vary the sentence structure, soften anything that feels rigid or formulaic, and make every word feel naturally chosen in the moment rather than produced by a template. The result should read like authentic human writing with a natural flow. Text: [paste here].
     label: "[Content Creation] Writing Humanizer: AI Cliché & Pattern Breaker"
-    comment: Removes overused AI clichés (delve, testament, pivotal, navigating).
+    # Removes overused AI clichés (delve, testament, pivotal, navigating).
     search_terms:
       - content-creation
       - content creation
@@ -1004,7 +1004,7 @@ matches:
     replace: |
       You are shaping a writing style that sounds like it belongs to a real person. Rewrite this so it has a clear point of view instead of the neutral tone of someone trying to please everyone. Let genuine opinions, subtle contradictions, and natural shifts in tone come through. The result should feel personal, confident, and unmistakably human-not polished into sounding generic. Text: [paste here].
     label: "[Content Creation] Writing Humanizer: Distinctive Brand Voice"
-    comment: Injects personality, conviction, and tone into flat, generic drafts.
+    # Injects personality, conviction, and tone into flat, generic drafts.
     search_terms:
       - content-creation
       - content creation
@@ -1013,7 +1013,7 @@ matches:
     replace: |
       Rewrite this with one goal: make it impossible to ignore. Keep the core message, but cut anything that feels weak, overthought, or forgettable. Every sentence should carry weight, every word should earn its place, and the writing should sound like it comes from someone who genuinely cares about what they're saying. Text: [paste here].
     label: "[Content Creation] Writing Humanizer: High-Impact Punchy Prose"
-    comment: Tightens writing for maximum punch, clarity, and emotional resonance.
+    # Tightens writing for maximum punch, clarity, and emotional resonance.
     search_terms:
       - content-creation
       - content creation
@@ -1022,7 +1022,7 @@ matches:
     replace: |
       You are a skeptical reader who immediately notices writing that feels too polished or artificial. Go through this text sentence by sentence and rewrite anything that sounds overly constructed, over-edited, or unnaturally precise. Make it sound like something a real person would actually say out loud-natural, believable, and effortless, without feeling forced. Text: [paste here].
     label: "[Content Creation] Writing Humanizer: Skeptical Reader Audit"
-    comment: Reviews text through the eyes of a skeptical reader to ensure proof and credibility.
+    # Reviews text through the eyes of a skeptical reader to ensure proof and credibility.
     search_terms:
       - content-creation
       - content creation
@@ -1031,7 +1031,7 @@ matches:
     replace: |
       Here's my text: [paste]. Make it clearer, smoother, and stronger. Show me exactly what to change and why.
     label: "[Content Creation] Quick Clarity & Tone Polish"
-    comment: Instantly polishes text for clarity, smoothness, and impact without over-editing.
+    # Instantly polishes text for clarity, smoothness, and impact without over-editing.
     search_terms:
       - content-creation
       - content creation
@@ -1040,7 +1040,7 @@ matches:
     replace: |
       Here is a long text: [paste]. Summarize it in seconds, keeping only the most important and useful points.
     label: "[Content Creation] Lightning-Fast Text Summarizer"
-    comment: Condenses long articles into seconds-readable bullet points preserving key data.
+    # Condenses long articles into seconds-readable bullet points preserving key data.
     search_terms:
       - content-creation
       - content creation
@@ -1061,7 +1061,7 @@ matches:
       writing_sample:
         multiline: true
     label: "[Content Creation] Kill The AI Voice (Sample Mimicry)"
-    comment: Rewrites text to match your natural sentence length, cadence, and vocabulary using 3 reference paragraphs.
+    # Rewrites text to match your natural sentence length, cadence, and vocabulary using 3 reference paragraphs.
     search_terms:
       - content-creation
       - content creation
@@ -1081,7 +1081,7 @@ matches:
       context:
         multiline: true
     label: "[Content Creation] The Cliche Pass (Context Specificity)"
-    comment: Flags overused tropes and generic phrases, replacing them with context-specific phrasing.
+    # Flags overused tropes and generic phrases, replacing them with context-specific phrasing.
     search_terms:
       - content-creation
       - content creation
@@ -1098,7 +1098,7 @@ matches:
     replace: |
       Take the opposite position to what I just wrote and make the strongest possible case against it. Then tell me which of my points actually survive.
     label: "[Content Creation] Make It Argue Back (Counter-Argument Stress Test)"
-    comment: Forces the model to adopt an adversarial position against your draft to test logical robustness.
+    # Forces the model to adopt an adversarial position against your draft to test logical robustness.
     search_terms:
       - content-creation
       - content creation
@@ -1115,7 +1115,7 @@ matches:
     replace: |
       Every time you make a general claim in this draft, replace it with a concrete number, name or example. If you do not have one, ask me for it instead of inventing it.
     label: "[Content Creation] Concrete Detail Enforcer (Concrete Evidence)"
-    comment: Replaces abstract or generalized claims with concrete figures, names, and real-world examples without hallucinating.
+    # Replaces abstract or generalized claims with concrete figures, names, and real-world examples without hallucinating.
     search_terms:
       - content-creation
       - content creation
@@ -1132,7 +1132,7 @@ matches:
     replace: |
       Remove every hedge and softener from this. No might, no could, no perhaps, no it is important to note. Say the thing directly.
     label: "[Content Creation] Strip The Hedging (Direct Assertion)"
-    comment: Removes weak modal verbs, qualifying filler, and timid tone to enforce direct, assertive writing.
+    # Removes weak modal verbs, qualifying filler, and timid tone to enforce direct, assertive writing.
     search_terms:
       - content-creation
       - content creation
@@ -1157,7 +1157,7 @@ matches:
       topic:
         multiline: true
     label: "[Content Creation] Steal A Structure (Outline Reverse Engineering)"
-    comment: Extracts structural outline from an admired article/essay and applies it to a target topic.
+    # Extracts structural outline from an admired article/essay and applies it to a target topic.
     search_terms:
       - content-creation
       - content creation
@@ -1177,7 +1177,7 @@ matches:
       topic:
         multiline: true
     label: "[Content Creation] Root Thesis Deep Dive (Find The Core Thesis)"
-    comment: Uses 5-Whys interrogation technique interactively to drill down to the core narrative thesis.
+    # Uses 5-Whys interrogation technique interactively to drill down to the core narrative thesis.
     search_terms:
       - content-creation
       - content creation
@@ -1194,7 +1194,7 @@ matches:
     replace: |
       Write the most boring, obvious version of this first. Then tell me exactly what makes it boring, and write the version that fixes each thing you named.
     label: "[Content Creation] Write The Bad Version (Flaw Contrast)"
-    comment: Generates the most predictable/boring draft first, diagnoses the weaknesses, then rewrites to fix them.
+    # Generates the most predictable/boring draft first, diagnoses the weaknesses, then rewrites to fix them.
     search_terms:
       - content-creation
       - content creation
@@ -1214,7 +1214,7 @@ matches:
       target_audience:
         default: reader
     label: "[Content Creation] The Sceptical Reader Audit (Drop-off Analysis)"
-    comment: Simulates a skeptical target persona to pinpoint drop-off friction points and loss of engagement.
+    # Simulates a skeptical target persona to pinpoint drop-off friction points and loss of engagement.
     search_terms:
       - content-creation
       - content creation
@@ -1234,7 +1234,7 @@ matches:
       rules:
         multiline: true
     label: "[Content Creation] Authorial Voice Guardrail (Tone & Style Guardrail)"
-    comment: Establishes a persistent voice constraint with a one-line restatement check and reset trigger.
+    # Establishes a persistent voice constraint with a one-line restatement check and reset trigger.
     search_terms:
       - content-creation
       - content creation

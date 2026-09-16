@@ -18,7 +18,7 @@ matches:
       resume:
         multiline: true
     label: "[Career] Technical Resume & ATS Optimizer"
-    comment: Rewrites resume bullet points to pass ATS filters and highlight technical impact.
+    # Rewrites resume bullet points to pass ATS filters and highlight technical impact.
     search_terms:
       - career
 
@@ -41,7 +41,7 @@ matches:
       background:
         multiline: true
     label: "[Career] Job Fit & Executive Talent Scout"
-    comment: Evaluates alignment between your background and target role requirements.
+    # Evaluates alignment between your background and target role requirements.
     search_terms:
       - career
 
@@ -67,7 +67,7 @@ matches:
       resume:
         multiline: true
     label: "[Career] Resume & Job Description Matcher"
-    comment: Identifies keyword gaps between your resume and a target job posting.
+    # Identifies keyword gaps between your resume and a target job posting.
     search_terms:
       - career
 
@@ -86,7 +86,7 @@ matches:
       job_posting:
         multiline: true
     label: "[Career] Senior Technical Mock Interviewer"
-    comment: Simulates a rigorous interview for target senior engineering roles.
+    # Simulates a rigorous interview for target senior engineering roles.
     search_terms:
       - career
 
@@ -101,7 +101,7 @@ matches:
       role:
         default: Software Engineer
     label: "[Career] Engineering Portfolio Reviewer"
-    comment: Reviews GitHub portfolio and project showcases for hiring impact.
+    # Reviews GitHub portfolio and project showcases for hiring impact.
     search_terms:
       - career
 
@@ -116,7 +116,7 @@ matches:
       amount:
         default: $150,000
     label: "[Career] Compensation & Offer Negotiation Coach"
-    comment: Scripts counter-offers and negotiation leverage for job offers.
+    # Scripts counter-offers and negotiation leverage for job offers.
     search_terms:
       - career
 
@@ -129,7 +129,7 @@ matches:
 
       Write a highly crisp, high-impact follow-up message optimized for a professional network platform or direct communication channel. The text must forcefully but elegantly reinforce my precise fit for the role, anchor on immediate value delivery, and maintain top-of-mind recall with the recruiter. Keep it persuasive, deeply respectful, and highly professional.
     label: "[Career] Recruiter Follow-Up (High-Impact Post-Application Message)"
-    comment: Act as an expert in elite corporate communications.
+    # Act as an expert in elite corporate communications.
     search_terms:
       - career
 
@@ -143,7 +143,7 @@ matches:
     form_fields:
       resume:
         multiline: true
-    comment: "Here is my resume:"
+    # Here is my resume:
     search_terms:
       - career
 
@@ -159,7 +159,7 @@ matches:
         type: shell
         params:
           cmd: cat "$HOME/.config/espanso/master_resume.md" 2>/dev/null || echo "[master resume not found - create $HOME/.config/espanso/master_resume.md]"
-    comment: "Here is my resume:"
+    # Here is my resume:
     search_terms:
       - career
 
@@ -178,7 +178,7 @@ matches:
         multiline: true
       resume:
         multiline: true
-    comment: "Job description:"
+    # Job description:
     search_terms:
       - career
 
@@ -199,7 +199,7 @@ matches:
         type: shell
         params:
           cmd: cat "$HOME/.config/espanso/master_resume.md" 2>/dev/null || echo "[master resume not found - create $HOME/.config/espanso/master_resume.md]"
-    comment: "Job description:"
+    # Job description:
     search_terms:
       - career
 
@@ -214,7 +214,7 @@ matches:
       skills:
         multiline: true
     label: "[Career] Hidden Role Discovery (10 High-Demand Career Paths)"
-    comment: "Based on my experience and skills:"
+    # Based on my experience and skills:
     search_terms:
       - career
 
@@ -228,7 +228,7 @@ matches:
       bullets:
         multiline: true
     label: "[Career] Resume Bullet Polish (Results-Focused & 2-Line Compression)"
-    comment: "Rewrite these resume bullet points:"
+    # Rewrite these resume bullet points:
     search_terms:
       - career
 
@@ -242,7 +242,7 @@ matches:
     form_fields:
       jd:
         multiline: true
-    comment: "Write a short, tailored cover letter for this role:"
+    # Write a short, tailored cover letter for this role:
     search_terms:
       - career
 
@@ -256,7 +256,7 @@ matches:
     vars:
       - name: jd
         type: clipboard
-    comment: "Write a short, tailored cover letter for this role:"
+    # Write a short, tailored cover letter for this role:
     search_terms:
       - career
 
@@ -270,7 +270,7 @@ matches:
       jd:
         multiline: true
     label: "[Career] Recruiter Cold Outreach (High-Response LinkedIn/Email Hook)"
-    comment: "Write a concise LinkedIn or email message to a recruiter for this role:"
+    # Write a concise LinkedIn or email message to a recruiter for this role:
     search_terms:
       - career
 
@@ -284,7 +284,7 @@ matches:
       background:
         multiline: true
     label: "[Career] Job Application Strategy (Weekly Cadence & Follow-Up System)"
-    comment: "Based on my background and target roles:"
+    # Based on my background and target roles:
     search_terms:
       - career
 
@@ -295,7 +295,7 @@ matches:
       - name: clip
         type: clipboard
     label: "[Career] Target Role Clarifier (Ideal Position & Market Demand Alignment)"
-    comment: '"Act as a senior hiring manager and career strategist. Analyze my skills, experience, interests, constraints, and curren'
+    # "Act as a senior hiring manager and career strategist. Analyze my skills, experience, interests, constraints, and curren
     search_terms:
       - career
 
@@ -309,7 +309,7 @@ matches:
       - name: clip
         type: clipboard
     label: "[Career] Role-Specific ATS Resume (Impact Metrics & Keyword Integration)"
-    comment: '"Act as a senior recruiter with deep ATS expertise. Create a resume tailored specifically for my target role . Convert r'
+    # "Act as a senior recruiter with deep ATS expertise. Create a resume tailored specifically for my target role . Convert r
     search_terms:
       - career
 
@@ -320,7 +320,7 @@ matches:
       - name: clip
         type: clipboard
     label: "[Career] LinkedIn Profile Overhaul (Headline, Summary & Recruiter Search)"
-    comment: '"Act as a recruiter who sources candidates daily on LinkedIn. Rewrite my headline, summary, and experience so my value, '
+    # "Act as a recruiter who sources candidates daily on LinkedIn. Rewrite my headline, summary, and experience so my value,
     search_terms:
       - career
 
@@ -331,7 +331,7 @@ matches:
       - name: clip
         type: clipboard
     label: "[Career] Resume Rejection Audit (Weak Signals & Credibility Gap Fixes)"
-    comment: '"Review my resume exactly as a recruiter would. Identify every reason it could be rejected, ignored, or misunderstood. H'
+    # "Review my resume exactly as a recruiter would. Identify every reason it could be rejected, ignored, or misunderstood. H
     search_terms:
       - career
 
@@ -346,7 +346,7 @@ matches:
       resume:
         multiline: true
     label: "[Career] The Recruiter Attention Test (10-Second Scan)"
-    comment: Evaluates resume first impression, visual hierarchy, and instant credibility during a 10-second recruiter scan.
+    # Evaluates resume first impression, visual hierarchy, and instant credibility during a 10-second recruiter scan.
     search_terms:
       - career
       - resume
@@ -369,7 +369,7 @@ matches:
       resume:
         multiline: true
     label: "[Career] The Recruiter Mindset (Competitive Role Assessment)"
-    comment: Raw and realistic candidate assessment evaluating positioning weaknesses against top competitors.
+    # Raw and realistic candidate assessment evaluating positioning weaknesses against top competitors.
     search_terms:
       - career
       - resume
@@ -394,7 +394,7 @@ matches:
       resume:
         multiline: true
     label: "[Career] The ATS Visibility Engine (Keyword & Screen Optimizer)"
-    comment: Identifies missing technical keywords and naturally integrates competencies for ATS and recruiter screening.
+    # Identifies missing technical keywords and naturally integrates competencies for ATS and recruiter screening.
     search_terms:
       - career
       - resume
@@ -413,7 +413,7 @@ matches:
       experience_section:
         multiline: true
     label: "[Career] The Impact Statement Rebuilder (Results & Metrics)"
-    comment: Converts task-oriented resume lines into high-value, metric-driven business achievement statements.
+    # Converts task-oriented resume lines into high-value, metric-driven business achievement statements.
     search_terms:
       - career
       - resume
@@ -440,7 +440,7 @@ matches:
       resume_summary:
         multiline: true
     label: "[Career] The Market Positioning Rewrite (Company & Culture Fit)"
-    comment: Aligns resume summary and skills with the communication patterns and expectations of top-tier target companies.
+    # Aligns resume summary and skills with the communication patterns and expectations of top-tier target companies.
     search_terms:
       - career
       - resume
@@ -459,7 +459,7 @@ matches:
       resume:
         multiline: true
     label: "[Career] Executive Resume Refinement (Final Polish & Tone)"
-    comment: Deep final-pass evaluation removing corporate jargon, sharpening phrasing, and maximizing executive presence.
+    # Deep final-pass evaluation removing corporate jargon, sharpening phrasing, and maximizing executive presence.
     search_terms:
       - career
       - resume
@@ -471,7 +471,7 @@ matches:
     replace: |
       I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, and past experiences that brought me joy. Based on my answers, identify 3-5 potential career paths that align with who I am, and create a 90-day action plan to explore each one with specific steps, resources, and milestones.
     label: "[Career] Career Direction Reset (10 Deep Questions & 90-Day Plan)"
-    comment: "I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values, "
+    # I'm feeling stuck in my career and unsure of my direction. Ask me 10 deep questions about my skills, interests, values,
     search_terms:
       - career
 
@@ -479,7 +479,7 @@ matches:
     replace: |
       “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, e.g. should I change jobs or stay?]. Ask 7 yes/no questions that filter step by step based on my priorities as you know them from our conversations. Make the outcomes super concrete, with clear actions (like ‘request this meeting,' ‘update your CV,' ‘plan a trial day'), not vague suggestions. Format it so I can screenshot it and reuse it anytime.”
     label: "[Career] Career Dilemma Decision Tree (7-Question Filter & Actionable Outcomes)"
-    comment: "“Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma, "
+    # “Using what you know about my career goals and values, create a decision tree for this dilemma: [describe your dilemma,
     search_terms:
       - career
 
@@ -487,7 +487,7 @@ matches:
     replace: |
       “Based on my talents and character, what's the way I can be most successful and happy in my career and life?”
     label: "[Career] Core Strengths Alignment (Talent, Character & Happiness Roadmap)"
-    comment: “Based on my talents and character, what's the way I can be most successful and happy in my career and life?”
+    # “Based on my talents and character, what's the way I can be most successful and happy in my career and life?”
     search_terms:
       - career
 
@@ -513,7 +513,7 @@ matches:
 
       Rewritten Experience Entries → 12-Second Conversion Verdict
     label: "[Career] LinkedIn Profile Landing Page (Justin Welsh 12-Second Conversion)"
-    comment: Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the h
+    # Act as a LinkedIn profile strategist trained on Justin Welsh's principle that your profile is not a resume - it is the h
     search_terms:
       - career
 
@@ -527,7 +527,7 @@ matches:
       - After each answer, provide: Critique (strengths) & Refinement (how to improve impact)
       - Gradually increase difficulty level
     label: "[Career] Interactive Behavioral Mock Interview (Roleplay & Progressive Difficulty)"
-    comment: Roleplay as a  at .
+    # Roleplay as a  at .
     search_terms:
       - career
 
@@ -546,7 +546,7 @@ matches:
 
       Input: Your current bullet points
     label: "[Career] McKinsey Resume Quantifier & Action Verbs"
-    comment: Transforms generic resume bullet points into quantified impact statements.
+    # Transforms generic resume bullet points into quantified impact statements.
     search_terms:
       - career
 
@@ -554,7 +554,7 @@ matches:
     replace: |
       Rewrite each of my job descriptions using the XYZ formula: 'Accomplished X by doing Y, resulting in Z. Add metrics where possible. Make me sound like I drove real impact, not just 'managed tasks.'
     label: "[Career] Job Experience & Promotion Glow-Up"
-    comment: Highlights leadership scope, cost savings, and revenue metrics in past job roles.
+    # Highlights leadership scope, cost savings, and revenue metrics in past job roles.
     search_terms:
       - career
 
@@ -562,7 +562,7 @@ matches:
     replace: |
       Turn my About section into a story that hooks recruiters in the first 2 lines. Use the PAS framework (Problem, Agitate, Solution). Keep it under 2000 characters and end with a clear CTA.
     label: "[Career] LinkedIn About Section Storyteller"
-    comment: Turns a dry professional summary into a compelling career narrative that attracts recruiters.
+    # Turns a dry professional summary into a compelling career narrative that attracts recruiters.
     search_terms:
       - career
 
@@ -570,6 +570,6 @@ matches:
     replace: |
       Act as the recruiter hiring for this role. Score my resume out of 100, list the keywords it's missing, name the 3 things that would make you reject it in 10 seconds, then rewrite the whole thing tailored to this exact job. Be brutal.
     label: "[Career] Targeted Role-Specific Resume Builder"
-    comment: Tailors resume achievements directly to match target job description keywords.
+    # Tailors resume achievements directly to match target job description keywords.
     search_terms:
       - career

@@ -7,7 +7,7 @@ matches:
 
       '
     label: "[Social Strategy] Niche Audience & Frustration Profiler"
-    comment: Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze
+    # Act as a senior social media strategist with over 10 years of experience managing brands in multiple industries. Analyze
     search_terms:
       - social-strategy
 
@@ -18,7 +18,7 @@ matches:
 
       '
     label: "[Social Strategy] Brand Identity & Unique Positioning Angle"
-    comment: Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". D
+    # Act as a brand positioning expert and help me design a powerful social media identity in the niche "{{target_niche}}". D
     search_terms:
       - social-strategy
 
@@ -34,7 +34,7 @@ matches:
       audience:
         default: Technical Architects and Enterprise Builders
     label: "[Social Strategy] 5 Core Engagement Content Pillars"
-    comment: "You're a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche  and target audience "
+    # You're a content strategist who has scaled multiple accounts to 100K+ followers. Based on my niche  and target audience
     search_terms:
       - social-strategy
 
@@ -53,7 +53,7 @@ matches:
           - YouTube Shorts
           - Instagram
     label: "[Social Strategy] 30-Day Multi-Platform Content Calendar"
-    comment: "Act as my content calendar manager. Create a complete 30-day posting schedule for . Include: daily post concepts, optima"
+    # Act as my content calendar manager. Create a complete 30-day posting schedule for . Include: daily post concepts, optima
     search_terms:
       - social-strategy
 
@@ -64,7 +64,7 @@ matches:
 
       "
     label: "[Social Strategy] 50 Viral Scroll-Stopping Hook Templates"
-    comment: You're a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}
+    # You're a copywriter who has written hooks for posts that got millions of views. Analyze viral content in {{target_niche}
     search_terms:
       - social-strategy
 
@@ -75,7 +75,7 @@ matches:
 
       "
     label: "[Social Strategy] Community Management & Engagement Strategy"
-    comment: "Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conver"
+    # Act as a community management expert. Design my engagement strategy: how to respond to comments authentically, DM conver
     search_terms:
       - social-strategy
 
@@ -94,7 +94,7 @@ matches:
       - name: raw_metrics
         type: clipboard
     label: "[Social Strategy] Social Media Metrics & Performance Auditor"
-    comment: "You're a data analyst for social media. Based on these metrics:"
+    # You're a data analyst for social media. Based on these metrics:
     search_terms:
       - social-strategy
 
@@ -118,7 +118,7 @@ matches:
 
       '
     label: "[Social Strategy] Before-and-After Experiential Transformation Grid"
-    comment: "### The Before-and-After Grid"
+    # ### The Before-and-After Grid
     search_terms:
       - social-strategy
 
@@ -144,7 +144,7 @@ matches:
 
       "
     label: "[Social Strategy] Epiphany Bridge Storytelling Narrative Outline"
-    comment: "### Epiphany Bridge Narrative Outline"
+    # ### Epiphany Bridge Narrative Outline
     search_terms:
       - social-strategy
 
@@ -183,7 +183,7 @@ matches:
         params:
           format: "%Y-%m-%d"
     label: "[Social Strategy] Consulting Triage Call Interaction Note"
-    comment: "---"
+    # ---
     search_terms:
       - social-strategy
 
@@ -191,7 +191,7 @@ matches:
   - trigger: :sigsys
     replace: "### Proprietary Signature System Design\n* Formula: $Signature System = Problem + Promise + Process$\n\n- **The Problem Core:** [State the primary high-friction marketplace inefficiency being resolved]\n- **The Promise Core:** [State the ultimate outcome achieved at Point Z]\n- **The Process Milestones:**\n  1. **Phase 1 (Quick Win / A → B):** [Low-friction intervention to establish trust and momentum]\n  2. **Phase 2 (Core Pivot):** [Implementation of the proprietary engine to resolve root obstacles]\n  3. **Phase 3 (Scale / Final Integration):** [Systemization to ensure long-term, repeatable outcomes]\n"
     label: "[Social Strategy] Proprietary Signature System Formula Design"
-    comment: "### Proprietary Signature System Design"
+    # ### Proprietary Signature System Design
     search_terms:
       - social-strategy
 
@@ -219,7 +219,7 @@ matches:
       niche:
         multiline: true
     label: "[Social Strategy] Niche Market Demand & Competitive Teardown"
-    comment: Analyze the market for . Use only specific, data-backed insights. No generic statements.
+    # Analyze the market for . Use only specific, data-backed insights. No generic statements.
     search_terms:
       - social-strategy
 
@@ -252,7 +252,7 @@ matches:
       industry:
         multiline: true
     label: "[Social Strategy] Top 10 High-Willingness-To-Pay Problems"
-    comment: List the top 10 problems in .
+    # List the top 10 problems in .
     search_terms:
       - social-strategy
 
@@ -285,7 +285,7 @@ matches:
       problem:
         multiline: true
     label: "[Social Strategy] High-Converting Irresistible Offer Creator"
-    comment: "Create a high-converting offer for: ."
+    # Create a high-converting offer for: .
     search_terms:
       - social-strategy
 
@@ -317,7 +317,7 @@ matches:
       idea:
         multiline: true
     label: "[Social Strategy] Growth Distribution & Channel Engine"
-    comment: Act as a senior growth strategist.
+    # Act as a senior growth strategist.
     search_terms:
       - social-strategy
 
@@ -348,7 +348,7 @@ matches:
       niche:
         multiline: true
     label: "[Social Strategy] Viral Content Strategy (Platform Matrix & Hook Bank)"
-    comment: "Create a viral content strategy for: ."
+    # Create a viral content strategy for: .
     search_terms:
       - social-strategy
 
@@ -384,7 +384,7 @@ matches:
       niche:
         multiline: true
     label: "[Social Strategy] Competitor Teardown (Moats, Weaknesses & White Spaces)"
-    comment: Analyze the top 5 competitors in , be specific.
+    # Analyze the top 5 competitors in , be specific.
     search_terms:
       - social-strategy
 
@@ -424,7 +424,7 @@ matches:
       business_description:
         multiline: true
     label: "[Social Strategy] Leveraged Content Scaling Architecture"
-    comment: Give me a plan to scale this business to  within .
+    # Give me a plan to scale this business to  within .
     search_terms:
       - social-strategy
 
@@ -452,7 +452,7 @@ matches:
       goals:
         default: Build a scalable brand and drive organic engine inbound leads
     label: "[Social Strategy] YouTube Channel Strategist (Positioning & 1K Sub Roadmap)"
-    comment: Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
+    # Act like a YouTube growth strategist. Analyze my niche, target audience, and content goals.
     search_terms:
       - social-strategy
 
@@ -464,7 +464,7 @@ matches:
 
       "
     label: "[Social Strategy] YouTube Video Ideas (20 High-CTR Viral Concepts)"
-    comment: Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, compe
+    # Act like a YouTube content researcher. Generate 20 high-potential video ideas for {{niche}} based on viral trends, compe
     search_terms:
       - social-strategy
 
@@ -505,7 +505,7 @@ matches:
       your_name:
         default: Founder
     label: "[Social Strategy] AI Agency Cold Pitch (15-Minute Discovery Call Hook)"
-    comment: Hi ,
+    # Hi ,
     search_terms:
       - social-strategy
 
@@ -531,7 +531,7 @@ matches:
 
       "
     label: "[Social Strategy] AI Agency Services Menu (7 Modular Studio Offerings)"
-    comment: "Our AI Studio Offerings:"
+    # Our AI Studio Offerings:
     search_terms:
       - social-strategy
 
@@ -572,7 +572,7 @@ matches:
           - Monthly Recurring Retainer Contract
           - Per-Session / Hourly Advisory Rate
     label: "[Social Strategy] Statement of Work (SOW Phases, Deliverables & Pricing)"
-    comment: "### Statement of Work:"
+    # ### Statement of Work:
     search_terms:
       - social-strategy
 
@@ -583,7 +583,7 @@ matches:
 
       "
     label: "[Social Strategy] AI Advisory Invitation (Regex Client Operational Stack)"
-    comment: Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selecti
+    # Hi {{client}}, I was looking over your current operational stack. Let's get an AI Readiness Assessment or a Tool Selecti
     search_terms:
       - social-strategy
 
@@ -610,7 +610,7 @@ matches:
       student_name:
         default: there
     label: "[Social Strategy] Corporate AI Academy (Curriculum Recommendation & Syllabus)"
-    comment: Hi ,
+    # Hi ,
     search_terms:
       - social-strategy
 
@@ -643,7 +643,7 @@ matches:
           - ₹4,500,000 (Mid-Market Scale)
           - ₹8,000,000 (Enterprise Custom Architecture)
     label: "[Social Strategy] Enterprise Systems Integration (Zero-Touch Architecture Proposal)"
-    comment: "### Proposed Integration:"
+    # ### Proposed Integration:
     search_terms:
       - social-strategy
 
@@ -665,7 +665,7 @@ matches:
           - AI Product Photography & Short Form Video Ads
           - Brand Identity Design & Visual Brand Systems
     label: "[Social Strategy] Turnkey Creative Studio (Asset Production Proposal)"
-    comment: We can lock down your request for  under our asset production umbrella. We deliver these assets at a fraction of standar
+    # We can lock down your request for  under our asset production umbrella. We deliver these assets at a fraction of standar
     search_terms:
       - social-strategy
 
@@ -675,7 +675,7 @@ matches:
 
       "
     label: "[Social Strategy] Social Engagement Call-To-Action (CTA)"
-    comment: High-converting call to action prompt encouraging saves, shares, and comments.
+    # High-converting call to action prompt encouraging saves, shares, and comments.
     search_terms:
       - social-strategy
 
@@ -686,7 +686,7 @@ matches:
 
       "
     label: "[Social Strategy] Viral Social Media Content Engine Intro"
-    comment: Introduction to automated viral social media copywriting with AI.
+    # Introduction to automated viral social media copywriting with AI.
     search_terms:
       - social-strategy
 

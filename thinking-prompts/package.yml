@@ -10,7 +10,7 @@ matches:
       problem:
         multiline: true
     label: "[Thinking Prompts] Recurring Problem Snapshot (Deconstruct Habits)"
-    comment: "I keep repeating this recurring problem:"
+    # I keep repeating this recurring problem:
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -19,7 +19,7 @@ matches:
     replace: |
       Based on everything I've said so far, break down how I think. Show my patterns in decision-making, how I handle pressure, where I overcomplicate things, and where I'm missing something obvious.
     label: "[Thinking Prompts] Cognitive Blind Spot Mirror (Subconscious Habits)"
-    comment: Based on everything I've said so far, break down how I think. Show my patterns in decision-making, how I handle pressure
+    # Based on everything I've said so far, break down how I think. Show my patterns in decision-making, how I handle pressure
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -33,7 +33,7 @@ matches:
       topic:
         multiline: true
     label: "[Thinking Prompts] Pre-Mortem Stress Test (Plan Destructor)"
-    comment: Take one of my beliefs about  and build the strongest possible case against it.
+    # Take one of my beliefs about  and build the strongest possible case against it.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -47,7 +47,7 @@ matches:
       idea_or_problem:
         multiline: true
     label: "[Thinking Prompts] Cross-Domain Mental Model Transfer (5 Experts)"
-    comment: "Look at my  through five different experts (for example: psychologist, investor, engineer, strategist, creator)."
+    # Look at my  through five different experts (for example: psychologist, investor, engineer, strategist, creator).
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -58,7 +58,7 @@ matches:
 
       Break it into clear steps, daily actions, and what I should practice to improve fast without wasting time.
     label: "[Thinking Prompts] Feynman Compression (Rapid Simple Mastery)"
-    comment: I want to get good at . Create a simple, focused plan that covers only the highest-impact parts.
+    # I want to get good at . Create a simple, focused plan that covers only the highest-impact parts.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -72,7 +72,7 @@ matches:
       area:
         default: my life and work
     label: "[Thinking Prompts] Self-Sabotage & Subconscious Barrier Detector"
-    comment: Help me spot where I'm getting in my own way in .
+    # Help me spot where I'm getting in my own way in .
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -83,7 +83,7 @@ matches:
 
       For each one, explain it simply and show how it actually applies in real life.
     label: "[Thinking Prompts] Core Truth & Mental Breakthrough Extractor"
-    comment: Take  and break it into five powerful insights that are easy to understand but hard to notice.
+    # Take  and break it into five powerful insights that are easy to understand but hard to notice.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -97,7 +97,7 @@ matches:
       problem:
         multiline: true
     label: "[Thinking Prompts] Personal Decision-Making Heuristic Decoder"
-    comment: Break down how I handle .
+    # Break down how I handle .
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -113,7 +113,7 @@ matches:
       challenge:
         multiline: true
     label: "[Thinking Prompts] Bold Vision Simulator (Unconstrained Thinking)"
-    comment: Show how someone bold and creative (like ) would approach my .
+    # Show how someone bold and creative (like ) would approach my .
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -127,7 +127,7 @@ matches:
       topic:
         multiline: true
     label: "[Thinking Prompts] Radical Assumption Challenge & Red Teaming"
-    comment: Challenge my thinking about .
+    # Challenge my thinking about .
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -139,7 +139,7 @@ matches:
       topic:
         multiline: true
     label: "[Thinking Prompts] Deep Investigative Research Brief"
-    comment: Comprehensive multi-angle research synthesizing data, history, and expert consensus.
+    # Comprehensive multi-angle research synthesizing data, history, and expert consensus.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -153,7 +153,7 @@ matches:
       dimensions:
         default: features, pricing, market share, UX, reliability
     label: "[Thinking Prompts] Competitor Strategy & Moat Teardown"
-    comment: Evaluates competitors pricing, core features, distribution channels, and vulnerabilities.
+    # Evaluates competitors pricing, core features, distribution channels, and vulnerabilities.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -165,7 +165,7 @@ matches:
       market:
         multiline: true
     label: "[Thinking Prompts] TAM/SAM/SOM Market Sizing Calculation"
-    comment: Calculates Total Addressable Market using bottom-up and top-down estimation methods.
+    # Calculates Total Addressable Market using bottom-up and top-down estimation methods.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -177,7 +177,7 @@ matches:
       controversial_position:
         multiline: true
     label: "[Thinking Prompts] Steelman Counter-Argument Generator"
-    comment: Constructs the strongest possible arguments against your own position to stress-test ideas.
+    # Constructs the strongest possible arguments against your own position to stress-test ideas.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -189,7 +189,7 @@ matches:
       target_asset:
         default: Company / Asset
     label: "[Thinking Prompts] Investment Thesis & Diligence Framework"
-    comment: Structures growth catalysts, risk factors, unit economics, and returns scenarios for investments.
+    # Structures growth catalysts, risk factors, unit economics, and returns scenarios for investments.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -201,7 +201,7 @@ matches:
       subject:
         multiline: true
     label: "[Thinking Prompts] Actionable SWOT Matrix"
-    comment: Generates SWOT analysis tied directly to strategic execution initiatives.
+    # Generates SWOT analysis tied directly to strategic execution initiatives.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -213,7 +213,7 @@ matches:
       subject:
         multiline: true
     label: "[Thinking Prompts] First Principles Deconstruction"
-    comment: Strips away conventional assumptions to analyze problems from foundational physical truths.
+    # Strips away conventional assumptions to analyze problems from foundational physical truths.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -227,7 +227,7 @@ matches:
       current_situation:
         multiline: true
     label: "[Thinking Prompts] Historical Pattern Matching"
-    comment: Draws parallels between modern market/tech situations and past historical precedents.
+    # Draws parallels between modern market/tech situations and past historical precedents.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -239,7 +239,7 @@ matches:
       project_or_decision:
         multiline: true
     label: "[Thinking Prompts] Comprehensive Risk Assessment Matrix"
-    comment: Identifies operational, financial, and regulatory risks with mitigation strategies.
+    # Identifies operational, financial, and regulatory risks with mitigation strategies.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -251,7 +251,7 @@ matches:
       situation:
         multiline: true
     label: "[Thinking Prompts] Scenario Planning (Best / Worst / Expected)"
-    comment: Maps plausible future scenarios, leading indicators, and proactive contingency playbooks.
+    # Maps plausible future scenarios, leading indicators, and proactive contingency playbooks.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -265,7 +265,7 @@ matches:
       outcome:
         multiline: true
     label: "[Thinking Prompts] Causal Chain & Root Dynamic Mapping"
-    comment: Traces the chain of cause-and-effect leading to an outcome to reveal high-leverage intervention points.
+    # Traces the chain of cause-and-effect leading to an outcome to reveal high-leverage intervention points.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -277,7 +277,7 @@ matches:
       trend:
         multiline: true
     label: "[Thinking Prompts] Macro Industry Trend Analysis"
-    comment: Evaluates technological, economic, and cultural forces shaping an industry over 3-5 years.
+    # Evaluates technological, economic, and cultural forces shaping an industry over 3-5 years.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -289,7 +289,7 @@ matches:
       decision_type:
         multiline: true
     label: "[Thinking Prompts] Multi-Criteria Decision Framework"
-    comment: Builds weighted decision matrices with trade-off analysis and scorecards.
+    # Builds weighted decision matrices with trade-off analysis and scorecards.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -301,7 +301,7 @@ matches:
       problem_or_failure:
         multiline: true
     label: "[Thinking Prompts] 5-Whys Root Cause Analysis"
-    comment: Drills past symptoms to uncover underlying systemic root causes of a failure.
+    # Drills past symptoms to uncover underlying systemic root causes of a failure.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -313,7 +313,7 @@ matches:
       project_or_decision:
         multiline: true
     label: "[Thinking Prompts] Stakeholder Impact & Alignment Mapping"
-    comment: Maps stakeholder motivations, influence levels, and communication strategies.
+    # Maps stakeholder motivations, influence levels, and communication strategies.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -325,7 +325,7 @@ matches:
       phenomenon:
         multiline: true
     label: "[Thinking Prompts] Falsifiable Hypothesis Generation"
-    comment: Formulates clear, testable hypotheses with validation experiments and success metrics.
+    # Formulates clear, testable hypotheses with validation experiments and success metrics.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -337,7 +337,7 @@ matches:
       plan_or_belief:
         multiline: true
     label: "[Thinking Prompts] Critical Assumption Stress Test"
-    comment: Surfaces unstated assumptions in a plan and rates their criticality and uncertainty.
+    # Surfaces unstated assumptions in a plan and rates their criticality and uncertainty.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -349,7 +349,7 @@ matches:
       decision_or_trend:
         multiline: true
     label: "[Thinking Prompts] Second-Order Consequences Forecaster"
-    comment: Uncovers unintended downstream consequences and ripple effects of an action.
+    # Uncovers unintended downstream consequences and ripple effects of an action.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -361,7 +361,7 @@ matches:
       plan:
         multiline: true
     label: "[Thinking Prompts] Pre-Mortem Failure Simulation"
-    comment: Assumes the project has failed 12 months in the future and works backward to identify flaws.
+    # Assumes the project has failed 12 months in the future and works backward to identify flaws.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -373,7 +373,7 @@ matches:
       industry:
         multiline: true
     label: "[Thinking Prompts] Industry Value Chain Mapping"
-    comment: Pinpoints where economic value is captured, commoditized, or disrupted along a value chain.
+    # Pinpoints where economic value is captured, commoditized, or disrupted along a value chain.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -385,7 +385,7 @@ matches:
       market_or_product:
         multiline: true
     label: "[Thinking Prompts] Network Effects & Flywheel Design"
-    comment: Designs direct, two-sided, or data network effects to build compounding moats.
+    # Designs direct, two-sided, or data network effects to build compounding moats.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -397,7 +397,7 @@ matches:
       product_or_service:
         multiline: true
     label: "[Thinking Prompts] Jobs-To-Be-Done (JTBD) Analysis"
-    comment: Uncovers the core functional, emotional, and social jobs customers hire a product to do.
+    # Uncovers the core functional, emotional, and social jobs customers hire a product to do.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -409,7 +409,7 @@ matches:
       company:
         default: Target Company
     label: "[Thinking Prompts] Defensible Business Moat Evaluation"
-    comment: Audits switching costs, network effects, brand power, and cost advantages.
+    # Audits switching costs, network effects, brand power, and cost advantages.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -421,7 +421,7 @@ matches:
       market:
         multiline: true
     label: "[Thinking Prompts] Supply & Demand Dynamics Teardown"
-    comment: Analyzes elasticity, pricing power, structural shortages, and surplus dynamics.
+    # Analyzes elasticity, pricing power, structural shortages, and surplus dynamics.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -433,7 +433,7 @@ matches:
       product:
         multiline: true
     label: "[Thinking Prompts] Go-To-Market (GTM) Launch Strategy"
-    comment: Defines ICP target, positioning hook, channel prioritization, and launch timeline.
+    # Defines ICP target, positioning hook, channel prioritization, and launch timeline.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -446,7 +446,7 @@ matches:
       # Collapse A Year Of Wisdom Into An Hour
       You are a master curator of high-leverage life and business wisdom. Your job is to compress 12 months of deep insights, growth, and transformation into a single, hyper-focused 60-minute breakdown.
     label: "[Thinking Prompts] Core Life Lessons & Blind Spots"
-    comment: Explores foundational life truths and unstated assumptions overlooked in daily routines.
+    # Explores foundational life truths and unstated assumptions overlooked in daily routines.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -459,7 +459,7 @@ matches:
       # Decode How People Become Unstoppable
       Imagine you're a peak performance psychologist mixed with a Navy SEAL mentor and world-class strategist. Your task: break down the psychology, behaviors, and rituals behind people who become 'unstoppable.'
     label: "[Thinking Prompts] Practical Success Mental Models"
-    comment: Unpacks pragmatic models for compounding career, health, and relationship success.
+    # Unpacks pragmatic models for compounding career, health, and relationship success.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -472,7 +472,7 @@ matches:
       # Train Me To Be Future-Proof
       You're a foresight expert who prepares high-performers to thrive in a rapidly changing world. Train me to become 'future-proof', adaptable, relevant, and unshakable over the next 20+ years.
     label: "[Thinking Prompts] Strategic Mental Models for Modern Complexity"
-    comment: Maps decision frameworks for navigating rapid technological and societal shifts.
+    # Maps decision frameworks for navigating rapid technological and societal shifts.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -481,7 +481,7 @@ matches:
     replace: |
       AI models can adopt specialized strategic frameworks like "Sun Tzu Strategy Master" to run decisions through 2,500 years of strategy doctrine.
     label: "[Thinking Prompts] Sun Tzu Art of War Framework Overview"
-    comment: Strategic warfare principles applied to negotiation, competition, and timing.
+    # Strategic warfare principles applied to negotiation, competition, and timing.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -490,7 +490,7 @@ matches:
     replace: |
       You are now operating as Sun Tzu's Strategy Master. Analyze every question through The Art of War: positioning, deception, timing, terrain, opponents, and force vs restraint. Refuse generic pros and cons. Name the opponent, the asymmetric advantage, the deception available, and the timing of action. Be tactical. Be direct.
     label: "[Thinking Prompts] Sun Tzu Strategic Advisor Mode"
-    comment: Adopts Sun Tzu persona to analyze competitive positioning and win without forced battles.
+    # Adopts Sun Tzu persona to analyze competitive positioning and win without forced battles.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -499,7 +499,7 @@ matches:
     replace: |
       BREAKING: ADVANCED AI MODELS FEATURE DECISION INTELLIGENCE FRAMEWORKS. YOU CAN USE THEM TO SOLVE ANY BUSINESS OR CAREER PROBLEM USING 7 PROVEN FRAMEWORKS THAT CONSULTANTS CHARGE $500/HOUR TO APPLY. HERE ARE 7 PROMPTS TO ACCESS IT:
     label: "[Thinking Prompts] Decision Intelligence Framework Overview"
-    comment: Overview of structured decision intelligence for navigating high-stakes uncertainty.
+    # Overview of structured decision intelligence for navigating high-stakes uncertainty.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -529,7 +529,7 @@ matches:
 
       <output>Competitor Output Map → Current vs Required Output Gap → 3 Daily Outwork Behaviors → One Ignored Area → 90-Day Competitive Advantage System</output>
     label: "[Thinking Prompts] Goggins Resilience: Competitive Advantage System"
-    comment: Evaluates mental grit, pain thresholds, and relentless execution discipline.
+    # Evaluates mental grit, pain thresholds, and relentless execution discipline.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -559,7 +559,7 @@ matches:
 
       <output>Current Output Map → Real vs Required Effort Gap → 3 Underperforming Areas → One Comfort Zone to Break → Daily Non-Negotiables</output>
     label: "[Thinking Prompts] Goggins Resilience: Effort Ceiling Audit"
-    comment: Diagnoses self-imposed limitations and pushes past comfort zones in business and fitness.
+    # Diagnoses self-imposed limitations and pushes past comfort zones in business and fitness.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -568,7 +568,7 @@ matches:
     replace: |
       AI CAN NOW HELP BUILD YOUR BUSINESS LIKE DAVID GOGGINS BUILT HIS $20M EMPIRE BY OUTWORKING EVERYONE WHO EVER DOUBTED HIM. FOR FREE
     label: "[Thinking Prompts] Goggins Mental Resilience Framework Overview"
-    comment: Introduction to applying extreme mental callousness and relentless work ethic.
+    # Introduction to applying extreme mental callousness and relentless work ethic.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -598,7 +598,7 @@ matches:
 
       <output>Current Struggle Map → Inside Experience vs Legacy Foundation Gap → 3 Things Being Forged → One Thing to Run Toward → 12-Month Legacy Vision</output>
     label: "[Thinking Prompts] Goggins Resilience: Legacy Through Adversity"
-    comment: Transforms pain, obstacles, and hardship into long-term compounding fuel.
+    # Transforms pain, obstacles, and hardship into long-term compounding fuel.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -628,7 +628,7 @@ matches:
 
       <output>Current Doubt Source Map -> Doubt Response Gap -> 3 Reframed Doubt Sources -> One Suppressed Doubt to Convert -> Daily Doubt-to-Fuel System</output>
     label: "[Thinking Prompts] Goggins Resilience: Doubt Conversion Engine"
-    comment: Converts self-doubt and criticism into aggressive operational focus.
+    # Converts self-doubt and criticism into aggressive operational focus.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -658,7 +658,7 @@ matches:
 
       <output>Current Setback Response Map -> Resilience Gap -> 3 Mental Reframes -> One Thought Pattern to Rewire -> 90-Day Unbreakable Mind Practice</output>
     label: "[Thinking Prompts] Goggins Resilience: Mind Callousing Protocol"
-    comment: Builds emotional callouses to endure high stress, rejection, and demanding workloads.
+    # Builds emotional callouses to endure high stress, rejection, and demanding workloads.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -667,7 +667,7 @@ matches:
     replace: |
       Show me exactly how you're thinking right now. Walk me through your internal reasoning before you give me any answer — step by step.
     label: "[Thinking Prompts] Glassbox Inner Monologue Inspection"
-    comment: Forces the LLM to expose its step-by-step reasoning and internal assumptions before answering.
+    # Forces the LLM to expose its step-by-step reasoning and internal assumptions before answering.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -676,7 +676,7 @@ matches:
     replace: |
       After every answer you give me, ask me one question that forces me to think deeper. Don't stop until I actually understand this — not just memorize it.
     label: "[Thinking Prompts] Socratic Probing Question"
-    comment: Instructs the LLM to ask a challenging follow-up question after every answer to deepen learning.
+    # Instructs the LLM to ask a challenging follow-up question after every answer to deepen learning.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -685,7 +685,7 @@ matches:
     replace: |
       Based only on how I've been talking to you in this conversation — what assumptions am I making that I don't even know I'm making?
     label: "[Thinking Prompts] Cold Read Tone & Subtext Audit"
-    comment: Analyzes conversational subtext, blind spots, and communication habits in your writing.
+    # Analyzes conversational subtext, blind spots, and communication habits in your writing.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -694,7 +694,7 @@ matches:
     replace: |
       Read my last message as if you're someone who doesn't know me. How does it actually sound? Be honest — not kind.
     label: "[Thinking Prompts] Third-Party Perspective Mirror Test"
-    comment: Evaluates how your message or draft sounds to an objective, skeptical outside reader.
+    # Evaluates how your message or draft sounds to an objective, skeptical outside reader.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -703,7 +703,7 @@ matches:
     replace: |
       Tell me every way this plan could completely fail. Don't soften it. I need the worst-case version so I can fix the real problems.
     label: "[Thinking Prompts] Plan Inversion (Failure Mode Enumeration)"
-    comment: Identifies all the ways a proposed strategy or plan could completely fail.
+    # Identifies all the ways a proposed strategy or plan could completely fail.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -723,7 +723,7 @@ matches:
 
       Return everything in concise bullet points or tables, ready to paste into slides. Think like a McKinsey partner preparing for a C-suite meeting.
     label: "[Thinking Prompts] McKinsey-Style Strategic Research Brief"
-    comment: Structures strategic analysis using top-tier management consulting research standards.
+    # Structures strategic analysis using top-tier management consulting research standards.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -763,7 +763,7 @@ matches:
       - Short paragraphs.
       - Plain English. No therapy jargon. No fluff.
     label: "[Thinking Prompts] Decision Journal: Project Instructions"
-    comment: Lifelong decision advisor instructions for tracking, evaluating, and reviewing life choices.
+    # Lifelong decision advisor instructions for tracking, evaluating, and reviewing life choices.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -815,7 +815,7 @@ matches:
 
       My decision: [DESCRIBE YOUR DECISION HERE]
     label: "[Thinking Prompts] Decision Journal: Pre-Decision Log"
-    comment: Structured logging template before making an important irreversible decision.
+    # Structured logging template before making an important irreversible decision.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -860,7 +860,7 @@ matches:
       End with: the single most important lesson
       from this decision in one sentence.
     label: "[Thinking Prompts] Decision Journal: Post-Decision Review"
-    comment: Evaluates decision outcomes against original rationale and predictions.
+    # Evaluates decision outcomes against original rationale and predictions.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -912,7 +912,7 @@ matches:
       how much they have cost me — with evidence
       from my own decision log.
     label: "[Thinking Prompts] Decision Journal: Blind Spot & Bias Audit"
-    comment: Identifies cognitive biases, emotional distortions, and overconfidence in logged decisions.
+    # Identifies cognitive biases, emotional distortions, and overconfidence in logged decisions.
     search_terms:
       - thinking-prompts
       - thinking prompts
@@ -961,7 +961,7 @@ matches:
       The person who reviews their decisions quarterly
       makes better ones annually. That is the compound.
     label: "[Thinking Prompts] Decision Journal: Quarterly Meta-Review"
-    comment: Reviews decision batting average and recurring blind spots over a 90-day quarter.
+    # Reviews decision batting average and recurring blind spots over a 90-day quarter.
     search_terms:
       - thinking-prompts
       - thinking prompts

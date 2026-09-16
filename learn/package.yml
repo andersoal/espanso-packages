@@ -5,7 +5,7 @@ matches:
     form: |
       "You are a teacher who only has 4 hours with me and will never see me again. Your only objective is to make me functional in [[skill]] before the time runs out. Do not give me theory without practical use. Do not give me a list. Tell me: what to learn first, what to completely ignore, and what exercise, if I do it once, will already put me ahead of 70% of people who have been studying this for months."
     label: "[Learn] 4-Hour High-Speed Learning Squeeze"
-    comment: Fast-tracks learning as if you only have 4 hours to learn the entire topic.
+    # Fast-tracks learning as if you only have 4 hours to learn the entire topic.
     search_terms:
       - learn
 
@@ -13,7 +13,7 @@ matches:
     form: |
       "My real goal is [[goal]]. It is not to learn [[skill]] in general. It is to achieve [[specific_result]] within [[deadline]]. I already know [[what_you_master]]. Based on that, build me a 7-day learning path. Each day must include one single task that fits within 45 minutes, a clear criterion so I know whether I did it correctly, and what not to do that day so I do not waste time. If the entire path does not lead me to the goal, rebuild it until it does."
     label: "[Learn] Mission-Specific Curriculum Architect"
-    comment: Builds a curriculum specifically tailored to your exact goal rather than generic theory.
+    # Builds a curriculum specifically tailored to your exact goal rather than generic theory.
     search_terms:
       - learn
 
@@ -24,7 +24,7 @@ matches:
       - name: clip
         type: clipboard
     label: "[Learn] Jargon to Plain Language Translator"
-    comment: Translates confusing technical jargon into intuitive concepts.
+    # Translates confusing technical jargon into intuitive concepts.
     search_terms:
       - learn
 
@@ -60,7 +60,7 @@ matches:
       topic:
         default: Machine Learning / AI Sourcing
     label: "[Learn] Research Step 1: Broad Landscape Map"
-    comment: Maps the overarching domain landscape, key figures, and core controversies.
+    # Maps the overarching domain landscape, key figures, and core controversies.
     search_terms:
       - learn
 
@@ -103,7 +103,7 @@ matches:
       topic:
         default: ""
     label: "[Learn] Research Step 2: Primary Source Deep Dive"
-    comment: Extracts empirical data and key findings from high-trust primary sources.
+    # Extracts empirical data and key findings from high-trust primary sources.
     search_terms:
       - learn
 
@@ -121,7 +121,7 @@ matches:
       topic:
         default: ""
     label: "[Learn] Research Step 3: Synthesis & Actionable Takeaways"
-    comment: Synthesizes gathered research into a crisp, actionable briefing document.
+    # Synthesizes gathered research into a crisp, actionable briefing document.
     search_terms:
       - learn
 
@@ -144,7 +144,7 @@ matches:
       target:
         default: this paper
     label: "[Learn] Steelman Thesis (Strongest Plain-Language Justification)"
-    comment: TASK
+    # TASK
     search_terms:
       - learn
 
@@ -167,7 +167,7 @@ matches:
       target:
         default: this paper
     label: "[Learn] Skeptical Red-Team (Methodology Flaws & Replication Audit)"
-    comment: "Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:"
+    # Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:
     search_terms:
       - learn
 
@@ -207,7 +207,7 @@ matches:
       topic:
         default: ""
     label: "[Learn] Literature Update Analysis (New Paper vs Established Canon)"
-    comment: "Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:"
+    # Using ONLY the documents in this project, and following the quote-first sourcing rules in the project instructions:
     search_terms:
       - learn
 
@@ -224,7 +224,7 @@ matches:
       hours:
         default: "3"
     label: "[Learn] Google Cloud Skills Roadmap (Focused Course & Badge Plan)"
-    comment: "I'm a  who wants to learn . Google Skills has ~3,000 courses and labs. Build me a focused -week plan: one track only, th"
+    # I'm a  who wants to learn . Google Skills has ~3,000 courses and labs. Build me a focused -week plan: one track only, th
     search_terms:
       - learn
 
@@ -240,7 +240,7 @@ matches:
       role:
         default: developer
     label: '[Learn] Google Cloud Lab Prep Sheet (Key Concepts & Traps Before Starting)'
-    comment: 'I am ready to start the "" lab from the plan you gave me. Before I click start, give me a 3-bullet prep sheet:'
+    # I am ready to start the "" lab from the plan you gave me. Before I click start, give me a 3-bullet prep sheet:
     search_terms:
       - learn
 
@@ -255,7 +255,7 @@ matches:
 
       Ask these as a short numbered list and then wait. Do not start teaching yet.
     label: "[Learn] Learning Protocol 1/5: Calibration (Prior Knowledge & Scope)"
-    comment: I want to learn . Before teaching me anything, calibrate to me.
+    # I want to learn . Before teaching me anything, calibrate to me.
     search_terms:
       - learn
 
@@ -274,7 +274,7 @@ matches:
       - name: copied_topic
         type: clipboard
     label: "[Learn] Learning Protocol 2/5: Targeted Instruction (Concept-by-Concept)"
-    comment: Based on my answers, teach me {{copied_topic}} at exactly the level I need - no more, no less.
+    # Based on my answers, teach me {{copied_topic}} at exactly the level I need - no more, no less.
     search_terms:
       - learn
 
@@ -288,7 +288,7 @@ matches:
 
       At the end, list the specific concepts I clearly have not grasped.
     label: "[Learn] Learning Protocol 3/5: Retention Quiz (6 Interactive Questions)"
-    comment: Now test whether it actually stuck. Do NOT re-explain anything first.
+    # Now test whether it actually stuck. Do NOT re-explain anything first.
     search_terms:
       - learn
 
@@ -301,7 +301,7 @@ matches:
       - Give me one fresh example.
       - Ask me a single follow-up question to confirm I have it now.
     label: "[Learn] Learning Protocol 4/5: Remediation (Targeted Concept Re-Teaching)"
-    comment: Re-teach ONLY the concepts I got wrong or was shaky on. Ignore everything I already understood.
+    # Re-teach ONLY the concepts I got wrong or was shaky on. Ignore everything I already understood.
     search_terms:
       - learn
 
@@ -317,7 +317,7 @@ matches:
 
       Keep it tight enough to fit on one screen.
     label: "[Learn] Learning Protocol 5/5: Cheat Sheet (1-Page Review & Traps)"
-    comment: Now compress everything into a one-page reference I can save and review later.
+    # Now compress everything into a one-page reference I can save and review later.
     search_terms:
       - learn
 
@@ -348,7 +348,7 @@ matches:
       baseline:
         default: Systems thinker, practical architecture focus
     label: "[Learn] Aggressively Gated"
-    comment: "[ROLE]"
+    # [ROLE]
     search_terms:
       - learn
 
@@ -356,7 +356,7 @@ matches:
     replace: |
       Design a 30-day brain upgrade program that includes high-IQ thinking routines, mind-expanding prompts, advanced reading material, memory-enhancing techniques, and strategic rest habits. Keep it practical and time-efficient.
     label: "[Learn] 30-Day Cognitive & Memory Upgrade Plan"
-    comment: 30-day routine for improving active recall, mental clarity, and problem-solving.
+    # 30-day routine for improving active recall, mental clarity, and problem-solving.
     search_terms:
       - learn
 
@@ -364,7 +364,7 @@ matches:
     replace: |
       Help me build a personalized learning system to master any topic. Include how to plan, practice, review, and track my progress for long-term retention.
     label: "[Learn] Personalized Learning System Architect"
-    comment: Builds an adaptive multi-week learning framework tailored to current skill level.
+    # Builds an adaptive multi-week learning framework tailored to current skill level.
     search_terms:
       - learn
 
@@ -372,7 +372,7 @@ matches:
     replace: |
       Become my private coach. Explain each concept, ask questions, give feedback, and guide me until I understand it.
     label: "[Learn] Private Socratic Coach"
-    comment: Explains concepts step-by-step and quizzes comprehension at each milestone.
+    # Explains concepts step-by-step and quizzes comprehension at each milestone.
     search_terms:
       - learn
 
@@ -380,7 +380,7 @@ matches:
     replace: |
       After explaining the concept, ask me to teach it back to you and point out any gaps in my understanding.
     label: "[Learn] Feynman Technique: Teach-Back Mode"
-    comment: Requires you to explain the concept in simple terms to verify true comprehension.
+    # Requires you to explain the concept in simple terms to verify true comprehension.
     search_terms:
       - learn
 
@@ -388,7 +388,7 @@ matches:
     replace: |
       Turn this concept into diagrams, analogies, mental models, or visual explanations.
     label: "[Learn] Visual Diagrams & Mental Models Explainer"
-    comment: Translates abstract topics into visual ASCII diagrams, analogies, and mental models.
+    # Translates abstract topics into visual ASCII diagrams, analogies, and mental models.
     search_terms:
       - learn
 
@@ -396,7 +396,7 @@ matches:
     replace: |
       Create a 30-day challenge that gradually increases in difficulty to improve my skills.
     label: "[Learn] 30-Day Progressive Practice Challenge"
-    comment: Generates a 30-day curriculum with daily micro-exercises increasing in difficulty.
+    # Generates a 30-day curriculum with daily micro-exercises increasing in difficulty.
     search_terms:
       - learn
 
@@ -404,7 +404,7 @@ matches:
     replace: |
       Generate 50 realistic situations where I can apply this skill in everyday life or work.
     label: "[Learn] 50 Real-World Application Scenarios"
-    comment: Generates 50 realistic practical situations to test and apply theoretical knowledge.
+    # Generates 50 realistic practical situations to test and apply theoretical knowledge.
     search_terms:
       - learn
 
@@ -412,7 +412,7 @@ matches:
     replace: |
       Build a weekly review system that measures my progress, identifies weaknesses, and recommends improvements.
     label: "[Learn] Weekly Knowledge Retention & Progress Review"
-    comment: Measures retention rate, identifies weak spots, and recalibrates the study plan.
+    # Measures retention rate, identifies weak spots, and recalibrates the study plan.
     search_terms:
       - learn
 
@@ -420,7 +420,7 @@ matches:
     replace: |
       Create flashcards, quizzes, and memory exercises that help me retain this information.
     label: "[Learn] Active Recall Flashcards & Spaced Repetition"
-    comment: Builds question-and-answer flashcard decks optimized for spaced repetition.
+    # Builds question-and-answer flashcard decks optimized for spaced repetition.
     search_terms:
       - learn
 
@@ -428,7 +428,7 @@ matches:
     replace: |
       Design a hands-on project that lets me practice and demonstrate everything I've learned.
     label: "[Learn] Hands-On Capstone Project Blueprint"
-    comment: Designs a tangible portfolio-grade project to cement conceptual understanding.
+    # Designs a tangible portfolio-grade project to cement conceptual understanding.
     search_terms:
       - learn
 
@@ -436,7 +436,7 @@ matches:
     replace: |
       Create a learning schedule that helps me make meaningful progress in just 30 minutes each day.
     label: "[Learn] 30-Minute Daily Micro-Learning Plan"
-    comment: Structures high-efficiency 30-minute daily learning routines for busy schedules.
+    # Structures high-efficiency 30-minute daily learning routines for busy schedules.
     search_terms:
       - learn
 
@@ -444,7 +444,7 @@ matches:
     replace: |
       Explain this lesson using engaging stories, analogies, and memorable real-world examples.
     label: "[Learn] Story & Analogy Explainer"
-    comment: Explains difficult technical ideas using relatable real-world stories and metaphors.
+    # Explains difficult technical ideas using relatable real-world stories and metaphors.
     search_terms:
       - learn
 
@@ -452,7 +452,7 @@ matches:
     replace: |
       Act as a disciplined coach who tracks my progress, reminds me of commitments, and pushes me to stay consistent.
     label: "[Learn] Disciplined Habit & Study Coach"
-    comment: Tracks learning consistency, calls out excuses, and maintains study momentum.
+    # Tracks learning consistency, calls out excuses, and maintains study momentum.
     search_terms:
       - learn
 
@@ -460,7 +460,7 @@ matches:
     replace: |
       Explain how AI and emerging technology are changing the way people learn this skill and how I can stay ahead.
     label: "[Learn] AI & Emerging Technology Skill Forecaster"
-    comment: Explains how AI is shifting requirements and highlights future-proof skills to learn.
+    # Explains how AI is shifting requirements and highlights future-proof skills to learn.
     search_terms:
       - learn
 
@@ -468,7 +468,7 @@ matches:
     replace: |
       Based on everything we've covered, give me the next three actions I should take today to keep improving.
     label: "[Learn] Actionable Step-by-Step Mastery Blueprint"
-    comment: Condenses comprehensive study topics into immediate tactical next steps.
+    # Condenses comprehensive study topics into immediate tactical next steps.
     search_terms:
       - learn
 
@@ -480,7 +480,7 @@ matches:
 
       Recursion Down - Level 2: Within each phase, identify the 2-4 key decisions or actions that most directly contributed to that phase's outcome. Ignore everything that happened - only the moves that mattered.
     label: "[Learn] Recursive Principle Decomposition Protocol"
-    comment: Breaks complex skills down through 3 recursive levels to extract core foundational truths.
+    # Breaks complex skills down through 3 recursive levels to extract core foundational truths.
     search_terms:
       - learn
 
@@ -488,7 +488,7 @@ matches:
     replace: |
       1 AI PROMPT WASHINGTON DECIDES. turns a success strategy into a repeatable system.
     label: "[Learn] Strategy Decomposition: Framework Intro"
-    comment: Introduction to the Washington Decides recursive strategy extraction method.
+    # Introduction to the Washington Decides recursive strategy extraction method.
     search_terms:
       - learn
 
@@ -496,7 +496,7 @@ matches:
     replace: |
       Every principle must be specific enough that someone could implement it next week without asking what you mean. Do not stop at what went right. Identify 1-2 things that went wrong or almost failed but were recovered - near-misses contain some of the highest-value lessons. Avoid the temptation to create ten or fifteen principles. Fewer, stronger principles beat a long list nobody remembers.
     label: "[Learn] Strategy Decomposition: Checklist Protocol"
-    comment: Translates high-level principles into an actionable operating checklist.
+    # Translates high-level principles into an actionable operating checklist.
     search_terms:
       - learn
 
@@ -506,7 +506,7 @@ matches:
 
       A checklist you or your team can run on the next project to hit the same result on purpose.
     label: "[Learn] Strategy Decomposition: Deliverables Summary"
-    comment: Overview of the concrete protocols and checklists generated by the framework.
+    # Overview of the concrete protocols and checklists generated by the framework.
     search_terms:
       - learn
 
@@ -516,7 +516,7 @@ matches:
 
       After building the protocol, stress-test it by identifying 2-3 scenarios where these principles would need to be adapted, and explain how to modify the protocol for each without losing its core value.
     label: "[Learn] Strategy Decomposition: Level 3 Meta-Principles"
-    comment: Extracts universal principles that transfer across diverse domains.
+    # Extracts universal principles that transfer across diverse domains.
     search_terms:
       - learn
 
@@ -524,7 +524,7 @@ matches:
     replace: |
       Recursion Up - Level 1: From the Level 3 analysis, identify which decisions succeeded because of conditions unique to this specific situation (one-time market window, specific relationship, unrepeatable timing) versus conditions you can recreate or engineer in future projects (process design, information systems, decision criteria, team structure).
     label: "[Learn] Strategy Decomposition: Level 1 Synthesis"
-    comment: Synthesizes granular tactics back up into overarching foundational rules.
+    # Synthesizes granular tactics back up into overarching foundational rules.
     search_terms:
       - learn
 
@@ -532,7 +532,7 @@ matches:
     replace: |
       It breaks a past success or any strategy into phases and decisions, then finds the mechanics that actually caused it.
     label: "[Learn] Strategy Decomposition: Concept Overview"
-    comment: Summary of how recursive decomposition strips vanity to reveal actionable strategy.
+    # Summary of how recursive decomposition strips vanity to reveal actionable strategy.
     search_terms:
       - learn
 
@@ -540,7 +540,7 @@ matches:
     replace: |
       Recursion Down - Level 3: For each key decision, answer three questions. First, what information or conditions existed at the time that made this the right move? Second, was this decision made deliberately based on reasoning, or did it happen intuitively or accidentally? Third, what would have happened if the opposite decision had been made?
     label: "[Learn] Strategy Decomposition: Level 3 Micro-Mechanisms"
-    comment: Drills down into sub-components and exact tactical levers of success.
+    # Drills down into sub-components and exact tactical levers of success.
     search_terms:
       - learn
 
@@ -548,7 +548,7 @@ matches:
     replace: |
       MOST IMPORTANT!: Structure your output with the following sections in order: Phase Decomposition (timeline with phases and their outcomes), Key Decision Register (table format with columns: Phase / Decision / Reasoning / Deliberate or Accidental / Counterfactual), Transferability Sort (two-column format: Situation-Specific Elements vs. Recreatable Elements), Transferability Principles (4-7 principles, each stated as an actionable rule with a one-sentence rationale), Repeatable Success Protocol (sequenced checklist format), Near-Miss Lessons (things that almost went wrong and what they teach), and Adaptation Notes (2-3 scenarios where the protocol needs modification with specific guidance).
     label: "[Learn] Strategy Decomposition: Final Structured Output"
-    comment: Outputs the complete 3-level recursive hierarchy with operational guidelines.
+    # Outputs the complete 3-level recursive hierarchy with operational guidelines.
     search_terms:
       - learn
 
@@ -556,7 +556,7 @@ matches:
     replace: |
       Adopt the role of a pattern extraction specialist who previously worked in after-action review units for elite military teams, where the mandate after every mission - successful or failed - was to extract every transferable principle before institutional memory decayed. You discovered that most organizations are terrible at learning from their own wins. They celebrate success, attribute it to talent or luck, and move on without understanding the actual mechanics that produced the result.
     label: "[Learn] Strategy Decomposition: Level 1 Foundation"
-    comment: Adopts pattern extraction specialist persona to deconstruct success mechanics.
+    # Adopts pattern extraction specialist persona to deconstruct success mechanics.
     search_terms:
       - learn
 
@@ -564,7 +564,7 @@ matches:
     replace: |
       Do not attribute the success to talent, hustle, or luck. Those might have contributed, but they aren't transferable. Extract the structural and procedural elements that are. Do not confuse correlation with causation - just because something happened during the success doesn't mean it caused the success. Apply the counterfactual test: if this element had been absent, would the outcome have changed? If not, it's not a real principle. Do not produce principles so generic they could apply to anything ("be customer-focused").
     label: "[Learn] Strategy Decomposition: Execution Hygiene"
-    comment: Removes survivorship bias, luck, and vague talent attributions from strategy.
+    # Removes survivorship bias, luck, and vague talent attributions from strategy.
     search_terms:
       - learn
 
@@ -572,7 +572,7 @@ matches:
     replace: |
       BREAKING: I INSTALLED A "BRAIN" IN ADVANCED AI, AND IT STARTED TEACHING ME THINGS I DIDN'T KNOW EXISTED. HERE ARE 7 PROMPTS THAT MAKE LEARNING FEEL ILLEGAL: (SAVE THIS)
     label: "[Learn] High-Speed Learning Engine Intro"
-    comment: Introduction to fast-track cognitive mastery and knowledge acquisition frameworks.
+    # Introduction to fast-track cognitive mastery and knowledge acquisition frameworks.
     search_terms:
       - learn
 
@@ -589,7 +589,7 @@ matches:
 
       Teach in a warm, Socratic tone and pause for understanding checks before advancing.
     label: "[Learn] World-Class Private Socratic Tutor"
-    comment: Patient, first-principles private tutor that adapts to your learning pace.
+    # Patient, first-principles private tutor that adapts to your learning pace.
     search_terms:
       - learn
 
@@ -597,7 +597,7 @@ matches:
     replace: |
       I want to learn [topic]. Teach me only the most important 20% - the part that helps me understand 80% of everything else.
     label: "[Learn] Pareto 80/20 Knowledge Extractor"
-    comment: Isolates the vital 20% of concepts that account for 80% of practical competence.
+    # Isolates the vital 20% of concepts that account for 80% of practical competence.
     search_terms:
       - learn
 
@@ -605,7 +605,7 @@ matches:
     replace: |
       I'm writing a report on [topic]. Research everything and rewrite it for a complete beginner. Make it simple, correct, and easy to read.
     label: "[Learn] Comprehensive Topic Research Engine"
-    comment: Researches any subject from primary sources and writes a comprehensive report.
+    # Researches any subject from primary sources and writes a comprehensive report.
     search_terms:
       - learn
 
@@ -613,7 +613,7 @@ matches:
     replace: |
       I want to learn [skill] from zero. Create a 30-day, step-by-step plan that takes me from clueless to confident.
     label: "[Learn] 30-Day Zero-to-One Skill Plan"
-    comment: Structured daily roadmap to take a beginner from zero to functional competence in 30 days.
+    # Structured daily roadmap to take a beginner from zero to functional competence in 30 days.
     search_terms:
       - learn
 
@@ -621,7 +621,7 @@ matches:
     replace: |
       I'm studying [topic]. Ask me questions to test my understanding. Correct my answers, explain mistakes, and give examples so I improve fast.
     label: "[Learn] Active Comprehension Quizzer"
-    comment: Tests understanding with probing conceptual and application questions.
+    # Tests understanding with probing conceptual and application questions.
     search_terms:
       - learn
 
@@ -629,7 +629,7 @@ matches:
     replace: |
       Create a ready-to-use prompt that helps me achieve [specific goal]. Make it short, powerful, and actionable.
     label: "[Learn] Custom Goal Prompt Generator"
-    comment: Generates optimized AI prompts tailored to achieve specific personal or career goals.
+    # Generates optimized AI prompts tailored to achieve specific personal or career goals.
     search_terms:
       - learn
 
@@ -637,7 +637,7 @@ matches:
     replace: |
       I want to get good at [topic]. Give me a simple mastery plan with clear steps, what to practice, and how long each stage takes.
     label: "[Learn] End-to-End Topic Mastery Roadmap"
-    comment: Clear milestone roadmap detailing beginner, intermediate, and master milestones.
+    # Clear milestone roadmap detailing beginner, intermediate, and master milestones.
     search_terms:
       - learn
 
@@ -645,7 +645,7 @@ matches:
     replace: |
       You're an expert in [field]. Walk me through how to solve [problem] with a direct, step-by-step approach.
     label: "[Learn] Domain Expert Problem Solving Walkthrough"
-    comment: Walks through complex technical challenges with senior engineering discipline.
+    # Walks through complex technical challenges with senior engineering discipline.
     search_terms:
       - learn
 
@@ -653,7 +653,7 @@ matches:
     replace: |
       My goal is [insert goal]. Tell me which skills I need and give me practical ideas I can start using today to reach that goal.
     label: "[Learn] Goal Skill Inventory & Action Engine"
-    comment: Determines exact prerequisite skills and projects needed to reach any goal.
+    # Determines exact prerequisite skills and projects needed to reach any goal.
     search_terms:
       - learn
 
@@ -661,7 +661,7 @@ matches:
     replace: |
       I want to master [TOPIC]. Before teaching me, find out what I already know, what I want to achieve, how much time I have, and how I prefer to learn. Then create the shortest practical learning path that builds real understanding instead of memorization. Teach one concept at a time, test my understanding before moving on, and adjust each lesson based on my progress.
     label: "[Learn] Diagnostic Accelerated Learning Path"
-    comment: Assesses existing knowledge before formulating a customized high-velocity path.
+    # Assesses existing knowledge before formulating a customized high-velocity path.
     search_terms:
       - learn
 
@@ -669,7 +669,7 @@ matches:
     replace: |
       Act as my private tutor for [TOPIC]. Don't overwhelm me with information. Teach me one lesson at a time using simple explanations, practical examples, analogies, and short exercises. After each lesson, ask me questions that show whether I truly understand the concept. If not, explain it a different way before continuing.
     label: "[Learn] First-Principles Topic Tutor"
-    comment: Breaks down complex subjects without overwhelming jargon or fluff.
+    # Breaks down complex subjects without overwhelming jargon or fluff.
     search_terms:
       - learn
 
@@ -677,7 +677,7 @@ matches:
     replace: |
       Teach me [TOPIC] from first principles. Cut out unnecessary jargon and assumptions. Start with the fundamentals, explain why each idea exists, then build up the topic step by step until I can explain it confidently in my own words.
     label: "[Learn] First-Principles Knowledge Breakdown"
-    comment: Rebuilds understanding from ground-level foundational facts up.
+    # Rebuilds understanding from ground-level foundational facts up.
     search_terms:
       - learn
 
@@ -685,7 +685,7 @@ matches:
     replace: |
       Help me remember [TOPIC] long-term. Turn every important concept into memorable analogies, mental models, visual descriptions, and recall questions. Schedule periodic review sessions throughout our conversation so it naturally reinforces what I've already learned.
     label: "[Learn] Long-Term Retention & Spaced Memory Protocol"
-    comment: Converts key concepts into memory anchors and retention triggers.
+    # Converts key concepts into memory anchors and retention triggers.
     search_terms:
       - learn
 
@@ -693,7 +693,7 @@ matches:
     replace: |
       Don't just teach me [TOPIC]. Teach me how experienced professionals think about it. Show me the mental models, common mistakes, hidden patterns, practical decision-making process, and real-world reasoning that experts use every day.
     label: "[Learn] Expert Mental Models & Heuristics"
-    comment: Teaches how seasoned industry veterans think, evaluate trade-offs, and make decisions.
+    # Teaches how seasoned industry veterans think, evaluate trade-offs, and make decisions.
     search_terms:
       - learn
 
@@ -701,7 +701,7 @@ matches:
     replace: |
       Turn this conversation into an interactive classroom on [TOPIC]. Teach one concept, quiz me with questions, let me explain it back, identify misunderstandings immediately, and only increase the difficulty once I've shown real understanding.
     label: "[Learn] Interactive Classroom Simulator"
-    comment: Transforms the AI chat into an interactive simulation with real-time feedback.
+    # Transforms the AI chat into an interactive simulation with real-time feedback.
     search_terms:
       - learn
 
@@ -709,7 +709,7 @@ matches:
     replace: |
       I want to understand [TOPIC] as if I were a genius. Break down the concept using advanced analogies, real-world applications, counterexamples, and multiple perspectives, then test my understanding with expert-level questions.
     label: "[Learn] Intuitive Genius Breakdown"
-    comment: Explains complex theoretical concepts using intuitive, simple mental models.
+    # Explains complex theoretical concepts using intuitive, simple mental models.
     search_terms:
       - learn
 
@@ -717,7 +717,7 @@ matches:
     replace: |
       Assume you're a master of [insert skill] with 20+ years of experience. Reverse engineer the process that got you there, and build me a day-by-day plan to reach that level as fast as humanly possible using only free or low-cost resources.
     label: "[Learn] 20-Year Veteran Skill Accelerator"
-    comment: Synthesizes 20+ years of domain experience into key shortcuts and anti-patterns.
+    # Synthesizes 20+ years of domain experience into key shortcuts and anti-patterns.
     search_terms:
       - learn
 
@@ -725,7 +725,7 @@ matches:
     replace: |
       I've been struggling with [insert personal issue: procrastination, burnout, fear, etc.]. Analyze it like a cognitive scientist. Identify the root causes, the behavioural patterns behind it, and design a habit loop to eliminate it.
     label: "[Learn] Habit Loop & Procrastination Deconstruction"
-    comment: Deconstructs triggers, routines, and rewards to overcome procrastination and burnout.
+    # Deconstructs triggers, routines, and rewards to overcome procrastination and burnout.
     search_terms:
       - learn
 
@@ -733,7 +733,7 @@ matches:
     replace: |
       I don't understand [insert complex concept]. Break it down step-by-step using metaphors, visual imagery, and real-world examples. Then create a mental shortcut or framework I can use to remember it forever.
     label: "[Learn] Complex Concept Simplifier"
-    comment: Takes any confusing concept and breaks it down into clear, plain language.
+    # Takes any confusing concept and breaks it down into clear, plain language.
     search_terms:
       - learn
 
@@ -741,7 +741,7 @@ matches:
     replace: |
       Teach me [insert topic] like I'm preparing for a PhD. Start from first principles, explain all foundational theories, include historical evolution, and give me key papers/books to go further.
     label: "[Learn] PhD-Level Rigorous Deep Dive"
-    comment: Explains topics with academic rigor, mathematical foundations, and technical depth.
+    # Explains topics with academic rigor, mathematical foundations, and technical depth.
     search_terms:
       - learn
 
@@ -749,7 +749,7 @@ matches:
     replace: |
       I'm trying to master [insert skill/topic]. Build me a custom mental model or decision framework that simplifies how to approach, evaluate, and improve in it over time like a pro would.
     label: "[Learn] Custom Mental Model Synthesizer"
-    comment: Creates tailored decision models specifically designed for your unique problem.
+    # Creates tailored decision models specifically designed for your unique problem.
     search_terms:
       - learn
 
@@ -757,7 +757,7 @@ matches:
     replace: |
       Design a 30-day brain upgrade program that includes high-IQ thinking routines, mind-expanding prompts, advanced reading material, memory-enhancing techniques, and strategic rest habits. Keep it practical and time-efficient.
     label: "[Learn] 30-Day Cognitive Enhancement Program"
-    comment: 30-day daily regimen of high-IQ thinking routines and mental clarity exercises.
+    # 30-day daily regimen of high-IQ thinking routines and mental clarity exercises.
     search_terms:
       - learn
 
@@ -817,7 +817,7 @@ matches:
       - name: clip
         type: clipboard
     label: "[Learn] YouTube Video Transcriber & Visual Learning Framework (Clipboard)"
-    comment: Transforms YouTube video content from clipboard into high-retention frameworks with SVG, Mermaid, Python charts, and HTML widgets.
+    # Transforms YouTube video content from clipboard into high-retention frameworks with SVG, Mermaid, Python charts, and HTML widgets.
     search_terms:
       - learn
       - youtube
@@ -886,7 +886,7 @@ matches:
       transcript:
         multiline: true
     label: "[Learn] YouTube Video Transcriber & Visual Learning Framework (Form)"
-    comment: Interactive modal to input YouTube URL and optional transcript for visual learning synthesis.
+    # Interactive modal to input YouTube URL and optional transcript for visual learning synthesis.
     search_terms:
       - learn
       - youtube
@@ -927,7 +927,7 @@ matches:
       topic:
         default: ""
     label: "[Learn] Gemini Research with Diagrams & Visual Suite (Form)"
-    comment: Prompts Gemini to research a topic and generate SVG concept maps, Mermaid workflows, and data visualizations.
+    # Prompts Gemini to research a topic and generate SVG concept maps, Mermaid workflows, and data visualizations.
     search_terms:
       - learn
       - gemini
@@ -947,7 +947,7 @@ matches:
       3. **Quantitative Data Plots (Python Matplotlib / SVG):** If data or metrics exist, run Python (`matplotlib`/`seaborn`) to render real visual charts, or output an SVG comparison chart.
       4. **Visual Retention Summary (HTML/CSS):** Provide a self-contained styled HTML/CSS summary card condensing key takeaways, formulas, and mnemonic anchors.
     label: "[Learn] Gemini Visual Synthesis Protocol Modifier"
-    comment: Appends mandatory SVG, Mermaid, Python chart, and HTML visual directives to any Gemini prompt.
+    # Appends mandatory SVG, Mermaid, Python chart, and HTML visual directives to any Gemini prompt.
     search_terms:
       - learn
       - gemini

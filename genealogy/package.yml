@@ -14,7 +14,7 @@ matches:
 
       When we are done, lay it all out as a clean, organized starting tree.
     label: "[Genealogy AI] Step 1: Memory Brain Dump Interview"
-    comment: "Interviews you one branch at a time to assemble a clean starting family tree from memory."
+    # Interviews you one branch at a time to assemble a clean starting family tree from memory.
     search_terms:
       - genealogy
       - family tree
@@ -41,7 +41,7 @@ matches:
       origin_location:
         default: ""
     label: "[Genealogy AI] Step 2: Surname Origins & Etymology"
-    comment: "Traces surname meaning, linguistic roots, distribution, and historical migration patterns."
+    # Traces surname meaning, linguistic roots, distribution, and historical migration patterns.
     search_terms:
       - genealogy
       - surname
@@ -72,7 +72,7 @@ matches:
         multiline: true
         default: "the names, dates, and locations discussed"
     label: "[Genealogy AI] Step 3: Find Relatives & Free Public Records"
-    comment: "Prompts AI to search open web sources (FamilySearch, Find a Grave, obits, census) for unconfirmed leads."
+    # Prompts AI to search open web sources (FamilySearch, Find a Grave, obits, census) for unconfirmed leads.
     search_terms:
       - genealogy
       - records
@@ -90,7 +90,7 @@ matches:
 
       Then give me a version I can reuse: export it as a diagram I can view, and also give me the raw structure so I can import it into a family tree app later. Export it as a GEDCOM file so I can import it into FamilySearch or another app, and give me a clean printable version organized by generation.
     label: "[Genealogy AI] Step 4: Visual Tree & GEDCOM Export"
-    comment: "Generates a visual generation tree, unconfirmed leads section, and reusable GEDCOM file."
+    # Generates a visual generation tree, unconfirmed leads section, and reusable GEDCOM file.
     search_terms:
       - genealogy
       - visual tree
@@ -110,7 +110,7 @@ matches:
       family_info:
         multiline: true
     label: "[Genealogy AI] Family History Chronological Timeline"
-    comment: "Builds a chronological timeline by generation and flags missing gaps to investigate."
+    # Builds a chronological timeline by generation and flags missing gaps to investigate.
     search_terms:
       - genealogy
       - timeline
@@ -127,7 +127,7 @@ matches:
       family_records:
         multiline: true
     label: "[Genealogy AI] Discover Hidden Family Branches & Forgotten Relatives"
-    comment: "Finds overlooked branches, remarriages, migrations, and spelling variations."
+    # Finds overlooked branches, remarriages, migrations, and spelling variations.
     search_terms:
       - genealogy
       - branches
@@ -144,7 +144,7 @@ matches:
       locations_and_dates:
         multiline: true
     label: "[Genealogy AI] Reconstruct Ancestor Migration Map & Context"
-    comment: "Maps generational movement with historical, economic, and social driving factors."
+    # Maps generational movement with historical, economic, and social driving factors.
     search_terms:
       - genealogy
       - migration
@@ -161,7 +161,7 @@ matches:
       family_records:
         multiline: true
     label: "[Genealogy AI] Hidden Relative Connections & Patterns"
-    comment: "Connects individuals across shared surnames, locations, occupations, and timelines."
+    # Connects individuals across shared surnames, locations, occupations, and timelines.
     search_terms:
       - genealogy
       - connections
@@ -180,7 +180,7 @@ matches:
       family_data:
         multiline: true
     label: "[Genealogy AI] Family Mystery & Discrepancy Investigation"
-    comment: "Detects missing years, name alterations, conflicting records, and ranks mystery priorities."
+    # Detects missing years, name alterations, conflicting records, and ranks mystery priorities.
     search_terms:
       - genealogy
       - mystery
@@ -197,7 +197,7 @@ matches:
       family_facts:
         multiline: true
     label: "[Genealogy AI] Narrative Historical Family Storyteller"
-    comment: "Converts factual records into a vivid narrative with verified facts distinct from context."
+    # Converts factual records into a vivid narrative with verified facts distinct from context.
     search_terms:
       - genealogy
       - story
@@ -214,7 +214,7 @@ matches:
       known_info:
         multiline: true
     label: "[Genealogy AI] Prioritized Family Research Roadmap"
-    comment: "Creates an actionable research plan with target archives, record sets, and justifications."
+    # Creates an actionable research plan with target archives, record sets, and justifications.
     search_terms:
       - genealogy
       - roadmap
@@ -252,7 +252,7 @@ matches:
         default: "Name Anglicization, missing census records, or language translation barriers."
         multiline: true
     label: "[Genealogy AI] Role-Task-Format-Limits Research Prompt Generator"
-    comment: "Full prompt-engineering framework tailored for genealogy queries."
+    # Full prompt-engineering framework tailored for genealogy queries.
     search_terms:
       - genealogy
       - prompt framework
@@ -271,7 +271,7 @@ matches:
       research_context:
         multiline: true
     label: "[Genealogy AI] 'What Am I Missing?' Blindspot Detector"
-    comment: "Prompts AI to surface overlooked archives, historical events, and alternative strategies."
+    # Prompts AI to surface overlooked archives, historical events, and alternative strategies.
     search_terms:
       - genealogy
       - blindspots
@@ -290,7 +290,7 @@ matches:
       research_status:
         multiline: true
     label: "[Genealogy AI] Research Decision Points & Crossroads Evaluator"
-    comment: "Identifies strategic decision forks in genealogical inquiry."
+    # Identifies strategic decision forks in genealogical inquiry.
     search_terms:
       - genealogy
       - decision points
@@ -316,7 +316,7 @@ matches:
       birth_place:
         default: ""
     label: "[Genealogy AI] Brick-Wall Breaker"
-    comment: "Systematic investigation guide for difficult or missing ancestors."
+    # Systematic investigation guide for difficult or missing ancestors.
     search_terms:
       - genealogy
       - brickwall
@@ -334,7 +334,7 @@ matches:
 
       Do not accept assumptions as facts. Flag any potential surname collisions or false-positive matches.
     label: "[Genealogy AI] Fact-Check & Verification Audit"
-    comment: "Audits AI output to separate verified sources from speculative leads."
+    # Audits AI output to separate verified sources from speculative leads.
     search_terms:
       - genealogy
       - audit
@@ -365,7 +365,7 @@ matches:
       single_question:
         default: "if their family branch originated from the same region"
     label: "[Genealogy AI] First-Contact Message to Potential Relatives"
-    comment: "Drafts a gentle, friendly outreach message to newly discovered family contacts."
+    # Drafts a gentle, friendly outreach message to newly discovered family contacts.
     search_terms:
       - genealogy
       - outreach
@@ -384,7 +384,7 @@ matches:
       original_prompt:
         multiline: true
     label: "[Genealogy AI] Genealogy Prompt Optimizer & Enhancer"
-    comment: "Improves a prompt by injecting genealogical context, obstacles, and decision points."
+    # Improves a prompt by injecting genealogical context, obstacles, and decision points.
     search_terms:
       - genealogy
       - prompt optimizer
@@ -415,7 +415,7 @@ matches:
       generation_count:
         default: "5"
     label: "[Genealogy AI] Historical Dynastic Lineage Tree"
-    comment: "Generates a structured genealogical breakdown for historic dynasties and prominent lineages."
+    # Generates a structured genealogical breakdown for historic dynasties and prominent lineages.
     search_terms:
       - genealogy
       - dynasty
@@ -440,7 +440,7 @@ matches:
       root_figure:
         default: "Adam and Eve"
     label: "[Genealogy AI] Ancient / Biblical Chronological Lineage Tree"
-    comment: "Builds a chronological branching tree for ancient, mythological, or biblical lineages."
+    # Builds a chronological branching tree for ancient, mythological, or biblical lineages.
     search_terms:
       - genealogy
       - biblical
@@ -465,7 +465,7 @@ matches:
       common_ancestor:
         default: "the grandparents"
     label: "[Genealogy AI] Family Cladogram (ASCII Evolutionary Branch Chart)"
-    comment: "Produces clean ASCII cladogram / tree diagrams from a common ancestor."
+    # Produces clean ASCII cladogram / tree diagrams from a common ancestor.
     search_terms:
       - genealogy
       - cladogram
@@ -491,7 +491,7 @@ matches:
       # Output Format
       Provide responses in a clear textual format describing the requested family relationships, using the names and IDs as given. Include hierarchical paths or lineage details if relevant to the query. Avoid code or JSON output unless specifically requested.
     label: "[Genealogy AI] Nested JSON Genealogy Parser & Tree Traversal Analyst"
-    comment: "System instructions for an AI agent to parse and query hierarchical JSON genealogy trees."
+    # System instructions for an AI agent to parse and query hierarchical JSON genealogy trees.
     search_terms:
       - genealogy
       - json
@@ -509,7 +509,7 @@ matches:
       3. **Interactivity:** Inspect modal profiles, expandable tree branches, audio narration, and navigation.
       4. **Output:** Provide clean, semantic, and accessible HTML5/CSS3/JavaScript components tailored for family archives and interactive trees.
     label: "[Genealogy AI] Interactive Family Webpage & Tree UI Developer"
-    comment: "Prompt for developing and analyzing interactive family tree web components and HTML pages."
+    # Prompt for developing and analyzing interactive family tree web components and HTML pages.
     search_terms:
       - genealogy
       - web development
@@ -534,7 +534,7 @@ matches:
       region_or_industry:
         default: "New Zealand (NZ) and Australian"
     label: "[Genealogy AI] Corporate Brand Lineage & Subsidiary Tree (Brandcestry)"
-    comment: "Builds a hierarchical parent-subsidiary brand ancestry tree specification."
+    # Builds a hierarchical parent-subsidiary brand ancestry tree specification.
     search_terms:
       - genealogy
       - brandcestry

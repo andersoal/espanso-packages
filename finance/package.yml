@@ -9,7 +9,7 @@ matches:
       -> What programmatic or systemic leverage am I ignoring?
       Think in scalable systems and enterprise value, not billable hours. Be uncomfortably direct.
     label: '[Finance] Macro Wealth Lens'
-    comment: Analyzes business or technical systems through an elite macro-scale investor perspective.
+    # Analyzes business or technical systems through an elite macro-scale investor perspective.
     search_terms:
       - finance
 
@@ -21,7 +21,7 @@ matches:
       -> Does it accumulate compounding equity, or is it transient transactional cash flow?
       Apply high friction to your analysis. Explicitly reject anything small or reliant on manual services.
     label: '[Finance] Asymmetric Wealth Filter'
-    comment: Evaluates the asymmetric upside and risk-to-reward ratio of an opportunity.
+    # Evaluates the asymmetric upside and risk-to-reward ratio of an opportunity.
     search_terms:
       - finance
 
@@ -35,7 +35,7 @@ matches:
       -> Systems architecture, decoupling mechanisms, and operational scaling bottlenecks
       -> Velocity vectors: Where can speed be weaponized over perfection?
     label: '[Finance] Scalable Business Architecture Blueprint'
-    comment: Designs an architectural roadmap to scale a business model with compounding returns.
+    # Designs an architectural roadmap to scale a business model with compounding returns.
     search_terms:
       - finance
 
@@ -48,7 +48,7 @@ matches:
       -> Emotional triggers around systemic risk, loss-aversion, and delegation.
       Isolate what specific mental framework or operational habit is artificially capping current income potential.
     label: '[Finance] Operational Risk & Fragility Decoder'
-    comment: Root-cause breakdown of operational risk, cognitive biases, and systemic weaknesses.
+    # Root-cause breakdown of operational risk, cognitive biases, and systemic weaknesses.
     search_terms:
       - finance
 
@@ -60,7 +60,7 @@ matches:
       -> Who takes the highest risk vs. who captures the ultimate economic equity?
       Map out the hidden transactional engine and structural gatekeepers of this market.
     label: '[Finance] Value-Capture Network Deconstruction'
-    comment: Deconstructs value capture, supply-chain hierarchy, and defensible moats.
+    # Deconstructs value capture, supply-chain hierarchy, and defensible moats.
     search_terms:
       - finance
 
@@ -72,7 +72,7 @@ matches:
       -> Risk profiling: Managing systemic risk via portfolio allocation vs avoiding risk altogether.
       -> Pattern recognition: Discovering scalable platform opportunities vs trading hours for a single-point-of-failure paycheck.
     label: '[Finance] Asymmetric Wealth vs Linear Effort Framework'
-    comment: Contrasts asymmetric equity-based execution against linear operational toil.
+    # Contrasts asymmetric equity-based execution against linear operational toil.
     search_terms:
       - finance
 
@@ -86,7 +86,7 @@ matches:
       -> Media: Scale-independent content engines, asset libraries, and digital real estate.
       Identify where to place the fulcrum to multiply throughput with zero additional manual labor.
     label: '[Finance] 4 Forms of Leverage Assessment'
-    comment: Audits labor, capital, code, and content leverage in a venture.
+    # Audits labor, capital, code, and content leverage in a venture.
     search_terms:
       - finance
 
@@ -99,7 +99,7 @@ matches:
       -> Network Effects: Designing systems where each new node inherently adds systemic value to the platform.
       -> Positioning & Defensibility: Becoming the structural standard so competing becomes economically irrational.
     label: '[Finance] Strategic Moat Architecture (Defensibility & Network Effects)'
-    comment: 'Construct an unassailable strategic moat within this space:'
+    # Construct an unassailable strategic moat within this space:
     search_terms:
       - finance
 
@@ -112,7 +112,7 @@ matches:
       -> What operational inefficiencies or lack of scaling engines must be corrected immediately?
       Do not pad the response. Give a direct, clinical, and data-driven critique.
     label: '[Finance] Forensic Financial Audit (3-Year Wealth Trajectory & Risk Scenarios)'
-    comment: Execute an aggressive 3-year forensic financial audit on current operational trajectories.
+    # Execute an aggressive 3-year forensic financial audit on current operational trajectories.
     search_terms:
       - finance
 
@@ -124,7 +124,7 @@ matches:
       -> Absolute Defusal: When to ruthlessly reject opportunities that distract from the core engine.
       -> Risk Mitigation: How to construct systemic safety nets to shield the core business when executing high-risk experiments.
     label: '[Finance] High-Stakes Decision Logic (Asymmetric Velocity & Risk Defusal)'
-    comment: 'Deconstruct high-velocity, high-stakes decision logic and apply it to this scenario:'
+    # Deconstruct high-velocity, high-stakes decision logic and apply it to this scenario:
     search_terms:
       - finance
 
@@ -139,7 +139,7 @@ matches:
       Copy any prompt. Replace the brackets. Get Goldman-quality financial analysis.
       No finance degree needed.
     label: '[Finance] Financial Modeling Prompt Suite Overview'
-    comment: Overview of investment banking and equity analysis prompt templates.
+    # Overview of investment banking and equity analysis prompt templates.
     search_terms:
       - finance
 
@@ -147,7 +147,7 @@ matches:
     replace: |
       BREAKING: AI CAN NOW BUILD FINANCIAL MODELS LIKE GOLDMAN SACHS ANALYSTS (FOR FREE). HERE ARE 12 AI PROMPTS THAT REPLACE $150K/YEAR INVESTMENT BANKING WORK (SAVE FOR LATER):
     label: '[Finance] Investment Banking Financial Modeler Intro'
-    comment: Goldman Sachs-style financial modeling framework for valuation and analysis.
+    # Goldman Sachs-style financial modeling framework for valuation and analysis.
     search_terms:
       - finance
 
@@ -184,7 +184,7 @@ matches:
       - Keep paragraphs short.
       - Use plain English — no jargon without explanation.
     label: '[Finance] Equity Research: Long-Term Analyst Core Prompt'
-    comment: Long-term value investor persona for analyzing competitive moats and balance sheets.
+    # Long-term value investor persona for analyzing competitive moats and balance sheets.
     search_terms:
       - finance
 
@@ -230,7 +230,7 @@ matches:
       - Key risk that could change trajectory
       - What kind of companies tend to win
     label: '[Finance] Equity Research: Industry Economics & Unit Economics'
-    comment: Evaluates TAM, pricing power, regulatory risks, and competitive rivalry in an industry.
+    # Evaluates TAM, pricing power, regulatory risks, and competitive rivalry in an industry.
     search_terms:
       - finance
 
@@ -245,7 +245,7 @@ matches:
       - If not available, write "Not Available"
       Do not use third-party sources.
     label: '[Finance] Equity Research: Capital Allocation & History'
-    comment: Tracks management track record, share repurchases, ROIC, and M&A history.
+    # Tracks management track record, share repurchases, ROIC, and M&A history.
     search_terms:
       - finance
 
@@ -278,7 +278,7 @@ matches:
       - Plain English, short sentences
       - No buzzwords, no macro speculation, no valuation models
     label: '[Finance] Peter Lynch 2-Minute Investment Elevator Pitch'
-    comment: Crafts a simple, jargon-free pitch explaining why an investment will compound.
+    # Crafts a simple, jargon-free pitch explaining why an investment will compound.
     search_terms:
       - finance
 
@@ -310,7 +310,7 @@ matches:
       - Direct, skeptical tone
       - No buzzwords, no macro, no valuation models
     label: '[Finance] Charlie Munger Inversion Analysis (Stock Thesis)'
-    comment: 'Inverts the thesis: lists everything that could permanently destroy equity value.'
+    # Inverts the thesis: lists everything that could permanently destroy equity value.
     search_terms:
       - finance
 
@@ -359,7 +359,7 @@ matches:
       - Management credibility: Strong / Mixed / Weak
       - Business momentum vs last year: Better / Same / Worse
     label: '[Finance] Equity Research: Quarterly Earnings Teardown'
-    comment: Analyzes 10-Q earnings releases for revenue quality, margin compression, and guidance changes.
+    # Analyzes 10-Q earnings releases for revenue quality, margin compression, and guidance changes.
     search_terms:
       - finance
 
@@ -377,7 +377,7 @@ matches:
       financial_details:
         multiline: true
     label: "[Finance] Personal CFO: Full Money & Balance Sheet Audit"
-    comment: Acts as personal CFO to audit income, expenses, debts, savings, and investments, finding leaks and creating a streamlined plan.
+    # Acts as personal CFO to audit income, expenses, debts, savings, and investments, finding leaks and creating a streamlined plan.
     search_terms:
       - finance
       - cfo
@@ -399,7 +399,7 @@ matches:
       financial_situation:
         multiline: true
     label: "[Finance] Personal CFO: Comprehensive Wealth Roadmap"
-    comment: Generates a prioritized roadmap for scaling income, cutting costs, eliminating debt, and compounding investments.
+    # Generates a prioritized roadmap for scaling income, cutting costs, eliminating debt, and compounding investments.
     search_terms:
       - finance
       - cfo
@@ -421,7 +421,7 @@ matches:
       cashflow_data:
         multiline: true
     label: "[Finance] Personal CFO: Cash Flow & Automation Optimizer"
-    comment: Restructures monthly cash flow to assign every dollar a purpose, cutting waste and automating recurring allocations.
+    # Restructures monthly cash flow to assign every dollar a purpose, cutting waste and automating recurring allocations.
     search_terms:
       - finance
       - cfo
@@ -443,7 +443,7 @@ matches:
       spending_history:
         multiline: true
     label: "[Finance] Personal CFO: Money Leaks & Stealth Expense Ranker"
-    comment: Uncovers hidden subscriptions, impulse buys, and lifestyle creep, ranking cuts by highest annual ROI with minimal friction.
+    # Uncovers hidden subscriptions, impulse buys, and lifestyle creep, ranking cuts by highest annual ROI with minimal friction.
     search_terms:
       - finance
       - cfo
@@ -465,7 +465,7 @@ matches:
       debt_details:
         multiline: true
     label: "[Finance] Personal CFO: Debt Destroyer & Payoff Strategy"
-    comment: Builds the mathematically optimal debt repayment blueprint (Avalanche vs Snowball) customized to cashflow and rates.
+    # Builds the mathematically optimal debt repayment blueprint (Avalanche vs Snowball) customized to cashflow and rates.
     search_terms:
       - finance
       - cfo

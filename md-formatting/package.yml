@@ -6,7 +6,7 @@ matches:
       ```$|$
       ```
     label: "[Markdown] Code Block (Syntax Highlighted)"
-    comment: "```$|$"
+    # ```$|$
     search_terms:
       - md-formatting
       - markdown
@@ -14,7 +14,7 @@ matches:
   - trigger: :md-collapse
     replace: "\n<details>\n\t<summary>$|$</summary>\n\t<p></p>\n</details>\n"
     label: "[Markdown] Collapsible Dropdown (<details>)"
-    comment: <details>
+    # <details>
     search_terms:
       - md-formatting
       - markdown
@@ -25,7 +25,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Markdown] Markdown Link [text](url)"
-    comment: "[$|$]({{clipboard}})"
+    # [$|$]({{clipboard}})
     search_terms:
       - md-formatting
       - markdown
@@ -36,7 +36,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: '[Markdown] HTML Hyperlink (<a href="...">)'
-    comment: <a href="{{clipboard}}" />$|$</a>
+    # <a href="{{clipboard}}" />$|$</a>
     search_terms:
       - md-formatting
       - markdown
@@ -47,7 +47,7 @@ matches:
       - name: clipboard
         type: clipboard
     label: "[Markdown] BBCode Link [url=...]...[/url]"
-    comment: "[url={{clipboard}}]$|$[/url]"
+    # [url={{clipboard}}]$|$[/url]
     search_terms:
       - md-formatting
       - markdown
@@ -56,7 +56,7 @@ matches:
     replace: "**$|$**"
     word: true
     label: "[Markdown] Bold Text (**text**)"
-    comment: "**$|$**"
+    # **$|$**
     search_terms:
       - md-formatting
       - markdown
@@ -65,7 +65,7 @@ matches:
     replace: "*$|$*"
     word: true
     label: "[Markdown] Italic Text (*text*)"
-    comment: "*$|$*"
+    # *$|$*
     search_terms:
       - md-formatting
       - markdown
@@ -74,7 +74,7 @@ matches:
     replace: __$|$__
     word: true
     label: "[Markdown] Underline Text (__text__)"
-    comment: __$|$__
+    # __$|$__
     search_terms:
       - md-formatting
       - markdown
@@ -83,7 +83,7 @@ matches:
     replace: "***$|$***"
     word: true
     label: "[Markdown] Bold Italic (***text***)"
-    comment: "***$|$***"
+    # ***$|$***
     search_terms:
       - md-formatting
       - markdown
@@ -92,7 +92,7 @@ matches:
     replace: __**$|$**__
     word: true
     label: "[Markdown] Bold Underline (__**text**__)"
-    comment: __**$|$**__
+    # __**$|$**__
     search_terms:
       - md-formatting
       - markdown
@@ -101,7 +101,7 @@ matches:
     replace: __*$|$*__
     word: true
     label: "[Markdown] Italic Underline (__*text*__)"
-    comment: __*$|$*__
+    # __*$|$*__
     search_terms:
       - md-formatting
       - markdown
@@ -110,7 +110,7 @@ matches:
     replace: "***__$|$__***"
     word: true
     label: "[Markdown] Bold Italic Underline (***__text__***)"
-    comment: "***__$|$__***"
+    # ***__$|$__***
     search_terms:
       - md-formatting
       - markdown
@@ -119,7 +119,7 @@ matches:
     replace: "`$|$`"
     word: true
     label: "[Markdown] Code Block Single-line"
-    comment: "`$|$`"
+    # `$|$`
     search_terms:
       - md-formatting
       - markdown
@@ -128,7 +128,7 @@ matches:
     replace: "```$|$```"
     word: true
     label: "[Markdown] Code Block Multi-line"
-    comment: "```$|$```"
+    # ```$|$```
     search_terms:
       - md-formatting
       - markdown

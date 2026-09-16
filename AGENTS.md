@@ -70,7 +70,9 @@ Every match definition across all packages must adhere to these consistency and 
    - **No Raw Placeholders**: Never include unparsed template variables like `[[...]]` or `{{...}}` in labels.
 
 3. **Metadata Hygiene**:
-   - `comment`: Describe the prompt's intent and contextual tips without altering expansion output.
+   - `label`: Mandatory clear display title used for search and popup disambiguation.
+   - `# <Context/Notes>`: Document prompt intent, instructions, or contextual tips using native YAML `# <description>` comments (with `#` hashtag) directly inside the match block.
+   - **No `comment:` property on matches**: Espanso does not use `comment:` for search or expansion. Never define `comment:` as a YAML key on matches; always use native `#` hashtag comments instead.
    - `search_terms`: Include package tag and relevant search keywords for fuzzy search discovery (`Alt + Space`).
    - `replace`/`form`: Use YAML literal block scalar `|` for multi-line text to preserve line breaks and avoid ugly `''` quote escaping.
 
@@ -79,6 +81,11 @@ Every match definition across all packages must adhere to these consistency and 
 ## Core Espanso Feature Guidelines (Official Docs Reference)
 
 When authoring or updating triggers, leverage native Espanso capabilities:
+
+- **Match Disambiguation (Identical Triggers)**:
+  According to official Espanso docs (`https://espanso.org/docs/matches/basics/#match-disambiguation`), **multiple matches CAN share the exact same trigger**. When typed, Espanso displays a selection popup allowing the user to choose the right expansion.
+  - To support disambiguation, each match sharing the same trigger **must** define a distinct, human-readable `label:`.
+  - Avoid creating awkward, synthetic trigger variations when sharing an intuitive trigger with popup disambiguation is clearer.
 
 - **Cursor Placement (`$|$)**: Place the cursor at an exact spot in the expansion:
   ```yaml
@@ -92,25 +99,53 @@ When authoring or updating triggers, leverage native Espanso capabilities:
     propagate_case: true
   # "greet" -> "hello", "Greet" -> "Hello", "GREET" -> "HELLO"
   ```
-- **Word Boundary (`word: true`)**: Ensure expansions fire only when surrounded by word separators (spaces, commas, punctuation), critical for autocorrect triggers:
-  ```yaml
-  - trigger: "teh"
-    replace: "the"
-    word: true
-  ```
-- **Match Disambiguation**: When multiple matches share the same trigger, Espanso displays a selection popup. Ensure distinct, descriptive `label:` attributes to make disambiguation intuitive.
+- **Word Boundary Controls (`word`, `left_word`, `right_word`)**:
+  - `word: true`: Expands only when surrounded by word separators (spaces, commas, punctuation, newlines). Critical for autocorrect triggers.
+  - `left_word: true`: Matches only at the start of a word.
+  - `right_word: true`: Matches only at the end of a word.
+  - Prefix shadowing warning: Shorter triggers without `word: true` fire immediately and shadow longer triggers. Use `word: true` or distinct prefixes.
+
+- **Uppercase Style (`uppercase_style`)**:
+  When `propagate_case: true` is enabled, customize the casing format with `uppercase_style: uppercase | capitalize | capitalize_words`. Note that `uppercase_style` requires `propagate_case: true`.
+
+- **Rich Text & Image Matches**:
+  - `markdown: "..."`: Formats text using Markdown. Use `paragraph: true` to prevent automatic newline/paragraph insertion.
+  - `html: "..."`: Injects rich HTML content.
+  - `image_path: "$CONFIG/images/example.png"`: Expands trigger into an image. Always use `$CONFIG` for portable cross-platform paths.
+
 - **Form Controls (`form:` & `form_fields:`)**:
-  - Text input (default): Omit `type` entirely. Use `multiline: true` for multi-line text areas.
+  - Text input (default): Omit `type` entirely. Use `multiline: true` for multi-line text areas. Never specify `type: text` or `multiline: false`.
   - Choice box (`type: choice`): Single select dropdown with `values: [...]`.
-  - List box (`type: list`): List selection control with `values: [...]`.
+  - List box (`type: list`): List selection control with `values: [...]` and optional `separator: ","`.
+  - **Form Variable Naming**: Form fields in `[[field_name]]` and `form_fields` MUST use alphanumeric characters and underscores (`[a-zA-Z0-9_]+`). **Never use hyphens** (e.g. `[[task_before]]`, never `[[task-before]]`), as hyphens are evaluated as subtraction operators in templating expressions.
+
 - **Variable Extensions (`vars:`)**:
-  - `date`: Supports `format` (strftime), `offset` (seconds in future/past), `locale` (BCP47, e.g. `en-US`), `tz` (IANA timezone).
-  - `choice`: Selection dialog in replacement; supports `values: [...]` or `{ label: "...", id: "..." }`.
+  - Variable names MUST only contain alphanumeric characters and underscores (`[a-zA-Z0-9_]+`).
+  - `date`: Supports `format` (strftime format string), `offset` (seconds in future/past), `locale` (BCP47, e.g. `en-US`), `tz` (IANA timezone).
+  - `choice`: Selection dialog in replacement; supports `values: [{ id: "...", label: "..." }]` for full schema compliance, or string lists.
   - `random`: Random selection with `choices: [...]`.
   - `clipboard`: Fetches current system clipboard content.
-  - `shell`: Runs shell commands with `cmd: "..."`, optional `shell: powershell|bash|sh|cmd`, and `trim: true`.
-- **Variable Injection & Escaping**:
-  - Variable injection occurs inside `params` and `replace` using `{{var_name}}`.
-  - Literal curly braces in replacement text must be escaped as `\\{\\{...}}` (in quoted strings) or `\{\{...}}` (in block scalars).
+  - `shell`: Runs shell commands with `cmd: "..."`, optional `shell: bash|cmd|powershell|pwsh|sh|zsh|wsl`, `trim: true`, and `debug: true`.
+  - `script`: Calls external script binaries with `args: [...]` and `trim: true`.
+  - `match`: Nested matches referencing existing triggers with `trigger: ":other"`.
+  - `echo`: Echoes literal text via `echo: "..."`.
+
+- **Environment Variables & Variable Chaining (`depends_on`)**:
+  - Shell commands and scripts automatically receive variables as uppercase environment variables: `$ESPANSO_<VAR_NAME>` (e.g. `{{name}}` -> `$ESPANSO_NAME`).
+  - When variables depend on other variables (e.g., shell command using form input), explicitly declare `depends_on: [var1, var2]` to enforce evaluation order.
+  - Use `inject_vars: false` when variable syntax (`{{...}}`) inside commands or scripts should not be parsed by Espanso.
+
+- **Regex Triggers (`regex`)**:
+  - Use `regex` instead of `trigger` (they are strictly mutually exclusive).
+  - Espanso uses the Rust `regex` engine. Named capture groups MUST follow Rust syntax: `(?P<group_name>...)`.
+  - Captured named groups automatically become Espanso variables accessible via `{{group_name}}` in `replace` or `$ESPANSO_GROUP_NAME` in shell scripts.
+  - Escape backslashes in quoted strings (e.g. `":greet\\d"`), or use unquoted scalars (`regex: :greet\d`).
+
+- **Quotes & Escaping**:
+  - Double quotes are required for strings containing `\n`, `\t`, or starting with YAML special characters (`' " [ ] { } > | * & ! % # \` @`).
+  - Literal curly braces in replacement text must be escaped as `\\{\\{...}}` in quoted strings or `\{\{...}}` in YAML block scalars.
+  - Prefer clean YAML literal block scalars (`|`) for multi-line replacements.
+
 - **Global Variables (`global_vars:`)**: Reusable variables declared at the root level above `matches:` for cross-match sharing within a file.
+
 

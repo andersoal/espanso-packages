@@ -414,4 +414,16 @@ A collection of targeted prompt structures designed to break default, low-value 
 - **Label**: `[Prompts] Expert Prompt Creator (Iterative Prompt Formulation Engine)`
 - **Purpose**: Interactive meta-prompt that instructs ChatGPT to act as an expert prompt creator. Follows an iterative refinement protocol returning a generated first-person prompt (`>`), 3 concise additions (`[A]`, `[B]`, `[C]`), and 3 targeted questions to incrementally refine the prompt to perfection.
 
+### Prompt Master (Comprehensive AI Prompt Engineering System)
 
+A production-grade prompt engineering meta-system designed to generate, adapt, and refine high-performance prompts for modern LLMs, reasoning models, coding agents, multimodal engines, and workflow automatons with zero wasted tokens.
+
+- **Interactive Form Triggers**: `:p-prompt-master-form`, `:prompt-master-form`, `:p-pm-form`
+  - **Label**: `[Prompts] Prompt Master Interactive Form (Target Tool & Task Injector)`
+  - **Purpose**: Displays an Espanso popup dialog allowing selection of the target AI system (Claude 5, GPT-5.6, Claude Code, Codex, Antigravity, Grok 4.6, Cursor, Midjourney, etc.) and multiline task entry, injecting the complete Prompt Master instructions with your request pre-attached.
+- **Direct System Prompt Triggers**: `:p-prompt-master`, `:prompt-master`, `:p-master-prompt`
+  - **Label**: `[Prompts] Prompt Master System Instruction (Comprehensive AI Prompt Engineering Engine)`
+  - **Purpose**: Pastes the complete ~32KB production Prompt Master system instructions via system clipboard (`force_clipboard: true`), placing the cursor at the end for immediate task entry.
+- **Quick / Compact Engine Triggers**: `:p-prompt-master-quick`, `:p-prompt-quick`, `:p-pm-quick`
+  - **Label**: `[Prompts] Prompt Master Quick Engine (Core Identity, Hard Rules & Output Lock)`
+  - **Purpose**: Lightweight interactive trigger delivering the core Primacy Zone rules, Intent Extraction dimensions, and Output Lock contract without the full multi-model catalog.

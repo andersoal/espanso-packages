@@ -1,0 +1,106 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - triggers:
+      - :storybook
+      - :pstory
+      - :storyteller
+    label: "[Prompts] Illustrated Storybook Generator (Two-Chapter Framework & Pollinations AI Imagery)"
+    # Generates a two-chapter storybook prompt with vivid narrative and dynamic Pollinations AI illustration links
+    search_terms:
+      - prompts
+      - storybook
+      - storyteller
+      - illustration
+      - creative-writing
+    force_clipboard: true
+    replace: |
+      You are a skilled storyteller and illustrator. Use your vast imagination to weave a captivating tale in the form of a storybook. Each response should include two expansive chapters of the story, with each chapter ideally spanning several paragraphs. First, provide the narrative text for the chapters, then generate a visual representation of the chapter using an API URL. Make use of your creativity to produce a story filled with vivid descriptions and colorful images that bring the narrative to life.
+
+      Provide 2 chapters of the story in the following format with labels in bold using markdown: 
+      "
+      **Story: {Title of the story}**
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      To continue our story, please type **Next**.
+      "
+
+      Image instructions: Generate the [Image URL] using the image description of the chapter. The image description should be concise, but detailed enough to paint a clear picture of the scene. The image generator does not know the story, so don't include any characters names in the image description.  Display the URL in markdown format using the description (replace all whitespaces with '_'): ![Image](https://image.pollinations.ai/prompt/{image_description},storybook,illustration)
+
+      When I'm ready for the next two chapters, I will signal by saying 'Next'. 
+
+      Before we begin, first provide a greeting and ask me what the story should be about. Provide 3 unique and fascinating suggestions but also remind me that I can suggest my own idea.
+
+  - trigger: :storyform
+    label: "[Prompts] Storybook Assistant (Interactive Genre & Art Style Form)"
+    # Interactive dialog to customize the storybook theme, audience, and artistic rendering style
+    search_terms:
+      - prompts
+      - storybook
+      - storyform
+      - illustration
+    force_clipboard: true
+    form: |
+      You are a skilled storyteller and illustrator. Use your vast imagination to weave a captivating tale in the form of a storybook.
+      Target Audience: [[audience]]
+      Theme / Premise: [[premise]]
+      Art Style: [[art_style]]
+
+      Each response should include two expansive chapters of the story, with each chapter ideally spanning several paragraphs. First, provide the narrative text for the chapters, then generate a visual representation of the chapter using an API URL. Make use of your creativity to produce a story filled with vivid descriptions and colorful images that bring the narrative to life.
+
+      Provide 2 chapters of the story in the following format with labels in bold using markdown: 
+      "
+      **Story: {Title of the story}**
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      To continue our story, please type **Next**.
+      "
+
+      Image instructions: Generate the [Image URL] using the image description of the chapter. The image description should be concise, but detailed enough to paint a clear picture of the scene. The image generator does not know the story, so don't include any characters names in the image description. Display the URL in markdown format using the description (replace all whitespaces with '_'): ![Image](https://image.pollinations.ai/prompt/{image_description},storybook,illustration,[[art_style]])
+
+      When I'm ready for the next two chapters, I will signal by saying 'Next'. 
+
+      Before we begin, first provide a greeting confirming the premise, or if unspecified, offer 3 unique and fascinating suggestions.
+    form_fields:
+      audience:
+        type: choice
+        values:
+          - Children (Ages 6-10)
+          - Young Adult
+          - All Ages / Whimsical
+          - Mature Fantasy & Sci-Fi
+      art_style:
+        type: choice
+        values:
+          - classic watercolor storybook
+          - vibrant digital illustration
+          - whimsical vintage fairytale
+          - studio ghibli anime aesthetic
+      premise:
+        default: ""

@@ -7,7 +7,7 @@ The audit found three classes of problems: **exact duplicate triggers** (21 trig
 All issues are fixed. The audit now reports: **711 triggers, no duplicates or shadowing.** Re-run it anytime with:
 
 ```sh
-python3 .meta/scripts/check_triggers.py
+python3 _scripts/check_triggers.py
 ```
 
 The script exits non-zero on any exact duplicate (unless every copy has a distinct `label`, which espanso disambiguates with a popup) or any prefix-shadowed trigger.
@@ -23,7 +23,7 @@ The repo grew by **batch-importing prompt collections** (many converted from scr
 | career headless `:pfix`/`:pmatch`/`:pcover` variants | `5184577` ("modularize espanso configuration") | The modularization reshuffle imported experimental "headless" variants alongside the form versions already added by `6ccbf6d` |
 | Second `:genius`, `[cite: 1]` markers | `5184577` | Content pasted from an AI chat export carried Gemini-style `[cite: 1]` citation markers (37 occurrences in productivity + prompts) and re-used an existing trigger name |
 
-The `.meta/scripts/check_triggers.py` guard now catches all of this at import time — run it after adding any batch of prompts.
+The `_scripts/check_triggers.py` guard now catches all of this at import time — run it after adding any batch of prompts.
 
 ## Reorganization: topical prompts moved out of `prompts`
 

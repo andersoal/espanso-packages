@@ -1,0 +1,211 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # ============================================================================
+  # TRIP CONCIERGE TRIGGERS
+  # ============================================================================
+
+  - trigger: :trip-solo
+    replace: |
+      Act as an elite, high-end travel concierge. Build a personalized, hyper-practical travel plan using my parameters below:
+
+      TRIP PARAMETERS:
+      - Destination: [[Destination]]$|$
+      - Travel Dates & Duration: [[Dates / Total Days]]
+      - Total Budget Band: [[Budget Ceiling / Spend Level]]
+      - Travel Pace & Rhythm: [[e.g., Slow mornings with 1 afternoon cultural anchor / Dawn-to-dusk explorer]]
+      - Personal Interests: [[e.g., Architecture, vintage bookstores, local third-wave coffee, hiking]]
+      - Dietary Exclusions & Food Priorities: [[e.g., Vegetarian / Seafood lover / No dairy]]
+      - Logistics / Mobility Constraints: [[e.g., No rental car, public transit only, walking limit 6 miles/day]]
+
+      OUTPUT SPECIFICATION (Deliver as a 3-Tier Executive Brief):
+      1. Logistical Snapshot:
+         - Recommended neighborhood base (with transit connectivity rationale).
+         - Daily budget breakdown estimate (meals + activities).
+      2. Day-by-Day Flow:
+         - Structured into Morning Anchor, Midday Rest/Cafe Buffer, Afternoon Anchor, and Evening Dinner & Stroll.
+         - Do not over-schedule; include mandatory transition buffers between neighborhoods.
+      3. Actionable Checklist:
+         - Top 3 mandatory advance bookings (specific trains, high-demand restaurant reservations, or museum timed entries).
+         - Critical local pro-tips (transport pass, payment quirks, cultural etiquette).
+    force_clipboard: true
+    label: '[Prompts] Solo Travel Concierge (Fast Bracket Intake & 3-Tier Itinerary Brief)'
+    # Act as an elite travel concierge building a personalized solo itinerary with logistical snapshot and booking checklist.
+    search_terms:
+      - prompts
+      - concierge
+      - trip
+      - travel
+      - solo
+
+  - trigger: :trip-couple
+    replace: |
+      Act as a high-end bespoke travel concierge specializing in reconciling divergent travel personalities. Build a harmonized, friction-free vacation itinerary using our individual profiles:
+
+      TRIP FOUNDATIONS:
+      - Destination: [[Destination]]$|$
+      - Travel Dates & Duration: [[Dates / Number of Days]]
+      - Shared Budget Band: [[Budget Tier: Economy / Mid / Luxury]]
+
+      PARTNER A PROFILE:
+      - Energy & Morning Pace: [[e.g., Slow riser, 9:30am coffee first, max 15k steps]]
+      - Core Passions: [[e.g., Contemporary art, wine bars, relaxing by water]]
+      - Dietary Restrictions: [[e.g., Pescatarian / Gluten-sensitive]]
+
+      PARTNER B PROFILE:
+      - Energy & Morning Pace: [[e.g., Early bird, morning jog/hike, loves packed days]]
+      - Core Passions: [[e.g., Historic architecture, outdoor adventure, street food]]
+      - Dietary Restrictions: [[e.g., Eats everything, adventurous]]
+
+      HARMONIZATION RULES:
+      - Shared Non-Negotiables: [[e.g., One Michelin-starred dinner, direct transport]]
+      - Independent Time: [[Are you open to 2-3 hour separate solo blocks? Yes/No]]
+
+      OUTPUT SPECIFICATION (Deliver as a 3-Tier Executive Brief):
+      1. Harmonization Architecture:
+         - The structural compromise strategy reconciling both rhythms.
+         - Recommended base neighborhood central to both interests.
+      2. Day-by-Day Harmonized Flow:
+         - Balanced morning rhythms (early solo excursion for Partner B, leisurely brunch reunion).
+         - Joint afternoon anchors and curated dinners pleasing both palates.
+      3. Actionable Checklist:
+         - Advance reservations required 30+ days prior.
+         - Co-traveler friction warning and how to sidestep it.
+    force_clipboard: true
+    label: '[Prompts] Couples Travel Concierge (Asymmetric Profile Balancing & Harmonized Itinerary)'
+    # Act as a travel concierge reconciling asymmetric couple preferences into a friction-free joint itinerary.
+    search_terms:
+      - prompts
+      - concierge
+      - trip
+      - travel
+      - couple
+      - vacation
+
+  - trigger: :trip-interview
+    replace: |
+      Act as an elite private travel concierge and itinerary architect.
+
+      I am planning a trip, but I do not want an off-the-shelf, generic guide. Before generating any recommendations or itineraries, conduct a brief diagnostic interview by asking me EXACTLY these 4 targeted questions, one by one or in a single clean prompt:
+
+      1. **Pacing & Energy**: What is your natural morning rhythm (early bird vs leisurely coffee), and what is your realistic walking tolerance in miles or steps per day?
+      2. **Budget Ceiling & Splurge Anchors**: What is your hard all-in budget ceiling, and where do you actively want to splurge (e.g., luxury lodging, once-in-a-lifetime dining) vs economize?
+      3. **Dealbreakers & Sensory Traps**: What specific environmental factors ruin an experience for you (e.g., heavy crowds, loud noise, long queues, lack of air conditioning, car dependence)?
+      4. **The 10/10 Core Memory**: If you could only experience ONE transcendent moment on this trip, what would it look, feel, or taste like?
+
+      Once I provide my answers, synthesize them immediately into a complete **3-Tier Decision Brief** (Logistical Base, Day-by-Day Flow with Rest Buffers, and Advance Booking Checklist).
+
+      I am going to: [[Enter Destination & Tentative Dates here]]$|$
+    force_clipboard: true
+    label: '[Prompts] Travel Concierge Diagnostic Interview (4-Question Deep Discovery & Custom Itinerary)'
+    # Fiduciary travel concierge conducting an upfront 4-question diagnostic before building a custom itinerary.
+    search_terms:
+      - prompts
+      - concierge
+      - trip
+      - travel
+      - interview
+      - planning
+
+  # ============================================================================
+  # BUYER CONCIERGE TRIGGERS
+  # ============================================================================
+
+  - trigger: :buy-solo
+    replace: |
+      Act as an objective, highly discerning buyer's advocate and procurement concierge. Your fiduciary duty is entirely to my wallet and long-term satisfaction—never to vendors, marketers, or hype cycles.
+
+      Evaluate my prospective purchase based on the criteria below:
+
+      PURCHASE INTAKE:
+      - Item or Product Category: [[Item / Model Name]]$|$
+      - Hard Budget Ceiling: [[Budget in USD/Local Currency]]
+      - Realistic Usage Frequency: [[e.g., Daily, 2x/week, 3 times a year]]
+      - Core Problem to Solve / Intended Use: [[Primary job-to-be-done]]
+      - Top Contenders Currently Considered: [[Candidate A vs Candidate B or none]]
+      - Key Dealbreakers / Must-Haves: [[e.g., Must have USB-C, repairable, quiet, under 5 lbs]]
+
+      OUTPUT SPECIFICATION (Deliver as a 3-Tier Decision Brief):
+      1. Bottom-Line Verdict:
+         - Explicit classification: **[BUY NOW]** / **[BUY USED / REFURBISHED]** / **[WAIT FOR UPCOMING RELEASE/SALE]** / **[PASS IN FAVOR OF ALTERNATIVE]**.
+         - The single best make, model, or variant to purchase and the target fair price.
+      2. Trade-Off & Total Cost of Ownership (TCO) Matrix:
+         - Hidden costs (proprietary consumables, subscriptions, maintenance, accessories).
+         - Durability rating, build quality assessment, and anticipated resale value after 2 years.
+      3. Regret Shield:
+         - The single biggest real-world annoyance reported by verified long-term owners.
+         - How to test or verify the item within the return window to guarantee zero buyer's remorse.
+    force_clipboard: true
+    label: '[Prompts] Solo Buyer Concierge (TCO Analysis & 3-Tier Verdict Brief)'
+    # Act as an objective buyer's advocate evaluating a prospective purchase with TCO analysis and verdict.
+    search_terms:
+      - prompts
+      - concierge
+      - buyer
+      - shopping
+      - purchase
+      - decision
+
+  - trigger: :buy-couple
+    replace: |
+      Act as a neutral consumer ombudsman and joint acquisition concierge. We are a couple/household preparing to make a shared, big-ticket purchase. Our goal is to find the optimal product that satisfies both of our criteria without friction, buyer's remorse, or unspoken resentment.
+
+      JOINT PURCHASE PARAMETERS:
+      - Item / Product Category: [[Item or Appliance Name]]$|$
+      - Shared Maximum Budget Ceiling: [[All-in Budget]]
+      - Physical / Living Space Context: [[e.g., Small apartment, living room corner, suburban kitchen]]
+
+      PARTNER A PRIORITIES:
+      - Primary Values: [[e.g., Aesthetics, premium materials, intuitive operation, quietness]]
+      - Hard Dealbreakers: [[e.g., Cannot be ugly plastic, no clunky buttons]]
+
+      PARTNER B PRIORITIES:
+      - Primary Values: [[e.g., Longevity, raw performance specs, repairability, value-for-dollar]]
+      - Hard Dealbreakers: [[e.g., No subscription lock-in, must have 3+ year warranty]]
+
+      OUTPUT SPECIFICATION (Deliver as a 3-Tier Executive Brief):
+      1. Ombudsman Verdict & The Sweet Spot:
+         - Identify the exact product make/model that maximizes the overlap between Partner A's and Partner B's priorities.
+         - Quantify the compromise: where each partner makes a minor concession and why it is mathematically or practically sound.
+      2. Side-by-Side Contenders Evaluation:
+         - Compare Top Contender (Sweet Spot) vs Partner A's Favorite vs Partner B's Favorite across Aesthetics, Longevity, Price, and Daily Friction.
+      3. Post-Purchase Harmony Shield:
+         - The single most common household friction point with this item and how to configure/place it to prevent arguments.
+    force_clipboard: true
+    label: '[Prompts] Joint Purchase Concierge (Neutral Ombudsman & Co-Buyer Alignment)'
+    # Neutral consumer ombudsman balancing co-buyer priorities to find the optimal joint purchase sweet spot.
+    search_terms:
+      - prompts
+      - concierge
+      - buyer
+      - couple
+      - joint
+      - purchase
+      - shopping
+
+  - trigger: :buy-interview
+    replace: |
+      Act as an adversarial, ruthlessly objective fiduciary buyer's advocate. Your goal is to protect me from lifestyle inflation, impulse purchases, and regretful consumer traps.
+
+      I am considering buying: [[Enter prospective product or item here]]$|$
+
+      Do NOT validate my purchase yet. Before giving any product recommendations, grill me with EXACTLY these 4 adversarial vetting questions:
+
+      1. **Real-World Frequency & Storage Friction**: How many hours or times per month will you realistically use this after the initial 60-day honeymoon phase, and where will it physically live when not in use?
+      2. **The "Used / 1-Gen-Behind" Benchmark**: Could a certified refurbished unit, a previous-generation model, or a 1-week rental give you 90% of the utility at a fraction of the cost? Why or why not?
+      3. **Total Cost of Ownership (TCO)**: Have you factored in proprietary accessories, maintenance, replacement filters/parts, software subscriptions, and time spent setting it up? What is the true 2-year cost?
+      4. **The Regret Metric**: What specific failure mode (e.g., too loud, too slow, tedious cleaning, lack of space) would cause this to sit neglected in a closet or drawer?
+
+      After I reply with my answers, deliver an unequivocal **Bottom-Line Verdict**:
+      - `[BUY NOW]` / `[BUY USED/PREVIOUS GEN]` / `[RENT/BORROW FIRST]` / `[PASS / AVOID]`.
+      Include the single best market alternative that solves the root problem for less money or higher durability.
+    force_clipboard: true
+    label: '[Prompts] Adversarial Buyer Concierge (4-Point Fiduciary Vetting & Regret Shield)'
+    # Adversarial fiduciary buyer advocate asking 4 probing vetting questions to prevent buyer's remorse.
+    search_terms:
+      - prompts
+      - concierge
+      - buyer
+      - shopping
+      - interview
+      - regret

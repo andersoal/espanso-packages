@@ -19,18 +19,20 @@ import sys
 
 import yaml
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-IGNORED_PACKAGES = {"_example-package", ".meta", "_resources"}
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IGNORED_PACKAGES = {"_example-package", "_docs", "_scripts", "_workflows", "_resources"}
 
 
 def load_matches():
     """Yield (trigger, package, word_flag, label) for every plain trigger."""
-    for path in sorted(glob.glob(os.path.join(REPO_ROOT, "*", "package.yml"))):
+    for path in sorted(glob.glob(os.path.join(REPO_ROOT, "*", "*.yml"))):
         pkg = os.path.basename(os.path.dirname(path))
         if pkg in IGNORED_PACKAGES or pkg.startswith(('.', '_')):
             continue
         with open(path, encoding='utf-8') as f:
             data = yaml.safe_load(f)
+        if not isinstance(data, dict):
+            continue
         for match in data.get("matches", []):
             triggers = match.get("triggers") or (
                 [match["trigger"]] if "trigger" in match else []

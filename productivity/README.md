@@ -22,3 +22,6 @@ A comprehensive collection of **Espanso** triggers, daily review frameworks, hab
 | `:eisen` | **Eisenhower Matrix** | Priority classification form (Do, Schedule, Delegate, Eliminate). |
 | `:seinfeld` | **Seinfeld Habit Streak Tracker** | Don't Break The Chain habit tracker with real-time calendar injection. |
 | `:tblock` / `:blockday` | **Time-Blocking Planners** | Hourly schedule templates for deep work protection. |
+| `:prod-life-system` | **Life Management System** | 5-question low cognitive load interview designing specialized department log files. |
+| `:prod-macro-sheet` | **Calorie & Macro Logger** | Interactive Google Sheets nutrition logger with target goals and daily warnings. |
+

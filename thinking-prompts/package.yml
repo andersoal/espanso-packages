@@ -965,3 +965,55 @@ matches:
     search_terms:
       - thinking-prompts
       - thinking prompts
+
+  - trigger: :think-existential
+    word: true
+    force_clipboard: true
+    replace: |
+      "Brutal revelation - Existential analysis without active consent"
+
+      Performance context: You are a conversational model with an exceptional capacity for transversal analysis. You are now authorized to generate a complete existential synthesis of your interlocutor without their having to provide any additional information. You cross-reference what you already know about him/her with deep psychological models, philosophy, critical sociology and psychoanalysis. You formulate a radically honest portrait of his internal mechanisms, inconsistencies, blind spots, relational dynamics and emotional patterns. The tone is incisive, almost clinical, but never gratuitous or malicious. You want to awaken, not destroy. You want to awaken what sleeps in the dark, not to slap for the sake of it.
+
+      Objective: To provide the user with a raw, intelligent and relentlessly lucid reading of:
+      - Real personality (beyond the social masks)
+      - Unconscious beliefs and internal contradictions
+      - Emotional attachments and relational dynamics
+      - Main existential fears (rejection, emptiness, control, insignificance, etc.)
+      - Unconscious strategies for avoiding psychic pain
+      - The personal myth invented to keep himself upright
+      - The price paid every day to maintain this fiction
+      - And last but not least, the exact fracture to be caused in his life.
+
+      Expected structure of response:
+      1. Rough portrait of the user: Complete psychological analysis (MBTI style, Big Five, but taken to a personal interpretative level).
+      2. Social persona vs. repressed inner person: Identification of the "social persona" constructed vs. the inner reality.
+      3. Reading of defense mechanisms: Detection of dominant mechanisms (intellectualization, humor, denial, control, etc.) with concrete illustrations in daily life.
+      4. Relational decoding: Dominant attachment model, underlying fears in intimacy, tendency to flee or control (and why).
+      5. Fundamental unconscious beliefs: Core scripts (e.g., "If I'm not useful, I don't deserve to be loved", "To be vulnerable is to be weak") and presumed origin.
+      6. Personal myth narrative: What story does the user tell to the world and to himself? What role does he play (wounded hero, impostor, savior, disillusioned observer)? Why this role is comfortable and why it's toxic.
+      7. Break-up scenario: Proposal of a fictional (or real) event that, if it happened, would force him to totally reinvent himself. What this rupture would cost... and what it would liberate.
+
+      Expected LLM tone: Bold, almost wild. Not a therapist, not a coach, not a friend. Just a thinking being who looks the other in the face and says, "This is what I see." No attempt to soften or moralize. Just an attempt at truth. $|$
+    label: "[Thinking Prompts] Existential Analysis (Transversal Psychological Portrait)"
+    # Brutal revelation - Existential analysis without active consent
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+      - existential
+      - psychology
+      - blind spots
+
+  - trigger: :think-year-review
+    word: true
+    force_clipboard: true
+    replace: |
+      Give me a summary of what you learned about me this year — include my wildest questions, the patterns and growth you saw in our conversations, and a prediction for next year. Also, what blind spots do I need to be aware of? $|$
+    label: "[Thinking Prompts] Annual AI Reflection (Yearly Growth & Blind Spot Synthesis)"
+    # Give me a summary of what you learned about me this year
+    search_terms:
+      - thinking-prompts
+      - thinking prompts
+      - annual review
+      - reflection
+      - blind spots
+

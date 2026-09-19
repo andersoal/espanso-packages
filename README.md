@@ -85,7 +85,7 @@ This repository includes custom tooling to ensure trigger hygiene, prevent short
 ### Run Trigger Audit Script
 
 ```bash
-python .meta/scripts/check_triggers.py
+python _scripts/check_triggers.py
 ```
 
 The script scans all package YAML files to identify:
@@ -94,7 +94,7 @@ The script scans all package YAML files to identify:
 - Missing or malformed manifest fields
 - Syntax & structural warnings
 
-Detailed audit reports are generated in [`trigger-audit.md`](./.meta/docs/trigger-audit.md).
+Detailed audit reports are generated in [`trigger-audit.md`](./_docs/trigger-audit.md).
 
 ---
 
@@ -109,7 +109,7 @@ cp -r _example-package my-new-package
 
 1. Edit `my-new-package/_manifest.yml` to set package `name`, `title`, `description`, and `author`.
 2. Add your Espanso triggers inside `my-new-package/package.yml` (or subfiles under `my-new-package/match/`).
-3. Run `python .meta/scripts/check_triggers.py` to verify trigger uniqueness and syntax correctness.
+3. Run `python _scripts/check_triggers.py` to verify trigger uniqueness and syntax correctness.
 
 ---
 

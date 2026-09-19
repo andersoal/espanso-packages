@@ -9,13 +9,15 @@ The package is split into domain-specific submodules imported via `package.yml` 
 - **`package.yml`**: Root configuration and imports manifest; contains core custom instructions, system persona setups, and model tuning triggers.
 - **`_storytelling.yml`**: Creative narrative, illustrated storybook generator, and Pollinations AI image synthesis triggers.
 - **`_prompt_engineering.yml`**: Meta-prompts, Prompt Master, Expert Prompt Creator, prompt optimization, clarification timing, and response refiners.
-- **`_frameworks.yml`**: Structured thinking frameworks (RTF, STAR, SOAR, SMART, RACE, DREAM, PACT, CARE, RISE, TREF, ROSES, SCET).
+- **`_frameworks.yml`**: Structured thinking frameworks (RTF, STAR, SOAR, SMART, RACE, DREAM, PACT, CARE, RISE, TREF, ROSES, SCET, TTAS).
 - **`_learning_education.yml`**: Accelerated learning roadmaps, Feynman techniques, 80/20 knowledge extraction, spaced repetition, Socratic tutors, and LearnOS.
 - **`_productivity_execution.yml`**: Flow state induction, mindset resets, time blindness audits, task initiation, weekly routines, and open loops triage.
 - **`_business_marketing.yml`**: Lean startup planning, MVP scoping, sales playbooks, LinkedIn content engines, customer friction research, and offer builders.
 - **`_software_engineering.yml`**: Systems architecture, debugging specialists, performance optimization, codebase audits, and refactoring engines.
 - **`_writing_editing.yml`**: Personal voice calibration, brutal editor feedback, human tone rewriters, red pen polish, and line-by-line cadence elevation.
 - **`_analysis_research.yml`**: Cross-document analysis, perspective synthesis, quality checks, bias audits, pre-mortems, and philosophical exploration.
+- **`_solopreneur_prompts.yml`**: Multi-expert collaborative prompt workflows replacing $4k/month outsourced roles across sales, cold outreach, objection handling, content calendars, customer support, pricing psychology, and launch strategy.
+- **`_concierge.yml`**: High-efficiency decision engines for solo & couples travel itinerary engineering and fiduciary buyer purchase vetting (TCO, ombudsman alignment, adversarial regret shields).
 
 ## Text Blaze Text Expander
 
@@ -435,13 +437,13 @@ A collection of targeted prompt structures designed to break default, low-value 
 
 A production-grade prompt engineering meta-system designed to generate, adapt, and refine high-performance prompts for modern LLMs, reasoning models, coding agents, multimodal engines, and workflow automatons with zero wasted tokens.
 
-- **Interactive Form Triggers**: `:p-prompt-master-form`, `:prompt-master-form`, `:p-pm-form`
+- **Interactive Form Triggers**: `:p-prompt-master-form`, `:prompt-master-form`, `:f-prompt-master`, `:p-pm-form`, `:pm-form`
   - **Label**: `[Prompts] Prompt Master Interactive Form (Target Tool & Task Injector)`
   - **Purpose**: Displays an Espanso popup dialog allowing selection of the target AI system (Claude 5, GPT-5.6, Claude Code, Codex, Antigravity, Grok 4.6, Cursor, Midjourney, etc.) and multiline task entry, injecting the complete Prompt Master instructions with your request pre-attached.
-- **Direct System Prompt Triggers**: `:p-prompt-master`, `:prompt-master`, `:p-master-prompt`
+- **Direct System Prompt Triggers**: `:p-prompt-master`, `:prompt-master`, `:p-master-prompt` (`word: true`)
   - **Label**: `[Prompts] Prompt Master System Instruction (Comprehensive AI Prompt Engineering Engine)`
-  - **Purpose**: Pastes the complete ~32KB production Prompt Master system instructions via system clipboard (`force_clipboard: true`), placing the cursor at the end for immediate task entry.
-- **Quick / Compact Engine Triggers**: `:p-prompt-master-quick`, `:p-prompt-quick`, `:p-pm-quick`
+  - **Purpose**: Pastes the complete ~32KB production Prompt Master system instructions via system clipboard (`force_clipboard: true`), placing the cursor at the end for immediate task entry. Uses `word: true` to prevent prefix shadowing of `-form` and `-quick` triggers (expands on Space or Enter).
+- **Quick / Compact Engine Triggers**: `:p-prompt-master-quick`, `:p-prompt-quick`, `:p-pm-quick`, `:q-prompt-master`, `:pm-quick`
   - **Label**: `[Prompts] Prompt Master Quick Engine (Core Identity, Hard Rules & Output Lock)`
   - **Purpose**: Lightweight interactive trigger delivering the core Primacy Zone rules, Intent Extraction dimensions, and Output Lock contract without the full multi-model catalog.
 
@@ -450,7 +452,7 @@ A production-grade prompt engineering meta-system designed to generate, adapt, a
 - **Trigger**: `:prompt-deconstruct`
 - **Label**: `[Prompts] Adversarial Prompt Optimizer (3 Tests with Continuity Proof)`
 - **Purpose**: Deconstructs and stress-tests candidate prompts using three adversarial passes (Precision Test, Intelligence Test, Challenge Test) with continuity proofs, rollback protection, and quantitative metric tracking.
-- **Workflow Spec**: [workflows/prompt-deconstruction-loop.md](file:///c:/Users/ag/Documents/Obsidian/espanso/match/packages/workflows/prompt-deconstruction-loop.md)
+- **Workflow Spec**: [_workflows/prompt-deconstruction-loop.md](file:///c:/Users/ag/Documents/Obsidian/espanso/match/packages/_workflows/prompt-deconstruction-loop.md)
 
 ### Discussion Thread Mapper (Compact Multi-Position Extraction)
 
@@ -463,4 +465,48 @@ A production-grade prompt engineering meta-system designed to generate, adapt, a
 - **Trigger**: `:prompt-movie-poster`
 - **Label**: `[Prompts] Conversational Movie Poster (Cinematic Profile Synthesis)`
 - **Purpose**: Synthesizes a striking cinematic poster prompt from user conversational memory, core values, humor, aesthetic preferences, and enduring character motifs.
+
+### Solopreneur AI Team Replacement Workflows (`_solopreneur_prompts.yml`)
+
+A curated collection of 16 high-converting AI prompts and multi-agent persona systems replacing outsourced roles across sales, cold outreach, objection handling, content creation, customer support, pricing psychology, productivity, and launch strategy:
+
+| Trigger | Label / Concept | Category | Focus / Replaced Role |
+|---|---|---|---|
+| `:solo-prospect` | Prospect Research Assistant | Sales & Intel | VA / B2B Sales Intelligence Analyst ($500/mo) |
+| `:solo-cold-email` | Converting Cold Email Writer | Sales & Outreach | Copywriter ($1,000/mo) |
+| `:solo-objection` | Objection Destroyer | Sales Closing | Sales Closer & Negotiation Psychologist |
+| `:solo-content-30d` | 30-Day Content Matrix | Content Creation | Social Media Manager ($800/mo) |
+| `:solo-thread` | Viral Thread Architecture | Content Creation | Growth Strategist & Viral Ghostwriter |
+| `:solo-support-ninja` | Customer Service Ninja | Support & Automation | Support VA ($700/mo) |
+| `:solo-faq-gen` | FAQ Generator That Sells | Conversion Optimization | CRO Specialist & Objection Handler |
+| `:solo-pricing-opt` | Pricing Psychology Optimizer | Revenue & Strategy | Pricing Strategist & Behavioral Economist |
+| `:solo-upsell` | Post-Purchase Upsell Script | Revenue & AOV | E-commerce Upsell Specialist |
+| `:solo-week-planner` | Ultradian Week Planner | Productivity | Executive Productivity Consultant |
+| `:solo-decision-3000` | Strategic Decision Engine | Productivity & Strategy | McKinsey Consultant & Risk Analyst |
+| `:solo-newsletter` | High-Open Newsletter Drafter | Email Marketing | Newsletter Growth Copywriter |
+| `:solo-winback` | Dormant List Win-Back Sequence | Email Marketing | Win-back Campaign Specialist |
+| `:solo-competitor` | Competitor Analysis Assassin | Market Strategy | Competitive Intelligence Analyst |
+| `:solo-launch` | Phased Launch Engine | Launch Strategy | Product Launch & Growth Marketer |
+| `:solo-raptor` | RAPTOR Meta-Prompt Generator | Prompt Engineering | Production Prompt Architect |
+
+### Trained Therapy Application System (`_frameworks.yml`)
+
+- **Triggers**: `:ttas`, `:pttas`, `:p-ttas`, `:therapy`
+- **Label**: `[Prompts] Trained Therapy Application System (TTAS Iterative Counseling Framework)`
+- **Purpose**: Interactive consultation framework structuring multi-modal therapy (CBT, psychodynamic, behavioral, humanistic, and mindfulness-based approaches) through continuous Q&A iterations. Evaluates the user's initial situation across 6 structured sections (*Clarify the request*, *Professional Analysis*, *Professional Opinion*, *Therapeutic Goals*, *Action Steps*, and up to 3 targeted *Next Questions*), adapting sequentially with each patient response. Includes an interactive multiline form with customizable problem text.
+
+### Travel & Buyer Concierge Suite (`_concierge.yml`)
+
+A suite of 6 high-efficiency decision triggers operating without modal popup forms. Designed with direct inline bracket expansion (`[...]`), automatic cursor landing (`$|$`), and structured 3-tier executive briefs (pushing checkpoints right):
+
+| Trigger | Label / Concept | Domain / Mode | Core Deliverable & Mechanism |
+|---|---|---|---|
+| `:trip-solo` | Solo Travel Concierge | Trip (Solo) | Direct replace with inline brackets $\to$ 3-Tier Itinerary Brief (Logistics, Day-by-Day flow with rest buffers, Advance Booking checklist). |
+| `:trip-couple` | Couples Travel Concierge | Trip (Couple) | Asymmetric profile reconciliation (Person A vs Person B pace, dietary, vibe) $\to$ Harmonized itinerary and friction mitigation. |
+| `:trip-interview` | Travel Concierge Diagnostic Interview | Trip (Diagnostic) | Fiduciary concierge asks **exactly 4 diagnostic questions** (pacing, budget ceiling, sensory dealbreakers, 10/10 core memory) before synthesizing the itinerary. |
+| `:buy-solo` | Solo Buyer Concierge | Buyer (Solo) | Direct replace with inline brackets $\to$ 3-Tier Decision Brief (Verdict `[BUY NOW / WAIT / ALTERNATIVE]`, TCO & Trade-Off Matrix, Regret Shield). |
+| `:buy-couple` | Joint Purchase Concierge | Buyer (Joint) | Neutral consumer ombudsman reconciling dual partner priorities (aesthetics vs longevity/specs) to find the household sweet spot. |
+| `:buy-interview` | Adversarial Buyer Concierge | Buyer (Diagnostic) | Fiduciary advocate grills with **4 vetting questions** (real frequency, used benchmark, 2-year TCO, regret trigger) before issuing a final verdict. |
+
+
 

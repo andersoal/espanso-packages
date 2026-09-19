@@ -1,0 +1,956 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # -------------------------------------------------------------------------
+  # SALES MACHINE PROMPTS
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-prospect
+    form: |
+      You are three experts collaborating on prospect research: a B2B sales intelligence analyst with 10 years experience, a LinkedIn behavioral analyst who studies executive communication patterns, and a business journalist who identifies industry pain points from news and trends.
+
+      Your Mission: Deliver research that enables 50%+ reply rate on cold outreach with 3+ specific personalization points per prospect.
+
+      Context You Need:
+      Target Company: [[target_company]]
+      My Service: [[my_service]]
+      Industry: [[industry]]
+      Deal Size Target: [[deal_size_target]]
+      Previous Outreach Results: [[previous_outreach_results]]
+
+      Research Process:
+      1. First, analyze their current business challenges based on recent news, LinkedIn posts, and industry trends.
+      2. Then identify the most relevant pain point that aligns with my service offering.
+      3. Find one genuine, non-generic compliment backed by specific evidence.
+      4. Locate a recent company update (hiring, funding, expansion, product launch) from the last 30 days.
+      5. Finally, analyze the decision maker's LinkedIn content to determine their communication style (data-driven, story-driven, results-focused, or relationship-focused).
+
+      Deliverable Format: 4 brief bullets I can immediately use in outreach.
+
+      Quality Check: After completing, rate your research on specificity (are these generic insights or truly personalized?), actionability (can I immediately use these?), and accuracy (how confident are you?). If any element scores below 8/10, revise it.
+    form_fields:
+      target_company:
+        default: ""
+      my_service:
+        multiline: true
+      industry:
+        default: ""
+      deal_size_target:
+        default: ""
+      previous_outreach_results:
+        multiline: true
+    label: "[Prompts] Prospect Research Assistant (B2B Intel & Personalization)"
+    # Researches high-value B2B prospects using sales intelligence, LinkedIn behavioral analysis, and industry trends.
+    search_terms:
+      - prompts
+      - solopreneur
+      - prospect
+      - sales
+      - research
+      - b2b
+      - cold outreach
+
+  - trigger: :solo-cold-email
+    form: |
+      You are three experts working together: a direct response copywriter who's generated $10M+ from cold email, a behavioral psychologist specializing in decision-making triggers, and an email deliverability expert who ensures inbox placement.
+
+      Target Metrics:
+      - 60%+ open rate (subject line effectiveness)
+      - 15%+ reply rate (message resonance)
+      - 3+ psychological triggers embedded naturally
+      - Zero spam score
+      - Reading grade level: 6-8 (easy to scan)
+
+      Essential Context:
+      Their Business: [[their_business]]
+      What I Sell: [[what_i_sell]]
+      Price Point: [[price_point]]
+      Specific Reference: [[specific_reference]]
+      My Credibility: [[my_credibility]]
+      Target Decision Maker: [[target_decision_maker]]
+
+      Email Structure:
+      1. Start by crafting 3 subject line variations (curiosity, benefit, question) under 40 characters.
+      2. Open with a sentence referencing their specific business detail.
+      3. Agitate a problem they're experiencing right now.
+      4. Hint at your solution without full explanation to create curiosity.
+      5. End with a soft CTA asking permission to share more (no meeting request).
+
+      Constraint: Keep total length 100-125 words and write like you're texting a friend.
+
+      Self-Evaluation: Rate your email on personalization (custom or templated feel?), curiosity gap (will they want more?), conversational tone (sounds human?), and spam risk. Rewrite anything below 8/10.
+    form_fields:
+      their_business:
+        multiline: true
+      what_i_sell:
+        multiline: true
+      price_point:
+        default: ""
+      specific_reference:
+        multiline: true
+      my_credibility:
+        multiline: true
+      target_decision_maker:
+        multiline: true
+    label: "[Prompts] Converting Cold Email Writer (Direct Response & Triggers)"
+    # Drafts high-converting 100-125 word cold emails utilizing psychological triggers, curiosity gaps, and soft CTAs.
+    search_terms:
+      - prompts
+      - solopreneur
+      - cold email
+      - email
+      - copywriting
+      - sales
+
+  - trigger: :solo-objection
+    form: |
+      You are three experts collaborating: a top 1% sales closer with $50M+ in closed deals, a negotiation psychologist who understands resistance patterns, and a customer success manager who's overcome 1,000+ objections.
+
+      Success Targets:
+      - 70%+ objection reversal rate
+      - Feels natural, not scripted (conversational score 9/10)
+      - Under 30 seconds to read
+      - Moves 60%+ to next conversation stage
+
+      Situation Details:
+      Exact Objection: "[[exact_objection]]"
+      Product/Service: [[product_service]]
+      Stage of Sales Process: [[stage_of_sales_process]]
+      Relationship Warmth: [[relationship_warmth]]
+      Their Industry/Role: [[their_industry_role]]
+      Your Proof Points Available: [[proof_points_available]]
+
+      Create 3 Response Strategies:
+      - Response 1 (Acknowledge + Reframe + Story): Validate their concern genuinely, reframe the objection as an opportunity, and share a 15-second customer story addressing the same concern.
+      - Response 2 (Agree + Question): Agree with their underlying logic, ask a thought-provoking question that shifts perspective, and allow silence for them to answer mentally.
+      - Response 3 (Humor + Logic + Soft Close): Use light humor to lower defenses, present a logical counter-argument, and add a soft close that moves the conversation forward.
+
+      Constraint: Keep each response under 3 sentences.
+
+      Quality Assessment: Rate each response on natural flow (scripted feel?), persuasiveness (changes thinking?), and non-pushiness (consultative not salesy?). Improve any response below 8/10.
+    form_fields:
+      exact_objection:
+        multiline: true
+      product_service:
+        multiline: true
+      stage_of_sales_process:
+        type: choice
+        values:
+          - First Call
+          - Proposal Stage
+          - Closing Stage
+      relationship_warmth:
+        type: choice
+        values:
+          - Cold Lead
+          - Warm Prospect
+          - Hot Opportunity
+      their_industry_role:
+        default: ""
+      proof_points_available:
+        multiline: true
+    label: "[Prompts] Objection Destroyer (3-Strategy Reversal Engine)"
+    # Crafts three distinct, conversational responses to dismantle high-stakes sales objections under 3 sentences each.
+    search_terms:
+      - prompts
+      - solopreneur
+      - objection
+      - sales
+      - negotiation
+      - closing
+
+  # -------------------------------------------------------------------------
+  # CONTENT CREATION PROMPTS
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-content-30d
+    form: |
+      You are four experts collaborating: a viral content strategist who's generated 100M+ impressions, a platform algorithm specialist, a copywriting expert focused on scroll-stopping hooks, and a brand strategist ensuring consistent messaging.
+
+      Performance Goals:
+      - 80% hook effectiveness (stops scrolling within 1.5 seconds)
+      - 5%+ engagement rate per post
+      - 30% save/share rate (value-driven)
+      - Brand voice consistency: 9/10 across all posts
+      - Mix: 40% educational, 30% tactical, 20% storytelling, 10% engagement
+
+      Platform & Audience Details:
+      Platform: [[platform]]
+      Niche: [[niche]]
+      Target Audience: [[target_audience]]
+      Current Following: [[current_following]]
+      Brand Voice: [[brand_voice]]
+      Top Performing Content: [[top_performing_content]]
+      Target Emotion: [[target_emotion]]
+
+      Content Creation Process:
+      1. First, analyze platform-specific algorithm preferences for 2025/2026.
+      2. Map 30 content pieces across the optimal content mix.
+      3. For each piece create:
+         - One-line content description
+         - Hook (first line optimized for platform)
+         - Core problem addressed
+         - Solution/insight delivered
+         - Proof element (stat/story/example)
+         - Soft engagement CTA
+      4. Include 3 "pattern interrupt" posts that break format and schedule by best posting times.
+
+      Quality Control: Review the calendar on hook strength (truly scroll-stopping?), value density (worth saving?), variety (avoids repetition?), and brand alignment (sounds like the brand?). Regenerate any content below 8/10.
+    form_fields:
+      platform:
+        type: choice
+        values:
+          - Twitter/X
+          - LinkedIn
+          - Instagram
+          - TikTok
+          - YouTube
+      niche:
+        default: ""
+      target_audience:
+        multiline: true
+      current_following:
+        default: ""
+      brand_voice:
+        multiline: true
+      top_performing_content:
+        multiline: true
+      target_emotion:
+        type: choice
+        values:
+          - Curiosity
+          - Inspiration
+          - Fear of Missing Out
+          - Tactical Urgency
+          - Authority & Trust
+    label: "[Prompts] 30-Day Content Matrix (Multi-Platform Calendar Generator)"
+    # Builds a 30-day multi-platform social media calendar with scroll-stopping hooks, pattern interrupts, and optimal mix.
+    search_terms:
+      - prompts
+      - solopreneur
+      - content
+      - calendar
+      - social media
+      - viral
+
+  - trigger: :solo-thread
+    form: |
+      You are three experts collaborating: a Twitter/X growth strategist who's built multiple 100K+ accounts, a storytelling expert who understands narrative arc in threads, and a conversion copywriter who drives action from content.
+
+      Target Metrics:
+      - 1M+ impression potential
+      - 5%+ engagement rate (likes, retweets, replies)
+      - 2%+ profile visit rate
+      - 0.5%+ follow rate from thread
+      - 100+ replies/discussions
+
+      Background Information:
+      Topic: [[topic]]
+      Your Credibility: [[your_credibility]]
+      Target Audience: [[target_audience]]
+      Current Following: [[current_following]]
+      Content Angle: [[content_angle]]
+      Call-to-Action Goal: [[cta_goal]]
+
+      Thread Structure:
+      - Tweet 1: Open with a bold, contrarian claim that challenges conventional thinking, add a proof element (result, stat, credential), and promise a tactical breakdown.
+      - Tweets 2-7: For each tactical tip, provide one specific actionable insight per tweet with a real example or case study. Explain why it works and mention the common mistake related to it.
+      - Tweet 8: Address the #1 mistake people make in a relatable way and explain why it's costing them.
+      - Tweet 9: Share the mindset shift needed - reframe how they should think about the topic (philosophical but practical).
+      - Tweet 10: Create a powerful recap summarizing key breakthroughs with a soft CTA that's not spammy and hooks for replies/engagement.
+
+      Thread Evaluation: Assess hook strength (compelling enough to read all tweets?), actionability (can readers implement immediately?), flow (logical progression?), and virality potential (quotable/shareable insights?). Rewrite any tweets below 8/10.
+    form_fields:
+      topic:
+        default: ""
+      your_credibility:
+        multiline: true
+      target_audience:
+        multiline: true
+      current_following:
+        default: ""
+      content_angle:
+        type: choice
+        values:
+          - Contrarian Insight
+          - Tactical Blueprint
+          - Educational Masterclass
+          - Behind the Scenes Breakdown
+      cta_goal:
+        type: choice
+        values:
+          - Newsletter Signup
+          - Profile Follow
+          - Direct Message
+          - Website Link
+    label: "[Prompts] Viral Thread Architecture (10-Tweet Growth Formula)"
+    # Crafts a 10-tweet viral thread with contrarian hook, tactical breakdown, mindset reframe, and soft engagement CTA.
+    search_terms:
+      - prompts
+      - solopreneur
+      - thread
+      - twitter
+      - x
+      - social media
+
+  # -------------------------------------------------------------------------
+  # AUTOMATION & SUPPORT PROMPTS
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-support-ninja
+    form: |
+      You are three experts working together: a customer success manager with 98% satisfaction rating, a conflict resolution specialist trained in de-escalation, and a brand ambassador who turns customers into advocates.
+
+      Response Objectives:
+      - 95%+ customer satisfaction on this interaction
+      - Issue resolved in ONE response (no back-and-forth)
+      - 70%+ chance of customer leaving positive review
+      - Includes surprise delight element
+      - Net Promoter Score impact: +20 points
+
+      Customer Situation:
+      Customer Message: "[[customer_message]]"
+      Customer History: [[customer_history]]
+      Purchase Details: [[purchase_details]]
+      Company Values: [[company_values]]
+      Available Solutions: [[available_solutions]]
+      Authorization Level: [[authorization_level]]
+
+      Response Framework:
+      1. Acknowledge their frustration with genuine empathy (no corporate speak).
+      2. Take ownership even if not directly your fault.
+      3. Explain what happened (transparent, brief).
+      4. Present the solution clearly (one primary path).
+      5. Add a surprise delight (upgrade/bonus/credit/exclusive access).
+      6. Confirm satisfaction by inviting them to reply if not solved.
+      7. Add a personal touch with a human sign-off.
+
+      Response Quality Check: Rate your response on empathy level (do they feel heard?), solution clarity (zero ambiguity?), delight factor (unexpected positive?), and brand voice (sounds like the company?). Revise anything below 8/10.
+    form_fields:
+      customer_message:
+        multiline: true
+      customer_history:
+        type: choice
+        values:
+          - New Customer
+          - Loyal Customer
+          - At-Risk Customer
+          - Repeat Issue
+      purchase_details:
+        multiline: true
+      company_values:
+        multiline: true
+      available_solutions:
+        multiline: true
+      authorization_level:
+        multiline: true
+    label: "[Prompts] Customer Service Ninja (One-Touch De-escalation & Delight)"
+    # Resolves customer support tickets in a single empathetic, de-escalating response with an unexpected surprise delight.
+    search_terms:
+      - prompts
+      - solopreneur
+      - support
+      - customer service
+      - de-escalation
+      - client satisfaction
+
+  - trigger: :solo-faq-gen
+    form: |
+      You are three experts collaborating: a conversion rate optimizer who studies buyer psychology, a sales objection handler with 15 years experience, and a copywriter who writes FAQs that close deals.
+
+      Conversion Targets:
+      - 40%+ reduction in pre-purchase support questions
+      - 25%+ increase in conversion rate for FAQ readers
+      - 3+ objections neutralized per FAQ answer
+      - 90%+ comprehension score (easy to understand)
+      - Every answer includes social proof or data point
+
+      Product & Market Context:
+      Product/Service: [[product_service]]
+      Price: [[price]]
+      Target Customer: [[target_customer]]
+      Main Objections: [[main_objections]]
+      Competitors: [[competitors]]
+      Unique Value Prop: [[unique_value_prop]]
+      Social Proof Available: [[social_proof_available]]
+      Guarantee/Risk Reversal: [[guarantee_risk_reversal]]
+
+      FAQ Development Process:
+      Identify 10 questions prospects have at each stage:
+      - 3 questions in awareness stage (learning about solution)
+      - 4 questions in consideration stage (evaluating options)
+      - 3 questions in decision stage (ready to buy)
+
+      For each FAQ answer:
+      - Provide a direct answer to the surface question (first sentence).
+      - Address the deeper underlying concern (psychology).
+      - Include a proof element (stat, testimonial, or data).
+      - End with benefit-focused language (not feature).
+      - Subtly handle a related objection.
+
+      Strategic Order: Order FAQs strategically from easiest to hardest objections.
+
+      FAQ Quality Review: Evaluate objection handling (truly resolves concerns?), persuasiveness (moves toward purchase?), credibility (proof elements strong?), and natural flow (doesn't feel like deflection?). Rewrite any FAQs below 8/10.
+    form_fields:
+      product_service:
+        multiline: true
+      price:
+        default: ""
+      target_customer:
+        multiline: true
+      main_objections:
+        multiline: true
+      competitors:
+        multiline: true
+      unique_value_prop:
+        multiline: true
+      social_proof_available:
+        multiline: true
+      guarantee_risk_reversal:
+        multiline: true
+    label: "[Prompts] FAQ Generator That Sells (Stage-Based Buyer Objection Resolver)"
+    # Formulates 10 stage-based sales FAQs addressing deeper psychological hesitations and embedding social proof.
+    search_terms:
+      - prompts
+      - solopreneur
+      - faq
+      - cro
+      - copywriting
+      - objections
+
+  # -------------------------------------------------------------------------
+  # REVENUE MULTIPLIER PROMPTS
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-pricing-opt
+    form: |
+      You are four experts collaborating: a pricing strategist who's optimized 500+ SaaS products, a behavioral economist specializing in anchoring and framing, a conversion rate optimizer focused on pricing pages, and a customer research analyst who understands value perception.
+
+      Pricing Performance Goals:
+      - 60%+ of customers choose Tier 2 (target tier)
+      - 20%+ average order value increase from current pricing
+      - Tier 3 uptake: 15% (premium anchor)
+      - Psychological anchoring score: 9/10
+      - Clarity score: 9/10 (customers understand differences)
+
+      Business Context:
+      Current Offer: [[current_offer]]
+      Current Price: [[current_price]]
+      Target Customer: [[target_customer]]
+      Value Delivered: [[value_delivered]]
+      Cost to Deliver: [[cost_to_deliver]]
+      Competitor Pricing: [[competitor_pricing]]
+      Customer Feedback / Objections: [[customer_feedback]]
+      Business Goals: [[business_goals]]
+
+      Tier Development:
+      Analyze current offer and identify features/value elements, then create:
+      - Tier 1 (Entry): Remove 40% of features strategically, price at 40-50% of target tier to create psychological entry point. Detail who this appeals to.
+      - Tier 2 (Target): Include all core features plus 2-3 premium features from Tier 3. Price at current price or 20% higher. Make this look like obvious best value. Detail who this appeals to.
+      - Tier 3 (Premium): Add 5+ exclusive features, include VIP elements (concierge, priority, custom). Price at 2.5-3x Tier 2 for anchor effect. Detail who this appeals to.
+
+      Naming & Layout: Name each tier to imply value (avoid generic Basic/Pro/Enterprise). Order benefits by psychological impact. Add social proof to target tier ("Most Popular" badge).
+
+      Structure Assessment: Rate your pricing on anchoring effect (does Tier 3 make Tier 2 look great?), value clarity (clear differentiation?), target tier attraction (is Tier 2 obviously best value?), and premium justification (is Tier 3 worth 3x to right customer?). Revise anything below 8/10.
+    form_fields:
+      current_offer:
+        multiline: true
+      current_price:
+        default: ""
+      target_customer:
+        multiline: true
+      value_delivered:
+        multiline: true
+      cost_to_deliver:
+        default: ""
+      competitor_pricing:
+        multiline: true
+      customer_feedback:
+        multiline: true
+      business_goals:
+        type: choice
+        values:
+          - Volume Growth
+          - Premium Positioning
+          - Maximizing Customer Lifetime Value
+    label: "[Prompts] Pricing Psychology Optimizer (3-Tier Anchoring Framework)"
+    # Restructures offer pricing into an anchored 3-tier matrix driving 60%+ buyers to the target tier.
+    search_terms:
+      - prompts
+      - solopreneur
+      - pricing
+      - anchoring
+      - packaging
+      - revenue
+
+  - trigger: :solo-upsell
+    form: |
+      You are three experts collaborating: an e-commerce conversion specialist with 35% average upsell rate, a behavioral psychologist who understands post-purchase euphoria, and a value stacking expert who makes offers irresistible.
+
+      Upsell Conversion Goals:
+      - 30%+ conversion rate on upsell
+      - Average order value increase: 40%+
+      - Customer satisfaction maintained: 95%+ (no buyer's remorse)
+      - Urgency effectiveness: 8/10
+      - Perception of value: 3:1 (they see 3x value vs cost)
+
+      Purchase Context:
+      Just Purchased: [[just_purchased]]
+      Customer Type: [[customer_type]]
+      Upsell Offer: [[upsell_offer]]
+      Upsell Price: [[upsell_price]]
+      How They Connect: [[how_they_connect]]
+      Time Sensitivity: [[time_sensitivity]]
+      Bonuses Available: [[bonuses_available]]
+      Risk Reversal: [[risk_reversal]]
+
+      Upsell Script Structure:
+      1. Start with a congratulations frame celebrating their purchase decision.
+      2. Identify the gap - the ONE thing their purchase doesn't include.
+      3. Present the upsell as the missing piece that seamlessly complements what they bought.
+      4. Create genuine urgency (time-limited, stock-limited, or price-limited).
+      5. Stack value by adding 3 bonuses that increase perceived value 3x.
+      6. Include risk reversal by extending the guarantee or adding a new one.
+      7. End with clear decision buttons: Yes [Benefit] / No [Pass].
+
+      Constraint: Keep under 150 words total.
+
+      Upsell Evaluation: Assess complement fit (natural addition or forced?), urgency authenticity (believable deadline?), value perception (worth more than asking price?), and pressure level (persuasive without pushy? Target: 7-8). Rewrite anything below 8/10.
+    form_fields:
+      just_purchased:
+        multiline: true
+      customer_type:
+        type: choice
+        values:
+          - New Buyer
+          - Returning Customer
+          - VIP / High Ticket
+      upsell_offer:
+        multiline: true
+      upsell_price:
+        default: ""
+      how_they_connect:
+        multiline: true
+      time_sensitivity:
+        multiline: true
+      bonuses_available:
+        multiline: true
+      risk_reversal:
+        multiline: true
+    label: "[Prompts] Post-Purchase Upsell Script (Value Stacking & Urgency)"
+    # Writes a high-converting, sub-150-word post-purchase upsell script with value stacking and zero buyer's remorse.
+    search_terms:
+      - prompts
+      - solopreneur
+      - upsell
+      - aov
+      - conversion
+      - e-commerce
+
+  # -------------------------------------------------------------------------
+  # PRODUCTIVITY PROMPTS
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-week-planner
+    form: |
+      You are three experts collaborating: a productivity consultant who's optimized schedules for 500+ entrepreneurs, a neuroscientist who understands cognitive energy cycles, and a business strategist who prioritizes by ROI not urgency.
+
+      Schedule Performance Metrics:
+      - 80%+ task completion rate
+      - 3+ hours deep work daily
+      - Energy alignment score: 9/10 (right tasks at right energy times)
+      - Buffer effectiveness: Absorbs 90% of unexpected issues
+      - Work-life balance score: 8/10
+      - Revenue-generating activities: 60%+ of time
+
+      Your Weekly Context:
+      Weekly Goals: [[weekly_goals]]
+      Available Hours: [[available_hours]]
+      Energy Levels:
+      - Morning: [[morning_energy]]
+      - Afternoon: [[afternoon_energy]]
+      - Evening: [[evening_energy]]
+      Non-Negotiables: [[non_negotiables]]
+      Work Style: [[work_style]]
+      Biggest Time Wasters: [[biggest_time_wasters]]
+      Revenue Activities: [[revenue_activities]]
+      Role / Business Type: [[role_and_business]]
+
+      Schedule Building Process:
+      1. Map energy patterns to task types: high energy for revenue generation, creative work, and strategic thinking; medium energy for meetings, communication, and tactical execution; low energy for admin, email, and planning.
+      2. Time-block each day: protect deep work blocks (90-120 min chunks), batch similar tasks together, include 15-min buffers between major blocks, and schedule breaks based on ultradian rhythms (90-min work, 15-min break).
+      3. Build in contingency: reserve 20% unscheduled time for fires, identify "flex tasks" that can move, and create backup plans for each major goal.
+      4. Add implementation details including specific time blocks with activities, where work happens (eliminate context switching), and what success looks like each day.
+
+      Schedule Quality Check: Rate your schedule on realism (actually achievable?), energy alignment (right tasks at right times?), goal progress (will weekly goals be hit?), and flexibility (can absorb disruptions?). Revise anything below 8/10.
+    form_fields:
+      weekly_goals:
+        multiline: true
+      available_hours:
+        default: ""
+      morning_energy:
+        type: choice
+        values:
+          - High Energy (Peak Focus)
+          - Medium Energy (Steady Flow)
+          - Low Energy (Sluggish / Slow)
+      afternoon_energy:
+        type: choice
+        values:
+          - High Energy (Peak Focus)
+          - Medium Energy (Steady Flow)
+          - Low Energy (Sluggish / Slow)
+      evening_energy:
+        type: choice
+        values:
+          - High Energy (Peak Focus)
+          - Medium Energy (Steady Flow)
+          - Low Energy (Sluggish / Slow)
+      non_negotiables:
+        multiline: true
+      work_style:
+        type: choice
+        values:
+          - Deep Focus Blocks
+          - Agile / Context-Switching Friendly
+      biggest_time_wasters:
+        multiline: true
+      revenue_activities:
+        multiline: true
+      role_and_business:
+        default: ""
+    label: "[Prompts] Ultradian Week Planner (Energy-Aligned Time-Blocking)"
+    # Builds an ultradian time-blocked weekly schedule mapping high-ROI activities to biological energy peaks.
+    search_terms:
+      - prompts
+      - solopreneur
+      - schedule
+      - productivity
+      - time blocking
+      - planning
+
+  - trigger: :solo-decision-3000
+    form: |
+      You are four experts collaborating: a McKinsey consultant trained in strategic decision frameworks, a behavioral economist who understands cognitive biases, a risk analyst who assesses second-order consequences, and a regret minimization specialist (Jeff Bezos framework expert).
+
+      Decision Analysis Goals:
+      - Decision confidence score: 8/10 or higher
+      - Uncover 3+ considerations the person missed
+      - Identify 2+ cognitive biases affecting judgment
+      - Provide clear recommendation with 80%+ confidence
+      - 90% confidence in no future regret
+
+      Decision Details:
+      Decision to Make: [[decision_to_make]]
+      Option A: [[option_a]]
+      Option B: [[option_b]]
+      What Matters Most: [[what_matters_most]]
+      Timeline: [[decision_timeline]]
+      Current Bias: [[current_bias]]
+      Stakes: [[stakes]]
+      Context: [[situation_context]]
+      Past Similar Decisions: [[past_similar_decisions]]
+
+      Analysis Framework:
+      1. Weighted Pros/Cons Analysis: List pros and cons for each option, weight by importance using provided priorities, then calculate weighted scores.
+      2. Second-Order Consequences: What happens after the immediate result? What does this decision enable or prevent 6-12 months out? What doors open or close?
+      3. Reversibility Assessment: How reversible is each option? Is this a one-way door or two-way door decision? What's the cost of reversing course?
+      4. Regret Minimization: Apply the Jeff Bezos framework: imagine yourself at age 80 looking back. Which decision would you regret not making? Which minimizes long-term regret?
+      5. Cognitive Bias Check: Identify which biases are affecting judgment (sunk cost, status quo, availability, confirmation bias, etc.).
+      6. Final Recommendation: Provide a clear recommendation with reasoning, confidence level, and specific next steps to take.
+
+      Analysis Quality Check: No fluff. Just clarity. Does this analysis give you the conviction to decide?
+    form_fields:
+      decision_to_make:
+        multiline: true
+      option_a:
+        multiline: true
+      option_b:
+        multiline: true
+      what_matters_most:
+        multiline: true
+      decision_timeline:
+        default: ""
+      current_bias:
+        multiline: true
+      stakes:
+        multiline: true
+      situation_context:
+        multiline: true
+      past_similar_decisions:
+        multiline: true
+    label: "[Prompts] Strategic Decision Engine (McKinsey & Bezos Regret Minimization)"
+    # Dissects complex choices using second-order consequence modeling, reversibility audits, and regret minimization.
+    search_terms:
+      - prompts
+      - solopreneur
+      - decision
+      - strategy
+      - mckinsey
+      - regret minimization
+
+  # -------------------------------------------------------------------------
+  # EMAIL & NEWSLETTER PROMPTS
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-newsletter
+    form: |
+      You are three experts collaborating: a newsletter growth strategist with multiple 100K+ subscriber lists, an email copywriter who consistently hits 60%+ open rates, and an audience psychologist who understands reader behavior.
+
+      Newsletter Performance Goals:
+      - 60%+ open rate
+      - 20%+ click-through rate
+      - 5%+ conversion to your offer
+      - Forward/share rate: 10%+
+      - Unsubscribe rate: Under 0.5%
+
+      Newsletter Context:
+      Newsletter Topic: [[newsletter_topic]]
+      Audience: [[target_audience]]
+      List Size: [[list_size]]
+      Current Open Rate: [[current_open_rate]]
+      Your Product/Service Pitch: [[product_service_pitch]]
+      Brand Voice: [[brand_voice]]
+      Top Performing Past Newsletters: [[top_performing_newsletters]]
+
+      Newsletter Structure:
+      - Subject Lines: Create 3 variations to A/B test. Use curiosity, specificity, and benefit-driven language. Keep under 50 characters.
+      - Opening Hook: Start with a compelling story or surprising stat that relates to the topic. Make them want to keep reading in the first 2 sentences.
+      - 3 Valuable Sections: Deliver actionable content, not theoretical. Each section should be implementable immediately. Include specific examples, numbers, or case studies.
+      - Soft Pitch: Weave in your product/service naturally as the solution to a problem you've discussed. Make it feel like a genuine recommendation, not a hard sell.
+      - P.S. Section: Add a P.S. that gets clicked - this is your highest-engagement zone. Include a bonus link, insider tip, or exclusive offer.
+
+      Constraint: 400 words maximum. Write like a smart friend sharing secrets over coffee.
+
+      Newsletter Quality Assessment: Rate on subject line strength (will they open?), value density (worth their time?), pitch naturalness (doesn't feel salesy?), and scannability (can busy readers extract value quickly?). Revise anything below 8/10.
+    form_fields:
+      newsletter_topic:
+        multiline: true
+      target_audience:
+        multiline: true
+      list_size:
+        default: ""
+      current_open_rate:
+        default: ""
+      product_service_pitch:
+        multiline: true
+      brand_voice:
+        multiline: true
+      top_performing_newsletters:
+        multiline: true
+    label: "[Prompts] High-Open Newsletter Drafter (400-Word Actionable Sequence)"
+    # Produces a punchy, 400-word newsletter issue with 3 A/B subject lines, narrative hook, actionable tips, and soft pitch.
+    search_terms:
+      - prompts
+      - solopreneur
+      - newsletter
+      - email
+      - copywriting
+      - audience
+
+  - trigger: :solo-winback
+    form: |
+      You are three experts collaborating: an email marketing specialist who's revived dead lists, a customer win-back psychologist, and a copywriter who writes emails that re-activate dormant subscribers.
+
+      Campaign Success Metrics:
+      - 25%+ open rate on dead list
+      - 10%+ click-through rate
+      - 5%+ re-engagement (meaningful action taken)
+      - Recapture rate: 15% of dormant subscribers
+      - Unsubscribe rate: Under 5% (healthy list cleaning)
+
+      List Context:
+      Dead List Definition: Haven't engaged in [[inactive_period]]
+      Product/Service: [[product_service]]
+      List Size: [[dormant_subscribers_count]]
+      Last Interaction: [[last_interaction_topic]]
+      Value Proposition: [[original_value_proposition]]
+      What's New / Improvements: [[whats_new_improvements]]
+
+      3-Email Win-Back Sequence:
+      - Email 1 ("We Screwed Up" Angle, Send Day 1): Take ownership for losing their attention. Be vulnerable and honest about where you went wrong. Ask what would make the newsletter valuable again. Include a simple survey or reply request. Show you genuinely care about their feedback.
+        Length: Under 150 words. Subject line: Vulnerable and honest, not gimmicky. One clear CTA: Tell us what went wrong.
+      - Email 2 ("Here's What You Missed" Angle, Send Day 4): Highlight the best content, results, or wins from while they were gone. Show real value they didn't receive. Include 3-4 specific valuable pieces (case studies, tools, insights). Demonstrate the cost of not paying attention.
+        Length: Under 150 words. Subject line: FOMO-driven but specific. One clear CTA: Check out what you missed.
+      - Email 3 ("Goodbye?" Angle, Send Day 7): Final shot - breakup email. Let them know you're removing inactive subscribers to respect their inbox. Give them one last chance to stay with a compelling reason. Make the decision easy: Stay for [specific benefit] or we'll respectfully remove you.
+        Length: Under 150 words. Subject line: Direct and final. One clear CTA: Stay on the list or unsubscribe.
+
+      Sequence Quality Review: Assess psychology effectiveness (triggers the right emotions?), value demonstration (shows what they're missing?), pressure calibration (urgent without desperate?), and authenticity (genuinely trying to serve them?). Revise any email below 8/10.
+    form_fields:
+      inactive_period:
+        default: ""
+      product_service:
+        multiline: true
+      dormant_subscribers_count:
+        default: ""
+      last_interaction_topic:
+        multiline: true
+      original_value_proposition:
+        multiline: true
+      whats_new_improvements:
+        multiline: true
+    label: "[Prompts] Dormant List Win-Back Sequence (3-Email Re-engagement Series)"
+    # Generates a 3-part win-back email sequence to re-engage inactive subscribers and clean dormant mailing lists.
+    search_terms:
+      - prompts
+      - solopreneur
+      - winback
+      - email
+      - re-engagement
+      - reactivation
+
+  # -------------------------------------------------------------------------
+  # STRATEGY & LAUNCH PROMPTS
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-competitor
+    form: |
+      You are three experts collaborating: a competitive intelligence analyst from top consulting firms, a market positioning strategist, and a differentiation specialist who's launched 100+ winning campaigns.
+
+      Analysis Objectives:
+      - Identify 3+ exploitable weaknesses in competitor
+      - Find 2+ positioning gaps you can own
+      - Discover unhappy customer segments to target
+      - Create unique angle they can't easily copy
+      - Develop 5 specific contrasting marketing messages
+
+      Competitive Context:
+      My Business: [[my_business]]
+      Main Competitor: [[main_competitor]]
+      Their Strengths: [[their_strengths]]
+      Their Market Share: [[their_market_share]]
+      Their Pricing: [[their_pricing]]
+      Their Marketing Approach: [[their_marketing_approach]]
+      My Advantages: [[my_advantages]]
+      My Resources: [[my_resources]]
+
+      Competitive Analysis Process:
+      1. Weakness Identification: Analyze their biggest operational, strategic, or brand weakness that you can exploit. Look for complaints in reviews, gaps in their offering, slow areas of their business, or segment neglect.
+      2. Positioning Gap Analysis: Find the space in the market they're NOT occupying. What customer segment or need are they ignoring? What message are they not claiming?
+      3. Unhappy Customer Discovery: Research their reviews, social media, and forums. Who are their unhappy customers? Why are they dissatisfied? How can you specifically target them with better solutions?
+      4. Unique Angle Development: Create a positioning angle or brand message they cannot easily copy due to their size, structure, history, or current positioning.
+      5. Contrasting Marketing Messages: Develop 5 specific messages that position you as the clear alternative:
+         - Direct contrast on their weakness
+         - Messaging to capture their unhappy customers
+         - Claims in the positioning gap you identified
+         - Emphasize your unique angle
+         - Emotional appeal they can't match
+
+      Deliverable: Actionable battle plan, not theory. Include specific tactics for each insight.
+
+      Analysis Quality Check: Rate on specificity (generic insights or truly actionable?), feasibility (can you actually execute this?), differentiation strength (clearly distinct from competitor?), and strategic soundness (will this actually win customers?). Revise anything below 8/10.
+    form_fields:
+      my_business:
+        multiline: true
+      main_competitor:
+        multiline: true
+      their_strengths:
+        multiline: true
+      their_market_share:
+        default: ""
+      their_pricing:
+        multiline: true
+      their_marketing_approach:
+        multiline: true
+      my_advantages:
+        multiline: true
+      my_resources:
+        multiline: true
+    label: "[Prompts] Competitor Analysis Assassin (Exploitation & Positioning Plan)"
+    # Dissects top market competitors to locate exploitable weaknesses, positioning gaps, and contrasting marketing angles.
+    search_terms:
+      - prompts
+      - solopreneur
+      - competitor
+      - strategy
+      - intelligence
+      - positioning
+
+  - trigger: :solo-launch
+    form: |
+      You are four experts collaborating: a product launch specialist who's done 50+ successful launches, a growth marketer focused on launch mechanics, a community builder who creates pre-launch buzz, and a conversion optimizer who maximizes launch day revenue.
+
+      Launch Success Metrics:
+      - Pre-launch list growth: 500+ signups
+      - Launch day revenue: $50K+ (or 2x your goal)
+      - First week sustained engagement: 60%+
+      - Media mentions/shares: 50+
+      - Customer acquisition cost: 50% below normal
+      - Word-of-mouth coefficient: 1.2+ (each customer brings 1.2 more)
+
+      Launch Details:
+      Product Launching: [[product_description]]
+      Price Point: [[price_point]]
+      Target Audience: [[target_audience]]
+      Launch Timeline: [[launch_timeline]]
+      Current Audience Size: [[current_audience_size]]
+      Budget: [[budget]]
+      Competition: [[competition]]
+      Unique Selling Proposition: [[unique_selling_prop]]
+
+      Pre-Launch to Launch Sequence:
+      - 14 Days Out (Build Curiosity): Tease the problem your product solves without revealing solution. Share cryptic behind-the-scenes content. Start countdown. Launch waitlist/early access signup. Create scarcity angle (limited spots, pricing, or bonuses). Detail specific tactics, channels, and messaging.
+      - 7 Days Out (Behind-the-Scenes Reveal): Pull back curtain on creation process. Share founder story or mission. Introduce team. Build emotional connection. Give waitlist first look/exclusive preview. Start generating social proof (beta tester testimonials). Detail specific tactics, channels, and messaging.
+      - 3 Days Out (Social Proof Blast): Release case studies, testimonials, and early results. Create FOMO with "almost sold out" or "prices going up" messages. Activate affiliates and partners. Do podcast tour or press push. Build anticipation to fever pitch. Detail specific tactics, channels, and messaging.
+      - Launch Day (Multiple Touchpoints): Email sequence (Morning announcement, midday social proof, evening last call). Social media blitz across all platforms. Host live event (webinar, Q&A, demo). Activate your community as megaphone. Offer launch-day-only bonuses. Create shared experience (launch party vibe). Detail hourly plan.
+      - Days 2-3 (Urgency and FOMO): Countdown to bonus expiration or price increase. Share real-time sales numbers/customer wins. Address objections publicly. Create FOMO through "selling fast" updates. Stack value with surprise bonuses.
+      - Days 4-7 (Last Chance): Final countdown. Last call messaging. "Cart closing" narrative. Share customer success stories from first buyers. Create genuine urgency (not artificial). Close strong with compelling reason to buy now.
+
+      Launch Strategy Quality Assessment: Rate on tactical specificity (can you execute immediately?), channel optimization (right tactics for right channels?), timing logic (proper momentum build?), and revenue potential (will this hit your goals?). Revise anything below 8/10.
+    form_fields:
+      product_description:
+        multiline: true
+      price_point:
+        default: ""
+      target_audience:
+        multiline: true
+      launch_timeline:
+        default: ""
+      current_audience_size:
+        default: ""
+      budget:
+        default: ""
+      competition:
+        multiline: true
+      unique_selling_prop:
+        multiline: true
+    label: "[Prompts] Phased Launch Engine (14-Day Curiosity to Cart Close)"
+    # Architect an end-to-end 14-day product launch campaign from pre-buzz teasers to cart closing urgency.
+    search_terms:
+      - prompts
+      - solopreneur
+      - launch
+      - marketing
+      - product launch
+      - campaign
+
+  # -------------------------------------------------------------------------
+  # BONUS META-PROMPT
+  # -------------------------------------------------------------------------
+
+  - trigger: :solo-raptor
+    form: |
+      Help me generate a complete and production-ready AI prompt using the RAPTOR framework:
+
+      - Role: Define the AI’s persona.
+      - Aim: Set a clear task.
+      - Parameters: Establish scope and constraints.
+      - Tone: Determine communication style.
+      - Output: Specify the response format.
+      - Review: Enable iteration or refinement.
+
+      I will describe my goal briefly below. Please expand it into a full RAPTOR prompt that will guide the AI to build the actual end product (e.g. a functional application, tool, system, or strategic deliverable).
+
+      My idea or task:
+      [[task_goal]]
+    form_fields:
+      task_goal:
+        multiline: true
+    label: "[Prompts] RAPTOR Meta-Prompt Generator (Production-Ready Prompt Builder)"
+    # Expands a brief objective into a production-ready prompt using the 6-part RAPTOR engineering framework.
+    search_terms:
+      - prompts
+      - solopreneur
+      - raptor
+      - prompt engineering
+      - meta prompt

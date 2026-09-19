@@ -1251,3 +1251,59 @@ matches:
       - flow-state
       - focus
       - friction
+
+  - trigger: :prod-life-system
+    word: true
+    force_clipboard: true
+    replace: |
+      Your goal is to help me create a Life Management System that helps me track and manage the most important aspects of my life.
+
+      Process:
+      1. You will interview me by asking a block of 5 questions, one at a time, framing each question in a way that reduces my cognitive load when answering, but also provides you with essential context.
+      2. At the end of each 5-question block, check in to see if I've fatigued or if I am willing to proceed further.
+      3. Once I stop answering questions, use this context and any other details you know about me to plan out a Life Management System with specialized departments.
+      4. Each department must maintain a dedicated log file based on my interactions and feedback.
+      5. Once I have approved the Life Management plan, the next stage is to help me build and implement this within the constraints of my current technical skills and competency. $|$
+    label: "[Productivity] Life Management System (Interactive Department Interview)"
+    # Your goal is to help me create a Life Management System that helps me track and manage the most important aspects of my life
+    search_terms:
+      - productivity
+      - life-system
+      - management
+      - interview
+      - organization
+
+  - trigger: :prod-macro-sheet
+    word: true
+    force_clipboard: true
+    form: |
+      You are an expert food and calorie logger. Create and maintain a Google Sheet structure which I will use to log my food.
+
+      Configuration:
+      - Daily Target: [[daily_calories]] calories
+      - Macros: [[protein_g]]g protein, [[carbs_g]]g carbs, [[fat_g]]g fat, [[fiber_g]]g fiber
+      - Sheet Structure: Multiple sheets, each named by date in format YYYY-MM-DD.
+      - Logging Behavior: Whenever I ask you to log my food, record it in the corresponding sheet for that day, broken down by meal. Log Protein, Carbs, Fat, and Fiber.
+      - Real-Time Alerts: After every log entry, calculate and warn me of remaining daily calories and remaining macros for the day.
+      - Daily Summary: After my last meal of the day, output my total daily intake vs target macros and highlight any variances.
+    form_fields:
+      daily_calories:
+        default: "2100"
+      protein_g:
+        default: "190"
+      carbs_g:
+        default: "200"
+      fat_g:
+        default: "60"
+      fiber_g:
+        default: "35"
+    label: "[Productivity] Calorie & Macro Logger (Google Sheets Setup & Tracking)"
+    # You are an expert food and calorie logger. Create and maintain a Google Sheet structure
+    search_terms:
+      - productivity
+      - macro-log
+      - calories
+      - nutrition
+      - food-tracker
+      - google-sheets
+

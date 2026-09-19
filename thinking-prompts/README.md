@@ -18,13 +18,15 @@ Inspired by [SAINT NULL's Thinking Toolkit](https://www.tiktok.com/@saint.null).
 | `:think-decode` | Decode Actions | Reveal hidden drivers behind your behavior |
 | `:think-vision` | Visionary Thinking | How bold thinkers would approach your challenge |
 | `:think-blind` | Blind Spot Exposer | Challenge your logic, expose biases, reframe |
+| `:think-existential` | Existential Analysis | Transversal psychological analysis & rupture scenario |
+| `:think-year-review` | Annual AI Reflection | Yearly conversation growth, patterns, and blind spots |
 
 ## How to Use
 
 Each trigger expands into a structured prompt you can paste into any AI chat or assistant interface.
 
 - **Interactive forms** (`:think-snap`, `:think-destroy`, `:think-borrow`, `:think-learn`, `:think-blocks`, `:think-insight`, `:think-decode`, `:think-vision`, `:think-blind`) will open a dialog asking for your specific context.
-- **Static prompts** (`:think-mirror`) work immediately based on conversation history.
+- **Static prompts** (`:think-mirror`, `:think-existential`, `:think-year-review`) work immediately based on conversation history.
 
 ## When to Use
 
@@ -32,6 +34,8 @@ Each trigger expands into a structured prompt you can paste into any AI chat or 
 |-----------|---------|
 | Stuck on a recurring problem | `:think-snap` or `:think-borrow` |
 | Want to understand how you think | `:think-mirror` |
+| Need a raw, transversal psychological profile | `:think-existential` |
+| Year-end or annual review of your AI conversations | `:think-year-review` |
 | Need to stress-test a belief | `:think-destroy` or `:think-blind` |
 | Feeling blocked or stuck | `:think-blocks` or `:think-decode` |
 | Want to learn something fast | `:think-learn` |
@@ -49,5 +53,5 @@ Or clone/copy this package into your `espanso/match/` directory.
 ## Package Info
 
 - **Name**: `thinking-prompts`
-- **Version**: 1.0.0
+- **Version**: 1.1.0
 - **Author**: Anderson Guarnier da Silva

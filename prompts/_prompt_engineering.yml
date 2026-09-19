@@ -1080,7 +1080,9 @@ matches:
   - triggers:
       - :p-prompt-master-form
       - :prompt-master-form
+      - :f-prompt-master
       - :p-pm-form
+      - :pm-form
     label: "[Prompts] Prompt Master Interactive Form (Target Tool & Task Injector)"
     # Launches an interactive modal dialog to select the target AI system and input task, expanding with complete Prompt Master instructions.
     search_terms:
@@ -1623,6 +1625,7 @@ matches:
       - :p-prompt-master
       - :prompt-master
       - :p-master-prompt
+    word: true
     label: "[Prompts] Prompt Master System Instruction (Comprehensive AI Prompt Engineering Engine)"
     # Full production-ready system instructions for generating and optimizing AI prompts across models and agentic tools.
     search_terms:
@@ -2142,6 +2145,8 @@ matches:
       - :p-prompt-master-quick
       - :p-prompt-quick
       - :p-pm-quick
+      - :q-prompt-master
+      - :pm-quick
     label: "[Prompts] Prompt Master Quick Engine (Core Identity, Hard Rules & Output Lock)"
     # Streamlined prompt engineering role focused on essential rules, intent extraction, and clean single-prompt output.
     search_terms:
@@ -2215,6 +2220,8 @@ matches:
         multiline: true
 
   - trigger: :prompt-deconstruct
+    word: true
+    force_clipboard: true
     form: |
       TASK: Deconstruct and improve the input prompt using these three tests:
 
@@ -2270,6 +2277,8 @@ matches:
       - optimizer
 
   - trigger: :prompt-thread-map
+    word: true
+    force_clipboard: true
     form: |
       Read only the supplied discussion. Make a compact map of the distinct positions, naming the author for each.
 
@@ -2299,6 +2308,8 @@ matches:
       - position-mapper
 
   - trigger: :prompt-movie-poster
+    word: true
+    force_clipboard: true
     form: |
       Synthesize a striking movie poster inspired by the conversations we've had and any context from my personal profile: my core values, signature humor, aesthetic tastes, and any enduring character details you've learned.
 

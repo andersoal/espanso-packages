@@ -10,6 +10,8 @@ imports:
   - "./_software_engineering.yml"
   - "./_writing_editing.yml"
   - "./_analysis_research.yml"
+  - "./_solopreneur_prompts.yml"
+  - "./_concierge.yml"
 
 matches:
   - trigger: :ci-concise

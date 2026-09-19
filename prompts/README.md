@@ -339,3 +339,79 @@ Here the transcription or video URL:
 ---
 
 ```
+
+### Universal Meta-Prompt (Works for Any Task)
+
+Triggers:
+- Interactive Form: `:p-any-task`, `:p-universal`, `:universal-prompt`
+- Raw Template: `:p-raw-any-task`, `:p-raw-universal`
+
+Source: [Tested 200+ Prompts. Steal the One That Works for Any Task](https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vvbjar/tested_200_prompts_steal_the_one_that_works_for/)
+
+An adaptive, meta-prompting framework that centers the user's role, domain, style, current focus, and hard constraints, while forcing a silent `<thinking>` private reasoning pass before the model responds to any request.
+
+### 8 Hardest Tasks for ChatGPT & Prompts That Worked
+
+Source: [8 Hardest Tasks I Gave ChatGPT — And the Prompts That Worked](https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vtiicw/8_hardest_tasks_i_gave_chatgpt_and_the_prompts/) by MudasirItoo
+
+A collection of targeted prompt structures designed to break default, low-value LLM outputs (agreeable flattery, fence-sitting pros/cons lists, corporate AI voice, blind spot omissions, safe Google-page-1 ideas, premature advice giving, passive explanations, and false certainty).
+
+#### Overview & Cheatsheet Guide
+- Triggers: `:p-8-hardest-prompts`, `:p-hard-tasks-guide`, `:hard-prompts-guide`
+- Label: `[Prompts] 8 Hardest LLM Tasks Guide (Curated Anti-Default Prompt Cheatsheet)`
+
+#### 1. Honest Work Feedback (Brutal Editor)
+- Triggers: `:p-brutal-editor`, `:p-honest-feedback`, `:brutal-editor`
+- Label: `[Prompts] Brutal Editor Feedback (Uncompromising Critique with Flaw Hierarchy)`
+- Purpose: Bypasses the "compliment sandwich" and agreeable defaults by requiring the single biggest flaw first, 3 secondary flaws, and only then any genuine strengths.
+
+#### 2. Direct Decision Recommendation (Recommendation over Pros & Cons)
+- Triggers: `:p-make-decision`, `:p-real-decision`, `:make-decision`
+- Label: `[Prompts] Direct Decision Recommendation (Actionable Choice over Pros and Cons)`
+- Purpose: Cuts through indecisive neutrality by forcing an explicit recommendation first, reasoning second, or defining the exact missing information needed to decide.
+
+#### 3. Personal Voice Cloner (Style Calibration from 3 Samples)
+- Triggers: `:p-my-voice`, `:p-clone-voice`, `:p-match-voice`, `:voice-match`
+- Label: `[Prompts] Personal Voice Cloner (Style Calibration from 3 Samples)`
+- Purpose: Calibrates tone, cadence, vocabulary, and omissions across 3 writing samples with an explicit confirmation step before generating drafts.
+
+#### 4. Subconscious Blind Spot Exposer (Uncover Unstated Assumptions)
+- Triggers: `:p-blind-spot`, `:p-what-am-i-missing`, `:blindspot-exposer`
+- Label: `[Prompts] Subconscious Blind Spot Exposer (Uncover Unstated Assumptions)`
+- Purpose: Assumes user culpability and challenges framing to expose unstated assumptions, omitted context, and blind spots.
+
+#### 5. Non-Obvious Idea Generator (Bypass Safe First 10 Google Concepts)
+- Triggers: `:p-non-obvious-ideas`, `:p-skip-first-10`, `:unconventional-ideas`
+- Label: `[Prompts] Non-Obvious Idea Generator (Bypass Safe First 10 Google Concepts)`
+- Purpose: Skips the obvious first 10 popular/consensus ideas and starts generating directly at idea #11, prioritizing counterintuitive and uncomfortable angles.
+
+#### 6. Emotionally Grounded Sounding Board (Sequential Socratic Inquiry)
+- Triggers: `:p-emotional-sounding-board`, `:p-curious-inquiry`, `:feelings-inquiry`
+- Label: `[Prompts] Emotionally Grounded Sounding Board (Sequential Socratic Inquiry)`
+- Purpose: Suppresses immediate generic advice and coping strategy lists, enforcing curious, one-at-a-time reflective questioning.
+
+#### 7. 3-Step Deep Learning Sequence (Analogy Breakdown & Concrete Exercise)
+- Triggers: `:p-3step-learn`, `:p-deep-learning`, `:teach-concept`
+- Label: `[Prompts] 3-Step Deep Learning Sequence (Analogy Breakdown & Concrete Exercise)`
+- Purpose: Replaces passive explanations with a gated 3-step sequence: core analogy, analogy breakdown point, and a 10-minute testing exercise.
+
+#### 8. Calibrated Fact Uncertainty Tagger (Explicit Confidence Annotations)
+- Triggers: `:p-confidence-tags`, `:p-uncertainty-markers`, `:fact-confidence`
+- Label: `[Prompts] Calibrated Fact Uncertainty Tagger (Explicit Confidence Annotations)`
+- Purpose: Overcomes artificial overconfidence by enforcing explicit claim tags: `[CONFIDENT]`, `[PROBABLY]`, and `[UNSURE]`.
+
+### Illustrated Storybook Generator
+
+- **Triggers**: `:storybook`, `:pstory`, `:storyteller`
+- **Interactive Form Trigger**: `:storyform`
+- **Label**: `[Prompts] Illustrated Storybook Generator (Two-Chapter Framework & Pollinations AI Imagery)`
+- **Form Label**: `[Prompts] Storybook Assistant (Interactive Genre & Art Style Form)`
+- **Purpose**: Establishes an interactive storytelling and illustration session where the LLM writes expansive two-chapter storybook installments accompanied by dynamically rendered Pollinations AI markdown image URLs. Includes optional interactive form (`:storyform`) for selecting target audience and artistic visual style.
+
+### Expert Prompt Creator (Iterative Prompt Formulation Engine)
+
+- **Triggers**: `:p-expert-prompt-creator`, `:expert-prompt-creator`, `:prompt-creator`
+- **Label**: `[Prompts] Expert Prompt Creator (Iterative Prompt Formulation Engine)`
+- **Purpose**: Interactive meta-prompt that instructs ChatGPT to act as an expert prompt creator. Follows an iterative refinement protocol returning a generated first-person prompt (`>`), 3 concise additions (`[A]`, `[B]`, `[C]`), and 3 targeted questions to incrementally refine the prompt to perfection.
+
+

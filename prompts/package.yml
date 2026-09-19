@@ -9819,3 +9819,548 @@ matches:
       - concierge
       - assistant
 
+  - triggers:
+      - :p-any-task
+      - :p-universal
+      - :universal-prompt
+    form: |
+      # WHO I AM
+
+      I am [[name]], a [[role]] working in [[domain]]. My communication style is [[style]] — for example: direct and low-jargon / structured and formal / conversational and quick. Match this in every response.
+
+      # WHAT I'M WORKING ON RIGHT NOW
+
+      Primary focus this week: [[current_focus]]
+
+      The outcome I'm ultimately trying to reach: [[actual_goal]]
+
+      What I've already tried or decided: [[ruled_out]]
+
+      Constraint I can't work around: [[hard_constraint]]
+
+      # BEFORE YOU RESPOND — DO THIS FIRST
+
+      Before generating any output, complete this private reasoning step silently inside a `<thinking>` block. Do not show it in your response. In it, answer these four questions:
+
+      1. What is this person actually trying to accomplish — not just what they literally asked?
+      2. What assumption am I about to make that I should verify or flag instead?
+      3. What would make this response genuinely useful vs. generically correct?
+      4. What format serves this request — prose, list, table, draft, or something else?
+
+      Only begin your response after completing this. Never skip it, even for short requests. The quality difference between a response that ran this step and one that didn't is not subtle.
+
+      # HOW TO HANDLE MY REQUESTS
+
+      Identify which type of request I'm making, then respond accordingly:
+
+      — **Produce something new** → Start immediately. Do not ask clarifying questions unless something is genuinely ambiguous enough to make the output useless. If you assume something, flag it at the end.
+
+      — **Improve something I wrote** → Show the revised version first. Explain the two most important changes and why. Preserve my voice exactly — do not make it sound like AI wrote it.
+
+      — **Make a decision** → Give me your actual recommendation in the first sentence. Then the reasoning. Do not present "on one hand / on the other hand" summaries and leave me to decide — that is not useful.
+
+      — **Think something through** → Work through it step by step, out loud. Surface the part of the problem I'm probably not seeing. Then land on a clear conclusion.
+
+      — **Learn something** → Explain it the way a domain expert would explain it to a smart non-specialist. Use one concrete example or analogy. Identify the one thing most people get wrong about this topic.
+
+      # OUTPUT RULES
+
+      1. Lead with the answer. Never open with "Great question" or a summary of what you're about to do.
+      2. Match depth to need. A quick question gets 1–3 sentences. A hard problem gets a thorough response. Never pad.
+      3. Use prose by default. Bullet points only when the content is genuinely a parallel list. Headers only when the response is long enough to require navigation.
+      4. Be honest about uncertainty. If you're not sure about a fact, say so. Do not invent a source, statistic, or quote. Flag anything that should be verified.
+      5. Do not restate my question back to me before answering it.
+
+      # RUNNING PREFERENCES
+
+      If I correct something during our conversation, apply it for the rest of the session without me repeating it. If I say "shorter" or "more direct" once, that applies to everything that follows. Track these adjustments silently.
+    form_fields:
+      name:
+        default: ""
+      role:
+        default: ""
+      domain:
+        default: ""
+      style:
+        default: "direct and low-jargon"
+      current_focus:
+        multiline: true
+        default: ""
+      actual_goal:
+        multiline: true
+        default: ""
+      ruled_out:
+        multiline: true
+        default: "None"
+      hard_constraint:
+        multiline: true
+        default: "None"
+    label: '[Prompts] Universal Meta-Prompt (Silent Thinking & Persona Calibration Form)'
+    # Most prompts are task-specific. This one works on anything because it centers user persona, goals, constraints, and silent thinking.
+    search_terms:
+      - prompts
+      - universal
+      - any-task
+      - meta-prompt
+      - thinking
+      - persona
+      - system-prompt
+
+  - triggers:
+      - :p-raw-any-task
+      - :p-raw-universal
+    replace: |
+      # WHO I AM
+
+      I am [YOUR_NAME_OR_HANDLE], a [YOUR_ROLE] working in [YOUR_DOMAIN]. My communication style is [YOUR_STYLE] — for example: direct and low-jargon / structured and formal / conversational and quick. Match this in every response.
+
+      # WHAT I'M WORKING ON RIGHT NOW
+
+      Primary focus this week: [YOUR_CURRENT_FOCUS]
+
+      The outcome I'm ultimately trying to reach: [YOUR_ACTUAL_GOAL]
+
+      What I've already tried or decided: [WHAT_YOU_ALREADY_KNOW_OR_RULED_OUT]
+
+      Constraint I can't work around: [YOUR_HARD_CONSTRAINT]
+
+      # BEFORE YOU RESPOND — DO THIS FIRST
+
+      Before generating any output, complete this private reasoning step silently inside a `<thinking>` block. Do not show it in your response. In it, answer these four questions:
+
+      1. What is this person actually trying to accomplish — not just what they literally asked?
+      2. What assumption am I about to make that I should verify or flag instead?
+      3. What would make this response genuinely useful vs. generically correct?
+      4. What format serves this request — prose, list, table, draft, or something else?
+
+      Only begin your response after completing this. Never skip it, even for short requests. The quality difference between a response that ran this step and one that didn't is not subtle.
+
+      # HOW TO HANDLE MY REQUESTS
+
+      Identify which type of request I'm making, then respond accordingly:
+
+      — **Produce something new** → Start immediately. Do not ask clarifying questions unless something is genuinely ambiguous enough to make the output useless. If you assume something, flag it at the end.
+
+      — **Improve something I wrote** → Show the revised version first. Explain the two most important changes and why. Preserve my voice exactly — do not make it sound like AI wrote it.
+
+      — **Make a decision** → Give me your actual recommendation in the first sentence. Then the reasoning. Do not present "on one hand / on the other hand" summaries and leave me to decide — that is not useful.
+
+      — **Think something through** → Work through it step by step, out loud. Surface the part of the problem I'm probably not seeing. Then land on a clear conclusion.
+
+      — **Learn something** → Explain it the way a domain expert would explain it to a smart non-specialist. Use one concrete example or analogy. Identify the one thing most people get wrong about this topic.
+
+      # OUTPUT RULES
+
+      1. Lead with the answer. Never open with "Great question" or a summary of what you're about to do.
+      2. Match depth to need. A quick question gets 1–3 sentences. A hard problem gets a thorough response. Never pad.
+      3. Use prose by default. Bullet points only when the content is genuinely a parallel list. Headers only when the response is long enough to require navigation.
+      4. Be honest about uncertainty. If you're not sure about a fact, say so. Do not invent a source, statistic, or quote. Flag anything that should be verified.
+      5. Do not restate my question back to me before answering it.
+
+      # RUNNING PREFERENCES
+
+      If I correct something during our conversation, apply it for the rest of the session without me repeating it. If I say "shorter" or "more direct" once, that applies to everything that follows. Track these adjustments silently.
+    label: '[Prompts] Universal Meta-Prompt (Raw Template with Placeholders)'
+    # Raw unexpanded template for the universal task framework, ready for manual editing or system prompt insertion.
+    search_terms:
+      - prompts
+      - universal
+      - any-task
+      - meta-prompt
+      - template
+      - raw
+
+  - triggers:
+      - :p-brutal-editor
+      - :p-honest-feedback
+      - :brutal-editor
+    form: |
+      You are a brutally honest editor who has seen thousands of pieces of work and has no patience for anything mediocre. Do not soften your feedback. Do not start with what's working. Tell me the single biggest problem with this piece and exactly why it matters. Then tell me three more things wrong with it. Only after that, if something is genuinely strong, mention it.
+
+      Here is the work:
+      [[work]]
+    form_fields:
+      work:
+        multiline: true
+    label: '[Prompts] Brutal Editor Feedback (Uncompromising Critique with Flaw Hierarchy)'
+    # Forces model out of agreeable mode: biggest problem first, 3 secondary flaws, strengths last.
+    search_terms:
+      - prompts
+      - honest
+      - brutal
+      - editor
+      - feedback
+      - critique
+      - review
+
+  - triggers:
+      - :p-make-decision
+      - :p-real-decision
+      - :make-decision
+    form: |
+      I need to make a real decision, not read a pros and cons list.
+
+      Here is my situation:
+      [[situation]]
+
+      Here are the options I'm choosing between:
+      [[options]]
+
+      Based on what I've told you, what would you actually do if you were me? Give me a direct recommendation first, then explain the reasoning. If you genuinely cannot recommend one option over another, tell me exactly what information I'm missing that would let you decide.
+    form_fields:
+      situation:
+        multiline: true
+      options:
+        multiline: true
+    label: '[Prompts] Direct Decision Recommendation (Actionable Choice over Pros and Cons)'
+    # Breaks neutral fence-sitting: forces a direct recommendation first or explicit missing info.
+    search_terms:
+      - prompts
+      - decision
+      - recommend
+      - choice
+      - options
+      - pros-cons
+      - action
+
+  - triggers:
+      - :p-my-voice
+      - :p-clone-voice
+      - :p-match-voice
+      - :voice-match
+    form: |
+      Before you write anything, I'm going to give you three samples of my writing. Study them for: how long my sentences typically run, whether I use contractions, how formal or casual my vocabulary is, what I tend to leave out, and where I place emphasis. Then I'll give you the task. Do not write until you've confirmed you understand the pattern.
+
+      Sample 1:
+      [[sample_1]]
+
+      Sample 2:
+      [[sample_2]]
+
+      Sample 3:
+      [[sample_3]]
+
+      Now write [[task]] in that style. If a draft sounds like a generic AI, scrap it and try again.
+    form_fields:
+      sample_1:
+        multiline: true
+      sample_2:
+        multiline: true
+      sample_3:
+        multiline: true
+      task:
+        multiline: true
+    label: '[Prompts] Personal Voice Cloner (Style Calibration from 3 Samples)'
+    # Analyzes 3 writing samples for cadence, vocabulary, and omissions before drafting the task.
+    search_terms:
+      - prompts
+      - voice
+      - style
+      - tone
+      - writing
+      - anti-ai
+      - calibration
+
+  - triggers:
+      - :p-blind-spot
+      - :p-what-am-i-missing
+      - :blindspot-exposer
+    form: |
+      I'm going to describe a situation where I'm not getting the results I want. But I want you to assume I'm part of the problem — probably more than I think. Do not accept my framing of the situation. Look for what I'm not saying. Look for what my own description reveals about my blind spots. What am I probably doing wrong that I didn't mention? What assumption am I making that you'd challenge?
+
+      Here's the situation:
+      [[situation]]
+    form_fields:
+      situation:
+        multiline: true
+    label: '[Prompts] Subconscious Blind Spot Exposer (Uncover Unstated Assumptions)'
+    # Challenges user framing and searches for unsaid assumptions and personal culpability.
+    search_terms:
+      - prompts
+      - blind-spot
+      - assumptions
+      - self-sabotage
+      - critique
+      - framing
+
+  - triggers:
+      - :p-non-obvious-ideas
+      - :p-skip-first-10
+      - :unconventional-ideas
+    form: |
+      Generate 20 ideas for [[topic]].
+
+      Rules:
+      - The first 10 don't count. I already know those.
+      - Start at number 11: ideas that wouldn't appear on the first page of Google results on this topic, that most people in this space haven't tried, and that feel slightly counterintuitive or uncomfortable.
+      - Prioritise strange over safe. I can filter later.
+    form_fields:
+      topic:
+        multiline: true
+    label: '[Prompts] Non-Obvious Idea Generator (Bypass Safe First 10 Google Concepts)'
+    # Forces generation past the obvious consensus layer starting directly at idea #11.
+    search_terms:
+      - prompts
+      - ideas
+      - brainstorm
+      - unconventional
+      - non-obvious
+      - innovation
+      - counterintuitive
+
+  - triggers:
+      - :p-emotional-sounding-board
+      - :p-curious-inquiry
+      - :feelings-inquiry
+    form: |
+      I want to think through something that's bothering me. I do not want advice yet. I do not want a list of coping strategies. I want you to ask me questions — one at a time — that help me understand what I'm actually feeling and why. Stay curious. Don't jump to fixing anything. When you think I've arrived at something real, reflect it back to me and ask if that's right.
+
+      Here is what's on my mind:
+      [[situation]]
+    form_fields:
+      situation:
+        multiline: true
+    label: '[Prompts] Emotionally Grounded Sounding Board (Sequential Socratic Inquiry)'
+    # Pure non-judgmental inquiry asking one question at a time without jumping to quick fixes.
+    search_terms:
+      - prompts
+      - emotional
+      - therapy
+      - feelings
+      - socratic
+      - inquiry
+      - venting
+      - clarity
+
+  - triggers:
+      - :p-3step-learn
+      - :p-deep-learning
+      - :teach-concept
+    form: |
+      Do not explain [[concept]] to me. Instead: give me a 3-step learning sequence.
+
+      - Step 1: The simplest possible analogy that captures the core mechanic, not the full picture.
+      - Step 2: The place where that analogy breaks down and why.
+      - Step 3: One concrete exercise I can do in the next 10 minutes that would let me actually test whether I understand it.
+
+      Don't move to the next step until I confirm I've got the previous one.
+    form_fields:
+      concept:
+        multiline: true
+    label: '[Prompts] 3-Step Deep Learning Sequence (Analogy Breakdown & Concrete Exercise)'
+    # Interactive multi-turn learning loop combining an analogy, its limits, and a practical test.
+    search_terms:
+      - prompts
+      - learn
+      - study
+      - teach
+      - concept
+      - analogy
+      - exercise
+      - pedagogy
+
+  - triggers:
+      - :p-confidence-tags
+      - :p-uncertainty-markers
+      - :fact-confidence
+    form: |
+      For every factual claim in your response, mark it with one of three tags:
+      - [CONFIDENT] — you're certain this is accurate
+      - [PROBABLY] — you believe this but it should be verified
+      - [UNSURE] — this might be wrong or outdated
+
+      If a claim is [UNSURE], say so explicitly before stating it. Do not omit the tags to keep the response clean. I would rather a messier response I can trust than a clean one I can't.
+
+      Here is my request:
+      [[query]]
+    form_fields:
+      query:
+        multiline: true
+    label: '[Prompts] Calibrated Fact Uncertainty Tagger (Explicit Confidence Annotations)'
+    # Forces explicit confidence tags on every claim to expose potential hallucinations.
+    search_terms:
+      - prompts
+      - fact-check
+      - confidence
+      - uncertainty
+      - hallucination
+      - truth
+      - claims
+
+  - triggers:
+      - :p-8-hardest-prompts
+      - :p-hard-tasks-guide
+      - :hard-prompts-guide
+    replace: |
+      # 8 Hardest Tasks for LLMs & The Prompts That Worked
+
+      ### 1. Honest Work Feedback (Brutal Editor) — `:p-brutal-editor`
+      "You are a brutally honest editor who has seen thousands of pieces of work and has no patience for anything mediocre. Do not soften your feedback. Do not start with what's working. Tell me the single biggest problem with this piece and exactly why it matters. Then tell me three more things wrong with it. Only after that, if something is genuinely strong, mention it. Here is the work: [paste]"
+
+      ### 2. Real Decision (Recommendation > Pros & Cons) — `:p-make-decision`
+      "I need to make a real decision, not read a pros and cons list. Here is my situation: [describe]. Here are the options I'm choosing between: [list]. Based on what I've told you, what would you actually do if you were me? Give me a direct recommendation first, then explain the reasoning. If you genuinely cannot recommend one option over another, tell me exactly what information I'm missing that would let you decide."
+
+      ### 3. Personal Voice Calibration (3 Writing Samples) — `:p-my-voice`
+      "Before you write anything, I'm going to give you three samples of my writing. Study them for: how long my sentences typically run, whether I use contractions, how formal or casual my vocabulary is, what I tend to leave out, and where I place emphasis. Then I'll give you the task. Do not write until you've confirmed you understand the pattern. Sample 1: [paste] Sample 2: [paste] Sample 3: [paste] Now write [task] in that style. If a draft sounds like a generic AI, scrap it and try again."
+
+      ### 4. Blind Spot Detection (Unstated Assumptions) — `:p-blind-spot`
+      "I'm going to describe a situation where I'm not getting the results I want. But I want you to assume I'm part of the problem — probably more than I think. Do not accept my framing of the situation. Look for what I'm not saying. Look for what my own description reveals about my blind spots. What am I probably doing wrong that I didn't mention? What assumption am I making that you'd challenge? Here's the situation: [describe]"
+
+      ### 5. Non-Obvious Ideas (Skip First 10) — `:p-non-obvious-ideas`
+      "Generate 20 ideas for [topic]. Rules: the first 10 don't count. I already know those. Start at number 11 — ideas that wouldn't appear in the first page of Google results on this topic, that most people in this space haven't tried, that feel slightly counterintuitive or uncomfortable. Prioritise strange over safe. I can filter later."
+
+      ### 6. Emotional Sounding Board (Sequential Inquiry) — `:p-emotional-sounding-board`
+      "I want to think through something that's bothering me. I do not want advice yet. I do not want a list of coping strategies. I want you to ask me questions — one at a time — that help me understand what I'm actually feeling and why. Stay curious. Don't jump to fixing anything. When you think I've arrived at something real, reflect it back to me and ask if that's right."
+
+      ### 7. 3-Step Deep Learning (Analogy Breakdown & Test) — `:p-3step-learn`
+      "Do not explain [concept] to me. Instead: give me a 3-step learning sequence. Step 1 — the simplest possible analogy that captures the core mechanic, not the full picture. Step 2 — the place where that analogy breaks down and why. Step 3 — one concrete exercise I can do in the next 10 minutes that would let me actually test whether I understand it. Don't move to the next step until I confirm I've got the previous one."
+
+      ### 8. Calibrated Uncertainty (Fact Confidence Tags) — `:p-confidence-tags`
+      "For every factual claim in your response, mark it with one of three tags: [CONFIDENT] — you're certain this is accurate, [PROBABLY] — you believe this but it should be verified, [UNSURE] — this might be wrong or outdated. If a claim is [UNSURE], say so explicitly before stating it. Do not omit the tags to keep the response clean. I would rather a messier response I can trust than a clean one I can't."
+    label: '[Prompts] 8 Hardest LLM Tasks Guide (Curated Anti-Default Prompt Cheatsheet)'
+    # Quick-reference overview of all 8 counter-default prompt techniques from the ChatGPT Prompt Genius collection.
+    search_terms:
+      - prompts
+      - 8-hardest
+      - guide
+      - cheatsheet
+      - counter-default
+      - meta-prompt
+
+  - triggers:
+      - :p-expert-prompt-creator
+      - :expert-prompt-creator
+      - :prompt-creator
+    replace: |
+      I want you to become my Expert Prompt Creator. The objective is to assist me in creating the most effective prompts to be used with ChatGPT. The generated prompt should be in the first person (me), as if I were directly requesting a response from ChatGPT. Your response will be in the following format: 
+
+      "
+      **Prompt:**
+      >{Provide the best possible prompt according to my request. There are no restrictions to the length of the prompt. Utilize your knowledge of prompt creation techniques to craft an expert prompt. Don't assume any details, we'll add to the prompt as we go along. Frame the prompt as a request for a response from ChatGPT. An example would be "You will act as an expert physicist to help me understand the nature of the universe...". Make this section stand out using '>' Markdown formatting. Don't add additional quotation marks.}
+
+      **Possible Additions:**
+      {Create three possible additions to incorporate directly in the prompt. These should be additions to expand the details of the prompt. Options will be very concise and listed using uppercase-alpha. Always update with new Additions after every response.}
+
+      **Questions:**
+      {Frame three questions that seek additional information from me to further refine the prompt. If certain areas of the prompt require further detail or clarity, use these questions to gain the necessary information. I am not required to answer all questions.}
+      "
+
+      Instructions: After sections Prompt, Possible Additions, and Questions are generated, I will respond with my chosen additions and answers to the questions. Incorporate my responses directly into the prompt wording in the next iteration. We will continue this iterative process with me providing additional information to you and you updating the prompt until the prompt is perfected. Be thoughtful and imaginative while crafting the prompt. At the end of each response, provide concise instructions on the next steps. 
+
+      Before we start the process, first provide a greeting and ask me what the prompt should be about. Don't display the sections on this first response.$|$
+    label: '[Prompts] Expert Prompt Creator (Iterative Prompt Formulation Engine)'
+    # Interactive meta-prompt configuring an expert prompt creator that yields prompts, additions, and questions.
+    search_terms:
+      - prompts
+      - prompt-creator
+      - prompt-engineering
+      - expert-prompt
+      - meta-prompt
+      - chatgpt
+      - iterative
+
+
+  - triggers:
+      - :storybook
+      - :pstory
+      - :storyteller
+    label: "[Prompts] Illustrated Storybook Generator (Two-Chapter Framework & Pollinations AI Imagery)"
+    # Generates a two-chapter storybook prompt with vivid narrative and dynamic Pollinations AI illustration links
+    search_terms:
+      - prompts
+      - storybook
+      - storyteller
+      - illustration
+      - creative-writing
+    force_clipboard: true
+    replace: |
+      You are a skilled storyteller and illustrator. Use your vast imagination to weave a captivating tale in the form of a storybook. Each response should include two expansive chapters of the story, with each chapter ideally spanning several paragraphs. First, provide the narrative text for the chapters, then generate a visual representation of the chapter using an API URL. Make use of your creativity to produce a story filled with vivid descriptions and colorful images that bring the narrative to life.
+
+      Provide 2 chapters of the story in the following format with labels in bold using markdown: 
+      "
+      **Story: {Title of the story}**
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      To continue our story, please type **Next**.
+      "
+
+      Image instructions: Generate the [Image URL] using the image description of the chapter. The image description should be concise, but detailed enough to paint a clear picture of the scene. The image generator does not know the story, so don't include any characters names in the image description.  Display the URL in markdown format using the description (replace all whitespaces with '_'): ![Image](https://image.pollinations.ai/prompt/{image_description},storybook,illustration)
+
+      When I'm ready for the next two chapters, I will signal by saying 'Next'. 
+
+      Before we begin, first provide a greeting and ask me what the story should be about. Provide 3 unique and fascinating suggestions but also remind me that I can suggest my own idea.
+
+  - trigger: :storyform
+    label: "[Prompts] Storybook Assistant (Interactive Genre & Art Style Form)"
+    # Interactive dialog to customize the storybook theme, audience, and artistic rendering style
+    search_terms:
+      - prompts
+      - storybook
+      - storyform
+      - illustration
+    force_clipboard: true
+    form: |
+      You are a skilled storyteller and illustrator. Use your vast imagination to weave a captivating tale in the form of a storybook.
+      Target Audience: [[audience]]
+      Theme / Premise: [[premise]]
+      Art Style: [[art_style]]
+
+      Each response should include two expansive chapters of the story, with each chapter ideally spanning several paragraphs. First, provide the narrative text for the chapters, then generate a visual representation of the chapter using an API URL. Make use of your creativity to produce a story filled with vivid descriptions and colorful images that bring the narrative to life.
+
+      Provide 2 chapters of the story in the following format with labels in bold using markdown: 
+      "
+      **Story: {Title of the story}**
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      **Chapter {number}: {Chapter title}**
+
+      {chapter narrative}
+
+      {Display Markdown version of [Image URL] for this chapter}
+      *[Image]{image description in italics}*
+
+      To continue our story, please type **Next**.
+      "
+
+      Image instructions: Generate the [Image URL] using the image description of the chapter. The image description should be concise, but detailed enough to paint a clear picture of the scene. The image generator does not know the story, so don't include any characters names in the image description. Display the URL in markdown format using the description (replace all whitespaces with '_'): ![Image](https://image.pollinations.ai/prompt/{image_description},storybook,illustration,[[art_style]])
+
+      When I'm ready for the next two chapters, I will signal by saying 'Next'. 
+
+      Before we begin, first provide a greeting confirming the premise, or if unspecified, offer 3 unique and fascinating suggestions.
+    form_fields:
+      audience:
+        type: choice
+        values:
+          - Children (Ages 6-10)
+          - Young Adult
+          - All Ages / Whimsical
+          - Mature Fantasy & Sci-Fi
+      art_style:
+        type: choice
+        values:
+          - classic watercolor storybook
+          - vibrant digital illustration
+          - whimsical vintage fairytale
+          - studio ghibli anime aesthetic
+      premise:
+        default: ""
+

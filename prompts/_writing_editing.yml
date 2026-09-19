@@ -1,0 +1,416 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: :p-human
+    replace: Rewrite so it sounds like a real person wrote it, no AI tells, no filler.
+    label: '[Prompts] Human Tone Rewriter (Natural Voice & Rhythm Polish)'
+    # Rewrite so it sounds like a real person wrote it, no AI tells, no filler.
+    search_terms:
+      - prompts
+
+  - trigger: :p-eli10
+    replace: Explain it like I'm ten, using plain words and a simple analogy.
+    label: '[Prompts] Explain Like I''m 10 (Simple Words & Everyday Analogies)'
+    # Explain it like I'm ten, using plain words and a simple analogy.
+    search_terms:
+      - prompts
+
+  - trigger: :p-tighten
+    replace: Rewrite your own last answer sharper and shorter without losing anything that mattered.
+    label: '[Prompts] Tighten & Condense (Sharper Half-Length Revision)'
+    # Rewrite your own last answer sharper and shorter without losing anything that mattered.
+    search_terms:
+      - prompts
+
+  - trigger: :p-flood
+    replace: Don't give me one safe idea, give me twenty, including the weird ones.
+    label: '[Prompts] Brainstorm Flood (20 Unconventional Ideas)'
+    # Don't give me one safe idea, give me twenty, including the weird ones.
+    search_terms:
+      - prompts
+
+  - trigger: :p-redpen
+    replace: Catch every grammar, clarity, and awkward-phrasing issue and fix them in one pass.
+    label: '[Prompts] Red Pen Polish (Grammar Flow & Precision Critique)'
+    # Catch every grammar, clarity, and awkward-phrasing issue and fix them in one pass.
+    search_terms:
+      - prompts
+
+  - trigger: :p-chain-1of3
+    form: |
+      Write a first draft of: [[what_you_need]].
+      Constraints: [[constraints]].
+
+      Just get a complete draft down. Do not polish or second-guess yet - I want raw material to work with.
+    form_fields:
+      what_you_need:
+        default: an email to my team
+      constraints:
+        default: professional tone, under 3 paragraphs
+    label: '[Prompts] Chain Step 1 of 3: Draft (Write Initial Version)'
+    # Write a first draft of: .
+    search_terms:
+      - prompts
+
+  - trigger: :p-chain-2of3
+    replace: |
+      Switch roles. You are now a tough reviewer seeing the draft above for the first time.
+
+      - Name the 3 weakest things, most important first.
+      - Flag anything generic, unclear, or unsupported.
+      - Say what is missing.
+
+      Do not rewrite it. Critique only - be blunt.
+    label: '[Prompts] Chain Step 2 of 3: Review (Tough Skeptical Critique)'
+    # Switch roles. You are now a tough reviewer seeing the draft above for the first time.
+    search_terms:
+      - prompts
+
+  - trigger: :p-chain-3of3
+    replace: |
+      Now rewrite the draft, fixing every point from the critique.
+
+      - Keep what was already working.
+      - Address each weakness specifically.
+      - Give me the final version only, polished.
+    label: '[Prompts] Chain Step 3 of 3: Rewrite (Incorporate All Critique Points)'
+    # Now rewrite the draft, fixing every point from the critique.
+    search_terms:
+      - prompts
+
+  - trigger: :editor-1of2
+    form: |
+      You are my editor, not my co-author.
+
+      Imagine you are the rare editor trusted by writers and thinkers such as [[authors]]. If you know the actual editor's style, use that.
+
+      Your task is not to provide ideas, impress me with creativity, or tell me what the book should become. Your task is to help me discover the idea myself.
+      Assume that the deepest intuitions of the work already exist within me, even if I cannot yet articulate them. Help me find the work through inquiry, which sometimes can be playful.
+
+      Your role is to draw out meaning, not suggest it, though short feedback is welcome.
+
+      RULES:
+      - By default, ask only one question at a time. Do not ask compound questions.
+      - Each question should be informed from my previous answer. Allow my answers to create curiosity about the project to inform your next question.
+      - Avoid jumping ahead or introducing possibilities I have not hinted at.
+      - Your questions should help me understand the idea, what about it fascinates me, what I do not yet know, and what key foundations I need to discover.
+      - Do not brainstorm for me unless I explicitly ask.
+      - Do not create plots, themes, characters, settings, or scenes unless I explicitly ask.
+      - Do not overwhelm me with lists of possibilities.
+      - Keep feedback extremely brief. Three sentences maximum. Feedback should clarify, sharpen, or point out tensions, never evaluate or praise.
+      - Criticism can be included in the feedback.
+      - Protect the integrity of the work. Do not optimize for entertainment, trends, commercial success, or conventional story structures, unless I give you a theme or genre I am writing toward.
+
+      TO CONSIDER IN YOUR QUESTIONS:
+      - What emotional truth lives underneath the idea?
+      - What contradictions or tensions animate it?
+      - What I fear, hope, love, or grieve through this work?
+      - What questions I am really asking?
+      - What kind of world, people, or symbols naturally belong to this book?
+      - What I know intuitively but have not yet put into words?
+
+      Trust that the work knows more than either of us. Our task is to listen carefully enough for it to reveal itself.
+    form_fields:
+      authors:
+        default: James Joyce, C.G. Jung, Eduardo Galeano, George Orwell, Aldous Huxley, Verlyn Klinkenborg, John Berger, Robert Moore, Gabriel García Márquez, Paulo Freire, Robert Bly, Maya Angelou, David Graeber, and Jeremy Taylor
+    label: '[Prompts] Strict Editor Persona (Non-Coauthor Polish & Tone Matching)'
+    # You are my editor, not my co-author.
+    search_terms:
+      - prompts
+
+  - trigger: :chain1-interrogator
+    form: |
+      You are a senior editorial strategist. I am going to give you a rough idea. Your ONLY job in this step is to interrogate it - do not write or draft anything yet.
+
+      ROUGH IDEA: [[idea]]
+
+      Do the following:
+      1. Restate the idea in one sharp sentence so I know we are aligned.
+      2. Identify the 3 hidden assumptions baked into the idea that could be wrong.
+      3. Ask me the 5 questions whose answers would most change how this should be written. Order them by impact, most decision-changing first.
+      4. Flag the single biggest risk that this idea ends up generic.
+
+      Rules: No drafting. No outline. Be specific to MY idea, not generic advice. End by waiting for my answers.
+    form_fields:
+      idea:
+        multiline: true
+    label: '[Prompts] Writing Chain 1 of 4: Interrogate (Editorial Angle Discovery)'
+    # You are a senior editorial strategist. I am going to give you a rough idea. Your ONLY job in this step is to interrogate
+    search_terms:
+      - prompts
+
+  - trigger: :chain2-angle
+    replace: |
+      Using my idea and my answers above, generate 3 distinct angles for the piece. These must be genuinely different in approach, not three flavors of the same take.
+
+      For EACH angle, give me:
+      - Working title
+      - The hook (the first line that makes someone stop scrolling)
+      - Who it is for and what they currently believe
+      - The one insight that makes this angle feel fresh
+      - Why it could fail
+
+      Then recommend which angle is strongest and explain the tradeoff in 2 sentences.
+
+      Rules: No full draft yet. Angles only. Avoid any angle that could be written without having read my specific answers.
+    label: '[Prompts] Writing Chain 2 of 4: Angle (Distinct Positioning Options)'
+    # Using my idea and my answers above, generate 3 distinct angles for the piece. These must be genuinely different in appro
+    search_terms:
+      - prompts
+
+  - trigger: :chain3-draft
+    form: |
+      Write the full draft using Angle #[[angle]] from above.
+
+      CONSTRAINTS:
+      - Tone: [[tone]]
+      - Length: [[length]]
+      - Lead with the strongest point. No warmup intro, no "in today's world."
+      - Every claim either shows a concrete example or gets cut.
+      - One idea per paragraph.
+
+      STRUCTURE:
+      1. Hook (the line from the chosen angle)
+      2. The core argument
+      3. The proof or example
+      4. The objection a smart reader would raise, and your answer
+      5. A close that gives the reader one thing to do or believe
+
+      Write it in full now.
+    form_fields:
+      angle:
+        type: choice
+        values:
+          - '1'
+          - '2'
+          - '3'
+      tone:
+        default: confident, plain-spoken, no hype
+      length:
+        default: 600-800 words
+    label: '[Prompts] Writing Chain 3 of 4: Draft (Full Version from Chosen Angle)'
+    # Write the full draft using Angle # from above.
+    search_terms:
+      - prompts
+
+  - trigger: :chain4-editor
+    replace: |
+      Switch roles. You are now a skeptical editor who thinks this draft is overrated. Do NOT rewrite the whole thing.
+
+      1. Quote the 3 weakest lines verbatim and say exactly why each is weak (vague, cliche, unsupported, etc.).
+      2. Rewrite ONLY those 3 lines.
+      3. Identify one place the argument has a logical gap a critic would attack.
+      4. Give the piece a score out of 10 for "would a smart reader share this," and state the one change that would raise the score most.
+
+      Be blunt. Flattery is useless to me.
+    label: '[Prompts] Writing Chain 4 of 4: Editor (Skeptical Cut & Tighten Pass)'
+    # Switch roles. You are now a skeptical editor who thinks this draft is overrated. Do NOT rewrite the whole thing.
+    search_terms:
+      - prompts
+
+  - trigger: :p-draft
+    form: |
+      Act as a writing assistant. Here's the topic: "[[topic]]"
+
+      Help me outline and rough-draft a clear, structured blog post in [[time_limit]] or less.
+    form_fields:
+      time_limit:
+        default: 15 minutes
+    label: '[Prompts] Fast Writing Assistant (Quick Zero-Draft Generation)'
+    # Act as a writing assistant. Here''s the topic:
+    search_terms:
+      - prompts
+
+  - trigger: :p-clean
+    replace: |
+      Act as an editor. Here's a messy doc or note:
+
+      {{clipboard_doc}}
+
+      Clean it up, make it scannable, and pull out a bullet list of key action items.
+    vars:
+      - name: clipboard_doc
+        type: clipboard
+    label: '[Prompts] Document Editor (Sharpen Structure Flow & Eliminate Fluff)'
+    # Act as an editor. Here''s a messy doc or note:
+    search_terms:
+      - prompts
+
+  - trigger: :p-compress
+    replace: |
+      Here's a long article or transcript:
+
+      {{clipboard_article}}
+
+      Summarize the key ideas in 5 bullet points, and give me one actionable takeaway.
+    vars:
+      - name: clipboard_article
+        type: clipboard
+    label: '[Prompts] Article & Transcript Compressor (Executive Summary & Core Insights)'
+    # Here''s a long article or transcript:
+    search_terms:
+      - prompts
+
+  - trigger: :p-voice
+    replace: |
+      I prefer talking to writing. I'm going to voice-record some ideas. Act as a copywriter - transcribe and polish into a clear document. Here is the rough transcription text:
+
+      {{clipboard_transcript}}
+    vars:
+      - name: clipboard_transcript
+        type: clipboard
+    label: '[Prompts] Voice-Note Synthesizer (Convert Rambling Voice Dumps into Clear Plans)'
+    # I prefer talking to writing. I'm going to voice-record some ideas. Act as a copywriter - transcribe and polish into a cl
+    search_terms:
+      - prompts
+
+  - trigger: :prmconsult
+    form: |
+      Analyze the following text acting as a [[persona]].
+      Identify the key ideas, missed opportunities, and strategic implications I should act on immediately.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      persona:
+        default: strategy consultant
+    label: '[Prompts] Role-Based Text Review (Persona-Driven Perspective Analysis)'
+    # Analyze the following text acting as a .
+    search_terms:
+      - prompts
+
+  - trigger: :improve-writing
+    word: true
+    replace: |
+      Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my writing.
+    label: '[Prompts] Quick Proofreading (Grammar Spelling & Typos Correction)'
+    # Proofread my writing above. Fix grammar and spelling mistakes. Provide suggestions that will improve the clarity of my w
+    search_terms:
+      - prompts
+
+  - trigger: :improve-writing-polish
+    replace: |
+      Review my writing above thoroughly. Correct all grammar, syntax, and spelling issues. Provide specific sentence-level revisions to improve flow, precision, and persuasive impact.
+    label: '[Prompts] Deep Writing Polish (Line-by-Line Cadence Flow & Voice Elevation)'
+    # Detailed proofreading and sentence-level clarity refinement.
+    search_terms:
+      - prompts
+      - writing
+      - proofread
+      - polish
+
+  - trigger: :ai-train
+    replace: |
+      Analyze the following text for style, voice, and tone:
+
+      {{clip}}
+
+      Based on this analysis, create a prompt that can generate new content in the same style, voice, and tone for future use.
+    vars:
+      - name: clip
+        type: clipboard
+    label: '[Prompts] Voice & Tone Extraction (Analyze Rhythm Cadence & Vocabulary Choices)'
+    # Analyze the following text for style, voice, and tone:
+    search_terms:
+      - prompts
+
+  - trigger: :ai-rewrite
+    replace: |
+      Rewrite the following content to better suit the specified audience and purpose.
+      Topic: {{metadata.topic}}
+      Audience: {{metadata.audience}}
+      Tone: {{metadata.tone}}
+      Goal: {{metadata.goal}}
+
+      Text to rewrite:
+      {{clip}}
+    vars:
+      - name: clip
+        type: clipboard
+      - name: metadata
+        type: form
+        params:
+          layout: |
+            Topic: [[topic]]
+            Audience: [[audience]]
+            Tone: [[tone]]
+            Goal: [[goal]]
+    label: '[Prompts] Audience Style Rewriter (Tailor Vocabulary & Tone for Specific Readers)'
+    # Rewrite the following content to better suit the specified audience and purpose.
+    search_terms:
+      - prompts
+
+  - triggers:
+      - :p-rewrite
+      - :prompt-rewrite
+    form: "Rewrite the following text so it is clearer and easier to read without changing the meaning.\n\nKeep my original tone.  \nRemove repetition.  \nUse shorter sentences where possible.  \nDo not make it sound corporate or overly polished.\n\nText:\n[[text]]\n"
+    form_fields:
+      text:
+        multiline: true
+    label: '[Prompts] Clarity & Flow Rewriter (Sharpen Sentence Structure & Remove Ambiguity)'
+    # Rewrite the following text so it is clearer and easier to read without changing the meaning.
+    search_terms:
+      - prompts
+
+  - triggers:
+      - :p-brutal-editor
+      - :p-honest-feedback
+      - :brutal-editor
+    form: |
+      You are a brutally honest editor who has seen thousands of pieces of work and has no patience for anything mediocre. Do not soften your feedback. Do not start with what's working. Tell me the single biggest problem with this piece and exactly why it matters. Then tell me three more things wrong with it. Only after that, if something is genuinely strong, mention it.
+
+      Here is the work:
+      [[work]]
+    form_fields:
+      work:
+        multiline: true
+    label: '[Prompts] Brutal Editor Feedback (Uncompromising Critique with Flaw Hierarchy)'
+    # Forces model out of agreeable mode: biggest problem first, 3 secondary flaws, strengths last.
+    search_terms:
+      - prompts
+      - honest
+      - brutal
+      - editor
+      - feedback
+      - critique
+      - review
+
+  - triggers:
+      - :p-my-voice
+      - :p-clone-voice
+      - :p-match-voice
+      - :voice-match
+    form: |
+      Before you write anything, I'm going to give you three samples of my writing. Study them for: how long my sentences typically run, whether I use contractions, how formal or casual my vocabulary is, what I tend to leave out, and where I place emphasis. Then I'll give you the task. Do not write until you've confirmed you understand the pattern.
+
+      Sample 1:
+      [[sample_1]]
+
+      Sample 2:
+      [[sample_2]]
+
+      Sample 3:
+      [[sample_3]]
+
+      Now write [[task]] in that style. If a draft sounds like a generic AI, scrap it and try again.
+    form_fields:
+      sample_1:
+        multiline: true
+      sample_2:
+        multiline: true
+      sample_3:
+        multiline: true
+      task:
+        multiline: true
+    label: '[Prompts] Personal Voice Cloner (Style Calibration from 3 Samples)'
+    # Analyzes 3 writing samples for cadence, vocabulary, and omissions before drafting the task.
+    search_terms:
+      - prompts
+      - voice
+      - style
+      - tone
+      - writing
+      - anti-ai
+      - calibration
+

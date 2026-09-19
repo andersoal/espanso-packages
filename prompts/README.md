@@ -1,4 +1,21 @@
-This is the _prompts_ package
+# Prompts Package
+
+A comprehensive, modular collection of prompts and AI engineering triggers for Espanso.
+
+## Modular Package Architecture
+
+The package is split into domain-specific submodules imported via `package.yml` using Espanso's official private submodule convention (`_*.yml`):
+
+- **`package.yml`**: Root configuration and imports manifest; contains core custom instructions, system persona setups, and model tuning triggers.
+- **`_storytelling.yml`**: Creative narrative, illustrated storybook generator, and Pollinations AI image synthesis triggers.
+- **`_prompt_engineering.yml`**: Meta-prompts, Prompt Master, Expert Prompt Creator, prompt optimization, clarification timing, and response refiners.
+- **`_frameworks.yml`**: Structured thinking frameworks (RTF, STAR, SOAR, SMART, RACE, DREAM, PACT, CARE, RISE, TREF, ROSES, SCET).
+- **`_learning_education.yml`**: Accelerated learning roadmaps, Feynman techniques, 80/20 knowledge extraction, spaced repetition, Socratic tutors, and LearnOS.
+- **`_productivity_execution.yml`**: Flow state induction, mindset resets, time blindness audits, task initiation, weekly routines, and open loops triage.
+- **`_business_marketing.yml`**: Lean startup planning, MVP scoping, sales playbooks, LinkedIn content engines, customer friction research, and offer builders.
+- **`_software_engineering.yml`**: Systems architecture, debugging specialists, performance optimization, codebase audits, and refactoring engines.
+- **`_writing_editing.yml`**: Personal voice calibration, brutal editor feedback, human tone rewriters, red pen polish, and line-by-line cadence elevation.
+- **`_analysis_research.yml`**: Cross-document analysis, perspective synthesis, quality checks, bias audits, pre-mortems, and philosophical exploration.
 
 ## Text Blaze Text Expander
 
@@ -427,3 +444,23 @@ A production-grade prompt engineering meta-system designed to generate, adapt, a
 - **Quick / Compact Engine Triggers**: `:p-prompt-master-quick`, `:p-prompt-quick`, `:p-pm-quick`
   - **Label**: `[Prompts] Prompt Master Quick Engine (Core Identity, Hard Rules & Output Lock)`
   - **Purpose**: Lightweight interactive trigger delivering the core Primacy Zone rules, Intent Extraction dimensions, and Output Lock contract without the full multi-model catalog.
+
+### Adversarial Prompt Optimizer (3 Tests with Continuity Proof)
+
+- **Trigger**: `:prompt-deconstruct`
+- **Label**: `[Prompts] Adversarial Prompt Optimizer (3 Tests with Continuity Proof)`
+- **Purpose**: Deconstructs and stress-tests candidate prompts using three adversarial passes (Precision Test, Intelligence Test, Challenge Test) with continuity proofs, rollback protection, and quantitative metric tracking.
+- **Workflow Spec**: [workflows/prompt-deconstruction-loop.md](file:///c:/Users/ag/Documents/Obsidian/espanso/match/packages/workflows/prompt-deconstruction-loop.md)
+
+### Discussion Thread Mapper (Compact Multi-Position Extraction)
+
+- **Trigger**: `:prompt-thread-map`
+- **Label**: `[Prompts] Discussion Thread Mapper (Compact Multi-Position Extraction)`
+- **Purpose**: Maps multi-party debates and complex online discussions into a compact overview under a configurable word budget (default 160 words). Isolates true author positions from quoted text, respects retractions, and surfaces unresolved context questions.
+
+### Conversational Movie Poster (Cinematic Profile Synthesis)
+
+- **Trigger**: `:prompt-movie-poster`
+- **Label**: `[Prompts] Conversational Movie Poster (Cinematic Profile Synthesis)`
+- **Purpose**: Synthesizes a striking cinematic poster prompt from user conversational memory, core values, humor, aesthetic preferences, and enduring character motifs.
+

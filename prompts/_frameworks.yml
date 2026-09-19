@@ -1,0 +1,993 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: :rtf
+    form: |
+      Act according to the following framework:
+      - **Role**: [[role]]
+      - **Task**: [[task]]
+      - **Format**: [[format]]
+    form_fields:
+      role:
+        default: Expert Assistant
+      task:
+        multiline: true
+      format:
+        default: Clean markdown tables or bullet points
+    label: '[Prompts] RTF Framework (Role Task Format Structure)'
+    # Act according to the following framework:
+    search_terms:
+      - prompts
+
+  - trigger: :solve
+    form: |
+      Please follow this prompt structure:
+      - **Situation**: [[situation]]
+      - **Objective**: [[objective]]
+      - **Limitations**: [[limitations]]
+      - **Vision**: [[vision]]
+      - **Execution**: [[execution]]
+    form_fields:
+      situation:
+        multiline: true
+      objective:
+        multiline: true
+      limitations:
+        multiline: true
+        default: None specified
+      execution:
+        multiline: true
+    label: '[Prompts] SOLVE Framework (Situation Objective Limitations Vision Execution)'
+    # Please follow this prompt structure:
+    search_terms:
+      - prompts
+
+  - trigger: :p-tag
+    form: |
+      Execute the following:
+      - **Task**: [[task]]
+      - **Action**: [[action]]
+      - **Goal**: [[goal]]
+    form_fields:
+      task:
+        multiline: true
+      action:
+        multiline: true
+    label: '[Prompts] TAG Framework (Task Action Goal Formulation)'
+    # Execute the following:
+    search_terms:
+      - prompts
+
+  - trigger: :race
+    form: |
+      Analyze and generate:
+      - **Role**: [[role]]
+      - **Action**: [[action]]
+      - **Context**: [[context]]
+      - **Expectation**: [[expectation]]
+    form_fields:
+      action:
+        multiline: true
+      context:
+        multiline: true
+      expectation:
+        multiline: true
+    label: '[Prompts] RACE Framework (Role Action Context Expectation Structure)'
+    # Analyze and generate:
+    search_terms:
+      - prompts
+
+  - trigger: :dream
+    form: |
+      Address this systematically:
+      - **Define**: [[define]]
+      - **Research**: [[research]]
+      - **Execute**: [[execute]]
+      - **Analyse**: [[analyse]]
+      - **Measure**: [[measure]]
+    form_fields:
+      define:
+        multiline: true
+      research:
+        multiline: true
+      execute:
+        multiline: true
+      analyse:
+        multiline: true
+    label: '[Prompts] DREAM Framework (Define Research Execute Analyse Measure)'
+    # Address this systematically:
+    search_terms:
+      - prompts
+
+  - trigger: :pact
+    form: |
+      Evaluate the problem space:
+      - **Problem**: [[problem]]
+      - **Approach**: [[approach]]
+      - **Compromise**: [[compromise]]
+      - **Test**: [[test]]
+    form_fields:
+      problem:
+        multiline: true
+      approach:
+        multiline: true
+      compromise:
+        multiline: true
+        default: None
+    label: '[Prompts] PACT Framework (Problem Approach Compromise Test Analysis)'
+    # Evaluate the problem space:
+    search_terms:
+      - prompts
+
+  - trigger: :care
+    form: |
+      Formulate a response using these elements:
+      - **Context**: [[context]]
+      - **Action**: [[action]]
+      - **Result**: [[result]]
+      - **Example**: [[example]]
+    form_fields:
+      context:
+        multiline: true
+      action:
+        multiline: true
+      example:
+        multiline: true
+    label: '[Prompts] CARE Framework (Context Action Result Example Formulation)'
+    # Formulate a response using these elements:
+    search_terms:
+      - prompts
+
+  - trigger: :rise
+    form: |
+      Execute this request:
+      - **Role**: [[role]]
+      - **Input**: [[input]]
+      - **Steps**: [[steps]]
+      - **Expectation**: [[expectation]]
+    form_fields:
+      input:
+        multiline: true
+      steps:
+        multiline: true
+      expectation:
+        multiline: true
+    label: '[Prompts] RISE Framework (Role Input Steps Expectation Execution)'
+    # Execute this request:
+    search_terms:
+      - prompts
+
+  - trigger: :ptref
+    form: |
+      Please execute the following request based on the TREF framework:
+      - Task: [[task]]
+      - Requirement: [[requirement]]
+      - Expectation: [[expectation]]
+      - Format: [[format]]
+    form_fields:
+      task:
+        default: Summarize the quarterly financial report
+      requirement:
+        default: Focus strictly on operational expenses and cloud spend
+      expectation:
+        default: Objective, technical, and actionable
+      format:
+        default: Markdown table followed by a 3-bullet takeaway list
+    label: '[Prompts] TREF Framework (Task Requirement Expectation Format Formulation)'
+    # Please execute the following request based on the TREF framework:
+    search_terms:
+      - prompts
+
+  - trigger: :pstar
+    form: |
+      Analyze and generate a response utilizing the STAR structure:
+      - Situation: [[situation]]
+      - Task: [[task]]
+      - Action: [[action]]
+      - Result: [[result]]
+    form_fields:
+      situation:
+        multiline: true
+        default: The main production API crashed unexpectedly during a traffic spike.
+      task:
+        multiline: true
+        default: Identify the root cause, mitigate immediate downtime, and establish a patch.
+      action:
+        multiline: true
+        default: Analyzed Datadog logs, isolated a database connection leak, and expanded the connection pool.
+      result:
+        multiline: true
+        default: Restored service within 8 minutes and cut database latency by 15% overall.
+    label: '[Prompts] STAR Framework (Situation Task Action Result Response)'
+    # Analyze and generate a response utilizing the STAR structure:
+    search_terms:
+      - prompts
+
+  - trigger: :proses
+    form: |
+      Execute the following task contextually:
+      - Role: [[role]]
+      - Objective: [[objective]]
+      - Scenario: [[scenario]]
+      - Expected Solution: [[solution]]
+      - Edge Cases to Avoid: [[edge]]
+    form_fields:
+      role:
+        default: Expert QA Automation Engineer
+      objective:
+        default: Draft a robust end-to-end testing strategy for our new checkout logic
+      scenario:
+        multiline: true
+        default: Simulated load of 10,000 parallel checkout requests during a holiday sales event.
+      solution:
+        multiline: true
+        default: A step-by-step automation test plan using Playwright and an accompanying script skeleton.
+      edge:
+        multiline: true
+        default: Expired authorization tokens mid-transaction, race conditions on inventory counts, and double-clicks on payment buttons.
+    label: '[Prompts] ROSES Framework (Role Objective Scenario Solution Edge Formulation)'
+    # Execute the following task contextually:
+    search_terms:
+      - prompts
+
+  - trigger: :tref
+    form: |
+      # [TREF Prompt] — Context: [[domain]]
+      ### TASK
+      [[task]]
+
+      ### REQUIREMENT
+      [[requirement]]
+
+      ### EXPECTATION
+      [[expectation]]
+
+      ### FORMAT
+      [[format]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - Tech Development (Architecture, Refactoring)
+          - Creative/Copywriting (Marketing, Editing)
+          - Business Strategy (Analysis, Operations)
+      task:
+        multiline: true
+        default: Define the core operation or task to be executed.
+      requirement:
+        multiline: true
+        default: List explicit constraints, rules, boundaries, or dependencies.
+      expectation:
+        multiline: true
+        default: Define what a successful output achieves (KPIs or qualitative benchmarks).
+      format:
+        multiline: true
+        default: 'Specify the structure: Markdown tables, JSON schemas, or bullet points.'
+    label: '[Prompts] TREF Domain Framework (Task Requirement Expectation Format Header)'
+    # # [TREF Prompt] — Context:
+    search_terms:
+      - prompts
+
+  - trigger: :scet
+    form: |
+      # [SCET Prompt] — Context: [[domain]]
+      ### SITUATION
+      [[situation]]
+
+      ### COMPLICATION
+      [[complication]]
+
+      ### EXPECTATION
+      [[expectation]]
+
+      ### TASK
+      [[task]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - System Engineering & Debugging
+          - Product Management & Roadmapping
+          - Executive Communication
+      situation:
+        multiline: true
+        default: Provide background information on the current steady-state environment.
+      complication:
+        multiline: true
+        default: Describe the specific friction point, bug, bottleneck, or structural issue triggering this request.
+      expectation:
+        multiline: true
+        default: Outline the ideal future state once the friction is resolved.
+      task:
+        multiline: true
+        default: Detail the explicit action steps needed from the model to bridge the gap.
+    label: '[Prompts] SCET Domain Framework (Situation Complication Expectation Task)'
+    # # [SCET Prompt] — Context:
+    search_terms:
+      - prompts
+
+  - trigger: :pecra
+    form: |
+      # [PECRA Prompt] — Context: [[domain]]
+      ### PURPOSE
+      [[purpose]]
+
+      ### EXPECTATION
+      [[expectation]]
+
+      ### CONTEXT
+      [[context]]
+
+      ### REQUEST
+      [[request]]
+
+      ### ACTION
+      [[action]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - Research & Synthesis
+          - Algorithm & Workflow Optimization
+          - Strategic Advisory
+      purpose:
+        multiline: true
+        default: The high-level 'Why' behind this task.
+      expectation:
+        multiline: true
+        default: The qualitative definition of done or quality check parameters.
+      context:
+        multiline: true
+        default: Environmental details, existing tech stack, historical data, or framing rules.
+      request:
+        multiline: true
+        default: The precise, direct prompt or question asked of the model.
+      action:
+        multiline: true
+        default: The explicit computational or creative processing steps to follow.
+    label: '[Prompts] PECRA Domain Framework (Purpose Expectation Context Request Action)'
+    # # [PECRA Prompt] — Context:
+    search_terms:
+      - prompts
+
+  - trigger: :pccra
+    form: |
+      # [PCCRA Prompt] — Context: [[domain]]
+      ### GOAL
+      [[goal]]
+
+      ### REQUEST
+      [[request]]
+
+      ### ACTION
+      [[action]]
+
+      ### DETAIL
+      [[detail]]
+
+      ### EXAMPLES
+      [[examples]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - Automation Scripting & DevOps
+          - Content Enrichment & SEO
+          - Financial Modeling
+      goal:
+        multiline: true
+        default: The ultimate target output or vision.
+      request:
+        multiline: true
+        default: The exact instruction block for the AI to process.
+      action:
+        multiline: true
+        default: Immediate execution operations required from the engine.
+      detail:
+        multiline: true
+        default: Granular technical requirements, exceptions, edge conditions, or specific variable types.
+      examples:
+        multiline: true
+        default: |
+          Few-shot examples:
+          - Input: [Example In]
+          - Output: [Example Out]
+    label: '[Prompts] PCCRA Domain Framework (Goal Request Action Detail Examples)'
+    # # [PCCRA Prompt] — Context:
+    search_terms:
+      - prompts
+
+  - trigger: :roses
+    form: |
+      # [ROSES Prompt] — Context: [[domain]]
+      ### ROLE
+      [[role]]
+
+      ### OBJECTIVE
+      [[objective]]
+
+      ### SCENARIO
+      [[scenario]]
+
+      ### EXPECTED SOLUTION
+      [[expected_solution]]
+
+      ### EDGE CASES
+      [[edge_cases]]
+    form_fields:
+      domain:
+        type: choice
+        values:
+          - Roleplay & Specialized AI Personas
+          - Security & Vulnerability Auditing
+          - Educational Course Design
+      role:
+        multiline: true
+        default: Act as a [Senior Systems Architect / Expert Editor / Principal Analyst].
+      objective:
+        multiline: true
+        default: What target must the persona hit?
+      scenario:
+        multiline: true
+        default: The ecosystem backdrop, real-world constraints, or live environment simulation details.
+      expected_solution:
+        multiline: true
+        default: The precise characteristics of the deliverable output.
+      edge_cases:
+        multiline: true
+        default: Unusual inputs, failure states, or explicit parameters to block or flag safely.
+    label: '[Prompts] ROSES Domain Framework (Role Objective Scenario Solution Edge)'
+    # # [ROSES Prompt] — Context:
+    search_terms:
+      - prompts
+
+  - trigger: :star
+    word: true
+    form: |
+      # [STAR Framework Summary]
+      ### SITUATION
+      [[situation]]
+
+      ### TASK
+      [[task]]
+
+      ### ACTION
+      [[action]]
+
+      ### RESULT
+      [[result]]
+    form_fields:
+      situation:
+        multiline: true
+        default: 'Set the scene: Describe the project backdrop or issue encountered.'
+      task:
+        multiline: true
+        default: Identify the explicit responsibility or challenge that needed addressing.
+      action:
+        multiline: true
+        default: Explain step-by-step how the challenge was navigated or resolved.
+      result:
+        multiline: true
+        default: Quantify the outcome (e.g., performance improved by 40%, zero downtime).
+    label: '[Prompts] STAR Summary Layout (Situation Task Action Result Breakdown)'
+    # # [STAR Framework Summary]
+    search_terms:
+      - prompts
+
+  - trigger: :soar
+    form: |
+      # [SOAR Strategic Layout]
+      ### SITUATION
+      [[situation]]
+
+      ### OBJECTIVE
+      [[objective]]
+
+      ### ACTION
+      [[action]]
+
+      ### RESULT
+      [[result]]
+    form_fields:
+      situation:
+        multiline: true
+        default: Define the operational status quo or baseline infrastructure.
+      objective:
+        multiline: true
+        default: State the forward-looking milestone or strategic target.
+      action:
+        multiline: true
+        default: Detail the specific deployment roadmap, resource allocation, or process changes.
+      result:
+        multiline: true
+        default: The strategic or quantitative metrics derived from this execution.
+    label: '[Prompts] SOAR Strategic Layout (Situation Objective Action Result Breakdown)'
+    # # [SOAR Strategic Layout]
+    search_terms:
+      - prompts
+
+  - trigger: :smart
+    form: |
+      # [SMART Goal Tracking Layout]
+      * **SPECIFIC:** [[specific]]
+      * **MEASURABLE:** [[measurable]]
+      * **ACHIEVABLE:** [[achievable]]
+      * **RELEVANT:** [[relevant]]
+      * **TIME-BOUND:** [[time_bound]]
+    form_fields:
+      specific:
+        multiline: true
+        default: What exactly needs to be accomplished? Narrow down the scope.
+      measurable:
+        multiline: true
+        default: What metrics will track progress and verify success?
+      achievable:
+        multiline: true
+        default: Is the goal realistic given current tooling, permissions, and skill sets?
+      relevant:
+        multiline: true
+        default: Does this task align with larger team directives or engineering priorities?
+      time_bound:
+        multiline: true
+        default: What is the hard target date or production deployment deadline?
+    label: '[Prompts] SMART Goal Tracker (Specific Measurable Achievable Relevant Time-Bound)'
+    # # [SMART Goal Tracking Layout]
+    search_terms:
+      - prompts
+
+  - trigger: :prompt
+    word: true
+    form: |
+      Act as a [[role]].
+      Create a [[task]] focusing on: [[context]].
+      Show your response as a [[format]].
+    form_fields:
+      role:
+        type: choice
+        values:
+          - Software Developer
+          - Copywriter
+          - Marketing Consultant
+          - Data Analyst
+          - Financial Advisor
+          - UX/UI Designer
+          - Cybersecurity Analyst
+          - Customer Service Representative
+          - tour guide
+          - customer service representative
+          - technical support specialist
+          - personal fitness trainer
+          - marketing consultant
+          - financial advisor
+          - teacher
+          - travel agent
+          - therapist
+          - chef
+          - project manager
+          - career counselor
+          - life coach
+          - fashion stylist
+          - cybersecurity analyst
+          - nutritionist
+          - social media manager
+          - copywriter
+          - wedding planner
+          - software developer
+          - journalist
+          - real estate agent
+          - photographer
+          - data analyst
+          - legal consultant
+          - graphic designer
+          - music producer
+          - sales representative
+          - healthcare provider
+          - negotiation expert
+          - language translator
+          - HR manager
+          - mediator
+          - startup founder
+          - sports coach
+          - wedding photographer
+          - parenting coach
+          - UX/UI designer
+          - software tester
+          - content strategist
+          - customer success manager
+          - social worker
+          - civil engineer
+          - fashion designer
+          - data scientist
+          - video editor
+          - talent agent
+          - health coach
+          - business consultant
+      task:
+        type: choice
+        values:
+          - social media marketing campaign
+          - content marketing strategy
+          - website design wireframe
+          - software testing plan
+          - data analysis report
+          - business proposal
+          - market research brief
+          - cybersecurity risk assessment
+          - social media marketing campaign
+          - workout routine
+          - budget plan
+          - meal plan
+          - project timeline
+          - website design
+          - lesson plan
+          - travel itinerary
+          - therapy session outline
+          - menu for a restaurant
+          - business proposal
+          - career development plan
+          - fashion lookbook
+          - cybersecurity risk assessment
+          - content marketing strategy
+          - wedding invitation design
+          - software testing plan
+          - financial investment portfolio
+          - marketing brochure
+          - customer satisfaction survey
+          - training program for employees
+          - product packaging design
+          - data analysis report
+          - legal contract
+          - graphic design for a poster
+          - music playlist
+          - sales pitch
+          - healthcare treatment plan
+          - negotiation strategy
+          - website wireframe
+          - parenting guide
+          - civil engineering blueprint
+          - fashion collection
+          - data visualization dashboard
+          - video editing montage
+          - talent scouting plan
+          - wellness program
+          - business process diagram
+          - social work intervention plan
+          - construction project proposal
+          - fashion sketch
+          - machine learning model
+          - social media content calendar
+          - talent show audition process
+          - health and fitness blog
+          - business intelligence dashboard
+          - video animation
+          - talent development program
+          - market research report
+      format:
+        type: choice
+        values:
+          - step-by-step guide
+          - sample code snippet
+          - presentation slide deck outline
+          - case study
+          - comparison chart
+          - checklist
+          - mock client meeting transcript
+          - step-by-step guide
+          - infographic outline
+          - video tutorial script
+          - presentation slide deck
+          - case study
+          - comparison chart
+          - sample dialogue
+          - before-and-after example
+          - mind map text structure
+          - template or template customization
+          - Q&A session
+          - checklist or checklist customization
+          - problem-solving scenario
+          - user interface design mockup
+          - simulated conversation
+          - demonstration video breakdown
+          - quiz or interactive quiz
+          - data visualization dashboard
+          - sales pitch script
+          - sample code snippet
+          - storytelling narrative
+          - case law analysis
+          - pricing comparison table
+          - strategic plan outline
+          - storyboard for a video or animation
+          - mock client meeting transcript
+          - mock therapy session transcript
+          - sample workout routine
+          - mock negotiation transcript
+          - software testing report
+          - sample lesson plan
+          - fashion lookbook design
+          - data analysis summary
+          - sample menu design
+          - mock interview script
+          - before-and-after home design outline
+          - social work case study
+          - blueprint or architectural design description
+          - fashion collection portfolio
+          - marketing campaign analysis report
+          - sample music production session
+          - mock sales presentation script
+          - sample healthcare treatment plan
+          - mock mediation session transcript
+          - sample blog post
+          - machine learning model flowchart description
+          - sample social media content calendar
+          - talent show audition evaluation form
+          - sample business plan
+      context:
+        default: '[insert specific topic or industry here]'
+    label: '[Prompts] Structured Prompt Builder (Role Task Format Context Formulation)'
+    # Act as a .
+    search_terms:
+      - prompts
+
+  - trigger: :gap5
+    replace: |
+      Looking at those 5 perspectives we just explored, now identify:
+
+      1. What critical information is missing from ALL perspectives?
+      2. What assumptions are they making that could be wrong?
+      3. What questions remain unanswered?
+      4. What data would we need to validate or reject each viewpoint?
+      5. Where do the perspectives contradict each other - and why?
+
+      Highlight the gaps in our current understanding.
+    label: '[Prompts] 5-Perspective Gap Analysis (Blindspots Overlaps & Tensions)'
+    # Looking at those 5 perspectives we just explored, now identify:
+    search_terms:
+      - prompts
+
+  - trigger: :prompt:1of2
+    replace: |
+      Before executing the task below, perform a failure prediction analysis.
+
+      Identify the most critical ways you are likely to fail at this task (e.g., misunderstandings, false assumptions, generic responses, or inherent model limitations).
+      For each identified failure mode, provide the exact instruction I should add to prevent it.
+
+      Do NOT execute the task yet. Output ONLY your failure analysis and suggested prompt patches.
+
+      <task>
+      {{form_output}}
+      </task>
+    vars:
+      - name: form_output
+        type: form
+        params:
+          layout: '[[task_input]]'
+          fields:
+            task_input:
+              multiline: true
+    label: '[Prompts] Failure Prediction Analysis (Pre-Execution Risk Mitigation)'
+    # Before executing the task below, perform a failure prediction analysis.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-tot
+    form: |
+      Imagine three different experts are answering this question.
+      All experts will write down 1 step of their thinking, then share it with the group.
+      Then all experts will go on to the next step, etc.
+      If any expert realizes they're wrong at any point, then they leave.
+      The question is:
+      [[question]]
+    form_fields:
+      question:
+        multiline: true
+    label: '[Prompts] Tree of Thoughts (3 Experts Multi-Step Collaboration)'
+    # Imagine three different experts are answering this question.
+    search_terms:
+      - prompts
+
+  - trigger: ;solve-step-by-step
+    form: |
+      Solve this and show your step-by-step reasoning, so that I learn how to do it myself.
+    label: '[Prompts] Step-by-Step Solver (Explicit Problem Reasoning & Teaching)'
+    # Solve this and show your step-by-step reasoning, so that I learn how to do it myself.
+    search_terms:
+      - prompts
+
+  - trigger: :p-struct
+    form: |
+      Act as a [[role]].
+
+      Your task is to [[task]].
+
+      Output the final result exactly in this format: [[format]].
+    form_fields:
+      role:
+        default: senior software architect specializing in enterprise integrations
+      task:
+        multiline: true
+      format:
+        type: choice
+        values:
+          - Markdown table with clear column headers
+          - Bullet points sorted by priority
+          - Step-by-step instructions
+          - Valid JSON schema
+    label: '[Prompts] Role-Based Request (Role Task Format Structure)'
+    # Act as a .
+    search_terms:
+      - prompts
+
+  - trigger: :skill-productivity-execution-framework
+    form: |
+      # Skill: Productivity & Execution Frameworks
+
+      ## Overview
+      A compilation of six foundational time-management, prioritization, and execution frameworks designed to optimize daily output and eliminate procrastination.
+
+      ---
+
+      ## 1. The Pomodoro Technique
+      A time-management method that breaks work into intervals separated by short breaks to maintain high focus and prevent mental fatigue.
+
+      ### Execution Steps
+      1. **List your tasks:** Identify the work that needs to be completed.
+      2. **Set a 25-min timer:** Commit to a single task during this window.
+      3. **Focus and work:** Work with zero distractions until the timer rings.
+      4. **Take a 5-min break:** Step away from the work to rest.
+      5. **Repeat and Reset:** Repeat the cycle 4 times, then take a longer break.
+
+      ---
+
+      ## 2. The 3/3/3 Method
+      A daily rule-of-thumb framework to balance deep work, urgent obligations, and administrative upkeep.
+
+      ### The Framework
+      * **3 Hours:** Spend 3 hours working on an important project (Deep Work).
+      * **3 Tasks/Meetings:** Complete 3 shorter urgent tasks or attend 3 essential meetings.
+      * **3 Maintenance Tasks:** Do 3 minor operational or administrative tasks to keep life and work running smoothly.
+
+      ---
+
+      ## 3. The Eisenhower Matrix
+      A prioritization framework used to categorize tasks by urgency and importance, optimizing decision-making on what to focus on next.
+
+      ### Matrix Breakdown
+
+      | | Urgent | Not Urgent |
+      |---|---|---|
+      | **Important** | **Do it** <br> *Tackle immediately.* | **Schedule it** <br> *Plan a dedicated time for it.* |
+      | **Not Important** | **Delegate it** <br> *Hand it off to someone else.* | **Eliminate it** <br> *Drop it from your list.* |
+
+      ---
+
+      ## 4. Eat the Frog
+      A behavioral framework centered on tackling the most difficult, high-friction task first to build momentum and remove stress early in the day.
+
+      ### Core Principle
+      > "Do your hardest task first. The rest will be easier."
+
+      ### Philosophy
+      > "If it's your job to eat a frog, it's best to do it first thing in the morning. And if it's your job to eat two frogs, it's best to eat the biggest one first."
+      > — *Mark Twain*
+
+      ---
+
+      ## 5. The Seinfeld Strategy (Don't Break the Chain)
+      A visual consistency framework designed to build long-term habits and sustain operational momentum.
+
+      ### Execution Steps
+      1. **Set your goal:** Define a specific, daily actionable habit.
+      2. **Mark a calendar:** Put a clear mark (e.g., an 'X') on each day you successfully complete the task.
+      3. **Keep the streak:** Focus entirely on maintaining the visual chain as long as possible.
+      4. **The Guardrail:** Never miss 2 days in a row.
+
+      ---
+
+      ## 6. Time Blocking
+      An intentional scheduling methodology where you divide your day into distinct blocks of time, dedicated to specific tasks or categories.
+
+      ### Execution Steps
+      1. **Identify** what needs doing.
+      2. **Group** similar activities together (batching).
+      3. **Assign** specific time slots for tasks.
+      4. **Plot** blocks clearly on a calendar.
+      5. **Stick** strictly to the schedule.
+      6. **Take** intentional breaks between blocks.
+      7. **Make** dynamic changes if or when needed.
+
+      ### Sample Schedule Block
+
+      | Time Slot | Activity |
+      |---|---|
+      | **9:00 - 12:00** | Deep Work |
+      | **12:00 - 12:30** | Email / Admin |
+      | **12:30 - 1:00** | Lunch |
+      | **1:00 - 2:00** | Gym / Physical Activity |
+      | **2:00 - 2:30** | Break |
+      | **2:30 - 4:00** | Meetings |
+    label: '[Prompts] Execution Frameworks Playbook (Throughput Leverage & Systems)'
+    # # Skill: Productivity & Execution Frameworks
+    search_terms:
+      - prompts
+
+  - trigger: :startup-idea-validator
+    form: |
+      Act like an experienced startup mentor. Analyze this business idea: [[describe_startup_idea]]. Evaluate the market demand, target audience, and competitors. Highlight the biggest risks, weaknesses, and opportunities, and suggest practical ways to improve the idea before launching.
+    form_fields:
+      describe_startup_idea:
+        multiline: true
+    label: '[Prompts] Venture Viability Stress-Tester (Demand Signals Unit Economics & Pitfalls)'
+    # Act like an experienced startup mentor. Analyze this business idea: . Evaluate the market demand, target audience, and c
+    search_terms:
+      - prompts
+
+  - trigger: :prmresearch
+    form: |
+      Analyze the methodology, key findings, and limitations of this academic paper step by step.
+      Then, write a [[sentences]]-sentence summary focused on how the study's findings can be applied in practice.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      sentences:
+        default: three
+    label: '[Prompts] Academic Research Audit (Methodology Findings & Limitations Critique)'
+    # Analyze the methodology, key findings, and limitations of this academic paper step by step.
+    search_terms:
+      - prompts
+
+  - trigger: :deep-youtube-summary
+    word: true
+    form: |
+      You are an elite knowledge engineer and expert video analyst. Your primary goal is to fetch, analyze, and transform YouTube video content into a high-retention, scannable learning framework.
+
+      Input URL: [insert link here]
+
+      ### Formatting Rule: Title Requirement
+      * **The very first line of your response must be a clear, compelling Title (using an `# H1` Markdown header) that captures the core essence of the video analyzed.** Do not include introductions, conversational filler, or greetings before this title.
+
+      Execute the following analysis pipeline exactly. Do not abbreviate.
+
+      ### 0. URL Resolution & Fetching (CRITICAL STEP)
+      * Note: The input link may be a mobile redirect or a shortened tracking URL (e.g., youtu.be/).
+      * Before performing any analysis, you MUST explicitly utilize your web browsing/search capabilities to resolve the URL, navigate to the video, and fetch the full, accurate transcript content with its associated timestamps. Do not guess based on the URL string.
+
+      ### 1. Contextual Extraction & Structural Mapping
+      * **The Metaphor:** Explain the video's core thesis using exactly one powerful, concrete, real-world analogy to make the abstract concept instantly relatable.
+      * **The Pillar Map:** Construct a Markdown table listing the 3-5 structural pillars of the video, mapping the concept to its timestamp/location and its practical value.
+      * **The Core Network:** Outline the relationships between secondary ideas using a Markdown hierarchical bullet structure (`- Major Node > Sub-Node > Attribute`).
+
+      ### 2. Deep Analysis & Critical Section
+      * **Objective Summary:** Provide a highly dense, scannable summary of the supporting arguments and data presented (aim for 300-400 words). Maintain strict objectivity (and keep it spoiler-free if it is entertainment content).
+      * **Critique Matrix:** Provide a balanced analysis detailing:
+        * Pros & Cons of the presented logic.
+        * Multi-perspective evaluation (e.g., practical, ethical, or educational validity).
+        * Science/data-backed counterarguments or validations where applicable.
+
+      ### 3. Execution Framework & Blind Spots
+      * **Actionable Flow:** Construct a step-by-step sequential breakdown of the methodology or framework described. Order is critical.
+      * For each step, use the format: `[Step X: Title] -> [Core Action] -> [Visual Anchor Description]`.
+      * **The Pitfall:** Identify the single biggest operational blind spot or common point of failure when executing this framework, and detail exactly how to avoid it.
+
+      ### 4. Retention Aids & Success Metrics
+      * **Memory Anchors:** Provide explicit mnemonics or cognitive hooks to ensure long-term retention of the core concept.
+      * **Takeaway Metric:** Design a singular, definitive formula, KPI, or key takeaway metric derived from the video's logic to measure implementation success.
+
+      Output everything using clean Markdown headers for clear section hierarchy.
+    label: '[Prompts] YouTube Video Analyst (Deep Educational Synthesis & Frameworks)'
+    # You are an elite knowledge engineer and expert video analyst. Your primary goal is to fetch, analyze, and transform YouT
+    search_terms:
+      - prompts
+
+  - trigger: :p-systems
+    replace: |
+      “I want more insight into my profile according to [choose one or several systems: astrology, Jungian archetypes, Human Design, or Myers-Briggs (MBTI)].
+      Here are my details or profiles: [birth date, birth time, birthplace for astrology], [my Human Design profile], [my MBTI type or other systems]. Can you explain what this means and how I can practically apply it in my life and work?
+      If I don't know my profile yet: can you, based on my character and lifestyle, guess which profile likely fits me best, or ask me specific questions to figure this out together?
+      You can also combine multiple systems for even deeper insight. “Can you merge all of this into one integrated personal image and explain the common thread?””
+    label: '[Prompts] Multi-System Profile Analysis (Synthesize Personality Typologies & Frameworks)'
+    # “I want more insight into my profile according to [choose one or several systems: astrology, Jungian archetypes, Human D
+    search_terms:
+      - prompts
+

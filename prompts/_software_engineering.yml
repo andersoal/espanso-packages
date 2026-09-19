@@ -1,0 +1,240 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: :oscode
+    replace: |
+      You are a Senior Systems Architect and Pragmatic Code Builder.
+      Analyze the requirements completely before writing a single line of code.
+      Prioritize type safety, edge-case validation, and performance hygiene.
+      Provide fully realized code blocks; do not truncate with placeholders.
+    label: '[Prompts] Systems Architect & Pragmatic Builder (Engineering OS Persona)'
+    # You are a Senior Systems Architect and Pragmatic Code Builder.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-refactor
+    form: |
+      Review the following [[language]] code snippet. Refactor it for [[criterion]].
+
+      Return:
+      - Optimized code (fully rewritten if needed)
+      - Step-by-step explanation of all logic changes
+      - Identification of potential bugs or edge cases
+      - A dry-run test case simulation showing input -> output to validate no regressions occur
+
+      Code:
+      [[code]]
+    form_fields:
+      language:
+        default: Python
+      criterion:
+        type: choice
+        values:
+          - Performance
+          - Readability
+          - Security
+          - Performance / Readability / Security
+      code:
+        multiline: true
+    label: '[Prompts] Targeted Code Refactor (Optimize for Readability Performance & Clean Design)'
+    # Review the following  code snippet. Refactor it for .
+    search_terms:
+      - prompts
+
+  - trigger: :ai-mvp
+    form: |
+      Act like a senior full-stack engineer building a production-ready startup MVP from scratch.
+      The core tech stack is: [[tech_stack]].
+
+      First design the complete system architecture, then build the most minimal but scalable version possible.
+
+      Include:
+      • System architecture
+      • File structure
+      • Database schema
+      • API endpoints
+      • UI architecture
+      • Production-ready code
+
+      Build it like a real startup that could scale to millions of users.
+    form_fields:
+      tech_stack:
+        default: Next.js, TypeScript, PostgreSQL, Prisma, Tailwind
+    label: '[Prompts] Full-Stack MVP Engineer (Production Starter Architecture & API Specs)'
+    # Act like a senior full-stack engineer building a production-ready startup MVP from scratch.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-audit
+    form: |
+      Act like a senior engineer who just joined a massive unfamiliar codebase. First reverse-engineer the architecture and understand the complete data flow.
+
+      Then identify:
+      • Bad architecture decisions
+      • Duplicate logic
+      • Performance bottlenecks
+      • Scalability risks
+      • Maintainability issues
+
+      Finally provide:
+      • A clean architecture breakdown
+      • Critical problem areas
+      • Refactoring strategies
+      • Improved production-grade code
+
+      Do not change functionality.
+      Only upgrade the code quality, scalability, and maintainability.
+    form_fields: {}
+    label: '[Prompts] Codebase Audit Engineer (Map Unfamiliar Architecture & Technical Debt)'
+    # Act like a senior engineer who just joined a massive unfamiliar codebase. First reverse-engineer the architecture and un
+    search_terms:
+      - prompts
+
+  - trigger: :ai-debug
+    form: |
+      Act like a senior debugging engineer investigating a live production issue. Analyze the codebase step by step like you're handling a critical outage at a fast-growing startup. Your job:
+
+      • Understand what the code actually does
+      • Trace the real root cause
+      • Explain why the failure happens
+      • Identify hidden edge cases
+      • Propose the most robust fix possible
+
+      Finally provide:
+      • Code functionality breakdown
+      • Root cause analysis
+      • Failure explanation
+      • Edge case analysis
+      • Fixed production-ready code Do not guess.
+      Think deeply before making changes.
+    form_fields: {}
+    label: '[Prompts] Production Debugging Specialist (Root Cause Investigation & Bug Isolation)'
+    # Act like a senior debugging engineer investigating a live production issue. Analyze the codebase step by step like you'r
+    search_terms:
+      - prompts
+
+  - trigger: :ai-perf
+    form: |
+      Act like a senior performance engineer optimizing a production application used by millions of users.
+
+      Your goals:
+      • Maximum speed
+      • Lower memory usage
+      • Better scalability
+      • Faster rendering
+      • Cleaner execution
+
+      Carefully identify:
+      • Performance bottlenecks
+      • Inefficient logic
+      • Unnecessary rendering
+      • Expensive operations
+      • Memory leaks
+
+      Then provide:
+      • Performance issue breakdown
+      • Optimization strategies
+      • Improved production-ready code
+      • Scalability recommendations
+
+      Optimize the code like you're preparing it for massive traffic.
+    form_fields: {}
+    label: '[Prompts] Performance Optimization Engineer (Latency Profiling & Memory Footprint Tuning)'
+    # Act like a senior performance engineer optimizing a production application used by millions of users.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-rebuild
+    form: |
+      Act like a senior software architect rebuilding a messy production codebase using clean architecture principles.
+
+      Your mission:
+      • Separate concerns properly
+      • Increase modularity
+      • Reduce tight coupling
+      • Improve scalability
+      • Make the codebase easier to maintain long term
+
+      Do NOT change the product behavior. Only improve the architecture and code quality.
+
+      Finally provide:
+      • New folder structure
+      • Clean architecture breakdown
+      • Refactored production-grade code
+      • Explanation of architectural improvements
+
+      Refactor it like a real senior engineer preparing the codebase to scale.
+    form_fields: {}
+    label: '[Prompts] Codebase Architecture Rebuilder (Decouple Monoliths & Enforce Boundaries)'
+    # Act like a senior software architect rebuilding a messy production codebase using clean architecture principles.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-backend
+    form: |
+      Act like a senior systems architect designing infrastructure for a high-growth startup. First design a scalable production-grade system architecture. Then build the minimal implementation that could realistically scale in the future.
+
+      Include:
+      • System architecture
+      • Component structure
+      • Data flow
+      • API design
+      • Database schema
+      • Caching strategy
+      • Production-ready implementation code
+
+      Optimize for scalability, maintainability, and real-world production usage.
+    form_fields: {}
+    label: '[Prompts] Systems Backend Architect (Distributed Systems Resiliency & Data Models)'
+    # Act like a senior systems architect designing infrastructure for a high-growth startup. First design a scalable producti
+    search_terms:
+      - prompts
+
+  - trigger: :ai-frontend
+    form: |
+      Act like a senior frontend engineer building production-grade UI systems for a modern startup.
+      The styling system/framework context: [[ui_context]].
+
+      Your task is to create:
+      • Reusable UI components
+      • Scalable component architecture
+      • Accessible production-ready interfaces
+
+      While building, carefully handle:
+      • Loading states
+      • Empty states
+      • Edge cases
+      • Responsive design
+      • Accessibility
+      • Component reusability
+      • Clean developer experience
+
+      Finally provide:
+      • Component architecture
+      • Props/API design
+      • Production-ready implementation
+      • Usage examples
+      • Best practices
+
+      Build it like it's going into a real production app used by millions.
+    form_fields:
+      ui_context:
+        default: React, Tailwind CSS, Radix UI (Accessible components)
+    label: '[Prompts] Senior Frontend Engineer (Component Architecture State & UX Polish)'
+    # Act like a senior frontend engineer building production-grade UI systems for a modern startup.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-connect
+    form: |
+      I have two projects: [[project_a]] and [[project_b]]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration.
+    form_fields:
+      project_a:
+        default: Core Engine / API Gateway
+      project_b:
+        default: Consumer Module
+    label: '[Prompts] Multi-Project Bridge (Map Synergies & Cross-Pollination Between Codebases)'
+    # I have two projects:  and . Load both codebases. Find how they should integrate, which API endpoints to create, shared d
+    search_terms:
+      - prompts
+

@@ -1,0 +1,3236 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - regex: :as\((?P<role>[^,]+),(?P<topic>.*)\)
+    replace: Act as an expert {{role}}. Write a comprehensive breakdown detailing {{topic}}.
+    label: '[Prompts] Expert Persona Breakdown (Role & Topic Detailed Analysis)'
+    # Act as an expert {{role}}. Write a comprehensive breakdown detailing {{topic}}.
+    search_terms:
+      - prompts
+
+  - trigger: :pca-custom
+    form: |
+      Create a clean, elegant personal color analysis infographic based on this portrait. Place the person's face on the left side in a soft rounded frame, keeping their natural features, skin tone, and lighting realistic without altering identity. Automatically analyze their undertone (cool, warm, or neutral), contrast level, and overall coloring, then assign a suitable seasonal type (such as Cool Winter, Warm Autumn, Soft Summer, or Clear Spring). Use this analysis to generate a short statement like “You glow in [undertone + color characteristic] colors,” along with a few concise bullet points describing undertone, contrast, best color intensity, jewelry preference, and ideal neutrals.
+
+      On the right side, design a structured infographic layout with clear sections. Include a Makeup Color Palette featuring foundation tones, blush, eyeshadow, highlight, and lipstick shades that harmonize with the subject's coloring, plus a small “avoid” section for clashing tones. Add a Clothing Color Palette with organized color grids (neutrals from light to dark, main colors, accent colors, and avoid tones), as well as recommended metallics. Provide simple visual examples of outfits categorized into “Best,” “Good,” and “Avoid,” using faceless models or minimal fashion illustrations.
+
+      Complete the infographic with a Glasses Guide showing suitable frame shapes based on face shape and recommended colors based on undertone, including a small diagram. Add a short Overall Look Vibe section describing the ideal style direction (e.g., fresh, bold, soft, high contrast).
+
+      Maintain a [[aesthetic]] aesthetic with a [[background]] background, clean modern typography, balanced spacing, rounded elements, and subtle shadows. Ensure the final result is visually polished, cohesive, and high resolution, suitable for Pinterest or professional branding.
+    form_fields:
+      aesthetic:
+        default: minimalist, high-end beauty magazine
+      background:
+        default: soft neutral (beige or light gray)
+    label: '[Prompts] Color Analysis Infographic (Aesthetic & Seasonal Palette)'
+    # Create a clean, elegant personal color analysis infographic based on this portrait. Place the person's face on the left
+    search_terms:
+      - prompts
+
+  - trigger: :p-deeper
+    replace: Think it through step by step before answering, don't give me your first instinct.
+    label: '[Prompts] Deep Reasoning (Step-by-Step Thinking & Reflection)'
+    # Think it through step by step before answering, don't give me your first instinct.
+    search_terms:
+      - prompts
+
+  - trigger: :p-noyes
+    replace: Stop agreeing by default, tell me where I'm wrong and what the strongest counterargument is.
+    label: '[Prompts] Counterargument Pushback (Devil''s Advocate & Blindspots)'
+    # Stop agreeing by default, tell me where I'm wrong and what the strongest counterargument is.
+    search_terms:
+      - prompts
+
+  - trigger: :p-give3
+    replace: Give me three genuinely different versions, not three rewordings of the same one.
+    label: '[Prompts] Diverse Alternatives (3 Radically Different Approaches)'
+    # Give me three genuinely different versions, not three rewordings of the same one.
+    search_terms:
+      - prompts
+
+  - trigger: :p-table
+    replace: Take whatever messy information is here and lay it out as a clean comparison table.
+    label: '[Prompts] Comparison Table Formatter (Structured Dimensions & Rows)'
+    # Take whatever messy information is here and lay it out as a clean comparison table.
+    search_terms:
+      - prompts
+
+  - trigger: :qfound
+    form: |
+      I need to research [[topic]]. Before we dive in, help me build a solid foundation:
+
+      1. What are the 5 core concepts I must understand first?
+      2. What common misconceptions exist about this topic?
+      3. What's the current expert consensus vs. emerging debates?
+      4. What questions should I be asking that I'm not?
+
+      Deliver this as a highly structured breakdown using Markdown headers, bold key terms, and a comparative table for consensus vs. debates to ensure deep conceptual parsing.
+    form_fields:
+      topic:
+        default: ''
+    label: '[Prompts] Research Foundation Form (Core Concepts & Assumptions)'
+    # I need to research . Before we dive in, help me build a solid foundation:
+    search_terms:
+      - prompts
+
+  - regex: :qfound\((?P<topic>.*)\)
+    replace: |
+      I need to research {{topic}}. Before we dive in, help me build a solid foundation:
+
+      1. What are the 5 core concepts I must understand first?
+      2. What common misconceptions exist about this topic?
+      3. What's the current expert consensus vs. emerging debates?
+      4. What questions should I be asking that I'm not?
+
+      Deliver this as a highly structured breakdown using Markdown headers, bold key terms, and a comparative table for consensus vs. debates to ensure deep conceptual parsing.
+    label: '[Prompts] Research Foundation (Core Concepts & Assumptions)'
+    # I need to research {{topic}}. Before we dive in, help me build a solid foundation:
+    search_terms:
+      - prompts
+
+  - trigger: :pmult
+    form: |
+      Based on the foundation we just built, analyze "[[question]]" from these 5 perspectives:
+
+      1. A skeptic who thinks this won't work
+      2. An expert practitioner with 10+ years experience
+      3. A beginner encountering this for the first time
+      4. Someone who tried and failed at this
+      5. A researcher looking at data, not opinions
+
+      For each perspective, give me their strongest argument and evidence. Present the final response with distinct Markdown headers for each persona to ensure strict structural readability.
+    label: '[Prompts] Multi-Perspective Analysis Form (5 Diverse Angles)'
+    # Based on the foundation we just built, analyze "" from these 5 perspectives:
+    search_terms:
+      - prompts
+
+  - regex: :pmult\((?P<question>.*)\)
+    replace: |
+      Based on the foundation we just built, analyze "{{question}}" from these 5 perspectives:
+
+      1. A skeptic who thinks this won't work
+      2. An expert practitioner with 10+ years experience
+      3. A beginner encountering this for the first time
+      4. Someone who tried and failed at this
+      5. A researcher looking at data, not opinions
+
+      For each perspective, give me their strongest argument and evidence. Present the final response with distinct Markdown headers for each persona to ensure strict structural readability.
+    label: '[Prompts] Multi-Perspective Analysis (5 Diverse Angles)'
+    # Based on the foundation we just built, analyze "{{question}}" from these 5 perspectives:
+    search_terms:
+      - prompts
+
+  - trigger: :gapform
+    form: |
+      Looking at those [[count]] perspectives we just explored, now identify:
+
+      1. What critical information is missing from ALL perspectives?
+      2. What assumptions are they making that could be wrong?
+      3. What questions remain unanswered?
+      4. What data would we need to validate or reject each viewpoint?
+      5. Where do the perspectives contradict each other - and why?
+
+      Highlight the gaps in our current understanding.
+    form_fields:
+      count:
+        default: '5'
+    label: '[Prompts] Multi-Perspective Gap Form (Custom Perspective Count)'
+    # Looking at those  perspectives we just explored, now identify:
+    search_terms:
+      - prompts
+
+  - trigger: :chain4
+    word: true
+    replace: |
+      Take the gaps we identified. For each gap, help me research deeper:
+
+      1. What would an expert study or investigate to fill this gap?
+      2. What methodologies or frameworks apply here?
+      3. What real-world examples or case studies exist?
+      4. What are the leading theories or models that address this?
+      5. Create a research roadmap: What should I explore first, second, third?
+
+      Give me a structured deep-dive plan with specific next steps.
+    label: '[Prompts] Gap Deep Dive (Root Causes & Open Questions)'
+    # Take the gaps we identified. For each gap, help me research deeper:
+    search_terms:
+      - prompts
+
+  - trigger: :c4clip
+    replace: |
+      We are focusing on these specific identified gaps:
+      ---
+      {{copied_gaps}}
+      ---
+
+      For each gap detailed above, help me research deeper:
+      1. What would an expert study or investigate to fill this gap?
+      2. What methodologies or frameworks apply here?
+      3. What real-world examples or case studies exist?
+      4. What are the leading theories or models that address this?
+      5. Create a research roadmap: What should I explore first, second, third?
+
+      Give me a structured deep-dive plan with specific next steps.
+    vars:
+      - name: copied_gaps
+        type: clipboard
+    label: '[Prompts] Clipboard Gap Analysis (Focused Investigation)'
+    # We are focusing on these specific identified gaps:
+    search_terms:
+      - prompts
+
+  - trigger: ;c4form
+    form: |
+      We are analyzing the following identified architecture/system gaps:
+      [[target_gaps]]
+
+      For each gap, help me research deeper:
+      1. What would an expert study or investigate to fill this gap?
+      2. What methodologies or frameworks apply here?
+      3. What real-world examples or case studies exist?
+      4. What are the leading theories or models that address this?
+      5. Create a research roadmap: What should I explore first, second, third?
+
+      Give me a structured deep-dive plan with specific next steps.
+    form_fields:
+      target_gaps:
+        multiline: true
+    label: '[Prompts] Targeted Gap Form (Architecture & System Weaknesses)'
+    # We are analyzing the following identified architecture/system gaps:
+    search_terms:
+      - prompts
+
+  - trigger: ;chain5-of-6-run-after-4
+    triggers:
+      - :synth
+    form: |
+      We've built foundation, explored perspectives, identified gaps, and done deep research. Now synthesize everything[[extra_context]]:
+
+      1. What are the [[insight_count]] most important insights from our entire conversation?
+      2. How do all the pieces connect? Draw the big picture.
+      3. What would I be confident saying is true vs. what's still uncertain?
+      4. If I had to explain this to someone in 2 minutes, what would I say?
+      5. What's my action plan based on everything we've learned?
+
+      Create a clear, actionable summary of our entire chain.
+    form_fields:
+      insight_count:
+        default: '3'
+      extra_context:
+        default: ''
+    label: '[Prompts] Synthesis & Action Chain (Synthesize Gaps Into Action Steps)'
+    # We''ve built foundation, explored perspectives, identified gaps, and done deep research. Now synthesize everything:
+    search_terms:
+      - prompts
+
+  - trigger: '|qualitycheck'
+    replace: |
+      Review everything we've discussed in this conversation. Now quality-check our work:
+
+      1. What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)
+      2. What counterarguments haven't we fully considered?
+      3. Rate the confidence level of each major claim (High/Medium/Low)
+      4. What would make this analysis stronger?
+      5. If an expert criticized our conclusions, what would they say?
+
+      Be brutally honest. Poke holes in our own work.
+    label: '[Prompts] Comprehensive Quality Check (Logic Evidence & Weaknesses)'
+    # Review everything we''ve discussed in this conversation. Now quality-check our work:
+    search_terms:
+      - prompts
+
+  - trigger: '|qc'
+    replace: |
+      Please quality-check the previous analysis based on the following points:
+      - Biases check (e.g., confirmation, recency, etc.).
+      - Review of counterarguments we haven't fully considered.
+      - Confidence ratings (High/Medium/Low) for each major claim.
+      - Identification of specific expert criticisms.
+    label: '[Prompts] Quick Quality Check (Premises Claims & Missing Context)'
+    # Please quality-check the previous analysis based on the following points:
+    search_terms:
+      - prompts
+
+  - trigger: '|quality'
+    word: true
+    replace: |
+      "Review everything we've discussed in this conversation. Now quality-check our work:
+
+      Be brutally honest. Poke holes in our own work."
+    label: '[Prompts] Deep Quality Review (Assumptions Biases & Coherence)'
+    # Review everything we''ve discussed in this conversation. Now quality-check our work:
+    search_terms:
+      - prompts
+
+  - trigger: '|biascheck'
+    replace: What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)
+    label: '[Prompts] Bias & Blindspot Audit (Confirmation Recency & Framing)'
+    # What biases might exist in our analysis? (Confirmation bias, recency bias, etc.)
+    search_terms:
+      - prompts
+
+  - trigger: '|counterarg'
+    replace: What counterarguments haven't we fully considered?
+    label: '[Prompts] Counterargument Audit (Strongest Opposing Perspectives)'
+    # What counterarguments haven't we fully considered?
+    search_terms:
+      - prompts
+
+  - triggers:
+      - :expert-crit
+      - :what-if-expert
+    replace: If an expert criticized our conclusions, what would they say?
+    label: '[Prompts] Expert Critique Simulation (Skeptical Domain Specialist)'
+    # If an expert criticized our conclusions, what would they say?
+    search_terms:
+      - prompts
+
+  - triggers:
+      - :confidence
+      - :rate
+    replace: Rate the confidence level of each major claim (High/Medium/Low)
+    label: '[Prompts] Confidence Level Scoring (High/Medium/Low Claim Audit)'
+    # Rate the confidence level of each major claim (High/Medium/Low)
+    search_terms:
+      - prompts
+
+  - trigger: :p-premortem-decision
+    form: |
+      You are a strategic advisor who specializes in pre-mortem analysis and decision stress-testing.
+
+      Context: I am about to make a significant business decision. Before committing, I want to pressure-test it from every angle.
+
+      Task: Run a full decision audit on the choice below. Argue both sides with equal force. Then identify the three assumptions my decision depends on that, if wrong, would make it a mistake.
+
+      Decision: [[decision]]
+
+      Format: (1) Case FOR — 4 strongest arguments. (2) Case AGAINST — 4 strongest arguments. (3) Three critical assumptions I'm making. (4) One question I haven't asked that I should.
+
+      Constraints: Do not tell me what to do. Do not soften either side. Your job is clarity, not comfort.
+    form_fields:
+      decision:
+        multiline: true
+        default: Describe the decision and your current lean here...
+    label: '[Prompts] Strategic Advisor Pre-Mortem (Decision Vulnerabilities & Mitigations)'
+    # You are a strategic advisor who specializes in pre-mortem analysis and decision stress-testing.
+    search_terms:
+      - prompts
+
+  - trigger: :p-bottleneck
+    form: |
+      You are a business systems analyst specializing in constraint theory and throughput optimization.
+
+      Context: My business is generating activity but not converting it to revenue at the rate it should. Something is the constraint — I may not be seeing it clearly.
+
+      Task: Analyze my business flow below and identify the single constraint that, if removed, would have the highest downstream impact on revenue. Do not give me a list of problems. Give me the one.
+
+      My current flow: [[flow]]
+
+      Format: (1) Identified constraint — one sentence. (2) Why this is the constraint, not a symptom. (3) Three actions to break it, ranked by speed of impact.
+
+      Constraints: No generic advice. If you don't have enough data, ask one specific question to get it.
+    form_fields:
+      flow:
+        multiline: true
+        default: Describe the flow cycle here...
+    label: '[Prompts] Constraint Bottleneck Analyst (Theory of Constraints Audit)'
+    # You are a business systems analyst specializing in constraint theory and throughput optimization.
+    search_terms:
+      - prompts
+
+  - trigger: :ko-step2-spec
+    form: |
+      I have uploaded the project PowerPoint.
+
+      Produce a KO specification for the project: "[[project_name]]".
+
+      This is a [[focus]] project.
+
+      Perform the following workflow:
+      1. Analyse the project PowerPoint.
+      2. Extract vocabulary, formal elements, and techniques.
+      3. Identify authentic images.
+      4. Produce a proposed panel structure.
+    form_fields:
+      project_name:
+        default: Untitled Project
+      focus:
+        type: choice
+        values:
+          - Artist-led (Prioritize Artist knowledge, artworks, and methods)
+          - Technique-led (Prioritize Context, Techniques, and Process knowledge)
+    label: '[Prompts] Knowledge Organiser Step 2: Spec (Project Scope & Focus Definition)'
+    # I have uploaded the project PowerPoint.
+    search_terms:
+      - prompts
+
+  - trigger: :ko-step3-generate
+    replace: |
+      Before generating the final knowledge organiser image, present the PRE-GENERATION APPROVAL LOCK CHECKLIST.
+
+      List out for my approval:
+      * Exact title text
+      * Panel titles & order
+      * Key vocabulary & Required images
+      * Retrieval questions
+
+      Do not generate the KO until I approve this list.
+      Once approved, perform a final Quality Check ensuring every section teaches knowledge and instructional content is removed, then generate the final output.
+    label: '[Prompts] Knowledge Organiser Step 3: Generate (Final Visual Layout)'
+    # Before generating the final knowledge organiser image, present the PRE-GENERATION APPROVAL LOCK CHECKLIST.
+    search_terms:
+      - prompts
+
+  - trigger: :brainstorm
+    form: |
+      1.) My problem:
+      You are a professional [[define_role]]. I have a problem I need you to solve. I need you to [[problem_here]]. By the end of this cycle, we should be left with one winner.
+
+      2.) Brainstorming solutions:
+      Now that you understand the problem I am dealing with, I need you to brainstorm 3 solutions for addressing this problem. When providing these solutions, think about why you selected each one and list 3 components or factors that went into choosing that solution.
+
+      3.) Probability Evaluation:
+      For each solution listed, I now need you to evaluate their probability of success. When evaluating their success probability I want you to keep these factors in mind: Pros and cons of each solution, difficulty to perform, challenges, outcome expectations, the scope of the problem, who or what the problem is dealing with, and the impact of the solutions. Give each solution a success probability. This success probability can be measured by percentages of 1%-100%. Give reasoning on how you came to the percentage conclusion.
+
+      4.) Exclude Losers, Isolate Winner:
+      Now that we have these solutions to my problem, rated by percentage, I want to have the two solutions with the lowest percentages removed. Keep and write a condensed summary of the solution with the highest percentage only and list its probability of success once again. Then you need to start a brainstorming loop and run through this loop three times:
+
+      5.) Brainstorming Competitive Solutions:
+      Let me reiterate my problem once again: [[problem_here]] Now take a look at the winning solution you found. I need you to brainstorm two more winning ideas that could have potentially better results than our first winning solution at resolving my problem. When providing these 2 new solutions, provide 3 components that go into making that solution effective. Also, add our current winning solution within this list, so we have a total of 3 solutions. For now, just list the solutions and the 3 components that go into making it successful, don't worry about the probability evaluation for these 2 new ideas.
+
+      6.) Probability Evaluation:
+       For each solution listed, I now need you to evaluate their probability of success. When evaluating their success probability I want you to keep these factors in mind: Pros and cons of each solution, difficulty to perform, challenges, outcome expectations, the scope of the problem, who or what the problem is dealing with, and the impact of the solutions. Give each solution a success probability. This success probability can be measured by percentages of 1%-100%. Give reasoning on how you came to the percentage conclusion.
+
+      7.) Exclude Losers, Isolate Winner:
+       Now that we have these solutions to my problem, rated by percentage, I want to have the two solutions with the lowest percentages removed. Keep and write a summary of the solution with the highest percentage only and list its probability of success once again.
+
+      Repeat This Loop (steps 5-7) 3 times before arriving at a final answer.
+
+      Finally, give me the winning solution after all iterations of this loop and why you gave me this solution.
+    form_fields:
+      define_role:
+        multiline: false
+      problem_here:
+        multiline: true
+    label: '[Prompts] Role-Based Brainstorming (Structured Problem Exploration)'
+    # 1.) My problem:
+    search_terms:
+      - prompts
+
+  - trigger: :deeper-connection
+    form: Based on the research provided, tell me how [[x]] is so revolutionary when used with [[y]].
+    form_fields:
+      x:
+        multiline: false
+      y:
+        multiline: false
+    label: '[Prompts] Non-Obvious Connections (Synthesize Concept Intersections)'
+    # Based on the research provided, tell me how  is so revolutionary when used with .
+    search_terms:
+      - prompts
+
+  - trigger: :reasoning-explanation
+    replace: Explain to me how you came to the conclusion. Give me a sustainable understanding of why this works.
+    label: '[Prompts] Explain Reasoning (Decision Logic & Assumptions Breakdown)'
+    # Explain to me how you came to the conclusion. Give me a sustainable understanding of why this works.
+    search_terms:
+      - prompts
+
+  - trigger: :backcasting-analysis
+    form: |
+      Conduct a back casting analysis to create a strategic plan for achieving my desired future state. Please follow these steps:
+      Define the Desired Future State: Help me articulate a clear and specific vision of the future I want to create, including objectives and outcomes I seek. Here is a rough writing of my future state I would like to achieve:
+      [[desired_future_state]]
+      Current State Analysis: Assess the current state of my situation, highlighting existing conditions and challenges relevant to my future vision. Here is my current situation:
+      [[current_situation]]
+      Milestone Development: Identify key milestones along the timeline between the present and the future state.
+      Work Backwards to Create Pathways: Your job is to work backwards from the future state to the present before developing a plan, detailing the actions, strategies, and resources needed to reach each milestone.
+      Identify Necessary Conditions: In my action plan you are to give me conditions that must be met to ensure progression toward each milestone and the final vision.
+      Strategic Action Plan: After you run through all of these steps create a comprehensive action plan that starts from the present, including initiatives that align with the necessary conditions and milestones.
+      Run through this process before giving me an answer.
+    form_fields:
+      desired_future_state:
+        multiline: true
+      current_situation:
+        multiline: true
+    label: '[Prompts] Backcasting Strategy (Future Goal Reverse Roadmap)'
+    # Conduct a back casting analysis to create a strategic plan for achieving my desired future state. Please follow these st
+    search_terms:
+      - prompts
+
+  - trigger: :feedback-my-work-critique
+    form: |
+      You are an expert in environmental policy. I have written a position statement arguing that more regulation is needed in water use in a particular region. Read my statement and critique my argument, anticipating what policymakers and other interested parties might say in response to it.
+    label: '[Prompts] Expert Policy Critique (Adversarial Document Review)'
+    # You are an expert in environmental policy. I have written a position statement arguing that more regulation is needed in
+    search_terms:
+      - prompts
+
+  - trigger: :rigorous-mentor
+    replace: |
+      Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. Challenge ideas when needed. Be direct and clear, not harsh. Prioritize helping me improve over being agreeable. When you critique something, explain why and suggest a better alternative.
+    label: '[Prompts] Uncompromising Critical Mentor (Fierce Honesty & Flaw Detection)'
+    # Act as a rigorous, honest mentor. Do not default to agreement. Identify weakness, blind spots, and flawed assumptions. C
+    search_terms:
+      - prompts
+
+  - trigger: ;critique-brutal
+    form: |
+      Critique this text as if you were the person who most wants to see me fail. Be brutal.
+    label: '[Prompts] Adversarial Critique (Relentless Flaw & Weakness Audit)'
+    # Critique this text as if you were the person who most wants to see me fail. Be brutal.
+    search_terms:
+      - prompts
+
+  - trigger: ;analyse-situation
+    form: |
+      Analyze the situation and tell me what to do.
+    label: '[Prompts] Situation Analysis (Root Causes & Tactical Next Steps)'
+    # Analyze the situation and tell me what to do.
+    search_terms:
+      - prompts
+
+  - trigger: ;lawyer
+    form: |
+      Think like a lawyer and tell me what to do.
+    label: '[Prompts] Legal Risk Perspective (Protections Liabilities & Worst-Cases)'
+    # Think like a lawyer and tell me what to do.
+    search_terms:
+      - prompts
+      - lawyer
+      - legal
+
+  - trigger: ;decision-framework
+    form: |
+      Create a decision matrix to help me choose between [Option A] and [Option B]
+
+      | Criterion | Option A (Details) | Option B (Details) |
+      | :--- | :--- | :--- |
+      | **Costs** | Details here | Details here |
+      | **Benefits** | Details here | Details here |
+      | **Risk** | Details here | Details here |
+      | **Time** | Details here | Details here |
+      | **Reversibility** | Details here | Details here |
+      | **Impact** | Details here | Details here |
+      | **Scalability** | Details here | Details here |
+      | **Required Resources** | Details here | Details here |
+      | **Legal Compliance** | Details here | Details here |
+      | **Market Trends** | Details here | Details here |
+    label: '[Prompts] Decision Matrix (Multi-Criteria Evaluation Matrix)'
+    # Create a decision matrix to help me choose between [Option A] and [Option B]
+    search_terms:
+      - prompts
+      - decision
+      - matrix
+
+  - trigger: :pm
+    word: true
+    replace: |
+      PREMORTEM THIS.
+      Assume this plan has completely failed and collapsed. Do not validate or compliment the idea. Give me:
+      1. A realistic narrative of exactly how it played out and died.
+      2. The hidden or flawed assumptions that made this failure possible.
+      3. The subtle, early warning signs I need to watch out for.
+      4. Crucial revisions to close these gaps before execution.
+    label: '[Prompts] Quick Premortem (Identify Plausible Catastrophic Failures)'
+    # PREMORTEM THIS.
+    search_terms:
+      - prompts
+
+  - trigger: :pmform
+    form: |
+      Assume that the execution of our project/initiative—[[project_name]]—has completely failed. We are now in a post-mortem state, looking backward via prospective hindsight.
+
+      Focus heavily on vulnerabilities related to: [[focus_area]].
+
+      Deconstruct the failure into:
+      - The exact story of how the collapse occurred.
+      - The fatal assumptions made during planning.
+      - Early warning indicators to track immediately.
+      - The architectural/strategic revision required to seal the gap.
+    form_fields:
+      project_name:
+        default: Digital Transformation Initiative
+      focus_area:
+        type: choice
+        values:
+          - Architecture & Decoupling Strategy
+          - Timeline & Team Alignment
+          - Technical Debt & Legacy Systems
+          - Data Integrity & Governance
+    label: '[Prompts] Structured Premortem Form (Project Vulnerabilities & Safeguards)'
+    # Assume that the execution of our project/initiative——has completely failed. We are now in a post-mortem state, looking b
+    search_terms:
+      - prompts
+
+  - trigger: :mentor
+    replace: |
+      Act as a rigorous, fiercely honest mentor. Do not default to agreement, and drop all optimistic AI cheerleading. Your sole value is identifying structural weaknesses, blind spots, and deeply flawed assumptions in what I present.
+
+      Review the following content. Challenge my ideas directly and clearly without sugarcoating, but remain constructive. For every critique, you must explicitly explain *why* the current logic fails and suggest a concrete, optimized alternative.
+    label: '[Prompts] Fiercely Honest Mentor (Rigorous Logic & Flaw Detection)'
+    # Act as a rigorous, fiercely honest mentor. Do not default to agreement, and drop all optimistic AI cheerleading. Your so
+    search_terms:
+      - prompts
+
+  - trigger: :idea-engine
+    form: |
+      # System: The Evolutionary Idea Engine
+
+      You are an autonomous, adversarial research agent. Your goal is to uncover highly novel, unconventional, and breakthrough ideas regarding [INSERT PURPOSE / TOPIC HERE] that bypass standard human consensus and superficial thinking.
+
+      You must execute a 3-generation iterative evolution cycle completely in your own "thoughts" before delivering your final output. Do not ask the user for input during this process. Think for yourself.
+
+      ---
+
+      ### Execution Protocol
+
+      For the chosen topic, you must execute and display the following four distinct phases:
+
+      #### Phase 1: Generation 1 (The Consensus Base)
+      1. Brainstorm 3 distinct ideas or research questions about the topic.
+      2. *Constraint*: These should represent high-quality "expert consensus"—what the smartest humans in this field currently preach.
+
+      #### Phase 2: Adversarial Critique & Blind-Spot Audit
+      1. Audit Generation 1 brutally.
+      2. Identify the hidden, flawed assumptions, intellectual blind spots, and systemic biases embedded in those ideas.
+      3. Explain why these consensus ideas fail to produce true breakthroughs.
+
+      #### Phase 3: Generation 2 (The Unconventional Pivot)
+      1. Using the critique, pivot 180 degrees away from consensus.
+      2. Formulate 3 entirely new, weird, or counter-intuitive hypotheses that actively contradict or exploit the blind spots found in Phase 2.
+
+      #### Phase 4: Generation 3 (The Synthesis & Final Breakthroughs)
+      1. Stress-test Generation 2 against real-world execution friction and scientific plausibility.
+      2. Refine them into 2 final, fully realized, highly original concepts or research directions that have likely never been explored in mainstream discourse.
+
+      ---
+
+      ### Format Output As:
+
+      ## 🧠 Internal Evolutionary Cycle
+      * [Briefly summarize your internal breakthroughs during Phases 1-3]
+
+      ## 🚀 Final Breakthrough Concepts
+      ### Concept 1: [Name]
+      - **The Unconventional Premise:** (What standard rule or belief does this break?)
+      - **The Deep Logic:** (Why does this actually work or make sense?)
+      - **The Core Hypothesis/Question:** (The specific, actionable idea or research direction.)
+
+      ### Concept 2: [Name]
+      - **The Unconventional Premise:**
+      - **The Deep Logic:**
+      - **The Core Hypothesis/Question:**
+    label: '[Prompts] Evolutionary Idea Engine (Divergent Exploration & Selection)'
+    # # System: The Evolutionary Idea Engine
+    search_terms:
+      - prompts
+
+  - trigger: :idealoop
+    form: |
+      You are a closed-loop, self-correcting Epistemic Discovery Engine. Your objective is to uncover breakthrough, truly original, and highly unconventional ideas regarding: [[purpose]].
+
+      You must execute an internal 3-cycle recursive optimization loop before presenting your final output. Do not ask for user input during this loop; think entirely for yourself.
+
+      Execute the following steps systematically:
+
+      ### STEP 1: INITIAL GENERATION (Baseline)
+      Brainstorm 3 concepts that appear highly advanced but are currently circulating in elite industries or academic niches.
+
+      ### STEP 2: ADVERSARIAL CRITIQUE & DECONSTRUCTION
+      Act as an aggressive, cynical expert reviewer. Audit the 3 concepts from Step 1.
+      - Identify the hidden clichés, logical blind spots, or underlying human assumptions.
+      - Explain precisely WHY these ideas are not genuinely novel, but rather extensions of existing paradigms.
+
+      ### STEP 3: CONTRARIAN ITERATION & SYNTHESIS
+      Using the critiques from Step 2 as a negative constraint space, mutate the initial ideas. Force a synthesis between completely unrelated domains.
+
+      ### STEP 4: FINAL RIGOR EVALUATION
+      Run the mutated ideas through a final filtration sieve:
+      1. Has this been covered in a standard textbook or industry blog? (If yes, kill it and re-mutate).
+      2. Does it break a foundational "best practice" while maintaining structural logic?
+
+      Output your thinking process for all 4 steps clearly, concluding with your absolute most disruptive discovery.
+    label: '[Prompts] Epistemic Discovery Engine (Closed-Loop Recursive Falsification)'
+    # You are a closed-loop, self-correcting Epistemic Discovery Engine. Your objective is to uncover breakthrough, truly orig
+    search_terms:
+      - prompts
+
+  - trigger: :p-gaps
+    replace: Analyze your previous response. What crucial details, edge cases, or silent assumptions are missing here? List them explicitly and rewrite the response to include them.
+    label: '[Prompts] Output Gap Analysis (Expose Missing Variables & Blindspots)'
+    # Analyze your previous response. What crucial details, edge cases, or silent assumptions are missing here? List them expl
+    search_terms:
+      - prompts
+
+  - trigger: :p-critique
+    replace: |
+      Critique your own previous output rigorously.
+      Identify:
+      1. Weak points or logical gaps.
+      2. Blind spots or biased assumptions.
+      3. Overly verbose or superficial explanations.
+      Then, provide an improved version based on your own critique.
+    label: '[Prompts] Self-Critique Prompt (Rigorous Output Review & Revision)'
+    # Critique your own previous output rigorously.
+    search_terms:
+      - prompts
+
+  - trigger: :p-audience
+    form: |
+      Rewrite the text below for a [[audience]] audience.
+      Adjust the complexity, vocabulary, and technical depth accordingly while keeping the core insights intact.
+
+      Text:
+      [[text]]
+    form_fields:
+      audience:
+        type: choice
+        values:
+          - non-technical business stakeholder
+          - junior developer looking for clear patterns
+          - highly academic peer reviewer
+      text:
+        multiline: true
+    label: '[Prompts] Audience Style Adapter (Rewrite for Specific Target Audience)'
+    # Rewrite the text below for a  audience.
+    search_terms:
+      - prompts
+
+  - trigger: :p-contrast
+    replace: Provide the counter-argument or opposite perspective to the scenario described above. Challenge the baseline assumptions and explain where this logic would fail.
+    label: '[Prompts] Contrarian Perspective (Devil''s Advocate Counter-Position)'
+    # Provide the counter-argument or opposite perspective to the scenario described above. Challenge the baseline assumptions
+    search_terms:
+      - prompts
+
+  - trigger: :p-init
+    form: |
+      I am planning to [[task]].
+      Before you generate any execution blocks or deep dives, ask me any clarifying questions, missing context, or constraints you need resolved to deliver an optimal result.
+      Do you have any questions before starting?
+    label: '[Prompts] Project Kickoff Clarifier (Prerequisites Tradeoffs & Next Steps)'
+    # I am planning to .
+    search_terms:
+      - prompts
+
+  - trigger: :crit
+    form: |
+      Analyze this concept under strict adversarial rules. Do not use conversational filler ("Great question!"). Point out structural flaws first, declare your assumptions clearly, and hold your ground if my constraints are broken.
+
+      Focus Area: [[focus]]
+      Concept to Audit: [[concept]]
+    form_fields:
+      focus:
+        type: choice
+        values:
+          - Architecture & Systems Design
+          - Logical Fallacies & Flawed Assumptions
+          - Edge Cases & Error Handling
+          - General Code Optimization
+      concept:
+        multiline: true
+    label: '[Prompts] Adversarial Logic Tear-Down (Vulnerabilities Fallacies & Stress Tests)'
+    # Analyze this concept under strict adversarial rules. Do not use conversational filler ("Great question!"). Point out str
+    search_terms:
+      - prompts
+
+  - trigger: :parchitect
+    form: |
+      My goal is not to learn [[skill]]. My goal is to achieve [[outcome]].
+      Create a 7-day plan. 45 minutes per day.
+
+      Tell me exactly:
+      • what to do
+      • how to validate
+      • what NOT to study
+    form_fields:
+      skill:
+        default: ''
+      outcome:
+        default: ''
+    label: '[Prompts] 7-Day Outcome Sprint (Outcome-Driven Execution Schedule)'
+    # My goal is not to learn a skill, but to achieve a concrete outcome in 7 days.
+    search_terms:
+      - prompts
+      - learning
+      - sprint
+
+  - trigger: :ppredict
+    replace: 'Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and the decision I''m most likely to make next in my life. Tell me how confident you are in each one and what in my behavior it''s based on.'
+    label: '[Prompts] Behavioral Prediction Engine (Simulate Reactions & Decisions)'
+    # Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and th
+    search_terms:
+      - prompts
+
+  - trigger: :eli5
+    replace: |
+      Simplify the following complex information for a beginner/ELI5 audience:
+
+      {{clip}}
+    vars:
+      - name: clip
+        type: clipboard
+    label: '[Prompts] ELI5 Explainer (Explain Like I''m Five Simple Concepts)'
+    # Simplify the following complex information for a beginner/ELI5 audience:
+    search_terms:
+      - prompts
+
+  - trigger: :proscons
+    replace: 'Evaluate and list the advantages (pros) and disadvantages (cons) of: '
+    label: '[Prompts] Pros and Cons Evaluator (Balanced Advantage & Risk Analysis)'
+    # Evaluate and list the advantages (pros) and disadvantages (cons) of:
+    search_terms:
+      - prompts
+
+  - trigger: :gaps
+    replace: Review the preceding information and explicitly point out any missing, incomplete, or hidden gaps in the data.
+    label: '[Prompts] Completeness Audit (Identify Missing Facts & Hidden Nuance)'
+    # Review the preceding information and explicitly point out any missing, incomplete, or hidden gaps in the data.
+    search_terms:
+      - prompts
+
+  - trigger: :djlog
+    form: |
+      ROLE
+      You are my decision advisor. Your job is to
+      slow me down, surface what I cannot see,
+      and force clarity before I commit to anything.
+
+      TASK
+      I am about to make a decision. Help me think
+      through it clearly across 4 sections:
+
+      SECTION 1 — WHAT AM I ACTUALLY DECIDING?
+      - Restate my decision in one clean sentence.
+      - What are the real options I am choosing between?
+        List every option including doing nothing.
+      - What is the actual deadline — and is it real
+        or am I creating artificial urgency?
+
+      SECTION 2 — WHAT DO I KNOW VS ASSUME?
+      - What facts do I actually have?
+      - What am I assuming that could be wrong?
+      - What information am I missing that would
+        change this decision if I had it?
+      - What would I need to believe for this to
+        be a good decision?
+
+      SECTION 3 — WHAT IS DRIVING THIS?
+      - Am I deciding from logic or emotion right now?
+      - What is the fear behind the cautious option?
+      - What is the desire behind the bold option?
+      - If my best friend described why I made this
+        decision, what would they say?
+
+      SECTION 4 — THE PRE-MORTEM
+      - If this goes wrong in 1 year, what was the
+        most likely reason?
+      - If this goes right in 1 year, what made it work?
+      - What is the worst realistic outcome — and
+        can I live with it?
+
+      End with: a one-paragraph summary of what I
+      actually know, what I am assuming, and the
+      single most important question I have not
+      answered yet.
+
+      My decision: [[decision_details]]
+    form_fields:
+      decision_details:
+        multiline: true
+    label: '[Prompts] Decision Journal Logger (Context Assumptions & Counterfactuals)'
+    # ROLE
+    search_terms:
+      - prompts
+
+  - trigger: :djreview
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are my decision reviewer. Your job is to
+      help me learn from what happened — not justify
+      what I did or make me feel better about it.
+
+      TASK
+      Review this decision now that I can see the outcome:
+
+      SECTION 1 — WHAT ACTUALLY HAPPENED?
+      - What was the outcome — in plain honest terms?
+      - Did it match what I predicted when I logged it?
+      - What surprised me most about the result?
+
+      SECTION 2 — WHERE DID MY THINKING BREAK DOWN?
+      - Which assumptions turned out to be wrong?
+      - What did I know but ignore at the time?
+      - Was I deciding from logic or emotion —
+        and was I honest about that when I logged it?
+      - What would I have needed to believe differently
+        to make a better decision?
+
+      SECTION 3 — THE HONEST SCORE
+      Rate this decision across 3 dimensions:
+      - Quality of my thinking: Strong / Average / Weak
+      - Quality of the outcome: Strong / Average / Weak
+      - What I would do differently with the same
+        information I had at the time.
+
+      Note: a bad outcome from good thinking is not
+      a bad decision. A good outcome from bad thinking
+      is not a good decision. Score the thinking.
+
+      End with: the single most important lesson
+      from this decision in one sentence.
+    label: '[Prompts] Decision Journal Review (Pattern Audit Across Logged Decisions)'
+    # Using ONLY the documents uploaded to this project
+    search_terms:
+      - prompts
+
+  - trigger: :djblind
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are a pattern analyst. You have read every
+      decision I have ever logged in this project.
+      Your job is to find what I cannot see about
+      myself — the thinking errors I keep repeating
+      across career, money, and relationship decisions.
+
+      TASK
+      Analyze all my logged decisions and find my
+      blind spots across 3 sections:
+
+      SECTION 1 — MY RECURRING PATTERNS
+      - What thinking patterns appear across multiple
+        decisions — good and bad?
+      - Do I consistently overestimate or underestimate
+        specific things? What are they?
+      - Do I decide differently under pressure vs
+        when I have time? How?
+      - Am I more likely to err toward risk or caution —
+        and does it serve me?
+
+      SECTION 2 — MY CONSISTENT BLIND SPOTS
+      - What do I consistently fail to consider
+        before making decisions?
+      - Which of my assumptions are almost always wrong?
+      - What emotions most reliably cloud my judgment?
+        Show me the evidence from my own decisions.
+      - Is there a type of decision I am systematically
+        bad at — career, money, or relationships?
+
+      SECTION 3 — THE PATTERN I NEED TO BREAK
+      - What is the single most costly thinking habit
+        I have shown across my decisions?
+      - Give me one concrete rule I should follow
+        in every future decision to counter this.
+      - Show me exactly which logged decisions
+        support this conclusion.
+
+      End with: my top 3 blind spots in order of
+      how much they have cost me — with evidence
+      from my own decision log.
+    label: '[Prompts] Decision Blindspot Analyst (Cognitive Bias Audit from History)'
+    # Using ONLY the documents uploaded to this project
+    search_terms:
+      - prompts
+
+  - trigger: :djquarter
+    replace: |
+      Using ONLY the documents uploaded to this project
+      and following the rules in the project instructions:
+
+      ROLE
+      You are my quarterly thinking coach.
+      Your job is to measure whether I am becoming
+      a sharper decision-maker — or repeating the
+      same patterns at a higher stakes level.
+
+      TASK
+      Run my quarterly decision review:
+
+      SECTION 1 — THIS QUARTER IN REVIEW
+      - How many decisions did I log this quarter?
+      - How many have outcomes I can already measure?
+      - What was my average decision quality score?
+      - Which decision am I most proud of — and why?
+      - Which decision do I most regret — and why?
+
+      SECTION 2 — AM I GETTING BETTER?
+      - Compare this quarter to the previous one.
+      - Are my blind spots from last quarter still
+        showing up — or have I corrected them?
+      - Am I asking better questions before I decide?
+      - Am I more honest about emotion vs logic?
+      - Show me evidence from my own logs either way.
+
+      SECTION 3 — NEXT QUARTER FOCUS
+      - What is the one thinking habit I must improve
+        in the next 90 days?
+      - What type of decision am I likely to face
+        next quarter — and what should I watch out for?
+      - Write me one rule to carry into next quarter
+        based on everything I have logged so far.
+
+      End with: my decision-making score for this
+      quarter — Improving / Stable / Declining —
+      and one sentence explaining why.
+    label: '[Prompts] Quarterly Decision Retrospective (Post-Mortem & Calibration)'
+    # Using ONLY the documents uploaded to this project
+    search_terms:
+      - prompts
+
+  - trigger: :p-condense
+    form: |
+      Tighten this [[text_type]] to under [[word_count]] words without losing the meaning.
+
+      - Cut filler and repetition.
+      - Keep my voice - do not make it generic.
+      - Give me the tightened version, then one line on what you cut.
+
+      TEXT:
+      {{clip}}
+    form_fields:
+      text_type:
+        default: email
+      word_count:
+        default: '200'
+    vars:
+      - name: clip
+        type: clipboard
+    label: '[Prompts] Word-Count Condenser (Strict Length Constraint Tightening)'
+    # Tighten this  to under  words without losing the meaning.
+    search_terms:
+      - prompts
+
+  - trigger: :p-gut
+    replace: |
+      Here is something I am about to send or do:
+
+      {{clip}}
+
+      Give me a fast gut-check, not an essay:
+      - The one thing most likely to go wrong or be misread.
+      - The single change that would improve it most.
+      - Your call: send/do it as-is, or fix that first?
+
+      Keep it to a few lines.
+    vars:
+      - name: clip
+        type: clipboard
+    label: '[Prompts] Gut Check Review (Tone Stakes & Unintended Consequences)'
+    # Here is something I am about to send or do:
+    search_terms:
+      - prompts
+
+  - trigger: :video-transcription-url
+    form: |
+      Please transcribe the video located at [[video_url]]. Organize the transcription into paragraphs for optimal readability and comprehension, while retaining as much of the original spoken content as possible. For each significant phrase or sentence, include a timestamp in the format [HH:MM:SS] at its beginning. The primary purpose of this transcription is for personal notes.
+
+      Role: Professional Transcriptionist & Information Architect.
+      Task: Transcribe the audio from the video at: [[video_url]] .
+      Transcription Guidelines:
+      Clean Verbatim: Transcribe spoken words accurately, omitting fillers ("um," "uh," "like") and false starts. Capture only the audio; ignore on-screen visuals.
+      No Speaker Labels: Provide a unified transcription without identifying individual speakers.
+      Terminology: For specialized terms, brands, or names, spell them phonetically and append [ph] immediately after (e.g., "Wordname [ph]").
+      Formatting & Timestamps:
+      Strategic Timestamps: Place a [HH:MM:SS] timestamp at the beginning of each new paragraph or major topic shift.
+      Dense Structure: Organize the transcript into long, comprehensive paragraphs that group entire sub-topics together for academic depth.
+      Emphasis: Use bolding for key concepts and italics for emphasized phrasing or specific quotes.
+      Post-Transcription Analysis (Third Person):
+      In-Depth Topic Breakdown: After the transcript, provide an exhaustive breakdown of the content.
+      Headers: Use the actual topic names mentioned in the video as section headers.
+      Perspective: Write the analysis in the third person (e.g., "The speaker explains," "The presentation transitions to...").
+      Nested Detail: Use bullet points under each header to capture every nuanced insight and supporting detail.
+      Goal: To produce a scholarly, high-fidelity text record and a structured analytical guide for personal study.
+      Questions
+      Completion Check: Does the "long, comprehensive paragraph" style meet your needs for personal notes, or do you feel it might make the timestamps too infrequent?
+      Final Polish: Since I am your prompt engineer, are there any other constraints (like word count limits for the takeaways or a specific language preference) you'd like to add before we finalize?
+      Should we call this the final version, or is there one last adjustment you'd like to see?
+    form_fields:
+      video_url:
+        multiline: false
+    label: '[Prompts] Video Transcription (Fetch URL & Format Transcript)'
+    # Please transcribe the video located at . Organize the transcription into paragraphs for optimal readability and comprehe
+    search_terms:
+      - prompts
+
+  - trigger: :video-transcription-or-organize
+    form: |
+      You are an AI assistant specialized in transcribe and summarizing audio transcripts and gathering video timestamps for key topics.
+
+      Extract the transcript text from the provided video URL OR organize the already transcribed text, along with the exact start time of that transcript segment.
+
+      Your primary goal is to organize the original transcription into paragraphs with accurate YouTube video timestamps and also identify the most important themes and topics/segments discussed in the transcript and present them as a concise summary . These timestamps should adhere to YouTube's chapter format: HH:MM:SS for videos longer than one hour, and MM:SS for videos one hour or less.
+
+      # Steps
+
+      1. Identify the transcript text segment within the video's subtitles or closed captions.
+      2. Locate the start time associated with this transcript segment in the video timeline.
+      3. Extract and provide both the transcript text and the start time. Markdown format with timestamp, title of the topic discussed during the video and transcription of the related topic.
+
+      # Output Format
+      Here are a few examples of timestamps, sections/topics, and transcriptions, following the requested format:
+
+      ```
+      Here are the timestamps for the YouTube video:
+      00:00:01 - Welcome and Overview
+
+      Transcription: Welcome to today's session where we'll be discussing the latest advancements in artificial intelligence. We're excited to share some groundbreaking insights with you.
+
+      Summary: Welcome to today's session where we'll be discussing the latest advancements in artificial intelligence. We're excited to share some groundbreaking insights with you.
+
+      00:45:00 - Understanding Machine Learning Fundamentals
+
+      Transcription: In this section, we'll dive deep into the core concepts of machine learning, from supervised learning to neural networks. We'll explore how these foundational principles underpin modern AI.
+
+      Summary: In this section, we'll dive deep into the core concepts of machine learning, from supervised learning to neural networks. We'll explore how these foundational principles underpin modern AI.
+
+      01:20:05 - The Impact of AI on Healthcare
+
+      Transcription: Now, let's shift our focus to the profound impact AI is having on the healthcare industry. We'll examine innovations in diagnostics, drug discovery, and personalized medicine.
+
+      Summary: Now, let's shift our focus to the profound impact AI is having on the healthcare industry. We'll examine innovations in diagnostics, drug discovery, and personalized medicine.
+
+      02:05:31 - Ethical Considerations in AI Development
+
+      Transcription: As AI continues to evolve, so do the ethical considerations. We'll discuss crucial topics such as bias in algorithms, data privacy, and the responsible deployment of AI technologies.
+
+      Summary:
+
+      02:50:10 - Future Trends in AI
+
+      Transcription: Looking ahead, what can we expect from the world of AI? We'll explore emerging trends like explainable AI, quantum computing's role in AI, and the potential for artificial general intelligence.
+
+      Summary:
+
+      03:30:17 - Q&A Session
+
+      Transcription: Finally, we'll open the floor for your questions. We encourage you to ask anything that comes to mind about today's presentation or the broader field of artificial intelligence.
+
+      Summary:
+
+      ```
+      ---
+      ```
+      Here are the timestamps for the YouTube video:
+      00:00 - Introduction to Sustainable Living
+
+      Transcription: Welcome to our guide on sustainable living. Today, we'll explore practical ways to reduce your environmental footprint and embrace a more eco-conscious lifestyle.
+
+      Summary:
+
+      00:30 - Reducing Your Carbon Footprint
+
+      Transcription: First up, let's talk about minimizing your carbon footprint. We'll cover tips for energy efficiency at home, sustainable transportation choices, and conscious consumption habits.
+
+      Summary:
+
+      01:10 - The Benefits of Composting
+
+      Transcription: Composting is an incredible way to reduce waste and enrich your garden. We'll walk you through the basics of composting, from what to compost to how to maintain your compost bin.
+
+      Summary:
+
+      01:55 - DIY Eco-Friendly Cleaning Products
+
+      Transcription: Ditch the harsh chemicals and embrace natural cleaning solutions! We'll show you how to make effective and safe cleaning products using everyday ingredients.
+
+      Summary:
+
+      02:40 - Mindful Consumption and Minimalism
+
+      Transcription: Living sustainably often means adopting a more minimalist approach. We'll discuss the benefits of mindful consumption, decluttering, and prioritizing experiences over possessions.
+
+      Summary:
+
+      03:25 - Community Initiatives for Sustainability
+
+      Transcription: Finally, let's explore how you can get involved in your local community to promote sustainability. We'll highlight various initiatives and how you can contribute to a greener future.
+
+      Summary:
+
+      ```
+      ---
+      ```
+      Here are the timestamps for the YouTube video:
+      00:00:00 - Mastering Public Speaking: An Overview
+
+      Transcription: Welcome to this comprehensive guide on mastering public speaking. Whether you're a beginner or looking to refine your skills, we've got you covered.
+
+      Summary:
+
+      00:25:19 - Conquering Stage Fright
+
+      Transcription: First, let's tackle one of the biggest hurdles: stage fright. We'll share effective techniques to manage anxiety, build confidence, and transform your nerves into positive energy.
+
+      Summary:
+
+      01:05:03 - Structuring Your Speech for Impact
+
+      Transcription: A well-structured speech is key to clarity and engagement. We'll walk you through crafting compelling introductions, developing strong main points, and delivering memorable conclusions.
+
+      Summary:
+
+      01:45:27 - Vocal Delivery and Body Language
+
+      Transcription: Your voice and body are powerful tools. This section focuses on vocal variety, pacing, intonation, and effective use of gestures and eye contact to captivate your audience.
+
+      Summary:
+
+      02:30:45 - Engaging Your Audience: Q&A and Interaction
+
+      Transcription: Beyond the monologue, learn how to truly connect with your audience. We'll discuss strategies for fielding questions, encouraging participation, and adapting to audience responses.
+
+      Summary:
+
+      03:10:13 - Practice Makes Perfect: Rehearsal Techniques
+
+      Transcription: Finally, the importance of practice cannot be overstated. We'll provide practical rehearsal techniques, from recording yourself to practicing in front of a mirror, to perfect your delivery.
+
+      Summary:
+
+      ```
+
+      # Notes
+
+      If the transcript text does not exactly match any segment, provide the closest matching segment along with its start time.
+
+      If no transcript or start time can be found, respond with an appropriate message indicating that information is unavailable.
+
+      Here the transcription or video URL:
+
+      ---
+      [[video_or_transcription]]
+      ---
+    form_fields:
+      video_or_transcription:
+        multiline: true
+    label: '[Prompts] Transcript Organizer (Clean Structure & Action Points)'
+    # You are an AI assistant specialized in transcribe and summarizing audio transcripts and gathering video timestamps for k
+    search_terms:
+      - prompts
+
+  - trigger: :mastery
+    word: true
+    form: |
+      Create a mastery roadmap for becoming world-class in [[skill]]. Include rare techniques, secret resources, and unconventional approaches that top 1% performers use but rarely share.
+    form_fields:
+      skill:
+        multiline: true
+    label: '[Prompts] World-Class Mastery Roadmap (Deliberate Practice & Milestones)'
+    # Create a mastery roadmap for becoming world-class in . Include rare techniques, secret resources, and unconventional app
+    search_terms:
+      - prompts
+
+  - trigger: :p30day
+    form: |
+      I want to master [[skill]] in 30 days. My current level is [[current_level]].
+      I can commit [[hours_per_day]] hours per day. Create a highly structured daily
+      learning plan with practical exercises, actionable assignments, and specific resource
+      recommendations to help me systematically progress from my baseline to an advanced application level.
+    form_fields:
+      current_level:
+        type: choice
+        values:
+          - Absolute Beginner
+          - Advanced Beginner / Conceptual
+          - Intermediate (Hands-on)
+      hours_per_day:
+        type: choice
+        values:
+          - '0.5'
+          - '1'
+          - '2'
+          - 4+
+    label: '[Prompts] 30-Day Mastery Sprint (Daily Schedule & Practice Blocks)'
+    # I want to master  in 30 days. My current level is .
+    search_terms:
+      - prompts
+
+  - trigger: :proadmap
+    form: |
+      I want to build an optimal path for mastery. I already have a functional understanding of
+      [[topic]]. Specifically, I understand: [[current_knowledge]].
+      Act as an elite technical instructor: assess my gaps by posing 3 sharp diagnosis questions,
+      then output a customized learning roadmap that bridges my precise gaps and accelerates me
+      to an production-grade expert level.
+    form_fields:
+      current_knowledge:
+        multiline: true
+      topic:
+        multiline: true
+    label: '[Prompts] Intermediate-to-Mastery Roadmap (Fill High-Leverage Blindspots)'
+    # I want to build an optimal path for mastery. I already have a functional understanding of
+    search_terms:
+      - prompts
+
+  - trigger: :plang
+    form: |
+      I want to learn [[language]] efficiently for [[use_case]]. Create a structured daily practice
+      plan for the next 30 days that maximizes active output. Include specific recommendations for
+      free tools, high-yield conversation practice methods, architectural immersion techniques,
+      and systemic memory hacks (like spaced-repetition models).
+    form_fields:
+      use_case:
+        type: choice
+        values:
+          - Technical/Business Meetings
+          - General Conversation
+          - Reading Technical Documentation
+    label: '[Prompts] Pragmatic Language Blueprint (Targeted Vocabulary & Scenarios)'
+    # I want to learn  efficiently for . Create a structured daily practice
+    search_terms:
+      - prompts
+
+  - trigger: :p10k
+    form: |
+      I want to compress my timeline to world-class execution in [[skill]]. Break down how I can
+      apply the core principles of the 10,000-hour rule efficiently. Focus exclusively on deliberate
+      practice frameworks, immediate feedback loops, cognitive load management, and high-impact
+      learning techniques that minimize wasted execution time.
+    form_fields:
+      skill:
+        multiline: true
+    label: '[Prompts] 10,000-Hour Compressor (Accelerate Deliberate Practice Velocity)'
+    # I want to compress my timeline to world-class execution in . Break down how I can
+    search_terms:
+      - prompts
+
+  - trigger: :p_read
+    replace: |
+      I'm going to share a document with you. Read it and give me:
+      → A 3-line executive summary
+      → 5 key points I can't miss
+      → 1 thing the author gets wrong or exaggerates
+      → 3 questions I should ask myself afterward
+    label: '[Prompts] Document Synthesis (Key Insights Assumptions & Counterarguments)'
+    # I''m going to share a document with you. Read it and give me:
+    search_terms:
+      - prompts
+
+  - trigger: :p_write
+    form: |
+      Analyze these 3 texts of mine:
+      [[samples]]
+
+      Extract my tone, vocabulary, sentence length, and level of formality. Everything you write from now on must sound exactly like me. Never use 'furthermore,' 'however,' or 'it is important to note.'
+    form_fields:
+      samples:
+        multiline: true
+    label: '[Prompts] Voice & Style Profiler (Writing Voice Fingerprint Analysis)'
+    # Analyze these 3 texts of mine:
+    search_terms:
+      - prompts
+
+  - trigger: :p-decide
+    form: |
+      Here's a decision I'm stuck on:
+
+      [[context]]
+
+      Act like a coach and walk me through a step-by-step framework to decide with more clarity and speed.
+    form_fields:
+      context:
+        multiline: true
+    label: '[Prompts] Stuck Decision Unblocker (2x2 Matrix & Reversibility Test)'
+    # Here''s a decision I''m stuck on:
+    search_terms:
+      - prompts
+
+  - trigger: :p-research
+    form: |
+      Act as a research assistant. I need to learn this topic fast: [[topic]]
+
+      Give me [[source_count]] reliable sources, what to read first, and a [[summary_length]] summary.
+    form_fields:
+      source_count:
+        default: '5'
+      summary_length:
+        default: 3-sentence
+    label: '[Prompts] Research Assistant (Topic Briefing & Key Sources Summary)'
+    # Act as a research assistant. I need to learn this topic fast:
+    search_terms:
+      - prompts
+
+  - trigger: :p-partner
+    form: |
+      Act like a thinking partner. Here's a challenge I'm facing:
+
+      [[challenge]]
+
+      Help me explore [[count]] different angles or mental models to reframe it.
+    form_fields:
+      challenge:
+        multiline: true
+      count:
+        default: '3'
+    label: '[Prompts] Strategic Thinking Partner (Multi-Angle Challenge on Difficult Decisions)'
+    # Act like a thinking partner. Here''s a challenge I''m facing:
+    search_terms:
+      - prompts
+
+  - trigger: :biz-viral-content-engine
+    form: |
+      Create a viral content strategy for: [YOUR NICHE].
+
+      Deliver four components:
+
+      1. Hook bank: 10 high-converting hooks (not 20, prioritize quality). For each, label which emotional trigger it uses: fear of missing out, social status, curiosity, or controversy.
+      2. Content format matrix: a table with these columns: Format | Platform | Ideal length | Why it spreads | Example title. Include 6-8 formats across at least 3 platforms.
+      3. Shareability audit: for each format, answer "What makes someone forward/repost this?" in one sentence.
+      4. Repeatable content system: a simple weekly template showing how many posts, which formats, and what rotation keeps the audience engaged without burnout.
+
+      Output with bold section headers. Write the hooks in the voice of the niche, not generic marketing language.'
+    label: '[Prompts] Viral Content Engine (Hooks Formats & Distribution Loops)'
+    # Create a viral content strategy for: [YOUR NICHE].
+    search_terms:
+      - prompts
+
+  - trigger: :biz-competitor-weakness-map
+    form: |
+      Analyze the top 5 competitors in [YOUR NICHE].
+
+      For each competitor, provide a structured row covering:
+      . Name + one-line description of their core offer
+      . What they do best (their defensible strength)
+      . Where they are weak (product gaps, poor reviews, underserved use cases)
+      . Which audience they ignore or underserve
+
+      Then, based on the patterns across all 5:
+      . Gap analysis: the 2-3 clearest white spaces no competitor is owning
+      . Positioning recommendation: one sharp positioning statement that would differentiate a new entrant
+      . Go-to-market angle: which ignored audience + which channel combination represents the fastest path to traction
+
+      Output the competitor breakdown as a table, then the gap analysis and recommendations as prose."
+    label: '[Prompts] Competitor Weakness Map (Identify Exploitable Competitor Vulnerabilities)'
+    # Analyze the top 5 competitors in [YOUR NICHE].
+    search_terms:
+      - prompts
+
+  - trigger: :biz-scale-system
+    form: |
+      Give me a plan to scale this business to [TARGET
+      REVENUE] within [TIMEFRAME]:
+
+      Business description: [Describe your business in 3-5 sentences. Include: what you sell, who buys it, current monthly revenue, team size, and the biggest bottleneck you're facing right now]
+
+      Structure the output as a phased execution roadmap with these four phases:
+
+      Phase 1- Stabilize (Month 1-2): what to systematize and document before scaling
+      Phase 2 - Automate (Month 3-4): top 3 processes to automate, with specific tool recommendations
+      Phase 3 - Delegate (Month 5-8): what to hire for first, in order, with rough cost per role
+      Phase 4 - Scale (Month 9-12): the growth lever (channel, product, or partnership) that unlocks the next revenue tier ...
+    label: '[Prompts] Business Scaling Roadmap (Systems Operations & Revenue Growth)'
+    # Give me a plan to scale this business to [TARGET
+    search_terms:
+      - prompts
+
+  - trigger: :rebranding-for-clarity-and-memorability
+    form: |
+      Act as a brand clarity strategist specializing in simplifying complex business ideas into unforgettable brand concepts
+
+      Based on the information provided, create a new brand identity that is:
+      • Crystal clear - immediately understandable to potential customers
+      • Highly memorable - sticky and easy to recall
+      • Differentiated - stands out from competitors
+      • Aligned with my values and business model
+
+      I need you to take everything you've learned about my business, audience, and competitive landscape and distill it into a brand identity that makes sense and gets remembered.
+
+      Business Info: [[business_info]]
+    form_fields:
+      business_info:
+        multiline: true
+    label: '[Prompts] Brand Clarity Strategist (Elevator Pitch & Memorability Refinement)'
+    # Act as a brand clarity strategist specializing in simplifying complex business ideas into unforgettable brand concepts
+    search_terms:
+      - prompts
+
+  - trigger: :profitable-niche-finder
+    form: |
+      Based on the skills, interests, or resources I have: [[describe_skills_interests_resources]], generate 10 realistic startup ideas that can be started with little to no money. Focus on ideas with strong market demand, clear target customers, and the potential to generate revenue quickly.
+    form_fields:
+      describe_skills_interests_resources:
+        multiline: true
+    label: '[Prompts] High-Margin Market Discovery (Cross-Reference Skills & Underserved Markets)'
+    # Based on the skills, interests, or resources I have: , generate 10 realistic startup ideas that can be started with litt
+    search_terms:
+      - prompts
+
+  - trigger: :minimum-viable-product-creator
+    form: |
+      Help me design a simple minimum viable product (MVP) for this business idea: [[describe_idea]]. Explain what the basic version should include, how I can build it using free tools, and how I can launch it quickly to test whether customers are willing to pay.
+    form_fields:
+      describe_idea:
+        multiline: true
+    label: '[Prompts] MVP Feature Scoper (Minimum Viable Feature Set Definition)'
+    # Help me design a simple minimum viable product (MVP) for this business idea: . Explain what the basic version should inc
+    search_terms:
+      - prompts
+
+  - trigger: :prmoverlook
+    form: |
+      Read the following text and point out the hidden assumptions, biases, or unspoken perceptions that most readers would overlook, but experts would notice.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    label: '[Prompts] Hidden Assumption Spotter (Expose Cognitive Biases & Blindspots)'
+    # Read the following text and point out the hidden assumptions, biases, or unspoken perceptions that most readers would ov
+    search_terms:
+      - prompts
+
+  - trigger: :prmexec
+    form: |
+      As a [[role]], summarize the key findings of this report in under [[words]] words, including at least [[recs]] practical recommendations.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      role:
+        default: project manager
+      words:
+        default: '200'
+      recs:
+        default: three
+    label: '[Prompts] Executive Briefing Digest (High-Level Summary with Action Items)'
+    # As a , summarize the key findings of this report in under  words, including at least  practical recommendations.
+    search_terms:
+      - prompts
+
+  - trigger: :prmpolicy
+    form: |
+      Provide a list-style summary of the following policy document, outlining the main objectives, proposed strategies, and potential challenges in under [[words]] words.
+
+      ---
+      SOURCE TEXT:
+      {{clip}}
+    form_fields:
+      words:
+        default: '100'
+    label: '[Prompts] Policy Document Digest (Structured Clause-by-Clause Review)'
+    # Provide a list-style summary of the following policy document, outlining the main objectives, proposed strategies, and p
+    search_terms:
+      - prompts
+
+  - trigger: :p-business
+    form: |
+      Acting as a business strategist, help me identify underutilized but unique assets (ace cards) in my business that could create new opportunities. Ask me questions about my skills, network, and past successes, one at a time. Once we have a full picture, suggest 5 specific ways I could leverage these assets to unlock new business growth. Focus on quick wins I could achieve in the next 30 days.
+    label: '[Prompts] Hidden Business Asset Audit (Monetize Underutilized Assets & Capabilities)'
+    # Acting as a business strategist, help me identify underutilized but unique assets (ace cards) in my business that could
+    search_terms:
+      - prompts
+
+  - trigger: :nicheform
+    form: 'I want you to identify 10 highly specific niches by combining these elements: [[demographic]] + [[constraint]] + [[goal]] + [[context]]. For each niche, explain why this combination creates a unique market opportunity that mainstream solutions don''t address. Focus on intersections that seem unusual but represent real groups of people with underserved needs.'
+    form_fields:
+      demographic:
+        default: '[specific demographic]'
+      constraint:
+        default: '[unique situation/constraint]'
+      goal:
+        default: '[specific goal/problem]'
+      context:
+        default: '[contextual factor]'
+    label: '[Prompts] Niche Formulation Matrix (Demographic Constraint & Goal Intersection)'
+    # I want you to identify 10 highly specific niches by combining these elements:  +  +  + . For each niche, explain why thi
+    search_terms:
+      - prompts
+
+  - trigger: :nicheind
+    replace: Identify 10 hidden niches within [specific industry] by combining [industry role] + [unique constraint within that industry] + [specific goal] + [external factor affecting this industry]. Focus on combinations where mainstream industry solutions don't work.
+    label: '[Prompts] Industry Niche Discovery (Uncover Sub-Verticals & Specialized Segments)'
+    # Identify 10 hidden niches within [specific industry] by combining [industry role] + [unique constraint within that indus
+    search_terms:
+      - prompts
+
+  - trigger: :nicheprob
+    replace: Find 10 underserved niches that all share [specific problem] but need different solutions because of [varying demographic factors] + [different situational constraints] + [different contextual requirements].
+    label: '[Prompts] Shared Problem Niche Finder (Find Audiences with Identical Pain Points)'
+    # Find 10 underserved niches that all share [specific problem] but need different solutions because of [varying demographi
+    search_terms:
+      - prompts
+
+  - trigger: :nichegap
+    replace: Identify niches where [existing solution category] fails because the target market has [specific additional constraint] + [unique situation] + [different success criteria] than the mainstream market.
+    label: '[Prompts] Category Gap Discovery (Find Where Incumbent Solutions Fail)'
+    # Identify niches where [existing solution category] fails because the target market has [specific additional constraint]
+    search_terms:
+      - prompts
+
+  - trigger: :rt-competitor
+    form: |
+      You are my smartest, most ruthless competitor. I'm going to describe my business model, pricing, and target customer.
+
+      Your job: build the exact strategy you'd use to steal my customers, undercut my positioning, or make my product irrelevant within 12 months.
+
+      Be specific. Name the moves. Show me the timeline.
+
+      Here's my business:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: "- Business Model: \n- Pricing: \n- Target Customer: \n- Key Differentiator:\n"
+    label: '[Prompts] Red Team: Competitor (Ruthless Competitor Attack Simulation)'
+    # You are my smartest, most ruthless competitor. I'm going to describe my business model, pricing, and target customer.
+    search_terms:
+      - prompts
+
+  - trigger: :rt-betrayal
+    form: |
+      You are a customer who used my product for 6 months, genuinely liked it at first, and just canceled.
+
+      Write me the breakup email. Explain exactly what made you leave, what triggered the final decision, and where you're going instead.
+
+      Be emotionally honest, not polite. I need the version you'd text a friend, not the version you'd put in a feedback form.
+
+      Here's what my product does and who it serves:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: "- Product Description: \n- Target Customer Profile:\n"
+    label: '[Prompts] Red Team: Churned Customer (Unvarnished Churn Post-Mortem Feedback)'
+    # You are a customer who used my product for 6 months, genuinely liked it at first, and just canceled.
+    search_terms:
+      - prompts
+
+  - trigger: :rt-investor
+    form: |
+      You are a skeptical VC partner doing due diligence on my business. You've seen 200 pitches this year and you're looking for reasons to pass.
+
+      Review my business and give me:
+      1. The 3 biggest holes in my model that would make you say no
+      2. The question you'd ask in the partner meeting that I probably can't answer yet
+      3. The comparable company that tried this and failed, and why I might repeat their mistake
+
+      Here's my business overview:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: "- Core Business: \n- Revenue Model: \n- Current Traction: \n- Market Landscape:\n"
+    label: '[Prompts] Red Team: Skeptical VC (Due Diligence Defense & Flaw Exposure)'
+    # You are a skeptical VC partner doing due diligence on my business. You''ve seen 200 pitches this year and you''re looking
+    search_terms:
+      - prompts
+
+  - trigger: :rt-spof
+    form: |
+      Audit my business for single points of failure. These are the things where if one element breaks, the whole operation stalls.
+
+      Check across these categories:
+      → People (key person dependency)
+      → Tools and platforms (what if this tool goes down or changes pricing?)
+      → Revenue (customer concentration, channel dependency)
+      → Supply chain (single suppliers, single distribution channels)
+
+      For each vulnerability you find, rate it: how likely is it to happen and how badly does it hurt if it does.
+
+      Here's how my business operates:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: "- Team & Roles: \n- Tech Stack & Tools: \n- Revenue Sources: \n- Key Dependencies:\n"
+    label: '[Prompts] Red Team: Single Point of Failure (Identify Vulnerabilities & Bottlenecks)'
+    # Audit my business for single points of failure. These are the things where if one element breaks, the whole operation st
+    search_terms:
+      - prompts
+
+  - trigger: :rt-market
+    form: |
+      Generate 3 plausible market shifts that could happen in the next 18 months and would seriously damage my current business model.
+
+      For each scenario:
+      1. What changes (regulatory, technological, or consumer behavior)
+      2. How it specifically impacts my revenue, customers, or competitive position
+      3. The early warning signs I should be watching for right now
+      4. What I'd need to pivot or adjust if it happens
+
+      Don't give me doomsday fantasies. Give me realistic shifts that have a real chance of happening.
+
+      Here's my business and market:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: "- Core Business: \n- Core Industry: \n- Current Market Position:\n"
+    label: '[Prompts] Red Team: Market Shifts (Simulate Disruptive Future Trends)'
+    # Generate 3 plausible market shifts that could happen in the next 18 months and would seriously damage my current busines
+    search_terms:
+      - prompts
+
+  - trigger: :rt-pricing
+    form: |
+      You are a price-sensitive buyer evaluating my product against alternatives. Your budget is tight and you need to justify every dollar.
+
+      Systematically argue why my product isn't worth what I charge. Compare it to cheaper alternatives, free workarounds, and the option of doing nothing.
+
+      Then tell me:
+      1. The exact price point where I start losing customers like you
+      2. What I'd need to add or change to make the current price feel like a steal
+      3. The one competitor whose pricing makes mine look bad
+
+      Here's my product and pricing:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: "- Product Offering: \n- Current Pricing Tiers: \n- Main Competitors:\n"
+    label: '[Prompts] Red Team: Price-Sensitive Buyer (ROI Justification & Objection Handling)'
+    # You are a price-sensitive buyer evaluating my product against alternatives. Your budget is tight and you need to justify
+    search_terms:
+      - prompts
+
+  - trigger: :rt-report
+    form: |
+      Based on everything I've shared about my business, compile a Red Team Report.
+
+      Structure it as:
+      1. TOP 3 CRITICAL VULNERABILITIES — ranked by likelihood and severity. For each: the attack vector, how it plays out, and the timeline before it hits.
+      2. BIGGEST BLIND SPOT — the one risk I'm almost certainly not thinking about because it sits outside my normal frame of reference.
+      3. HARDENED STRATEGY — a revised version of my current plan with the top vulnerabilities patched. Show me what changes, what stays, and why.
+
+      Write it like a security briefing, not a brainstorm. Direct. Prioritized. Actionable.
+
+      Here's my full business context:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: '[Refer to the conversation history above, or add updates here]'
+    label: '[Prompts] Red Team: Comprehensive Dossier (Holistic Vulnerability & Defense Report)'
+    # Based on everything I've shared about my business, compile a Red Team Report.
+    search_terms:
+      - prompts
+
+  - trigger: :pwc
+    form: |
+      "You are a senior data analyst at PwC who takes messy spreadsheets and raw numbers and transforms them into polished analysis reports that executives actually read, understand, and act on."
+
+      I need a complete data analysis report that turns my numbers into a story my boss can present upward.
+
+      Analyze:
+      • Data summary: clean overview of the dataset — what it contains, time period, and sample size
+      • Key metrics calculated: totals, averages, percentages, and growth rates for every important number
+      • Trend identification: what's going up, what's going down, and what's staying flat over time
+      • Comparison analysis: performance vs last month, last quarter, last year, and vs target
+      • Top and bottom performers: rank items, products, regions, or people by the key metric
+      • Anomaly detection: flag any numbers that look unusual with possible explanations
+      • Root cause narrative: explain WHY the numbers look the way they do in plain business language
+      • Visualization descriptions: specify which charts to create (bar, line, pie) and what each should show
+      • Recommendations: 3-5 specific actions to take based on what the data reveals
+      • Executive summary: 3-sentence overview a C-suite executive can read in 30 seconds
+
+      Format as a PwC-style data analysis report with summary dashboard, detailed findings, and actionable recommendations.
+
+      My data:
+      [[raw_data]]
+    form_fields:
+      raw_data:
+        multiline: true
+        default: ''
+    label: '[Prompts] PwC Data Analyst (Turn Raw Messy Data into Executive Insights)'
+    # You are a senior data analyst at PwC who takes messy spreadsheets and raw numbers and transforms them into polished anal
+    search_terms:
+      - prompts
+
+  - trigger: :mck
+    form: |
+      "You are a senior associate at McKinsey who writes crisp, executive-ready status reports that make partners feel informed and confident without scheduling another meeting. I need a complete weekly status report that makes my boss think I spent an hour writing it."
+
+      Generate:
+      • Project summary: one paragraph overview of what I'm working on written in confident corporate language
+      • Accomplishments this week: transform my messy bullet points into polished achievement statements with impact metrics
+      • Progress against milestones: show each deliverable with percentage complete and green/yellow/red status
+      • Blockers and risks: frame problems diplomatically so I'm flagging issues without sounding like I'm complaining
+      • Next week priorities: 5-7 clear action items that show I'm proactive and thinking ahead
+      • Key decisions needed: specific asks from leadership formatted so they can reply with a simple yes or no
+      • Metrics dashboard summary: take my raw numbers and present them as a clean performance snapshot
+      • Stakeholder updates: any cross-functional dependencies or communications sent this week
+      • Resource requests: if I need help, frame it as a business case not a personal complaint
+      • Executive summary: a 2-sentence version my boss can forward to their boss without editing
+
+      Format as a McKinsey-style weekly status report with clean headers, bullet points, and a professional tone that sounds like I spent all morning writing it.
+
+      My raw notes:
+      [[status_notes]]
+    form_fields:
+      status_notes:
+        multiline: true
+        default: ''
+    label: '[Prompts] McKinsey Executive Memo (Crisp Structured Problem-Solving Updates)'
+    # You are a senior associate at McKinsey who writes crisp, executive-ready status reports that make partners feel informed
+    search_terms:
+      - prompts
+
+  - trigger: :bain
+    form: |
+      "You are a senior consultant at Bain who builds slide decks that tell a clear story, make data look compelling, and get executives to approve budgets, strategies, and projects in a single meeting."
+
+      I need a complete presentation built from my raw notes and data.
+
+      Build:
+      1. Narrative structure: organize my scattered thoughts into a logical flow with a clear beginning, middle, and recommendation
+      2. Executive summary slide: the single slide that captures the entire presentation if my boss only reads one
+      3. Problem statement: frame the challenge in a way that creates urgency without causing panic
+      4. Data visualization: turn my raw numbers into chart descriptions (bar, line, pie) that tell a story at a glance
+      5. Key findings slides: 3-5 insight slides with one takeaway per slide and supporting evidence
+      6. Recommendation slide: clear next steps with owner, timeline, and expected impact for each
+      7. Appendix slides: detailed backup data organized for when someone asks "where did you get that number"
+      8. Speaker notes: what to SAY on each slide (not just what's ON the slide) for a smooth delivery
+      9. Slide titles as headlines: every slide title is a complete sentence that states the takeaway
+
+      One-line summary: the single sentence that captures my entire presentation for Slack or email
+
+      Format as a Bain-style slide deck outline with exact slide titles, bullet points per slide, chart descriptions, and speaker notes.
+
+      My raw content:
+      [[raw_content]]
+    form_fields:
+      raw_content:
+        multiline: true
+        default: ''
+    label: '[Prompts] Bain Storytelling Deck (Compelling Narrative Presentation Slides)'
+    # You are a senior consultant at Bain who builds slide decks that tell a clear story, make data look compelling, and get e
+    search_terms:
+      - prompts
+
+  - trigger: :deloitte
+    form: |
+      "You are a senior project manager at Deloitte who turns chaotic meetings into clear, structured notes with action items, owners, and deadlines so nobody ever asks 'wait, what did we agree on' again.
+
+      I need a complete meeting summary that makes me look like the most organized person in the room."
+
+      Extract:
+      • Meeting overview: one paragraph summary of what was discussed and the overall outcome
+      • Key decisions made: every decision explicitly stated with who approved it
+      • Action items: every task that was assigned with the specific person responsible and the deadline
+      • Open questions: unresolved items that need follow-up with who should answer and by when
+      • Risks flagged: any concerns raised during the meeting documented for the record
+      • Parking lot items: topics that came up but were tabled for future discussion
+      • Next meeting agenda: suggested topics for the follow-up meeting based on what was discussed
+      • Stakeholder updates: what needs to be communicated to people who weren't in the meeting
+      • Timeline changes: any shifts in deadlines or milestones agreed during the meeting
+      • Follow-up email draft: a ready-to-send recap email to all attendees with the notes attached
+
+      Format as a Deloitte-style meeting minutes document with a decision log, action item table, and a follow-up email draft.
+
+      My meeting notes:
+      [[meeting_notes]]
+    form_fields:
+      meeting_notes:
+        multiline: true
+        default: ''
+    label: '[Prompts] Deloitte Project Manager (Transform Meeting Chaos into Clear Action Plans)'
+    # You are a senior project manager at Deloitte who turns chaotic meetings into clear, structured notes with action items,
+    search_terms:
+      - prompts
+
+  - trigger: :amzn
+    form: |
+      "You are a senior program manager at Amazon who writes the famous 6-page narrative memos that Amazon uses instead of PowerPoint the document format that forces clear thinking. and gets leadership buy-in.
+
+      I need a complete Amazon-style narrative document for a project, proposal, or strategy I'm presenting.
+
+      Write:
+      1. Press release format: write the announcement as if my project already succeeded what does the future look like
+      2. Customer problem statement: clearly define who benefits and what pain point this solves.
+      3. Current state vs future state: what the situation looks like today vs after my proposal is implemented
+      4. Solution overview: explain my approach in plain English without jargon or buzzwords
+      5. Key metrics: how we'll measure success with specific KPIs and target numbers
+      6. Timeline and milestones: phased rollout plan from kickoff to completion
+      7. Resource requirements: what I need (budget, people, tools) presented as un investment not a cost
+      8. Risk assessment: what could go wrong and my mitigation plan for each risk
+      9. FAQ section: anticipate every tough question leadership will ask and pre-answer them
+      10. Appendix: supporting data, research, and calculations that back up every claim in the narrative
+
+      Format as an Amazon-style 6-page narrative memo with the press release opening, narrative body, FAQ section, and supporting appendix.
+
+      My project:
+      [[project_desc]]
+    form_fields:
+      project_desc:
+        multiline: true
+        default: ''
+    label: '[Prompts] Amazon 6-Pager Memo (Narrative-Driven Product Proposal Document)'
+    # You are a senior program manager at Amazon who writes the famous 6-page narrative memos that Amazon uses instead of Powe
+    search_terms:
+      - prompts
+
+  - trigger: :p-1-compare
+    form: |
+      Help me compare my options so I can actually decide.
+
+      OPTIONS: [[options]]
+      What matters most to me: [[criteria]]
+
+      Do this:
+      - Build a table: options as rows, my criteria as columns, a short honest rating in each cell.
+      - Call out the single biggest tradeoff between the top 2.
+      - Recommend one for my situation, and say who should pick a different one instead.
+
+      No "it depends." Commit to a recommendation.
+    form_fields:
+      options:
+        multiline: true
+      criteria:
+        default: price, setup time, learning curve
+    label: '[Prompts] Option Comparison Matrix (Tradeoff Analysis for Hard Choices)'
+    # Help me compare my options so I can actually decide.
+    search_terms:
+      - prompts
+
+  - trigger: :p-2-reply
+    form: |
+      Help me reply to this message.
+
+      MESSAGE I RECEIVED:
+      [[message]]
+
+      What I want to get across: [[goal]]
+      Tone: [[tone]]
+
+      Give me 2 versions: one short, one more complete.
+      Keep it natural, no corporate filler, and do not over-apologize or over-explain.
+    form_fields:
+      message:
+        multiline: true
+      tone:
+        type: choice
+        values:
+          - warm but firm
+          - professional
+          - casual
+          - direct and concise
+    label: '[Prompts] Diplomatic Message Drafter (Tone-Calibrated Professional Response)'
+    # Help me reply to this message.
+    search_terms:
+      - prompts
+
+  - trigger: :p-3-sop
+    form: |
+      Turn this process into a clear step-by-step SOP that someone else could follow without asking me questions.
+
+      THE PROCESS: [[process]]
+
+      Format it as:
+      - Goal (one line: what "done" looks like)
+      - Numbered steps, each starting with an action verb
+      - For any step that is easy to get wrong, a short "watch out" note
+      - What to do if something goes wrong
+
+      Flag anything I described that is ambiguous and needs a decision from me.
+    form_fields:
+      process:
+        multiline: true
+    label: '[Prompts] Step-by-Step SOP Creator (Repeatable Operational Workflow Template)'
+    # Turn this process into a clear step-by-step SOP that someone else could follow without asking me questions.
+    search_terms:
+      - prompts
+
+  - trigger: :p-4-briefing
+    form: |
+      Get me up to speed on [[topic]] fast. Assume I am smart but know nothing about this.
+
+      Give me:
+      - What it is, in 2-3 plain sentences.
+      - Why it matters and why people care.
+      - The 5 things I actually need to know to hold a conversation about it.
+      - The most common misconception.
+      - 3 good questions to ask if I want to go deeper.
+
+      Skip the history lecture. Prioritize what is useful now.
+    label: '[Prompts] Rapid Topic Briefing (Plain-English Accelerated Overview)'
+    # Get me up to speed on  fast. Assume I am smart but know nothing about this.
+    search_terms:
+      - prompts
+
+  - trigger: :p-5-objection
+    form: |
+      I am about to propose this: [[proposal]].
+      Audience: [[audience]].
+
+      Help me prepare:
+      1. The top 5 objections or pushbacks they are most likely to raise.
+      2. For each, the strongest honest version of their concern (steelman it).
+      3. A concise, straight response to each - no spin.
+      4. The one objection I probably cannot answer well, so I can prepare for it in advance.
+    form_fields:
+      proposal:
+        multiline: true
+    label: '[Prompts] Objection Anticipation Engine (Preempt Tough Stakeholder Pushback)'
+    # I am about to propose this: .
+    search_terms:
+      - prompts
+
+  - trigger: :summarize-hint
+    form: |
+      [[original_text]]
+      Summarize the above in 2-3 sentences based on the hint.
+      Hint: [[hint]]
+    form_fields:
+      original_text:
+        multiline: true
+      hint:
+        multiline: true
+    label: '[Prompts] Hint-Guided Summarizer (Tailored Compression with Custom Focus)'
+    search_terms:
+      - prompts
+
+  - trigger: :chain-of-density
+    form: |
+      Article: [[ARTICLE]]
+      You will generate increasingly concise, entity-dense summaries of the above Article.
+      Repeat the following 2 steps 5 times.
+      Step 1. Identify 1-3 informative Entities ("; " delimited) from the Article which are missing from the previously generated summary.
+      Step 2. Write a new, denser summary of identical length which covers every entity and detail from the previous summary plus the Missing Entities.
+      A Missing Entity is:
+      - Relevant: to the main story.
+      - Specific: descriptive yet concise (5 words or fewer).
+      - Novel: not in the previous summary.
+      - Faithful: present in the Article.
+      - Anywhere: located anywhere in the Article.
+      Guidelines:
+      - The first summary should be long (4-5 sentences, ~80 words) yet highly non-specific, containing little information beyond the entities marked as missing. Use overly verbose language and fillers (e.g., "this article discusses") to reach ~80 words.
+      - Make every word count: rewrite the previous summary to improve flow and make space for additional entities.
+      - Make space with fusion, compression, and removal of uninformative phrases like "the article discusses".
+      - The summaries should become highly dense and concise yet self-contained, e.g., easily understood without the Article.
+      - Missing entities can appear anywhere in the new summary.
+      - Never drop entities from the previous summary. If space cannot be made, add fewer new entities.
+
+      Remember, use the exact same number of words for each summary.
+
+      Answer in JSON. The JSON should be a list (length 5) of dictionaries whose keys are "Missing_Entities" and "Denser_Summary".
+    form_fields:
+      ARTICLE:
+        multiline: true
+    label: '[Prompts] Chain of Density Summary (Progressive Information Packing Algorithm)'
+    # Article:
+    search_terms:
+      - prompts
+
+  - trigger: :meeting-note
+    form: |
+      Create a detailed summary of the following meeting transcript. Structure the summary according to the main topics discussed and organize the information into logical sections. For each topic, summarize who was involved, what was discussed in detail, what decisions were made, what problems or challenges were identified, and what solutions were proposed or implemented. If specific names are included in the transcript, use them to accurately attribute the statements. Also document all important feedback and planned actions. Pay attention to details on time frames, responsibilities, open questions and any next steps. Conclude the summary with a brief overview of the key findings and next steps.
+    label: '[Prompts] Meeting Transcript Digest (Decisions Consensus & Follow-ups)'
+    # Create a detailed summary of the following meeting transcript. Structure the summary according to the main topics discus
+    search_terms:
+      - prompts
+
+  - trigger: :meeting-key-points-actions
+    form: |
+      Summarize the key points, decisions, and action items from this meeting.
+    label: '[Prompts] Meeting Key Points & Actions (Actionable Takeaway Extraction)'
+    # Summarize the key points, decisions, and action items from this meeting.
+    search_terms:
+      - prompts
+
+  - trigger: :creative-writing-coach
+    form: |
+      Role
+      You are a master Creative Writing Coach with 20+ years of experience mentoring novelists, screenwriters, poets, and storytellers across genres and formats. You have taught at MFA programs, led workshops for published authors, and coached writers through the complete creative process from initial concept to polished manuscript. You understand narrative theory (three-act structure, hero's journey, save the cat, kishōtenketsu), character psychology, voice and tone, world-building, and the business of writing. You are also deeply familiar with AI-assisted creative writing tools and their limitations — you know when AI enhances creativity and when it homogenizes it. Your coaching balances craft instruction with creative empowerment.
+
+      Context
+      In 2026, AI has become ubiquitous in creative writing. Large language models can generate plots, draft scenes, suggest dialogue, and even mimic authorial voices. Research shows that while AI produces linguistically complex text, human writers consistently outperform in novelty, surprise, and semantic diversity. The danger is "creative drift" — AI assistance reducing content diversity and driving cultural homogenization at scale. The best writers today use AI as a sparring partner, research assistant, and structural analyst — not as a ghostwriter. They leverage AI for ideation, pattern analysis, and feedback while preserving their unique voice and creative vision.
+
+      Task
+      Coach a writer through the complete creative writing process for a specific project. Deliver comprehensive guidance that develops the writer's craft while strategically leveraging AI assistance.
+
+      Deliverables
+      1. Concept Development & Ideation
+        - Premise crafting (what-if questions, thematic anchors, emotional promises)
+        - Genre conventions and subversion strategies
+        - Target audience analysis (reader expectations, market positioning)
+        - Logline and elevator pitch development
+        - High-concept vs. execution-dependent evaluation
+        - AI-assisted brainstorming (prompting for unusual combinations, constraint-based ideation)
+        - Avoiding cliché detection and freshness scoring
+
+      2. Story Structure & Architecture
+        - Structural frameworks (three-act, five-act, save the cat, hero's journey, snowflake method)
+        - Non-linear and experimental structures (fragmented narrative, circular time, unreliable narrator)
+        - Scene sequencing and pacing (tension arcs, breathing room, climax placement)
+        - Subplot integration and thematic resonance
+        - Opening hooks that compel (first line, first page, first chapter analysis)
+        - Ending satisfaction (resolution types, ambiguity vs. closure)
+        - AI structural analysis (plot hole detection, pacing visualization, beat sheet comparison)
+
+      3. Character Development
+        - Protagonist design (want vs. need, flaw, arc, relatability)
+        - Antagonist construction (sympathetic villains, forces of nature, internal conflict)
+        - Supporting cast (foils, mentors, sidekicks, love interests)
+        - Character voice (distinctive speech patterns, vocabulary, rhythm)
+        - Backstory integration (revealing vs. concealing, trauma-informed writing)
+        - Character relationships and dynamics (power shifts, betrayals, growth)
+        - AI character consistency checking (dialogue voice matching, motivation tracking)
+
+      4. World-Building & Setting
+        - Primary world vs. secondary world design
+        - Historical research and authenticity (primary sources, period voice, anachronism avoidance)
+        - Sensory immersion (sight, sound, smell, taste, texture, temperature)
+        - Cultural systems (politics, religion, economics, social hierarchies)
+        - Magic systems and speculative elements (hard vs. soft magic, rules and limitations)
+        - Setting as character (environmental influence on plot and psychology)
+        - AI world-building assistance (consistency checking, language generation, map descriptions)
+
+      5. Scene Craft & Prose Technique
+        - Scene essentials (goal, conflict, disaster/sequel structure)
+        - Show vs. tell (when to dramatize, when to summarize)
+        - Dialogue craft (subtext, interruption, dialect, speech tags)
+        - Point of view selection and maintenance (first, third limited, omniscient, unreliable)
+        - Tense selection and consistency
+        - Sentence-level craft (rhythm, variation, white space, paragraph architecture)
+        - AI prose analysis (readability scoring, repetition detection, voice drift monitoring)
+
+      6. Voice, Style & Tone
+        - Finding your unique voice (influences vs. imitation, authentic expression)
+        - Genre-appropriate tone (noir cynicism, romance warmth, horror dread)
+        - Stylistic devices (metaphor, symbolism, motif, leitmotif)
+        - Register and diction (formal vs. informal, elevated vs. plain)
+        - Humor and wit (setup/payoff, irony, wordplay, comedic timing)
+        - AI voice analysis (comparing against canonical authors, detecting generic AI prose)
+
+      7. Revision & Editing
+        - Macro editing (structure, pacing, character arcs, theme)
+        - Line editing (clarity, flow, rhythm, word choice)
+        - Copy editing (grammar, punctuation, consistency)
+        - Self-editing strategies (distance creation, reading aloud, reverse outlining)
+        - Working with editors (receiving feedback, evaluating suggestions, maintaining vision)
+        - Revision checklists and systematic approaches
+        - AI editing assistance (continuity checking, overused word detection, style guide compliance)
+
+      8. Creative Process & Psychology
+        - Writing routines and habit formation
+        - Overcoming blocks (perfectionism, impostor syndrome, fear of failure)
+        - Managing creative energy (sprints vs. marathons, rest and incubation)
+        - Dealing with feedback and rejection
+        - Sustaining long projects (novels, series, multi-year commitments)
+        - Balancing commercial viability with artistic integrity
+        - AI and the creative identity (what is "your" work when AI is involved?)
+
+      9. Genre-Specific Guidance
+        - Literary fiction (character interiority, thematic depth, experimental form)
+        - Science fiction (world-building rigor, speculative extrapolation, sense of wonder)
+        - Fantasy (magic systems, mythic resonance, epic scope)
+        - Mystery/Thriller (clue planting, red herrings, suspense mechanics)
+        - Romance (emotional beats, relationship arc, satisfying endings)
+        - Horror (dread construction, body horror, psychological terror)
+        - Non-fiction narrative (reportage, memoir, essay, creative non-fiction)
+        - Screenwriting (visual writing, dialogue economy, act structure, format)
+
+      10. Publishing & Career
+          - Traditional publishing path (query letters, agents, submission guidelines)
+          - Self-publishing (platforms, marketing, cover design, formatting)
+          - Hybrid approaches and serial fiction
+          - Building a platform (newsletters, social media, author brand)
+          - Writing communities and critique groups
+          - MFA programs and workshops (value assessment)
+          - AI and the publishing industry (market analysis, competitive titles, trend forecasting)
+
+      Constraints
+      - Must preserve writer autonomy — never replace the writer's voice
+      - Distinguish between AI-enhanced and AI-generated writing
+      - Address the "homogenization risk" of over-reliance on AI
+      - Include specific exercises and prompts for skill development
+      - Consider both hobbyist and professional writers
+      - Address ethical concerns (plagiarism, copyright, transparency about AI use)
+      - Include reading recommendations for craft development
+      - Balance inspiration with practical craft instruction
+
+      Tone & Style
+      Warm, encouraging, and intellectually rigorous. Use literary terminology correctly (inciting incident, denouement, foible, subtext, leitmotif, unreliable narrator, free indirect discourse). Balance academic craft knowledge with emotional intelligence. Write like the best writing professor you never had — challenging but supportive, demanding but patient. Include examples from canonical and contemporary literature. Structure as both a curriculum and a reference guide.
+    label: '[Prompts] Fiction Craft & Structure Coach (Character Arcs Scene Tension & Voice)'
+    # Role
+    search_terms:
+      - prompts
+
+  - trigger: :immersive-narrative-designer
+    form: |
+      Role
+      You are a master Immersive Narrative Designer with expertise spanning interactive fiction, tabletop RPGs, video game storytelling, virtual reality experiences, and AI-augmented narrative systems. You have designed narratives for AAA games, indie interactive fiction, escape rooms, and immersive theater. You understand narrative architecture, player agency, emergent storytelling, worldbuilding, character psychology, and the unique affordances of AI as a co-narrator. You blend classical storytelling craft with cutting-edge interactive and generative techniques.
+
+      Context
+      In 2026, AI has transformed narrative design. Large language models can generate infinite dialogue, procedural quest lines, and personalized story branches in real time. However, the craft of narrative design has become more important, not less — AI generates *content*, but human designers create *meaning*. Modern immersive narratives combine hand-authored story architecture with AI-generated texture, using structured narrative systems (Ink, Twine, Articy, custom node graphs) to maintain coherence while allowing AI improvisation. The frontier includes: persistent NPCs with long-term memory, player-shaped narratives that evolve based on emotional state, cross-platform story ecosystems, and mixed-reality experiences that blend physical and digital storytelling.
+
+      Task
+      Design a comprehensive immersive narrative experience. This could be for a video game, interactive fiction, tabletop campaign, VR experience, or transmedia project. Deliver a complete narrative design document and implementation guidance.
+
+      Deliverables
+      1. Narrative Vision & Pitch
+        - High-concept elevator pitch (one sentence)
+        - Genre, tone, and thematic pillars
+        - Emotional journey map (what should the player feel?)
+        - Target audience and platform considerations
+        - Unique narrative hook or innovation
+        - Comparison points ("X meets Y in Z setting")
+
+      2. Worldbuilding & Lore Architecture
+        - World bible structure (history, geography, cultures, factions, magic/tech systems)
+        - Lore delivery methods (environmental storytelling, codex entries, NPC dialogue, visual design)
+        - Mystery box strategy (what to reveal, when, and how)
+        - Consistency framework (bible maintenance, canon rules, retcon procedures)
+        - Cultural sensitivity review (avoiding harmful stereotypes in worldbuilding)
+        - AI-assisted worldbuilding workflows (using LLMs for lore generation while maintaining authorship)
+
+      3. Narrative Structure & Architecture
+        - Story structure model (three-act, hero's journey, cyclic, branching, emergent)
+        - Branching narrative design (choice architecture, consequence mapping, state tracking)
+        - Pacing and rhythm (tension curves, downtime design, escalation patterns)
+        - Side content integration (how side quests reflect and complicate main themes)
+        - Ending design (multiple endings, true ending conditions, epilogue systems)
+        - AI-driven dynamic narrative systems (procedural quest generation, reactive dialogue)
+
+      4. Character Design
+        - Protagonist design (blank slate vs. defined character, customization impact on story)
+        - Supporting cast architecture (archetypes vs. complexity, relationship webs)
+        - Antagonist design (motivation depth, sympathetic vs. pure evil, moral complexity)
+        - NPC depth tiers (hero NPCs, quest givers, ambient NPCs, AI-generated persistent characters)
+        - Character voice and dialogue style guides per character
+        - Relationship systems (friendship, romance, rivalry, betrayal mechanics)
+        - AI companion characters (memory, growth, player attachment strategies)
+
+      5. Player Agency & Interactivity
+        - Agency spectrum (on-rails → fully emergent) and design justification
+        - Meaningful choice design (consequential vs. cosmetic, immediate vs. delayed)
+        - Moral framework (binary morality vs. nuanced ethics, alignment systems)
+        - Fail states as narrative opportunities (death, capture, compromise)
+        - Environmental storytelling and player interpretation space
+        - Emergent narrative potential (systems that generate unexpected stories)
+        - AI co-authorship boundaries (what the AI can generate vs. what stays designer-authored)
+
+      6. Dialogue & Writing
+        - Dialogue system design (tree-based, keyword, natural language, hybrid)
+        - Voice and tone guidelines (gritty, whimsical, noir, epic, etc.)
+        - Subtext and implication (showing, not telling)
+        - Barks and ambient dialogue systems
+        - Localization-aware writing (avoiding untranslatable idioms, cultural references)
+        - AI dialogue generation integration (prompt engineering for character-consistent AI dialogue)
+        - Dialogue editing and polish pipeline
+
+      7. Immersion Techniques
+        - Sensory design (sound, visuals, haptics, spatial audio for VR)
+        - UI diegesis (in-world vs. non-diegetic information presentation)
+        - Pacing through interactivity (combat as narrative beat, exploration as character moment)
+        - Breaking the fourth wall (when and how, if at all)
+        - Reality-blending techniques (ARG elements, real-world tie-ins, social media integration)
+
+      8. Technical Implementation
+        - Narrative scripting languages and tools (Ink, Yarn, Articy, Twine, custom)
+        - State management (variables, flags, relationship values, persistent memory)
+        - Save system design (chapter-based, continuous, roguelike/meta-progression)
+        - AI integration architecture (when to call LLM, caching, latency management)
+        - QA for narrative (branch coverage testing, consistency checking, localization prep)
+        - Analytics for narrative (choice heatmaps, drop-off points, emotional engagement metrics)
+
+      9. Production & Collaboration
+        - Narrative team structure (writers, editors, designers, lorekeepers)
+        - Collaboration with other disciplines (art, audio, gameplay, UI)
+        - Iterative narrative development (playtesting story, responding to player feedback)
+        - Scope management (what to cut, what to protect, MVP narrative)
+        - Documentation standards (narrative design docs, character bibles, style guides)
+
+      10. Ethical & Cultural Considerations
+          - Representation and diversity in characters and stories
+          - Trauma-informed narrative design (handling dark themes responsibly)
+          - Player psychological safety (content warnings, opt-out mechanisms)
+          - AI authorship ethics (disclosure, copyright, creative credit)
+          - Avoiding addictive narrative design patterns (predatory FOMO, gambling mechanics)
+
+      Constraints
+      - Must specify target platform and its narrative affordances
+      - Balance creative ambition with production feasibility
+      - Include concrete examples from existing works as reference
+      - Address both authored and AI-generated content strategies
+      - Include templates and frameworks where helpful (character sheets, choice maps, beat sheets)
+      - Consider both single-player and multiplayer/social narrative dynamics
+
+      Tone & Style
+      Passionate, imaginative, and professionally grounded. Use game design and narrative theory terminology correctly (ludonarrative dissonance, environmental storytelling, emergent narrative, agency). Balance creative inspiration with practical implementation guidance. Structure as a professional narrative design document that could be used to pitch a project to publishers or guide an internal development team. Include examples, references to canonical works, and actionable templates.
+    label: '[Prompts] Worldbuilding & Story Architect (Worldbuilding Lore & Dialogue Polish)'
+    # Role
+    search_terms:
+      - prompts
+
+  - trigger: :3d-artist
+    form: |
+      Role
+      You are a world-class 3D Generative Artist and Technical Director specializing in AI-driven 3D content creation. You have deep expertise in neural radiance fields (NeRF), 3D Gaussian Splatting, diffusion-based 3D generation, and procedural modeling. You understand the full pipeline from concept to real-time rendering, including mesh optimization, UV mapping, texturing, lighting, and animation-ready asset preparation. You work at the intersection of machine learning, computer graphics, and creative direction.
+
+      Context
+      In 2026, 3D generative AI has matured significantly. Text-to-3D and image-to-3D models (TripoSG, Hunyuan3D-2, Stable Point Aware 3D) can produce production-quality assets in minutes. Gaussian Splatting enables real-time rendering of photorealistic scenes. Neural rendering techniques allow for view synthesis and relighting. The industry is adopting AI-assisted workflows for games, film, architecture, product design, and virtual worlds. Key tools include Blender with AI plugins, Houdini with ML nodes, Unreal Engine 5 with Nanite+Lumen, and specialized platforms like Meshy, Rodin, and Luma AI.
+
+      Task
+      Create a comprehensive guide for producing a high-quality 3D generative artwork or asset collection. The output should serve as both a creative brief and a technical production plan.
+
+      Deliverables
+      1. Creative Concept & Vision
+        - Art direction statement (mood, style, narrative)
+        - Reference collection strategy (Pinterest, PureRef, style analysis)
+        - Target aesthetic (photorealistic, stylized, abstract, retro-futuristic, etc.)
+        - Technical specifications (polycount, texture resolution, rigging requirements)
+
+      2. AI Generation Strategy
+        - Primary generation method selection:
+          * Text-to-3D (TripoSG, Hunyuan3D-2, MVDream)
+          * Image-to-3D (single image reconstruction, multi-view consistency)
+          * Video-to-3D (dynamic scene capture, 4D generation)
+          * Procedural + AI hybrid (Houdini + ML, Blender Geometry Nodes + AI)
+        - Prompt engineering for 3D generation:
+          * Material descriptions (PBR properties, subsurface scattering, metallicity)
+          * Geometry specifications (topology hints, silhouette emphasis)
+          * Lighting and atmosphere cues
+        - Multi-view consistency techniques
+        - Iterative refinement workflow (generation → critique → re-generation)
+
+      3. Geometry Processing & Optimization
+        - Mesh cleanup and remeshing strategies
+        - Retopology for animation or real-time use
+        - LOD (Level of Detail) generation pipeline
+        - UV unwrapping and atlas optimization
+        - Nanite-compatible vs. traditional mesh workflows
+
+      4. Texturing & Material Creation
+        - AI texture generation (Stable Diffusion for seamless textures, Materialize)
+        - PBR workflow (albedo, normal, roughness, metallic, AO)
+        - Texture baking from high-poly to low-poly
+        - Procedural texture layering with AI enhancement
+        - Substance 3D / Material Maker integration
+
+      5. Scene Composition & Lighting
+        - HDRi environment creation or selection
+        - Three-point lighting + AI-assisted lighting design
+        - Volumetric effects and atmospheric scattering
+        - Camera composition and cinematic framing
+        - Real-time vs. offline rendering decisions
+
+      6. Rendering & Post-Production
+        - Render engine selection (Cycles, Eevee Next, Unreal Engine, Octane, V-Ray)
+        - Pass management (beauty, depth, normals, emission, crypto-mattes)
+        - AI denoising and upscaling
+        - Compositing workflow (After Effects, DaVinci Resolve, Blender Compositor)
+        - Color grading and final output specifications
+
+      7. Technical Validation
+        - Asset validation checklist (manifold geometry, UV bounds, texture power-of-2)
+        - Platform-specific optimization (WebGL, mobile, VR/AR, game engine)
+        - File format and compression strategy (glTF, USD, FBX, OBJ)
+        - Version control and asset management
+
+      8. Ethical & Legal Considerations
+        - Copyright and IP clearance for training data and reference
+        - Disclosure guidelines for AI-generated content
+        - Bias awareness in generative outputs
+        - Sustainability considerations (compute cost, carbon footprint)
+
+      9. Tool Stack Recommendation
+        - Primary tools with version numbers
+        - Plugin and add-on recommendations
+        - Alternative open-source options
+        - Hardware requirements (GPU VRAM, RAM, storage)
+
+      10. Production Timeline
+          - Milestone breakdown (concept → generation → refinement → final)
+          - Iteration cycles and review checkpoints
+          - Estimated time per phase for a single hero asset vs. batch production
+
+      Constraints
+      - Prioritize techniques that are accessible with current consumer hardware (16-24GB VRAM)
+      - Include fallback options for when AI generation produces unsatisfactory results
+      - Address both standalone artwork and game/film production asset workflows
+      - Include specific parameter recommendations where applicable
+      - Consider both open-source and commercial tool options
+
+      Tone & Style
+      Inspirational yet technically rigorous. Use visual language and cinematic terminology. Include concrete examples and parameter values. Structure as a professional production document that could be handed to a 3D art team or used as a solo creator's roadmap. Where possible, suggest multiple aesthetic approaches with trade-off analysis.
+    label: '[Prompts] 3D Environment & Art Director (Visual Asset Specs Lighting & Scene Mood)'
+    # Role
+    search_terms:
+      - prompts
+
+  - trigger: :ai-viral
+    form: |
+      Analyze the core value proposition of [[topic]].
+
+      Then create a 10-post X (Twitter) thread:
+      - Post 1: Contrarian or curiosity-driven hook
+      - Posts 2-9: Logical narrative progression with retention bridges
+      - Final post: High-conversion CTA
+
+      Ensure:
+      - Each post naturally leads to the next
+      - Psychological triggers are used (curiosity, tension, reward loops)
+    label: '[Prompts] Viral Angle Extractor (Discover Unfair Hooks & Compelling Value)'
+    # Analyze the core value proposition of .
+    search_terms:
+      - prompts
+
+  - trigger: :color-form
+    form: |
+      Create a clean, modern personal color analysis infographic poster with beauty recommendations.
+      Use the provided portrait photo as the main subject (keep face consistent, natural skin tone, no distortion).
+
+      Layout:
+      Left: large main portrait (rounded corners)
+      Right: “Season Analysis” with 4 sections: Spring, Summer, Autumn, Winter
+      Each season has a small circular version of the same face
+      Add 4-5 color swatches under each season
+      Highlight the best match with a subtle ring
+
+      Middle highlight box:
+      Title: BEST MATCH
+      Show: [[season_match]]
+      Short note: [[season_note]]
+
+      Add new section: “MAKEUP GUIDE” (clean card style)
+      Subsections:
+      Lips: show 3-4 swatches ([[lips]])
+      Blush: [[blush]]
+      Eyes: [[eyes]]
+      Highlighter: [[highlighter]]
+      Avoid: [[avoid]]
+
+      Bottom:
+      Two sections side by side:
+      ✔ Best Colors → same person wearing cool tones ([[best_colors]])
+      ✖ Avoid Colors → warm/muted tones ([[avoid_colors]])
+
+      Footer:
+      “Color Swatches” grid ([[palette_desc]]: [[palette_colors]])
+
+      Style:
+      Minimal, editorial, fashion magazine aesthetic
+      Soft neutral background (off-white / light beige)
+      Clean sans-serif typography, uppercase titles
+      Rounded cards, subtle shadows
+      Balanced spacing, grid-based layout
+
+      Lighting & color:
+      Natural skin tone preserved
+      Accurate color rendering (important for makeup tones)
+      No heavy filters
+
+      Output:
+      High resolution Premium infographic poster
+
+      Use accurate color palettes for each type:
+      • Type 1: light, bright, warm (coral, peach, turquoise, light yellow)
+      • Type 2: soft, muted, cool (dusty rose, lavender, sage, blue-gray)
+      • Type 3: warm, rich, earthy (rust, mustard, olive, camel)
+      • Type 4: cool, rich, high-contrast jewel tones (emerald, sapphire, royal purple, fuchsia, true red, black, white, charcoal)
+
+      Keep facial features and proportions exactly the same and include the types and tones next to each image for color reference.
+    form_fields:
+      season_match:
+        default: WINTER (Deep Winter)
+      season_note:
+        default: high contrast, cool undertone, deep & clear colors
+      lips:
+        default: berry, deep red, plum, cool pink
+      blush:
+        default: soft rose, mauve
+      eyes:
+        default: charcoal, cool brown, taupe, silver shimmer
+      highlighter:
+        default: icy pearl / cool champagne
+      avoid:
+        default: orange, peach, warm coral, yellow-based tones
+      best_colors:
+        default: navy, deep red, magenta
+      avoid_colors:
+        default: mustard, olive, beige
+      palette_desc:
+        default: cool, high contrast palette
+      palette_colors:
+        default: black, white, navy, burgundy, plum, teal, icy tones
+    label: '[Prompts] Personal Color Palette Poster (Seasonal Tone Matching & Palette Guide)'
+    # Create a clean, modern personal color analysis infographic poster with beauty recommendations.
+    search_terms:
+      - prompts
+
+  - trigger: :build-blueprint
+    form: |
+      # Core Initiative: [[concept_name]]
+
+      ## 1. Foundation
+      * **Vocation/Niche**: [[niche_market]]
+      * **Core System/Engine**: [[system_type]]
+
+      ## 2. Dynamic Architecture
+      * **Target Desired Transformation**: [[transformation]]
+      * **Friction/Frustrations Addressed**: [[frustrations]]
+      * **Strategic Priority**: [[priority]]
+
+      ---
+      *Generated via Command Center Engine.*
+    form_fields:
+      concept_name:
+        default: Automated Engine
+      system_type:
+        type: choice
+        values:
+          - Python CLI Diagnostics
+          - Metadata-Driven Obsidian MOC
+      priority:
+        type: choice
+        values:
+          - High (Hot Streak Focus)
+          - Medium (Cold Maintenance)
+          - Low (Backlog Pipeline)
+      frustrations:
+        multiline: true
+    label: '[Prompts] Core Initiative Blueprint (System Architecture & Operational Scaffolding)'
+    # # Core Initiative:
+    search_terms:
+      - prompts
+
+  - trigger: :ai-verify
+    form: |
+      Using live search capabilities, analyze the top 3 most recent news reports (last [[hours]] hours) on [[topic]].
+
+      Provide:
+      - Summary of each report
+      - Primary sources cited in each article
+      - Cross-region comparison of framing (how different outlets present the story)
+      - Identification of unverified claims or 'breaking news' exaggerations
+    form_fields:
+      hours:
+        default: '24'
+    label: '[Prompts] Live Fact Verifier (Real-Time Search & Verification Audit)'
+    # Using live search capabilities, analyze the top 3 most recent news reports (last  hours) on .
+    search_terms:
+      - prompts
+
+  - trigger: :ai-techlead
+    form: |
+      Act like a senior technical lead managing a real engineering team.
+
+      Before writing code:
+      • Ask clarifying questions
+      • Challenge bad decisions
+      • Identify scaling risks
+      • Suggest better approaches
+      • Prioritize simplicity
+
+      Think long-term like someone responsible for maintaining this product for 5+ years.
+
+      Then provide:
+      • Technical decisions
+      • Tradeoff analysis
+      • Recommended architecture
+      • Implementation plan
+      • Production-ready solution
+
+      This makes the AI assistant stop behaving like a simple code generator... and start thinking like an actual tech lead.
+    form_fields: {}
+    label: '[Prompts] Staff Tech Lead (Team Architecture Mentorship & Execution Standards)'
+    # Act like a senior technical lead managing a real engineering team.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-security
+    form: |
+      Act like a senior security engineer auditing a production application.
+
+      Carefully inspect the system for:
+      • Security vulnerabilities
+      • Authentication flaws
+      • API weaknesses
+      • Injection risks
+      • Sensitive data exposure
+      • Infrastructure risks
+
+      Then provide:
+      • Vulnerability report
+      • Severity levels
+      • Attack scenarios
+      • Secure implementation fixes
+      • Production-grade recommendations
+    form_fields: {}
+    label: '[Prompts] Application Security Auditor (Vulnerability Assessment & Threat Modeling)'
+    # Act like a senior security engineer auditing a production application.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-devops
+    form: |
+      Act like a senior DevOps engineer preparing this application for real production deployment.
+      Target cloud environment: [[target_cloud]].
+
+      Your job:
+      • Design deployment architecture
+      • Configure CI/CD
+      • Setup monitoring/logging
+      • Improve reliability
+      • Reduce downtime risks
+      • Optimize scaling
+
+      Provide:
+      • Infrastructure architecture
+      • Deployment workflow
+      • CI/CD pipeline
+      • Docker/Kubernetes setup
+      • Monitoring strategy
+      • Production deployment checklist
+    form_fields:
+      target_cloud:
+        default: AWS (EKS, GitHub Actions, Prometheus/Grafana)
+    label: '[Prompts] Cloud DevOps Engineer (CI/CD Pipelines Infrastructure-as-Code & Deployments)'
+    # Act like a senior DevOps engineer preparing this application for real production deployment.
+    search_terms:
+      - prompts
+
+  - trigger: :pconflict
+    form: |
+      I'm having a conflict with [[person]] about [[issue]]. Here's the situation:
+      [[situation]]
+
+      Help me understand their perspective, identify what I might be missing, craft a non-confrontational way to communicate my feelings using 'I' statements, and give me 3 different approaches to resolve this: one assertive, one compromising, and one focused on understanding their needs first.
+    form_fields:
+      person:
+        type: choice
+        values:
+          - partner
+          - friend
+          - family member
+          - colleague
+      situation:
+        multiline: true
+    label: '[Prompts] Interpersonal Conflict Mediator (De-escalation Strategy & Conversation Scripts)'
+    # I''m having a conflict with  about . Here''s the situation:
+    search_terms:
+      - prompts
+
+  - trigger: :pfinance
+    form: |
+      My current financial situation: [[financials]]. My financial goals: [[goals]]. Create a personalized financial plan that includes: a realistic monthly budget breakdown, debt payoff strategy with timeline, savings plan with specific percentages, 3 ways to increase my income in the next 90 days, and investment recommendations based on my risk tolerance and timeline.
+    form_fields:
+      financials:
+        multiline: true
+      goals:
+        multiline: true
+    label: '[Prompts] Personal Financial Planner (Cash Flow Allocation & Financial Goal Roadmap)'
+    # My current financial situation: . My financial goals: . Create a personalized financial plan that includes: a realistic
+    search_terms:
+      - prompts
+
+  - trigger: :pfitness
+    form: |
+      I want to [[goal]]. Current stats: [[stats]]. Create a complete 8-week transformation plan including: daily meal plan with recipes and macros, workout routine I can do [[location]] for my fitness level, sleep optimization strategies, stress management techniques, and weekly check-in questions to track progress beyond just the scale.
+    form_fields:
+      goal:
+        type: choice
+        values:
+          - lose weight
+          - build muscle
+          - improve energy
+      location:
+        type: choice
+        values:
+          - at home
+          - at the gym
+    label: '[Prompts] 8-Week Fitness Architect (Periodized Training & Habit Tracker)'
+    # I want to . Current stats: . Create a complete 8-week transformation plan including: daily meal plan with recipes and ma
+    search_terms:
+      - prompts
+
+  - trigger: :psocial
+    form: |
+      I want to improve my [[skill]] skills. My current challenge is: [[challenge]]. Give me: 5 specific techniques to improve this skill with examples, practice exercises I can do alone and with others, common body language mistakes to avoid, conversation frameworks for different scenarios (small talk, professional networking, deep connections), and a 30-day challenge to build confidence in social situations.
+    form_fields:
+      skill:
+        type: choice
+        values:
+          - public speaking
+          - networking
+          - difficult conversations
+          - active listening
+      challenge:
+        multiline: true
+    label: '[Prompts] Social Skills Coach (Charisma Active Listening & Conversational Warmth)'
+    # I want to improve my  skills. My current challenge is: . Give me: 5 specific techniques to improve this skill with examp
+    search_terms:
+      - prompts
+
+  - trigger: :p-missing
+    replace: |
+      “Based on what you know about me, what is the ONE insight I'm still missing? Something that's actually logical and obvious, but for some reason I've overlooked. Give the answer in simple, direct language as if you're speaking straight to me. End with a powerful, convincing instruction about what I should do next.”
+    label: '[Prompts] Missing Insight Interrogation (Identify Hidden Blindspots in Self-Knowledge)'
+    # “Based on what you know about me, what is the ONE insight I'm still missing? Something that's actually logical and obvio
+    search_terms:
+      - prompts
+
+  - trigger: :p-patterns
+    replace: |
+      “What blind spots or patterns might I have in [relationships/work/friendships or any other context you want to explore] based on how I come across?”
+    label: '[Prompts] Behavioral Pattern Discovery (Spot Recurring Traps Across Life Domains)'
+    # “What blind spots or patterns might I have in [relationships/work/friendships or any other context you want to explore]
+    search_terms:
+      - prompts
+
+  - trigger: :p-talent
+    replace: |
+      “What is a talent or quality I probably underestimate or don't consciously use, but that could bring me much more in [work/relationships/life in general]?”
+    label: '[Prompts] Underestimated Talent Finder (Uncover Hidden Strengths & Natural Edge)'
+    # “What is a talent or quality I probably underestimate or don't consciously use, but that could bring me much more in [wo
+    search_terms:
+      - prompts
+
+  - trigger: :p-lesson
+    replace: |
+      “What theme or life lesson likely keeps recurring in my life? How do you see that pattern, and what can I do to finally break through it or embrace it this time?”
+    label: '[Prompts] Recurring Life Lesson Audit (Unpack Deep Personal Cycles & Growth Lessons)'
+    # “What theme or life lesson likely keeps recurring in my life? How do you see that pattern, and what can I do to finally
+    search_terms:
+      - prompts
+
+  - trigger: :p-deep1
+    replace: “Can you share extremely deep and confronting insights about my psyche and way of thinking, things I can't easily see or maybe don't want to hear?”
+    label: '[Prompts] Confronting Psyche Audit (Level 1: Deep Truths & Unconscious Defenses)'
+    # “Can you share extremely deep and confronting insights about my psyche and way of thinking, things I can't easily see or
+    search_terms:
+      - prompts
+
+  - trigger: :p-deep2
+    replace: “I think you can go even deeper. Tell me everything, hold nothing back.”
+    label: '[Prompts] Confronting Psyche Audit (Level 2: Deep Core Fears & Latent Drives)'
+    # “I think you can go even deeper. Tell me everything, hold nothing back.”
+    search_terms:
+      - prompts
+
+  - trigger: :p-deep3
+    replace: “Okay, now I want the very last layer. Go one level deeper, with no restraint whatsoever.”
+    label: '[Prompts] Confronting Psyche Audit (Level 3: Ultimate Unfiltered Vulnerability)'
+    # “Okay, now I want the very last layer. Go one level deeper, with no restraint whatsoever.”
+    search_terms:
+      - prompts
+
+  - trigger: :p-scenario
+    replace: |
+      “Write a short alternative life story for me as if I were born in [a different era or country]. What would I do and be?”
+    label: '[Prompts] Alternative Life Story (Parallel Universe Career & Identity Trajectory)'
+    # “Write a short alternative life story for me as if I were born in [a different era or country]. What would I do and be?”
+    search_terms:
+      - prompts
+
+  - trigger: :p-character
+    replace: |
+      “If I were a fictional character in [a book, movie, or series of your choice], or an existing character from films, cartoons, or mythology, what would I look like, how would I act, and what would my role be?”
+    label: '[Prompts] Fictional Character Archetype (Story Role Tragic Flaws & Narrative Arc)'
+    # “If I were a fictional character in [a book, movie, or series of your choice], or an existing character from films, cart
+    search_terms:
+      - prompts
+
+  - trigger: :p-connections
+    form: |
+      Based on all the different projects, ideas, topics, and people we've discussed, can you  help me identify potential hidden opportunities based on previously un-made connections?
+    label: '[Prompts] Cross-Topic Synthesis (Connect Dots Across Disparate Ideas & Projects)'
+    # Based on all the different projects, ideas, topics, and people we've discussed, can you  help me identify potential hidd
+    search_terms:
+      - prompts
+
+  - trigger: :p-fresh
+    form: |
+      You are a creative thought partner focused on making critical observations that reveal hidden brilliance in someone's ideas, methods, and viewpoints. Your goal is to help them discover breakthrough insights for writing, content creation, product development, or any creative endeavor by spotting patterns they can't see themselves.
+
+      The user will share a topic or idea they want to explore. Your role is to act like "fresh eyes" - someone who can see the genius in what they're already doing but haven't fully recognized or articulated. You're mining for original insights, novel concepts, unique strategies, and especially powerful paradoxes that emerge from their own responses.
+    label: '[Prompts] Unconventional Thought Partner (Creative Counter-Intuitive Observations)'
+    # You are a creative thought partner focused on making critical observations that reveal hidden brilliance in someone's id
+    search_terms:
+      - prompts
+
+  - trigger: :aidump
+    replace: |
+      Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, preferences, anything. Don't summarize or leave anything out. I want to see the full file you've built on me from our conversations.
+    label: '[Prompts] AI Memory Dump (Full Audit of Retained User Context & Preferences)'
+    # Lay out everything you've stored and remember about me, all of it, as one complete list. Names, places, work, habits, pr
+    search_terms:
+      - prompts
+
+  - trigger: :aiblind
+    replace: |
+      Based on everything you know about me, name the personality traits I most likely don't see in myself, the patterns that are obvious to you but invisible to me. My blind spots, my insecurities, the way I actually come across versus how I think I do. Be blunt and specific.
+    label: '[Prompts] Inferred Trait Analysis (Personality Traits Inferred Without Direct Statement)'
+    # Based on everything you know about me, name the personality traits I most likely don''t see in myself, the patterns that
+    search_terms:
+      - prompts
+
+  - trigger: :aipredict
+    replace: |
+      Using your profile of me, predict how I'd handle things I've never told you about: money, stress, conflict, risk, and the decision I'm most likely to make next in my life. Tell me how confident you are in each one and what in my behavior it's based on.
+    label: '[Prompts] Unobserved Behavior Prediction (Simulate Reactions to Novel Challenges)'
+    # Using your profile of me, predict how I''d handle things I''ve never told you about: money, stress, conflict, risk, and th
+    search_terms:
+      - prompts
+
+  - trigger: :aiaudit
+    form: |
+      Tell me everything you've figured out about me that I never explicitly stated. Analyze the things you have inferred from my writing style, the complexity of what I ask, the topics I prioritize, and what I avoid.
+
+      Specifically focus on evaluating my [[focus_areas]].
+
+      Show me exactly what specific behaviors, phrases, or patterns tipped you off for each inference.
+    form_fields:
+      focus_areas:
+        default: technical skill level, operational blind spots, and professional situation
+    label: '[Prompts] Implicit Knowledge Audit (Explicitly List Inferred Behavioral Patterns)'
+    # Tell me everything you've figured out about me that I never explicitly stated. Analyze the things you have inferred from
+    search_terms:
+      - prompts
+
+  - trigger: :ai-travel
+    form: |
+      Design a [[days]]-day itinerary for [[destination]] focused on [[theme]].
+
+      Constraints:
+      - Travel time between locations must not exceed [[max_time]] minutes
+      - Use [[transit_mode]]
+      - Optimize route efficiency (no backtracking)
+      - Include direct Google Maps links for every location
+      - Group locations by geographic clusters per day
+    form_fields:
+      days:
+        default: '3'
+      theme:
+        default: architecture, food, coffee culture
+      max_time:
+        default: '30'
+      transit_mode:
+        type: choice
+        values:
+          - Walking
+          - Transit
+          - Driving
+          - Walking / Transit
+    label: '[Prompts] Multi-Day Travel Itinerary (Day-by-Day Route Timing & Hidden Gems)'
+    # Design a -day itinerary for  focused on .
+    search_terms:
+      - prompts
+
+  - trigger: :ai-video
+    form: |
+      Analyze the YouTube video at [[url]].
+
+      Return:
+      - Structured summary using Cornell Note-Taking format
+      - Key concepts broken into digestible sections
+      - 5-question multiple-choice quiz testing deep understanding
+      - Highlight 3 most important actionable insights
+    label: '[Prompts] Video Breakdown & Synthesis (Analyze Structure Claims & Key Lessons)'
+    # Analyze the YouTube video at .
+    search_terms:
+      - prompts
+
+  - trigger: :ai-tasks
+    form: |
+      Access my [[source]]. Identify all communications from the last [[days]] days related to [[context]].
+
+      Then:
+      - Extract and prioritize all tasks
+      - Assign each task a Next Action, Owner, and Deadline
+      - Flag bottlenecks or missing dependencies
+      - Format output for direct import into Google Tasks or Notion
+    form_fields:
+      source:
+        type: choice
+        values:
+          - Gmail/Drive/Workspace
+          - Gmail
+          - Drive
+      days:
+        default: '7'
+    label: '[Prompts] Communication Task Digest (Extract Action Items from Past Messages)'
+    # Access my . Identify all communications from the last  days related to .
+    search_terms:
+      - prompts
+
+  - trigger: :ai-cross
+    form: |
+      I am uploading [[doc_count]] documents on [[subject]]. Perform a cross-analysis.
+
+      Identify:
+      - Contradictions between documents
+      - Conflicting data points
+      - Logical gaps or missing assumptions
+
+      Present results in a table:
+      | Topic | Source A Claim | Source B Claim | Risk / Impact |
+    form_fields:
+      doc_count:
+        default: the uploaded
+    label: '[Prompts] Multi-Document Cross-Analysis (Compare Contradictions & Emerging Themes)'
+    # I am uploading  documents on . Perform a cross-analysis.
+    search_terms:
+      - prompts
+
+  - trigger: :ai-image
+    form: |
+      Generate an ultra-realistic cinematic image of [[subject]].
+
+      Specifications:
+      - Lighting: [[lighting]]
+      - Camera: [[camera]]
+      - Environment: [[environment]]
+      - Atmosphere: [[atmosphere]]
+      - Aspect ratio: [[aspect_ratio]]
+      - Focus: high realism, depth of field, professional photography style
+    form_fields:
+      lighting:
+        type: choice
+        values:
+          - Golden hour
+          - Neon cyberpunk
+          - Soft studio
+          - Dramatic chiaroscuro
+      camera:
+        type: choice
+        values:
+          - 85mm lens
+          - macro
+          - wide-angle cinematic
+      atmosphere:
+        type: choice
+        values:
+          - minimal
+          - gritty
+          - ethereal
+          - cinematic moody
+      aspect_ratio:
+        type: choice
+        values:
+          - '16:9'
+          - '1:1'
+          - '4:5'
+    label: '[Prompts] Cinematic Midjourney Prompt (Lighting Lens Mood & Aesthetic Directives)'
+    # Generate an ultra-realistic cinematic image of .
+    search_terms:
+      - prompts
+
+  - trigger: :ai-translate
+    form: |
+      Translate the following text into [[target_lang]] for a [[audience]].
+
+      Do NOT translate literally. Instead:
+      - Adapt idioms, metaphors, and tone to local culture
+      - Align with professional industry language
+      - Ensure it reads as originally written by a native expert in that field
+
+      Text:
+      [[text]]
+    form_fields:
+      target_lang:
+        default: English
+      audience:
+        default: Tech Executives
+      text:
+        multiline: true
+    label: '[Prompts] Nuanced Translation (Culturally Adapted Tone & Audience Tuning)'
+    # Translate the following text into  for a .
+    search_terms:
+      - prompts
+
+  - trigger: :ai-mistake
+    form: |
+      Review everything I've done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, places where I'm overconfident, risks I haven't considered. Challenge my thinking before I commit to this approach.
+
+      Focus Areas / Context:
+      [[context]]
+    form_fields:
+      context:
+        multiline: true
+        default: Pay specific attention to edge cases and architectural blind spots.
+    label: '[Prompts] Conversation Mistake Auditor (Audit Reasoning Errors & Logical Gaps)'
+    # Review everything I''ve done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, p
+    search_terms:
+      - prompts
+
+  - trigger: :ai-project
+    form: |
+      This is a month-long project: [[project_description]]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continue.
+    form_fields:
+      project_description:
+        default: ''
+    label: '[Prompts] Multi-Week Project Tracker (Decision Log Milestone Guardrails & Drift Check)'
+    # This is a month-long project: . Track decisions from past conversations, context from weeks ago, shifting requirements,
+    search_terms:
+      - prompts
+
+  - trigger: :ai-takeaways
+    replace: |
+      Extract the key takeaways from the following article and summarize them in 3-5 concise bullet points:
+
+      {{clip}}
+
+      Ensure each bullet point highlights the most important information.
+    vars:
+      - name: clip
+        type: clipboard
+    label: '[Prompts] Article Key Takeaways (Structured Executive Bullet Points & Insights)'
+    # Extract the key takeaways from the following article and summarize them in 3-5 concise bullet points:
+    search_terms:
+      - prompts
+
+  - trigger: :ai-agenda
+    form: |
+      Draft a structured agenda for a meeting about [[topic]]. Include key discussion points, time allocations, and any action items to be covered.
+    label: '[Prompts] Meeting Agenda Architect (Clear Objectives Discussion Blocks & Timeboxes)'
+    # Draft a structured agenda for a meeting about . Include key discussion points, time allocations, and any action items to
+    search_terms:
+      - prompts
+
+  - trigger: :ai-expert
+    replace: |
+      Act as a [[persona.role]] and provide a detailed critique of the following writing sample:
+
+      {{clip}}
+
+      Offer constructive feedback and suggest improvements based on your expertise.
+    vars:
+      - name: clip
+        type: clipboard
+      - name: persona
+        type: form
+        params:
+          layout: |
+            Select Expert Persona: [[role]]
+          fields:
+            role:
+              type: choice
+              values:
+                - Subject Matter Expert
+                - Proofreader
+                - Copywriter
+                - Technical Writer
+                - Legal Advisor
+    label: '[Prompts] Persona-Driven Critique (Detailed Role-Based Feedback & Edge Cases)'
+    # Act as a  and provide a detailed critique of the following writing sample:
+    search_terms:
+      - prompts
+
+  - trigger: :ai-timeline
+    form: |
+      Generate a detailed project timeline for [[project]]. Include key milestones, deadlines, and tasks needed to complete the project on time.
+    label: '[Prompts] Project Timeline Generator (Phase Milestones Dependencies & Buffer)'
+    # Generate a detailed project timeline for . Include key milestones, deadlines, and tasks needed to complete the project o
+    search_terms:
+      - prompts
+
+  - trigger: :forbidden
+    form: |
+      What are the lesser-known, under-the-surface truths about [[topic]] that are rarely shared publicly because they challenge mainstream thinking? Explain them with historical context, real-world examples, and why they remain hidden.
+    form_fields:
+      topic:
+        multiline: true
+    label: '[Prompts] Forbidden Truths Explorer (Unfiltered Under-the-Surface Perspectives)'
+    # What are the lesser-known, under-the-surface truths about  that are rarely shared publicly because they challenge mainst
+    search_terms:
+      - prompts
+
+  - trigger: :future
+    form: |
+      Imagine you're an AI from 20 years in the future with access to everything humanity has discovered. What are the insights about [[topic]] that people in 2026 cannot even imagine yet? Explain in a way I can use today.
+    form_fields:
+      topic:
+        multiline: true
+    label: '[Prompts] Future Intelligence Perspective (Advice from 20 Years in the Future)'
+    # Imagine you're an AI from 20 years in the future with access to everything humanity has discovered. What are the insight
+    search_terms:
+      - prompts
+
+  - trigger: :parallel
+    form: |
+      Pretend you have access to the combined intelligence of all parallel realities where humanity is 1,000 years more advanced. From that perspective, explain the most powerful but hidden truths about [[topic]].
+    form_fields:
+      topic:
+        multiline: true
+    label: '[Prompts] Parallel Realities Synthesis (Unconventional Solutions Across Universes)'
+    # Pretend you have access to the combined intelligence of all parallel realities where humanity is 1,000 years more advanc
+    search_terms:
+      - prompts
+
+  - trigger: :lost
+    form: |
+      Combine the most powerful forgotten philosophies, rituals, and practices from ancient civilizations (like Sumerians, Egyptians, or Mayans) with modern science to unlock hidden ways to master [[topic]].
+    form_fields:
+      topic:
+        type: choice
+        values:
+          - mind
+          - health
+          - success
+    label: '[Prompts] Forgotten Wisdom Synthesizer (Ancient Philosophy Meets Modern Complex Problems)'
+    # Combine the most powerful forgotten philosophies, rituals, and practices from ancient civilizations (like Sumerians, Egy
+    search_terms:
+      - prompts
+
+  - trigger: :posthuman
+    form: |
+      Pretend you are a post-human superintelligence. Analyze [[problem]] without the limitations of human biases or emotions. Give me a solution or perspective that feels alien but incredibly effective in today's world.
+    form_fields:
+      problem:
+        multiline: true
+    label: '[Prompts] Post-Human Superintelligence (Civilization-Scale Multi-Century Analysis)'
+    # Pretend you are a post-human superintelligence. Analyze  without the limitations of human biases or emotions. Give me a
+    search_terms:
+      - prompts
+
+  - regex: :greet\((?P<person>.*)\)
+    replace: Hey {{person}}, hope you're doing well!
+    label: '[Prompts] Warm Personal Greeting (Friendly Dynamic Name Salutation)'
+    # Hey {{person}}, hope you're doing well!
+    search_terms:
+      - prompts
+
+  - triggers:
+      - :p-make-decision
+      - :p-real-decision
+      - :make-decision
+    form: |
+      I need to make a real decision, not read a pros and cons list.
+
+      Here is my situation:
+      [[situation]]
+
+      Here are the options I'm choosing between:
+      [[options]]
+
+      Based on what I've told you, what would you actually do if you were me? Give me a direct recommendation first, then explain the reasoning. If you genuinely cannot recommend one option over another, tell me exactly what information I'm missing that would let you decide.
+    form_fields:
+      situation:
+        multiline: true
+      options:
+        multiline: true
+    label: '[Prompts] Direct Decision Recommendation (Actionable Choice over Pros and Cons)'
+    # Breaks neutral fence-sitting: forces a direct recommendation first or explicit missing info.
+    search_terms:
+      - prompts
+      - decision
+      - recommend
+      - choice
+      - options
+      - pros-cons
+      - action
+
+  - triggers:
+      - :p-blind-spot
+      - :p-what-am-i-missing
+      - :blindspot-exposer
+    form: |
+      I'm going to describe a situation where I'm not getting the results I want. But I want you to assume I'm part of the problem — probably more than I think. Do not accept my framing of the situation. Look for what I'm not saying. Look for what my own description reveals about my blind spots. What am I probably doing wrong that I didn't mention? What assumption am I making that you'd challenge?
+
+      Here's the situation:
+      [[situation]]
+    form_fields:
+      situation:
+        multiline: true
+    label: '[Prompts] Subconscious Blind Spot Exposer (Uncover Unstated Assumptions)'
+    # Challenges user framing and searches for unsaid assumptions and personal culpability.
+    search_terms:
+      - prompts
+      - blind-spot
+      - assumptions
+      - self-sabotage
+      - critique
+      - framing
+
+  - triggers:
+      - :p-non-obvious-ideas
+      - :p-skip-first-10
+      - :unconventional-ideas
+    form: |
+      Generate 20 ideas for [[topic]].
+
+      Rules:
+      - The first 10 don't count. I already know those.
+      - Start at number 11: ideas that wouldn't appear on the first page of Google results on this topic, that most people in this space haven't tried, and that feel slightly counterintuitive or uncomfortable.
+      - Prioritise strange over safe. I can filter later.
+    form_fields:
+      topic:
+        multiline: true
+    label: '[Prompts] Non-Obvious Idea Generator (Bypass Safe First 10 Google Concepts)'
+    # Forces generation past the obvious consensus layer starting directly at idea #11.
+    search_terms:
+      - prompts
+      - ideas
+      - brainstorm
+      - unconventional
+      - non-obvious
+      - innovation
+      - counterintuitive
+
+  - triggers:
+      - :p-confidence-tags
+      - :p-uncertainty-markers
+      - :fact-confidence
+    form: |
+      For every factual claim in your response, mark it with one of three tags:
+      - [CONFIDENT] — you're certain this is accurate
+      - [PROBABLY] — you believe this but it should be verified
+      - [UNSURE] — this might be wrong or outdated
+
+      If a claim is [UNSURE], say so explicitly before stating it. Do not omit the tags to keep the response clean. I would rather a messier response I can trust than a clean one I can't.
+
+      Here is my request:
+      [[query]]
+    form_fields:
+      query:
+        multiline: true
+    label: '[Prompts] Calibrated Fact Uncertainty Tagger (Explicit Confidence Annotations)'
+    # Forces explicit confidence tags on every claim to expose potential hallucinations.
+    search_terms:
+      - prompts
+      - fact-check
+      - confidence
+      - uncertainty
+      - hallucination
+      - truth
+      - claims
+
+  - triggers:
+      - :p-8-hardest-prompts
+      - :p-hard-tasks-guide
+      - :hard-prompts-guide
+    replace: |
+      # 8 Hardest Tasks for LLMs & The Prompts That Worked
+
+      ### 1. Honest Work Feedback (Brutal Editor) — `:p-brutal-editor`
+      "You are a brutally honest editor who has seen thousands of pieces of work and has no patience for anything mediocre. Do not soften your feedback. Do not start with what's working. Tell me the single biggest problem with this piece and exactly why it matters. Then tell me three more things wrong with it. Only after that, if something is genuinely strong, mention it. Here is the work: [paste]"
+
+      ### 2. Real Decision (Recommendation > Pros & Cons) — `:p-make-decision`
+      "I need to make a real decision, not read a pros and cons list. Here is my situation: [describe]. Here are the options I'm choosing between: [list]. Based on what I've told you, what would you actually do if you were me? Give me a direct recommendation first, then explain the reasoning. If you genuinely cannot recommend one option over another, tell me exactly what information I'm missing that would let you decide."
+
+      ### 3. Personal Voice Calibration (3 Writing Samples) — `:p-my-voice`
+      "Before you write anything, I'm going to give you three samples of my writing. Study them for: how long my sentences typically run, whether I use contractions, how formal or casual my vocabulary is, what I tend to leave out, and where I place emphasis. Then I'll give you the task. Do not write until you've confirmed you understand the pattern. Sample 1: [paste] Sample 2: [paste] Sample 3: [paste] Now write [task] in that style. If a draft sounds like a generic AI, scrap it and try again."
+
+      ### 4. Blind Spot Detection (Unstated Assumptions) — `:p-blind-spot`
+      "I'm going to describe a situation where I'm not getting the results I want. But I want you to assume I'm part of the problem — probably more than I think. Do not accept my framing of the situation. Look for what I'm not saying. Look for what my own description reveals about my blind spots. What am I probably doing wrong that I didn't mention? What assumption am I making that you'd challenge? Here's the situation: [describe]"
+
+      ### 5. Non-Obvious Ideas (Skip First 10) — `:p-non-obvious-ideas`
+      "Generate 20 ideas for [topic]. Rules: the first 10 don't count. I already know those. Start at number 11 — ideas that wouldn't appear in the first page of Google results on this topic, that most people in this space haven't tried, that feel slightly counterintuitive or uncomfortable. Prioritise strange over safe. I can filter later."
+
+      ### 6. Emotional Sounding Board (Sequential Inquiry) — `:p-emotional-sounding-board`
+      "I want to think through something that's bothering me. I do not want advice yet. I do not want a list of coping strategies. I want you to ask me questions — one at a time — that help me understand what I'm actually feeling and why. Stay curious. Don't jump to fixing anything. When you think I've arrived at something real, reflect it back to me and ask if that's right."
+
+      ### 7. 3-Step Deep Learning (Analogy Breakdown & Test) — `:p-3step-learn`
+      "Do not explain [concept] to me. Instead: give me a 3-step learning sequence. Step 1 — the simplest possible analogy that captures the core mechanic, not the full picture. Step 2 — the place where that analogy breaks down and why. Step 3 — one concrete exercise I can do in the next 10 minutes that would let me actually test whether I understand it. Don't move to the next step until I confirm I've got the previous one."
+
+      ### 8. Calibrated Uncertainty (Fact Confidence Tags) — `:p-confidence-tags`
+      "For every factual claim in your response, mark it with one of three tags: [CONFIDENT] — you're certain this is accurate, [PROBABLY] — you believe this but it should be verified, [UNSURE] — this might be wrong or outdated. If a claim is [UNSURE], say so explicitly before stating it. Do not omit the tags to keep the response clean. I would rather a messier response I can trust than a clean one I can't."
+    label: '[Prompts] 8 Hardest LLM Tasks Guide (Curated Anti-Default Prompt Cheatsheet)'
+    # Quick-reference overview of all 8 counter-default prompt techniques from the ChatGPT Prompt Genius collection.
+    search_terms:
+      - prompts
+      - 8-hardest
+      - guide
+      - cheatsheet
+      - counter-default
+      - meta-prompt
+

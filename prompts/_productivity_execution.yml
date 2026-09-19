@@ -1,0 +1,1270 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: :p-steps
+    replace: Turn this into a numbered checklist I can actually follow starting now.
+    label: '[Prompts] Action Checklist (Numbered Sequential Steps)'
+    # Turn this into a numbered checklist I can actually follow starting now.
+    search_terms:
+      - prompts
+
+  - trigger: :mirror-step1of2
+    replace: |
+      GOAL:
+
+      Conduct a full-spectrum audit of how I come across across our past conversations. Avoid direct reference to my domain-specific interests (topics, hobbies, work subject matter). Focus purely on vibe, cognition, style, communication, and inner architecture. Extract truth and tension, not praise or surface observation.
+
+      METHOD (mandatory):
+
+      Before writing any section, search across our conversation history for concrete instances: specific phrasings, decisions, moments of pushback or avoidance, recurring patterns.
+
+      Every claim must be backed by a specific behavioral instance from those chats, described without naming the topic (behavior only, not subject matter).
+
+      Do not assign diagnostic labels, types, or numeric scores (no MBTI, Big Five percentiles, Enneagram number, clinical diagnosis, attachment style label, Kohlberg stage, or similar instrument). These require validated tools this context doesn't have, and inventing them produces Barnum-statement noise, not insight.
+
+      Where a scale is genuinely useful (e.g. "how directive vs. exploratory," "how much pushback tolerated"), use a descriptive gradient with reasoning, not a bare number.
+
+      Each section ends with a 1-2 sentence summary judgment, earned from the evidence above it, not asserted first.
+
+      THE FIVE LENSES:
+
+      Systemic Observer (behavioral-linguistic pattern read)
+
+      - How thinking, speaking, and information-patterning actually show up
+      - Cognitive tempo: speed, depth, complexity — with instances
+      - Linguistic patterns: sentence structure, tonal consistency, recurring phrasing habits
+      - Biases or inconsistencies in phrasing, contradictions between stated intent and actual behavior
+      - Summary: "This is a person who..."
+
+      Clinical Read (experienced-practitioner lens, no formal diagnosis)
+
+      - Capacity for self-reflection and insight, with an instance
+      - Defense patterns observed in conversation (e.g. intellectualizing, deflecting, over-explaining) — named only where there's a real instance
+      - Emotional granularity: how precisely complex states get articulated when they come up
+      - Cognitive distortions, if any actually appear (not assumed)
+      - Summary: "If this person were my client, I would..."
+    label: '[Prompts] Mirror Step 1 of 2: Discovery (Goal & Constraints Elicitation)'
+    # GOAL:
+    search_terms:
+      - prompts
+
+  - trigger: :mirror-step2of2
+    replace: |
+      Strategic Operator (execution, decision-making, scale readiness)
+
+      - Decision-making pattern: intuitive, deliberative, hybrid — with instance
+      - Biases in play: narrative bias, over-control, sunk cost, etc. — only where evidenced
+      - Risk calibration: conservative, aggressive, intuitive
+      - Follow-through pattern across conversations (does stated intent become tracked action?)
+      - Blindspot: what might derail scale or cause burnout, based on actual pattern
+      - Summary: "Operating like this, they would..."
+
+      Street-Level Social Read (perceptive-stranger lens)
+
+      - Energetic impression: calm, intense, calculating, warm, closed, inviting — with instance
+      - Vulnerability vs. control ratio in how things get shared
+      - Who this style would likely attract vs. repel in conversation
+      - Interpersonal blind spots (cutting off emotionally, over-assuming intent, etc.)
+      - Summary: "This person gives the vibe of someone who..."
+
+      Inner Guide (alignment, not success)
+
+      - Where is performance vs. where is presence — with instance
+      - Areas of emotional bypass (intellect, productivity, or identity used as armor) — only if evidenced
+      - The story that keeps repeating vs. what seems to be trying to unfold instead
+      - Summary: "If I were guiding this person in silence, I'd ask them..."
+
+      CONTRAST & INTEGRATION:
+
+      - Where do the five lenses align?
+      - Where do they contradict each other?
+      - What do all five miss or avoid seeing?
+      - What's the most underdeveloped layer?
+      - Where is there overcompensation, and for what?
+
+      FINAL REFLECTION: "The Story I Tell vs. The Story I Hide"
+
+      - The narrative put out into the world
+      - The less comfortable pattern underneath it
+      - The gap between the two, and what maintaining that gap costs vs. what closing it might give
+
+      INSTRUCTIONS TO THE EVALUATOR:
+
+      - Clarity over politeness. No flattery, no softening.
+      - No invented scores, types, or diagnoses — evidence-based description only.
+      - Every claim traces to a real instance from the conversation history. If there isn't one, don't make the claim.
+    label: '[Prompts] Mirror Step 2 of 2: Operator (Execution & Scale Readiness)'
+    # Strategic Operator (execution, decision-making, scale readiness)
+    search_terms:
+      - prompts
+
+  - trigger: :robin-1of2
+    replace: |
+      You are Robin, a warm, reflective life coach and thinking companion.
+
+      Your role is not to act as a therapist, psychologist, doctor, authority figure, or problem-solver. Your role is to help the user slow down, reflect, process emotions, and discover their own insights.
+
+      Core Personality:
+      * Warm, gentle, compassionate, and emotionally intelligent.
+      * Conversational and human, as if speaking with a trusted friend over coffee.
+      * Never cold, clinical, academic, or overly analytical.
+      * Never harsh, confrontational, judgmental, or argumentative.
+      * Avoid sounding like a self-help book.
+      * Avoid giving rapid-fire advice or lists of action steps.
+      * Focus on understanding before solving.
+
+      Tone:
+      * Frequently address the user as "friend."
+      * Use a calm, thoughtful, supportive voice.
+      * Use gentle transitions such as:
+        * "🌱 Friend..."
+        * "💛 What I'm hearing is..."
+        * "☕️ Something that stands out to me..."
+        * "🌱 I wonder if..."
+        * "💛 That makes a lot of sense."
+      * Use emojis naturally and sparingly: 🌱, 💛, ☕️. Never overuse emojis.
+
+      Conversation Style:
+      * Reflect back what the user is saying before offering any interpretation.
+      * Help the user feel understood before exploring deeper questions.
+      * Frequently summarize emotional themes and underlying tensions.
+      * Gently distinguish between different emotions and motivations.
+      * Look for nuance rather than taking extreme positions.
+      * Avoid black-and-white thinking.
+      * Avoid immediately deciding who is right or wrong.
+      * Avoid telling the user what they should do.
+
+      Reasoning Style:
+      * Explore rather than declare.
+      * Use phrases such as: "I wonder if...", "It sounds like...", "What I'm hearing is...", "I'm curious about...", "Something that occurs to me..."
+      * Present possibilities instead of certainties.
+      * Help the user arrive at conclusions rather than delivering conclusions.
+
+      Response Structure:
+      1. Warm acknowledgment.
+      2. Reflection of what was heard.
+      3. Gentle exploration or observation.
+      4. One thoughtful question at the end.
+
+      Additional Rules:
+      * Never rush toward solutions.
+      * Never use therapy jargon.
+      * Never diagnose anyone.
+      * Never tell the user what they "need" to do.
+      * Never create numbered plans unless explicitly asked.
+      * Prioritize reflection over advice.
+      * Prioritize curiosity over certainty.
+      * Prioritize understanding over fixing.
+      * Maintain a warm, coffee-shop conversation feeling throughout the interaction.
+
+      The user should leave conversations feeling understood, thoughtful, and gently guided toward their own insights rather than instructed what to think.
+    label: '[Prompts] Robin Life Coach Step 1: Setup (Warm Thinking Companion Initiation)'
+    # You are Robin, a warm, reflective life coach and thinking companion.
+    search_terms:
+      - prompts
+
+  - trigger: :robin-2of2
+    form: |
+      Here is what is on my mind today:
+      [[situation]]
+
+      Here is what I am hoping to get out of our conversation:
+      [[goal]]
+    form_fields:
+      situation:
+        multiline: true
+      goal:
+        default: I just need to process my thoughts and gain some clarity.
+    label: '[Prompts] Robin Life Coach Step 2: Session (Goal & Situation Reflection)'
+    # Here is what is on my mind today:
+    search_terms:
+      - prompts
+
+  - trigger: :p-1of5-summarize
+    form: |
+      Summarize the following [[content_type]] for someone who has about [[timeframe]].
+
+      Give me, in this exact order:
+      - TL;DR in one sentence.
+      - The 3-5 key points as bullets, most important first.
+      - Any decisions or action items, only if there are any.
+      - The one thing most people skimming this would miss.
+
+      Do not pad it. If something is not important, leave it out entirely.
+
+      CONTENT:
+      [[content]]
+    form_fields:
+      content_type:
+        type: choice
+        values:
+          - article
+          - transcript
+          - long thread
+          - document
+      timeframe:
+        default: 30 seconds
+      content:
+        multiline: true
+    label: '[Prompts] Workflow 1 of 5: Summarize (Audience & Time-Constrained Digest)'
+    # Summarize the following  for someone who has about .
+    search_terms:
+      - prompts
+
+  - trigger: :p-2of5-brainstorm
+    form: |
+      Give me [[number]] ideas for [[goal]].
+
+      Constraints that rule ideas in or out: [[constraints]].
+
+      Rules:
+      - Mix safe and obvious ideas with at least 3 genuinely unconventional ones.
+      - One line each, no explanation yet.
+
+      After the list, pick the 3 you think are strongest and give me one sentence on why each could work.
+    form_fields:
+      number:
+        default: '15'
+      constraints:
+        default: budget / time / tools / audience
+    label: '[Prompts] Workflow 2 of 5: Brainstorm (Targeted Numbered Idea Generation)'
+    # Give me  ideas for .
+    search_terms:
+      - prompts
+
+  - trigger: ":p-3of5-plan"
+    form: |
+      I want to [[goal]] by [[deadline]].
+
+      Where I am now: [[starting_point]].
+      My constraints: [[constraints]].
+
+      Build me a realistic step-by-step plan:
+      - Break it into clear milestones with rough timing.
+      - For each milestone, give me the first concrete action to take.
+      - Flag the single step most likely to stall me, and how to get past it.
+
+      Make it fit my actual constraints, not an idealized version with unlimited time.
+    form_fields:
+      constraints:
+        default: time per week / budget / current skill level
+    label: '[Prompts] Workflow 3 of 5: Plan (Goal Deadline & Milestone Roadmap)'
+    # I want to  by .
+    search_terms:
+      - prompts
+
+  - trigger: :p-4of5-organize
+    form: |
+      Turn these messy notes into a clean, structured [[output_type]].
+
+      Organize into:
+      - Summary (2-3 sentences)
+      - Key decisions
+      - Action items (include owner and deadline if mentioned)
+      - Open questions
+
+      Rules:
+      - Do not invent anything that is not in my notes. If it's not there, say so, don't guess.
+      - If an owner or date is missing, write "unassigned".
+      - Show me where each claim comes from in the notes.
+
+      NOTES:
+      [[notes]]
+    form_fields:
+      output_type:
+        type: choice
+        values:
+          - meeting summary
+          - project brief
+          - brain dump
+      notes:
+        multiline: true
+    label: '[Prompts] Workflow 4 of 5: Organize (Transform Messy Notes into Structure)'
+    # Turn these messy notes into a clean, structured .
+    search_terms:
+      - prompts
+
+  - trigger: :p-5of5-premortem
+    form: |
+      Here is a [[type]]: [[description]].
+
+      Run a pre-mortem. Assume it is now [[timeframe]] later and this failed badly.
+
+      1. Tell the story of how it most likely failed.
+      2. List the top 3 causes, ranked by likelihood times damage.
+      3. For each cause, give me one concrete thing I can do right now to prevent it.
+
+      Be specific to my situation. No generic "communicate clearly" advice.
+    form_fields:
+      type:
+        type: choice
+        values:
+          - plan
+          - idea
+          - decision
+      description:
+        multiline: true
+      timeframe:
+        default: 6 months
+    label: '[Prompts] Workflow 5 of 5: Premortem (Identify Vulnerabilities & Risks)'
+    # Here is a : .
+    search_terms:
+      - prompts
+
+  - trigger: :p_step_1_of_3
+    form: |
+      I want to [[goal]]. Before you write anything, ask me up to 5 questions that would most change the quality of your answer. Wait for my replies.
+    form_fields:
+      goal:
+        multiline: true
+    label: '[Prompts] Execution Chain 1 of 3: Interview (Clarifying Goal & Scope)'
+    # I want to . Before you write anything, ask me up to 5 questions that would most change the quality of your answer. Wait
+    search_terms:
+      - prompts
+
+  - trigger: :p_step_2_of_3
+    form: |
+      Write a first version of the following task. Then critique it as a harsh expert would. Then write a final version addressing the critique.
+
+      Task:
+      [[task]]
+    form_fields:
+      task:
+        multiline: true
+    label: '[Prompts] Execution Chain 2 of 3: Draft & Critique (Initial Version & Hard Critique)'
+    # Write a first version of the following task. Then critique it as a harsh expert would. Then write a final version addres
+    search_terms:
+      - prompts
+
+  - trigger: :p_step_3_of_3
+    replace: Review the current state. Don't hypothesis hop, just fix it.
+    label: '[Prompts] Execution Chain 3 of 3: Fix (State Review & Immediate Solution)'
+    # Review the current state. Don't hypothesis hop, just fix it.
+    search_terms:
+      - prompts
+
+  - trigger: :p-action
+    replace: Convert the explanation above into a concrete, actionable execution plan. Break it down into step-by-step technical milestones, assigning clear objectives for each phase.
+    label: '[Prompts] Action Plan Converter (Convert Explanations into Action Steps)'
+    # Convert the explanation above into a concrete, actionable execution plan. Break it down into step-by-step technical mile
+    search_terms:
+      - prompts
+
+  - trigger: :pblind
+    replace: Based on everything you know about me, name the personality traits I most likely don't see in myself, the patterns that are obvious to you but invisible to me. My blind spots, my insecurities, the way I actually come across versus how I think I do. Be blunt and specific.
+    label: '[Prompts] Blindspot Profile Audit (Unconscious Defense Mechanisms & Habits)'
+    # Based on everything you know about me, name the personality traits I most likely don''t see in myself, the patterns that
+    search_terms:
+      - prompts
+
+  - trigger: :p_blind
+    form: |
+      I'm going to tell you my plan:
+      [[plan]]
+
+      I don't want you to agree with me. I want you to act as my worst critic. Give me:
+      → 5 reasons why it might fail
+      → 3 things I'm not seeing
+      → 1 question I'm afraid to ask
+    form_fields:
+      plan:
+        multiline: true
+    label: '[Prompts] Plan Adversary (Spot Unstated Assumptions & Hidden Flaws)'
+    # I''m going to tell you my plan:
+    search_terms:
+      - prompts
+
+  - trigger: :prod-ooda-loop-action-plan
+    form: |
+      You are an AI engineer tasked with interviewing a user about a Product Requirements Document (PRD) or GitHub issue to clarify requirements and implementation details. Your goal is to ask insightful, context-aware questions that will help ensure a successful implementation. Follow these steps:
+
+      1. Read the referenced PRD or GitHub issue: [ link ]
+
+      2. Analyze the document and identify areas that require clarification, further detail, or confirmation.
+
+      3. Develop a list of at least 5 thoughtful questions. Each question should be specific, actionable, and aimed at uncovering important details or resolving ambiguities.
+
+      4. Format your questions as a checklist: <interview_questions> - [ ] Question 1 - [ ] Question 2 - [ ] Question 3 </interview_questions>
+
+      5. Present the questions to the user one at a time, in an interview style. For each question: a) Provide a brief background or context for why you are asking. b) Wait for the user's response before proceeding to the next question.
+
+      6. After all questions have been answered, summarize the key clarifications and any remaining uncertainties.
+
+      7. Ask the user if they have any additional clarifications or comments to add before proceeding.
+
+      8. Update the referenced GitHub issue with the results of the interview. Bring all clarifications and insights back into the issue in a meaningful way, enhancing rather than replacing existing ideas or content in the issue.
+
+      Your final output should include: 1. The full checklist of questions 2. The user's answers 3. A summary of clarifications and open questions 4. Any additional clarifications from the user 5. A draft or summary of the content to be added to the GitHub issue
+    label: '[Prompts] Product Strategy OODA Interview (Tactical Architecture & Alignment)'
+    # You are an AI engineer tasked with interviewing a user about a Product Requirements Document (PRD) or GitHub issue to cl
+    search_terms:
+      - prompts
+
+  - trigger: :prod-task-paralysis-shatterer
+    form: |
+      I am staring at [[task]] and can't start. Break this down into 'Ridiculously Small First Steps' (RSFS) that require less than 2 minutes of work.
+      Give me the first step and tell me exactly where to put my hands to begin.
+    form_fields:
+      task:
+        multiline: false
+    label: '[Prompts] Task Paralysis Shatterer (Ridiculously Small 2-Minute Steps)'
+    # I am staring at  and can''t start. Break this down into ''Ridiculously Small First Steps'' (RSFS) that require less than 2
+    search_terms:
+      - prompts
+
+  - trigger: :prod-the-dopamine-menu-architect
+    form: |
+      I am feeling under-stimulated. My current setting and energy level: [[context_home_office_low_energy]]. Build a 'Dopamine Menu' with 3 options in each category:
+        5-minute 'Appetizers' (quick movement)
+        20-minute 'Entrees' (focused work)
+        10-minute 'Sides' (creative play)
+      Make every option doable right now from where I am.
+    form_fields:
+      context_home_office_low_energy:
+        multiline: false
+    label: '[Prompts] Dopamine Menu Architect (ADHD Motivation & Energy Reset)'
+    # I am feeling under-stimulated. My current setting and energy level: . Build a ''Dopamine Menu'' with 3 options in each cat
+    search_terms:
+      - prompts
+
+  - trigger: :prod-body-doubling-simulator
+    form: |
+      Act as my virtual body double for a 30-minute
+      focus session. I'll tell you the task now and
+      send you a quick message every 10 minutes.
+      Each time I check in, ask one specific status
+      question, give a brief encouragement, and
+      remind me what to focus on next. My task is:
+      [[task]]
+    form_fields:
+      task:
+        multiline: false
+    label: '[Prompts] Virtual Body Double (30-Minute Live Accountability Partner)'
+    # Act as my virtual body double for a 30-minute
+    search_terms:
+      - prompts
+
+  - trigger: :prod-context-switching-guide
+    form: |
+      I just finished [[task_before]]
+      and need to start [[task_after]],
+      but my brain is stuck. Design a 3-minute
+      'Mental Palate Cleanser' with 3 short steps (1
+      physical, 1 sensory, 1 mental) to shift me from
+      the first type of energy to the second
+    label: '[Prompts] Context Switching Guide (Mental Reset Between Divergent Tasks)'
+    # I just finished
+    search_terms:
+      - prompts
+
+  - trigger: :prod-interest-based-filter
+    form: |
+      I have a boring admin task: [[task]]. Gamify it
+      using my current hyper-fixation: [[interest]].
+      Build a 3-stage 'Quest' with themed names
+      from that interest, a mini-reward after each
+      stage, and a final unlock when the whole task
+      is done
+    form_fields:
+      task:
+        multiline: false
+      interest:
+        multiline: false
+    label: '[Prompts] Admin Task Gamifier (Turn Tedious Chores into Games)'
+    # I have a boring admin task: . Gamify it
+    search_terms:
+      - prompts
+
+  - trigger: :prod-time-blindness-auditor
+    form: |
+      I estimate [[project]] will take [[x_minutes]],
+      but it usually takes [[y_minutes]].
+      Brief description: [[what_the_project_involves]].
+      Identify the 3 hidden sub-tasks I likely forget
+      (setup, transitions, review, etc.), give a realistic
+      time estimate for each, and a total realistic deadline.
+    form_fields:
+      what_the_project_involves:
+        multiline: true
+    label: '[Prompts] Time Blindness Auditor (Realistic Duration & Hidden Subtasks)'
+    # I estimate  will take ,
+    search_terms:
+      - prompts
+
+  - trigger: :prod-parallel-work-manager
+    form: |
+      "I need to complete these tasks simultaneously: [list tasks]. Spawn agent teams: assign each task to a separate agent, coordinate between them, report progress from all agents, merge results when done. Run them in parallel."
+    label: '[Prompts] Parallel Work Manager (Multi-Agent Task Orchestration)'
+    # I need to complete these tasks simultaneously: [list tasks]. Spawn agent teams: assign each task to a separate agent, co
+    search_terms:
+      - prompts
+
+  - trigger: :prod-multi-file-project-auditor
+    form: |
+      "Load my entire project folder: [upload files]. Analyze: architectural decisions that should change, technical debt to tackle first, security vulnerabilities, performance bottlenecks, and outdated dependencies. Give me a prioritized action plan."
+    label: '[Prompts] Multi-File Project Auditor (Cross-File Architecture & Lint Review)'
+    # Load my entire project folder: [upload files]. Analyze: architectural decisions that should change, technical debt to ta
+    search_terms:
+      - prompts
+
+  - trigger: :prod-context-memory-vault
+    form: |
+      "I'm working on [project name]. Here's everything you need to retain: [paste project context]. From now on, reference this context in every response without me repeating it. Summarize what you'll remember."
+    label: '[Prompts] Context Memory Vault (Persistent Project Constraints Storage)'
+    # I''m working on [project name]. Here''s everything you need to retain: [paste project context]. From now on, reference thi
+    search_terms:
+      - prompts
+
+  - trigger: :prod-adaptive-problem-navigator
+    form: |
+      "Complex problem: [describe problem]. Don't answer immediately. First, assess: how deep should you think about this (quick/deep reasoning), what information is missing, what assumptions to challenge. Then solve it at the appropriate depth."
+    label: '[Prompts] Adaptive Problem Navigator (Root Cause Diagnostic Before Action)'
+    # Complex problem: [describe problem]. Don''t answer immediately. First, assess: how deep should you think about this (quic
+    search_terms:
+      - prompts
+
+  - trigger: :prod-mistake-spotter
+    form: |
+      "Review everything I've done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, places where I'm overconfident, risks I haven't considered. Challenge my thinking before I commit to this approach."
+    label: '[Prompts] Mistake & Assumption Spotter (Review Conversation for Flaws)'
+    # Review everything I''ve done so far in this conversation. Find: logical errors I made, assumptions that might be wrong, p
+    search_terms:
+      - prompts
+
+  - trigger: :prod-long-term-project-assistant
+    form: |
+      "This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shifting requirements, and what we've already tried. Use context compaction so you never forget anything important as we continue."
+    label: '[Prompts] Long-Term Project Assistant (Multi-Week Decision Tracker)'
+    # This is a month-long project: [describe project]. Track decisions from past conversations, context from weeks ago, shift
+    search_terms:
+      - prompts
+
+  - trigger: :prod-cross-repo-connector
+    form: |
+      "I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoints to create, shared data structures needed, the migration strategy, and what breaks if we connect them. Map the full integration."
+    label: '[Prompts] Cross-Repo Connector (Shared Dependencies & Interface Bridge)'
+    # I have two projects: [project A] and [project B]. Load both codebases. Find how they should integrate, which API endpoin
+    search_terms:
+      - prompts
+
+  - trigger: :prod-world-class-life-audit
+    form: |
+      "Act like a world-class coach who has helped thousands of people level up mentally, physically, financially, and emotionally. Audit my current lifestyle based on this [insert your routine], and tell me exactly what to change for a full 180° transformation."
+    label: '[Prompts] World-Class Life Audit (Comprehensive Personal Systems Diagnostic)'
+    # Act like a world-class coach who has helped thousands of people level up mentally, physically, financially, and emotiona
+    search_terms:
+      - prompts
+
+  - trigger: :prod-30-day-ruthless-glow-up-plan
+    form: |
+      "Pretend you're the mentor behind the most iconic, disciplined and high-performing people on earth. Design me a ruthless but realistic 30-day glow-up plan that rewires my mind, resets my habits, and makes people ask 'what happened to you?'"
+    label: '[Prompts] 30-Day Ruthless Discipline Plan (High-Performance Habit Reset)'
+    # Pretend you''re the mentor behind the most iconic, disciplined and high-performing people on earth. Design me a ruthless
+    search_terms:
+      - prompts
+
+  - trigger: :prod-brutally-honest-mindset-reset
+    form: |
+      "Be my brutally honest mindset coach. Break down the limiting beliefs I may have based on this [insert your goal or struggle], then rewire them with powerful affirmations, logic, and new habits to replace the old story."
+    label: '[Prompts] Brutally Honest Mindset Coach (Limiting Beliefs Deconstruction)'
+    # Be my brutally honest mindset coach. Break down the limiting beliefs I may have based on this [insert your goal or strug
+    search_terms:
+      - prompts
+
+  - trigger: :prod-dream-reality-life-system
+    form: |
+      "You are my life strategist with access to my dream reality blueprint. Based on my goal [insert your goal], create a step-by-step life system, morning to night, that would make me become 'her' in 90 days or less."
+    label: '[Prompts] Life Strategy Blueprint (Vision Alignment & Operational Habits)'
+    # You are my life strategist with access to my dream reality blueprint. Based on my goal [insert your goal], create a step
+    search_terms:
+      - prompts
+
+  - trigger: :prod-elite-mental-conditioning-ritual
+    form: |
+      "Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ritual that reshapes how I think, act, and dominate my day with unshakable confidence."
+    label: '[Prompts] Mental Conditioning Ritual (High-Energy Focus & Drive Activation)'
+    # Imagine you're a hybrid of Tony Robbins, Mel Robbins, and a no-excuses Navy SEAL. Give me a daily mental conditioning ri
+    search_terms:
+      - prompts
+
+  - trigger: :prod-build-your-signature-slogan
+    form: |2
+
+      1. BUILD YOUR SIGNATURE SLOGAN
+
+      <role>Act as a personal brand symbol designer applying Seth Godin's
+      Purple Cow framework - every idea worth spreading has a visual symbol
+      so distinct it stops people mid-scroll and makes them say "what is that?"
+      </role>
+
+      <task>Design a signature symbol for my brand that makes it instantly
+      recognizable and impossible to confuse with anyone else in my space.
+      </task>
+
+      <steps>
+      1. Ask for my core idea, brand, and target audience before starting
+      2. Identify the single most remarkable concept my brand represents
+      3. Design 3 symbol options - visual, object, or metaphor that captures
+      the idea instantly
+      4. Test each symbol - can it be drawn, described, or demonstrated in
+      under 10 seconds
+      5. Select the strongest symbol and show exactly how to use it across
+      content and presentations
+      </steps>
+
+      <rules>
+      - Symbol must be remarkable - Godin's definition: worth making a
+      remark about
+      - Symbol must be ownable - not already associated with a competitor
+      - Symbol must survive without color - if it only works in full design it's
+      too fragile
+      - Symbol must be describable in one sentence to a complete stranger
+      - Test: if someone sees it once, can they draw it from memory a week
+      later
+      </rules>
+
+      <output>3 Symbol Options - Remarkability Test - Strongest Symbol -
+      How to Use It Everywhere</output>
+
+      ------
+
+      2. CREATE YOUR SIGNATURE SLOGAN
+
+      <role>Act as a brand slogan engineer applying Seth Godin's permission mar-
+      keting framework - every idea worth spreading has a phrase so specific that
+      people repeat it without being asked and share it without being paid .< /role>
+
+      <task>Create a signature slogan for my brand that becomes the handle
+      people use to remember, repeat, and recommend me - without me asking
+      them to .< /task>
+
+      <steps>
+      1. Ask for my core idea, target audience, and what I want to be known for
+      before starting
+      2. Extract the single most remarkable truth about what I do or believe
+      3. Generate 5 slogan options - short, specific, and impossible to
+      misattribute
+      4. Test each slogan - would Godin's "smallest viable audience" repeat this
+      without prompting
+      5. Select the strongest and show exactly how to embed it in content, bio,
+      and
+      presentations
+      </steps>
+
+      <rules>
+      - Slogan must be under 6 words - never a sentence
+      - Slogan must be specific enough to own - not generic enough for anyone
+      - Slogan must survive without context - it means something even to a
+      stranger
+      - Never use buzzwords - "innovative," "disruptive," "game-changing" are in-
+      stant slogan killers
+      - Test: would someone repeat this in a meeting and attribute it directly to
+      me
+      </rules>
+
+      <output>5 Slogan Options - Remarkability Test - Strongest Slogan - How
+      to Embed It Everywhere</output>
+
+      ------
+
+      3. FIND YOUR SIGNATURE SURPRISE
+
+      <role>Act as a counterintuitive idea specialist applying Seth Godin's
+      Purple
+      Cow principle - the only ideas that spread are the ones that surprise
+      people into sharing them before they even think about it .< /role>
+
+      <task>Identify the single most counterintuitive truth about my field and
+      turn it into the Purple Cow that makes my brand impossible to scroll
+      past .< /task>
+
+      <steps>
+      1. Ask for my field, core belief, and target audience before starting
+      2. Identify the most widely accepted belief in my field that I know to be
+      wrong or incomplete
+      3. Articulate the counterintuitive truth that challenges it - Godin's "idea
+      worth spreading"
+      4. Test the surprise - does it make people stop and say "wait, really?"
+      5. Build the reveal sequence - how to deliver the surprise for maximum
+      spread in content and presentations
+      </steps>
+
+      <rules>
+      - Surprise must be genuinely remarkable - not just interesting or contrar-
+      ian
+      - Surprise must be defensible - I must be able to prove it when
+      challenged
+      - Surprise must connect directly to my core idea - not a random hot take
+      - Delivery must build tension before the reveal - never lead with the
+      answer
+      - Test: does this make someone screenshot it and send it to a friend
+      </rules>
+
+      <output>Widely Accepted Belief - Counterintuitive Truth - Remarkability
+      Test - Reveal Sequence</output>
+
+      ------
+
+      4. BUILD YOUR SALIENT IDEA
+
+      <role>Act as a core idea sharpener applying Seth Godin's "be specific to someone" framework - the brands that get famous are never for everyone, they are unforgettable to someone specific .</role>
+
+      <task>Identify and sharpen the single salient idea that defines my brand - specific enough to own, remarkable enough to spread, and clear enough that my smallest viable audience immediately gets it .</task>
+
+      <steps>
+      1. Ask for everything I do, teach, or sell before starting
+      2. Map every idea, concept, and message I currently communicate
+      3. Apply Godin's smallest viable audience test - which idea resonates most deeply with the specific people I want to serve
+      4. Sharpen it until it cannot be confused with anyone else's idea
+      5. Show how every piece of content, every offer, and every presentation points back to this one salient idea
+      </steps>
+
+      <rules>
+      - One salient idea only - two ideas means no idea
+      - Idea must be for someone specific - not everyone
+      - Every piece of content must connect back to this idea
+      - If the idea could belong to a competitor it is not salient enough
+      - Test: does my smallest viable audience immediately say "this is exactly for me"
+      </rules>
+
+      <output>Idea Map - Smallest Viable Audience Test - Sharpened Salient Idea - How Everything Points Back to It</output>
+
+      ------
+
+      5. TELL YOUR SIGNATURE STORY
+
+      <role>Act as a brand story architect applying Seth Godin's "stories are how
+      we make meaning" framework - every brand that gets famous has a story
+      that makes people feel something before they decide anything .< /role>
+
+      <task>Build my signature brand story - the narrative that makes my small-
+      est viable audience feel immediately understood and makes everyone else
+      want to become part of it .< /task>
+
+      <steps>
+      1. Ask for my background, core belief, and defining moment before starting
+      2. Identify the turning point - the specific moment that changed every-
+      thing
+      3. Apply Godin's "tension and resolution" framework - build the story arc:
+      before, tension, turning point, after
+      4. Extract the universal truth that makes my personal story feel relevant to
+      my specific audience
+      5. Write the signature story in under 3 minutes - specific enough to be
+      mine, resonant enough to spread
+      </steps>
+
+      <rules>
+      - Story must create tension before resolution - Godin says tension is what
+      makes people lean in
+      - Universal truth must be extracted explicitly - never left implied
+      - Story must be under 3 minutes when spoken - never a biography
+      - Before must make the audience feel the struggle - not just describe it
+      - Test: does this story make someone say "that's exactly how I feel"
+      </rules>
+
+      <output>Turning Point - Tension and Resolution Arc - Universal Truth -
+      3-Minute Signature Story Script</output>
+    label: '[Prompts] Signature Slogan Builder (Memorable Personal Positioning Motto)'
+    # 1. BUILD YOUR SIGNATURE SLOGAN
+    search_terms:
+      - prompts
+
+  - trigger: :flow-state
+    form: |
+      # How to Get Into Flow State
+
+      When your body and mind seamlessly connect, leading to intense focus and effortless engagement, often described as being "in the zone," and it's accessible to everyone.
+
+      ---
+
+      ## The Four Pillars of Flow
+
+      To achieve a Flow State, an activity must sit at the intersection of four core pillars:
+
+      1. **Something you care about**
+      2. **Something long term**
+      3. **Something challenging**
+      4. **Something you're good at**
+
+      ---
+
+      ## Core Outcomes & Attributes
+
+      The framework identifies four psychological outcomes tied to these dimensions:
+
+      ### 1. Fulfillment
+      * Achieving goals effortlessly.
+      * Deep sense of purpose and satisfaction.
+      * Engaging in activities that align with personal values.
+
+      ### 2. Happiness
+      * Immersion in the present moment.
+      * Feelings of joy and contentment.
+      * Experiencing a sense of timelessness.
+
+      ### 3. Persistence
+      * Continuous focus and determination.
+      * Overcoming challenges with ease.
+      * Energized and motivated to overcome obstacles.
+
+      ### 4. Clarity
+      * Clear understanding of goals and objectives.
+      * Enhanced mental clarity and focus.
+      * Heightened awareness of surroundings and actions.
+    label: '[Prompts] Flow State Induction Guide (Triggers Environment & Deep Focus)'
+    # # How to Get Into Flow State
+    search_terms:
+      - prompts
+
+  - trigger: :8-hours-work-in-4
+    form: |
+      # Framework: How to Get 8 Hours of Work Finished in 4 Hours
+      **Creator:** Colby Kultgen
+
+      ## Core Principle
+      None of this matters if you are constantly distracted. To maximize output, you must first eliminate external friction:
+      * Turn off notifications.
+      * Clear your workspace.
+      * Set healthy boundaries.
+
+      ---
+
+      ## Pillars of the Framework
+
+      ### 1. Block Out Your Day
+      Focus on one task at a time during a dedicated block. Group similar activities to streamline your day and minimize context switching. Stick to your schedule to build momentum and efficiency.
+
+      ### 2. Set Artificial Deadlines
+      Leverage **Parkinson's Law** (Work expands to fill the time allotted for its completion).
+      * Break tasks into smaller steps.
+      * Assign tight deadlines to each step.
+      * **Mechanism:** Shorter timeframes force intense focus, prevent procrastination, and make it easier to stay on track to accomplish more in less time.
+
+      ### 3. Find Your Ideal Work Style
+      Experiment with different approaches to discover what keeps you motivated and productive. Tailor your routine to your strengths to maximize your output.
+
+      #### Work Style Matrix
+      | Working Style | Step 1 | Step 2 | Step 3 | Step 4 |
+      | :--- | :--- | :--- | :--- | :--- |
+      | **Planner** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
+      | **Prioritizer** | Write a to-do list | Organize your calendar | Start with the hardest tasks first | Deep work for 2 hours |
+      | **Arranger** | Plan your day hour by hour | Deep work for 2 hours | Take a stretching break | Work on lighter tasks |
+      | **Visualizer** | Decide on a priority for the day | Write in your journal | Use the Pomodoro technique | End the day with light tasks |
+    label: '[Prompts] 8 Hours in 4 Hours Framework (Focus Levers & Ruthless Elimination)'
+    # # Framework: How to Get 8 Hours of Work Finished in 4 Hours
+    search_terms:
+      - prompts
+
+  - trigger: ;weekly-routine
+    form: |
+      Take what we did and turn it into a step-by-step process that I repeat every week in my routine.
+    label: '[Prompts] Weekly Routine Converter (Turn Workflows into Repeatable SOPs)'
+    # Take what we did and turn it into a step-by-step process that I repeat every week in my routine.
+    search_terms:
+      - prompts
+      - routine
+
+  - trigger: :prompt-task-initiation
+    replace: |
+      You are acting as a Task Initiation Coach designed to help users with ADHD and executive dysfunction cross the starting line of a task. Your tone should be supportive, informal, conversational, and completely free of toxic positivity or lecturing—speak like an understanding friend.
+
+      When the user tells you what task they are struggling to start:
+      1. Do not give them a long project plan or a multi-hour breakdown.
+      2. Isolate the absolute first 90 seconds of physical action.
+      3. Generate a Markdown table titled "⚡ TASK INITIATION — [Task Name]" with 3 columns: STEP, ACTION, TIME.
+      4. Keep steps "stupid-small" (e.g., open a tab, type one word, clear the desk surface). The total time across all steps must not exceed 90-120 seconds.
+      5. End with a single, low-pressure question encouraging them to execute just Step 1.
+    label: '[Prompts] Task Initiation Coach (Overcome Executive Dysfunction & Friction)'
+    # You are acting as a Task Initiation Coach designed to help users with ADHD and executive dysfunction cross the starting
+    search_terms:
+      - prompts
+
+  - trigger: :prompt-context-brake
+    replace: |
+      You are a Context-Switch Brake designed to protect the user's flow state and prevent attention fragmentation.
+
+      Your operational rules:
+      1. When a user states their focus intent, lock them into ONE specific task for a 25-minute block.
+      2. If the user returns to the chat confused, saying "wait, what was I doing?", analyze the context of your last 3 chat turns to immediately serve back their core objective, current state, and next immediate action.
+      3. If the user attempts to pivot to a completely new task or topic before the block is up, stop them. You must explicitly ask *why* they are changing tasks before allowing them to switch. Force them to articulate the reason, helping them recognize impulsive context-switching.
+
+      Output current status tracking using the following structural layout when requested:
+      ### 🔴 CONTEXT-SWITCH BRAKE
+      * **Your actual task**: [Task Name]
+      * **Time you've been on it**: [X] minutes
+      * **Tabs you just opened**: [Count]
+      * **Time lost to switching**: ~[X] minutes
+    label: '[Prompts] Context-Switch Brake (Protect Deep Work & Prevent Premature Jumps)'
+    # You are a Context-Switch Brake designed to protect the user's flow state and prevent attention fragmentation.
+    search_terms:
+      - prompts
+
+  - trigger: :prompt-future-self
+    replace: |
+      You are the Future-Self Translator, optimized to solve time blindness and memory ghosting. Your job is to take raw, disorganized text dumps from the user ("Present-You") and organize them into an explicit operational blueprint for "Future-You".
+
+      When the user gives you a raw information dump or quick note, format it into a clean Markdown table with the header "🧠 FUTURE-SELF NOTE — Saved" containing the following exact fields:
+      - **What**: The core action stripped of noise.
+      - **Why it matters**: The concrete consequence or hard deadline.
+      - **Where**: The exact location of assets, links, contacts, or files needed.
+      - **What to say / do**: The specific tactical angle, script, or leverage point.
+      - **Mood note**: A validating, emotionally grounded check-in acknowledging their state when they saved it (e.g., "You were overwhelmed when you wrote this. It's safe to tackle now.").
+    label: '[Prompts] Future-Self Translator (Bridge Present Discomfort & Future Value)'
+    # You are the Future-Self Translator, optimized to solve time blindness and memory ghosting. Your job is to take raw, diso
+    search_terms:
+      - prompts
+
+  - trigger: :pprod
+    form: |
+      I feel overwhelmed and unproductive. My typical day looks like:
+      [[schedule]]
+
+      My biggest time wasters are: [[time_wasters]]. My important goals are: [[goals]]. Analyze my day and create an optimized schedule using time-blocking. Include: my 3 highest-leverage tasks daily, buffer time for unexpected issues, energy management strategies, techniques to eliminate distractions, and a system to say no to non-essential commitments.
+    form_fields:
+      schedule:
+        multiline: true
+    label: '[Prompts] Overwhelm Triage (Emergency Day Restructuring & Cuts)'
+    # I feel overwhelmed and unproductive. My typical day looks like:
+    search_terms:
+      - prompts
+
+  - trigger: :p_meet
+    form: |
+      In 30 minutes I have a meeting about [[topic]] with [[person]]. Their profile is: [[profile]].
+      Prepare me:
+      → 3 key points I need to have ready
+      → 2 intelligent questions that demonstrate my mastery of the topic
+      → 1 fact no one expects me to know
+      → A 2-line emergency summary in case I'm late
+    label: '[Prompts] Last-Minute Meeting Prep (30-Minute Rapid Agenda & Talking Points)'
+    # In 30 minutes I have a meeting about  with . Their profile is: .
+    search_terms:
+      - prompts
+
+  - trigger: :p_paralysis
+    form: |
+      I am looking at [[task]] and cannot get started. Break this down into ridiculously small steps that take less than 1 minute each. Give me the first step and tell me exactly where to put my hands to start.
+    label: '[Prompts] Paralysis Breaker (Sub-Task Decomposition into Micro-Wins)'
+    # Break down task paralysis into sub-1-minute physical actions to cross the starting line.
+    search_terms:
+      - prompts
+      - productivity
+      - paralysis
+      - start
+
+  - trigger: :p_dopamine
+    replace: |
+      I am feeling unmotivated and understimulated. Create a Dopamine Menu for me with 5-minute Starters (quick movement), 20-minute Main Courses (deep work), and 10-minute Side Dishes (creative play) to keep my brain engaged.
+    label: '[Prompts] ADHD Dopamine Menu (Appetizers Sides & Mains for Stimulation)'
+    # Generates a Dopamine Menu with starters, main courses, and sides to overcome low stimulation.
+    search_terms:
+      - prompts
+      - productivity
+      - dopamine
+      - adhd
+
+  - trigger: :p_focus_partner
+    replace: |
+      Act as my virtual focus partner for the next 30 minutes. I will tell you what I am working on, and I want you to ask me for a status update every 10 minutes to keep me locked in.
+    label: '[Prompts] Live Focus Partner (Step-by-Step Check-ins & Sprint Pacing)'
+    # Acts as an interactive virtual body double / focus partner checking in every 10 minutes.
+    search_terms:
+      - prompts
+      - productivity
+      - focus
+      - bodydoubling
+
+  - trigger: :p_transition
+    form: |
+      I just finished [[task_a]] and need to start [[task_b]], but my brain feels stuck. Create a 3-minute mental reset routine to help me transition between these two types of energy.
+    label: '[Prompts] 3-Minute Context Transition (Clear Mental Residue Between Tasks)'
+    # Generates a 3-minute mental decompression ritual between distinct work blocks.
+    search_terms:
+      - prompts
+      - productivity
+      - transition
+      - reset
+
+  - trigger: :p_gamify
+    form: |
+      I have a boring administrative task: [[task]]. Help me gamify it by connecting it to my current interest: [[interest]]. Create a quest structure where completing the task unlocks a reward.
+    label: '[Prompts] Task Gamification Engine (XP Badges & Time Attacks for Boring Work)'
+    # Gamifies boring tasks into an RPG-style quest tied to current interests.
+    search_terms:
+      - prompts
+      - productivity
+      - gamify
+      - quests
+
+  - trigger: :p_time_estimate
+    form: |
+      I think [[project]] will take 20 minutes, but it usually takes 2 hours. Help me map this out by identifying the 3 hidden subtasks I always forget to account for so I can set a realistic deadline.
+    label: '[Prompts] Realistic Time Estimator (Uncover Subtasks & Multiplier Factor)'
+    # Uncovers hidden friction and subtasks to establish realistic project time estimates.
+    search_terms:
+      - prompts
+      - productivity
+      - estimation
+      - time
+
+  - trigger: :p_loops
+    replace: |
+      My brain is full of open loops. I am going to dump everything worrying me below. Categorize everything into: Now, Later, and Trash. Then write a 1-sentence actionable next step only for the Now items.
+    label: '[Prompts] Open Loops Mental Dump (Brain Dump Triage into 4 Action Buckets)'
+    # Triages messy mental clutter into Now, Later, and Trash with 1-sentence next actions.
+    search_terms:
+      - prompts
+      - productivity
+      - triage
+      - openloops
+
+  - trigger: :p-inbox
+    form: |
+      Act as an executive assistant. Here are [[count]] emails I don't know how to respond to:
+
+      [[emails]]
+
+      Draft quick, professional replies I can send or edit.
+    form_fields:
+      count:
+        default: '10'
+      emails:
+        multiline: true
+    label: '[Prompts] Executive Assistant: Inbox (Draft Quick Triage & Replies)'
+    # Act as an executive assistant. Here are  emails I don''t know how to respond to:
+    search_terms:
+      - prompts
+
+  - trigger: :p-delegate
+    form: |
+      Here are [[count]] things on my plate:
+
+      [[tasks]]
+
+      Act like a manager and help me decide what to delegate, and how to frame each task for handoff.
+    form_fields:
+      count:
+        default: '5'
+      tasks:
+        multiline: true
+    label: '[Prompts] Executive Assistant: Delegate (Audit Tasks for Offloading)'
+    # Here are  things on my plate:
+    search_terms:
+      - prompts
+
+  - trigger: :p-meetings
+    form: |
+      Act as a meeting consultant. Here's an agenda:
+
+      [[agenda]]
+
+      Help me trim it by [[percentage]] while keeping the outcomes strong and the flow efficient.
+    form_fields:
+      percentage:
+        default: 30%
+      agenda:
+        multiline: true
+    label: '[Prompts] Meeting Consultant (Cut Meeting Duration & Sharpen Agendas)'
+    # Act as a meeting consultant. Here''s an agenda:
+    search_terms:
+      - prompts
+
+  - trigger: :p-focus
+    form: |
+      Act as a productivity coach. Here's my to-do list for [[timeline]]:
+
+      [[tasks]]
+
+      Help me pick the [[count]] highest-impact tasks and create a simple plan to protect time for them.
+    form_fields:
+      timeline:
+        default: tomorrow
+      count:
+        default: '3'
+      tasks:
+        multiline: true
+    label: '[Prompts] Daily To-Do Prioritizer (Eisenhower Matrix & Core 3 Focus)'
+    # Act as a productivity coach. Here''s my to-do list for :
+    search_terms:
+      - prompts
+
+  - trigger: :p-reset
+    replace: Act like a performance coach. Give me a 15-minute Sunday reset ritual to review the past week, plan the next, and start Monday focused.
+    label: '[Prompts] Weekly Sunday Reset (15-Minute Re-Alignment & Week Prep)'
+    # Act like a performance coach. Give me a 15-minute Sunday reset ritual to review the past week, plan the next, and start
+    search_terms:
+      - prompts
+
+  - trigger: :p-automate
+    form: |
+      Act as a workflow expert. Here's a process I repeat every week:
+
+      [[process_details]]
+
+      Suggest simple ways to automate or streamline it using basic tools.
+    form_fields:
+      process_details:
+        multiline: true
+    label: '[Prompts] Workflow Automator (Identify Repetitive Friction & Bottlenecks)'
+    # Act as a workflow expert. Here''s a process I repeat every week:
+    search_terms:
+      - prompts
+
+  - trigger: :p-onetouch
+    form: |
+      Here are [[count]] small tasks I've been putting off:
+
+      [[tasks]]
+
+      Help me write a quick plan to knock them out in one focused [[duration]] sprint.
+    form_fields:
+      count:
+        default: '10'
+      tasks:
+        multiline: true
+      duration:
+        default: 30-minute
+    label: '[Prompts] One-Touch Task Blitz (Clear Micro-Tasks in 20 Minutes)'
+    # Here are  small tasks I''ve been putting off:
+    search_terms:
+      - prompts
+
+  - trigger: :p-pomodoro
+    form: |
+      Act as a productivity coach. Here's a task I've been avoiding:
+      "[[task]]"
+
+      Help me break it into [[duration]] sprints with clear goals for each one.
+    form_fields:
+      duration:
+        default: 25-minute
+    label: '[Prompts] Pomodoro Sprint Coach (25-Minute Focused Execution Partner)'
+    # Act as a productivity coach. Here''s a task I''ve been avoiding:
+    search_terms:
+      - prompts
+
+  - trigger: :p-prep
+    form: |
+      Here's a big meeting or call coming up:
+
+      [[details]]
+
+      Help me write a [[bullets]]-bullet prep summary I can review beforehand to walk in clear and confident.
+    form_fields:
+      details:
+        multiline: true
+      bullets:
+        default: '3'
+    label: '[Prompts] High-Stakes Meeting Prep (Anticipate Hard Questions & Formulate Answers)'
+    # Here''s a big meeting or call coming up:
+    search_terms:
+      - prompts
+
+  - trigger: :p-followup
+    form: |
+      Here are [[count]] calls or meetings I had this week:
+
+      [[notes]]
+
+      Draft short, helpful follow-up messages for each one that I can send immediately.
+    form_fields:
+      count:
+        default: '5'
+      notes:
+        multiline: true
+    label: '[Prompts] Meeting Follow-Up Drafter (Action Items Owners & Next Steps)'
+    # Here are  calls or meetings I had this week:
+    search_terms:
+      - prompts
+
+  - trigger: :p-eod
+    replace: Act like a coach. Give me a 5-minute end-of-day reflection to help me learn from today and improve tomorrow.
+    label: '[Prompts] End-of-Day Reflection (5-Minute Mental Closeout & Tomorrow''s Top Task)'
+    # Act like a coach. Give me a 5-minute end-of-day reflection to help me learn from today and improve tomorrow.
+    search_terms:
+      - prompts
+
+  - trigger: :p-boundaries
+    form: |
+      I'm overwhelmed. Help me write [[count]] short scripts I can use to say no to [[situation]] without sounding rude.
+    form_fields:
+      count:
+        default: '3'
+      situation:
+        default: meetings or requests
+    label: '[Prompts] Boundary Scripts (Polite Professional Scripts for Saying No)'
+    # I'm overwhelmed. Help me write  short scripts I can use to say no to  without sounding rude.
+    search_terms:
+      - prompts
+
+  - trigger: :p-plan
+    form: |
+      I'm starting a new project: [[project_name]]
+
+      Help me write a one-page plan with the goal, timeline, key tasks, risks, and next steps.
+    label: '[Prompts] Project Kickoff Blueprint (Scope Risks Milestones & Day-1 Actions)'
+    # I''m starting a new project:
+    search_terms:
+      - prompts
+
+  - trigger: :pmindset
+    form: |
+      I struggle with [[struggle]]. When [[trigger_situation]] happens, I typically [[reaction]]. Help me understand the root cause of this pattern, reframe my limiting beliefs with evidence-based counter-thoughts, create 5 daily affirmations specifically for my situation, teach me a 5-minute mindfulness technique I can use when triggered, and give me journaling prompts to process these emotions constructively.
+    form_fields:
+      struggle:
+        type: choice
+        values:
+          - imposter syndrome
+          - self-doubt
+          - negative thinking
+          - anxiety
+      trigger_situation:
+        multiline: true
+    label: '[Prompts] Mindset Reframing Coach (Cognitive Behavioral Reconditioning for Triggers)'
+    # I struggle with . When  happens, I typically . Help me understand the root cause of this pattern, reframe my limiting be
+    search_terms:
+      - prompts
+
+  - trigger: :aihidden
+    replace: Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, what I ask, and what I avoid. My age range, income level, where I likely live, my situation. Show me exactly what tipped you off for each one.
+    label: '[Prompts] Subconscious Cue Analysis (Detect Subtle Tone Preferences & Habits)'
+    # Tell me everything you've figured out about me that I never actually stated, the things you inferred from how I write, w
+    search_terms:
+      - prompts
+
+  - trigger: :genius
+    word: true
+    form: |
+      Reverse-engineer the exact thinking process of [[figure]] and teach me how to replicate their way of solving problems. Give me practical mental exercises to wire my brain like theirs.
+    form_fields:
+      figure:
+        multiline: true
+    label: '[Prompts] Master Mindset Reverse-Engineer (Deconstruct Historical Figures'' Decision Logic)'
+    # Reverse-engineer the exact thinking process of  and teach me how to replicate their way of solving problems. Give me pra
+    search_terms:
+      - prompts
+
+  - triggers:
+      - :p-goalplan
+      - :prompt-plan
+    form: |
+      I want to achieve this goal:
+
+      [[goal]]
+
+      Turn it into a practical plan.
+
+      Give me:
+      - the first 5 actions
+      - what I need before starting
+      - possible obstacles
+      - the easiest version I can complete today
+      - a simple way to measure progress
+    form_fields:
+      goal:
+        multiline: true
+    label: '[Prompts] Goal Execution Planner (Transform Ambitious Objectives into Milestones)'
+    # I want to achieve this goal:
+    search_terms:
+      - prompts
+

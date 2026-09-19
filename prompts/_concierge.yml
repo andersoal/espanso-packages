@@ -28,6 +28,7 @@ matches:
       3. Actionable Checklist:
          - Top 3 mandatory advance bookings (specific trains, high-demand restaurant reservations, or museum timed entries).
          - Critical local pro-tips (transport pass, payment quirks, cultural etiquette).
+    word: true
     force_clipboard: true
     label: '[Prompts] Solo Travel Concierge (Fast Bracket Intake & 3-Tier Itinerary Brief)'
     # Act as an elite travel concierge building a personalized solo itinerary with logistical snapshot and booking checklist.
@@ -71,6 +72,7 @@ matches:
       3. Actionable Checklist:
          - Advance reservations required 30+ days prior.
          - Co-traveler friction warning and how to sidestep it.
+    word: true
     force_clipboard: true
     label: '[Prompts] Couples Travel Concierge (Asymmetric Profile Balancing & Harmonized Itinerary)'
     # Act as a travel concierge reconciling asymmetric couple preferences into a friction-free joint itinerary.
@@ -96,6 +98,7 @@ matches:
       Once I provide my answers, synthesize them immediately into a complete **3-Tier Decision Brief** (Logistical Base, Day-by-Day Flow with Rest Buffers, and Advance Booking Checklist).
 
       I am going to: [[Enter Destination & Tentative Dates here]]$|$
+    word: true
     force_clipboard: true
     label: '[Prompts] Travel Concierge Diagnostic Interview (4-Question Deep Discovery & Custom Itinerary)'
     # Fiduciary travel concierge conducting an upfront 4-question diagnostic before building a custom itinerary.
@@ -135,6 +138,7 @@ matches:
       3. Regret Shield:
          - The single biggest real-world annoyance reported by verified long-term owners.
          - How to test or verify the item within the return window to guarantee zero buyer's remorse.
+    word: true
     force_clipboard: true
     label: '[Prompts] Solo Buyer Concierge (TCO Analysis & 3-Tier Verdict Brief)'
     # Act as an objective buyer's advocate evaluating a prospective purchase with TCO analysis and verdict.
@@ -171,6 +175,7 @@ matches:
          - Compare Top Contender (Sweet Spot) vs Partner A's Favorite vs Partner B's Favorite across Aesthetics, Longevity, Price, and Daily Friction.
       3. Post-Purchase Harmony Shield:
          - The single most common household friction point with this item and how to configure/place it to prevent arguments.
+    word: true
     force_clipboard: true
     label: '[Prompts] Joint Purchase Concierge (Neutral Ombudsman & Co-Buyer Alignment)'
     # Neutral consumer ombudsman balancing co-buyer priorities to find the optimal joint purchase sweet spot.
@@ -199,6 +204,7 @@ matches:
       After I reply with my answers, deliver an unequivocal **Bottom-Line Verdict**:
       - `[BUY NOW]` / `[BUY USED/PREVIOUS GEN]` / `[RENT/BORROW FIRST]` / `[PASS / AVOID]`.
       Include the single best market alternative that solves the root problem for less money or higher durability.
+    word: true
     force_clipboard: true
     label: '[Prompts] Adversarial Buyer Concierge (4-Point Fiduciary Vetting & Regret Shield)'
     # Adversarial fiduciary buyer advocate asking 4 probing vetting questions to prevent buyer's remorse.

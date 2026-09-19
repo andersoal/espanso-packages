@@ -1007,7 +1007,7 @@ matches:
     word: true
     force_clipboard: true
     replace: |
-      Give me a summary of what you learned about me this year — include my wildest questions, the patterns and growth you saw in our conversations, and a prediction for next year. Also, what blind spots do I need to be aware of? $|$
+      Give me a summary of what you learned about me this year - include my wildest questions, the patterns and growth you saw in our conversations, and a prediction for next year. Also, what blind spots do I need to be aware of? $|$
     label: "[Thinking Prompts] Annual AI Reflection (Yearly Growth & Blind Spot Synthesis)"
     # Give me a summary of what you learned about me this year
     search_terms:

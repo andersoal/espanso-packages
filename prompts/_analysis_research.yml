@@ -56,6 +56,7 @@ matches:
       - prompts
 
   - trigger: :qfound
+    word: true
     form: |
       I need to research [[topic]]. Before we dive in, help me build a solid foundation:
 
@@ -89,6 +90,7 @@ matches:
       - prompts
 
   - trigger: :pmult
+    word: true
     form: |
       Based on the foundation we just built, analyze "[[question]]" from these 5 perspectives:
 

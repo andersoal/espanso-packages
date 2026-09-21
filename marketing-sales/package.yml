@@ -478,6 +478,7 @@ matches:
       - marketing & sales
 
   - trigger: :hooks
+    word: true
     form: |
       Give me 20 scroll-stopping content hooks for my content on the topic of: [[topic]].
       Use the PAS (Problem-Agitation-Solution) copywriting framework.

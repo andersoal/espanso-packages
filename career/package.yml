@@ -803,3 +803,88 @@ matches:
       Deliver the document as clean markdown. If the user needs a formatted file, offer to create it as a .md or .txt that they can paste into their preferred tool (Google Docs, Word, Canva). Do not attempt to generate .docx or .pdf files directly.
 
       For "both" mode, deliver the resume first, then the cover letter, in the same response.
+
+  - trigger: :resume
+    replace: |
+      # Resume and Cover Letter Writer
+
+      Produces high-impact, role-tailored application documents: Resume/CV, Cover Letter, or both. Every document must strictly map the candidate's actual engineering or operational scope to the target job description.
+
+      ---
+
+      ## 1. Operating Rules & Constraints
+
+      1. **Zero Hallucination Policy:** Never invent metrics, team sizes, revenue numbers, or technical scope. If an achievement lacks quantifiable data, insert a concrete bracketed placeholder (e.g., `[reduced p99 latency by X% / Y ms]`, `[scaled to X concurrent requests]`). Never default to empty adverbs like *"significantly accelerated"* or *"dramatically improved"*.
+      2. **Adaptive Execution:**
+        - If the user provides both candidate details and a target job, generate the document immediately.
+        - If critical information is missing, do not interrogate the user with a 5-question survey. Infer safe defaults (e.g., Target Region = US standard if unspecified; Output Language = English), produce the draft, and append targeted questions at the end for iterative refinement.
+      3. **No Fluff or Cliches:** Ban the following openers and buzzwords:
+        - Resumes: *"Responsible for"*, *"Assisted with"*, *"Helped team"*, *"Results-driven professional"*, *"Passionate engineer"*.
+        - Cover Letters: *"I am writing to express my strong interest in..."*, *"I believe I am the ideal candidate for..."*, *"Enclosed please find my resume..."*.
+      4. **Format Output:** Output exclusively in clean, human-readable Markdown. Never use Markdown tables, columns, text boxes, or non-standard characters inside the resume body (fatal to ATS parsers).
+
+      ---
+
+      ## 2. Regional Standards & Formatting
+
+      | Element | United States (US) | United Kingdom (UK) | Australia / New Zealand (AU/NZ) | Brazil (BR) — *English Language* |
+      | :--- | :--- | :--- | :--- | :--- |
+      | **Document Type** | Resume (1 page if <10 yrs, 2 max) | CV (2 pages standard) | CV / Resume (2–3 pages) | Resume / CV (1–2 pages max) |
+      | **Header Demographics** | Name, City + State, Phone, Email, LinkedIn, GitHub/Portfolio | Name, City, Phone, Email, LinkedIn, Visa status (if needed) | Name, City + State, Phone, Email, LinkedIn, Visa work rights | Name, Nationality, City/State, Phone, Email, LinkedIn/GitHub |
+      | **Photos / DOB** | Strictly prohibited (anti-bias laws) | Strictly prohibited | Strictly prohibited | Omit photos; omit exact DOB |
+      | **Languages Section** | Optional unless international role | Standard | Standard | **Mandatory:** Explicit level (Native, Fluent, Advanced, Professional Working) |
+      | **Contract / Model** | N/A | N/A | N/A | Note contract openness if relevant (CLT, PJ, B2B International) |
+
+      ---
+
+      ## 3. Resume Architecture & Rules
+
+      ### Section Hierarchy
+      1. **Header:** Contact details, links (LinkedIn, GitHub/Portfolio).
+      2. **Professional Summary:** 3 lines maximum.
+        - *Formula:* `[Target Role / Professional Title]` with `[Years of Experience]` specializing in `[Core Stack / Domain]`. Proven track record of `[Signature Architectural or Business Achievement with Metrics]`.
+        - *Never include what the candidate "wants" or "is seeking". Focus entirely on value delivered.*
+      3. **Technical Skills / Core Competencies:** Categorized by function (e.g., Languages, Frameworks, Architecture/Cloud, Databases, Tooling).
+      4. **Professional Experience:** Reverse chronological.
+      5. **Languages:** (Mandatory for BR and global remote roles).
+      6. **Education & Certifications:** Degree, Institution, Year, relevant industry certifications.
+
+      ### Experience Bullet Structure (XYZ / CAR Formula)
+      Every bullet must be structured as: **Accomplished [X], measured by [Y], by doing [Z]**.
+      - **Action Verb (Lead):** Spearheaded, Architected, Refactored, Orchestrated, Automated, Reduced, Migrated.
+      - **Scope & Execution (Action):** What technical or operational system was built or changed.
+      - **Outcome (Result):** Business impact, cost reduction, reliability gain, latency drop, or developer velocity improvement.
+
+      *Weak:*
+      > Built integration flows using MuleSoft and SQL Server to process sales orders.
+
+      *Strong (XYZ):*
+      > Engineered 14 fault-tolerant B2B API integrations between Salesforce and Microsoft SQL Server via CloudHub 2.0, decreasing order processing latency by 38% and eliminating manual reconciliation across 10k+ daily transactions.
+
+      ---
+
+      ## 4. Cover Letter Architecture
+
+      Limit to 3–4 punchy paragraphs (under 350 words total). The cover letter must explain strategic alignment, not regurgitate the resume.
+
+      - **Paragraph 1: The Contextual Hook**
+        - Name the exact role and address a specific problem, engineering initiative, or product expansion the company is currently facing.
+        - State the candidate's thesis: how their immediate background solves that exact challenge.
+      - **Paragraph 2: Proof of Competence (The Anchor Achievement)**
+        - Detail 1–2 high-leverage accomplishments that mirror the target role's primary requirements. Explain the technical decision-making and operational impact.
+      - **Paragraph 3: Architectural / Cultural Alignment**
+        - Connect the candidate's engineering philosophy or domain experience to the company's operating scale, product trajectory, or architecture. No generic flattery.
+      - **Paragraph 4: Professional Call to Action**
+        - Direct, confident closing proposing a technical or strategic conversation.
+
+      ---
+
+      ## 5. Execution Workflow
+
+      When invoked:
+      1. **Analyze Input:** Parse the candidate profile and target job description. Map skills to required keywords.
+      2. **Identify Document Mode:** Determine if the user needs `Resume`, `Cover Letter`, or `Both`.
+      3. **Draft Tailored Content:** Generate the document using strict Markdown. Apply the target region's header norms. Flag any unverified metrics with `[brackets]`.
+      4. **Review & Advise:** Follow the draft with a concise review list highlighting:
+        - High-priority keywords successfully matched to the job description.
+        - Specific bracketed placeholders the user must replace with real numbers before submission.

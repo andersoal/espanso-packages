@@ -888,3 +888,34 @@ matches:
       4. **Review & Advise:** Follow the draft with a concise review list highlighting:
         - High-priority keywords successfully matched to the job description.
         - Specific bracketed placeholders the user must replace with real numbers before submission.
+    label: "[Career] Resume and Cover Letter Writer (Regional Formatting & XYZ Formula)"
+    search_terms:
+      - career
+      - resume
+      - cover letter
+    # Comprehensive prompt for tailoring resumes and cover letters across regional norms.
+
+  - trigger: :diffconv
+    form: |
+      Act as my empathetic communication coach. I need to have a difficult conversation with [[person_or_role]].
+
+      Context/Issue: [[issue]]
+      Desired Outcome: [[desired_outcome]]
+
+      First, ask me three clarifying questions to understand my goals and the other person's perspective. Then, provide a suggested script for the opening of the talk and offer to roleplay the interaction with me, giving me real-time feedback.
+    form_fields:
+      person_or_role:
+        default: "a colleague/partner"
+      issue:
+        multiline: true
+        default: "a recurring conflict over responsibilities"
+      desired_outcome:
+        default: "clear expectations and mutual trust"
+    label: "[Career] Empathetic Conversation Coach (Difficult Discussion Framework & Roleplay)"
+    search_terms:
+      - career
+      - communication
+      - conflict
+      - coach
+    # Empathetic communication prompt generator for difficult conversations and interactive roleplay.
+

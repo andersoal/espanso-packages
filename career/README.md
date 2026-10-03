@@ -25,3 +25,5 @@ A modular collection of **Espanso** triggers and interactive AI prompt templates
 - `:p_interview` — Senior Technical Mock Interviewer
 - `:p_portfolio` — 7-Day High-Impact Architecture Portfolio Architect
 - `:p_negotiate` — Executive Compensation & Equity Offer Negotiation Strategy
+- `:diffconv` — Empathetic Conversation Coach & Roleplay Framework
+

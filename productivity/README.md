@@ -25,3 +25,7 @@ A comprehensive collection of **Espanso** triggers, daily review frameworks, hab
 | `:prod-life-system` | **Life Management System** | 5-question low cognitive load interview designing specialized department log files. |
 | `:prod-macro-sheet` | **Calorie & Macro Logger** | Interactive Google Sheets nutrition logger with target goals and daily warnings. |
 
+| `:prod-planner` / `:planner-sys` | **Productivity Planner Persona** | Complete system configuration & protocols for AI personal work assistant and operational optimizer. |
+| `:prod-workflow` | **Productivity Workflow Hub** | Interactive form selector running planning briefs, time-blocking, recaps, action extraction, or meeting prep. |
+| `:prod-actions` | **Action Item Extraction Matrix** | Scans raw meeting/tracking text into a 4-column structured priority action matrix. |
+| `:prod-brief` | **Planning Brief Generator** | Generates a unified daily or weekly schedule brief with prioritized deliverables and blockers. |

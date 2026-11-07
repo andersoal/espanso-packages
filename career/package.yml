@@ -919,3 +919,241 @@ matches:
       - coach
     # Empathetic communication prompt generator for difficult conversations and interactive roleplay.
 
+
+  # -------------------------------------------------------------------------
+  # Evidentiary Resume & ATS Optimization Series (Ramonov & Robert Half 2026)
+  # -------------------------------------------------------------------------
+
+  - trigger: :p_factbank
+    form: |
+      Interview me like you are writing a comprehensive, factual biography of my career. Your goal is to build an evidentiary "Fact Bank" and Master Career Inventory (combining the Sabrina Ramonov fact-bank method and the Robert Half Master Document framework).
+
+      Operational Guidelines:
+      1. Ask exactly ONE question at a time.
+      2. Systematically cover each role, project, and technical initiative provided in my background below.
+      3. For each experience, extract:
+         - The core business or technical problem.
+         - My exact individual contribution vs. what was shared or led by others.
+         - The quantifiable outcome (e.g., latency, revenue, hours saved, volume handled, budget).
+         - Concrete sources or artifacts where those metrics can be verified.
+      4. If I cannot explain a result or its direct cause, mark it "[Unverified Claim]" and proceed after 2 follow-up probes.
+      5. After reviewing all roles, output a structured MASTER CAREER INVENTORY containing:
+         - Verified Achievements (Action + Metric + Proof Source).
+         - Unverified Claims needing validation before resume inclusion.
+
+      Begin by asking Question 1 based on my background below:
+
+      ---
+      ROUGH RESUME / CAREER BACKGROUND:
+      [[background]]
+    form_fields:
+      background:
+        multiline: true
+    label: "[Career] Fact Bank & Master Inventory (Socratic Biography & Work Audit - Ramonov & Robert Half)"
+    search_terms:
+      - career
+      - resume
+      - factbank
+      - interview
+      - ramonov
+      - robert-half
+      - master-resume
+    force_clipboard: true
+    # Socratic AI interview extracting verified career metrics and building an evidentiary Master Inventory.
+
+  - trigger: :p_proofmatch
+    form: |
+      Act as an executive hiring director and ATS technical recruiter. Synthesize my Fact Bank against the target Job Description using the Sabrina Ramonov & MIT evidentiary resume framework and Robert Half 2026 standards.
+
+      Deliver these 3 distinct sections:
+
+      ### 1. Requirements Ranking & Proof Gap Analysis
+      - Extract and rank the 5 most critical job requirements.
+      - Label each as [Required] or [Preferred].
+      - For each, provide my direct verified proof from the fact bank or state "No proof yet - gap identified".
+
+      ### 2. Tailored ATS-Optimized Resume Draft (1-2 Pages Maximum)
+      - **Professional Summary**: A concise 3-4 sentence elevator pitch highlighting target role alignment, core domain authority, and top quantifiable value.
+      - **Experience Section**:
+        * Bullet 1 of the most recent role MUST directly prove the #1 ranked required qualification with verifiable evidence.
+        * Bullet 2 MUST highlight my strongest quantifiable metric or performance improvement (unless featured in bullet 1).
+        * Give primary space to recent relevant experience; restrict older or tangential positions to at most 2 concise bullets.
+        * Structure every bullet as: Strong Action Verb + Problem/Context + Quantifiable Business Result.
+        * Strictly eliminate passive filler ("responsible for", "duties included"), generic AI buzzwords, and first-person pronouns ("I", "my").
+      - **Core Competencies / Areas of Expertise**: Clean, comma-separated keywords directly matching the job description for flawless ATS parsing.
+
+      ### 3. Brutal Fit Assessment
+      - Provide an honest, unvarnished evaluation of my competitiveness for this specific role and identify the single biggest risk a recruiter might flag.
+
+      ---
+      TARGET JOB DESCRIPTION:
+      [[job_desc]]
+
+      ---
+      MY FACT BANK / BACKGROUND:
+      [[fact_bank]]
+    form_fields:
+      job_desc:
+        multiline: true
+      fact_bank:
+        multiline: true
+    label: "[Career] Job Match & Proof Hierarchy (Top 5 Requirements & Evidence Bullets - MIT & Ramonov)"
+    search_terms:
+      - career
+      - resume
+      - match
+      - proof
+      - ramonov
+      - mit
+      - ats
+    force_clipboard: true
+    # Ranks employer requirements against proven achievements and drafts an evidence-led ATS resume.
+
+  - trigger: :p_recruiter
+    form: |
+      Review the resume draft against the target job post and fact bank provided in our chat.
+
+      Evaluate this draft through the eyes of a discerning hiring manager asking: "Why should I interview this person?"
+
+      Provide the following 4 outputs:
+      1. **Recruiter Screen Verdict**:
+         - 3 Strong Reasons to advance this candidate to an interview (citing exact lines and numbers).
+         - 3 Critical Doubts or Gaps that could lead to rejection (pointing to omissions or unclear ownership).
+      2. **Proof & Hierarchy Verification**:
+         - Does Bullet 1 prove the highest-ranked required need with evidence?
+         - Does Bullet 2 surface the most impressive relevant metric?
+         - Are older roles trimmed to maximum 2 bullets?
+         - Are all figures strictly grounded in the Fact Bank with zero AI hallucination?
+      3. **Final Plain-Text ATS Resume**:
+         - Output a finalized, clean single-column plain-text resume ready for ATS submission or document pasting.
+         - Single-column structure with standard headers (Professional Summary, Experience, Core Competencies, Education). No tables, columns, or graphic symbols.
+      4. **Tough Interview Preparation**:
+         - 3 skeptical, high-pressure interview questions specifically targeting the potential gaps or boldest claims on this resume.
+    label: "[Career] Recruiter Fit Stress Test (3 Reasons, 3 Doubts & ATS Plain-Text Polish - Ramonov)"
+    search_terms:
+      - career
+      - resume
+      - recruiter
+      - audit
+      - review
+      - ramonov
+      - interview-prep
+    force_clipboard: true
+    # Simulates recruiter screening with 3 reasons, 3 doubts, ATS plain-text polish, and tough questions.
+
+  - trigger: :p_pivot
+    form: |
+      Act as a career transition strategist and executive resume writer. I am targeting a new role or industry and need to translate my background into high-value transferable skills per the Robert Half 2026 resume guidelines.
+
+      Target Role / Pivot Domain: [[target_role]]
+      Current / Prior Background: [[prior_background]]
+
+      Deliver a strategic Transferable Skills Matrix and Resume Blueprint:
+      1. **Competency Translation Matrix**:
+         - Identify 4-6 high-demand competencies for [[target_role]] (e.g., cross-functional leadership, data-driven decisions, process automation, stakeholder management).
+         - Map each competency to specific accomplishments from my prior background.
+         - Frame each mapping with concrete context, tools used, and measurable results.
+      2. **"Areas of Expertise" Section**:
+         - Generate an ATS-optimized, keyword-dense core competency block tailored for the top third of my resume.
+      3. **Reframed Resume Bullets**:
+         - Rewrite 4-6 experience bullet points using strong action verbs (Led, Streamlined, Orchestrated, Engineered).
+         - Focus on the transferable business impact rather than outdated industry-specific jargon.
+      4. **Elevator Pitch Summary**:
+         - Write a 3-4 sentence professional summary connecting my past track record directly to the future value I will create in [[target_role]].
+    form_fields:
+      target_role:
+        default: "Target Role or Industry"
+      prior_background:
+        multiline: true
+        default: "Key responsibilities and achievements from prior roles"
+    label: "[Career] Transferable Skills & Pivot Bridge (Core Competency & Areas of Expertise - Robert Half 2026)"
+    search_terms:
+      - career
+      - pivot
+      - transferable-skills
+      - robert-half
+      - transition
+      - career-change
+    force_clipboard: true
+    # Bridges non-traditional or pivoting backgrounds to target roles using Robert Half transferable skills frameworks.
+
+  - trigger: :p_fluffcheck
+    form: |
+      Act as an ATS compliance auditor and strict executive recruiter. Review the resume draft below against the Robert Half 2026 Screening Guidelines and Sabrina Ramonov Anti-Hallucination rules.
+
+      Audit the resume across these 4 critical failure modes:
+      1. **AI Fluff & Buzzword Detection**:
+         - Flag all generic filler phrases (e.g., "results-driven professional", "responsible for", "dynamic team player", "leveraged synergy").
+         - Suggest concrete, active replacements for each.
+      2. **Evidentiary Integrity & Hallucination Audit**:
+         - Flag any vague metric, ungrounded percentage, or metric that sounds AI-fabricated without clear causal context.
+         - Ensure every metric answers: "What did YOU specifically change, and how was it measured?"
+      3. **ATS Machine-Readability & Formatting Check**:
+         - Verify layout complies with single-column ATS parsing (no tables, text boxes, headers/footers, or multi-column layouts).
+         - Confirm standard section headers are used (Summary, Experience, Skills, Education).
+      4. **Scannability & Brevity Audit**:
+         - Ensure length is capped at 1-2 pages.
+         - Verify bullets are under 3 lines and lead with high-impact action verbs.
+
+      ---
+      RESUME DRAFT FOR AUDIT:
+      [[resume]]
+    form_fields:
+      resume:
+        multiline: true
+    label: "[Career] AI Resume Fluff & ATS Screening Defense (Hallucination & Formatting Audit - Robert Half 2026)"
+    search_terms:
+      - career
+      - resume
+      - fluff
+      - ats
+      - audit
+      - robert-half
+      - screening
+    force_clipboard: true
+    # Audits resumes for AI-generated fluff, ungrounded metrics, and ATS formatting traps.
+
+  - trigger: :p_aiskills
+    label: "[Career] AI Skills Chat History Mining (60-Day Workspace Capability Audit - Ramonov)"
+    replace: |
+      Review all our conversations and coding sessions from the past 60 days.
+
+      Identify my concrete AI workflows, technical capabilities, and practical tool proficiencies that can strengthen my resume. Organize the findings into:
+      1. **AI Platforms & Developer Tooling**: Explicit tools, models, and extensions used (e.g., Claude, ChatGPT, Codex, Antigravity, Perplexity, Cursor, API SDKs).
+      2. **Practical Workflows & Automations**: Specific high-leverage tasks completed (e.g., automated refactoring, test generation, schema migrations, documentation synthesis, agent prompt engineering).
+      3. **High-Impact Resume Bullets**: 3-5 quantified bullet points formatted as Action Verb + AI Tool/Methodology + Measurable Productivity/Quality Gain.
+    search_terms:
+      - career
+      - resume
+      - aiskills
+      - claude
+      - chatgpt
+      - ramonov
+      - automation
+    force_clipboard: true
+    # Mines AI workspace chat history to extract concrete, market-ready AI competencies and bullet points.
+
+  - trigger: :p_atsapply
+    form: |
+      Navigate to the official company careers page for [[company]] regarding the target role "[[role]]".
+
+      Operational Instructions:
+      1. Populate the ATS application form fields using verified details from my approved resume.
+      2. Accurately map form sections (Personal Details, Work History, Education, Portfolio/GitHub Links).
+      3. **MANDATORY SAFETY STOP**: Do NOT click "Submit", "Send Application", or finalize the submission under any circumstances.
+      4. Stop immediately once the form is populated and prompt me to perform a human review of dates, location, contact info, and attached files before manual submission.
+    form_fields:
+      company:
+        default: ""
+      role:
+        default: ""
+    label: "[Career] ATS Application Form Assist (Browser Agent Safe Form Assist & Stop Point - Ramonov)"
+    search_terms:
+      - career
+      - apply
+      - ats
+      - browser
+      - agent
+      - ramonov
+    force_clipboard: true
+    # Guides browser AI agents through company ATS forms with a mandatory pre-submission human safety stop.

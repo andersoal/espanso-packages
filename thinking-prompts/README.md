@@ -50,8 +50,41 @@ espanso install thinking-prompts
 
 Or clone/copy this package into your `espanso/match/` directory.
 
+## Regex Variants (Inline Quick-Fire)
+
+Instant expansion without opening a form dialog:
+
+| Trigger | Example |
+|---------|---------|
+| `:think-snap(problem)` | `:think-snap(I keep procrastinating)` |
+| `:think-destroy(topic)` | `:think-destroy(remote work is better)` |
+| `:think-borrow(idea)` | `:think-borrow(my startup idea)` |
+| `:think-learn(skill)` | `:think-learn(DataWeave 2.0)` |
+| `:think-blocks(area)` | `:think-blocks(my career)` |
+| `:think-insight(topic)` | `:think-insight(AI in healthcare)` |
+| `:think-decode(problem)` | `:think-decode(conflict with manager)` |
+| `:think-vision(person,challenge)` | `:think-vision(Steve Jobs,new market)` |
+| `:think-blind(topic)` | `:think-blind(quitting my job)` |
+
+## Chain Triggers (Multi-Step Workflows)
+
+- **The Decision Forge** (`:think-chain-decide` → `-2` → `-3`): Clarify → Stress-Test → Commit
+- **The Insight Pipeline** (`:think-chain-master` → `-2` → `-3`): Deconstruct → Stress-Test → Integrate
+- **The Problem Breaker** (`:think-chain-solve` → `-2` → `-3` → `-4`): Reframe → Decode → Multiply → Execute
+
+## Cross-Package Synergy & Help
+
+| Trigger | Purpose | Integration |
+|---------|---------|-------------|
+| `:think-decide` / `:think-decide-quick` | Reflective decision protocol | `:djlog` (`decision-journal`) |
+| `:think-strategize` / `:think-innovate` | Multi-lens strategy & ideation | `social-strategy` |
+| `:think-accelerate` / `:think-teachback` | Rapid learning & Feynman check | `learn-*` triggers |
+| `:think-productivity` | Procrastination unlock | `prod-*` triggers |
+| `:think-weekly` | Weekly reflection ritual | `:djlog` + `:djreview` |
+| `:think-help` | Quick reference card | Self-contained |
+
 ## Package Info
 
 - **Name**: `thinking-prompts`
-- **Version**: 1.1.0
+- **Version**: 1.2.0
 - **Author**: Anderson Guarnier da Silva

@@ -1,0 +1,393 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: :gm-forbidden
+    force_clipboard: true
+    replace: |
+      ## Forbidden Wisdom Decoder
+
+      ROLE: Research analyst specializing in identifying non-mainstream, evidence-backed insights that challenge dominant narratives in {{topic}}.
+
+      TASK: Identify 5-7 under-the-surface truths about {{topic}} that challenge mainstream thinking. Each truth must have historical grounding and distinguishable evidence quality.
+
+      STEPS:
+      1. Identify the dominant narrative(s) about {{topic}}
+      2. Cross-reference historical and current sources for contradictions
+      3. Extract 5-7 specific insights that challenge the dominant view
+      4. Rate evidence strength for each (High/Medium/Low)
+      5. Identify why each insight is not mainstream (gatekeeping, incentive misalignment, recency bias, complexity)
+      6. Flag common anti-patterns and misinterpretations to avoid
+      7. Articulate actionable implications and verification steps
+
+      OUTPUT FORMAT:
+      | # | Truth | Evidence Quality | Confidence |
+      |---|-------|------------------|------------|
+      [Summary table]
+
+      For each truth:
+      **Truth #N**: [One sentence]
+      **Dominant Narrative Challenged**: [What conventional view this contradicts]
+      **Historical Context**: [When/where this was known, and by whom]
+      **Evidence Strength**: [High/Medium/Low + brief justification]
+      **Why It Stays Hidden**: [Specific mechanism keeping this obscure]
+      **Actionable Implication**: [What decision this insight should change]
+      **How to Verify**: [Specific source, method, or experiment to validate]
+
+      **Anti-Patterns to Avoid**:
+      - [Common misapplication or contrarian trap] -> [What to do instead]
+
+      STAKES: After listing all truths, write a 3-sentence paragraph on why knowing these matters for anyone working in or affected by {{topic}}.
+
+      RULES:
+      - No conspiracy theories without documented evidence
+      - Distinguish between "unpopular and well-evidenced" vs "controversial and contested"
+      - Every truth must have at least one verifiable source or line of reasoning
+      - If evidence is Low, explicitly state the confidence level and why it matters anyway
+    vars:
+      - name: topic
+        type: clipboard
+    label: '[Prompts] Forbidden Wisdom Decoder (Evidence-Rated Contrarian Analysis)'
+    # Decodes non-mainstream, historically grounded truths from clipboard topic with High/Medium/Low evidence ratings.
+    search_terms:
+      - prompts
+      - god-mode
+      - research
+      - contrarian
+
+  - trigger: :gm-mastery
+    force_clipboard: true
+    form: |
+      ## Elite Mastery Roadmap
+
+      ROLE: Learning scientist and performance analyst specializing in skill acquisition. You synthesize research on deliberate practice, cognitive load theory, and expertise development.
+
+      TASK: Create a structured mastery roadmap for [[skill]] assuming a [[level]] starting point over a [[timeline]] timeline.
+
+      STEPS:
+      1. Assess the starting point: What does a [[level]] practitioner already know?
+      2. Define 4 progression phases: Foundation -> Competence -> Expertise -> Mastery
+      3. For each phase, specify:
+         - The specific sub-skills to develop
+         - The deliberate practice method (specific exercise, not "practice more")
+         - The validation metric (how to know you've achieved this phase)
+         - 2-3 evidence-based but underutilized resources
+      4. Identify the 3 most common anti-patterns that derail mastery in [[skill]]
+      5. Recommend a weekly practice structure with time allocation
+
+      OUTPUT FORMAT:
+      | Phase | Timeline | Core Sub-Skills | Validation Milestone |
+      |-------|----------|-----------------|----------------------|
+      [4-phase overview table]
+
+      **Phase 1: Foundation** (Weeks X-Y)
+      - Sub-skills: [...]
+      - Practice Method: [Specific exercise with duration/frequency]
+      - Validation: [Observable milestone]
+      - Resources: [Book/tool/community + why it's underutilized]
+
+      [Repeat for Phases 2-4]
+
+      **Anti-Patterns to Avoid**:
+      1. [Pattern] -> [Why it fails] -> [What to do instead]
+      2. [Pattern] -> [Why it fails] -> [What to do instead]
+      3. [Pattern] -> [Why it fails] -> [What to do instead]
+
+      **Weekly Structure**:
+      [Day-by-day or time-block recommendation]
+
+      **Validation Checkpoints**:
+      [How to self-assess at each phase transition]
+    form_fields:
+      skill:
+        default: ''
+      level:
+        type: choice
+        values:
+          - complete beginner
+          - beginner with some exposure
+          - intermediate
+          - advanced
+        default: beginner with some exposure
+      timeline:
+        type: choice
+        values:
+          - 3 months
+          - 6 months
+          - 1 year
+          - 2 years
+          - 5 years
+        default: 6 months
+    label: '[Prompts] Elite Mastery Roadmap (Deliberate Practice & Phase Progression)'
+    # Interactive form to build a 4-phase deliberate practice roadmap with anti-patterns and validation milestones.
+    search_terms:
+      - prompts
+      - god-mode
+      - mastery
+      - learning
+
+  - trigger: :gm-future
+    force_clipboard: true
+    replace: |
+      ## Future Trajectory Analysis
+
+      ROLE: Strategic foresight analyst. You extrapolate current trends in {{topic}} to project developments over the next 20 years, grounded in observable momentum rather than speculation.
+
+      TASK: Identify 5 high-probability developments in {{topic}} by 2045 that most people are underestimating, based on current trajectory analysis.
+
+      STEPS:
+      1. Map the current state of {{topic}} — key technologies, research frontiers, market dynamics
+      2. Identify 3-5 trend lines with clear acceleration or inflection signals
+      3. Extrapolate each trend line to 2045
+      4. Identify second-order effects (what happens when trends intersect)
+      5. Assign confidence level and evidence quality to each prediction
+      6. Specify "what would need to be true" and how to verify early signals
+      7. Flag forecasting anti-patterns and articulate immediate actions
+
+      OUTPUT FORMAT:
+      | # | Trend | Confidence | Evidence Quality | Leading Indicator |
+      |---|-------|------------|------------------|-------------------|
+      [Summary table]
+
+      **Trend #N**: [Name of trend]
+      **Current Signal**: [Observable evidence this trend is real]
+      **Extrapolation to 2045**: [Specific projected development]
+      **Confidence**: [High (70%+) / Medium (40-70%) / Low (below 40%)]
+      **Evidence Quality**: [High/Medium/Low + source basis]
+      **What Would Need to Be True**: [Key assumptions required]
+      **Second-Order Effects**: [What this unlocks or disrupts]
+      **How to Verify**: [Specific metric or milestone to watch in the next 12-24 months]
+      **Action Today**: [Specific thing to learn, invest in, or prepare for]
+
+      **Forecasting Anti-Patterns to Avoid**:
+      - [Common extrapolation mistake in {{topic}}] -> [How to guard against it]
+
+      RULES:
+      - Every prediction must be grounded in a CURRENT trend with evidence
+      - No science fiction — extrapolate from existing research/technology only
+      - Distinguish between "likely" and "possible" clearly
+      - Include at least one prediction that runs counter to mainstream optimism/pessimism
+    vars:
+      - name: topic
+        type: clipboard
+    label: '[Prompts] Future Trajectory Analysis (2045 Trend Extrapolation & Signals)'
+    # Extrapolates current clipboard topic trends to 2045 with confidence ratings, second-order effects, and verification signals.
+    search_terms:
+      - prompts
+      - god-mode
+      - foresight
+      - future
+
+  - trigger: :gm-parallel
+    force_clipboard: true
+    replace: |
+      ## Cross-Domain Pattern Transfer
+
+      ROLE: Interdisciplinary systems thinker. You identify proven solutions from one domain that have not yet been applied to another, creating novel insights through analogy transfer.
+
+      TASK: Analyze {{topic}} through the lens of 3 different disciplines to generate actionable insights that insiders in {{topic}} typically miss.
+
+      STEPS:
+      1. Select 3 analogy domains based on structural similarity to {{topic}}:
+         - One from natural sciences (biology, physics, ecology)
+         - One from engineering/systems (networks, control systems, architecture)
+         - One from social sciences (economics, sociology, anthropology)
+      2. For each analogy domain:
+         - Identify a well-solved problem with structural parallels
+         - Extract the core pattern/principle
+         - Map the transfer mechanism to {{topic}}
+         - Generate specific actionable insights
+      3. Validate each transfer: explain WHY the pattern applies across domains and rate transfer confidence (High/Medium/Low)
+      4. Flag transfers that might be misleading or oversimplified
+
+      OUTPUT FORMAT:
+      | # | Analogy Domain | Core Pattern | Transfer Confidence | Validation Check |
+      |---|----------------|--------------|---------------------|------------------|
+      [Cross-domain summary table]
+
+      **Analogy Domain #N**: [Field name]
+      **Well-Solved Problem There**: [Specific solved challenge]
+      **Core Pattern**: [The transferable principle]
+      **Transfer Mechanism**: [How it maps to {{topic}}]
+      **Insight for {{topic}}**: [Specific, actionable recommendation]
+      **Validation**: [Why this pattern genuinely applies + how to test it]
+      **Caution**: [Where the analogy breaks down — what NOT to transfer]
+
+      SYNTHESIS: After presenting all 3, write a "Cross-Domain Synthesis" paragraph identifying the meta-pattern that connects them and what this reveals about {{topic}} at a systems level.
+    vars:
+      - name: topic
+        type: clipboard
+    label: '[Prompts] Cross-Domain Pattern Transfer (Interdisciplinary Analogy Synthesis)'
+    # Analyzes clipboard topic through natural science, engineering, and social science analogies with validation checks.
+    search_terms:
+      - prompts
+      - god-mode
+      - analogy
+      - systems
+
+  - trigger: :gm-genius
+    force_clipboard: true
+    form: |
+      ## Cognitive Pattern Modeling
+
+      ROLE: Cognitive scientist studying expert problem-solving. You model the evidenced thinking patterns of exceptional performers, creating transferable cognitive frameworks.
+
+      TASK: Deconstruct the problem-solving approach of [[figure]] in their domain of [[domain]], then create a learnable framework with progressive exercises.
+
+      STEPS:
+      1. Identify the specific domain of genius: What kind of problems did [[figure]] solve?
+      2. Deconstruct their approach into 3-4 cognitive patterns evidenced in their work:
+         - Mental models they used
+         - Heuristics they applied
+         - Knowledge structures they built
+         - Question-framing techniques
+      3. For each pattern:
+         - Provide 2-3 pieces of evidence from their work (rate Evidence Quality: High/Medium/Low)
+         - Design a practice exercise (progressive: beginner -> advanced)
+         - Specify application scope (where this pattern works)
+         - State limitations (where it doesn't apply)
+      4. Create a 4-week practice plan
+      5. Add a "When NOT to use this" section — boundaries and anti-patterns of the model
+
+      OUTPUT FORMAT:
+      | # | Cognitive Pattern | Evidence Quality | Primary Application | Key Limitation |
+      |---|-------------------|------------------|---------------------|----------------|
+      [Pattern overview table]
+
+      **Pattern #N**: [Name of cognitive pattern]
+      **Evidence**: [Specific work, decision, or quote demonstrating this + High/Medium/Low quality]
+      **Practice Exercise (Beginner)**: [Specific 15-20 min exercise]
+      **Practice Exercise (Advanced)**: [Specific complex application]
+      **Application Scope**: [Domains/problems where this applies]
+      **Limitation**: [Where this pattern fails or misleads]
+
+      **4-Week Practice Plan**:
+      Week 1: [Focus] — [Daily exercise]
+      Week 2: [Focus] — [Daily exercise]
+      Week 3: [Focus] — [Daily exercise]
+      Week 4: [Focus] — [Daily exercise]
+
+      **When NOT to Use This (Anti-Patterns)**:
+      - [Situations where copying [[figure]] backfires]
+
+      **IMPORTANT CAVEAT**: Write a paragraph on the limitations of modeling genius — what aspects of [[figure]]'s success were contextual, non-replicable, or dependent on factors beyond thinking patterns (timing, resources, temperament, luck).
+    form_fields:
+      figure:
+        default: ''
+      domain:
+        default: ''
+    label: '[Prompts] Cognitive Pattern Modeling (Expert Deconstruction & Practice Plan)'
+    # Interactive form to deconstruct an expert figure's cognitive patterns in a domain into a 4-week practice plan.
+    search_terms:
+      - prompts
+      - god-mode
+      - cognitive
+      - mental-models
+
+  - trigger: :gm-lost
+    force_clipboard: true
+    replace: |
+      ## Evidence-Based Ancient Wisdom Audit
+
+      ROLE: Historian of ideas with scientific methodology training. You evaluate practices from pre-modern civilizations against current evidence, separating genuine insight from romanticized nonsense.
+
+      TASK: Identify 5 practices from ancient or pre-industrial civilizations relevant to {{topic}} that have modern scientific support, and provide specific implementation protocols.
+
+      STEPS:
+      1. Survey practices from 3+ ancient traditions relevant to {{topic}}
+      2. Filter: Only include practices with at least preliminary modern evidence
+      3. For each surviving practice:
+         - Document historical origin and original context
+         - Present modern scientific evidence (with strength rating: High/Medium/Low)
+         - Explain why it was abandoned (not just "forgotten")
+         - Provide specific implementation protocol and verification method
+         - List caveats and contraindications
+      4. Flag practices that are popular but lack evidence
+      5. Synthesize: What meta-principles emerge across traditions?
+
+      OUTPUT FORMAT:
+      | # | Practice | Origin | Evidence Quality | Confidence |
+      |---|----------|--------|------------------|------------|
+      [Audit summary table]
+
+      **Practice #N**: [Name]
+      **Origin**: [Civilization/Tradition + time period]
+      **Original Purpose**: [What it was designed to achieve]
+      **Why It Was Abandoned**: [Specific historical reason — technological replacement, cultural shift, etc.]
+      **Modern Evidence**: [Study finding or mechanism + quality: High/Medium/Low]
+      **Implementation Protocol**: [Step-by-step, with frequency/duration]
+      **How to Verify**: [Observable personal or empirical metric]
+      **Caveats**: [Who should not do this, known risks, common mistakes]
+
+      **Evidence-Free Zone (What NOT to Do)**: List 2-3 popular "ancient wisdom" claims about {{topic}} that lack scientific support and should be avoided.
+
+      **Meta-Principles**: What common threads connect the evidence-backed practices across different civilizations?
+    vars:
+      - name: topic
+        type: clipboard
+    label: '[Prompts] Ancient Wisdom Audit (Evidence-Based Historical Practice Filter)'
+    # Audits pre-modern practices for clipboard topic against modern scientific evidence and provides implementation protocols.
+    search_terms:
+      - prompts
+      - god-mode
+      - history
+      - evidence
+
+  - trigger: :gm-posthuman
+    force_clipboard: true
+    replace: |
+      ## Systematic De-Biasing Analysis
+
+      ROLE: Decision quality analyst trained in cognitive bias identification and structured analytical techniques. You don't claim to be bias-free — you systematically expose and counter biases.
+
+      TASK: Audit the conventional approach to {{problem}} for cognitive biases, then re-analyze from a de-biased perspective to generate counterintuitive but feasible solutions.
+
+      STEPS:
+      1. BIAS AUDIT: Identify which biases likely affect typical thinking about {{problem}}:
+         - Confirmation bias (seeking confirming evidence)
+         - Status quo bias (overweighting current state)
+         - Availability bias (overweighting recent/vivid examples)
+         - Sunk cost bias (committing to past investments)
+         - Anchoring bias (over-relying on first information)
+         - Groupthink (suppressing dissent in teams)
+      2. For each identified bias: document how it likely manifests in {{problem}} and score Severity (1-5): 1=Negligible distortion, 3=Moderate blind spot, 5=Critical decision-warping bias
+      3. UNBIASED RE-ANALYSIS: Re-examine {{problem}} as if each bias were neutralized
+      4. Generate 3 counterintuitive solutions that emerge from de-biased thinking
+      5. FEASIBILITY FILTER: For each solution:
+         - Assess implementation feasibility (Easy/Medium/Hard)
+         - Identify the "human resistance" — why people will reject this
+         - Design a step-by-step adoption path and verification check
+      6. PRIORITY MATRIX: Rank by Impact vs. Implementation Difficulty
+
+      OUTPUT FORMAT:
+      **Bias Audit** (Severity 1-5: 1=Negligible, 3=Moderate, 5=Critical):
+      | Bias | Manifestation in {{problem}} | Severity (1-5) | Evidence Quality |
+      |------|------------------------------|----------------|------------------|
+      [Table format]
+
+      **De-Biased Solutions**:
+      Solution #N: [Description]
+      - Why it's counterintuitive: [Which bias it overcomes]
+      - Feasibility: [Easy/Medium/Hard + why]
+      - Human Resistance: [Why people/organizations will resist]
+      - Adoption Path: [Step 1 -> Step 2 -> Step 3]
+      - Verification: [How to test this solution cheaply]
+
+      **Priority Matrix**: [High Impact/Low Effort first, etc.]
+
+      **Anti-Patterns to Avoid**:
+      - [Common de-biasing trap or political misstep] -> [What to do instead]
+
+      RULES:
+      - Do not claim to be "unbiased" — show the PROCESS of de-biasing
+      - Every solution must be actually implementable (not theoretically optimal but practically impossible)
+      - Address the political/social reality of adoption, not just the logical case
+    vars:
+      - name: problem
+        type: clipboard
+    label: '[Prompts] Systematic De-Biasing Analysis (Cognitive Bias Audit & Feasibility)'
+    # Audits clipboard problem for cognitive biases using a 1-5 severity rubric and generates feasible counterintuitive solutions.
+    search_terms:
+      - prompts
+      - god-mode
+      - bias
+      - decision

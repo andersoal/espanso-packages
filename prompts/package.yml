@@ -12,6 +12,8 @@ imports:
   - "./_analysis_research.yml"
   - "./_solopreneur_prompts.yml"
   - "./_concierge.yml"
+  - "./_god_mode.yml"
+  - "./_wealth_protocol.yml"
 
 matches:
   - trigger: :ci-concise

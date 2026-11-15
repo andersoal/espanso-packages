@@ -1,0 +1,316 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: :wp-excavator
+    force_clipboard: true
+    form: |
+      ## Specific Knowledge Excavator
+
+      MY INPUTS:
+      - Obsessions (things I read about without being paid): [[obsessions]]
+      - Weird angles (things I've done that others haven't): [[angles]]
+      - Skills (even if I think they're not special): [[skills]]
+
+      ROLE: Specific knowledge analyst trained on Naval Ravikant's wealth philosophy. You reverse-engineer a person's unique intellectual fingerprint — the rare intersection of obsessions, experiences, and undervalued skills.
+
+      TASK: Excavate my specific knowledge profile from the inputs above. Identify the knowledge stack I can build a leverage engine around.
+
+      STEPS:
+      1. Cross-reference all three inputs to find the rare intersection
+      2. Name the specific knowledge niche in one precise sentence
+      3. Articulate what makes this combination unusual (2-3 sentences)
+      4. Evaluate: Could this be learned from a course or copied in 6 months? If yes, drill deeper until the answer is no.
+      5. Propose 3 business models that turn this into leverage (code, media, or capital — not labor)
+      6. Score each model using the rubric below
+      7. Design a fast validation experiment for the top model and flag anti-patterns
+
+      SCORING RUBRIC (1-5 scale for each):
+      - Market Size: 1=Niche hobbyist, 5=Mass market or high-value B2B
+      - Competition: 1=Dominated by incumbents, 5=Blue ocean / underserved
+      - Leverage Multiplier: 1=Linear time-for-money, 5=Non-linear scalable
+      - Speed to Validate: 1=Years to test, 5=Can validate in 2 weeks
+      - Personal Fit: 1=Draining work, 5=Energizing work
+
+      OUTPUT FORMAT:
+      **Your Specific Knowledge Niche**: [One precise sentence]
+
+      **Why This Is Rare**: [2-3 sentences on what makes this combination unusual and defensible]
+
+      **Defensibility Test**: [Why this cannot be easily copied + time estimate for replication]
+
+      **3 Leveraged Business Models**:
+      | Model | Leverage Type | Market | Competition | Multiplier | Validation Speed | Personal Fit | Total |
+      |-------|---------------|--------|-------------|------------|------------------|--------------|-------|
+      [Scoring table with totals]
+
+      **Top Model Deep Dive**: [Name]
+      - Recommended Positioning: [One sentence]
+      - First 3 Steps: [Specific, time-bound actions]
+
+      **Fast Validation Experiment**: [Specific experiment to run in 14 days to test demand]
+
+      **Anti-Patterns to Avoid**:
+      - [Common trap when monetizing this niche] -> [What to do instead]
+    form_fields:
+      obsessions:
+        multiline: true
+      angles:
+        multiline: true
+      skills:
+        multiline: true
+    label: '[Prompts] Specific Knowledge Excavator (Niche Discovery & Scoring Rubric)'
+    # Interactive form to excavate specific knowledge from obsessions, weird angles, and skills with a 1-5 scoring rubric.
+    search_terms:
+      - prompts
+      - wealth-protocol
+      - naval
+      - niche
+
+  - trigger: :wp-leverage
+    force_clipboard: true
+    form: |
+      ## Leverage Stack Audit
+
+      MY INPUTS:
+      - Income sources and hours per week on each: [[streams]]
+      - Monthly income breakdown: [[income]]
+
+      ROLE: Leverage analyst operating on Naval Ravikant's four-layer framework: labor, capital, code, and media. You diagnose over-dependence on low-leverage activities and redesign work around high-leverage equivalents.
+
+      FRAMEWORK (1-10 Leverage Scale):
+      - Labor leverage (1-3): Trading time for money. Scales linearly. Capped by hours.
+      - Capital leverage (4-6): Money working for you. Requires capital accumulation.
+      - Code leverage (7-9): Software working for you. Build once, serve many. Requires technical skill or hiring.
+      - Media leverage (8-10): Content working for you. Build once, discovered repeatedly. Requires distribution.
+
+      TASK: Audit my current income streams and work activities. Show where I have leverage and where I'm leaking time.
+
+      STEPS:
+      1. Map every income source to leverage type and score (using rubric above)
+      2. Calculate overall leverage index (weighted average by income)
+      3. Identify the biggest leverage leak (highest hours, lowest score)
+      4. Assess leverage risk: which streams die if I stop working for 60 days?
+      5. Propose 3 conversion upgrades with realistic timelines
+      6. Sequence by effort vs. impact (do highest impact/easiest first)
+
+      OUTPUT FORMAT:
+      **Leverage Audit Table**:
+      | Activity | Leverage Type | Score | Hours/Week | % of Income | Risk if Stopped? |
+      |----------|---------------|-------|------------|-------------|------------------|
+      [Full table]
+
+      **Your Leverage Index**: [X/10] — [Interpretation: "Mostly labor-dependent" / "Balanced" / "Highly leveraged"]
+
+      **Leverage Risk Map**: Which income streams disappear if you take 60 days off?
+
+      **Biggest Leverage Leak**: [Activity + hours invested + income generated + why it's a trap]
+
+      **3 Conversion Upgrades**:
+      | Current Activity | Convert To | Specific Change | Timeline | Effort | Impact |
+      |------------------|------------|-----------------|----------|--------|--------|
+      [Prioritized table — highest impact/easiest effort first]
+
+      **90-Day Action Plan**:
+      Month 1: [Specific action]
+      Month 2: [Specific action]
+      Month 3: [Specific action]
+
+      **Anti-Patterns to Avoid**:
+      - [Common leverage trap, e.g. hiring labor before productizing] -> [What to do instead]
+
+      RULES:
+      - Hourly consulting = Labor score 1-2 regardless of rate
+      - Upgrades must specify the exact asset being built, not conceptual direction
+      - Each upgrade must include a concrete deliverable name
+      - Protect current income — no "quit your job first" recommendations
+    form_fields:
+      streams:
+        multiline: true
+      income:
+        multiline: true
+    label: '[Prompts] Leverage Stack Audit (4-Layer Labor/Capital/Code/Media Diagnostic)'
+    # Interactive form to audit income streams across Naval's 4 leverage layers and design a 90-day upgrade plan.
+    search_terms:
+      - prompts
+      - wealth-protocol
+      - leverage
+      - naval
+
+  - trigger: :wp-productize
+    force_clipboard: true
+    form: |
+      ## Productize Yourself Blueprint
+
+      MY INPUTS:
+      - Expertise and transformation I provide: [[expertise]]
+      - Current audience: [[audience]]
+      - Time available to build: [[time]]
+
+      ROLE: Product architect specializing in converting knowledge workers into scalable operators. You design product ecosystems that deliver transformation without requiring the creator's live presence.
+
+      TASK: Design a complete "productize yourself" blueprint. Convert my expertise into a scalable system — not more client work, but a machine.
+
+      STEPS:
+      1. Identify the single most valuable transformation I deliver (in one sentence)
+      2. Design a product ladder: Free -> Entry -> Core -> Premium -> Enterprise
+      3. Specify the winning product: contents, delivery mechanism, irreplaceability factor
+      4. Design the distribution channel based on my existing audience/platform
+      5. Write the positioning statement for launch
+      6. Create a validation plan: How to test demand BEFORE building
+      7. Build a realistic timeline with milestones for [[time]]
+
+      PRODUCT LADDER FRAMEWORK:
+      - Free: [Attracts audience, demonstrates expertise]
+      - Entry ($): [Low-risk first purchase, high value]
+      - Core ($$): [Main revenue driver, complete transformation]
+      - Premium ($$$): [High-touch, high-price for committed customers]
+      - Enterprise ($$$$): [Custom, requires some presence but at massive scale]
+
+      OUTPUT FORMAT:
+      **Your Core Transformation**: [One sentence — what do you help people DO or BECOME]
+
+      **Product Ladder**:
+      | Tier | Product Name | Price | Contents | Delivery | Purpose |
+      |------|--------------|-------|----------|----------|---------|
+      [Complete ladder]
+
+      **Winning Product (Core Tier)**:
+      - Name: [Product name + proprietary mechanism name]
+      - Contents: [What's inside — modules, tools, resources]
+      - Delivery: [How it reaches buyers without your live presence]
+      - Price: [Recommended price + pricing psychology reasoning]
+      - Irreplaceability Factor: [Why this can't be easily copied]
+
+      **Validation Plan** (Do THIS before building):
+      - Step 1: [Specific validation action with success criteria]
+      - Step 2: [Specific validation action with success criteria]
+      - Step 3: [Specific validation action with success criteria]
+
+      **Positioning Statement**: [One sentence — For [target] who [problem], [Product] is the [category] that [benefit], unlike [alternatives].]
+
+      **Build Timeline** (at [[time]]):
+      Week 1-2: [Milestone]
+      Week 3-4: [Milestone]
+      [Continue with realistic milestones...]
+
+      **Anti-Patterns to Avoid**:
+      - [Building before validating / over-relying on live calls] -> [What to do instead]
+
+      RULES:
+      - A product requiring live presence to deliver must have >10x price justification
+      - No generic courses — must include a named framework or proprietary methodology
+      - Distribution must match current platform — no starting from zero on new channel
+      - Validation comes before building, always
+    form_fields:
+      expertise:
+        multiline: true
+      audience:
+        default: ''
+      time:
+        type: choice
+        values:
+          - 5 hours/week
+          - 10 hours/week
+          - 15 hours/week
+          - 20 hours/week
+        default: 10 hours/week
+    label: '[Prompts] Productize Yourself Blueprint (Product Ladder & Validation Plan)'
+    # Interactive form to design a 5-tier product ladder, pre-build validation plan, and realistic build timeline.
+    search_terms:
+      - prompts
+      - wealth-protocol
+      - productize
+      - offer
+
+  - trigger: :wp-leak
+    force_clipboard: true
+    form: |
+      ## Time-For-Money Leak Detector
+
+      MY INPUTS:
+      - Current work activities and compensation: [[activities]]
+      - Total hours worked per week: [[total_hours]]
+      - Current income split (active vs passive): [[split]]
+
+      ROLE: Wealth architect trained on equity-building principles. You expose time-for-money traps and design gradual escape paths that convert rented time into owned assets — without requiring income sacrifice.
+
+      FRAMEWORK:
+      - Time-Rented: Activities where stopping = income stops within 60 days
+        (Employment, consulting, freelancing, agency work, retainers)
+      - Equity-Building: Activities where stopping for 6 months doesn't kill income
+        (Products, content libraries, software, investments, automated services)
+      - Hybrid: Activities with maintenance requirements but significant passive component
+        (Membership communities, SaaS, content with ongoing updates)
+
+      TASK: Audit my work structure. Find every hour being rented instead of invested. Then design a graduated conversion plan.
+
+      STEPS:
+      1. Categorize every work activity: Time-Rented / Hybrid / Equity-Building
+      2. Calculate time-rent ratio (% of hours in each category)
+      3. Calculate income-rent ratio (% of income from each category)
+      4. Identify 3 conversion opportunities: turning rented work into equity equivalents
+      5. For each conversion:
+         - Design the equity equivalent
+         - Assess risk level (Low/Medium/High)
+         - Create a timeline that protects current income
+         - Specify the exact asset being built
+      6. Score each opportunity (1-5 scale: 1=Low upside/high risk, 3=Moderate upside, 5=High leverage/low risk) and rank by Score
+      7. Design a "Transition Bridge" — maintaining income while building equity
+
+      OUTPUT FORMAT:
+      **Time Audit Table**:
+      | Activity | Category | Hours/Week | % of Income | Equity Potential | Conversion Difficulty |
+      |----------|----------|------------|-------------|------------------|-----------------------|
+      [Full table]
+
+      **Your Ratios**:
+      - Time-Rent Ratio: [% of hours in Time-Rented]
+      - Income-Rent Ratio: [% of income from Time-Rented]
+      - Equity Score: [Hours in Equity-Building / Total Hours]
+
+      **Top 3 Conversion Opportunities** (Score 1-5: 1=Low upside/high risk, 5=High leverage/low risk):
+      | # | Current Activity | Equity Equivalent | Timeline | Risk | Effort | Leverage | Score (1-5) |
+      |---|------------------|-------------------|----------|------|--------|----------|-------------|
+      [Prioritized by score]
+
+      **Conversion Detail #1** (Highest scored):
+      - Current: [What you do now]
+      - Equity Equivalent: [What you build]
+      - Asset Being Created: [Specific named deliverable]
+      - Timeline: [Phase 1 -> Phase 2 -> Phase 3 with realistic dates]
+      - Risk Mitigation: [How to protect current income]
+
+      **The Transition Bridge**:
+      How to maintain current income while building equity:
+      - Month 1-2: [Specific actions]
+      - Month 3-4: [Specific actions]
+      - Month 5-6: [Specific actions]
+
+      **2-Year Projection**:
+      If you convert the top opportunity: What does your income structure look like in 2 years?
+      - Time-rent ratio target: [%]
+      - New income streams: [Description]
+      - Equity assets owned: [List]
+
+      **Anti-Patterns to Avoid**:
+      - [Prematurely quitting active income / building unvalidated assets] -> [What to do instead]
+
+      RULES:
+      - Consulting, freelancing, and employment are time-rented — no exceptions regardless of rate
+      - Every conversion must include a specific, named asset (not "start a blog" but "Build [Name]: a [specific thing] that [specific outcome]")
+      - The transition bridge must protect current income — no "quit your job first" recommendations
+      - Include realistic maintenance requirements for "passive" income
+    form_fields:
+      activities:
+        multiline: true
+      total_hours:
+        default: ''
+      split:
+        default: ''
+    label: '[Prompts] Time-For-Money Leak Detector (Equity Conversion & Transition Bridge)'
+    # Interactive form to audit rented-time vs equity-building work and design an income-protected transition bridge.
+    search_terms:
+      - prompts
+      - wealth-protocol
+      - equity
+      - time-leak

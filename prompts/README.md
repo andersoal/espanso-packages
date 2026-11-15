@@ -18,6 +18,8 @@ The package is split into domain-specific submodules imported via `package.yml` 
 - **`_analysis_research.yml`**: Cross-document analysis, perspective synthesis, quality checks, bias audits, pre-mortems, and philosophical exploration.
 - **`_solopreneur_prompts.yml`**: Multi-expert collaborative prompt workflows replacing $4k/month outsourced roles across sales, cold outreach, objection handling, content calendars, customer support, pricing psychology, and launch strategy.
 - **`_concierge.yml`**: High-efficiency decision engines for solo & couples travel itinerary engineering and fiduciary buyer purchase vetting (TCO, ombudsman alignment, adversarial regret shields).
+- **`_god_mode.yml`**: 7 evidence-rated thinking and foresight frameworks (`:gm-forbidden`, `:gm-mastery`, `:gm-future`, `:gm-parallel`, `:gm-genius`, `:gm-lost`, `:gm-posthuman`).
+- **`_wealth_protocol.yml`**: 4 Naval Ravikant-inspired leverage, specific knowledge, and equity-building interactive forms (`:wp-excavator`, `:wp-leverage`, `:wp-productize`, `:wp-leak`).
 
 ## Text Blaze Text Expander
 

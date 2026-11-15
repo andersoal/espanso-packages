@@ -46,6 +46,11 @@ A comprehensive Espanso package of AI prompts and workflows for genealogists and
 | `:gen-web-analyst` | Family Webpage Developer | Prompt for building/analyzing interactive family HTML pages |
 | `:gen-brandcestry` | Brand Ancestry Tree | Parent-subsidiary corporate hierarchy and brand ancestry spec |
 
+### 5. Record Enrichment & FamilySearch Workflows (PT-BR / EN)
+| Trigger | Name | Purpose |
+|---|---|---|
+| `:gen-enrich` | Enrich Genealogical Records (PT-BR / EN) | Disambiguated PT-BR or EN workflow to audit original record images, compare index vs. tree, propose approved edits, and document free sources |
+
 ---
 
 ## 🚀 Installation & Usage

@@ -575,6 +575,7 @@ matches:
       - career
 
   - trigger: :resume
+    word: true
     replace: |
       # Resume and Cover Letter Writer
 
@@ -803,8 +804,15 @@ matches:
       Deliver the document as clean markdown. If the user needs a formatted file, offer to create it as a .md or .txt that they can paste into their preferred tool (Google Docs, Word, Canva). Do not attempt to generate .docx or .pdf files directly.
 
       For "both" mode, deliver the resume first, then the cover letter, in the same response.
+    label: "[Career] Resume and Cover Letter Writer (Interactive Intake & Regional Norms)"
+    # Interactive intake prompt for tailoring resumes and cover letters across AU/NZ, US, UK, and BR norms.
+    search_terms:
+      - career
+      - resume
+      - cover letter
 
   - trigger: :resume
+    word: true
     replace: |
       # Resume and Cover Letter Writer
 

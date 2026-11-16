@@ -1,0 +1,106 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: :pi-os
+    replace: |
+      Act as a world-class entrepreneur and financial planner. Build a complete operating system for creating multiple passive and semi-passive income streams based on my skills, interests, available time, risk tolerance, and financial goals. Analyze my current situation, recommend the highest-leverage opportunities, validate each business model, and create a step-by-step execution plan.
+    label: "[Prompts] Passive Income Operating System (Skills, Leverage & Execution Plan)"
+    # Builds a complete passive/semi-passive income operating system tailored to skills, time, risk tolerance, and financial goals.
+    search_terms:
+      - prompts
+      - passive-income
+      - operating system
+      - entrepreneurship
+      - financial planning
+      - execution plan
+
+  - trigger: :pi-finder
+    replace: |
+      Act as an elite business strategist. Generate 30 passive and semi-passive income ideas that match my skills and resources. For each opportunity include startup cost, implementation time, technical difficulty, scalability, recurring revenue potential, maintenance requirements, competition level, and long-term earning potential. Rank every opportunity by speed to launch, sustainability, and automation potential.
+    label: "[Prompts] Passive Income Opportunity Finder (30 Ranked & Scored Business Ideas)"
+    # Generates and ranks 30 passive/semi-passive income ideas across cost, difficulty, scalability, and automation potential.
+    search_terms:
+      - prompts
+      - passive-income
+      - opportunity finder
+      - business ideas
+      - ranking
+      - strategy
+
+  - trigger: :pi-assets
+    replace: |
+      Act as a digital product entrepreneur. Design a complete strategy for building digital assets that can generate recurring revenue over time. Recommend products such as online courses, eBooks, templates, prompt packs, software, memberships, printables, stock assets, and licensing opportunities. For each asset include creation roadmap, pricing strategy, marketing plan, delivery system, and maintenance requirements.
+    label: "[Prompts] Digital Asset Builder (Recurring Revenue Product Strategy)"
+    # Designs a complete digital asset strategy covering courses, templates, software, memberships, and licensing.
+    search_terms:
+      - prompts
+      - passive-income
+      - digital assets
+      - digital products
+      - recurring revenue
+      - pricing
+
+  - trigger: :pi-content
+    replace: |
+      Act as a creator economy strategist. Build a complete system for using content platforms like YouTube, Instagram, Threads, TikTok, newsletters, blogs, and podcasts to create multiple income streams. Include audience growth strategy, content repurposing workflows, affiliate marketing, sponsorships, digital products, memberships, consulting, and email marketing. Explain how each revenue stream supports the others.
+    label: "[Prompts] Content & Audience Monetization (Multi-Platform Revenue Engine)"
+    # Builds a multi-platform creator economy system linking audience growth, repurposing, and compounding revenue streams.
+    search_terms:
+      - prompts
+      - passive-income
+      - content monetization
+      - creator economy
+      - audience growth
+      - newsletter
+
+  - trigger: :pi-automation
+    replace: |
+      Act as a business systems architect. Design an automation framework for my passive income business including AI workflows, customer onboarding, payment processing, email marketing, analytics, customer support, documentation, CRM, content scheduling, and reporting. Clearly identify which processes should be automated and which require periodic human oversight. Constraints: scalable automation only.
+    label: "[Prompts] Automation & Business Systems (Scalable AI & Operations Framework)"
+    # Designs a scalable automation framework across AI workflows, onboarding, payments, CRM, support, and reporting.
+    search_terms:
+      - prompts
+      - passive-income
+      - automation
+      - business systems
+      - ai workflows
+      - operations
+
+  - trigger: :pi-portfolio
+    replace: |
+      Act as a financial strategist. Build a diversified portfolio of business-based passive and semi-passive income streams that reduce dependence on any single source of revenue. Recommend an order for launching each income stream, explain how they complement one another, and identify risks associated with each model. Constraints: balanced, long-term strategy only, optimized for financial resilience.
+    label: "[Prompts] Diversified Income Portfolio (Resilient Multi-Stream Strategy)"
+    # Builds a balanced, sequenced portfolio of complementary passive/semi-passive income streams with risk analysis.
+    search_terms:
+      - prompts
+      - passive-income
+      - portfolio
+      - diversification
+      - risk management
+      - financial resilience
+
+  - trigger: :pi-analytics
+    replace: |
+      Act as a business intelligence analyst. Create a complete dashboard for tracking recurring revenue, customer acquisition cost, customer lifetime value, profit margins, churn, conversion rates, traffic sources, email growth, automation performance, and monthly cash flow. Design weekly and monthly review systems that identify opportunities to improve profitability and efficiency.
+    label: "[Prompts] Passive Income Analytics Dashboard (KPIs & Review Cadence)"
+    # Creates a BI dashboard and weekly/monthly review system for MRR, CAC, LTV, churn, margins, and cash flow.
+    search_terms:
+      - prompts
+      - passive-income
+      - analytics
+      - dashboard
+      - kpis
+      - business intelligence
+
+  - trigger: :pi-roadmap
+    replace: |
+      Act as a world-class entrepreneur and long-term business advisor. Create a detailed 36-month roadmap for building multiple passive and semi-passive income streams into a sustainable portfolio. Include quarterly milestones, product launches, software opportunities, audience growth targets, automation improvements, reinvestment strategy, financial planning, and business KPIs. Include contingency plans if growth is slower than expected.
+    label: "[Prompts] 36-Month Wealth Roadmap (Quarterly Milestones & Contingency Plan)"
+    # Creates a 36-month passive income roadmap with quarterly milestones, reinvestment strategy, KPIs, and contingencies.
+    search_terms:
+      - prompts
+      - passive-income
+      - wealth roadmap
+      - 36-month plan
+      - milestones
+      - contingency

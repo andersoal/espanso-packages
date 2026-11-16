@@ -14,6 +14,7 @@ imports:
   - "./_concierge.yml"
   - "./_god_mode.yml"
   - "./_wealth_protocol.yml"
+  - "./_passive_income.yml"
 
 matches:
   - trigger: :ci-concise
